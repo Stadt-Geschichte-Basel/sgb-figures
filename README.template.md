@@ -1,12 +1,12 @@
-# REPO_NAME
+# sgb-figures
 
-This repository contains SHORT_DESCRIPTION. The data in this repository is openly available to everyone and is intended to support reproducible research.
+This repository contains code and data for creating plots used in Stadt.Geschichte.Basel. The data in this repository is openly available to everyone and is intended to support reproducible research.
 
-[![GitHub issues](https://img.shields.io/github/issues/USERNAME/REPO_NAME.svg)](https://github.com/USERNAME/REPO_NAME/issues)
-[![GitHub forks](https://img.shields.io/github/forks/USERNAME/REPO_NAME.svg)](https://github.com/USERNAME/REPO_NAME/network)
-[![GitHub stars](https://img.shields.io/github/stars/USERNAME/REPO_NAME.svg)](https://github.com/USERNAME/REPO_NAME/stargazers)
-[![Code license](https://img.shields.io/github/license/USERNAME/REPO_NAME.svg)](https://github.com/USERNAME/REPO_NAME/blob/main/LICENSE-AGPL.md)
-[![Data license](https://img.shields.io/github/license/USERNAME/REPO_NAME.svg)](https://github.com/USERNAME/REPO_NAME/blob/main/LICENSE-CCBY.md)
+[![GitHub issues](https://img.shields.io/github/issues/mtwente/sgb-figures.svg)](https://github.com/mtwente/sgb-figures/issues)
+[![GitHub forks](https://img.shields.io/github/forks/mtwente/sgb-figures.svg)](https://github.com/mtwente/sgb-figures/network)
+[![GitHub stars](https://img.shields.io/github/stars/mtwente/sgb-figures.svg)](https://github.com/mtwente/sgb-figures/stargazers)
+[![Code license](https://img.shields.io/github/license/mtwente/sgb-figures.svg)](https://github.com/mtwente/sgb-figures/blob/main/LICENSE-AGPL.md)
+[![Data license](https://img.shields.io/github/license/mtwente/sgb-figures.svg)](https://github.com/mtwente/sgb-figures/blob/main/LICENSE-CCBY.md)
 [![DOI](https://zenodo.org/badge/ZENODO_RECORD.svg)](https://zenodo.org/badge/latestdoi/ZENODO_RECORD)
 
 ## Repository Structure
@@ -28,6 +28,40 @@ The structure of this repository follows the [Advanced Structure for Data Analys
 - TODO Describe the data in this repository, including what it represents, how it was collected or obtained, any preprocessing or cleaning that was done, and any limitations or potential biases.
 - TODO Data models, including field names, descriptions, and controlled values, should be clearly documented in a static document that is maintained with the data and is part of the products.
 - TODO All rights and intellectual property issues should be clearly documented. Where possible, data and products should be released under open licenses (Creative Commons, GNU, BSD, MPL).
+
+## Installation
+
+Install Node.js, Quarto and R. Run the following commands in the root directory of the repository:
+
+```bash
+npm install
+```
+
+Set up the R environment using renv:
+
+```bash
+npm run setup
+```
+
+## Build
+
+Build an individual plot as PDF by running the following command:
+
+```bash
+npm run plot
+```
+
+Specify the ID of the plot when prompted, e.g.:
+
+```bash
+Please enter the plot ID (e.g. 39017 for abb39017): 24258
+```
+
+You can also specify the plot before already:
+
+```bash
+npm run plot 24258
+```
 
 ## Use
 
@@ -51,16 +85,16 @@ curl -i https://zenodo.org/api/records/ZENODO_RECORD
 
 ## Support
 
-This project is maintained by [@USERNAME](https://github.com/USERNAME). Please understand that we can't provide individual support via email. We also believe that help is much more valuable when it's shared publicly, so more people can benefit from it.
+This project is maintained by [@mtwente](https://github.com/mtwente). Please understand that we can't provide individual support via email. We also believe that help is much more valuable when it's shared publicly, so more people can benefit from it.
 
-| Type                                   | Platforms                                                               |
-| -------------------------------------- | ----------------------------------------------------------------------- |
-| 🚨 **Bug Reports**                     | [GitHub Issue Tracker](https://github.com/USERNAME/REPO_NAME/issues)    |
-| 📊 **Report bad data**                 | [GitHub Issue Tracker](https://github.com/USERNAME/REPO_NAME/issues)    |
-| 📚 **Docs Issue**                      | [GitHub Issue Tracker](https://github.com/USERNAME/REPO_NAME/issues)    |
-| 🎁 **Feature Requests**                | [GitHub Issue Tracker](https://github.com/USERNAME/REPO_NAME/issues)    |
-| 🛡 **Report a security vulnerability** | See [SECURITY.md](SECURITY.md)                                          |
-| 💬 **General Questions**               | [GitHub Discussions](https://github.com/USERNAME/REPO_NAME/discussions) |
+| Type                                   | Platforms                                                                |
+| -------------------------------------- | ------------------------------------------------------------------------ |
+| 🚨 **Bug Reports**                     | [GitHub Issue Tracker](https://github.com/mtwente/sgb-figures/issues)    |
+| 📊 **Report bad data**                 | [GitHub Issue Tracker](https://github.com/mtwente/sgb-figures/issues)    |
+| 📚 **Docs Issue**                      | [GitHub Issue Tracker](https://github.com/mtwente/sgb-figures/issues)    |
+| 🎁 **Feature Requests**                | [GitHub Issue Tracker](https://github.com/mtwente/sgb-figures/issues)    |
+| 🛡 **Report a security vulnerability** | See [SECURITY.md](SECURITY.md)                                           |
+| 💬 **General Questions**               | [GitHub Discussions](https://github.com/mtwente/sgb-figures/discussions) |
 
 ## Roadmap
 
@@ -72,13 +106,13 @@ All contributions to this repository are welcome! If you find errors or problems
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. The available versions are listed in the [tags on this repository](https://github.com/USERNAME/REPO_NAME/tags).
+We use [SemVer](http://semver.org/) for versioning. The available versions are listed in the [tags on this repository](https://github.com/mtwente/sgb-figures/tags).
 
 ## Authors and acknowledgment
 
-- **FULLNAME** - _Initial work_ - [USERNAME](https://github.com/USERNAME)
+- **Moritz Twente** - _Initial work_ - [mtwente](https://github.com/mtwente)
 
-See also the list of [contributors](https://github.com/USERNAME/REPO_NAME/graphs/contributors) who contributed to this project.
+See also the list of [contributors](https://github.com/mtwente/sgb-figures/graphs/contributors) who contributed to this project.
 
 ## License
 

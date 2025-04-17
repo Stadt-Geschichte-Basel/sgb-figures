@@ -1,8 +1,8 @@
 contact_links:
-  - name: Are you looking for documentation on REPO_NAME?
-    url: https://USERNAME.github.io/REPO_NAME
-    about: Please see the documentation for REPO_NAME on its GitHub Pages page.
-  - name: Do want to discuss REPO_NAME with the community?
-    url: https://github.com/USERNAME/REPO_NAME/discussions
-    about: Please see the discussions page for REPO_NAME.
+  - name: Are you looking for documentation on sgb-figures?
+    url: https://mtwente.github.io/sgb-figures
+    about: Please see the documentation for sgb-figures on its GitHub Pages page.
+  - name: Do want to discuss sgb-figures with the community?
+    url: https://github.com/mtwente/sgb-figures/discussions
+    about: Please see the discussions page for sgb-figures.
 blank_issues_enabled: true
