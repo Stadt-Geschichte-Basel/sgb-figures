@@ -1,8 +1,8 @@
 contact_links:
   - name: Are you looking for documentation on sgb-figures?
-    url: https://mtwente.github.io/sgb-figures
+    url: https://stadt-geschichte-basel.github.io/sgb-figures
     about: Please see the documentation for sgb-figures on its GitHub Pages page.
   - name: Do want to discuss sgb-figures with the community?
-    url: https://github.com/mtwente/sgb-figures/discussions
+    url: https://github.com/stadt-geschichte-basel/sgb-figures/discussions
     about: Please see the discussions page for sgb-figures.
 blank_issues_enabled: true

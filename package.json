@@ -2,7 +2,7 @@
 	"name": "sgb-figures",
 	"description": "Code and data for creating plots used in Stadt.Geschichte.Basel",
 	"author": "Moritz Twente <[mtwente@protonmail.com]>",
-	"url": "https://github.com/mtwente/sgb-figures/issues",
+	"url": "https://github.com/stadt-geschichte-basel/sgb-figures/issues",
 	"license": "AGPL-3.0",
 	"scripts": {
 		"check": "prettier --ignore-path .gitignore  --check . '!{CODE_OF_CONDUCT.md,LICENSE-AGPL.md,LICENSE-CCBY.md,_layouts/default.html,package-lock.json,pnpm-lock.yaml,yarn.lock}'",
