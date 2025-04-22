@@ -8,7 +8,7 @@ typeline <- function(msg) {
   return(txt)
 }
 
-txt <- typeline("Please enter the plot ID (e.g. 39017 for abb39017): ")
+txt <- typeline("Bitte ID des Plots eingeben (z.B. 39017 für abb39017): ")
 
 path <- here::here("src", txt, paste0(txt, "_plot.R"))
 
