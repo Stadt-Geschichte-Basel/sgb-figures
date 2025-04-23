@@ -10,7 +10,7 @@
 		"format": "prettier --ignore-path .gitignore --write . '!{CODE_OF_CONDUCT.md,LICENSE-AGPL.md,LICENSE-CCBY.md,_layouts/default.html,package-lock.json,pnpm-lock.yaml,yarn.lock}'",
 		"prepare": "husky",
 		"changelog": "npm exec git-cliff -- --config cliff.toml",
-		"setup": "Rscript -e ' renv::restore()'",
+		"setup": "Rscript -e 'install.packages(\"renv\"); renv::restore()'",
 		"plot": "Rscript -e 'source(here::here(\"build\", \"plot_pipeline.R\"))'"
 	},
 	"devDependencies": {
