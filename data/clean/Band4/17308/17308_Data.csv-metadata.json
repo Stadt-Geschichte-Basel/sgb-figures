@@ -1,0 +1,79 @@
+{
+	"@context": ["http://www.w3.org/ns/csvw"],
+	"tables": {
+		"url": ["17308_Data.csv"],
+		"tableSchema": {
+			"columns": [
+				{
+					"name": "Jahr",
+					"titles": "Jahr",
+					"datatype": "number",
+					"description": "Jahreszahl, Angaben bezeichnen jeweils in Jahr unserer Zeitrechnung"
+				},
+				{
+					"name": "Bevölkerungszahl",
+					"titles": "Bevölkerungszahl",
+					"datatype": "number",
+					"description": "Bevölkerungszahl von Basel in Anzahl Personen"
+				},
+				{
+					"name": "Pestjahr",
+					"titles": "Pestjahr",
+					"datatype": "boolean",
+					"description": "Jahre, in denen die Pest auftrat (TRUE)"
+				}
+			],
+			"mediaID": ["m17308_3"],
+			"isPartOf": {
+				"ObjectID": ["abb17308"],
+				"volume": [
+					"Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 (Stadt.Geschichte.Basel 4)."
+				]
+			},
+			"title": ["Bevölkerungsentwicklung und Pestepidemien, 1500–1700"],
+			"description": [
+				"Bis ins 17. Jahrhundert brach in der Stadt ungefähr alle fünfzehn Jahre eine Seuche oder die Pest aus und forderte häufig tausende Opfer. So stieg die Zahl der Stadtbewohnerinnen und -bewohner kaum an. Erst nach der letzten grossen Pestwelle 1666/67 setzte ein kontinuierliches Bevölkerungswachstum ein, dem der Rat im 18. Jahrhundert mit einer restriktiven Einwanderungspolitik entgegenwirkte. Bei der Volkszählung im Jahr 1779 wurden 15 040 Personen erfasst. Für die Zeit davor liegen keine exakten Zahlen vor. Mithilfe von Tauf- und Geburtsregistern, Verzeichnissen der Bürgeraufnahmen, Häuserverzeichnissen, Steuerrödeln und des ‹Pestberichts› des Stadtarztes Felix Platter lassen sich aber Näherungswerte abschätzen."
+			],
+			"creator": [
+				{
+					"name": ["Susanna Burghartz"]
+				},
+				{
+					"name": ["Marcus Sandl"]
+				},
+				{
+					"name": ["Daniel Sidler"]
+				}
+			],
+			"contributor": [
+				{
+					"name": ["Nico Görlich"],
+					"orcid": ["0000-0003-3860-1488"]
+				},
+				{
+					"name": ["Moritz Twente"],
+					"email": ["moritz.twente@unibas.ch"],
+					"orcid": ["0009-0005-7187-9774"]
+				}
+			],
+			"publisher": ["Stadt.Geschichte.Basel"],
+			"date": ["1497/1798"],
+			"temporal": ["Neuzeit"],
+			"type": ["Dataset"],
+			"format": ["text/csv"],
+			"source": [
+				"Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500) Basel, Liestal 1977, S. 172–174. Bearbeitung: Nico Görlich / Moritz Twente"
+			],
+			"language": ["de"],
+			"relation": [["m17308_1"], ["m17308_2"]],
+			"rights": [
+				"CC BY-SA, Quelle: Gschwind 1977, S. 172–174. Bearbeitung: Nico Görlich / Moritz Twente"
+			],
+			"license": ["https://creativecommons.org/licenses/by-sa/4.0/"],
+			"modified": ["2025-06-16 16:30:09"],
+			"bibliographicCitation": [
+				"Stadt.Geschichte.Basel: Bevölkerungsentwicklung und Pestepidemien, 1500–1700. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb17308.html#m17308_3>, letzte Aktualisierung: 16.06.2025."
+			]
+		}
+	}
+}
