@@ -27,10 +27,13 @@ data18046$Jahr[40] <- 1653
 
 plot18046 <- ggplot(data = data18046, aes(x = Jahr)) +
   
-  geom_line(aes(y = `Dinkel (in Viernzeln)`, color = "#6195CF"), linewidth = 0.561) +
-  geom_line(aes(y = `Roggen (in Viernzeln)`, color= "#F7CB45"), linewidth = 0.561) +
-  geom_line(aes(y = `Hafer (in Viernzeln)`, color = "#90C987"), linewidth = 0.561) +
-  
+  geom_line(aes(y = `Dinkel (in Viernzeln)`, color = "Dinkel (in Viernzeln)"), linewidth = 0.561) +
+  geom_line(aes(y = `Roggen (in Viernzeln)`, color= "Roggen (in Viernzeln)"), linewidth = 0.561) +
+  geom_line(aes(y = `Hafer (in Viernzeln)`, color = "Hafer (in Viernzeln)"), linewidth = 0.561) +
+
+  # unsichtbares Element für zusätzlichen Text in der Legende
+  geom_blank(aes(x = 1613, y = 0, color = "Ein 'Viernzel' entsprach\nzwei 'Säcken' à je 137 l.")) +
+
   scale_x_continuous(
     breaks = c(1613, 1623, 1633, 1643, 1653),
     guide = guide_axis(angle = 45), # zentriert Labels passend zu ticks
@@ -45,13 +48,25 @@ plot18046 <- ggplot(data = data18046, aes(x = Jahr)) +
     labels = ch_numbers
   ) +
   
-  scale_color_identity(
+  scale_color_manual(
     name = "",
-    breaks = c("#6195CF", "#F7CB45", "#90C987"),
-    labels = c("Dinkel (in Viernzeln)", "Hafer (in Viernzeln)", "Roggen (in Viernzeln)"),
-    guide = "legend"
+    values = c(
+      "Dinkel (in Viernzeln)" = "#6195CF",
+      "Roggen (in Viernzeln)" = "#F7CB45",
+      "Hafer (in Viernzeln)" = "#90C987",
+      "Ein 'Viernzel' entsprach\nzwei 'Säcken' à je 137 l." = "transparent"
+    ),
+    breaks = c(
+      "Dinkel (in Viernzeln)",
+      "Roggen (in Viernzeln)",
+      "Hafer (in Viernzeln)",
+      "Ein 'Viernzel' entsprach\nzwei 'Säcken' à je 137 l."
+    ),
+    guide = guide_legend(override.aes = list(
+      linetype = c(1, 1, 1, 0)
+    ))
   ) +
-  
+
   coord_cartesian(clip = "off") + # Cut-Off an den Rändern deaktivieren
   
   guides(color = guide_legend(keyheight = unit(4.8, "mm"))) + # results in ca. 3mm
@@ -65,4 +80,4 @@ plot18046 <- ggplot(data = data18046, aes(x = Jahr)) +
 
 # Export -----------------------
 
-export_plot(plot18046, 4, 124, 68, 35, 16)
+export_plot(plot18046, 4, 124, 68, 35, 20)
