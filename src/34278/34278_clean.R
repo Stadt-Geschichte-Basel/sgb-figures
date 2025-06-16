@@ -73,7 +73,6 @@ meta34278 <- annotate(data = data34278,
                                              "Zustand des jeweiligen Feldes in der zweiten Hälfte des elften Monats",
                                              "Zustand des jeweiligen Feldes in der ersten Hälfte des zwölften Monats",
                                              "Zustand des jeweiligen Feldes in der zweiten Hälfte des zwölften Monats"),
-                      subject = c(""),
                       object_description = "Die zeitlich verschobene Bewirtschaftung der drei Felder benötigte einen grossen organisatorischen Aufwand und verbindliche Absprachen innerhalb der Dorfgemeinschaft.",
                       creator = list(list(name = "Claudius Sieber-Lehmann"),
                                      list(name = "Peter-Andrew Schwarz")),
@@ -85,7 +84,6 @@ meta34278 <- annotate(data = data34278,
                       date = "",
                       temporal = "Mittelalter",
                       source = "Abel, Wilhelm: Geschichte der deutschen Landwirtschaft vom frühen Mittelalter bis zum 19. Jahrhundert (Deutsche Agrargeschichte), Stuttgart 1978. Bearbeitung: Nico Görlich / Moritz Twente",
-                      relation = list("m34278_1", "m34278_2"),
-                      rights = "... Bearbeitung: Nico Görlich / Moritz Twente",
-                      license = ""
-                      )
+                      rights = "CC BY-SA 4.0, Daten Wilhelm Abel. Bearbeitung: Moritz Twente / Nico Görlich"
+                      relation = list("m34278_1", "m34278_2")
+)

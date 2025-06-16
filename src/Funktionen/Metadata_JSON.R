@@ -1,5 +1,5 @@
-annotate <- function(data, mediaID, vol, title, column_description, subject, object_description, creator,
-                            contributor, date, temporal, source, relation, rights, license) {
+annotate <- function(data, mediaID, vol, title, column_description, object_description, creator,
+                            contributor, date, temporal, source, relation, rights) {
   
   # derive folder ID from mediaID
   folderID <- sub("^(\\d{5}).*$", "\\1", mediaID)
@@ -25,7 +25,6 @@ annotate <- function(data, mediaID, vol, title, column_description, subject, obj
     )
   metadata$columns[["description"]] <- column_description
   metadata$title <- title
-  metadata$subject <- subject
   metadata$description <- object_description
   metadata$creator <- creator
   metadata$contributor <- contributor
@@ -38,7 +37,7 @@ annotate <- function(data, mediaID, vol, title, column_description, subject, obj
   metadata$language <- "de"
   metadata$relation <- relation
   metadata$rights <- rights
-  metadata$license <- license
+  metadata$license <- "https://creativecommons.org/licenses/by-sa/4.0/"
   metadata$modified <- Sys.time()
   metadata$bibliographicCitation <- paste0(
     "Stadt.Geschichte.Basel: ", title, ". Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb", folderID, ".html#m" , mediaID, "_3>, letzte Aktualisierung: ", format(Sys.Date(), format = "%d.%m.%Y"), "."

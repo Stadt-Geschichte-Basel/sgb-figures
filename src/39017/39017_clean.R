@@ -27,7 +27,6 @@ meta39017 <- annotate(data = data39017,
                       vol = 3,
                       title = "Rentengeschäft von Ludwig Kilchmann",
                       column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Summe der Ablösungen im jeweiligen Jahr in Gulden", "Summe der Neueinträge im jeweiligen Jahr in Gulden", "Investierte Summe (netto) im jeweiligen Jahr in Gulden"),
-                      subject = c("", ""),
                       object_description = "Die Grafik zeigt die Gesamtsumme (in Gulden) des in Renten angelegten Vermögens von Ludwig Kilchmann, dazu die Summen der jährlich erfolgten Ablösungen und Neukäufe. Dank regelmässiger Zinszahlungen fuhr Kilchmann gut mit seiner Anlagestrategie, er konnte in den Jahren des Wachstums die investierte Summe um über vier Prozent pro Jahr steigern (erstellt auf der Basis von Signori 2014; Umrechnung nach Harms 1907).",
                       creator = list(name = "Benjamin Hitz"),
                       contributor = list(list(name = "Nico Görlich",
@@ -38,7 +37,6 @@ meta39017 <- annotate(data = data39017,
                       date = "1484/1521",
                       temporal = "Neuzeit",
                       source = "Signori, Gabriela: Das Schuldbuch des Basler Kaufmanns Ludwig Kilchmann (gest. 1518), Stuttgart 2014. Bearbeitung: Nico Görlich / Moritz Twente",
-                      relation = list("m39017_1", "m39017_2"),
-                      rights = "",
-                      license = ""
+                      rights = "CC BY-SA 4.0, Daten Gabriela Signori. Bearbeitung: Moritz Twente / Nico Görlich",
+                      relation = list("m39017_1", "m39017_2")
 )
