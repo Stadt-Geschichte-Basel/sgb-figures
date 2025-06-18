@@ -43,13 +43,13 @@
 				]
 			},
 			"title": ["Bürgeraufnahmen und Kriegsausgaben, 1360–1530"],
-			"subject": ["", ""],
 			"description": [
 				"Der Zusammenhang zwischen Bürgeraufnahmen und Kriegszügen wird aus der Gegenüberstellung mit den städtischen Kriegsausgaben klar ersichtlich. Bis weit ins 15. Jahrhundert richtete sich die Einbürgerungspolitik nach den Bedürfnissen der Stadt im Kriegsfall und nicht nach der Migration. Entsprechend verging wohl für viele Zugezogene eine lange Zeit zwischen Zuwanderung und Einbürgerung (Daten nach: Portmann 1979, S. 96–99. Rosen 1984, S. 477–479)"
 			],
 			"creator": [
 				{
-					"name": ["Benjamin Hitz"]
+					"name": ["Benjamin Hitz"],
+					"orcid": ["0000-0002-3208-4881"]
 				}
 			],
 			"contributor": [
@@ -73,11 +73,13 @@
 			],
 			"language": ["de"],
 			"relation": [["m39492_1"], ["m39492_2"]],
-			"rights": [""],
-			"license": [""],
-			"modified": ["2025-04-22 18:32:21"],
+			"rights": [
+				"CC BY-SA 4.0, Daten: Rolf Ernst Portmann, Josef Rosen. Bearbeitung: Moritz Twente / Nico Görlich"
+			],
+			"license": ["https://creativecommons.org/licenses/by-sa/4.0/"],
+			"modified": ["2025-06-18 23:05:50"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Bürgeraufnahmen und Kriegsausgaben, 1360–1530. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39492.html#m39492_3>, letzte Aktualisierung: 22.04.2025."
+				"Stadt.Geschichte.Basel: Bürgeraufnahmen und Kriegsausgaben, 1360–1530. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39492.html#m39492_3>, letzte Aktualisierung: 18.06.2025."
 			]
 		}
 	}

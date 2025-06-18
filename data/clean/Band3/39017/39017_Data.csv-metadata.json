@@ -37,13 +37,15 @@
 				]
 			},
 			"title": ["Rentengeschäft von Ludwig Kilchmann"],
-			"subject": ["", ""],
 			"description": [
 				"Die Grafik zeigt die Gesamtsumme (in Gulden) des in Renten angelegten Vermögens von Ludwig Kilchmann, dazu die Summen der jährlich erfolgten Ablösungen und Neukäufe. Dank regelmässiger Zinszahlungen fuhr Kilchmann gut mit seiner Anlagestrategie, er konnte in den Jahren des Wachstums die investierte Summe um über vier Prozent pro Jahr steigern (erstellt auf der Basis von Signori 2014; Umrechnung nach Harms 1907)."
 			],
-			"creator": {
-				"name": ["Benjamin Hitz"]
-			},
+			"creator": [
+				{
+					"name": ["Benjamin Hitz"],
+					"orcid": ["0000-0002-3208-4881"]
+				}
+			],
 			"contributor": [
 				{
 					"name": ["Nico Görlich"],
@@ -65,11 +67,11 @@
 			],
 			"language": ["de"],
 			"relation": [["m39017_1"], ["m39017_2"]],
-			"rights": [""],
-			"license": [""],
-			"modified": ["2025-04-23 22:29:06"],
+			"rights": ["CC BY-SA 4.0, Daten Gabriela Signori. Bearbeitung: Moritz Twente / Nico Görlich"],
+			"license": ["https://creativecommons.org/licenses/by-sa/4.0/"],
+			"modified": ["2025-06-18 23:00:33"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Rentengeschäft von Ludwig Kilchmann. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39017.html#m39017_3>, letzte Aktualisierung: 23.04.2025."
+				"Stadt.Geschichte.Basel: Rentengeschäft von Ludwig Kilchmann. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39017.html#m39017_3>, letzte Aktualisierung: 18.06.2025."
 			]
 		}
 	}

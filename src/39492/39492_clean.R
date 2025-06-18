@@ -28,7 +28,8 @@ meta39492 <- annotate(data = data39492,
                       title = "Bürgeraufnahmen und Kriegsausgaben, 1360–1530",
                       column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Zeitraum, Angaben in Jahren unserer Zeitrechnung", "Summe der Bürgeraufnahmen im jeweiligen Zeitraum", "Summe der Kriegsausgaben im jeweiligen Zeitraum in Pfund"),
                       object_description = c("Der Zusammenhang zwischen Bürgeraufnahmen und Kriegszügen wird aus der Gegenüberstellung mit den städtischen Kriegsausgaben klar ersichtlich. Bis weit ins 15. Jahrhundert richtete sich die Einbürgerungspolitik nach den Bedürfnissen der Stadt im Kriegsfall und nicht nach der Migration. Entsprechend verging wohl für viele Zugezogene eine lange Zeit zwischen Zuwanderung und Einbürgerung (Daten nach: Portmann 1979, S. 96–99. Rosen 1984, S. 477–479)"),
-                      creator = list(list(name = "Benjamin Hitz")),
+                      creator = list(list(name = "Benjamin Hitz",
+                                          orcid = "0000-0002-3208-4881")),
                       contributor = list(list(name = "Nico Görlich",
                                               orcid = "0000-0003-3860-1488"),
                                          list(name = "Moritz Twente",
@@ -37,6 +38,6 @@ meta39492 <- annotate(data = data39492,
                       date = "1360/1525",
                       temporal = "Neuzeit",
                       source = "Portmann, Rolf Ernst: Basler Einbürgerungspolitik 1358–1798. Mit einer Berufs- und Herkunftsstatistik des Mittelalters, Basel 1979, S. 96–99. Rosen, Josef: Kriegsausgaben im Spätmittelalter. Der militärische Aufwand in Basel 1360–1535, in: Vierteljahrschrift für Sozial- und Wirtschaftsgeschichte 71, 1984, S. 477–479. Bearbeitung: Nico Görlich / Moritz Twente",
-                      rights = "CC BY-SA 4.0, Daten Rolf Ernst Portmann, Josef Rosen. Bearbeitung: Moritz Twente / Nico Görlich"
+                      rights = "CC BY-SA 4.0, Daten: Rolf Ernst Portmann, Josef Rosen. Bearbeitung: Moritz Twente / Nico Görlich",
                       relation = list("m39492_1", "m39492_2")
 )
