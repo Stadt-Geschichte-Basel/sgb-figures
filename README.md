@@ -74,6 +74,12 @@ You can also specify the plot directly:
 npm run plot 39017
 ```
 
+Print a list of all plots that can be built from this repository:
+
+```bash
+npm run list
+```
+
 ## Use
 
 These data are openly available to everyone and can be used for any research or educational purpose. If you use this data in your research, please cite as specified in [CITATION.cff](CITATION.cff). <!-- The following citation formats are also available through _Zenodo_: -->
