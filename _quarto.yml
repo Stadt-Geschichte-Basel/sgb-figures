@@ -23,13 +23,16 @@ website:
     tools:
       - icon: github
         url: https://github.com/stadt-geschichte-basel/sgb-figures/
+        aria-label: GitHub-Repository
     left:
-      - text: Readme
+      - text: Plots
         href: index.qmd
-      - text: Project
-        href: https://stadt-geschichte-basel.github.io
       - text: Research Data Platform
         href: https://forschung.stadtgeschichtebasel.ch
+      - text: RDM Documentation
+        href: https://stadt-geschichte-basel.github.io
+      - text: About
+        href: index.qmd
 
   sidebar:
     contents:
@@ -42,7 +45,7 @@ website:
             href: CODE_OF_CONDUCT.md
           - text: Contributing
             href: CONTRIBUTING.md
-          - text: License (Data)
+          - text: License (Plots)
             href: LICENSE-CCBY.md
           - text: License (Code)
             href: LICENSE-AGPL.md
@@ -51,11 +54,13 @@ website:
 
 format:
   html:
+    link-external-newwindow: true
     toc: true
     theme: cosmo
     code-copy: true
     code-overflow: wrap
     css: styles.css
+    mainfont: Euclid Circular B
 
 freeze: true
 
