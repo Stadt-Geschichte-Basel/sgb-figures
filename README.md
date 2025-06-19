@@ -5,8 +5,8 @@ This repository contains code and data for creating plots used in the [Stadt.Ges
 [![GitHub issues](https://img.shields.io/github/issues/Stadt-Geschichte-Basel/sgb-figures.svg)](https://github.com/Stadt-Geschichte-Basel/sgb-figures/issues)
 [![GitHub forks](https://img.shields.io/github/forks/Stadt-Geschichte-Basel/sgb-figures.svg)](https://github.com/Stadt-Geschichte-Basel/sgb-figures/network)
 [![GitHub stars](https://img.shields.io/github/stars/Stadt-Geschichte-Basel/sgb-figures.svg)](https://github.com/Stadt-Geschichte-Basel/sgb-figures/stargazers)
-[![Code license](https://img.shields.io/github/license/Stadt-Geschichte-Basel/sgb-figures.svg)](https://github.com/Stadt-Geschichte-Basel/sgb-figures/blob/main/LICENSE-AGPL.md)
-[![Data license](https://img.shields.io/github/license/Stadt-Geschichte-Basel/sgb-figures.svg)](https://github.com/Stadt-Geschichte-Basel/sgb-figures/blob/main/LICENSE-CCBY.md)
+[![Code license](https://img.shields.io/badge/Code-AGPL--3.0-orange)](LICENSE-AGPL.md)
+[![Plot license](https://img.shields.io/badge/Plots-CC_BY--SA_4.0-green)](LICENSE-CCBY.md)
 
 <!-- [![DOI](https://zenodo.org/badge/ZENODO_RECORD.svg)](https://zenodo.org/badge/latestdoi/ZENODO_RECORD) -->
 
@@ -119,6 +119,8 @@ This project is maintained by [@Stadt-Geschichte-Basel](https://github.com/stadt
 
 - add plot source code and data from volumes 1 to 9
 - archive repository on Zenodo
+- add DOIs
+- add individual `index.qmd` for plots
 
 ## Contributing
 
@@ -136,8 +138,8 @@ See also the list of [contributors](https://github.com/stadt-geschichte-basel/sg
 
 ## License
 
+This codebase is released under the GNU Affero General Public License v3.0. See the [LICENSE-AGPL](LICENSE-AGPL.md) file for details. By using this code, you agree to make any modifications available under the same license.
+
 The output of the code in this repository is released under the Creative Commons Attribution 4.0 International (CC BY 4.0) License - see the [LICENSE-CCBY](LICENSE-CCBY.md) file for details. By using this data, you agree to give appropriate credit to the original author(s) and to indicate if any modifications have been made.
 
 The raw data in this repository, specifically in `data/`, is released according to the individual licensing as stated in the respective metadata files.
-
-The code in this repository is released under the GNU Affero General Public License v3.0 - see the [LICENSE-AGPL](LICENSE-AGPL.md) file for details. By using this code, you agree to make any modifications available under the same license.
