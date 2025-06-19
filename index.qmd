@@ -1,1 +1,12 @@
+---
+title: sgb-figures
+subtitle: Stadt.Geschichte.Basel Figures, Code and Data
+lang: de
+format:
+  html:
+    filters:
+      - filter-h1.lua
+date-modified: last-modified
+---
+
 {{< include README.md >}}
