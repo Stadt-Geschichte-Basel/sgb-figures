@@ -1,7 +1,7 @@
 ---
 title: sgb-figures
-subtitle: Stadt.Geschichte.Basel Figures, Code and Data
-lang: de
+subtitle: Figures, Code and Data for Stadt.Geschichte.Basel
+lang: en
 format:
   html:
     filters:
