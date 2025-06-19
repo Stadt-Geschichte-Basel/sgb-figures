@@ -17,7 +17,7 @@ website:
     show-item-context: true
     type: overlay
   navbar:
-    logo: android-chrome-512x512.png
+    logo: assets/img/logo_yellow.svg
     logo-alt: ''
     title: sgb-figures
     tools:
