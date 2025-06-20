@@ -1,0 +1,31 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: sgb-figures
+message: >-
+  If you use this dataset, please cite it using the metadata
+  from this file.
+type: dataset
+authors:
+  - given-names: Moritz
+    family-names: Twente
+    email: mtwente@protonmail.com
+    affiliation: University of Basel
+    orcid: 'https://orcid.org/0009-0005-7187-9774'
+#identifiers:
+#  - type: doi
+#    value: 10.5281/zenodo.FIXME
+#    description: FIXME
+repository-code: 'https://github.com/stadt-geschichte-basel/sgb-figures'
+url: 'https://forschung.stadtgeschichtebasel.ch'
+repository: 'https://github.com/stadt-geschichte-basel/sgb-figures'
+abstract: >-
+  This repository contains data and source code to make
+  figures from the Stadt.Geschichte.Basel research project
+  openly available for reproduction using R.
+keywords:
+  - Basel
+  - Stadt.Geschichte.Basel
+  - data visualisation
+license: AGPL-3.0-or-later
