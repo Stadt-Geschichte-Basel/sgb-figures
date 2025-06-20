@@ -1,15 +1,18 @@
 {
-	"name": "REPO_NAME",
-	"description": "SHORT_DESCRIPTION",
-	"author": "FULLNAME <[INSERT CONTACT METHOD]>",
-	"url": "https://github.com/USERNAME/REPO_NAME/issues",
+	"name": "sgb-figures",
+	"description": "Code and data for creating plots used in Stadt.Geschichte.Basel",
+	"author": "Moritz Twente <[mtwente@protonmail.com]>",
+	"url": "https://github.com/stadt-geschichte-basel/sgb-figures/issues",
 	"license": "AGPL-3.0",
 	"scripts": {
 		"check": "prettier --ignore-path .gitignore  --check . '!{CODE_OF_CONDUCT.md,LICENSE-AGPL.md,LICENSE-CCBY.md,_layouts/default.html,package-lock.json,pnpm-lock.yaml,yarn.lock}'",
 		"commit": "cz",
 		"format": "prettier --ignore-path .gitignore --write . '!{CODE_OF_CONDUCT.md,LICENSE-AGPL.md,LICENSE-CCBY.md,_layouts/default.html,package-lock.json,pnpm-lock.yaml,yarn.lock}'",
 		"prepare": "husky",
-		"changelog": "npm exec git-cliff -- --config cliff.toml"
+		"changelog": "npm exec git-cliff -- --config cliff.toml",
+		"setup": "Rscript -e 'install.packages(\"renv\"); renv::restore()'",
+		"list": "ls -d src/*/ | xargs -n 1 basename | grep -E '^[0-9]+$'",
+		"plot": "Rscript -e 'source(here::here(\"build\", \"plot_pipeline.R\"))'"
 	},
 	"devDependencies": {
 		"commitizen": "^4.3.1",

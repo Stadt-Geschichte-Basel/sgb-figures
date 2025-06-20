@@ -1,0 +1,87 @@
+{
+	"@context": ["http://www.w3.org/ns/csvw"],
+	"tables": {
+		"url": ["39050d_Data.csv"],
+		"tableSchema": {
+			"columns": [
+				{
+					"name": "Rechnungjahr",
+					"titles": "Rechnungjahr",
+					"datatype": "string",
+					"description": "Rechnungsjahr, Angabe als Jahreszahl in Jahren unserer Zeitrechnung"
+				},
+				{
+					"name": "Steuereinnahmen",
+					"titles": "Steuereinnahmen",
+					"datatype": "number",
+					"description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Steuereinnahmen in Basler Pfund"
+				},
+				{
+					"name": "Leibrenten",
+					"titles": "Leibrenten",
+					"datatype": "number",
+					"description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Leibrenten in Basler Pfund"
+				},
+				{
+					"name": "verkäufliche Renten",
+					"titles": "verkäufliche Renten",
+					"datatype": "number",
+					"description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: verkäufliche Renten in Basler Pfund"
+				}
+			],
+			"mediaID": ["m39050d_3"],
+			"isPartOf": {
+				"ObjectID": ["abb39050"],
+				"volume": [
+					"Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
+				]
+			},
+			"title": ["Einnahmen der Stadt Basel: Ungelder und Zölle ab 1424"],
+			"description": [
+				"Die Einnahmen sind jeweils getrennt dargestellt nach ausserordentlichen Einnahmen (direkte Steuern und Anleihen; letztere aufgeschlüsselt nach an den Gläubiger gebundene Leibrenten und verkäufliche Renten) und laufenden Einnahmen (indirekte Steuern und Zölle). Alle Einnahmen in Basler Pfund."
+			],
+			"creator": [
+				{
+					"name": ["Benjamin Hitz"],
+					"orcid": ["0000-0002-3208-4881"]
+				}
+			],
+			"contributor": [
+				{
+					"name": ["Nico Görlich"],
+					"orcid": ["0000-0003-3860-1488"]
+				},
+				{
+					"name": ["Moritz Twente"],
+					"email": ["moritz.twente@unibas.ch"],
+					"orcid": ["0009-0005-7187-9774"]
+				}
+			],
+			"publisher": ["Stadt.Geschichte.Basel"],
+			"date": ["1424/1484"],
+			"temporal": ["Frühe Neuzeit"],
+			"type": ["Dataset"],
+			"format": ["text/csv"],
+			"source": [
+				"Harms, Bernhard: Die Münz- und Geldpolitik der Stadt Basel im Mittelalter, Tübingen 1907, S. 640–672. Bearbeitung: Nico Görlich / Moritz Twente"
+			],
+			"language": ["de"],
+			"relation": [
+				["m39050a_1"],
+				["m39050a_2"],
+				["m39050b_1"],
+				["m39050b_2"],
+				["m39050c_1"],
+				["m39050c_2"],
+				["m39050d_1"],
+				["m39050d_2"]
+			],
+			"rights": ["CC BY-SA. Daten: Harms 1907. Bearbeitung: Nico Görlich / Moritz Twente"],
+			"license": ["https://creativecommons.org/licenses/by-sa/4.0/"],
+			"modified": ["2025-06-20 18:54:01"],
+			"bibliographicCitation": [
+				"Stadt.Geschichte.Basel: Einnahmen der Stadt Basel: Ungelder und Zölle ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050d_3>, letzte Aktualisierung: 20.06.2025."
+			]
+		}
+	}
+}
