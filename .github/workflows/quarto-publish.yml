@@ -63,30 +63,15 @@ jobs:
       # - name: Setup Python
       #   uses: actions/setup-python@v3
 
+      # From https://github.com/r-lib/actions/tree/v2-branch/setup-r
+      # - name: Setup R
+      #   uses: r-lib/actions/setup-r@v2
+
       # From https://github.com/julia-actions/setup-julia
       # - name: Setup Julia
       #   uses: julia-actions/setup-julia@v1
 
       # See more at https://github.com/quarto-dev/quarto-actions/blob/main/examples/example-03-dependencies.md
-      - name: Setup R
-        uses: r-lib/actions/setup-r@v2
-        with:
-          r-version: '4.4'
-
-      - name: Configure R environment
-        run: |
-          # Prefer binary packages in R session
-          echo 'options(pkgType = "binary")' >> ~/.Rprofile
-          echo 'options(pak.prefer_binary = TRUE)' >> ~/.Rprofile
-
-          # Environment variables for renv/pak behavior
-          echo "RENV_CONFIG_PAK_ENABLED=true" >> $GITHUB_ENV
-          echo "RENV_CONFIG_PREFER_BINARY=true" >> $GITHUB_ENV
-          echo "RENV_CONFIG_PACKAGE_CACHE=true" >> $GITHUB_ENV
-
-      - uses: r-lib/actions/setup-renv@v2
-        with:
-          cache-version: 1
 
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
