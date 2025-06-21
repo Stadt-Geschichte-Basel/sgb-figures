@@ -2,8 +2,8 @@
 
 library(here)
 library(readxl)
-library(magrittr)
 library(csvwr)
+library(magrittr)
 library(jsonlite)
 
 # Functions ------------------
