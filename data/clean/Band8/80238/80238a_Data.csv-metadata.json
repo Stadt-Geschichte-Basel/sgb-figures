@@ -1,0 +1,125 @@
+{
+	"@context": ["http://www.w3.org/ns/csvw"],
+	"tables": {
+		"url": ["80238a_Data.csv"],
+		"tableSchema": {
+			"columns": [
+				{
+					"name": "Jahr",
+					"titles": "Jahr",
+					"datatype": "number",
+					"description": "Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung"
+				},
+				{
+					"name": "Grüne",
+					"titles": "Grüne",
+					"datatype": "number",
+					"description": "Anzahl der Regierungsrät*innen aus der Partei 'Grüne' im entsprechenden Jahr"
+				},
+				{
+					"name": "SP",
+					"titles": "SP",
+					"datatype": "number",
+					"description": "Anzahl der Regierungsrät*innen aus der Partei 'SP' im entsprechenden Jahr"
+				},
+				{
+					"name": "Parteilos",
+					"titles": "Parteilos",
+					"datatype": "number",
+					"description": "Anzahl der parteilosen Regierungsrät*innen im entsprechenden Jahr"
+				},
+				{
+					"name": "GLP",
+					"titles": "GLP",
+					"datatype": "number",
+					"description": "Anzahl der Regierungsrät*innen aus der Partei 'GLP' im entsprechenden Jahr"
+				},
+				{
+					"name": "DSP",
+					"titles": "DSP",
+					"datatype": "number",
+					"description": "Anzahl der Regierungsrät*innen aus der Partei 'DSP' im entsprechenden Jahr"
+				},
+				{
+					"name": "CVP",
+					"titles": "CVP",
+					"datatype": "number",
+					"description": "Anzahl der Regierungsrät*innen aus der Partei 'CVP' im entsprechenden Jahr"
+				},
+				{
+					"name": "FDP",
+					"titles": "FDP",
+					"datatype": "number",
+					"description": "Anzahl der Regierungsrät*innen aus der Partei 'FDP' im entsprechenden Jahr"
+				},
+				{
+					"name": "LDP",
+					"titles": "LDP",
+					"datatype": "number",
+					"description": "Anzahl der Regierungsrät*innen aus der Partei 'LDP' im entsprechenden Jahr"
+				},
+				{
+					"name": "Total",
+					"titles": "Total",
+					"datatype": "number",
+					"description": "Gesamtzahl der Regierungsrät*innen im entsprechenden Jahr"
+				},
+				{
+					"name": "NeueLegislatur",
+					"titles": "NeueLegislatur",
+					"datatype": "boolean",
+					"description": "Angabe, ob das Jahr der Beginn einer neuen Legislaturperiode markiert"
+				}
+			],
+			"mediaID": ["m80238a_3"],
+			"isPartOf": {
+				"ObjectID": ["abb80238"],
+				"volume": [
+					"Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
+				]
+			},
+			"title": ["Regierungsrat in Basel-Stadt, 1960–2024"],
+			"description": [
+				"Die Basler Regierung war nach 1960 geprägt von relativ stabilen Verhältnissen. Bis zur Jahrtausendwende herrschte eine eine knappe bürgerliche Mehrheit, linke Parteien besetzten drei von sieben Sitzen. 2004 eroberten die Grünen einen Sitz der FDP, damit dominierte die rot-grüne Linke. Mit der Wahl von 2020 trat eine Pattsituation ein: Die Grünen verloren ihren Sitz an die GLP, die sowohl ökologische wie liberale Interessen vertritt"
+			],
+			"creator": [
+				{
+					"name": ["Tobias Ehrenbold"]
+				},
+				{
+					"name": ["Silas Gusset"]
+				},
+				{
+					"name": ["Anina Zahn"]
+				}
+			],
+			"contributor": [
+				{
+					"name": ["Nico Görlich"],
+					"orcid": ["0000-0003-3860-1488"]
+				},
+				{
+					"name": ["Moritz Twente"],
+					"email": ["moritz.twente@unibas.ch"],
+					"orcid": ["0009-0005-7187-9774"]
+				}
+			],
+			"publisher": ["Stadt.Geschichte.Basel"],
+			"date": ["1960/2024"],
+			"temporal": ["Zeitgeschichte"],
+			"type": ["Dataset"],
+			"format": ["text/csv"],
+			"source": [
+				"Quelle: https://www.bs.ch/regierungsrat/alt-regierungsraete. Bearbeitung: Nico Görlich / Moritz Twente"
+			],
+			"language": ["de"],
+			"relation": [["m80238a_1"], ["m80238a_2"]],
+			"rights": ["Public Domain Mark"],
+			"license": ["https://creativecommons.org/licenses/by-sa/4.0/"],
+			"modified": ["2025-06-23 14:39:00"],
+			"bibliographicCitation": [
+				"Stadt.Geschichte.Basel: Regierungsrat in Basel-Stadt, 1960–2024. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238a_3>, letzte Aktualisierung: 23.06.2025."
+			]
+		}
+	}
+}
