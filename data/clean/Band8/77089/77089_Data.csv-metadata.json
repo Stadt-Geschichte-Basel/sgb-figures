@@ -14,19 +14,19 @@
 					"name": "Personenwagen",
 					"titles": "Personenwagen",
 					"datatype": "number",
-					"description": "Anzahl der Personenwagen (Automobile) im Fahrzeugbestand im Kanton Basel-Stadt im entsprechenden Jahr. Ab dem Jahr 2019 werden in dieser Kategorie auch E-Autos mitgezählt"
+					"description": "Anzahl der Personenwagen (Automobile) im Fahrzeugbestand im Kanton Basel-Stadt im entsprechenden Jahr. Ab dem Jahr 2019 werden in dieser Kategorie auch E-Autos mitgezählt. Die Zahlen stellen bis inkl. 1953 'Erteilte Fahrzeugausweise auf Jahresende' dar, ab inkl. 1954 dann 'Motorfahrzeug- und Fahrrad-Höchstbestände'. Die Angabe für 1920 ist eine Schätzung auf Basis der Daten von 1921 und Angaben von https://hsso.ch/2012/n/12. Für die Jahre 1924, 1927, 1929, 1930, 1931, 1932, 1934, 1965–1953, 1960, 1961: Abweichende Angaben in früheren oder späteren Berichten."
 				},
 				{
 					"name": "Motorräder inkl. Mofas",
 					"titles": "Motorräder inkl. Mofas",
 					"datatype": "number",
-					"description": "Anzahl an Motorrädern (inklusive Mofas) im Fahrzeugbestand im Kanton Basel-Stadt im entsprechenden Jahr"
+					"description": "Anzahl an Motorrädern (inklusive Mofas) im Fahrzeugbestand im Kanton Basel-Stadt im entsprechenden Jahr. Die Zahlen stellen bis inkl. 1953 'Erteilte Fahrzeugausweise auf Jahresende' dar, ab inkl. 1954 dann 'Motorfahrzeug- und Fahrrad-Höchstbestände'. Ab 1954 weiterhin neu exkl. Dreiräder (davor jeweils max. 25). Für die Jahre 1924, 1925, 1927, 1928, 1929, 1930, 1931, 1933, 1935, 1939, 1940, 1946–1954, 1960, 1961: Abweichende Angaben in früheren oder späteren Berichten."
 				},
 				{
 					"name": "Fahrräder",
 					"titles": "Fahrräder",
 					"datatype": "number",
-					"description": "Anzahl an Fahrrädern im Fahrzeugbestand im Kanton Basel-Stadt im entsprechenden Jahr"
+					"description": "Anzahl an Fahrrädern im Fahrzeugbestand im Kanton Basel-Stadt im entsprechenden Jahr. Für das Jahr 1961: Abweichende Angaben in späteren Berichten"
 				}
 			],
 			"mediaID": ["m77089_3"],
@@ -74,9 +74,9 @@
 			"relation": [["m77089_1"], ["m77089_2"]],
 			"rights": ["CC BY-SA. Daten: Kanton Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente"],
 			"license": ["https://creativecommons.org/licenses/by-sa/4.0/"],
-			"modified": ["2025-06-19 11:23:27"],
+			"modified": ["2025-06-25 20:53:28"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Der Fahrzeugbestand in Basel-Stadt, 1920–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77089.html#m77089_3>, letzte Aktualisierung: 19.06.2025."
+				"Stadt.Geschichte.Basel: Der Fahrzeugbestand in Basel-Stadt, 1920–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77089.html#m77089_3>, letzte Aktualisierung: 25.06.2025."
 			]
 		}
 	}
