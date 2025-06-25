@@ -34,9 +34,7 @@ data88415_longer <- data88415 %>%
                names_to = "Veranstaltung",
                values_to = "Zuschauer",
                names_prefix = "'",
-               names_transform = list(Jahr = as.numeric)) %>%
-  mutate(Jahr = gsub("'", "", Jahr)) %>%
-  mutate(Jahr = as.numeric(Jahr))
+               names_transform = list(Jahr = as.numeric))
 
 # Plot -----------------------
 
