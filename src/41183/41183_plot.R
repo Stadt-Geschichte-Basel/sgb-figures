@@ -103,7 +103,8 @@ plot41183 <- ggplot(data = data41183, aes(x = Jahr)) +
   
   theme_sgb_basis() +
   theme(legend.position = "none",
-        axis.text.y = element_text(margin = margin(r = 5)),
+        axis.text.y = element_text(margin = margin(r = 5),
+                                   hjust = 1),
         plot.margin = margin(0.5,1.2,0,0.5, "lines"))
 
 # Export -----------------------

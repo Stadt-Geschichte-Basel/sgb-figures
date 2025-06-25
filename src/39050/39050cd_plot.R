@@ -100,7 +100,8 @@ plot39050c <- ggplot(data39050c_longer,
   theme(legend.position = "none",
         legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
         legend.key.width = unit(5, "mm"), # entspricht 4mm
-        axis.text.y = element_text(margin = margin(r = 5)),
+        axis.text.y = element_text(margin = margin(r = 5),
+                                   hjust = 1),
         plot.margin = margin(0.5,0.5,0,0, "lines"))
 
 # Plot 39050d: Steuereinnahmen, Leibrenten, verk. Renten ---------
@@ -140,7 +141,8 @@ plot39050d <- ggplot(data39050d_longer,
   theme(plot.margin = margin(0.5,0.5,0,0, "lines"),
         legend.position = "none",
         axis.text.x = element_blank(),
-        axis.text.y = element_text(margin = margin(r = 5)),
+        axis.text.y = element_text(margin = margin(r = 5),
+                                   hjust = 1),
         axis.ticks.x = element_blank(),
         legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
         legend.key.width = unit(5, "mm"), # entspricht 4mm

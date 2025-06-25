@@ -51,7 +51,8 @@ plot84380 <- ggplot() +
   theme_sgb_basis() +
   theme(
     legend.position = "none",
-    axis.text.y = element_text(margin = margin(r = 5)),
+    axis.text.y = element_text(margin = margin(r = 5),
+                               hjust = 1),
     plot.margin = margin(0.5,1,0,0.4, "lines")
   )
 

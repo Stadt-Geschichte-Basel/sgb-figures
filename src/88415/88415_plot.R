@@ -98,7 +98,8 @@ plot88415 <- ggplot(data88415_longer) +
     legend.box.just = "left",
     legend.spacing.y = unit(0, "cm"),
     legend.margin = margin(0,0,0,0, "cm"),
-    axis.text.y = element_text(margin = margin(r = 5)),
+    axis.text.y = element_text(margin = margin(r = 5),
+                               hjust = 1),
     plot.margin = margin(0.5,0.9,0,0.4, "lines"))
 
 # Export -----------------------

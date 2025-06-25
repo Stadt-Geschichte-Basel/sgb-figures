@@ -59,7 +59,8 @@ plot39492a <- ggplot(data39492, aes(x = Startjahr)) +
   theme(legend.position = "none",
         axis.text.x = element_blank(),
         axis.ticks.x = element_blank(),
-        axis.text.y = element_text(margin = margin(r = 5)),
+        axis.text.y = element_text(margin = margin(r = 5),
+                                   hjust = 1),
         plot.margin = margin(0.5,0.25,0,0.2, "lines"))
 
 ## zweiter Plot: Bürgeraufnahmen -----------
@@ -94,7 +95,8 @@ plot39492b <- ggplot(data39492, aes(x = Startjahr)) +
   
   theme_sgb_basis() +
   theme(legend.position = "none",
-        axis.text.y = element_text(margin = margin(r = 5)),
+        axis.text.y = element_text(margin = margin(r = 5),
+                                   hjust = 1),
         plot.margin = margin(0.5,0.25,0,0.2, "lines"))
 
 # Combine Plots ---------
