@@ -163,7 +163,6 @@
 				]
 			},
 			"title": ["Schema der Dreifelderwirtschaft"],
-			"subject": [""],
 			"description": [
 				"Die zeitlich verschobene Bewirtschaftung der drei Felder benötigte einen grossen organisatorischen Aufwand und verbindliche Absprachen innerhalb der Dorfgemeinschaft."
 			],
@@ -187,7 +186,7 @@
 				}
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
-			"date": [""],
+			"date": ["1000~"],
 			"temporal": ["Mittelalter"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
@@ -196,11 +195,11 @@
 			],
 			"language": ["de"],
 			"relation": [["m34278_1"], ["m34278_2"]],
-			"rights": ["... Bearbeitung: Nico Görlich / Moritz Twente"],
-			"license": [""],
-			"modified": ["2025-04-22 17:10:46"],
+			"rights": ["CC BY-SA 4.0, Daten Wilhelm Abel. Bearbeitung: Moritz Twente / Nico Görlich"],
+			"license": ["https://creativecommons.org/licenses/by-sa/4.0/"],
+			"modified": ["2025-06-25 21:51:14"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Schema der Dreifelderwirtschaft. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb34278.html#m34278_3>, letzte Aktualisierung: 22.04.2025."
+				"Stadt.Geschichte.Basel: Schema der Dreifelderwirtschaft. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb34278.html#m34278_3>, letzte Aktualisierung: 25.06.2025."
 			]
 		}
 	}
