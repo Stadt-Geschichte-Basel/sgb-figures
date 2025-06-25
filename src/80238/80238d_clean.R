@@ -42,6 +42,5 @@ meta80238d <- annotate(data = data80238d,
                        temporal = "Zeitgeschichte",
                        source = "Quelle: Kanton Basel-Stadt: nationale und kantonale Wahlen seit 1919, Bundesamt für Statistik, je-d-17.02.01_12BS, online: https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/tabellen.assetdetail.14836245.html. Bearbeitung: Nico Görlich / Moritz Twente",
                        rights = "Public Domain Mark",
-                       #license = "https://creativecommons.org/publicdomain/mark/1.0/",
                        relation = list("m80238d_1", "m80238d_2")
 )

@@ -40,6 +40,5 @@ meta80238b <- annotate(data = data80238b,
                        temporal = "Zeitgeschichte",
                        source = "Quelle: Sitzverteilung im Grossen Rat seit 1905, Entwicklung Frauenanteil im Grossen Rat, t17.3.05, Statistisches Amt BS, online: https://grosserrat.bs.ch/parlament/ratsgeschichte/entwicklung-der-parteien; Parteien, Jungeparteien und Listenvereinigungen seit 1971, t17.1.01, Statistisches Amt BS, online: https://grosserrat.bs.ch/parlament/ratsgeschichte/entwicklung-der-parteien; Nationale und kantonale Wahlen seit 1919, Bundesamt für Statistik, je-d-17.02.01_12BS, online: https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/tabellen.assetdetail.14836245.html. Bearbeitung: Nico Görlich / Moritz Twente",
                        rights = "Public Domain Mark",
-                       #license = "https://creativecommons.org/publicdomain/mark/1.0/",
                        relation = list("m80238b_1", "m80238b_2")
 )

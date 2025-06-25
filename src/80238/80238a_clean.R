@@ -45,6 +45,5 @@ meta80238a <- annotate(data = data80238a,
                        temporal = "Zeitgeschichte",
                        source = "Quelle: https://www.bs.ch/regierungsrat/alt-regierungsraete. Bearbeitung: Nico Görlich / Moritz Twente",
                        rights = "Public Domain Mark",
-                       #license = "https://creativecommons.org/publicdomain/mark/1.0/",
                        relation = list("m80238a_1", "m80238a_2")
 )
