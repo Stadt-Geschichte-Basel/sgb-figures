@@ -36,10 +36,8 @@
 			],
 			"creator": [
 				{
-					"name": ["Franziska Schürch"]
-				},
-				{
-					"name": ["Isabel Koellreuter"]
+					"name": ["Oliver Kühschelm"],
+					"orcid": ["0000-0002-3091-5426"]
 				}
 			],
 			"contributor": [
@@ -65,9 +63,9 @@
 			"relation": [["m90886_1"], ["m90886_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-26 16:30:52"],
+			"modified": ["2025-06-27 00:40:40"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Anteil der Erwerbstätigen in wichtigen Branchen, 1870 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90886.html#m90886_3>, letzte Aktualisierung: 26.06.2025."
+				"Stadt.Geschichte.Basel: Anteil der Erwerbstätigen in wichtigen Branchen, 1870 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90886.html#m90886_3>, letzte Aktualisierung: 27.06.2025."
 			]
 		}
 	}
