@@ -6,6 +6,7 @@ library(csvwr)
 library(magrittr)
 library(jsonlite)
 library(tidyr)
+library(dplyr)
 
 # Functions ------------------
 
