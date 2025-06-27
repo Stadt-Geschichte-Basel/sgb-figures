@@ -33,6 +33,7 @@ data91310_longer$Partei <- factor(data91310_longer$Partei, levels = rev(c("Parte
                                                                           "Sozialdemokraten")))
 
 # Diagramm plotten -----------
+
 plot91310 <- ggplot(data = data91310_longer,
                     aes(x = Jahr, y = Sitze, fill = Partei)) +
   
