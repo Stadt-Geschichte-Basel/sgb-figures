@@ -80,6 +80,12 @@ Print a list of all plots that can be built from this repository:
 npm run list
 ```
 
+Build all plots that are available in this repository:
+
+```bash
+npm run all
+```
+
 ## Use
 
 These data are openly available to everyone and can be used for any research or educational purpose. If you use this data in your research, please cite as specified in [CITATION.cff](CITATION.cff). <!-- The following citation formats are also available through _Zenodo_: -->
