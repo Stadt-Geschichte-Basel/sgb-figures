@@ -1,0 +1,88 @@
+{
+	"@context": ["http://www.w3.org/ns/csvw"],
+	"tables": {
+		"url": ["90940_Data.csv"],
+		"tableSchema": {
+			"columns": [
+				{
+					"name": "Jahr",
+					"titles": "Jahr",
+					"datatype": "string",
+					"description": "Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten"
+				},
+				{
+					"name": "800–1500 Franken",
+					"titles": "800–1500 Franken",
+					"datatype": "number",
+					"description": "Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von 800-1500 Franken im entsprechenden Jahr"
+				},
+				{
+					"name": "1500–3000 Franken",
+					"titles": "1500–3000 Franken",
+					"datatype": "number",
+					"description": "Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von 1500-3000 Franken im entsprechenden Jahr"
+				},
+				{
+					"name": "3000–6000 Franken",
+					"titles": "3000–6000 Franken",
+					"datatype": "number",
+					"description": "Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von 3000-6000 Franken im entsprechenden Jahr"
+				},
+				{
+					"name": "6000–20 000 Franken",
+					"titles": "6000–20 000 Franken",
+					"datatype": "number",
+					"description": "Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von 6000-20000 Franken im entsprechenden Jahr"
+				},
+				{
+					"name": ">20 000 Franken",
+					"titles": ">20 000 Franken",
+					"datatype": "number",
+					"description": "Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von >20000 Franken im entsprechenden Jahr"
+				}
+			],
+			"mediaID": ["m90940_3"],
+			"isPartOf": {
+				"ObjectID": ["abb90940"],
+				"volume": [
+					"Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
+				]
+			},
+			"title": ["Soziale Klassen in Basel, 1888–1904"],
+			"description": [
+				"Die Grafik beruht auf den Daten zur Gemeindesteuer. Diese erfasste Haushaltseinkommen ab 800 Franken pro Jahr, der Verdienst der Ehefrau und von minderjährigen Kindern wurde gemeinsam mit dem Einkommen des Mannes versteuert. Die Erhebung war also patriarchal zugeschnitten – und sie erbrachte das Bild einer Bevölkerung, die mehrheitlich am unteren Rand des Möglichen leben musste"
+			],
+			"creator": [
+				{
+					"name": ["Oliver Kühschelm"],
+					"orcid": ["0000-0002-3091-5426"]
+				}
+			],
+			"contributor": [
+				{
+					"name": ["Nico Görlich"],
+					"orcid": ["0000-0003-3860-1488"]
+				},
+				{
+					"name": ["Moritz Twente"],
+					"email": ["moritz.twente@unibas.ch"],
+					"orcid": ["0009-0005-7187-9774"]
+				}
+			],
+			"publisher": ["Stadt.Geschichte.Basel"],
+			"date": ["1888/1904"],
+			"temporal": [["19 Jahrhundert"], ["20. Jahrhundert"]],
+			"type": ["Dataset"],
+			"format": ["text/csv"],
+			"source": ["Quelle: Mangold 1905, Tab. XIX. Bearbeitung: Nico Görlich / Moritz Twente"],
+			"language": ["de"],
+			"relation": [["m90940_1"], ["m90940_2"]],
+			"rights": ["Public Domain Mark"],
+			"license": ["https://creativecommons.org/public-domain/pdm/"],
+			"modified": ["2025-06-27 16:55:16"],
+			"bibliographicCitation": [
+				"Stadt.Geschichte.Basel: Soziale Klassen in Basel, 1888–1904. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90940.html#m90940_3>, letzte Aktualisierung: 27.06.2025."
+			]
+		}
+	}
+}
