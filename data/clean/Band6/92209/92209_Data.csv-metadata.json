@@ -1,0 +1,83 @@
+{
+	"@context": ["http://www.w3.org/ns/csvw"],
+	"tables": {
+		"url": ["92209_Data.csv"],
+		"tableSchema": {
+			"columns": [
+				{
+					"name": "Jahr",
+					"titles": "Jahr",
+					"datatype": "number",
+					"description": "Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten."
+				},
+				{
+					"name": "Basler Bürgerrecht",
+					"titles": "Basler Bürgerrecht",
+					"datatype": "number",
+					"description": "Zahl der Einwohner:innen von Basel-Stadt mit Basler Bürgerrecht im entsprechenden Jahr"
+				},
+				{
+					"name": "Bürgerrecht eines anderen Schweizer Kantons",
+					"titles": "Bürgerrecht eines anderen Schweizer Kantons",
+					"datatype": "number",
+					"description": "Zahl der Einwohner:innen von Basel-Stadt mit Bürgerrecht eines anderen Schweizer Kantons im entsprechenden Jahr"
+				},
+				{
+					"name": "Ausländische Staatsbürgerschaft",
+					"titles": "Ausländische Staatsbürgerschaft",
+					"datatype": "number",
+					"description": "Zahl der Einwohner:innen von Basel-Stadt mit ausländischer Staatsbürgerschaft im entsprechenden Jahr"
+				},
+				{
+					"name": "Total",
+					"titles": "Total",
+					"datatype": "number",
+					"description": "Gesamtsumme der Zahl der Einwohner:innen von Basel-Stadt im entsprechenden Jahr"
+				}
+			],
+			"mediaID": ["m92209_3"],
+			"isPartOf": {
+				"ObjectID": ["abb92209"],
+				"volume": [
+					"Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
+				]
+			},
+			"title": ["Bevölkerungsentwicklung des Kantons Basel-Stadt, 1870–1910"],
+			"description": [
+				"Dank der liberalen Einbürgerungspraxis stieg der Anteil der Menschen mit Basler Bürgerrecht von 1900 bis 1910 von rund 17 000 auf 45 000 Personen an. Der Anteil von Einwohner:innen mit ausländischer Staatsbürgerschaft lag um 1910 bei rund 38 Prozent"
+			],
+			"creator": [
+				{
+					"name": ["Benedikt Pfister"]
+				}
+			],
+			"contributor": [
+				{
+					"name": ["Nico Görlich"],
+					"orcid": ["0000-0003-3860-1488"]
+				},
+				{
+					"name": ["Moritz Twente"],
+					"email": ["moritz.twente@unibas.ch"],
+					"orcid": ["0009-0005-7187-9774"]
+				}
+			],
+			"publisher": ["Stadt.Geschichte.Basel"],
+			"date": ["1870/1910"],
+			"temporal": [["19 Jahrhundert"], ["20. Jahrhundert"]],
+			"type": ["Dataset"],
+			"format": ["text/csv"],
+			"source": [
+				"Quelle: Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924. Bearbeitung: Nico Görlich / Moritz Twente"
+			],
+			"language": ["de"],
+			"relation": [["m92209_1"], ["m92209_2"]],
+			"rights": ["Public Domain Mark"],
+			"license": ["https://creativecommons.org/public-domain/pdm/"],
+			"modified": ["2025-06-27 23:36:00"],
+			"bibliographicCitation": [
+				"Stadt.Geschichte.Basel: Bevölkerungsentwicklung des Kantons Basel-Stadt, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92209.html#m92209_3>, letzte Aktualisierung: 27.06.2025."
+			]
+		}
+	}
+}
