@@ -15,10 +15,9 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 # Read Data ------------------
 
-#data80380 <- read.csv(here("Band8", "80380", "80380_Data_processed.csv"))
 source(here("src", "80380", "80380_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 colnames(data80380) <- c("Tageszeitungen\n(total verkaufte Auflage Print,\nexkl. Gratisauflage)",
                          1966, 1971, 1972, 1973, 1975, 1978, 1984, 1985, 1990, 1991, 1992, 1996, 2002, 2008, 2014, 2020)
@@ -77,6 +76,6 @@ plot80380 <- ggplot(data_long, aes(x = Jahr, y = Auflage,
     plot.margin = margin(0.5,0.9,0,0, "lines")
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot80380, 8, 120, 63, 57, 28)

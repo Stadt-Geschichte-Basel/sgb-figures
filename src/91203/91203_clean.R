@@ -15,7 +15,7 @@ source(here("src", "Funktionen", "Export_CSV.R"))
 
 data91203 <- read_excel(here("data", "raw", "Band6", "91203", "91203_Data_raw.xlsx"))
 
-# Process Data --------
+# Process Data ---------------
 
 data91203_Stimmberechtigte <- data91203[, c("Stimmberechtigte", "...4")]
 
@@ -29,7 +29,7 @@ data91203 <- merge(data91203, data91203_Stimmberechtigte, by.x = "Jahr", by.y = 
 
 save_clean_csv(data91203, vol = 6)
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta91203 <- annotate(data = data91203,
                       mediaID = 91203,

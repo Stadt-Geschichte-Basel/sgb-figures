@@ -18,7 +18,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 #data24528 <- readr::read_csv(here("Band4", "24528", "24528_Data.csv"))
 source(here("src", "24528", "24528_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 # Subset mit Extremjahren
 data24528_extrem <- subset(data24528,
@@ -121,6 +121,6 @@ plot24528 <- ggplot(data = data24528, aes(x = Jahr)) +
     plot.margin = margin(0.5, 0.5, 0, 0, "lines")
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot24528, 4, 140, 64, 50, 17)

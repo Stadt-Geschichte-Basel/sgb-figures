@@ -94,6 +94,6 @@ plot34278 <- ggplot(data34278_longer, aes(x = as.numeric(as.character(Monat)) -0
         legend.key.width = unit(5, "mm")) # entspricht 4mm
 
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot34278, 2, 120, 35.75, 23, 13)

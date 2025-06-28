@@ -17,7 +17,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 source(here("src", "88454", "88454_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data88454_longer <- data88454 %>%
   pivot_longer(cols = -Jahr,
@@ -62,6 +62,6 @@ plot88454 <- ggplot(data88454_longer, aes(x = Jahr, y = Anzahl,
                                hjust = 1),
     plot.margin = margin(0.5,0.9,0,0.4, "lines"))
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot88454, 8, 120, 63, 27, 6)

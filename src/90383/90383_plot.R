@@ -17,7 +17,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 source(here("src", "90383", "90383_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data90383$Stadtviertel[1] <- "St. Alban"
 
@@ -76,6 +76,6 @@ plot90383 <- ggplot(data = data90383_longer,
         panel.grid.major.x = element_line(color = "black", linewidth = 0.14)
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot90383, 6, 130, 53, 98, 22)

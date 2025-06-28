@@ -15,10 +15,9 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 # Read Data ------------------
 
-#data41404_neu <- readr::read_csv(here("Band3", "41404", "41404_Data.csv"))
 source(here("src", "41404", "41404_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data41404_korrektionen <- subset(data41404,
                                  !(is.na(Gewässerkorrektionen)))
@@ -104,6 +103,6 @@ plot41404 <- ggplot(data = data41404,
                                    hjust = 1),
         plot.margin = margin(0.5,0.5,0,0.3, "lines"))
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot41404, 3, 140, 55.6, 65, 23)

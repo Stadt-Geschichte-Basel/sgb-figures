@@ -85,6 +85,6 @@ plot20418 <- ggplot(data = data20418, aes(x = Jahr)) +
     plot.margin = margin(0.5, 0.9, 0, 0, "lines")
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot20418, 4, 116, 66, 38, 30)

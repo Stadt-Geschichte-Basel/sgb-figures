@@ -17,7 +17,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 source(here("src", "90340", "90340_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data90340_longer <- pivot_longer(
   data90340,
@@ -67,6 +67,6 @@ plot90340 <- ggplot(data = data90340_longer, aes(x = Zeitraum,
     plot.margin = margin(0.5,0.1,0,0.5, "lines")
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot90340, 6, 120, 70, 21, 8)

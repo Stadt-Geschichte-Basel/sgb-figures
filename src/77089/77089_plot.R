@@ -15,10 +15,9 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 # Read Data ------------------
 
-#data77089 <- readr::read_csv(here("Band8", "77089", "77089_Data_processed.csv"))
 source(here("src", "77089", "77089_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data77089_Personenwagen <- data77089[,-3:-4]
 
@@ -74,6 +73,6 @@ plot77089 <- ggplot() +
     plot.margin = margin(0.5,0.9,0,0, "lines")
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot77089, 8, 120, 63, 33, 13)

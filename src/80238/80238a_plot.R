@@ -17,7 +17,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 source(here("src", "80238", "80238a_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 election_years <- c(1960, 1964, 1968, 1972, 1976, 1980, 1984, 1988, 1992, 1997, 2001, 2005, 2009, 2013, 2017, 2021)
 
@@ -106,6 +106,6 @@ plot80238a <- ggplot(data80238a_longer,
     plot.margin = margin(0.5,0.1,0,0.4, "lines")
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot80238a, 8, 120, 63, 28, 31)

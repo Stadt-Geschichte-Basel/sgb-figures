@@ -11,7 +11,7 @@ library(magrittr)
 source(here("src", "Funktionen", "Metadata_JSON.R"))
 source(here("src", "Funktionen", "Export_CSV.R"))
 
-# Process Data --------
+# Process Data ---------------
 
 data77733 <- read_excel(here("data", "raw", "Band8", "77733", "77733_Data_raw.xlsx"),
                         sheet = 1,
@@ -21,7 +21,7 @@ data77733 <- data77733[,-3:-5]
 
 save_clean_csv(data77733, vol = 8)
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta77733 <- annotate(data = data77733,
                       mediaID = 77733,

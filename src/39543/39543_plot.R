@@ -16,10 +16,9 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 # Read Data ------------------
 
-#data39543 <- readr::read_csv(here("Band3", "39543", "39543_Data.csv"))
 source(here("src", "39543", "39543_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data39543_longer <- data39543[,-2:-3]
 
@@ -84,6 +83,6 @@ plot39543 <- ggplot(data39543_longer,
         legend.key.width = unit(5, "mm"), # entspricht 4mm
         plot.margin = margin(0.5,0.2,0,0, "lines"))
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot39543, 3, 129.8, 72.2, 30, 26)

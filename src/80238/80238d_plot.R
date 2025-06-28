@@ -17,7 +17,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 source(here("src", "80238", "80238d_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data80238d_longer <- data80238d %>%
   pivot_longer(cols = -Jahr,
@@ -70,6 +70,6 @@ plot80238d <- ggplot(data80238d_longer,
     axis.text.y = element_text(margin = margin(r = 5)),
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot80238d, 8, 120, 12.7, 15, 8)

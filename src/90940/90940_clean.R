@@ -17,7 +17,7 @@ data90940 <- read_excel(here("data", "raw", "Band6", "90940", "90940_Data_raw.xl
                         sheet = 4,
                         range = "A38:R43")
 
-# Process Data --------
+# Process Data ---------------
 
 colnames(data90940)[1] <- "Jahreseinkommen"
 
@@ -38,7 +38,7 @@ colnames(data90940)[-1] <- paste(colnames(data90940)[-1], "Franken", sep = " ")
 
 save_clean_csv(data90940, vol = 6)
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta90940 <- annotate(data = data90940,
                       mediaID = 90940,

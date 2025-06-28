@@ -12,7 +12,7 @@ library(readr)
 source(here("src", "Funktionen", "Metadata_JSON.R"))
 source(here("src", "Funktionen", "Export_CSV.R"))
 
-# Process Data --------
+# Process Data ---------------
 
 data20418 <- readr::read_csv(here("data", "raw", "Band4", "20418", "20418_Data_raw.csv"))
 
@@ -27,7 +27,7 @@ colnames(data20418) <- c("Jahr", "Handels- und Marktabgaben", "Konsumabgaben Sta
 save_clean_csv(data20418, vol = 4)
 
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta20418 <- annotate(data = data20418,
                       mediaID = 20418,

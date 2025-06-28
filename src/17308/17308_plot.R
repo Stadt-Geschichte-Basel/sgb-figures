@@ -18,7 +18,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 #data17308 <- readr::read_csv(here("Band4", "17308", "17308_Data.csv"))
 source(here("src", "17308", "17308_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data17308_pest <- subset(data17308,
                          Pestjahr == TRUE,
@@ -106,6 +106,6 @@ plot17308 <- ggplot(data = data17308, aes(x = Jahr)) +
     legend.margin = margin(0,0,0,0, "cm"),
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot17308, 4, 114.5, 63.8, 28, 8)

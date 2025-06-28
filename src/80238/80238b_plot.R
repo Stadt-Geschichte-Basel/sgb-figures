@@ -17,7 +17,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 source(here("src", "80238", "80238b_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data80238b <- data80238b[,-18]
 
@@ -105,6 +105,6 @@ plot80238b <- ggplot(data80238b_longer,
     plot.margin = margin(0.5,0.1,0,0.5, "lines"),
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot80238b, 8, 120, 63, 45, 43)

@@ -52,6 +52,6 @@ plot92792 <- ggplot(data92792, aes(x = reorder(Eigentümer, `Anzahl Wohnungen`),
     legend.key.height = unit(2.5, "mm"), # resultiert in 2 mm
     )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot92792, 9, 144, 116, 30, 5)

@@ -17,7 +17,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 source(here("src", "92237", "92237_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data92237_longer <- pivot_longer(data92237,
                           cols = c("Basel-Stadt", Glarus),
@@ -61,6 +61,6 @@ plot92237 <- ggplot(data = data92237_longer, aes(x = Jahr,
     plot.margin = margin(0.5,0.2,0,0, "lines")
 )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot92237, 6, 65, 50, 23, 7)

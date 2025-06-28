@@ -17,7 +17,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 source(here("src", "91310", "91310_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data91310_longer <- data91310 %>%
   pivot_longer(
@@ -32,7 +32,7 @@ data91310_longer$Partei <- factor(data91310_longer$Partei, levels = rev(c("Parte
                                                                           "Konservative",
                                                                           "Sozialdemokraten")))
 
-# Diagramm plotten -----------
+# Plot -----------------------
 
 plot91310 <- ggplot(data = data91310_longer,
                     aes(x = Jahr, y = Sitze, fill = Partei)) +
@@ -89,6 +89,6 @@ plot91310 <- ggplot(data = data91310_longer,
         plot.margin = margin(0.5,0.15,0,0.5, "lines")
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot91310, 6, 120, 63, 32, 23)

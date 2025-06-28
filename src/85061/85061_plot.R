@@ -17,7 +17,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 source(here("src", "85061", "85061_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data85061 <- data85061 %>%
   mutate(across(.cols = Leerstandsquote, .fns = ~ . / 100))
@@ -56,10 +56,11 @@ plot85061 <- ggplot() +
   theme_sgb_basis() +
   theme(
     legend.position = "none",
-    axis.text.y = element_text(margin = margin(r = 5)),
+    axis.text.y = element_text(margin = margin(r = 5),
+                               hjust = 1),
     plot.margin = margin(0.5,0.9,0,0.5, "lines")
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot85061, 8, 120, 63, 27, 5)

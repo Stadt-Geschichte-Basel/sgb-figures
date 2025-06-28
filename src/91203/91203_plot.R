@@ -17,7 +17,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 source(here("src", "91203", "91203_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data91203_longer <- data91203 %>%
   pivot_longer(cols = -Jahr, names_to = "Typ", values_to = "Anzahl") %>%
@@ -60,6 +60,6 @@ plot91203 <- ggplot(data91203_longer, aes(x = Jahr, y = Anzahl, color = Typ)) +
                                hjust = 1)
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot91203, 6, 120, 63, 32, 11)

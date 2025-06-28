@@ -13,7 +13,7 @@ library(dplyr)
 source(here("src", "Funktionen", "Metadata_JSON.R"))
 source(here("src", "Funktionen", "Export_CSV.R"))
 
-# Process Data --------
+# Process Data ---------------
 
 data91407 <- read_excel(here("data", "raw", "Band6", "91407", "91407_Data_raw.xlsx"),
                         range = "A2:O9",
@@ -34,7 +34,7 @@ data91407 <- data91407 %>%
 
 save_clean_csv(data91407, vol = 6)
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta91407 <- annotate(data = data91407,
                       mediaID = 91407,

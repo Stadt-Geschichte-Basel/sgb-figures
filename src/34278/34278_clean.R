@@ -11,7 +11,7 @@ library(jsonlite)
 source(here("src", "Funktionen", "Metadata_JSON.R"))
 source(here("src", "Funktionen", "Export_CSV.R"))
 
-# Process Data --------
+# Process Data ---------------
 
 data34278 <- data.frame(Feldtyp = c("Brachfeld", "Winterfeld", "Sommerfeld"),
                         Januar = c("Brache/Weide", "Winterfrucht", "Brache/Weide"),
@@ -42,7 +42,7 @@ data34278 <- data.frame(Feldtyp = c("Brachfeld", "Winterfeld", "Sommerfeld"),
 
 save_clean_csv(data34278, vol = 2)
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta34278 <- annotate(data = data34278,
                       mediaID = 34278,

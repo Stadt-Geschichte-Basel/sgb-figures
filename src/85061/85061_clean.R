@@ -12,7 +12,7 @@ library(tidyr)
 source(here("src", "Funktionen", "Metadata_JSON.R"))
 source(here("src", "Funktionen", "Export_CSV.R"))
 
-# Process Data --------
+# Process Data ---------------
 
 data85061 <- read_excel(here("data", "raw", "Band8", "85061", "85061_Data_raw.xlsx"),
                         range = "A2:BI3")
@@ -28,7 +28,7 @@ data85061 <- data85061 %>%
 
 save_clean_csv(data85061, vol = 8)
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta85061 <- annotate(data = data85061,
                       mediaID = 85061,

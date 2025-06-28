@@ -16,7 +16,7 @@ source(here("src", "Funktionen", "Export_CSV.R"))
 data90340 <- read_excel(here("data", "raw", "Band6", "90340", "90340_Data_raw.xlsx"),
                         range = "A6:G9")
 
-# Process Data --------
+# Process Data ---------------
 
 data90340 <- data90340[-1,-2]
 colnames(data90340)[1] <- "Stadtteil"
@@ -34,7 +34,7 @@ data90340 <- data90340 %>%
 
 save_clean_csv(data90340, vol = 6)
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta88415 <- annotate(data = data90340,
                       mediaID = 90340,

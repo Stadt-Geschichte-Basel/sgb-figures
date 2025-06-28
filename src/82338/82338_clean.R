@@ -12,7 +12,7 @@ library(tidyr)
 source(here("src", "Funktionen", "Metadata_JSON.R"))
 source(here("src", "Funktionen", "Export_CSV.R"))
 
-# Process Data --------
+# Process Data ---------------
 
 data82338 <- read_excel(here("data", "raw", "Band8", "82338", "82338_Data_raw.xlsx"),
                         range = "A3:AE9")
@@ -27,7 +27,7 @@ data82338 <- data82338[, -c(5, 6)] # Plot ohne Waadt und Neuenburg
 
 save_clean_csv(data82338, vol = 8)
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta82338 <- annotate(data = data82338,
                       mediaID = 82338,

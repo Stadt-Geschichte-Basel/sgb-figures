@@ -18,7 +18,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 source(here("src", "90940", "90940_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data90940_longer <- pivot_longer(data90940,
                                  cols = -Jahr,
@@ -72,6 +72,6 @@ plot90940 <- ggplot(data = data90940_longer,
                                    hjust = 1)
         )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot90940, 6, 120, 72, 33, 20)

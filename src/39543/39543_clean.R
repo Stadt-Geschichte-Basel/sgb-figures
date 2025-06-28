@@ -11,7 +11,7 @@ library(jsonlite)
 source(here("src", "Funktionen", "Metadata_JSON.R"))
 source(here("src", "Funktionen", "Export_CSV.R"))
 
-# Process Data --------
+# Process Data ---------------
 
 data39543 <- read_excel(here("data", "raw", "Band3", "39543", "39543_Data_raw.xlsx"),
                         col_names = c("Startjahr", "Endjahr", "Zeitraum", "Wundtat", "Totschlag", "«Geloiff» (Tumult)", "Ehrverletzung", "Jugenddelikt", "Ungehorsam", "Eigentum", "Sexualdelikt", "Meineid", "Gotteslästerung"),
@@ -33,7 +33,7 @@ data39543 <- data39543[,col_order]
 
 save_clean_csv(data39543, vol = 3)
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta39543 <- annotate(data = data39543,
                       mediaID = 39543,

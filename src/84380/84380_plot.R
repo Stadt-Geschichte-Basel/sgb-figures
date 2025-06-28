@@ -56,6 +56,6 @@ plot84380 <- ggplot() +
     plot.margin = margin(0.5,1,0,0.4, "lines")
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot84380, 8, 120, 63, 30, 8)

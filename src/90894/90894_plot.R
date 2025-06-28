@@ -18,7 +18,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 source(here("src", "90894", "90894_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 top_ziellaender <- c("England", "USA", "Frankreich", "Deutschland")
 
@@ -102,6 +102,6 @@ plot90894 <- ggplot(data90894_modified) +
     plot.margin = margin(0,1,0,0, "lines")
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot90894, 6, 120, 55, 33, 20)

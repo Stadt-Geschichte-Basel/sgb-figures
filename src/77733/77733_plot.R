@@ -17,7 +17,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 source(here("src", "77733", "77733_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 colnames(data77733)[3] <- "Wohnbevölkerung Kanton Basel-Landschaft\n(ab 1994 mit Laufental)"
 
@@ -64,6 +64,6 @@ plot77733 <- ggplot() +
     plot.margin = margin(0.5,0.9,0,0, "lines")
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot77733, 8, 120, 63, 58.5, 10.5)

@@ -11,7 +11,7 @@ library(jsonlite)
 source(here("src", "Funktionen", "Metadata_JSON.R"))
 source(here("src", "Funktionen", "Export_CSV.R"))
 
-# Process Data --------
+# Process Data ---------------
 
 data24528 <- read_excel(here("data", "raw", "Band4", "24528", "24528_Data_raw.xls"),
                         sheet = 1,
@@ -23,7 +23,7 @@ colnames(data24528) <- c("Jahr", "Swiss GHD DOY", "Mittlere April-Juli-Temperatu
 
 save_clean_csv(data24528, vol = 4)
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta24528 <- annotate(data = data24528,
                       mediaID = 24528,

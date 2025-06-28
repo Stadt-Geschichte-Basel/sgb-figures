@@ -105,7 +105,7 @@ plot88300b <- ggplot(data88300b) +
     legend.title = element_blank()
   )
 
-# Combine Plots ---------
+# Combine Plots --------------
 
 ## Plot 88300b: get legend
 plot88300b_with_legend <- plot88300b + theme(legend.position = "right")
@@ -121,6 +121,6 @@ plot88300b_joined <- plot88300b + plot_spacer() + legende88300b + plot_layout(nc
 plot88300 <- plot88300a + plot_spacer() + plot88300b_joined + plot_layout(ncol = 3,
                                                                           widths = c(1.2, 0.2, 1.9))
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot88300, 8, 120, 88)

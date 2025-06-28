@@ -12,7 +12,7 @@ library(tidyr)
 source(here("src", "Funktionen", "Metadata_JSON.R"))
 source(here("src", "Funktionen", "Export_CSV.R"))
 
-# Process Data --------
+# Process Data ---------------
 
 data92792 <- read_excel(here("data", "raw", "Band9", "92792", "92792_Data_raw.xlsx"),
                         range = "A2:B26",
@@ -23,9 +23,7 @@ data92792$Eigentümer[23] <- c("GAM Investment Management")
 
 save_clean_csv(data92792, vol = 9)
 
-# Metadata-Informationen in der Exceltabelle!
-
-# Create Metadata -------
+# Create Metadata ------------
 
 meta92792 <- annotate(data = data92792,
                       mediaID = 92792,

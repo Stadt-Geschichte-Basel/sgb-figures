@@ -19,7 +19,7 @@ source(here("src", "92209", "92209_clean.R"))
 
 data92209 <- data92209[,-5]
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data92209_longer <- pivot_longer(data92209,
                                  cols = !Jahr,
@@ -62,6 +62,6 @@ plot92209 <- ggplot(data = data92209_longer,
         legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
         legend.key.justification = "top") # FIXME works only from Jan25 on, see https://github.com/tidyverse/ggplot2/pull/6279
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot92209, 6, 120, 60, 45, 12)

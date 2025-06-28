@@ -18,7 +18,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 #data14158 <- readr::read_csv(here("Band4", "14158", "14158_Data.csv"))
 source(here("src", "14158", "14158_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data14158 <- data14158[, -1]
 data14158_longer <- pivot_longer(data14158,
@@ -60,6 +60,6 @@ plot14158 <- ggplot(data14158_longer, aes(x = Jahrhundert, y = value, fill = var
     plot.margin = margin(0.5,0.9,0,0, "lines")
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot14158, 4, 113, 57.5, 46, 8)

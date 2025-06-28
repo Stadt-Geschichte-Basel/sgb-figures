@@ -17,7 +17,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 source(here("src", "82338", "82338_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data82338_longer <- data82338 %>%
   pivot_longer(cols = -Jahr,
@@ -69,6 +69,6 @@ plot82338 <- ggplot(data82338_longer, aes(x = Jahr, y = Arbeitslosenquote,
     plot.margin = margin(0.5,0.1,0,0.5, "lines")
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot82338, 8, 120, 63, 34, 18)

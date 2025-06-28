@@ -17,7 +17,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 source(here("src", "39017", "39017_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 subset39017 <- data39017 %>%
   select(Jahr, `Summe Ablösungen`, `Summe Neueinträge`) %>%
@@ -78,6 +78,6 @@ plot39017 <- ggplot() +
         legend.margin = margin(0,0,0,0, "cm"),
         plot.margin = margin(0.5,0,0,0, "lines"))
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot39017, 3, 104.25, 60, 34, 8)

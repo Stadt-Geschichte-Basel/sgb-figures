@@ -11,7 +11,7 @@ library(jsonlite)
 source(here("src", "Funktionen", "Metadata_JSON.R"))
 source(here("src", "Funktionen", "Export_CSV.R"))
 
-# Process Data --------
+# Process Data ---------------
 
 ## originally, plot88300a was a separate plot. Therefore, the raw data file has a diverging name.
 ## To refer to this plot, only the ID 88300 or 88300a should be used.
@@ -23,7 +23,7 @@ data88300a <- read_excel(here("data", "raw", "Band8", "88300", "91294_Data_raw.x
 
 save_clean_csv(data88300a, vol = 8)
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta88300a <- annotate(data = data88300a,
                       mediaID = "88300a",

@@ -17,7 +17,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 source(here("src", "88415", "88415_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 ## Create data frame for mapping number of home games
 data88415_Heimspiele <- data88415 %>%
@@ -102,6 +102,6 @@ plot88415 <- ggplot(data88415_longer) +
                                hjust = 1),
     plot.margin = margin(0.5,0.9,0,0.4, "lines"))
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot88415, 8, 120, 63, 46, 10)

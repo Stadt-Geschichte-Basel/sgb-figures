@@ -17,7 +17,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 source(here("src", "81757", "81757_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data81757_long <- data81757 %>%
   pivot_longer(cols = -Jahr,
@@ -88,6 +88,6 @@ plot81757 <- ggplot(data81757_long, aes(x = Jahr, y = Ausländeranteil,
     plot.margin = margin(0.5,0.9,0,0, "lines")
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot81757, 8, 120, 64, 25, 18)

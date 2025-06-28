@@ -16,10 +16,9 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 # Read Data ------------------
 
-#data41183 <- readr::read_csv(here("Band3", "41183", "41183_Data.csv"))
 source(here("src", "41183", "41183_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 # gleitende Durchschnitte
 data41183 <- data41183 %>%
@@ -107,6 +106,6 @@ plot41183 <- ggplot(data = data41183, aes(x = Jahr)) +
                                    hjust = 1),
         plot.margin = margin(0.5,1.2,0,0.5, "lines"))
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot41183, 3, 155, 66, 44, 35.5)
