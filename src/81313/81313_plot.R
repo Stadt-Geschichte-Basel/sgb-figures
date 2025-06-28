@@ -65,7 +65,8 @@ plot81313 <- ggplot(data81313_longer, aes(x = Jahr, y = Anzahl,
     legend.position = "none",
     legend.key.width = unit(5, "mm"), # resultiert in 4 mm
     legend.key.height = unit(2.5, "mm"), # resultiert in 2 mm
-    axis.text.y = element_text(margin = margin(r = 5)),
+    axis.text.y = element_text(margin = margin(r = 5),
+                               hjust = 1),
     plot.margin = margin(0.5,0.9,0,0, "lines")
   )
 

@@ -15,7 +15,6 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 # Read Data ------------------
 
-#data77733 <- readr::read_csv(here("Band8", "77733", "77733_Data_processed.csv"))
 source(here("src", "77733", "77733_clean.R"))
 
 # Transform Data ------------------
@@ -60,7 +59,8 @@ plot77733 <- ggplot() +
   theme(
     legend.position = "none",
     legend.key.height = unit(1.64, "mm"),
-    axis.text.y = element_text(margin = margin(r = 5)),
+    axis.text.y = element_text(margin = margin(r = 5),
+                               hjust = 1),
     plot.margin = margin(0.5,0.9,0,0, "lines")
   )
 

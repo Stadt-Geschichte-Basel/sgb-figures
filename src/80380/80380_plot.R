@@ -43,7 +43,6 @@ plot80380 <- ggplot(data_long, aes(x = Jahr, y = Auflage,
   geom_line(data = na.omit(data_long),
             linewidth = 0.561) +
             
-  #geom_line(linewidth = 0.561) +
   geom_point() +
 
   scale_x_continuous(
@@ -73,7 +72,8 @@ plot80380 <- ggplot(data_long, aes(x = Jahr, y = Auflage,
   theme_sgb_basis() +
   theme(
     legend.position = "none",
-    axis.text.y = element_text(margin = margin(r = 5)),
+    axis.text.y = element_text(margin = margin(r = 5),
+                               hjust = 1),
     plot.margin = margin(0.5,0.9,0,0, "lines")
   )
 
