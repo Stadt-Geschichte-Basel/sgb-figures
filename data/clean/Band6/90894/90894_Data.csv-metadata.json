@@ -63,15 +63,15 @@
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
-				"Quelle: Jahresbericht Basler Handelskammer 1901, S. 10 Bearbeitung: Nico Görlich / Moritz Twente"
+				"Quelle: Jahresbericht Basler Handelskammer 1901, S. 10. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
 			"relation": [["m90894_1"], ["m90894_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-27 00:41:57"],
+			"modified": ["2025-06-30 18:50:10"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Exporte in die wichtigsten Zielländer, 1900. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90894.html#m90894_3>, letzte Aktualisierung: 27.06.2025."
+				"Stadt.Geschichte.Basel: Exporte in die wichtigsten Zielländer, 1900. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90894.html#m90894_3>, letzte Aktualisierung: 30.06.2025."
 			]
 		}
 	}
