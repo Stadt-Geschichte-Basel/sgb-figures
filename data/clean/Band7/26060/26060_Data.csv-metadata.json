@@ -1,0 +1,83 @@
+{
+	"@context": ["http://www.w3.org/ns/csvw"],
+	"tables": {
+		"url": ["26060_Data.csv"],
+		"tableSchema": {
+			"columns": [
+				{
+					"name": "Branche",
+					"titles": "Branche",
+					"datatype": "string",
+					"description": "Bezeichnung des Wirtschaftszweigs, für die die angegebenen Zahlen gelten"
+				},
+				{
+					"name": "1929",
+					"titles": "1929",
+					"datatype": "number",
+					"description": "Anzahl der im jeweiligen Wirtschaftszweig beschäftigten Personen im Kanton Basel-Stadt im Jahr 1929"
+				},
+				{
+					"name": "1939",
+					"titles": "1939",
+					"datatype": "number",
+					"description": "Anzahl der im jeweiligen Wirtschaftszweig beschäftigten Personen im Kanton Basel-Stadt im Jahr 1939"
+				},
+				{
+					"name": "1955",
+					"titles": "1955",
+					"datatype": "number",
+					"description": "Anzahl der im jeweiligen Wirtschaftszweig beschäftigten Personen im Kanton Basel-Stadt im Jahr 1955"
+				},
+				{
+					"name": "1965",
+					"titles": "1965",
+					"datatype": "number",
+					"description": "Anzahl der im jeweiligen Wirtschaftszweig beschäftigten Personen im Kanton Basel-Stadt im Jahr 1965"
+				}
+			],
+			"mediaID": ["m26060_3"],
+			"isPartOf": {
+				"ObjectID": ["abb26060"],
+				"volume": [
+					"Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
+				]
+			},
+			"title": ["Beschäftigte nach Wirtschaftszweigen im Kanton Basel-Stadt, 1929–1965"],
+			"description": [
+				"Zehn Jahre sollte der Abstand zwischen den einzelnen Zählungen betragen, was die beiden Weltkriege jedoch verhinderten. Trotz beträchtlicher zeitlicher Abstände untersuchten die Statistiker die erhobenen Daten auf Kontinuitäten und Veränderungen. Bei der Zusammenstellung der vier Zählungen von 1965 fällt auf, dass 1939 – als Folge der Wirtschaftskrise der 1930er Jahre – die Zahl der Beschäftigten tiefer ist als 1929, obschon im selben Zeitraum der Kanton einen Bevölkerungszuwachs erfuhr. Von einer deutlichen Zunahme der Beschäftigten während der Hochkonjunktur hingegen zeugen die Daten von 1955 und 1965. Die Zahl der Beschäftigten in «Bergbau, Steinbrüche, Gruben» ist dermassen klein (zwischen 25 und 10), dass sie in der Grafik nicht erscheint."
+			],
+			"creator": [
+				{
+					"name": ["Isabel Koellreuter"]
+				}
+			],
+			"contributor": [
+				{
+					"name": ["Nico Görlich"],
+					"orcid": ["0000-0003-3860-1488"]
+				},
+				{
+					"name": ["Moritz Twente"],
+					"email": ["moritz.twente@unibas.ch"],
+					"orcid": ["0009-0005-7187-9774"]
+				}
+			],
+			"publisher": ["Stadt.Geschichte.Basel"],
+			"date": ["1929/1965"],
+			"temporal": [["20. Jahrhundert"]],
+			"type": ["Dataset"],
+			"format": ["text/csv"],
+			"source": [
+				"Quelle: Böhner, Martin: Die Eidgenössische Betriebszählung 1965 aus baslerischer Sicht, Basel 1968, S. 66f. Bearbeitung: Nico Görlich / Moritz Twente"
+			],
+			"language": ["de"],
+			"relation": [["m26060_1"], ["m26060_2"]],
+			"rights": ["Public Domain Mark"],
+			"license": ["https://creativecommons.org/public-domain/pdm/"],
+			"modified": ["2025-06-30 18:14:56"],
+			"bibliographicCitation": [
+				"Stadt.Geschichte.Basel: Beschäftigte nach Wirtschaftszweigen im Kanton Basel-Stadt, 1929–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26060.html#m26060_3>, letzte Aktualisierung: 30.06.2025."
+			]
+		}
+	}
+}
