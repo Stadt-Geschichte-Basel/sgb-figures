@@ -40,6 +40,6 @@ meta77089 <- annotate(data = data77089,
                       date = "1920/2022",
                       temporal = "Zeitgeschichte",
                       source = "https://statistik.bs.ch/apps/jahrbuch; https://statistik.bs.ch/files/webtabellen/t11-1-01.xlsx. Bearbeitung: Nico Görlich / Moritz Twente",
-                      rights = "CC BY-SA. Daten: Kanton Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
+                      rights = "Public Domain Mark",
                       relation = list("m77089_1", "m77089_2")
                       )

@@ -42,6 +42,6 @@ meta24528 <- annotate(data = data24528,
                       date = "1444/2011",
                       temporal = "Neuzeit",
                       source = "Wetter, Oliver; Pfister, Christian: Spring–summer Temperatures Reconstructed for Northern Switzerland and Southwestern Germany from Winter Rye Harvest Dates, 1454–1970, in: Climate of the Past 7 (4), 2011, S. 1307–1326. Bearbeitung: Nico Görlich / Moritz Twente",
-                      rights = "CC BY-SA. Daten: Wetter; Pfister 2011, S. 1307–1326. Bearbeitung: Nico Görlich / Moritz Twente",
+                      rights = "In Copyright",
                       relation = list("m24528_1", "m24528_2")
 )

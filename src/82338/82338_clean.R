@@ -46,6 +46,6 @@ meta82338 <- annotate(data = data82338,
                       date = "1973/2002",
                       temporal = "Zeitgeschichte",
                       source = "Statistisches Amt Kanton Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
-                      rights = "Public Domain Mark. Bearbeitung: Nico Görlich / Moritz Twente",
+                      rights = "Public Domain Mark",
                       relation = list("m82338_1", "m82338_2")
 )

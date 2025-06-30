@@ -39,6 +39,6 @@ meta84380 <- annotate(data = data84380,
                       date = "1960/2020",
                       temporal = "Zeitgeschichte",
                       source = "Quelle: Statistisches Jahrbuch des Kantons Basel-Stadt 1960–2020. Bearbeitung: Nico Görlich / Moritz Twente",
-                      rights = "Public Domain Mark. Daten: Kanton Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
+                      rights = "Public Domain Mark",
                       relation = list("m84380_1", "m84380_2")
 )

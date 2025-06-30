@@ -47,6 +47,6 @@ meta81313 <- annotate(data = data81313,
                       date = "1960/2020",
                       temporal = "Zeitgeschichte",
                       source = "Quelle: https://statistik.bs.ch/apps/jahrbuch. Bearbeitung: Nico Görlich / Moritz Twente",
-                      rights = "CC BY-SA. Daten: Kanton Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
+                      rights = "Public Domain Mark",
                       relation = list("m81313_1", "m81313_2")
 )

@@ -38,6 +38,6 @@ meta39492 <- annotate(data = data39492,
                       date = "1360/1525",
                       temporal = "Neuzeit",
                       source = "Portmann, Rolf Ernst: Basler Einbürgerungspolitik 1358–1798. Mit einer Berufs- und Herkunftsstatistik des Mittelalters, Basel 1979, S. 96–99. Rosen, Josef: Kriegsausgaben im Spätmittelalter. Der militärische Aufwand in Basel 1360–1535, in: Vierteljahrschrift für Sozial- und Wirtschaftsgeschichte 71, 1984, S. 477–479. Bearbeitung: Nico Görlich / Moritz Twente",
-                      rights = "CC BY-SA 4.0, Daten: Rolf Ernst Portmann, Josef Rosen. Bearbeitung: Moritz Twente / Nico Görlich",
+                      rights = "Public Domain Mark",
                       relation = list("m39492_1", "m39492_2")
 )

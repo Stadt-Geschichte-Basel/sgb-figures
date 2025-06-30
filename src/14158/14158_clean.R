@@ -49,6 +49,6 @@ meta14158 <- annotate(data = data14158,
                       date = "1400/1798",
                       temporal = "Neuzeit",
                       source = "Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500) Basel, Liestal 1977, S. 170. Bearbeitung: Nico Görlich / Moritz Twente",
-                      rights = "CC BY-SA, Quelle: Gschwind 1977, S. 170. Bearbeitung: Nico Görlich / Moritz Twente",
+                      rights = "Public Domain Mark",
                       relation = list("m14158_1", "m14158_2")
 )

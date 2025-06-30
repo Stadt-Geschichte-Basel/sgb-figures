@@ -84,13 +84,11 @@
 			],
 			"language": ["de"],
 			"relation": [["m24528_1"], ["m24528_2"]],
-			"rights": [
-				"CC BY-SA. Daten: Wetter; Pfister 2011, S. 1307–1326. Bearbeitung: Nico Görlich / Moritz Twente"
-			],
-			"license": ["https://creativecommons.org/licenses/by-sa/4.0/"],
-			"modified": ["2025-06-16 16:46:51"],
+			"rights": ["In Copyright"],
+			"license": ["https://rightsstatements.org/vocab/InC-RUU/1.0/"],
+			"modified": ["2025-06-30 23:48:46"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Temperaturabweichungen in °C, 1444–2011. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb24528.html#m24528_3>, letzte Aktualisierung: 16.06.2025."
+				"Stadt.Geschichte.Basel: Temperaturabweichungen in °C, 1444–2011. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb24528.html#m24528_3>, letzte Aktualisierung: 30.06.2025."
 			]
 		}
 	}

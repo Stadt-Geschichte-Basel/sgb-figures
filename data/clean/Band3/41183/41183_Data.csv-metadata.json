@@ -169,13 +169,11 @@
 			],
 			"language": ["de"],
 			"relation": [["m41183_1"], ["m41183_2"]],
-			"rights": [
-				"CC BY-SA. Daten: Katharina Simon-Muscheid. Bearbeitung: Nico Görlich / Moritz Twente"
-			],
-			"license": ["https://creativecommons.org/licenses/by-sa/4.0/"],
-			"modified": ["2025-06-18 23:04:04"],
+			"rights": ["Public Domain Mark"],
+			"license": ["https://creativecommons.org/public-domain/pdm/"],
+			"modified": ["2025-06-30 23:42:08"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41183.html#m41183_3>, letzte Aktualisierung: 18.06.2025."
+				"Stadt.Geschichte.Basel: Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41183.html#m41183_3>, letzte Aktualisierung: 30.06.2025."
 			]
 		}
 	}

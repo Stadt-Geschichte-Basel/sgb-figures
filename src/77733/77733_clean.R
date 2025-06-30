@@ -40,6 +40,6 @@ meta77733 <- annotate(data = data77733,
                       date = "1940/2020",
                       temporal = "Zeitgeschichte",
                       source = "Quelle: https://statistik.bs.ch/apps/jahrbuch; Moll; Sandtner; Saner 2002, Anhang 2.1; https://www.statistik.bl.ch/web_portal/1_9; https://www.statistik.bl.ch/web_portal/1_1_3?sheet=6&Jahr=34. Bearbeitung: Nico Görlich / Moritz Twente",
-                      rights = "CC BY-SA. Daten: Kanton Basel-Stadt, Kanton Basel-Landschaft und Moll, Sandtner, Saner 2002. Bearbeitung: Nico Görlich / Moritz Twente",
+                      rights = "Public Domain Mark",
                       relation = list("m77733_1", "m77733_2")
                       )

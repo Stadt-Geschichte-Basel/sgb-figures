@@ -46,6 +46,6 @@ meta20418 <- annotate(data = data20418,
                       date = "1689/1797",
                       temporal = "Neuzeit",
                       source = "Vettori, Arthur: Finanzhaushalt und Wirtschaftsverwaltung Basels (1689–1798). Wirtschafts - und Lebensverhältnisse einer Gesellschaft zwischen Tradition und Umbruch, Basel; Frankfurt a. M. 1984, S. 211–215, 334–340. Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500) Basel, Liestal 1977, S. 173–174, 639–641. Bearbeitung: Nico Görlich / Moritz Twente",
-                      rights = "CC BY-SA 4.0. Quelle: Vettori 1984, S. 211–215, 334–340; Gschwind 1977, S. 173–174, 639–641. Bearbeitung: Nico Görlich / Moritz Twente",
+                      rights = "CC BY-SA 4.0",
                       relation = list("m20418_1", "m20418_2")
 )

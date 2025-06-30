@@ -105,6 +105,6 @@ meta80380 <- annotate(data = data80380,
                       date = "1966/2020",
                       temporal = "Zeitgeschichte",
                       source = "WEMF-Archiv: Auflagebulletins. Bearbeitung: Nico Görlich / Moritz Twente",
-                      rights = "CC BY-SA. Daten: WEMF-Archiv. Bearbeitung: Nico Görlich / Moritz Twente",
+                      rights = "Public Domain",
                       relation = list("m80380_1", "m80380_2")
 )

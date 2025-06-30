@@ -38,6 +38,6 @@ meta39017 <- annotate(data = data39017,
                       date = "1484/1521",
                       temporal = "Neuzeit",
                       source = "Signori, Gabriela: Das Schuldbuch des Basler Kaufmanns Ludwig Kilchmann (gest. 1518), Stuttgart 2014. Bearbeitung: Nico Görlich / Moritz Twente",
-                      rights = "CC BY-SA 4.0, Daten Gabriela Signori. Bearbeitung: Moritz Twente / Nico Görlich",
+                      rights = "Public Domain Mark",
                       relation = list("m39017_1", "m39017_2")
 )

@@ -121,13 +121,11 @@
 			],
 			"language": ["de"],
 			"relation": [["m39543_1"], ["m39543_2"]],
-			"rights": [
-				"CC BY-SA, Quelle: Simon-Muscheid 1977. Bearbeitung: Nico Görlich / Moritz Twente"
-			],
-			"license": ["https://creativecommons.org/licenses/by-sa/4.0/"],
-			"modified": ["2025-06-19 11:22:59"],
+			"rights": ["Public Domain Mark"],
+			"license": ["https://creativecommons.org/public-domain/pdm/"],
+			"modified": ["2025-06-30 23:41:23"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Verbannungsurteile, 1376–1455. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39543.html#m39543_3>, letzte Aktualisierung: 19.06.2025."
+				"Stadt.Geschichte.Basel: Verbannungsurteile, 1376–1455. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39543.html#m39543_3>, letzte Aktualisierung: 30.06.2025."
 			]
 		}
 	}

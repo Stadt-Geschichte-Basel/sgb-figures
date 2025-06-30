@@ -72,13 +72,11 @@
 			],
 			"language": ["de"],
 			"relation": [["m14158_1"], ["m14158_2"]],
-			"rights": [
-				"CC BY-SA, Quelle: Gschwind 1977, S. 170. Bearbeitung: Nico Görlich / Moritz Twente"
-			],
-			"license": ["https://creativecommons.org/licenses/by-sa/4.0/"],
-			"modified": ["2025-06-16 16:56:33"],
+			"rights": ["Public Domain Mark"],
+			"license": ["https://creativecommons.org/public-domain/pdm/"],
+			"modified": ["2025-06-30 23:45:07"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Bürgerrechtsaufnahmen, 1400–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb14158.html#m14158_3>, letzte Aktualisierung: 16.06.2025."
+				"Stadt.Geschichte.Basel: Bürgerrechtsaufnahmen, 1400–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb14158.html#m14158_3>, letzte Aktualisierung: 30.06.2025."
 			]
 		}
 	}

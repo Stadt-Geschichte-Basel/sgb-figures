@@ -51,6 +51,6 @@ meta39543 <- annotate(data = data39543,
                       date = "1376/1455",
                       temporal = "Frühe Neuzeit",
                       source = "Simon-Muscheid, Katharina: Gewalt und Ehre im spätmittelalterlichen Handwerk am Beispiel Basels, in: Zeitschrift für historische Forschung 18, 1991, S. 1–31, hier S. 30 f. Bearbeitung: Nico Görlich / Moritz Twente",
-                      rights = "CC BY-SA, Quelle: Simon-Muscheid 1977. Bearbeitung: Nico Görlich / Moritz Twente",
+                      rights = "Public Domain Mark",
                       relation = list("m39543_1", "m39543_2")
 )

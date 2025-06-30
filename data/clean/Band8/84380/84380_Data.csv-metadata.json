@@ -66,13 +66,11 @@
 			],
 			"language": ["de"],
 			"relation": [["m84380_1"], ["m84380_2"]],
-			"rights": [
-				"Public Domain Mark. Daten: Kanton Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente"
-			],
+			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-25 23:21:34"],
+			"modified": ["2025-07-01 00:00:07"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Eheschliessungen und Ehescheidungen in Basel-Stadt, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb84380.html#m84380_3>, letzte Aktualisierung: 25.06.2025."
+				"Stadt.Geschichte.Basel: Eheschliessungen und Ehescheidungen in Basel-Stadt, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb84380.html#m84380_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}
