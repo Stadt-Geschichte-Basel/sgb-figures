@@ -11,6 +11,8 @@ annotate <- function(data, mediaID, vol, title, column_description, object_descr
     "https://creativecommons.org/public-domain/pdm/"
   } else if (grepl("CC BY-SA", rights, ignore.case = TRUE)) {
     "https://creativecommons.org/licenses/by-sa/4.0/"
+  } else if (grepl("In Copyright", rights, ignore.case = TRUE)) {
+    "https://rightsstatements.org/vocab/InC-RUU/1.0/"
   } else {
     NA  # fallback if no match
   }
