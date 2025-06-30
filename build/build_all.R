@@ -15,11 +15,11 @@ for (plot in src_subdirs) {
         source(plot_script)
       },
       error = function(e) {
-        message(sprintf("Error in script %s: %s", plot_script, e$message))
+        message(sprintf("Fehler im Script %s: %s", plot_script, e$message))
       }
     )
   } else {
-    message(sprintf("No script found at %s", plot_script))
+    message(sprintf("Kein Script gefunden: %s", plot_script))
   }
 }
 
