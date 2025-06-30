@@ -11,7 +11,7 @@
 		"prepare": "husky",
 		"changelog": "npm exec git-cliff -- --config cliff.toml",
 		"setup": "Rscript -e 'install.packages(\"renv\"); renv::restore()'",
-		"list": "ls -d src/*/ | xargs -n 1 basename | grep -E '^[0-9]+$'",
+		"list": "Rscript build/list_plots.R",
 		"plot": "Rscript -e 'source(here::here(\"build\", \"plot_pipeline.R\"))'",
 		"all": "Rscript build/build_all.R"
 	},
