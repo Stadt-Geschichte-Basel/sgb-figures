@@ -56,7 +56,7 @@ npm run setup
 
 ## Build
 
-Build an individual plot as PDF and save it to `output/` by running the following command:
+Build an individual plot as PDF – saving the plot to `output/` and the annotated data to `data/clean/`– by running the following command:
 
 ```bash
 npm run plot
@@ -78,6 +78,12 @@ Print a list of all plots that can be built from this repository:
 
 ```bash
 npm run list
+```
+
+Build all plots from a specific volume, e.g. volume 7:
+
+```bash
+npm run vol 7
 ```
 
 Build all plots that are available in this repository:
@@ -123,7 +129,6 @@ This project is maintained by [@Stadt-Geschichte-Basel](https://github.com/stadt
 
 ## Roadmap
 
-- add plot source code and data from volumes 1 to 9
 - archive repository on Zenodo
 - add DOIs
 - add individual `index.qmd` for plots

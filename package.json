@@ -13,7 +13,8 @@
 		"setup": "Rscript -e 'install.packages(\"renv\"); renv::restore()'",
 		"list": "Rscript build/list_plots.R",
 		"plot": "Rscript -e 'source(here::here(\"build\", \"plot_pipeline.R\"))'",
-		"all": "Rscript build/build_all.R"
+		"all": "Rscript build/build_all.R",
+		"vol": "Rscript build/build_volume.R"
 	},
 	"devDependencies": {
 		"commitizen": "^4.3.1",
