@@ -56,6 +56,12 @@ npm run setup
 
 ## Build
 
+Print a list of all plots that can be built from this repository:
+
+```bash
+npm run list
+```
+
 Build an individual plot as PDF – saving the plot to `output/` and the annotated data to `data/clean/`– by running the following command:
 
 ```bash
@@ -72,12 +78,6 @@ You can also specify the plot directly:
 
 ```bash
 npm run plot 39017
-```
-
-Print a list of all plots that can be built from this repository:
-
-```bash
-npm run list
 ```
 
 Build all plots from a specific volume, e.g. volume 7:
