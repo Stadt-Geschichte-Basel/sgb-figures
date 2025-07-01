@@ -195,11 +195,11 @@
 			],
 			"language": ["de"],
 			"relation": [["m34278_1"], ["m34278_2"]],
-			"rights": ["CC BY-SA 4.0, Daten Wilhelm Abel. Bearbeitung: Moritz Twente / Nico Görlich"],
-			"license": ["https://creativecommons.org/licenses/by-sa/4.0/"],
-			"modified": ["2025-06-25 21:51:14"],
+			"rights": ["Public Domain Mark"],
+			"license": ["https://creativecommons.org/public-domain/pdm/"],
+			"modified": ["2025-07-01 09:32:12"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Schema der Dreifelderwirtschaft. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb34278.html#m34278_3>, letzte Aktualisierung: 25.06.2025."
+				"Stadt.Geschichte.Basel: Schema der Dreifelderwirtschaft. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb34278.html#m34278_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}
