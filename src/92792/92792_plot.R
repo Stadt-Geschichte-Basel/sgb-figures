@@ -19,13 +19,13 @@ source(here("src", "92792", "92792_clean.R"))
 
 # Plot -----------------------
 
-plot92792 <- ggplot(data92792, aes(x = reorder(Eigentümer, `Anzahl Wohnungen`),
-                                   y = `Anzahl Wohnungen`)) +
+plot92792 <- ggplot(data92792, aes(x = `Anzahl Wohnungen`,
+                                   y = reorder(Eigentümer, `Anzahl Wohnungen`))) +
   
   geom_bar(stat = "identity",
            aes(fill = "Anzahl Wohnungen")) +
   
-  scale_y_continuous(
+  scale_x_continuous(
     limits = c(0, 3001.5),
     breaks = seq(0, 3000, 500),
     expand = expansion(mult = c(0, 0)),
@@ -36,8 +36,6 @@ plot92792 <- ggplot(data92792, aes(x = reorder(Eigentümer, `Anzahl Wohnungen`),
     values = c("Anzahl Wohnungen" = "#3f7653")) + # Bandfarbe 9
 
   coord_cartesian(clip = "off") +
-  
-  coord_flip() +
   
   theme_sgb_basis() +
   theme(

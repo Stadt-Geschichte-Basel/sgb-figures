@@ -67,7 +67,7 @@ data90894_modified <- data90894_modified %>%
 
 plot90894 <- ggplot(data90894_modified) +
   
-  geom_col(aes(x = Ware, y = Summe, fill = Zielland)) +
+  geom_col(aes(x = Summe, y = Ware, fill = Zielland)) +
   
   scale_fill_manual(name = "Exporte in Millionen Franken",
                     values = c("England" = "#F7CB45",
@@ -76,18 +76,17 @@ plot90894 <- ggplot(data90894_modified) +
                                "Frankreich" = "#6195CF",
                                "Übrige" = "#777777")) +
   
-  scale_x_discrete(expand = expansion(mult = c(0, 0))) +
-
-  scale_y_continuous(
+  scale_x_continuous(
     breaks = seq(0, 35, 5),
     limits = c(0, 35.1),
     expand = expansion(mult = c(0, 0)),
     labels = ch_numbers
   ) +
   
+  scale_y_discrete(expand = expansion(mult = c(0, 0))) +
+
   coord_cartesian(clip = "off") +
-  coord_flip() +
-  
+
   theme_sgb_basis() +
   theme(
     legend.position = "none",
@@ -99,7 +98,7 @@ plot90894 <- ggplot(data90894_modified) +
                                hjust = 1),
     panel.grid.major.x = element_line(color = "black", linewidth = 0.14),
     panel.grid.major.y = element_blank(),
-    plot.margin = margin(0,1,0,0, "lines")
+    plot.margin = margin(0.2,0.5,0,0, "lines")
   )
 
 # Export ---------------------

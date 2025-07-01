@@ -31,7 +31,7 @@ data90383_longer <- data90383 %>%
 # Diagramm plotten -----------
 
 plot90383 <- ggplot(data = data90383_longer,
-                    aes(x = Stadtviertel, y = Anzahl, fill = Klasse)) +
+                    aes(x = Anzahl, y = Stadtviertel, fill = Klasse)) +
   
   geom_bar(stat = "identity", position = position_fill()) +
   
@@ -48,22 +48,20 @@ plot90383 <- ggplot(data = data90383_longer,
                                "Klasse5" = "Ungelernte Arbeiter",
                                "Klasse6" = "Häusliche Dienstboten")) +
   
-  scale_x_discrete(
-    guide = guide_axis(),
-    expand = expansion(mult = c(0, 0))
-  ) +
-
-  scale_y_continuous(
+  scale_x_continuous(
     breaks = pretty_breaks(),
     expand = expansion(mult = c(0, 0)),
     labels = label_percent()
   ) +
   
+  scale_y_discrete(
+    guide = guide_axis(),
+    expand = expansion(mult = c(0, 0))
+  ) +
+
   guides(fill = guide_legend(reverse = TRUE)) +
   
   coord_cartesian(clip = "off") +
-  
-  coord_flip() +
   
   theme_sgb_basis() +
   theme(legend.position = "none",
@@ -72,7 +70,7 @@ plot90383 <- ggplot(data = data90383_longer,
         axis.text.y = element_text(margin = margin(r = 5),
                                    hjust = 1),
         axis.ticks.y = element_blank(),
-        plot.margin = margin(0,1.5,0,0.5, "lines"),
+        plot.margin = margin(0.1,1.5,0,0.5, "lines"),
         panel.grid.major.x = element_line(color = "black", linewidth = 0.14)
   )
 
