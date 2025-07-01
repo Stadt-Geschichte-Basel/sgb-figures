@@ -153,4 +153,4 @@ This codebase is released under the GNU Affero General Public License v3.0. See 
 
 The output of the code in this repository is released under the Creative Commons Attribution 4.0 International (CC BY 4.0) License - see the [LICENSE-CCBY](LICENSE-CCBY.md) file for details. By using this data, you agree to give appropriate credit to the original author(s) and to indicate if any modifications have been made.
 
-The raw data in this repository, specifically in `data/`, is released according to the individual licensing as stated in the respective metadata files.
+The tabular data in this repository, specifically in `data/`, is released according to the individual licensing as stated in the respective metadata files.
