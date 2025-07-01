@@ -61,7 +61,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1613/1653"],
-			"temporal": ["Neuzeit"],
+			"coverage": ["Neuzeit"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -71,9 +71,9 @@
 			"relation": [["m18046_1"], ["m18046_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-30 23:46:51"],
+			"modified": ["2025-07-01 11:02:43"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Getreidevorräte in der Stadt Basel, 1613–1653. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb18046.html#m18046_3>, letzte Aktualisierung: 30.06.2025."
+				"Stadt.Geschichte.Basel: Getreidevorräte in der Stadt Basel, 1613–1653. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb18046.html#m18046_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

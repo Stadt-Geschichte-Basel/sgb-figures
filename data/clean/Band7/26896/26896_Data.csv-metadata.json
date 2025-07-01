@@ -54,7 +54,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1927/1962"],
-			"temporal": ["Zeitgeschichte"],
+			"coverage": ["Zeitgeschichte"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -64,9 +64,9 @@
 			"relation": [["m26896_1"], ["m26896_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-29 22:34:08"],
+			"modified": ["2025-07-01 11:02:45"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Ausgestellte Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger im Kanton Basel-Stadt, 1927–1962. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26896.html#m26896_3>, letzte Aktualisierung: 29.06.2025."
+				"Stadt.Geschichte.Basel: Ausgestellte Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger im Kanton Basel-Stadt, 1927–1962. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26896.html#m26896_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

@@ -85,7 +85,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1875/1914"],
-			"temporal": [["19 Jahrhundert"], ["20. Jahrhundert"]],
+			"coverage": [["19. Jahrhundert"], ["20. Jahrhundert"]],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -95,9 +95,9 @@
 			"relation": [["m91407_1"], ["m91407_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-27 23:35:54"],
+			"modified": ["2025-07-01 11:02:49"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Mandate der Parteien bei Grossratswahlen, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91407.html#m91407_3>, letzte Aktualisierung: 27.06.2025."
+				"Stadt.Geschichte.Basel: Mandate der Parteien bei Grossratswahlen, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91407.html#m91407_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

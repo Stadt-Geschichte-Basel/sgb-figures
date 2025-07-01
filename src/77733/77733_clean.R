@@ -38,7 +38,7 @@ meta77733 <- annotate(data = data77733,
                                          email = "moritz.twente@unibas.ch",
                                          orcid = "0009-0005-7187-9774")),
                       date = "1940/2020",
-                      temporal = "Zeitgeschichte",
+                      coverage = "Zeitgeschichte",
                       source = "Quelle: https://statistik.bs.ch/apps/jahrbuch; Moll; Sandtner; Saner 2002, Anhang 2.1; https://www.statistik.bl.ch/web_portal/1_9; https://www.statistik.bl.ch/web_portal/1_1_3?sheet=6&Jahr=34. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m77733_1", "m77733_2")

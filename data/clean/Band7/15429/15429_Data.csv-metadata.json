@@ -78,7 +78,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1910/1970"],
-			"temporal": ["Zeitgeschichte"],
+			"coverage": ["Zeitgeschichte"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -88,9 +88,9 @@
 			"relation": [["m15429_1"], ["m15429_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-28 23:00:05"],
+			"modified": ["2025-07-01 11:02:43"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Wohnbevölkerung im Kanton Basel-Stadt nach Religionszugehörigkeit und Herkunft, 1910–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb15429.html#m15429_3>, letzte Aktualisierung: 28.06.2025."
+				"Stadt.Geschichte.Basel: Wohnbevölkerung im Kanton Basel-Stadt nach Religionszugehörigkeit und Herkunft, 1910–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb15429.html#m15429_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

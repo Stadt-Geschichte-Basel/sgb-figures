@@ -1,5 +1,5 @@
 annotate <- function(data, mediaID, vol, title, column_description, object_description, creator,
-                            contributor, date, temporal, source, relation, rights) {
+                            contributor, date, coverage, source, relation, rights) {
   
   # derive folder ID from mediaID
   folderID <- sub("^(\\d{5}).*$", "\\1", mediaID)
@@ -42,7 +42,7 @@ annotate <- function(data, mediaID, vol, title, column_description, object_descr
   metadata$contributor <- contributor
   metadata$publisher <- "Stadt.Geschichte.Basel"
   metadata$date <- date
-  metadata$temporal <- temporal
+  metadata$coverage <- coverage
   metadata$type <- "Dataset"
   metadata$format <- "text/csv"
   metadata$source <- source

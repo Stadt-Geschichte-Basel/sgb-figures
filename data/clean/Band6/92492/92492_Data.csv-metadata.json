@@ -70,7 +70,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1860/1910"],
-			"temporal": [["19. Jahrhundert"], ["20. Jahrhundert"]],
+			"coverage": [["19. Jahrhundert"], ["20. Jahrhundert"]],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -80,9 +80,9 @@
 			"relation": [["m92492_1"], ["m92492_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-30 21:18:21"],
+			"modified": ["2025-07-01 11:02:49"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92492.html#m92492_3>, letzte Aktualisierung: 30.06.2025."
+				"Stadt.Geschichte.Basel: Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92492.html#m92492_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

@@ -187,7 +187,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1000~"],
-			"temporal": ["Mittelalter"],
+			"coverage": ["Mittelalter"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -197,7 +197,7 @@
 			"relation": [["m34278_1"], ["m34278_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-07-01 09:32:12"],
+			"modified": ["2025-07-01 11:02:45"],
 			"bibliographicCitation": [
 				"Stadt.Geschichte.Basel: Schema der Dreifelderwirtschaft. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb34278.html#m34278_3>, letzte Aktualisierung: 01.07.2025."
 			]

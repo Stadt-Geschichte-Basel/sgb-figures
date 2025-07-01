@@ -52,7 +52,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["2014"],
-			"temporal": ["Zeitgeschichte"],
+			"coverage": ["Zeitgeschichte"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -62,9 +62,9 @@
 			"relation": [["m88300_1"], ["m88300_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-25 23:21:54"],
+			"modified": ["2025-07-01 11:02:48"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300a_3>, letzte Aktualisierung: 25.06.2025."
+				"Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300a_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

@@ -60,7 +60,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1940/2020"],
-			"temporal": ["Zeitgeschichte"],
+			"coverage": ["Zeitgeschichte"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -70,9 +70,9 @@
 			"relation": [["m77733_1"], ["m77733_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-30 23:55:50"],
+			"modified": ["2025-07-01 11:02:46"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Basel-Landschaft, 1940–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77733.html#m77733_3>, letzte Aktualisierung: 30.06.2025."
+				"Stadt.Geschichte.Basel: Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Basel-Landschaft, 1940–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77733.html#m77733_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

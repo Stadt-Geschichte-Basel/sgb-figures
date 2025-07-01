@@ -53,7 +53,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["[1870, 1910]"],
-			"temporal": [["19 Jahrhundert"], ["20. Jahrhundert"]],
+			"coverage": [["19. Jahrhundert"], ["20. Jahrhundert"]],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -63,9 +63,9 @@
 			"relation": [["m90886_1"], ["m90886_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-27 00:40:40"],
+			"modified": ["2025-07-01 11:02:49"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Anteil der Erwerbstätigen in wichtigen Branchen, 1870 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90886.html#m90886_3>, letzte Aktualisierung: 27.06.2025."
+				"Stadt.Geschichte.Basel: Anteil der Erwerbstätigen in wichtigen Branchen, 1870 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90886.html#m90886_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

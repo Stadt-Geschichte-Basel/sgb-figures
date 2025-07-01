@@ -72,7 +72,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1973/2002"],
-			"temporal": ["Zeitgeschichte"],
+			"coverage": ["Zeitgeschichte"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": ["Statistisches Amt Kanton Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente"],
@@ -80,9 +80,9 @@
 			"relation": [["m82338_1"], ["m82338_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-30 23:59:27"],
+			"modified": ["2025-07-01 11:02:47"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb82338.html#m82338_3>, letzte Aktualisierung: 30.06.2025."
+				"Stadt.Geschichte.Basel: Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb82338.html#m82338_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

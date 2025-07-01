@@ -142,7 +142,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1966/2020"],
-			"temporal": ["Zeitgeschichte"],
+			"coverage": ["Zeitgeschichte"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": ["WEMF-Archiv: Auflagebulletins. Bearbeitung: Nico Görlich / Moritz Twente"],
@@ -150,9 +150,9 @@
 			"relation": [["m80380_1"], ["m80380_2"]],
 			"rights": ["Public Domain"],
 			"license": [null],
-			"modified": ["2025-06-30 23:57:12"],
+			"modified": ["2025-07-01 11:02:47"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Auflage der Tageszeitungen in der Region Basel, 1966–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80380.html#m80380_3>, letzte Aktualisierung: 30.06.2025."
+				"Stadt.Geschichte.Basel: Auflage der Tageszeitungen in der Region Basel, 1966–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80380.html#m80380_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

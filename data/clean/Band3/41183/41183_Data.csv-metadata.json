@@ -161,7 +161,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1443/1500"],
-			"temporal": ["Mittelalter"],
+			"coverage": ["Mittelalter"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -171,9 +171,9 @@
 			"relation": [["m41183_1"], ["m41183_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-30 23:42:08"],
+			"modified": ["2025-07-01 11:02:46"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41183.html#m41183_3>, letzte Aktualisierung: 30.06.2025."
+				"Stadt.Geschichte.Basel: Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41183.html#m41183_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

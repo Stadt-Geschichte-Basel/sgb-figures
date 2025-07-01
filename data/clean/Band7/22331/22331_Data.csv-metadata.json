@@ -46,7 +46,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1913/1966"],
-			"temporal": ["Zeitgeschichte"],
+			"coverage": ["Zeitgeschichte"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -56,9 +56,9 @@
 			"relation": [["m22331_1"], ["m22331_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-30 16:03:01"],
+			"modified": ["2025-07-01 11:02:44"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Staatliche Ausgaben für Musik und Theater, 1913–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb22331.html#m22331_3>, letzte Aktualisierung: 30.06.2025."
+				"Stadt.Geschichte.Basel: Staatliche Ausgaben für Musik und Theater, 1913–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb22331.html#m22331_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

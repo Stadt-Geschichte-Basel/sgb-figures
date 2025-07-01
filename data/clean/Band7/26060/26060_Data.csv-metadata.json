@@ -64,7 +64,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1929/1965"],
-			"temporal": [["20. Jahrhundert"]],
+			"coverage": ["20. Jahrhundert"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -74,9 +74,9 @@
 			"relation": [["m26060_1"], ["m26060_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-30 18:14:56"],
+			"modified": ["2025-07-01 11:02:45"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Beschäftigte nach Wirtschaftszweigen im Kanton Basel-Stadt, 1929–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26060.html#m26060_3>, letzte Aktualisierung: 30.06.2025."
+				"Stadt.Geschichte.Basel: Beschäftigte nach Wirtschaftszweigen im Kanton Basel-Stadt, 1929–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26060.html#m26060_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

@@ -59,7 +59,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1424/1484"],
-			"temporal": ["Frühe Neuzeit"],
+			"coverage": ["Frühe Neuzeit"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -78,9 +78,9 @@
 			],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-30 23:39:48"],
+			"modified": ["2025-07-01 11:02:46"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Einnahmen der Stadt Basel: Ungelder und Zölle ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050d_3>, letzte Aktualisierung: 30.06.2025."
+				"Stadt.Geschichte.Basel: Einnahmen der Stadt Basel: Ungelder und Zölle ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050d_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

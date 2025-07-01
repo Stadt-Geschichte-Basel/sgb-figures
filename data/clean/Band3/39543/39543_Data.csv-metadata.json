@@ -113,7 +113,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1376/1455"],
-			"temporal": ["Frühe Neuzeit"],
+			"coverage": ["Frühe Neuzeit"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -123,9 +123,9 @@
 			"relation": [["m39543_1"], ["m39543_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-30 23:41:23"],
+			"modified": ["2025-07-01 11:02:46"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Verbannungsurteile, 1376–1455. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39543.html#m39543_3>, letzte Aktualisierung: 30.06.2025."
+				"Stadt.Geschichte.Basel: Verbannungsurteile, 1376–1455. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39543.html#m39543_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

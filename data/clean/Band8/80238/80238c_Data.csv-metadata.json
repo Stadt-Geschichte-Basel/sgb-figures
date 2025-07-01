@@ -112,7 +112,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1963/2019"],
-			"temporal": ["Zeitgeschichte"],
+			"coverage": ["Zeitgeschichte"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -122,9 +122,9 @@
 			"relation": [["m80238c_1"], ["m80238c_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-30 18:50:08"],
+			"modified": ["2025-07-01 11:02:47"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Vertretung Basel-Stadt im Nationalrat, 1963–2023. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238c_3>, letzte Aktualisierung: 30.06.2025."
+				"Stadt.Geschichte.Basel: Vertretung Basel-Stadt im Nationalrat, 1963–2023. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238c_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

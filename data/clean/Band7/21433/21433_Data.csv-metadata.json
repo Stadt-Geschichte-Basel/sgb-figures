@@ -58,7 +58,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1912/1966"],
-			"temporal": ["Zeitgeschichte"],
+			"coverage": ["Zeitgeschichte"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -68,9 +68,9 @@
 			"relation": [["m21433_1"], ["m21433_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-29 23:17:25"],
+			"modified": ["2025-07-01 11:02:44"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Die Bevölkerung von Basel-Stadt, 1912–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21433.html#m21433_3>, letzte Aktualisierung: 29.06.2025."
+				"Stadt.Geschichte.Basel: Die Bevölkerung von Basel-Stadt, 1912–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21433.html#m21433_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

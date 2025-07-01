@@ -59,7 +59,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1484/1521"],
-			"temporal": ["Neuzeit"],
+			"coverage": ["Neuzeit"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -69,9 +69,9 @@
 			"relation": [["m39017_1"], ["m39017_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-30 23:38:47"],
+			"modified": ["2025-07-01 11:02:45"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Rentengeschäft von Ludwig Kilchmann. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39017.html#m39017_3>, letzte Aktualisierung: 30.06.2025."
+				"Stadt.Geschichte.Basel: Rentengeschäft von Ludwig Kilchmann. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39017.html#m39017_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

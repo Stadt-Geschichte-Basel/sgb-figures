@@ -64,7 +64,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1400/1798"],
-			"temporal": ["Neuzeit"],
+			"coverage": ["Neuzeit"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -74,9 +74,9 @@
 			"relation": [["m14158_1"], ["m14158_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-30 23:45:07"],
+			"modified": ["2025-07-01 11:02:43"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Bürgerrechtsaufnahmen, 1400–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb14158.html#m14158_3>, letzte Aktualisierung: 30.06.2025."
+				"Stadt.Geschichte.Basel: Bürgerrechtsaufnahmen, 1400–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb14158.html#m14158_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

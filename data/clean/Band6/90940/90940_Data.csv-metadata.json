@@ -71,7 +71,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1888/1904"],
-			"temporal": [["19 Jahrhundert"], ["20. Jahrhundert"]],
+			"coverage": [["19. Jahrhundert"], ["20. Jahrhundert"]],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": ["Quelle: Mangold 1905, Tab. XIX. Bearbeitung: Nico Görlich / Moritz Twente"],
@@ -79,9 +79,9 @@
 			"relation": [["m90940_1"], ["m90940_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-27 16:55:16"],
+			"modified": ["2025-07-01 11:02:49"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Soziale Klassen in Basel, 1888–1904. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90940.html#m90940_3>, letzte Aktualisierung: 27.06.2025."
+				"Stadt.Geschichte.Basel: Soziale Klassen in Basel, 1888–1904. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90940.html#m90940_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

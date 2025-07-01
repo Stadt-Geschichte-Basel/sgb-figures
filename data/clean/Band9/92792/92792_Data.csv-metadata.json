@@ -52,7 +52,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["2021"],
-			"temporal": ["Zeitgeschichte"],
+			"coverage": ["Zeitgeschichte"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -62,7 +62,7 @@
 			"relation": [["m92792_1"], ["m92792_2"]],
 			"rights": ["CC BY-SA 4.0"],
 			"license": ["https://creativecommons.org/licenses/by-sa/4.0/"],
-			"modified": ["2025-07-01 09:15:33"],
+			"modified": ["2025-07-01 11:02:49"],
 			"bibliographicCitation": [
 				"Stadt.Geschichte.Basel: Privatbesitz an Boden und Wohnraum in Basel, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92792.html#m92792_3>, letzte Aktualisierung: 01.07.2025."
 			]

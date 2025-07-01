@@ -94,7 +94,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1950/2020"],
-			"temporal": ["Zeitgeschichte"],
+			"coverage": ["Zeitgeschichte"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -104,9 +104,9 @@
 			"relation": [["m86088_1"], ["m86088_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-25 23:21:50"],
+			"modified": ["2025-07-01 11:02:48"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Religionszugehörigkeiten in Basel-Stadt, 1950–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb86088.html#m86088_3>, letzte Aktualisierung: 25.06.2025."
+				"Stadt.Geschichte.Basel: Religionszugehörigkeiten in Basel-Stadt, 1950–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb86088.html#m86088_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

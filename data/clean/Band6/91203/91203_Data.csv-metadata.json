@@ -55,7 +55,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1870/1910"],
-			"temporal": [["19 Jahrhundert"], ["20. Jahrhundert"]],
+			"coverage": [["19. Jahrhundert"], ["20. Jahrhundert"]],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -65,9 +65,9 @@
 			"relation": [["m91203_1"], ["m91203_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-27 17:23:46"],
+			"modified": ["2025-07-01 11:02:49"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Stimmberechtigte und Gesamtbevölkerung, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91203.html#m91203_3>, letzte Aktualisierung: 27.06.2025."
+				"Stadt.Geschichte.Basel: Stimmberechtigte und Gesamtbevölkerung, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91203.html#m91203_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

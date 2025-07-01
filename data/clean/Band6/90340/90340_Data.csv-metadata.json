@@ -55,7 +55,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1860/1910"],
-			"temporal": [["19. Jahrhundert"], ["20. Jahrhundert"]],
+			"coverage": [["19. Jahrhundert"], ["20. Jahrhundert"]],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -65,9 +65,9 @@
 			"relation": [["m90340_1"], ["m90340_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-06-26 15:25:43"],
+			"modified": ["2025-07-01 11:02:48"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Prozentuales Bevölkerungswachstum in Gross- und Kleinbasel, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90340.html#m90340_3>, letzte Aktualisierung: 26.06.2025."
+				"Stadt.Geschichte.Basel: Prozentuales Bevölkerungswachstum in Gross- und Kleinbasel, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90340.html#m90340_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

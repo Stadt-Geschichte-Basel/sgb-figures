@@ -79,7 +79,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1910"],
-			"temporal": ["20. Jahrhundert"],
+			"coverage": ["20. Jahrhundert"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -89,7 +89,7 @@
 			"relation": [["m90383_1"], ["m90383_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-07-01 09:27:43"],
+			"modified": ["2025-07-01 11:02:48"],
 			"bibliographicCitation": [
 				"Stadt.Geschichte.Basel: Erwerbstätige nach sozialen Klassen im St. Alban und Klybeck. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90383.html#m90383_3>, letzte Aktualisierung: 01.07.2025."
 			]
