@@ -5,12 +5,12 @@ annotate <- function(data, mediaID, vol, title, column_description, object_descr
   folderID <- sub("^(\\d{5}).*$", "\\1", mediaID)
   
   # derive license URL based on rights string
-  license_url <- if (grepl("CC BY", rights, ignore.case = TRUE)) {
+  license_url <- if (grepl("CC BY-SA", rights, ignore.case = TRUE)) {
     "https://creativecommons.org/licenses/by-sa/4.0/"
   } else if (grepl("Public Domain Mark", rights, ignore.case = TRUE)) {
     "https://creativecommons.org/public-domain/pdm/"
-  } else if (grepl("CC BY-SA", rights, ignore.case = TRUE)) {
     "https://creativecommons.org/licenses/by-sa/4.0/"
+  } else if (grepl("CC BY", rights, ignore.case = TRUE)) {
   } else if (grepl("In Copyright", rights, ignore.case = TRUE)) {
     "https://rightsstatements.org/vocab/InC-RUU/1.0/"
   } else {
