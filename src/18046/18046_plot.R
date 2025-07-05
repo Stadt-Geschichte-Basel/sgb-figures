@@ -18,7 +18,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 #data18046 <- readr::read_csv(here("Band4", "18046", "18046_Data.csv"))
 source(here("src", "18046", "18046_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 # (Jahr 1652 als 1653 auf Achse laut Regieanweisung)
 data18046$Jahr[40] <- 1653
@@ -74,10 +74,11 @@ plot18046 <- ggplot(data = data18046, aes(x = Jahr)) +
   theme_sgb_basis() +
   theme(
     legend.position = "none",
-    axis.text.y = element_text(margin = margin(r = 5)),
+    axis.text.y = element_text(margin = margin(r = 5),
+                               hjust = 1),
     plot.margin = margin(0.5,0.9,0,0, "lines")
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot18046, 4, 124, 68, 35, 20)

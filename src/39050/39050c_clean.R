@@ -11,7 +11,7 @@ library(jsonlite)
 source(here("src", "Funktionen", "Metadata_JSON.R"))
 source(here("src", "Funktionen", "Export_CSV.R"))
 
-# Process Data --------
+# Process Data ---------------
 
 data39050c <- read_excel(here("data", "raw", "Band3", "39050", "39050_Data_raw.xlsx"),
                          sheet = 2,
@@ -20,7 +20,7 @@ data39050c <- read_excel(here("data", "raw", "Band3", "39050", "39050_Data_raw.x
 
 save_clean_csv(data39050c, vol = 3)
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta39050c <- annotate(data = data39050c,
                        mediaID = "39050c",
@@ -36,8 +36,8 @@ meta39050c <- annotate(data = data39050c,
                                                email = "moritz.twente@unibas.ch",
                                                orcid = "0009-0005-7187-9774")),
                        date = "1424/1484",
-                       temporal = "Frühe Neuzeit",
+                       coverage = "Frühe Neuzeit",
                        source = "Harms, Bernhard: Die Münz- und Geldpolitik der Stadt Basel im Mittelalter, Tübingen 1907, S. 640–672. Bearbeitung: Nico Görlich / Moritz Twente",
-                       rights = "CC BY-SA. Daten: Harms 1907. Bearbeitung: Nico Görlich / Moritz Twente",
+                       rights = "Public Domain Mark",
                        relation = list("m39050a_1", "m39050a_2", "m39050b_1", "m39050b_2", "m39050c_1", "m39050c_2", "m39050d_1", "m39050d_2")
                        )

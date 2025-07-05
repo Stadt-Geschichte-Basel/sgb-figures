@@ -11,7 +11,7 @@ library(jsonlite)
 source(here("src", "Funktionen", "Metadata_JSON.R"))
 source(here("src", "Funktionen", "Export_CSV.R"))
 
-# Process Data --------
+# Process Data ---------------
 
 data39492 <- read_excel(here("data", "raw", "Band3", "39492", "39492_Data_raw.xlsx"),
                         sheet = 2,
@@ -20,7 +20,7 @@ data39492 <- read_excel(here("data", "raw", "Band3", "39492", "39492_Data_raw.xl
 
 save_clean_csv(data39492, vol = 3)
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta39492 <- annotate(data = data39492,
                       mediaID = 39492,
@@ -36,8 +36,8 @@ meta39492 <- annotate(data = data39492,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1360/1525",
-                      temporal = "Neuzeit",
+                      coverage = "Neuzeit",
                       source = "Portmann, Rolf Ernst: Basler Einbürgerungspolitik 1358–1798. Mit einer Berufs- und Herkunftsstatistik des Mittelalters, Basel 1979, S. 96–99. Rosen, Josef: Kriegsausgaben im Spätmittelalter. Der militärische Aufwand in Basel 1360–1535, in: Vierteljahrschrift für Sozial- und Wirtschaftsgeschichte 71, 1984, S. 477–479. Bearbeitung: Nico Görlich / Moritz Twente",
-                      rights = "CC BY-SA 4.0, Daten: Rolf Ernst Portmann, Josef Rosen. Bearbeitung: Moritz Twente / Nico Görlich",
+                      rights = "Public Domain Mark",
                       relation = list("m39492_1", "m39492_2")
 )

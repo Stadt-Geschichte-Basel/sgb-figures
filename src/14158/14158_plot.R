@@ -18,7 +18,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 #data14158 <- readr::read_csv(here("Band4", "14158", "14158_Data.csv"))
 source(here("src", "14158", "14158_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data14158 <- data14158[, -1]
 data14158_longer <- pivot_longer(data14158,
@@ -52,12 +52,14 @@ plot14158 <- ggplot(data14158_longer, aes(x = Jahrhundert, y = value, fill = var
   theme_sgb_basis() +
   theme(
     legend.position = "none",
-    legend.key.height = unit(1.64, "mm"),
+    legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
+    legend.key.width = unit(5, "mm"), # entspricht 4mm
     axis.ticks.x = element_blank(),
-    axis.text.y = element_text(margin = margin(r = 5)),
+    axis.text.y = element_text(margin = margin(r = 5),
+                               hjust = 1),
     plot.margin = margin(0.5,0.9,0,0, "lines")
   )
 
-# Export -----------------------
+# Export ---------------------
 
-export_plot(plot14158, 4, 113, 57.5, 46, 8.5)
+export_plot(plot14158, 4, 113, 57.5, 46, 8)

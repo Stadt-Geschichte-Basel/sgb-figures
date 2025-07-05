@@ -15,10 +15,9 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 # Read Data ------------------
 
-#data77733 <- readr::read_csv(here("Band8", "77733", "77733_Data_processed.csv"))
 source(here("src", "77733", "77733_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 colnames(data77733)[3] <- "Wohnbevölkerung Kanton Basel-Landschaft\n(ab 1994 mit Laufental)"
 
@@ -60,10 +59,11 @@ plot77733 <- ggplot() +
   theme(
     legend.position = "none",
     legend.key.height = unit(1.64, "mm"),
-    axis.text.y = element_text(margin = margin(r = 5)),
+    axis.text.y = element_text(margin = margin(r = 5),
+                               hjust = 1),
     plot.margin = margin(0.5,0.9,0,0, "lines")
   )
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot77733, 8, 120, 63, 58.5, 10.5)

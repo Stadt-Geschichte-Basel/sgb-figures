@@ -11,7 +11,7 @@ library(jsonlite)
 source(here("src", "Funktionen", "Metadata_JSON.R"))
 source(here("src", "Funktionen", "Export_CSV.R"))
 
-# Process Data --------
+# Process Data ---------------
 
 data18046 <- read_excel(here("data", "raw", "Band4", "18046", "18046_Data_raw.xlsx"),
                         col_names = TRUE)
@@ -27,7 +27,7 @@ colnames(data18046) <- c("Jahr", "Dinkel (in Viernzeln)", "Roggen (in Viernzeln)
 
 save_clean_csv(data18046, vol = 4)
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta18046 <- annotate(data = data18046,
                       mediaID = 18046,
@@ -43,8 +43,8 @@ meta18046 <- annotate(data = data18046,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1613/1653",
-                      temporal = "Neuzeit",
+                      coverage = "Neuzeit",
                       source = "Stritmatter, Robert: Die Stadt Basel während des Dreissigjährigen Krieges. Politik, Wirtschaft, Finanzen, Basel; Frankfurt a. M.; Las Vegas 1977, S. 115. Bearbeitung: Nico Görlich / Moritz Twente",
-                      rights = "CC BY-SA 4.0, Daten Robert Stritmatter. Bearbeitung: Moritz Twente / Nico Görlich",
+                      rights = "Public Domain Mark",
                       relation = list("m18046_1", "m18046_2")
 )

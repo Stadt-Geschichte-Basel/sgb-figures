@@ -65,7 +65,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1360/1525"],
-			"temporal": ["Neuzeit"],
+			"coverage": ["Neuzeit"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -73,13 +73,11 @@
 			],
 			"language": ["de"],
 			"relation": [["m39492_1"], ["m39492_2"]],
-			"rights": [
-				"CC BY-SA 4.0, Daten: Rolf Ernst Portmann, Josef Rosen. Bearbeitung: Moritz Twente / Nico Görlich"
-			],
-			"license": ["https://creativecommons.org/licenses/by-sa/4.0/"],
-			"modified": ["2025-06-18 23:05:50"],
+			"rights": ["Public Domain Mark"],
+			"license": ["https://creativecommons.org/public-domain/pdm/"],
+			"modified": ["2025-07-01 11:02:46"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Bürgeraufnahmen und Kriegsausgaben, 1360–1530. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39492.html#m39492_3>, letzte Aktualisierung: 18.06.2025."
+				"Stadt.Geschichte.Basel: Bürgeraufnahmen und Kriegsausgaben, 1360–1530. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39492.html#m39492_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

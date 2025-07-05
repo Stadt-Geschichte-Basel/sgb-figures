@@ -67,7 +67,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1300/2021"],
-			"temporal": ["Neuzeit"],
+			"coverage": ["Neuzeit"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -75,13 +75,11 @@
 			],
 			"language": ["de"],
 			"relation": [["m41404_1"], ["m41404_2"]],
-			"rights": [
-				"CC BY-SA. Daten: O. Wetter, C. Pfister, R. Weingartner u.a., Bearbeitung: Nico Görlich / Moritz Twente"
-			],
-			"license": ["https://creativecommons.org/licenses/by-sa/4.0/"],
-			"modified": ["2025-06-18 18:39:01"],
+			"rights": ["Public Domain Mark"],
+			"license": ["https://creativecommons.org/public-domain/pdm/"],
+			"modified": ["2025-07-01 11:02:46"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Rheinhochwasser bei Basel-Schifflände, 1300–2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41404.html#m41404_3>, letzte Aktualisierung: 18.06.2025."
+				"Stadt.Geschichte.Basel: Rheinhochwasser bei Basel-Schifflände, 1300–2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41404.html#m41404_3>, letzte Aktualisierung: 01.07.2025."
 			]
 		}
 	}

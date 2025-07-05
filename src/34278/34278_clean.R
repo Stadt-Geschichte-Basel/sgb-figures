@@ -11,7 +11,7 @@ library(jsonlite)
 source(here("src", "Funktionen", "Metadata_JSON.R"))
 source(here("src", "Funktionen", "Export_CSV.R"))
 
-# Process Data --------
+# Process Data ---------------
 
 data34278 <- data.frame(Feldtyp = c("Brachfeld", "Winterfeld", "Sommerfeld"),
                         Januar = c("Brache/Weide", "Winterfrucht", "Brache/Weide"),
@@ -42,7 +42,7 @@ data34278 <- data.frame(Feldtyp = c("Brachfeld", "Winterfeld", "Sommerfeld"),
 
 save_clean_csv(data34278, vol = 2)
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta34278 <- annotate(data = data34278,
                       mediaID = 34278,
@@ -81,9 +81,9 @@ meta34278 <- annotate(data = data34278,
                                          list(name = "Moritz Twente",
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
-                      date = "",
-                      temporal = "Mittelalter",
+                      date = "1000~",
+                      coverage = "Mittelalter",
                       source = "Abel, Wilhelm: Geschichte der deutschen Landwirtschaft vom frühen Mittelalter bis zum 19. Jahrhundert (Deutsche Agrargeschichte), Stuttgart 1978. Bearbeitung: Nico Görlich / Moritz Twente",
-                      rights = "CC BY-SA 4.0, Daten Wilhelm Abel. Bearbeitung: Moritz Twente / Nico Görlich"
+                      rights = "Public Domain Mark",
                       relation = list("m34278_1", "m34278_2")
 )

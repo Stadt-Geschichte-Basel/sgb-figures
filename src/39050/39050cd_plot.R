@@ -17,16 +17,14 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 # Read Data ------------------
 
-#data39050c <- readr::read_csv(here("Band3", "39050", "39050c_Data.csv"))
 source(here("src", "39050", "39050c_clean.R"))
-#data39050d <- readr::read_csv(here("Band3", "39050", "39050d_Data.csv"))
 source(here("src", "39050", "39050d_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 vertical_lines <- seq(1425, 1484, by = 5)
 
-## Transform Data Plot c ----------------
+## Transform Data Plot c -----
 
 data39050c$Jahr_einzel <- as.numeric(substr(data39050c$Rechnungjahr, 1, 4))
 
@@ -46,7 +44,7 @@ data39050c_longer <- data39050c %>%
   ) %>%
   mutate(Typ = factor(Typ, levels = c("Von den Messen", "Weinungeld in Gasthäusern", "Weinungeld", "Mühlenungeld", "Zölle")))
 
-## Transform Data Plot d ----------------
+## Transform Data Plot d -----
 
 data39050d$Jahr_einzel <- as.numeric(substr(data39050d$Rechnungjahr, 1, 4))
 
@@ -100,7 +98,8 @@ plot39050c <- ggplot(data39050c_longer,
   theme(legend.position = "none",
         legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
         legend.key.width = unit(5, "mm"), # entspricht 4mm
-        axis.text.y = element_text(margin = margin(r = 5)),
+        axis.text.y = element_text(margin = margin(r = 5),
+                                   hjust = 1),
         plot.margin = margin(0.5,0.5,0,0, "lines"))
 
 # Plot 39050d: Steuereinnahmen, Leibrenten, verk. Renten ---------
@@ -140,7 +139,8 @@ plot39050d <- ggplot(data39050d_longer,
   theme(plot.margin = margin(0.5,0.5,0,0, "lines"),
         legend.position = "none",
         axis.text.x = element_blank(),
-        axis.text.y = element_text(margin = margin(r = 5)),
+        axis.text.y = element_text(margin = margin(r = 5),
+                                   hjust = 1),
         axis.ticks.x = element_blank(),
         legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
         legend.key.width = unit(5, "mm"), # entspricht 4mm
@@ -148,7 +148,7 @@ plot39050d <- ggplot(data39050d_longer,
         legend.title.align = 0
   )
 
-# Combine Plots ---------
+# Combine Plots --------------
 
 ## Plot 39050c: get legend
 plot39050c_with_legend <- plot39050c + theme(legend.position = "right",
@@ -168,6 +168,6 @@ legende39050d <- get_legend(plot39050d_with_legend) %>%
 
 plot39050cd <- plot39050d + legende39050d + plot39050c + legende39050c + plot_layout(ncol = 2, widths = c(4, 1))
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot39050cd, 3, 205, 139)

@@ -1,0 +1,159 @@
+{
+	"@context": ["http://www.w3.org/ns/csvw"],
+	"tables": {
+		"url": ["80380_Data.csv"],
+		"tableSchema": {
+			"columns": [
+				{
+					"name": "Tageszeitungen (total verkaufte Auflage Print, exkl. Gratisauflage)",
+					"titles": "Tageszeitungen (total verkaufte Auflage Print, exkl. Gratisauflage)",
+					"datatype": "string",
+					"description": "Name der jeweiligen Tageszeitung"
+				},
+				{
+					"name": "1966",
+					"titles": "1966",
+					"datatype": "number",
+					"description": "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage"
+				},
+				{
+					"name": "1971",
+					"titles": "1971",
+					"datatype": "number",
+					"description": "Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage"
+				},
+				{
+					"name": "1972",
+					"titles": "1972",
+					"datatype": "number",
+					"description": "Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage"
+				},
+				{
+					"name": "1973",
+					"titles": "1973",
+					"datatype": "number",
+					"description": "Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage"
+				},
+				{
+					"name": "1975",
+					"titles": "1975",
+					"datatype": "number",
+					"description": "Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage"
+				},
+				{
+					"name": "1978",
+					"titles": "1978",
+					"datatype": "number",
+					"description": "Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage"
+				},
+				{
+					"name": "1984",
+					"titles": "1984",
+					"datatype": "number",
+					"description": "Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage"
+				},
+				{
+					"name": "1985",
+					"titles": "1985",
+					"datatype": "number",
+					"description": "Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage"
+				},
+				{
+					"name": "1990",
+					"titles": "1990",
+					"datatype": "number",
+					"description": "Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage"
+				},
+				{
+					"name": "1991",
+					"titles": "1991",
+					"datatype": "number",
+					"description": "Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage"
+				},
+				{
+					"name": "1992",
+					"titles": "1992",
+					"datatype": "number",
+					"description": "Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage"
+				},
+				{
+					"name": "1996",
+					"titles": "1996",
+					"datatype": "number",
+					"description": "Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage"
+				},
+				{
+					"name": "2002",
+					"titles": "2002",
+					"datatype": "number",
+					"description": "Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage"
+				},
+				{
+					"name": "2008",
+					"titles": "2008",
+					"datatype": "number",
+					"description": "Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage"
+				},
+				{
+					"name": "2014",
+					"titles": "2014",
+					"datatype": "number",
+					"description": "Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage"
+				},
+				{
+					"name": "2020",
+					"titles": "2020",
+					"datatype": "number",
+					"description": "Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage"
+				}
+			],
+			"mediaID": ["m80380_3"],
+			"isPartOf": {
+				"ObjectID": ["abb80380"],
+				"volume": [
+					"Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
+				]
+			},
+			"title": ["Auflage der Tageszeitungen in der Region Basel, 1966–2020"],
+			"description": [
+				"Die 'National-Zeitung' fusionierte mit den 'Basler Nachrichten' zur 'Basler Zeitung', die 'Basellandschaftliche Zeitung' übernahm die 'Nordschweiz', und die 'AZ Abend-Zeitung' musste den Betrieb einstellen. Die BaZ war über Jahrzehnte die bestverkaufte Zeitung in der Region – allerdings mit stark rückläufigen Verkaufszahlen. Die Digitalisierung hat den Medienkonsum grundlegend verändert."
+			],
+			"creator": [
+				{
+					"name": ["Tobias Ehrenbold"]
+				},
+				{
+					"name": ["Silas Gusset"]
+				},
+				{
+					"name": ["Anina Zahn"]
+				}
+			],
+			"contributor": [
+				{
+					"name": ["Nico Görlich"],
+					"orcid": ["0000-0003-3860-1488"]
+				},
+				{
+					"name": ["Moritz Twente"],
+					"email": ["moritz.twente@unibas.ch"],
+					"orcid": ["0009-0005-7187-9774"]
+				}
+			],
+			"publisher": ["Stadt.Geschichte.Basel"],
+			"date": ["1966/2020"],
+			"coverage": ["Zeitgeschichte"],
+			"type": ["Dataset"],
+			"format": ["text/csv"],
+			"source": ["WEMF-Archiv: Auflagebulletins. Bearbeitung: Nico Görlich / Moritz Twente"],
+			"language": ["de"],
+			"relation": [["m80380_1"], ["m80380_2"]],
+			"rights": ["Public Domain Mark"],
+			"license": ["https://creativecommons.org/public-domain/pdm/"],
+			"modified": ["2025-07-02 19:08:28"],
+			"bibliographicCitation": [
+				"Stadt.Geschichte.Basel: Auflage der Tageszeitungen in der Region Basel, 1966–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80380.html#m80380_3>, letzte Aktualisierung: 02.07.2025."
+			]
+		}
+	}
+}

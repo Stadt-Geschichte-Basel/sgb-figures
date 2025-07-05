@@ -1,0 +1,98 @@
+{
+	"@context": ["http://www.w3.org/ns/csvw"],
+	"tables": {
+		"url": ["90383_Data.csv"],
+		"tableSchema": {
+			"columns": [
+				{
+					"name": "Stadtviertel",
+					"titles": "Stadtviertel",
+					"datatype": "string",
+					"description": "Stadtviertel, für die die Angaben zur Zusammensetzung nach sozialen Klassen gelten"
+				},
+				{
+					"name": "Klasse1",
+					"titles": "Klasse1",
+					"datatype": "number",
+					"description": "Anzahl der Zugehörigen zur Klasse 1 'Inhaber und Leiter von Grossbetrieben, hohe Beamte, Professoren, Geistliche, selbstständige Ärzte, Apotheker, Tierärzte, Anwälte, Ingenieure, Architekten, hervorragende Künstler, Grossrentner'."
+				},
+				{
+					"name": "Klasse2",
+					"titles": "Klasse2",
+					"datatype": "number",
+					"description": "Anzahl der Zugehörigen zur Klasse 2 'Mittlere und kleine Selbstständige'."
+				},
+				{
+					"name": "Klasse3",
+					"titles": "Klasse3",
+					"datatype": "number",
+					"description": "Anzahl der Zugehörigen zur Klasse 3 'Mittlere Beamte und Lehrer'."
+				},
+				{
+					"name": "Klasse4",
+					"titles": "Klasse4",
+					"datatype": "number",
+					"description": "Anzahl der Zugehörigen zur Klasse 4 'Unterbeamte und gelernte Arbeiter'."
+				},
+				{
+					"name": "Klasse5",
+					"titles": "Klasse5",
+					"datatype": "number",
+					"description": "Anzahl der Zugehörigen zur Klasse 5 'Ungelernte Arbeiter'."
+				},
+				{
+					"name": "Klasse6",
+					"titles": "Klasse6",
+					"datatype": "number",
+					"description": "Anzahl der Zugehörigen zur Klasse 6 'Häusliche Dienstboten'."
+				}
+			],
+			"mediaID": ["m90383_3"],
+			"isPartOf": {
+				"ObjectID": ["abb90383"],
+				"volume": [
+					"Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
+				]
+			},
+			"title": ["Erwerbstätige nach sozialen Klassen im St. Alban und Klybeck"],
+			"description": [
+				"Um die soziale Zusammensetzung der Wohnviertel zu bestimmen, teilte die Volkszählung von 1910 die Bevölkerung in «Erwerbstätige nach sozialen Klassen» ein. Während im Alban-Viertel die obersten drei sozialen Klassen mehr als ein Drittel ausmachten, waren es im Klybeck knapp ein Fünftel, dafür ungleich mehr gelernte und ungelernte Arbeiter. Obschon die Dienstboten im Alban-Viertel die Anzahl hoher Beamter und Leiter von Grossbetrieben deutlich übertrafen, wurden sie für die Charakterisierung der Stadtteile nicht miteinbezogen: Für die Prägung eines Stadtteils waren sie in den Augen der Statistiker keine relevante Grösse"
+			],
+			"creator": [
+				{
+					"name": ["Franziska Schürch"]
+				},
+				{
+					"name": ["Isabel Koellreuter"]
+				}
+			],
+			"contributor": [
+				{
+					"name": ["Nico Görlich"],
+					"orcid": ["0000-0003-3860-1488"]
+				},
+				{
+					"name": ["Moritz Twente"],
+					"email": ["moritz.twente@unibas.ch"],
+					"orcid": ["0009-0005-7187-9774"]
+				}
+			],
+			"publisher": ["Stadt.Geschichte.Basel"],
+			"date": ["1910"],
+			"coverage": ["20. Jahrhundert"],
+			"type": ["Dataset"],
+			"format": ["text/csv"],
+			"source": [
+				"Quelle: Jenny, Oskar Hugo: Die Bevölkerung des Kantons Basel-Stadt. Am 1. Dezember 1910, Basel 1924 (Mitteilungen des Statistischen Amtes des Kantons Basel-Stadt Nr. 28, Ed. 1924), S. 156f. Bearbeitung: Nico Görlich / Moritz Twente"
+			],
+			"language": ["de"],
+			"relation": [["m90383_1"], ["m90383_2"]],
+			"rights": ["Public Domain Mark"],
+			"license": ["https://creativecommons.org/public-domain/pdm/"],
+			"modified": ["2025-07-01 11:02:48"],
+			"bibliographicCitation": [
+				"Stadt.Geschichte.Basel: Erwerbstätige nach sozialen Klassen im St. Alban und Klybeck. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90383.html#m90383_3>, letzte Aktualisierung: 01.07.2025."
+			]
+		}
+	}
+}

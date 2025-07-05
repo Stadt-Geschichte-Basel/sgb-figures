@@ -1,14 +1,26 @@
 annotate <- function(data, mediaID, vol, title, column_description, object_description, creator,
-                            contributor, date, temporal, source, relation, rights) {
+                            contributor, date, coverage, source, relation, rights) {
   
   # derive folder ID from mediaID
   folderID <- sub("^(\\d{5}).*$", "\\1", mediaID)
-
+  
+  # derive license URL based on rights string
+  license_url <- if (grepl("CC BY-SA", rights, ignore.case = TRUE)) {
+    "https://creativecommons.org/licenses/by-sa/4.0/"
+  } else if (grepl("Public Domain Mark", rights, ignore.case = TRUE)) {
+    "https://creativecommons.org/public-domain/pdm/"
+  } else if (grepl("CC BY", rights, ignore.case = TRUE)) {
+    "https://creativecommons.org/licenses/by/4.0/"
+  } else if (grepl("In Copyright", rights, ignore.case = TRUE)) {
+    "https://rightsstatements.org/vocab/InC-RUU/1.0/"
+  } else {
+    NA  # fallback if no match
+  }
+  
   # derive basic schema using csvwr::derive_table_schema()
   metadata <- derive_table_schema(data)
   
   # add Stadt.Geschichte.Basel Data Model
-  
   metadata$mediaID <- paste0("m", mediaID, "_3")
   metadata$isPartOf <- list(
     ObjectID = paste0("abb", folderID),
@@ -30,14 +42,14 @@ annotate <- function(data, mediaID, vol, title, column_description, object_descr
   metadata$contributor <- contributor
   metadata$publisher <- "Stadt.Geschichte.Basel"
   metadata$date <- date
-  metadata$temporal <- temporal
+  metadata$coverage <- coverage
   metadata$type <- "Dataset"
   metadata$format <- "text/csv"
   metadata$source <- source
   metadata$language <- "de"
   metadata$relation <- relation
   metadata$rights <- rights
-  metadata$license <- "https://creativecommons.org/licenses/by-sa/4.0/"
+  metadata$license <- license_url
   metadata$modified <- Sys.time()
   metadata$bibliographicCitation <- paste0(
     "Stadt.Geschichte.Basel: ", title, ". Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb", folderID, ".html#m" , mediaID, "_3>, letzte Aktualisierung: ", format(Sys.Date(), format = "%d.%m.%Y"), "."

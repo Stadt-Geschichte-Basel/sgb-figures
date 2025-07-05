@@ -11,7 +11,7 @@ library(jsonlite)
 source(here("src", "Funktionen", "Metadata_JSON.R"))
 source(here("src", "Funktionen", "Export_CSV.R"))
 
-# Process Data --------
+# Process Data ---------------
 
 data41404 <- read_excel(here("data", "raw", "Band3", "41404", "41404_Data_raw.xlsx"),
                         col_names = TRUE,
@@ -31,7 +31,7 @@ for (i in spalte5_bereinigen) {
 
 save_clean_csv(data41404, vol = 3)
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta41404 <- annotate(data = data41404,
                       mediaID = 41404,
@@ -47,8 +47,8 @@ meta41404 <- annotate(data = data41404,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1300/2021",
-                      temporal = "Neuzeit",
+                      coverage = "Neuzeit",
                       source = "Wetter, O., Pfister, C., Weingartner, R. u.a.: The largest floods in the High Rhine basin since 1268 assessed from documentary and instrmental evidence, in: Hydrological Sciences Journal 56 (5), 2011, S. 733-758. Bearbeitung: Nico Görlich / Moritz Twente",
-                      relation = list("m41404_1", "m41404_2"),
-                      rights = "CC BY-SA. Daten: O. Wetter, C. Pfister, R. Weingartner u.a., Bearbeitung: Nico Görlich / Moritz Twente"
+                      rights = "Public Domain Mark",
+                      relation = list("m41404_1", "m41404_2")
 )

@@ -1,0 +1,113 @@
+{
+	"@context": ["http://www.w3.org/ns/csvw"],
+	"tables": {
+		"url": ["86088_Data.csv"],
+		"tableSchema": {
+			"columns": [
+				{
+					"name": "Jahr",
+					"titles": "Jahr",
+					"datatype": "number",
+					"description": "Angabe des Jahres nach unserer Zeitrechnung"
+				},
+				{
+					"name": "Evangelisch-reformiert",
+					"titles": "Evangelisch-reformiert",
+					"datatype": "number",
+					"description": "Anzahl der Angehörigen evangelisch-reformierter Glaubensgemeinschaften im Kanton Basel-Stadt im angegebenen Jahr"
+				},
+				{
+					"name": "Römisch-katholisch",
+					"titles": "Römisch-katholisch",
+					"datatype": "number",
+					"description": "Anzahl der Angehörigen römisch-katholischer Glaubensgemeinschaften im Kanton Basel-Stadt im angegebenen Jahr"
+				},
+				{
+					"name": "Andere christliche Glaubensgemeinschaften",
+					"titles": "Andere christliche Glaubensgemeinschaften",
+					"datatype": "number",
+					"description": "Anzahl der Angehörigen anderer christlicher Glaubensgemeinschaften (weder evangelisch-reformiert, noch römisch-katholisch) im Kanton Basel-Stadt im angegebenen Jahr"
+				},
+				{
+					"name": "Jüdische Glaubensgemeinschaften",
+					"titles": "Jüdische Glaubensgemeinschaften",
+					"datatype": "number",
+					"description": "Anzahl der Angehörigen jüdischer Glaubensgemeinschaften im Kanton Basel-Stadt im angegebenen Jahr"
+				},
+				{
+					"name": "Islamische Glaubensgemeinschaften",
+					"titles": "Islamische Glaubensgemeinschaften",
+					"datatype": "number",
+					"description": "Anzahl der Angehörigen islamischer Glaubensgemeinschaften im Kanton Basel-Stadt im angegebenen Jahr"
+				},
+				{
+					"name": "Andere Religionsgemeinschaften",
+					"titles": "Andere Religionsgemeinschaften",
+					"datatype": "number",
+					"description": "Anzahl der Angehörigen anderer Glaubensgemeinschaften im Kanton Basel-Stadt im angegebenen Jahr"
+				},
+				{
+					"name": "Konfessionslos",
+					"titles": "Konfessionslos",
+					"datatype": "number",
+					"description": "Anzahl der konfessionslosen Menschen im Kanton Basel-Stadt im angegebenen Jahr"
+				},
+				{
+					"name": "Ohne Angabe",
+					"titles": "Ohne Angabe",
+					"datatype": "number",
+					"description": "Anzahl der Menschen ohne Angabe zur Religionszugehörigkeit im Kanton Basel-Stadt im angegebenen Jahr"
+				}
+			],
+			"mediaID": ["m86088_3"],
+			"isPartOf": {
+				"ObjectID": ["abb86088"],
+				"volume": [
+					"Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
+				]
+			},
+			"title": ["Religionszugehörigkeiten in Basel-Stadt, 1950–2020"],
+			"description": [
+				"In den 1950er-Jahren waren fast alle Bewohnerinnen und Bewohner von Basel reformiert oder katholisch, kaum jemand konfessionslos und nur wenige Angehörige einer anderen Glaubensgemeinschaft. Das hat sich seither grundlegend verändert. Basel entwickelte sich zu einer multireligiösen Gesellschaft. Der muslimische Glaube etablierte sich, das Christentum verlor derweil an Bedeutung im Alltag. Keine andere Stadt in der Schweiz hatte um 2020 so viele Konfessionslose wie Basel."
+			],
+			"creator": [
+				{
+					"name": ["Tobias Ehrenbold"]
+				},
+				{
+					"name": ["Silas Gusset"]
+				},
+				{
+					"name": ["Anina Zahn"]
+				}
+			],
+			"contributor": [
+				{
+					"name": ["Nico Görlich"],
+					"orcid": ["0000-0003-3860-1488"]
+				},
+				{
+					"name": ["Moritz Twente"],
+					"email": ["moritz.twente@unibas.ch"],
+					"orcid": ["0009-0005-7187-9774"]
+				}
+			],
+			"publisher": ["Stadt.Geschichte.Basel"],
+			"date": ["1950/2020"],
+			"coverage": ["Zeitgeschichte"],
+			"type": ["Dataset"],
+			"format": ["text/csv"],
+			"source": [
+				"Quelle: Statistisches Amt des Kantons Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente"
+			],
+			"language": ["de"],
+			"relation": [["m86088_1"], ["m86088_2"]],
+			"rights": ["Public Domain Mark"],
+			"license": ["https://creativecommons.org/public-domain/pdm/"],
+			"modified": ["2025-07-01 11:02:48"],
+			"bibliographicCitation": [
+				"Stadt.Geschichte.Basel: Religionszugehörigkeiten in Basel-Stadt, 1950–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb86088.html#m86088_3>, letzte Aktualisierung: 01.07.2025."
+			]
+		}
+	}
+}

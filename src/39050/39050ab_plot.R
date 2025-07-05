@@ -17,17 +17,15 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 # Read Data ------------------
 
-#data39050a <- readr::read_csv(here("Band3", "39050", "39050a_Data.csv"))
 source(here("src", "39050", "39050a_clean.R"))
-#data39050b <- readr::read_csv(here("Band3", "39050", "39050b_Data.csv"))
 source(here("src", "39050", "39050b_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 vertical_lines <- seq(1373, 1399, by = 2)
 xlabels39050 <- c("1373/74", "1375/76", "1377/78", "1379/80", "1381/82", "1383/84", "1385/86", "1387/88", "1389/90", "1391/92", "1393/94", "1395/96", "1397/98", "1399/1400")
 
-## Transform Data Plot a ----------------
+## Transform Data Plot a -----
 
 data39050a$Jahr_einzel <- c(1373:1399)
 
@@ -40,7 +38,7 @@ data39050a_longer <- data39050a %>%
     values_to = "Betrag"
   )
 
-## Transform Data Plot b ----------------
+## Transform Data Plot b -----
 
 data39050b$Jahr_einzel <- c(1373:1399)
 
@@ -90,7 +88,8 @@ plot39050a <- ggplot(data39050a_longer,
   theme(legend.position = "none",
         legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
         legend.key.width = unit(5, "mm"), # entspricht 4mm
-        axis.text.y = element_text(margin = margin(r = 5)),
+        axis.text.y = element_text(margin = margin(r = 5),
+                                   hjust = 1),
         plot.margin = margin(0.5,0.5,0,0, "lines"))
 
 # Plot 39050b: Steuereinnahmen, Leibrenten, verk. Renten ---------
@@ -130,7 +129,8 @@ plot39050b <- ggplot(data39050b_longer,
   theme(plot.margin = margin(0.5,0.5,0,0, "lines"),
         legend.position = "none",
         axis.text.x = element_blank(),
-        axis.text.y = element_text(margin = margin(r = 5)),
+        axis.text.y = element_text(margin = margin(r = 5),
+                                   hjust = 1),
         axis.ticks.x = element_blank(),
         legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
         legend.key.width = unit(5, "mm"), # entspricht 4mm
@@ -138,7 +138,7 @@ plot39050b <- ggplot(data39050b_longer,
         legend.title.align = 0
   )
 
-# Combine Plots ---------
+# Combine Plots --------------
 
 ## Plot 39050a: get legend
 plot39050a_with_legend <- plot39050a + theme(legend.position = "right",
@@ -158,6 +158,6 @@ legende39050b <- get_legend(plot39050b_with_legend) %>%
 
 plot39050ab <- plot39050b + legende39050b + plot39050a + legende39050a + plot_layout(ncol = 2, widths = c(4, 1))
 
-# Export -----------------------
+# Export ---------------------
 
 export_plot(plot39050ab, 3, 175, 139)

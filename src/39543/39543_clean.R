@@ -11,7 +11,7 @@ library(jsonlite)
 source(here("src", "Funktionen", "Metadata_JSON.R"))
 source(here("src", "Funktionen", "Export_CSV.R"))
 
-# Process Data --------
+# Process Data ---------------
 
 data39543 <- read_excel(here("data", "raw", "Band3", "39543", "39543_Data_raw.xlsx"),
                         col_names = c("Startjahr", "Endjahr", "Zeitraum", "Wundtat", "Totschlag", "«Geloiff» (Tumult)", "Ehrverletzung", "Jugenddelikt", "Ungehorsam", "Eigentum", "Sexualdelikt", "Meineid", "Gotteslästerung"),
@@ -33,7 +33,7 @@ data39543 <- data39543[,col_order]
 
 save_clean_csv(data39543, vol = 3)
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta39543 <- annotate(data = data39543,
                       mediaID = 39543,
@@ -49,8 +49,8 @@ meta39543 <- annotate(data = data39543,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1376/1455",
-                      temporal = "Frühe Neuzeit",
+                      coverage = "Frühe Neuzeit",
                       source = "Simon-Muscheid, Katharina: Gewalt und Ehre im spätmittelalterlichen Handwerk am Beispiel Basels, in: Zeitschrift für historische Forschung 18, 1991, S. 1–31, hier S. 30 f. Bearbeitung: Nico Görlich / Moritz Twente",
-                      rights = "CC BY-SA, Quelle: Simon-Muscheid 1977. Bearbeitung: Nico Görlich / Moritz Twente",
+                      rights = "Public Domain Mark",
                       relation = list("m39543_1", "m39543_2")
 )

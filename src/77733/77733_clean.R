@@ -11,7 +11,7 @@ library(magrittr)
 source(here("src", "Funktionen", "Metadata_JSON.R"))
 source(here("src", "Funktionen", "Export_CSV.R"))
 
-# Process Data --------
+# Process Data ---------------
 
 data77733 <- read_excel(here("data", "raw", "Band8", "77733", "77733_Data_raw.xlsx"),
                         sheet = 1,
@@ -21,7 +21,7 @@ data77733 <- data77733[,-3:-5]
 
 save_clean_csv(data77733, vol = 8)
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta77733 <- annotate(data = data77733,
                       mediaID = 77733,
@@ -38,8 +38,8 @@ meta77733 <- annotate(data = data77733,
                                          email = "moritz.twente@unibas.ch",
                                          orcid = "0009-0005-7187-9774")),
                       date = "1940/2020",
-                      temporal = "Zeitgeschichte",
+                      coverage = "Zeitgeschichte",
                       source = "Quelle: https://statistik.bs.ch/apps/jahrbuch; Moll; Sandtner; Saner 2002, Anhang 2.1; https://www.statistik.bl.ch/web_portal/1_9; https://www.statistik.bl.ch/web_portal/1_1_3?sheet=6&Jahr=34. Bearbeitung: Nico Görlich / Moritz Twente",
-                      rights = "CC BY-SA. Daten: Kanton Basel-Stadt, Kanton Basel-Landschaft und Moll, Sandtner, Saner 2002. Bearbeitung: Nico Görlich / Moritz Twente",
+                      rights = "Public Domain Mark",
                       relation = list("m77733_1", "m77733_2")
                       )

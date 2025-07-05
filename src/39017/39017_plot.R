@@ -15,10 +15,9 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 # Read Data ------------------
 
-#data39017 <- readr::read_csv(here("data", "clean", "Band3", "39017", "39017_Data.csv"))
 source(here("src", "39017", "39017_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 subset39017 <- data39017 %>%
   select(Jahr, `Summe Ablösungen`, `Summe Neueinträge`) %>%
@@ -40,9 +39,11 @@ plot39017 <- ggplot() +
             data = data39017,
             linewidth = 0.561) +
   
-  scale_fill_manual(values = c("#F7CB45", "#6195CF"), name = "Kategorie") +
+  scale_fill_manual(values = c("#F7CB45", "#6195CF"),
+                    name = "Kategorie") +
 
-  scale_color_manual(values = c("Investierte Summe netto" = "#DC050C"), name = "Kategorie") + 
+  scale_color_manual(values = c("Investierte Summe netto" = "#DC050C"),
+                     name = "Kategorie") + 
   
   scale_x_continuous(
     breaks = seq(1484, 1521, 5),
@@ -57,15 +58,26 @@ plot39017 <- ggplot() +
     labels = ch_numbers
   ) +
   
+  guides(
+    fill = guide_legend(order = 2),
+    color = guide_legend(order = 1)
+  ) +
+  
+  
   coord_cartesian(clip = "off") +
   
   theme_sgb_basis() +
   theme(legend.position = "none",
-        axis.text.y = element_text(margin = margin(r = 5)),
+        axis.text.y = element_text(margin = margin(r = 5),
+                                   hjust = 1),
         legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
         legend.key.width = unit(5, "mm"), # entspricht 4mm
+        legend.box = "vertical",
+        legend.box.just = "left",
+        legend.spacing.y = unit(0, "cm"),
+        legend.margin = margin(0,0,0,0, "cm"),
         plot.margin = margin(0.5,0,0,0, "lines"))
 
-# Export -----------------------
+# Export ---------------------
 
-export_plot(plot39017, 3, 104.25, 60, 77, 7.3)
+export_plot(plot39017, 3, 104.25, 60, 34, 8)

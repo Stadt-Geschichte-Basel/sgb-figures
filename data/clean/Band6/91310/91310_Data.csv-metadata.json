@@ -1,0 +1,86 @@
+{
+	"@context": ["http://www.w3.org/ns/csvw"],
+	"tables": {
+		"url": ["91310_Data.csv"],
+		"tableSchema": {
+			"columns": [
+				{
+					"name": "Jahr",
+					"titles": "Jahr",
+					"datatype": "number",
+					"description": "Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten."
+				},
+				{
+					"name": "Freisinn",
+					"titles": "Freisinn",
+					"datatype": "number",
+					"description": "Anzahl der freisinnigen Mitglieder des Regierungsrats des Kantons Basel-Stadt nach den Gesamterneuerungswahlen im angegebenen Jahr"
+				},
+				{
+					"name": "Konservative",
+					"titles": "Konservative",
+					"datatype": "number",
+					"description": "Anzahl der konservativen Mitglieder des Regierungsrats des Kantons Basel-Stadt nach den Gesamterneuerungswahlen im angegebenen Jahr"
+				},
+				{
+					"name": "Sozialdemokraten",
+					"titles": "Sozialdemokraten",
+					"datatype": "number",
+					"description": "Anzahl der sozialdemokratischen Mitglieder des Regierungsrats des Kantons Basel-Stadt nach den Gesamterneuerungswahlen im angegebenen Jahr"
+				},
+				{
+					"name": "Parteilos",
+					"titles": "Parteilos",
+					"datatype": "number",
+					"description": "Anzahl der parteilosen Mitglieder des Regierungsrats des Kantons Basel-Stadt nach den Gesamterneuerungswahlen im angegebenen Jahr"
+				}
+			],
+			"mediaID": ["m91310_3"],
+			"isPartOf": {
+				"ObjectID": ["abb91310"],
+				"volume": [
+					"Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
+				]
+			},
+			"title": ["Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914"],
+			"description": [
+				"Die Grafik zeigt die Zusammensetzung des Regierungsrates jeweils nach den Gesamterneuerungswahlen alle drei Jahre. Bis 1887 wählte der Grosse Rat die Regierung. Seit 1890 wählt das Volk den Regierungsrat im Majorzsystem, im Gegensatz zum Grossen Rat, der seit 1905 im Proporzsystem gewählt wird"
+			],
+			"creator": [
+				{
+					"name": ["Eva Gschwind"]
+				},
+				{
+					"name": ["Benedikt Pfister"]
+				}
+			],
+			"contributor": [
+				{
+					"name": ["Nico Görlich"],
+					"orcid": ["0000-0003-3860-1488"]
+				},
+				{
+					"name": ["Moritz Twente"],
+					"email": ["moritz.twente@unibas.ch"],
+					"orcid": ["0009-0005-7187-9774"]
+				}
+			],
+			"publisher": ["Stadt.Geschichte.Basel"],
+			"date": ["1875/1914"],
+			"coverage": [["19. Jahrhundert"], ["20. Jahrhundert"]],
+			"type": ["Dataset"],
+			"format": ["text/csv"],
+			"source": [
+				"Quelle: Liste der Mitglieder des basel-städtischen Regierungsrates seit 1875. Bearbeitung: Nico Görlich / Moritz Twente"
+			],
+			"language": ["de"],
+			"relation": [["m91310_1"], ["m91310_2"]],
+			"rights": ["Public Domain Mark"],
+			"license": ["https://creativecommons.org/public-domain/pdm/"],
+			"modified": ["2025-07-01 11:02:49"],
+			"bibliographicCitation": [
+				"Stadt.Geschichte.Basel: Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91310.html#m91310_3>, letzte Aktualisierung: 01.07.2025."
+			]
+		}
+	}
+}

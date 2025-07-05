@@ -11,7 +11,7 @@ library(jsonlite)
 source(here("src", "Funktionen", "Metadata_JSON.R"))
 source(here("src", "Funktionen", "Export_CSV.R"))
 
-# Process Data --------
+# Process Data ---------------
 
 data17308 <- read_excel(here("data", "raw", "Band4", "17308", "17308_Data_raw.xlsx"),
                         sheet = 2,
@@ -24,7 +24,7 @@ data17308$Pestjahr <- ifelse(is.na(data17308$Pestjahr), FALSE, data17308$Pestjah
 
 save_clean_csv(data17308, vol = 4)
 
-# Create Metadata -------
+# Create Metadata ------------
 
 meta17308 <- annotate(data = data17308,
                       mediaID = 17308,
@@ -41,8 +41,8 @@ meta17308 <- annotate(data = data17308,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1497/1798",
-                      temporal = "Neuzeit",
+                      coverage = "Neuzeit",
                       source = "Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500) Basel, Liestal 1977, S. 172–174. Bearbeitung: Nico Görlich / Moritz Twente",
-                      relation = list("m17308_1", "m17308_2"),
-                      rights = "CC BY-SA, Quelle: Gschwind 1977, S. 172–174. Bearbeitung: Nico Görlich / Moritz Twente"
+                      rights = "Public Domain Mark",
+                      relation = list("m17308_1", "m17308_2")
 )

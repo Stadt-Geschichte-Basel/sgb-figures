@@ -1,0 +1,77 @@
+{
+	"@context": ["http://www.w3.org/ns/csvw"],
+	"tables": {
+		"url": ["80238d_Data.csv"],
+		"tableSchema": {
+			"columns": [
+				{
+					"name": "Jahr",
+					"titles": "Jahr",
+					"datatype": "number",
+					"description": "Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung"
+				},
+				{
+					"name": "SP",
+					"titles": "SP",
+					"datatype": "number",
+					"description": "Anzahl der baselstädtischen Mitglieder des Ständerats der Partei 'SP' im entsprechenden Jahr"
+				},
+				{
+					"name": "FDP",
+					"titles": "FDP",
+					"datatype": "number",
+					"description": "Anzahl der baselstädtischen Mitglieder des Ständerats der Partei 'FDP' im entsprechenden Jahr"
+				}
+			],
+			"mediaID": ["m80238d_3"],
+			"isPartOf": {
+				"ObjectID": ["abb80238"],
+				"volume": [
+					"Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
+				]
+			},
+			"title": ["Vertretung Basel-Stadt im Ständerat, 1963–2023"],
+			"description": [
+				"Als Halbkanton steht Basel-Stadt nur ein Sitz im Ständerat zu. Nach dem Freisinnigen Eugen Dietschi (1960–1967) trugen dieses Amt über Jahrzehnte nur noch Vertreterinnen und Vertreter der SP: Willi Wenk (1967–1979), Carl Miville (1979–1991), Gian-Reto Plattner (1991–2003), Anita Fetz (2003–2019), Eva Herzog (seit 2019)"
+			],
+			"creator": [
+				{
+					"name": ["Tobias Ehrenbold"]
+				},
+				{
+					"name": ["Silas Gusset"]
+				},
+				{
+					"name": ["Anina Zahn"]
+				}
+			],
+			"contributor": [
+				{
+					"name": ["Nico Görlich"],
+					"orcid": ["0000-0003-3860-1488"]
+				},
+				{
+					"name": ["Moritz Twente"],
+					"email": ["moritz.twente@unibas.ch"],
+					"orcid": ["0009-0005-7187-9774"]
+				}
+			],
+			"publisher": ["Stadt.Geschichte.Basel"],
+			"date": ["1963/2019"],
+			"coverage": ["Zeitgeschichte"],
+			"type": ["Dataset"],
+			"format": ["text/csv"],
+			"source": [
+				"Quelle: Kanton Basel-Stadt: nationale und kantonale Wahlen seit 1919, Bundesamt für Statistik, je-d-17.02.01_12BS, online: https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/tabellen.assetdetail.14836245.html. Bearbeitung: Nico Görlich / Moritz Twente"
+			],
+			"language": ["de"],
+			"relation": [["m80238d_1"], ["m80238d_2"]],
+			"rights": ["Public Domain Mark"],
+			"license": ["https://creativecommons.org/public-domain/pdm/"],
+			"modified": ["2025-07-01 11:02:47"],
+			"bibliographicCitation": [
+				"Stadt.Geschichte.Basel: Vertretung Basel-Stadt im Ständerat, 1963–2023. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238d_3>, letzte Aktualisierung: 01.07.2025."
+			]
+		}
+	}
+}

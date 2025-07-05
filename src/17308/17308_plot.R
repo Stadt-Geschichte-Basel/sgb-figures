@@ -18,7 +18,7 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 #data17308 <- readr::read_csv(here("Band4", "17308", "17308_Data.csv"))
 source(here("src", "17308", "17308_clean.R"))
 
-# Transform Data ------------------
+# Transform Data -------------
 
 data17308_pest <- subset(data17308,
                          Pestjahr == TRUE,
@@ -75,25 +75,37 @@ plot17308 <- ggplot(data = data17308, aes(x = Jahr)) +
   scale_color_manual(
     values = c("Pestjahr" = "#F7CB45"),
     labels = c("Pestjahr"),
-    guide = guide_legend(override.aes = list(fill = NA))
+    breaks = c("Pestjahr"),
   ) +
   
   scale_fill_manual(
     values = c("Bevölkerungszahl" = "#7BAFDE"),
-    labels = c("Bevölkerungszahl"),
+    labels = c("Anzahl Einwohner"),
+    breaks = c("Bevölkerungszahl")
+  ) +
+  
+  guides(
+    fill = guide_legend(order = 1),
+    color = guide_legend(order = 2,
+                         override.aes = list(fill = NA))
   ) +
   
   coord_cartesian(clip = "off") +
   
   theme_sgb_basis() +
   theme(
-    legend.position = "none",
-    axis.text.y = element_text(margin = margin(r = 5)),
+    axis.text.y = element_text(margin = margin(r = 5),
+                               hjust = 1),
     plot.margin = margin(0.5,0.9,0,0, "lines"),
+    legend.position = "none",
     legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
-    legend.key.width = unit(5, "mm") # entspricht 4mm
+    legend.key.width = unit(5, "mm"), # entspricht 4mm
+    legend.box = "vertical",
+    legend.box.just = "left",
+    legend.spacing.y = unit(0.2, "cm"),
+    legend.margin = margin(0,0,0,0, "cm"),
   )
 
-# Export -----------------------
+# Export ---------------------
 
-export_plot(plot17308, 4, 114.5, 63.8, 56, 8)
+export_plot(plot17308, 4, 114.5, 63.8, 28, 8)
