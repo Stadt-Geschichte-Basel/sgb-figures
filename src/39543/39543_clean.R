@@ -37,6 +37,7 @@ save_clean_csv(data39543, vol = 3)
 
 meta39543 <- annotate(data = data39543,
                       mediaID = 39543,
+                      csv_suffix = 3,
                       vol = 3,
                       title = "Verbannungsurteile, 1376–1455",
                       column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Zeitraum, Angabe von Start- und Endjahr als Jahreszahl unserer Zeitrechnung", "Anzahl der Verbannungsurteile wegen Gotteslästerung im angegebenen Zeitraum", "Anzahl der Verbannungsurteile wegen Ehrverletzung im angegebenen Zeitraum", "Anzahl der Verbannungsurteile wegen Meineid im angegebenen Zeitraum", "Anzahl der Verbannungsurteile wegen Ungehorsam im angegebenen Zeitraum", "Anzahl der Verbannungsurteile wegen Jugenddelikten im angegebenen Zeitraum", "Anzahl der Verbannungsurteile wegen Eigentumsdelikten im angegebenen Zeitraum", "Anzahl der Verbannungsurteile wegen Sexualdelikten im angegebenen Zeitraum", "Anzahl der Verbannungsurteile wegen Geloiff (Tumult) im angegebenen Zeitraum", "Anzahl der Verbannungsurteile wegen Totschlag im angegebenen Zeitraum", "Anzahl der Verbannungsurteile wegen Wundtaten im angegebenen Zeitraum"),

@@ -24,6 +24,7 @@ save_clean_csv(data39050d, vol = 3)
 
 meta39050d <- annotate(data = data39050d,
                        mediaID = "39050d",
+                       csv_suffix = 3,
                        vol = 3,
                        title = "Einnahmen der Stadt Basel: Ungelder und Zölle ab 1424",
                        column_description = c("Rechnungsjahr, Angabe als Jahreszahl in Jahren unserer Zeitrechnung", "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Steuereinnahmen in Basler Pfund", "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Leibrenten in Basler Pfund", "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: verkäufliche Renten in Basler Pfund"),

@@ -26,6 +26,7 @@ save_clean_csv(data80238d, vol = 8)
 
 meta80238d <- annotate(data = data80238d,
                        mediaID = "80238d",
+                       csv_suffix = 3,
                        vol = 8,
                        title = "Vertretung Basel-Stadt im Ständerat, 1963–2023",
                        column_description = c("Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung", "Anzahl der baselstädtischen Mitglieder des Ständerats der Partei 'SP' im entsprechenden Jahr", "Anzahl der baselstädtischen Mitglieder des Ständerats der Partei 'FDP' im entsprechenden Jahr"),

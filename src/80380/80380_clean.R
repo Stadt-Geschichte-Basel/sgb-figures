@@ -75,6 +75,7 @@ save_clean_csv(data80380, vol = 8)
 
 meta80380 <- annotate(data = data80380,
                       mediaID = 80380,
+                      csv_suffix = 3,
                       vol = 8,
                       title = "Auflage der Tageszeitungen in der Region Basel, 1966–2020",
                       column_description = c("Name der jeweiligen Tageszeitung", "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage",

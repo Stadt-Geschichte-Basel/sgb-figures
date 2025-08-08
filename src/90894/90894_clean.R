@@ -25,6 +25,7 @@ save_clean_csv(data90894, vol = 6)
 
 meta90894 <- annotate(data = data90894,
                       mediaID = 90894,
+                      csv_suffix = 3,
                       vol = 6,
                       title = "Exporte in die wichtigsten Zielländer, 1900",
                       column_description = c("Bezeichnung des Staates, in das exportiert wird",

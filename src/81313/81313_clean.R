@@ -25,6 +25,7 @@ save_clean_csv(data81313, vol = 8)
 
 meta81313 <- annotate(data = data81313,
                       mediaID = 81313,
+                      csv_suffix = 3,
                       vol = 8,
                       title = "Nationalitäten von in Basel-Stadt wohnhaften Ausländerinnen und Ausländern, 1960–2020",
                       column_description = c("Nationalitäten von Personengruppen in Basel-Stadt wohnhaften Ausländerinnen und Ausländern",

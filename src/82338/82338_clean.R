@@ -31,6 +31,7 @@ save_clean_csv(data82338, vol = 8)
 
 meta82338 <- annotate(data = data82338,
                       mediaID = 82338,
+                      csv_suffix = 3,
                       vol = 8,
                       title = "Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002",
                       column_description = c("Jahreszahl nach unserer Zeitrechnung", "Anteil der Arbeitslosen an der Gesamtbevölkerung der Schweiz in Prozent im entsprechenden Jahr", "Anteil der Arbeitslosen an der Bevölkerung des Kantons Basel-Stadt in Prozent im entsprechenden Jahr", "Anteil der Arbeitslosen an der Gesamtbevölkerung des Kantons Genf in Prozent im entsprechenden Jahr", "Anteil der Arbeitslosen an der Gesamtbevölkerung des Kantons Zürich in Prozent im entsprechenden Jahr"),

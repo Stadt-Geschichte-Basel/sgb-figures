@@ -25,6 +25,7 @@ save_clean_csv(data81757, vol = 8)
 
 meta81757 <- annotate(data = data81757,
                       mediaID = 81757,
+                      csv_suffix = 3,
                       vol = 8,
                       title = "Anteil an Ausländerinnen und Ausländern im Kanton und in ausgewählten Quartieren, 1960–2020",
                       column_description = c("Jahreszahl nach unserer Zeitrechnung", "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung im Kanton Basel-Stadt im entsprechenden Jahr", "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung im Wohnviertel Matthäus im entsprechenden Jahr", "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung im Wohnviertel St. Johann im entsprechenden Jahr", "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung im Wohnviertel Breite im entsprechenden Jahr", "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung im Wohnviertel Gundeldingen im entsprechenden Jahr", "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung im Wohnviertel Bruderholz im entsprechenden Jahr", "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung in der Gemeinde Riehen im entsprechenden Jahr"),

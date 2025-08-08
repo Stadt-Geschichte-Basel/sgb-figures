@@ -25,6 +25,7 @@ save_clean_csv(data21892, vol = 7)
 
 meta21892 <- annotate(data = data21892,
                       mediaID = 21892,
+                      csv_suffix = 3,
                       vol = 7,
                       title = "Öffentliches Personal des Kantons auf 1000 Einwohnerinnen und Einwohner, 1912–1963",
                       column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Anzahl der vom Kanton Basel-Stadt angestellten Menschen gerechnet auf 1000 Einwohner:innen und Einwohner am Ende des jeweiligen Jahres"),

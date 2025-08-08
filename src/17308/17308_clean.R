@@ -28,6 +28,7 @@ save_clean_csv(data17308, vol = 4)
 
 meta17308 <- annotate(data = data17308,
                       mediaID = 17308,
+                      csv_suffix = 3,
                       vol = 4,
                       title = "Bevölkerungsentwicklung und Pestepidemien, 1500–1700",
                       column_description = c("Jahreszahl, Angaben bezeichnen jeweils in Jahr unserer Zeitrechnung", "Bevölkerungszahl von Basel in Anzahl Personen", "Jahre, in denen die Pest auftrat (TRUE)"),

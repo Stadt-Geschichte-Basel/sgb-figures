@@ -36,6 +36,7 @@ save_clean_csv(data22331, vol = 7)
 
 meta22331 <- annotate(data = data22331,
                       mediaID = 22331,
+                      csv_suffix = 3,
                       vol = 7,
                       title = "Staatliche Ausgaben für Musik und Theater, 1913–1966",
                       column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Höhe der Staatsausgaben des Kantons Basel-Stadt für Musik und Theater in Schweizer Franken pro Kopf im angegebenen Jahr. In den Jahren 1913 bis 1930 beinhalten die Ausgaben neben Musik und Theater auch noch die Literaturförderung. Für das Jahr 1913 wurden zur Berechnung die Bevölkerungszahlen aus der Volkszählung 1910 verwendet (ganzer Kanton, da sich die Staatsausgaben auch auf den Kanton und nicht nur die Stadt Basel beziehen)"),

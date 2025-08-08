@@ -31,6 +31,7 @@ save_clean_csv(data20418, vol = 4)
 
 meta20418 <- annotate(data = data20418,
                       mediaID = 20418,
+                      csv_suffix = 3,
                       vol = 4,
                       title = "Exportabgaben und Konsumsteuern, 1690–1798",
                       column_description = c("Jahreszahl, Angaben bezeichnen jeweils ein Jahr unserer Zeitrechnung", "Handels- und Marktabgaben. Angaben in Pfund", "Konsumabgaben der Stadt. Angaben in Pfund", "Konsumabgaben der Landschaft. Angaben in Pfund", "Einwohnerzahl der Stadt in Personen. Angaben übernommen aus abb17308", "Alternative Angaben zur Einwohnerzahl der Stadt in Personen. Angaben von S. Burghartz"),

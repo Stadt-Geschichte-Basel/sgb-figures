@@ -28,6 +28,7 @@ save_clean_csv(data11589, vol = 7)
 
 meta11589 <- annotate(data = data11589,
                       mediaID = 11589,
+                      csv_suffix = 3,
                       vol = 7,
                       title = "Anzahl Verkehrsträger pro 100 Einwohner und Einwohnerinnen im Kanton Basel-Stadt, 1916–1970",
                       column_description = c("Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung",

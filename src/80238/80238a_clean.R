@@ -29,6 +29,7 @@ save_clean_csv(data80238a, vol = 8)
 
 meta80238a <- annotate(data = data80238a,
                        mediaID = "80238a",
+                       csv_suffix = 3,
                        vol = 8,
                        title = "Regierungsrat in Basel-Stadt, 1960–2024",
                        column_description = c("Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung", "Anzahl der Regierungsrät*innen aus der Partei 'Grüne' im entsprechenden Jahr", "Anzahl der Regierungsrät*innen aus der Partei 'SP' im entsprechenden Jahr", "Anzahl der parteilosen Regierungsrät*innen im entsprechenden Jahr", "Anzahl der Regierungsrät*innen aus der Partei 'GLP' im entsprechenden Jahr", "Anzahl der Regierungsrät*innen aus der Partei 'DSP' im entsprechenden Jahr", "Anzahl der Regierungsrät*innen aus der Partei 'CVP' im entsprechenden Jahr", "Anzahl der Regierungsrät*innen aus der Partei 'FDP' im entsprechenden Jahr", "Anzahl der Regierungsrät*innen aus der Partei 'LDP' im entsprechenden Jahr", "Gesamtzahl der Regierungsrät*innen im entsprechenden Jahr", "Angabe, ob das Jahr der Beginn einer neuen Legislaturperiode markiert"),

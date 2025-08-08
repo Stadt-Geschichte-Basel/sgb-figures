@@ -26,6 +26,7 @@ save_clean_csv(data26896, vol = 7)
 
 meta26896 <- annotate(data = data26896,
                       mediaID = 26896,
+                      csv_suffix = 3,
                       vol = 7,
                       title = "Ausgestellte Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger im Kanton Basel-Stadt, 1927–1962",
                       column_description = c("Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung",

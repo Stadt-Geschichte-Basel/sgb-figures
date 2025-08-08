@@ -33,6 +33,7 @@ save_clean_csv(data91203, vol = 6)
 
 meta91203 <- annotate(data = data91203,
                       mediaID = 91203,
+                      csv_suffix = 3,
                       vol = 6,
                       title = "Stimmberechtigte und Gesamtbevölkerung, 1870–1910",
                       column_description = c("Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten",

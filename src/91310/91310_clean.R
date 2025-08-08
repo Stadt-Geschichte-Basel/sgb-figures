@@ -40,6 +40,7 @@ save_clean_csv(data91310, vol = 6)
 
 meta91310 <- annotate(data = data91310,
                       mediaID = 91310,
+                      csv_suffix = 3,
                       vol = 6,
                       title = "Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914",
                       column_description = c("Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten.",

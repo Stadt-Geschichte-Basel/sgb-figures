@@ -24,6 +24,7 @@ save_clean_csv(data39492, vol = 3)
 
 meta39492 <- annotate(data = data39492,
                       mediaID = 39492,
+                      csv_suffix = 3,
                       vol = 3,
                       title = "Bürgeraufnahmen und Kriegsausgaben, 1360–1530",
                       column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Zeitraum, Angaben in Jahren unserer Zeitrechnung", "Summe der Bürgeraufnahmen im jeweiligen Zeitraum", "Summe der Kriegsausgaben im jeweiligen Zeitraum in Pfund"),

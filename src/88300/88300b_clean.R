@@ -26,6 +26,7 @@ save_clean_csv(data88300b, vol = 8)
 
 meta88300b <- annotate(data = data88300b,
                       mediaID = "88300b",
+                      csv_suffix = 3,
                       vol = 8,
                       title = "Kulturausgaben in Basel-Stadt, 2021",
                       column_description = c("Gruppe der Institutionen, an die im Kanton Basel-Stadt Kulturförderung verteilt wurde",

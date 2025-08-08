@@ -38,6 +38,7 @@ save_clean_csv(data90340, vol = 6)
 
 meta88415 <- annotate(data = data90340,
                       mediaID = 90340,
+                      csv_suffix = 3,
                       vol = 6,
                       title = "Prozentuales Bevölkerungswachstum in Gross- und Kleinbasel, 1860–1910",
                       column_description = c("Zeitraum, für den die angegebenen Zahlen gelten. Angabe in Jahren unserer Zeitrechnung.",

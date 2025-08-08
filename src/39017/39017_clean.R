@@ -24,6 +24,7 @@ save_clean_csv(data39017, vol = 3)
 
 meta39017 <- annotate(data = data39017,
                       mediaID = 39017,
+                      csv_suffix = 3,
                       vol = 3,
                       title = "Rentengeschäft von Ludwig Kilchmann",
                       column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Summe der Ablösungen im jeweiligen Jahr in Gulden", "Summe der Neueinträge im jeweiligen Jahr in Gulden", "Investierte Summe (netto) im jeweiligen Jahr in Gulden"),

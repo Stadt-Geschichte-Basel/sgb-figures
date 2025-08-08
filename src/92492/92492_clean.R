@@ -23,6 +23,7 @@ save_clean_csv(data92492, vol = 6)
 
 meta92492 <- annotate(data = data92492,
                       mediaID = 92492,
+                      csv_suffix = 3,
                       vol = 6,
                       title = "Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910",
                       column_description = c("Angabe des Jahres, für das die jeweiligen Daten gelten. Jahreszahl in unserer Zeitrechnung",

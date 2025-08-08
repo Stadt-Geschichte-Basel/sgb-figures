@@ -25,6 +25,7 @@ save_clean_csv(data21535, vol = 7)
 
 meta21535 <- annotate(data = data21535,
                       mediaID = 21535,
+                      csv_suffix = 3,
                       vol = 7,
                       title = "Die ausländische Wohnbevölkerung von Basel-Stadt nach Heimatnation, 1920–1965",
                       column_description = c("Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung",

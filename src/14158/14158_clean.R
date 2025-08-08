@@ -34,6 +34,7 @@ save_clean_csv(data14158, vol = 4)
 
 meta14158 <- annotate(data = data14158,
                       mediaID = 14158,
+                      csv_suffix = 3,
                       vol = 4,
                       title = "Bürgerrechtsaufnahmen, 1400–1798",
                       column_description = c("Zeitraum zwischen zwei Jahreszahlen, Angaben der Jahre nach unserer Zeitrechnung", "Angabe des Jahrhunderts nach unserer Zeitrechnung", "Anzahl der im entsprechenden Zeitraum bzw. Jahrhundert erfolgten Aufnahmen ins Bürgerrecht", "Anzahl der im entsprechenden Zeitraum bzw. Jahrhundert aufgenommenen Personen"),

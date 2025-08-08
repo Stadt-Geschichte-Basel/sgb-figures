@@ -27,6 +27,7 @@ save_clean_csv(data24528, vol = 4)
 
 meta24528 <- annotate(data = data24528,
                       mediaID = 24528,
+                      csv_suffix = 3,
                       vol = 4,
                       title = "Temperaturabweichungen in °C, 1444–2011",
                       column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Nummer des Tages im jeweiligen Jahr (DOY, Day of Year), an dem die Weinlese begonnen wurde (GHD, Grape Harvest Date)", "Abweichung der mittleren April-Juli-Temperatur verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius", "Abweichung des elfjährig gleitenden Temperaturmittels verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius", "oberer doppelter Standard-Temperaturschätzfehler verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius", "unterer doppelter Standard-Temperaturschätzfehler verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius"),

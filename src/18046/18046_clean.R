@@ -31,6 +31,7 @@ save_clean_csv(data18046, vol = 4)
 
 meta18046 <- annotate(data = data18046,
                       mediaID = 18046,
+                      csv_suffix = 3,
                       vol = 4,
                       title = "Getreidevorräte in der Stadt Basel, 1613–1653",
                       column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Vorrat an Dinkel, Angabe in Viernzeln", "Vorrat an Roggen, Angabe in Viernzeln", "Vorrat an Hafer, Angabe in Viernzeln"),

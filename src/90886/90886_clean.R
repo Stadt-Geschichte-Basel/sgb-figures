@@ -29,6 +29,7 @@ save_clean_csv(data90886, vol = 6)
 
 meta90886 <- annotate(data = data90886,
                       mediaID = 90886,
+                      csv_suffix = 3,
                       vol = 6,
                       title = "Anteil der Erwerbstätigen in wichtigen Branchen, 1870 und 1910",
                       column_description = c("Bezeichnung der Branche, für die die jeweiligen Zahlen zum Anteil der dort beschäftigten im jeweiligen Jahr gilt",

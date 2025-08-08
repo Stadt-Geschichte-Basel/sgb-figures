@@ -25,6 +25,7 @@ save_clean_csv(data77733, vol = 8)
 
 meta77733 <- annotate(data = data77733,
                       mediaID = 77733,
+                      csv_suffix = 3,
                       vol = 8,
                       title = "Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Basel-Landschaft, 1940–2020",
                       column_description = c("Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung", "Anzahl der die Wohnbevölkerung des Kantons Basel-Stadt bildenden Menschen im entsprechenden Jahr. Die Zahlen beruhen bis 1969 auf Volkszählungen, ab 1970 handelt es sich um Rückberechnungen auf Basis des Bestandes der Einwohnerdienste im Jahr 1990", "Anzahl der die Wohnbevölkerung des Kantons Basel-Landschaft bildenden Menschen im entsprechenden Jahr. Ab dem Jahr 1994 inklusive Laufental"),

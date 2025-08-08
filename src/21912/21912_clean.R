@@ -28,6 +28,7 @@ save_clean_csv(data21912, vol = 7)
 
 meta21912 <- annotate(data = data21912,
                       mediaID = 21912,
+                      csv_suffix = 3,
                       vol = 7,
                       title = "Kantonale Staatsausgaben pro Einwohner in CHF, 1920–1966",
                       column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Höhe der Staatsausgaben des Kantons Basel-Stadt in Schweizer Franken pro Einwohner:in im angegebenen Jahr"),

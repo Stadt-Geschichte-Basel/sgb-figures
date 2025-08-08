@@ -23,6 +23,7 @@ save_clean_csv(data88454, vol = 8)
 
 meta88454 <- annotate(data = data88454,
                       mediaID = 88454,
+                      csv_suffix = 3,
                       vol = 8,
                       title = "Museumseintritte und Kinobesuche in Basel-Stadt, 1945–2020",
                       column_description = c("Jahreszahl nach unserer Zeitrechnung", "Anzahl der Kinobesuche im Kanton Basel-Stadt im entsprechenden Jahr. Angaben nach der Billetsteuerabrechnung, ab 1999 wegen der Abschaffung der Billetsteuer nur wenige Daten erhältlich. Wegen der COVID-19-Pandemie waren Kinos vom 28.02.2020 bis zum 05.06.2020 geschlossen, danach eingeschränkter Betrieb bezüglich Platz- und Personenzahl.", "Anzahl der Museumseintritte im Kanton Basel-Stadt im entsprechenden Jahr. Daten vor 1980 sind nicht vorhanden. Angabe zu den Eintritten bis inkl. 1991 nach StaBS ED-REG 37a 7-1 (2) Besucherstatistik nach Jahren 1980–2008, Daten ab 1992 aus dem Statistischen Jahrbuch. Im Jahr 2020 reduzierter Betrieb aufgrund der COVID-19-Pandemie."),

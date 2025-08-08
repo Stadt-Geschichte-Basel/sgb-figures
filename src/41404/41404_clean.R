@@ -35,6 +35,7 @@ save_clean_csv(data41404, vol = 3)
 
 meta41404 <- annotate(data = data41404,
                       mediaID = 41404,
+                      csv_suffix = 3,
                       vol = 3,
                       title = "Rheinhochwasser bei Basel-Schifflände, 1300–2021",
                       column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Abflussmenge Q in Kubikmetern pro Sekunde", "P, Angabe in Meter über Meer (m. ü. M.)", "100-jähriges gleitendes Hochwasserabflussmittel der rekonstruierten sowie aller gemessenen Jahresabflussmaxima in Kubikmetern pro Sekunde", "Gewässerkorrektionen im jeweilige Jahr: Kanderkorrektion (ab 1714) und Juragewässerkorrektion (ab 1878)"),

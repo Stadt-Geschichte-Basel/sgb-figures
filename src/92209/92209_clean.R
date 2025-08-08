@@ -23,6 +23,7 @@ save_clean_csv(data92209, vol = 6)
 
 meta92209 <- annotate(data = data92209,
                       mediaID = 92209,
+                      csv_suffix = 3,
                       vol = 6,
                       title = "Bevölkerungsentwicklung des Kantons Basel-Stadt, 1870–1910",
                       column_description = c("Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten.",
