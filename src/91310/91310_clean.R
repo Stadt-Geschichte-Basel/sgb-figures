@@ -58,7 +58,7 @@ meta91310 <- annotate(data = data91310,
                                               orcid = "0009-0005-7187-9774")),
                       date = "1875/1914",
                       coverage = list("19. Jahrhundert", "20. Jahrhundert"),
-                      source = "Quelle: Liste der Mitglieder des basel-städtischen Regierungsrates seit 1875. Bearbeitung: Nico Görlich / Moritz Twente",
+                      source = "Liste der Mitglieder des basel-städtischen Regierungsrates seit 1875. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m91310_1", "m91310_2")
 )

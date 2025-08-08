@@ -37,8 +37,8 @@ meta21892 <- annotate(data = data21892,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1911/1963",
-                      source = "Quelle: Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge: Daten 1911-1945: Ausgabe 1945, S. 203. Daten 1946-1950: Ausgabe 1950, S. 199. Daten 1951-1955: Ausgabe 1955, S. 192. Daten 1956-1960: Ausgabe 1960, S. 182. Daten 1961-1963: Ausgabe 1963, S. 180. Bearbeitung: Nico Görlich / Moritz Twente",
                       coverage = "20. Jahrhundert",
+                      source = "Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge: Daten 1911-1945: Ausgabe 1945, S. 203. Daten 1946-1950: Ausgabe 1950, S. 199. Daten 1951-1955: Ausgabe 1955, S. 192. Daten 1956-1960: Ausgabe 1960, S. 182. Daten 1961-1963: Ausgabe 1963, S. 180. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m21892_1", "m21892_2", "m21912_1", "m21912_2", "m21912_3")
 )

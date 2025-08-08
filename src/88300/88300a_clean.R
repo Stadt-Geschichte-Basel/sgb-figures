@@ -42,8 +42,8 @@ meta88300a <- annotate(data = data88300a,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "2014",
-                      source = "Quelle: Bundesamt für Statistik, gd-d-16.02.05.01-2024. Bearbeitung: Nico Görlich / Moritz Twente",
                       coverage = "21. Jahrhundert",
+                      source = "Bundesamt für Statistik, gd-d-16.02.05.01-2024. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m88300_1", "m88300_2")
 )

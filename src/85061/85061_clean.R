@@ -47,8 +47,8 @@ meta85061 <- annotate(data = data85061,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1960/2020",
-                      source = "Quelle: Statistisches Amt Kanton Basel-Stadt Bearbeitung: Nico Görlich / Moritz Twente",
                       coverage = list("20. Jahrhundert", "21. Jahrhundert"),
+                      source = "Statistisches Amt Kanton Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m85061_1", "m85061_2")
                       )

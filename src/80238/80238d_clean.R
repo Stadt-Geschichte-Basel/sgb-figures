@@ -40,8 +40,8 @@ meta80238d <- annotate(data = data80238d,
                                                email = "moritz.twente@unibas.ch",
                                                orcid = "0009-0005-7187-9774")),
                        date = "1963/2019",
-                       source = "Quelle: Kanton Basel-Stadt: nationale und kantonale Wahlen seit 1919, Bundesamt für Statistik, je-d-17.02.01_12BS, online: https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/tabellen.assetdetail.14836245.html. Bearbeitung: Nico Görlich / Moritz Twente",
                        coverage = list("20. Jahrhundert", "21. Jahrhundert"),
+                       source = "Kanton Basel-Stadt: nationale und kantonale Wahlen seit 1919, Bundesamt für Statistik, je-d-17.02.01_12BS, online: https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/tabellen.assetdetail.14836245.html. Bearbeitung: Nico Görlich / Moritz Twente",
                        rights = "Public Domain Mark",
                        relation = list("m80238d_1", "m80238d_2")
 )

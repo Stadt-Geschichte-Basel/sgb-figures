@@ -50,7 +50,7 @@ meta91203 <- annotate(data = data91203,
                                               orcid = "0009-0005-7187-9774")),
                       date = "1870/1910",
                       coverage = list("19. Jahrhundert", "20. Jahrhundert"),
-                      source = "Quelle: Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924; Kantons-Blatt Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
+                      source = "Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924; Kantons-Blatt Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m91203_1", "m91203_2")
 )

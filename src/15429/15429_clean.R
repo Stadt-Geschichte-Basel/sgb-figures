@@ -43,8 +43,8 @@ meta15429 <- annotate(data = data15429,
                                          email = "moritz.twente@unibas.ch",
                                          orcid = "0009-0005-7187-9774")),
                       date = "1910/1970",
-                      source = "Quelle: Statistisches Jahrbuch des Kantons Basel-Stadt 1971 (Volkszählungen). Bearbeitung: Nico Görlich / Moritz Twente",
                       coverage = "20. Jahrhundert",
+                      source = "Statistisches Jahrbuch des Kantons Basel-Stadt 1971 (Volkszählungen). Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m15429_1", "m15429_2")
                       )

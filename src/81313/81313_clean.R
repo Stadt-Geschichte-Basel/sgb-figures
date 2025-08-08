@@ -46,8 +46,8 @@ meta81313 <- annotate(data = data81313,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1960/2020",
-                      source = "Quelle: https://statistik.bs.ch/apps/jahrbuch. Bearbeitung: Nico Görlich / Moritz Twente",
                       coverage = list("20. Jahrhundert", "21. Jahrhundert"),
+                      source = "https://statistik.bs.ch/apps/jahrbuch. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m81313_1", "m81313_2")
 )
