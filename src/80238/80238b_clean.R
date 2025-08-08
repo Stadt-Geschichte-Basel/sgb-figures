@@ -38,8 +38,8 @@ meta80238b <- annotate(data = data80238b,
                                                email = "moritz.twente@unibas.ch",
                                                orcid = "0009-0005-7187-9774")),
                        date = "1960/2024",
-                       coverage = "Zeitgeschichte",
                        source = "Quelle: Sitzverteilung im Grossen Rat seit 1905, Entwicklung Frauenanteil im Grossen Rat, t17.3.05, Statistisches Amt BS, online: https://grosserrat.bs.ch/parlament/ratsgeschichte/entwicklung-der-parteien; Parteien, Jungeparteien und Listenvereinigungen seit 1971, t17.1.01, Statistisches Amt BS, online: https://grosserrat.bs.ch/parlament/ratsgeschichte/entwicklung-der-parteien; Nationale und kantonale Wahlen seit 1919, Bundesamt für Statistik, je-d-17.02.01_12BS, online: https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/tabellen.assetdetail.14836245.html. Bearbeitung: Nico Görlich / Moritz Twente",
+                       coverage = list("20. Jahrhundert", "21. Jahrhundert"),
                        rights = "Public Domain Mark",
                        relation = list("m80238b_1", "m80238b_2")
 )

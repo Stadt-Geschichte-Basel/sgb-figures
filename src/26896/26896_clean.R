@@ -40,8 +40,8 @@ meta26896 <- annotate(data = data26896,
                                          email = "moritz.twente@unibas.ch",
                                          orcid = "0009-0005-7187-9774")),
                       date = "1927/1962",
-                      coverage = "Zeitgeschichte",
                       source = "Quelle: Banz, Marcel: Die deutschen und französischen Grenzgänger auf dem baselstädtischen Arbeitsmarkt, Basel 1964. Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "20. Jahrhundert",
                       rights = "Public Domain Mark",
                       relation = list("m26896_1", "m26896_2")
                       )

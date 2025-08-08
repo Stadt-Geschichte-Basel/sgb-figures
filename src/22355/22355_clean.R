@@ -50,8 +50,8 @@ meta22355 <- annotate(data = data22355,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1911/1964",
-                      coverage = "Zeitgeschichte",
                       source = "Quelle: Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge: Daten 1911-1920: Ausgabe 1930. Daten 1923-1941: Ausgabe 1942, S. 195. Daten 1944-1964: Ausgabe 1966, S. 167. Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "20. Jahrhundert",
                       rights = "Public Domain Mark",
                       relation = list("m22355_1", "m22355_2")
 )

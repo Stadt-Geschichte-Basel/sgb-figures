@@ -39,8 +39,8 @@ meta88415 <- annotate(data = data88415,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1960/2022",
-                      coverage = "Zeitgeschichte",
                       source = "Quelle: Genossenschaft Stadion St. Jakob-Park (Hg.): Kraft der Visionen: die Genossenschaft Stadion St. Jakob-Park, Basel, 1953–2003. Basel 2004. S. 275; FC Basel-Archiv (www.fcb-archiv.ch). Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = list("20. Jahrhundert", "21. Jahrhundert"),
                       rights = "Public Domain Mark",
                       relation = list("m88415_1", "m88415_2")
 )

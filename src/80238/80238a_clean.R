@@ -43,8 +43,8 @@ meta80238a <- annotate(data = data80238a,
                                                email = "moritz.twente@unibas.ch",
                                                orcid = "0009-0005-7187-9774")),
                        date = "1960/2024",
-                       coverage = "Zeitgeschichte",
                        source = "Quelle: https://www.bs.ch/regierungsrat/alt-regierungsraete. Bearbeitung: Nico Görlich / Moritz Twente",
+                       coverage = list("20. Jahrhundert", "21. Jahrhundert"),
                        rights = "Public Domain Mark",
                        relation = list("m80238a_1", "m80238a_2")
 )

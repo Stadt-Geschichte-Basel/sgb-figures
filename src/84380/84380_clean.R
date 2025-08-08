@@ -38,8 +38,8 @@ meta84380 <- annotate(data = data84380,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1960/2020",
-                      coverage = "Zeitgeschichte",
                       source = "Quelle: Statistisches Jahrbuch des Kantons Basel-Stadt 1960–2020. Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = list("20. Jahrhundert", "21. Jahrhundert"),
                       rights = "Public Domain Mark",
                       relation = list("m84380_1", "m84380_2")
 )
