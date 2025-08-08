@@ -25,6 +25,7 @@ save_clean_csv(data77089, vol = 8)
 
 meta77089 <- annotate(data = data77089,
                       mediaID = 77089,
+                      csv_suffix = 3,
                       vol = 8,
                       title = "Der Fahrzeugbestand in Basel-Stadt, 1920–2020",
                       column_description = c("Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung", "Anzahl der Personenwagen (Automobile) im Fahrzeugbestand im Kanton Basel-Stadt im entsprechenden Jahr. Ab dem Jahr 2019 werden in dieser Kategorie auch E-Autos mitgezählt. Die Zahlen stellen bis inkl. 1953 'Erteilte Fahrzeugausweise auf Jahresende' dar, ab inkl. 1954 dann 'Motorfahrzeug- und Fahrrad-Höchstbestände'. Die Angabe für 1920 ist eine Schätzung auf Basis der Daten von 1921 und Angaben von https://hsso.ch/2012/n/12. Für die Jahre 1924, 1927, 1929, 1930, 1931, 1932, 1934, 1965–1953, 1960, 1961: Abweichende Angaben in früheren oder späteren Berichten.", "Anzahl an Motorrädern (inklusive Mofas) im Fahrzeugbestand im Kanton Basel-Stadt im entsprechenden Jahr. Die Zahlen stellen bis inkl. 1953 'Erteilte Fahrzeugausweise auf Jahresende' dar, ab inkl. 1954 dann 'Motorfahrzeug- und Fahrrad-Höchstbestände'. Ab 1954 weiterhin neu exkl. Dreiräder (davor jeweils max. 25). Für die Jahre 1924, 1925, 1927, 1928, 1929, 1930, 1931, 1933, 1935, 1939, 1940, 1946–1954, 1960, 1961: Abweichende Angaben in früheren oder späteren Berichten.", "Anzahl an Fahrrädern im Fahrzeugbestand im Kanton Basel-Stadt im entsprechenden Jahr. Für das Jahr 1961: Abweichende Angaben in späteren Berichten"),

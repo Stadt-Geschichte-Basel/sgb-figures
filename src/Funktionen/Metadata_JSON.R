@@ -1,4 +1,4 @@
-annotate <- function(data, mediaID, vol, title, column_description, object_description, creator,
+annotate <- function(data, mediaID, csv_suffix, vol, title, column_description, object_description, creator,
                             contributor, date, coverage, source, relation, rights) {
   
   # derive folder ID from mediaID
@@ -21,7 +21,7 @@ annotate <- function(data, mediaID, vol, title, column_description, object_descr
   metadata <- derive_table_schema(data)
   
   # add Stadt.Geschichte.Basel Data Model
-  metadata$mediaID <- paste0("m", mediaID, "_3")
+  metadata$mediaID <- paste0("m", mediaID, "_", csv_suffix)
   metadata$isPartOf <- list(
     ObjectID = paste0("abb", folderID),
     volume = switch(vol,
@@ -52,7 +52,7 @@ annotate <- function(data, mediaID, vol, title, column_description, object_descr
   metadata$license <- license_url
   metadata$modified <- Sys.time()
   metadata$bibliographicCitation <- paste0(
-    "Stadt.Geschichte.Basel: ", title, ". Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb", folderID, ".html#m" , mediaID, "_3>, letzte Aktualisierung: ", format(Sys.Date(), format = "%d.%m.%Y"), "."
+    "Stadt.Geschichte.Basel: ", title, ". Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb", folderID, ".html#m" , mediaID, "_", csv_suffix, ">, letzte Aktualisierung: ", format(Sys.Date(), format = "%d.%m.%Y"), "."
     )
   
   # Build folder path
