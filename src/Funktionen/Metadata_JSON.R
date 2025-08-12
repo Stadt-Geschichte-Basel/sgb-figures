@@ -1,8 +1,11 @@
 annotate <- function(data, mediaID, csv_suffix, vol, title, column_description, object_description, creator,
-                            contributor, date, coverage, source, relation, rights) {
+                     contributor, date, coverage, source, relation, rights) {
   
-  # derive folder ID from mediaID
+  # derive folder ID from mediaID (first 5 digits only)
   folderID <- sub("^(\\d{5}).*$", "\\1", mediaID)
+  
+  # Build suffix part
+  suffix_part <- if (!is.null(csv_suffix)) paste0("_", csv_suffix) else ""
   
   # derive license URL based on rights string
   license_url <- if (grepl("CC BY-SA", rights, ignore.case = TRUE)) {
@@ -14,14 +17,14 @@ annotate <- function(data, mediaID, csv_suffix, vol, title, column_description, 
   } else if (grepl("In Copyright", rights, ignore.case = TRUE)) {
     "https://rightsstatements.org/vocab/InC-RUU/1.0/"
   } else {
-    NA  # fallback if no match
+    NA
   }
   
   # derive basic schema using csvwr::derive_table_schema()
   metadata <- derive_table_schema(data)
   
   # add Stadt.Geschichte.Basel Data Model
-  metadata$mediaID <- paste0("m", mediaID, "_", csv_suffix)
+  metadata$mediaID <- paste0("m", folderID, suffix_part)
   metadata$isPartOf <- list(
     ObjectID = paste0("abb", folderID),
     volume = switch(vol,
@@ -34,7 +37,7 @@ annotate <- function(data, mediaID, csv_suffix, vol, title, column_description, 
                     "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7).",
                     "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8).",
                     "Baur, Esther; Gafner, Lina (Hg.): Stadträume. Offen und begrenzt, gestaltet und umkämpft. Basel 2025 (Stadt.Geschichte.Basel 9).")
-    )
+  )
   metadata$columns[["description"]] <- column_description
   metadata$title <- title
   metadata$description <- object_description
@@ -52,8 +55,8 @@ annotate <- function(data, mediaID, csv_suffix, vol, title, column_description, 
   metadata$license <- license_url
   metadata$modified <- Sys.time()
   metadata$bibliographicCitation <- paste0(
-    "Stadt.Geschichte.Basel: ", title, ". Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb", folderID, ".html#m" , mediaID, "_", csv_suffix, ">, letzte Aktualisierung: ", format(Sys.Date(), format = "%d.%m.%Y"), "."
-    )
+    "Stadt.Geschichte.Basel: ", title, ". Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb", folderID, ".html#m", folderID, suffix_part, ">, letzte Aktualisierung: ", format(Sys.Date(), format = "%d.%m.%Y"), "."
+  )
   
   # Build folder path
   json_folder <- here("data", "clean", paste0("Band", vol), folderID)
@@ -63,12 +66,12 @@ annotate <- function(data, mediaID, csv_suffix, vol, title, column_description, 
     dir.create(json_folder, recursive = TRUE)
   }
   
-  # File name uses full mediaID
-  json_file <- file.path(json_folder, paste0(mediaID, "_Data.csv-metadata.json"))
+  # File name uses pure folderID + optional suffix
+  csv_filename <- paste0(folderID, suffix_part, "_Data.csv")
+  json_file <- file.path(json_folder, paste0(csv_filename, "-metadata.json"))
   
-
   # write JSON
-  list(url = paste0(mediaID, "_Data.csv"),
+  list(url = csv_filename,
        tableSchema = metadata) %>%
     create_metadata() %>%
     toJSON() %>%
