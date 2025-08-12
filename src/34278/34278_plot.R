@@ -14,7 +14,6 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 # Read Data ------------------
 
-#data34278 <- readr::read_csv(here("Band2", "34278", "34278_Data.csv"))
 source(here("src", "34278", "34278_clean.R"))
 
 # Transform Data -------------

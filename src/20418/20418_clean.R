@@ -26,7 +26,6 @@ colnames(data20418) <- c("Jahr", "Handels- und Marktabgaben", "Konsumabgaben Sta
 
 save_clean_csv(data20418, vol = 4)
 
-
 # Create Metadata ------------
 
 meta20418 <- annotate(data = data20418,
