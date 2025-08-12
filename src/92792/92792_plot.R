@@ -52,4 +52,6 @@ plot92792 <- ggplot(data92792, aes(x = `Anzahl Wohnungen`,
 
 # Export ---------------------
 
-export_plot(plot92792, 9, 144, 116, 30, 5)
+export_plot(plot92792, 9, 144, 116, 30, 5,
+            plot_suffix = 1,
+            legend_suffix = 2)

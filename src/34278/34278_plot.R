@@ -95,4 +95,6 @@ plot34278 <- ggplot(data34278_longer, aes(x = as.numeric(as.character(Monat)) -0
 
 # Export ---------------------
 
-export_plot(plot34278, 2, 120, 35.75, 23, 13)
+export_plot(plot34278, 2, 120, 35.75, 23, 13,
+            plot_suffix = 1,
+            legend_suffix = 2)

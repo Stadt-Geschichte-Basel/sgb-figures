@@ -81,4 +81,6 @@ plot18046 <- ggplot(data = data18046, aes(x = Jahr)) +
 
 # Export ---------------------
 
-export_plot(plot18046, 4, 124, 68, 35, 20)
+export_plot(plot18046, 4, 124, 68, 35, 20,
+            plot_suffix = 1,
+            legend_suffix = 2)

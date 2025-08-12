@@ -75,4 +75,6 @@ plot77089 <- ggplot() +
 
 # Export ---------------------
 
-export_plot(plot77089, 8, 120, 63, 33, 13)
+export_plot(plot77089, 8, 120, 63, 33, 13,
+            plot_suffix = 1,
+            legend_suffix = 2)

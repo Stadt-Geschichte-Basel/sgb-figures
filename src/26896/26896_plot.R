@@ -63,4 +63,6 @@ plot26896 <- ggplot(data26896_longer, aes(x = Jahr, y = Anzahl, fill = Staat)) +
 
 # Export ---------------------
 
-export_plot(plot26896, 7, 120, 63, 27, 7)
+export_plot(plot26896, 7, 120, 63, 27, 7,
+            plot_suffix = 1,
+            legend_suffix = 2)

@@ -101,4 +101,6 @@ plot26375 <- ggplot(data26375_longer) +
 
 # Export ---------------------
 
-export_plot(plot26375, 7, 110, 56, 43, 24)
+export_plot(plot26375, 7, 110, 56, 43, 24,
+            plot_suffix = 1,
+            legend_suffix = 2)

@@ -63,4 +63,6 @@ plot92237 <- ggplot(data = data92237_longer, aes(x = Jahr,
 
 # Export ---------------------
 
-export_plot(plot92237, 6, 65, 50, 23, 7)
+export_plot(plot92237, 6, 65, 50, 23, 7,
+            plot_suffix = 1,
+            legend_suffix = 2)

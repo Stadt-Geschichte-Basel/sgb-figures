@@ -119,4 +119,5 @@ plot39492 <- plot39492a + legende39492a + plot39492b + legende39492b + plot_layo
 
 # Export ---------------------
 
-export_plot(plot39492, 3, 175, 139)
+export_plot(plot39492, 3, 175, 139,
+            plot_suffix = 1)

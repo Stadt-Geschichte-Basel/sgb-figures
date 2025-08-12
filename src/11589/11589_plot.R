@@ -59,4 +59,6 @@ plot11589 <- ggplot(data = data11589, aes(x = Jahr)) +
 
 # Export ---------------------
 
-export_plot(plot11589, 7, 120, 63, 26, 11)
+export_plot(plot11589, 7, 120, 63, 26, 11,
+            plot_suffix = 1,
+            legend_suffix = 2)

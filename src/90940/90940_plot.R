@@ -74,4 +74,6 @@ plot90940 <- ggplot(data = data90940_longer,
 
 # Export ---------------------
 
-export_plot(plot90940, 6, 120, 72, 33, 20)
+export_plot(plot90940, 6, 120, 72, 33, 20,
+            plot_suffix = 1,
+            legend_suffix = 2)

@@ -58,4 +58,6 @@ plot84380 <- ggplot() +
 
 # Export ---------------------
 
-export_plot(plot84380, 8, 120, 63, 30, 8)
+export_plot(plot84380, 8, 120, 63, 30, 8,
+            plot_suffix = 1,
+            legend_suffix =2)

@@ -91,4 +91,6 @@ plot91310 <- ggplot(data = data91310_longer,
 
 # Export ---------------------
 
-export_plot(plot91310, 6, 120, 63, 32, 23)
+export_plot(plot91310, 6, 120, 63, 32, 23,
+            plot_suffix = 1,
+            legend_suffix = 2)

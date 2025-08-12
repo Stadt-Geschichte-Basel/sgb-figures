@@ -123,4 +123,6 @@ plot24528 <- ggplot(data = data24528, aes(x = Jahr)) +
 
 # Export ---------------------
 
-export_plot(plot24528, 4, 140, 64, 50, 17)
+export_plot(plot24528, 4, 140, 64, 50, 17,
+            plot_suffix = 1,
+            legend_suffix = 2)
