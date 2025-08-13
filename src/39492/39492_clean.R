@@ -18,13 +18,13 @@ data39492 <- read_excel(here("data", "raw", "Band3", "39492", "39492_Data_raw.xl
                         col_names = c("Startjahr", "Endjahr", "Zeitraum", "Summe Bürgeraufnahmen", "Summe Kriegsausgaben in Pfund"),
                         range = "A2:E35")
 
-save_clean_csv(data39492, csv_suffix = 2, vol = 3)
+save_clean_csv(data39492, csv_suffix = 3, vol = 3)
 
 # Create Metadata ------------
 
 meta39492 <- annotate(data = data39492,
                       mediaID = 39492,
-                      csv_suffix = 2,
+                      csv_suffix = 3,
                       vol = 3,
                       title = "Bürgeraufnahmen und Kriegsausgaben, 1360–1530",
                       column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Zeitraum, Angaben in Jahren unserer Zeitrechnung", "Summe der Bürgeraufnahmen im jeweiligen Zeitraum", "Summe der Kriegsausgaben im jeweiligen Zeitraum in Pfund"),
