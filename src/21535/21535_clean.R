@@ -42,7 +42,7 @@ meta21535 <- annotate(data = data21535,
                                          orcid = "0009-0005-7187-9774")),
                       date = "1920/1965",
                       coverage = "20. Jahrhundert",
-                      source = "Quelle: Statistisches Jahrbuch des Kantons Basel-Stadt 1966, S. 32. Bearbeitung: Nico Görlich / Moritz Twente",
+                      source = "Statistisches Jahrbuch des Kantons Basel-Stadt 1966, S. 32. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m21535_1", "m21535_2")
                       )
