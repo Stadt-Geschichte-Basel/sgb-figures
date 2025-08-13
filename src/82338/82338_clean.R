@@ -46,7 +46,7 @@ meta82338 <- annotate(data = data82338,
                                               orcid = "0009-0005-7187-9774")),
                       date = "1973/2002",
                       coverage = list("20. Jahrhundert", "21. Jahrhundert"),
-                      source = "Statistisches Amt Kanton Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
+                      source = "Bundesamt für Statistik, Staatssekretariat für Wirtschaft 2024: Arbeitslose nach Kanton. Jahresdurchschnitt. https://www.bfs.admin.ch/asset/de/30245369. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m82338_1", "m82338_2")
 )
