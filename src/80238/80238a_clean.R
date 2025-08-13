@@ -23,12 +23,12 @@ colnames(data80238a)[11] <- "NeueLegislatur"
 data80238a$NeueLegislatur <- ifelse(is.na(data80238a$NeueLegislatur), FALSE,
                                        data80238a$NeueLegislatur == "x")
 
-save_clean_csv(data80238a, vol = 8)
+save_clean_csv(data80238a, csv_suffix = 3, vol = 8)
 
 # Create Metadata ------------
 
 meta80238a <- annotate(data = data80238a,
-                       mediaID = "80238a",
+                       mediaID = 80238,
                        csv_suffix = 3,
                        vol = 8,
                        title = "Regierungsrat in Basel-Stadt, 1960–2024",
@@ -46,5 +46,5 @@ meta80238a <- annotate(data = data80238a,
                        coverage = list("20. Jahrhundert", "21. Jahrhundert"),
                        source = "https://www.bs.ch/regierungsrat/alt-regierungsraete. Bearbeitung: Nico Görlich / Moritz Twente",
                        rights = "Public Domain Mark",
-                       relation = list("m80238a_1", "m80238a_2")
+                       relation = list("m80238_1", "m80238_2")
 )

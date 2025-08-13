@@ -21,7 +21,7 @@ data88300a <- read_excel(here("data", "raw", "Band8", "88300", "91294_Data_raw.x
                         range = "A5:B7",
                         col_names = c("Kanton", "Kultursubventionen pro Kopf in Franken (2021)"))
 
-save_clean_csv(data88300a, vol = 8)
+save_clean_csv(data88300a, csv_suffix = 2, vol = 8)
 
 # Create Metadata ------------
 

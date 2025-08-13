@@ -20,7 +20,7 @@ data88300b <- read_excel(here("data", "raw", "Band8", "88300", "88300_Data_raw.x
 
 data88300b <- data88300b[complete.cases(data88300b), ]
 
-save_clean_csv(data88300b, vol = 8)
+save_clean_csv(data88300b, csv_suffix = 3, vol = 8)
 
 # Create Metadata ------------
 

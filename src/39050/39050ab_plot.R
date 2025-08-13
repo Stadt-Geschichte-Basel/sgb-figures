@@ -160,4 +160,5 @@ plot39050ab <- plot39050b + legende39050b + plot39050a + legende39050a + plot_la
 
 # Export ---------------------
 
-export_plot(plot39050ab, 3, 175, 139)
+export_plot(plot39050ab, 3, 175, 139,
+            plot_suffix = 1)

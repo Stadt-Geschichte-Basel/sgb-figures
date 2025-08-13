@@ -170,4 +170,5 @@ plot39050cd <- plot39050d + legende39050d + plot39050c + legende39050c + plot_la
 
 # Export ---------------------
 
-export_plot(plot39050cd, 3, 205, 139)
+export_plot(plot39050cd, 3, 205, 139,
+            plot_suffix = 4)
