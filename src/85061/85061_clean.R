@@ -26,7 +26,7 @@ data85061 <- data85061 %>%
   mutate(Jahr = gsub("'", "", Jahr)) %>%
   mutate(Jahr = as.numeric(Jahr))
 
-save_clean_csv(data85061, vol = 8)
+save_clean_csv(data85061, csv_suffix = 3, vol = 8)
 
 # Create Metadata ------------
 

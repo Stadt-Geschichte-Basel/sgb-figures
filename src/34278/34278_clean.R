@@ -40,7 +40,7 @@ data34278 <- data.frame(Feldtyp = c("Brachfeld", "Winterfeld", "Sommerfeld"),
                         Dezember15 = c("Winterfrucht", "Brache/Weide", "Brache/Weide")
 )
 
-save_clean_csv(data34278, vol = 2)
+save_clean_csv(data34278, csv_suffix = 3, vol = 2)
 
 # Create Metadata ------------
 

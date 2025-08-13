@@ -25,7 +25,7 @@ data82338 <- data82338 %>%
 
 data82338 <- data82338[, -c(5, 6)] # Plot ohne Waadt und Neuenburg
 
-save_clean_csv(data82338, vol = 8)
+save_clean_csv(data82338, csv_suffix = 3, vol = 8)
 
 # Create Metadata ------------
 

@@ -69,7 +69,7 @@ data80380 <- add_column(data80380,
                         .before = "1996")
 data80380[6, "1990"] <- NA
 
-save_clean_csv(data80380, vol = 8)
+save_clean_csv(data80380, csv_suffix = 3, vol = 8)
 
 # Create Metadata ------------
 

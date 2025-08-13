@@ -22,7 +22,7 @@ data41183 <- read_excel(here("data", "raw", "Band3", "41183", "41183_Data_raw.xl
                                       "Köln: hl in g Ag", "Köln: Malter in Mk", "Köln: hl in Allbus", "Köln: Roggen oder Weizen (hl in fl)"),
                         range = "A7:U64")
 
-save_clean_csv(data41183, vol = 3)
+save_clean_csv(data41183, csv_suffix = 3, vol = 3)
 
 # Create Metadata ------------
 

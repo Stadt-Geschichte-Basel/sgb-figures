@@ -27,7 +27,7 @@ colnames(data91203)[2] <- "Gesamtbevölkerung"
 
 data91203 <- merge(data91203, data91203_Stimmberechtigte, by.x = "Jahr", by.y = "...4", all = TRUE)
 
-save_clean_csv(data91203, vol = 6)
+save_clean_csv(data91203, csv_suffix = 3, vol = 6)
 
 # Create Metadata ------------
 

@@ -16,7 +16,7 @@ source(here("src", "Funktionen", "Export_CSV.R"))
 data84380 <- read_excel(here("data", "raw", "Band8", "84380", "84380_Data_raw.xlsx"),
                         range = "A5:C66")
 
-save_clean_csv(data84380, vol = 8)
+save_clean_csv(data84380, csv_suffix = 3, vol = 8)
 
 # Create Metadata ------------
 

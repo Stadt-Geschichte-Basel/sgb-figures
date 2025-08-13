@@ -29,7 +29,7 @@ for (i in spalte5_bereinigen) {
   data41404[i, 5] <- NA
 } 
 
-save_clean_csv(data41404, vol = 3)
+save_clean_csv(data41404, csv_suffix = 3, vol = 3)
 
 # Create Metadata ------------
 

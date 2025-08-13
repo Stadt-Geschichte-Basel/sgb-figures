@@ -21,7 +21,7 @@ data92792 <- read_excel(here("data", "raw", "Band9", "92792", "92792_Data_raw.xl
 data92792$Eigentümer[3] <- c("Pensionskasse Basel-Stadt")
 data92792$Eigentümer[23] <- c("GAM Investment Management")
 
-save_clean_csv(data92792, vol = 9)
+save_clean_csv(data92792, csv_suffix = 3, vol = 9)
 
 # Create Metadata ------------
 

@@ -25,7 +25,7 @@ data18046$`Roggen (in Säcken)` <- data18046$`Roggen (in Säcken)` / 2
 
 colnames(data18046) <- c("Jahr", "Dinkel (in Viernzeln)", "Roggen (in Viernzeln)", "Hafer (in Viernzeln)")
 
-save_clean_csv(data18046, vol = 4)
+save_clean_csv(data18046, csv_suffix = 3, vol = 4)
 
 # Create Metadata ------------
 

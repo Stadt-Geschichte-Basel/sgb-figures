@@ -34,7 +34,7 @@ data91310 <- data91310 %>%
   mutate(Jahr = as.numeric(Jahr)) %>%
   arrange(Jahr)
 
-save_clean_csv(data91310, vol = 6)
+save_clean_csv(data91310, csv_suffix = 3, vol = 6)
 
 # Create Metadata ------------
 

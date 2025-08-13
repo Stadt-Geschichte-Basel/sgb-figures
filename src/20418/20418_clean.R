@@ -24,7 +24,7 @@ data20418 <- data20418[, -1]
 
 colnames(data20418) <- c("Jahr", "Handels- und Marktabgaben", "Konsumabgaben Stadt", "Konsumabgaben Land", "Einwohnerzahl", "Einwohnerzahl_alternativ")
 
-save_clean_csv(data20418, vol = 4)
+save_clean_csv(data20418, csv_suffix = 3, vol = 4)
 
 # Create Metadata ------------
 

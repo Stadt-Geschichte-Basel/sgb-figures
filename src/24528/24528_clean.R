@@ -21,7 +21,7 @@ data24528 <- data24528[,-3]
 
 colnames(data24528) <- c("Jahr", "Swiss GHD DOY", "Mittlere April-Juli-Temperatur", "11-jährig gleitendes Temperaturmittel", "oberer doppelter Standard-Temperaturschätzfehler", "unterer doppelter Standard-Temperaturschätzfehler")
 
-save_clean_csv(data24528, vol = 4)
+save_clean_csv(data24528, csv_suffix = 3, vol = 4)
 
 # Create Metadata ------------
 

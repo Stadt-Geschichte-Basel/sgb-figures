@@ -17,7 +17,7 @@ data92492 <- read_excel(here("data", "raw", "Band6", "92492", "92492_Data_raw.xl
 
 colnames(data92492)[6] <- "Andere/Keine/Unbekannt"
 
-save_clean_csv(data92492, vol = 6)
+save_clean_csv(data92492, csv_suffix = 3, vol = 6)
 
 # Create Metadata ------------
 

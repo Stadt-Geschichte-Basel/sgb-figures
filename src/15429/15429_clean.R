@@ -19,7 +19,7 @@ data15429 <- read_excel(here("data", "raw", "Band7", "15429", "15429_Data_raw.xl
 
 colnames(data15429) <- c("Jahr", "Protestant:innen (Ausland)", "Protestant:innen (Inland)", "Katholik:innen inkl. Christkatholik:innen (Ausland)", "Katholik:innen inkl. Christkatholik:innen (Inland)", "Jüd:innen (Inland und Ausland)", "Andere, ohne Religionszugehörigkeit und ohne Angabe (Inland und Ausland)")
 
-save_clean_csv(data15429, vol = 7)
+save_clean_csv(data15429, csv_suffix = 3, vol = 7)
 
 # Create Metadata ------------
 

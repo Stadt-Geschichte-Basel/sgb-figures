@@ -19,7 +19,7 @@ data21892 <- read_excel(here("data", "raw", "Band7", "21892", "21892_Data_raw.xl
 
 colnames(data21892)[2] = "Öffentliches Personal auf 1000 Einwohner" 
 
-save_clean_csv(data21892, vol = 7)
+save_clean_csv(data21892, csv_suffix = 3, vol = 7)
 
 # Create Metadata ------------
 

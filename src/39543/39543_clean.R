@@ -31,7 +31,7 @@ col_order <- c("Startjahr", "Endjahr", "Zeitraum",
 
 data39543 <- data39543[,col_order]
 
-save_clean_csv(data39543, vol = 3)
+save_clean_csv(data39543, csv_suffix = 3, vol = 3)
 
 # Create Metadata ------------
 

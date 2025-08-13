@@ -21,7 +21,7 @@ colnames(data26060) <- c("Branche", "1929", "1939", "1955", "1965")
 data26060 <- data26060[-2,]
 data26060$Branche[5] <- "Dienstleistungen (ohne öffentliche Verwaltung)"
 
-save_clean_csv(data26060, vol = 7)
+save_clean_csv(data26060, csv_suffix = 3, vol = 7)
 
 # Create Metadata ------------
 

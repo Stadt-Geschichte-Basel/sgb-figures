@@ -23,7 +23,7 @@ names(data22355) <- gsub("[0-9]", "", names(data22355))
 colnames(data22355)[2] <- "Liberaldemokratische Bürgerpartei"
 colnames(data22355)[4] <- "Radikaldemokratische Partei"
 
-save_clean_csv(data22355, vol = 7)
+save_clean_csv(data22355, csv_suffix = 3, vol = 7)
 
 # Create Metadata ------------
 

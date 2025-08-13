@@ -22,7 +22,7 @@ data21912 <- data21912[-1,]
 colnames(data21912) <- c("Jahr",
                          "Staatsausgaben pro Einwohner:in in CHF")
 
-save_clean_csv(data21912, vol = 7)
+save_clean_csv(data21912, csv_suffix = 3, vol = 7)
 
 # Create Metadata ------------
 

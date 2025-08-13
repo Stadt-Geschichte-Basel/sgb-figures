@@ -23,7 +23,7 @@ data90886 <- data90886[c("Branche", "1870", "1910")]
 
 data90886$Branche[10] <- "Persönliche Dienste/Dienstboten"
 
-save_clean_csv(data90886, vol = 6)
+save_clean_csv(data90886, csv_suffix = 3, vol = 6)
 
 # Create Metadata ------------
 

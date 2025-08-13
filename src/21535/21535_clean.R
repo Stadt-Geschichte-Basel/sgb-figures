@@ -19,7 +19,7 @@ data21535 <- read_excel(here("data", "raw", "Band7", "21535", "21535_Data_raw.xl
 
 colnames(data21535)[1] <- "Jahr"
 
-save_clean_csv(data21535, vol = 7)
+save_clean_csv(data21535, csv_suffix = 3, vol = 7)
 
 # Create Metadata ------------
 

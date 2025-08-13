@@ -28,7 +28,7 @@ colnames(data14158) <- c("Zeitraum", "Total Bürgerrechtsaufnahmen", "Total aufg
 
 data14158 <- data14158[, c("Zeitraum", "Jahrhundert", "Total Bürgerrechtsaufnahmen", "Total aufgenommene Personen")]
 
-save_clean_csv(data14158, vol = 4)
+save_clean_csv(data14158, csv_suffix = 3, vol = 4)
 
 # Create Metadata ------------
 

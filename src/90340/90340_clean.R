@@ -32,7 +32,7 @@ data90340 <- data90340 %>%
     values_from = Wachstum
   )
 
-save_clean_csv(data90340, vol = 6)
+save_clean_csv(data90340, csv_suffix = 3, vol = 6)
 
 # Create Metadata ------------
 

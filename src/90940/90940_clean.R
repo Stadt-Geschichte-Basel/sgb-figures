@@ -36,7 +36,7 @@ data90940 <- data90940_transposed %>%
 
 colnames(data90940)[-1] <- paste(colnames(data90940)[-1], "Franken", sep = " ")
 
-save_clean_csv(data90940, vol = 6)
+save_clean_csv(data90940, csv_suffix = 3, vol = 6)
 
 # Create Metadata ------------
 

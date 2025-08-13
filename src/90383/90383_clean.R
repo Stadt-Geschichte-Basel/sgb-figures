@@ -21,7 +21,7 @@ colnames(data90383)[1] <- "Stadtviertel"
 
 colnames(data90383) <- gsub(" ", "", colnames(data90383))
 
-save_clean_csv(data90383, vol = 6)
+save_clean_csv(data90383, csv_suffix = 3, vol = 6)
 
 # Create Metadata ------------
 

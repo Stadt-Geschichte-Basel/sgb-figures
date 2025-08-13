@@ -22,7 +22,7 @@ colnames(data17308) <- c("Jahr", "Bevölkerungszahl", "Pestjahr")
 
 data17308$Pestjahr <- ifelse(is.na(data17308$Pestjahr), FALSE, data17308$Pestjahr == "Pest")
 
-save_clean_csv(data17308, vol = 4)
+save_clean_csv(data17308, csv_suffix = 3, vol = 4)
 
 # Create Metadata ------------
 
