@@ -58,7 +58,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1945/2020"],
-			"coverage": [["20. Jahrhundert"], ["21. Jahrhundert"]],
+			"coverage": ["20. Jahrhundert"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -68,9 +68,9 @@
 			"relation": [["m88454_1"], ["m88454_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-08-13 16:21:08"],
+			"modified": ["2025-09-24 23:24:45"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Museumseintritte und Kinobesuche in Basel-Stadt, 1945–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88454.html#m88454_3>, letzte Aktualisierung: 13.08.2025."
+				"Stadt.Geschichte.Basel: Museumseintritte und Kinobesuche in Basel-Stadt, 1945–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88454.html#m88454_3>, letzte Aktualisierung: 24.09.2025."
 			]
 		}
 	}

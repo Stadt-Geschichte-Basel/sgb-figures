@@ -71,7 +71,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1888/1904"],
-			"coverage": [["19. Jahrhundert"], ["20. Jahrhundert"]],
+			"coverage": ["19. Jahrhundert"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -81,9 +81,9 @@
 			"relation": [["m90940_1"], ["m90940_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-08-13 16:21:08"],
+			"modified": ["2025-09-24 23:24:46"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Soziale Klassen in Basel, 1888–1904. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90940.html#m90940_3>, letzte Aktualisierung: 13.08.2025."
+				"Stadt.Geschichte.Basel: Soziale Klassen in Basel, 1888–1904. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90940.html#m90940_3>, letzte Aktualisierung: 24.09.2025."
 			]
 		}
 	}

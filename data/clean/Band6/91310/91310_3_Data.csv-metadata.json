@@ -67,7 +67,7 @@
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
 			"date": ["1875/1914"],
-			"coverage": [["19. Jahrhundert"], ["20. Jahrhundert"]],
+			"coverage": ["19. Jahrhundert"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
@@ -77,9 +77,9 @@
 			"relation": [["m91310_1"], ["m91310_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-08-13 16:21:08"],
+			"modified": ["2025-09-24 23:24:46"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91310.html#m91310_3>, letzte Aktualisierung: 13.08.2025."
+				"Stadt.Geschichte.Basel: Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91310.html#m91310_3>, letzte Aktualisierung: 24.09.2025."
 			]
 		}
 	}
