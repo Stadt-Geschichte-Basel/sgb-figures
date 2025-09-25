@@ -1,3 +1,13 @@
+---
+title: "Der Fahrzeugbestand in Basel-Stadt, 1920–2020"
+subtitle: Plot and Data Preview
+format: html
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# only source the preamble of the plot script
 # Packages -------------------
 
 library(here)
@@ -74,17 +84,46 @@ plot77089 <- ggplot() +
     plot.margin = margin(0.5,0.9,0,0, "lines")
   )
 
-# Write Info Page ------------
+```
 
-write_info_page(
-  plot_obj = plot77089,
-  plot_id = 77089,
-  volume = 8,
-  metadata_file = here("data", "clean", "Band8", "77089", "77089_3_Data.csv-metadata.json")
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+plot77089 + theme(legend.position = "right")
+```
+
+```{r, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Date",
+    "Coverage",
+    "Volume",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)"
+  ),
+  Value = c(
+    "[abb77089](https://forschung.stadtgeschichtebasel.ch/items/abb77089.html)",
+    "Der Fahrzeugbestand in Basel-Stadt, 1920–2020",
+    "Die Motorisierung der Gesellschaft machte sich in den 1960er-Jahren eindrücklich bemerkbar: Der Bestand an Autos nahm in Basel massiv zu, während immer weniger Fahrräder im Einsatz waren. Mitte der 1970er-Jahre wuchs der Bestand an Fahrrädern wieder, ab 1990 wurde er nicht mehr erhoben. Anhaltende Popularität hatte das Auto: Der vermeintliche Einbruch um 1980 geht auf eine neue Zählweise zurück. Hinweis: Die Zahlen entsprechen dem Bestand der Motorfahrzeugkontrolle des Kantons Basel-Stadt. Daten aus dem Statistischen Jahrbuch der Schweiz unterscheiden sich jeweils leicht von den Daten im StAJB BS (vermutlich weil jeweils Bestand 'Ende September 19xx)'",
+    "1920/2022",
+    "20. Jahrhundert",
+    "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8).",
+    "https://statistik.bs.ch/apps/jahrbuch; https://statistik.bs.ch/files/webtabellen/t11-1-01.xlsx. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[77089_3_Data.csv-metadata.json](/data/clean/Band8/77089/77089_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Der Fahrzeugbestand in Basel-Stadt, 1920–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77089.html#m77089_3>, letzte Aktualisierung: 26.09.2025."
+  ),
+  stringsAsFactors = FALSE
 )
 
-# Export ---------------------
-
-export_plot(plot77089, 8, 120, 63, 33, 13,
-            plot_suffix = 1,
-            legend_suffix = 2)
+knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+```

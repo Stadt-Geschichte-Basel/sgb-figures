@@ -12,6 +12,7 @@ source(here("src", "Funktionen", "Format_Theme.R"))
 source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
 source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
 source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
@@ -56,6 +57,15 @@ plot11589 <- ggplot(data = data11589, aes(x = Jahr)) +
                                hjust = 1),
     plot.margin = margin(0.5,0.2,0,0, "lines"),
   )
+
+# Write Info Page ------------
+
+write_info_page(
+  plot_obj = plot11589,
+  plot_id = 11589,
+  volume = 7,
+  metadata_file = here("data", "clean", "Band7", "11589", "11589_3_Data.csv-metadata.json")
+)
 
 # Export ---------------------
 

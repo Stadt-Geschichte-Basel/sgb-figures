@@ -1,0 +1,115 @@
+---
+title: "Bürgerrechtsaufnahmen, 1400–1798"
+subtitle: Plot and Data Preview
+format: html
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# only source the preamble of the plot script
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Funktionen", "Format_Theme.R"))
+source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
+source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "14158", "14158_clean.R"))
+
+# Transform Data -------------
+
+data14158 <- data14158[, -1]
+data14158_longer <- pivot_longer(data14158,
+                                 cols = -Jahrhundert, names_to = "variable", values_to = "value")
+
+# Plot -----------------------
+
+plot14158 <- ggplot(data14158_longer, aes(x = Jahrhundert, y = value, fill = variable)) +
+  
+  geom_bar(stat = "identity", position = position_dodge2(reverse = TRUE)) +
+  
+  scale_y_continuous(
+    limits = c(0, max(15000)),
+    breaks = breaks_pretty(),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  
+  ylab("") +
+  ggtitle("Anzahl") +
+  
+  scale_fill_manual(
+    values = c("#6195CF", "#F7CB45"),
+    labels = c("Total Bürgerrechtsaufnahmen", "Total aufgenommene Personen")
+  ) +
+  
+  coord_cartesian(clip = "off") +
+  
+  guides(color = guide_legend()) +
+  
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
+    legend.key.width = unit(5, "mm"), # entspricht 4mm
+    axis.ticks.x = element_blank(),
+    axis.text.y = element_text(margin = margin(r = 5),
+                               hjust = 1),
+    plot.margin = margin(0.5,0.9,0,0, "lines")
+  )
+
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+plot14158 + theme(legend.position = "right")
+```
+
+```{r, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Date",
+    "Coverage",
+    "Volume",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)"
+  ),
+  Value = c(
+    "[abb14158](https://forschung.stadtgeschichtebasel.ch/items/abb14158.html)",
+    "Bürgerrechtsaufnahmen, 1400–1798",
+    "Basels Einbürgerungspolitik wurde im Laufe der Frühen Neuzeit immer restriktiver. Im 18. Jahrhundert kam es kaum noch zu Neuaufnahmen ins Bürgerrecht (Angaben nach Gschwind 1977, S. 170).",
+    "1400/1798",
+    "Frühe Neuzeit",
+    "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 (Stadt.Geschichte.Basel 4).",
+    "Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500). Basel, Liestal 1977, S. 170. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[14158_3_Data.csv-metadata.json](/data/clean/Band4/14158/14158_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Bürgerrechtsaufnahmen, 1400–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb14158.html#m14158_3>, letzte Aktualisierung: 26.09.2025."
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+```

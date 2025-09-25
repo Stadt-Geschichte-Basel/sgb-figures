@@ -3,103 +3,24 @@ title: Available Plots
 lang: en
 format: html
 date-modified: last-modified
+listing:
+  - id: plot-list
+    contents: plots/*.qmd
+    type: table
+    sort: "categories"
+    sort-ui: false
+    fields: [title]
+    field-display-names: 
+      title: "Available Figures"
 ---
 
 Code and data for more than 50 plots are available in this repository. Run `npm run list` to print an overview or take a look at the tables on this page.
 
-## Individual Plot Metadata
+## Individual Plots with Metadata
 
 All plots are published on the [Open Research Data Platform](https://forschung.stadtgeschichtebasel.ch) of Stadt.Geschichte.Basel as `pdf` with metadata annotation. The numerical data behind the plots is also available as `csv`. The following section features tables with **selected** metadata on each `csv` file (in German)[^1]. The full `csv` metadata are available in this repository in `json` format.
 
 [^1]: A few duplicated values are to be expected, because in several cases, multiple `csv` files make up one plot and thus share the same metadata for `title` or `description` etc.
 
-```{r, results="asis"}
-#| echo: false
-#| message: false
-
-library(jsonlite)
-library(here)
-library(fs)
-library(dplyr)
-library(stringr)
-
-# find all metadata JSON files recursively
-json_files <- dir_ls(here("data", "clean"), 
-                     recurse = TRUE, 
-                     regexp = "-metadata\\.json$")
-
-# parse all files into a list of field lists
-all_fields <- lapply(json_files, function(f) {
-  meta <- fromJSON(f)
-  schema <- meta$tables$tableSchema
-  
-  list(
-    Figure    = schema$isPartOf$ObjectID[[1]],
-    Metadata = f, # store path to JSON
-    Title     = schema$title[[1]],
-    Description = schema$description[[1]],
-    Date      = schema$date[[1]],
-    Coverage  = schema$coverage[[1]],
-    Volume    = schema$isPartOf$volume[[1]],
-    "Source (Data)" = schema$source[[1]],
-    "Reference Link (Data)" = schema$bibliographicCitation[[1]]
-    
-  )
-})
-
-# convert to data frame
-all_fields_df <- bind_rows(all_fields)
-
-# extract band number and short band title
-all_fields_df <- all_fields_df %>%
-  mutate(
-    BandNum  = sapply(str_extract_all(Volume, "\\d+"), function(x) {
-      if (length(x) == 0) NA_integer_ else as.integer(tail(x, 1))
-    }),
-    BandKurz = ifelse(is.na(BandNum), Volume, paste0("Volume ", BandNum))
-  )
-
-# ---- Detailed tables grouped by Band ----
-# sort by BandNum and then Figure
-all_fields_df <- all_fields_df %>% arrange(BandNum, Figure)
-
-# get unique bands in order
-bands <- unique(all_fields_df$BandKurz)
-
-for (band in bands) {
-  cat("### ", band, "\n\n")   # level-3 heading for the volume
-  
-  band_entries <- all_fields_df %>% filter(BandKurz == band)
-  
-  for (i in seq_len(nrow(band_entries))) {
-    fields <- band_entries[i, ]
-    
-    # level-4 heading for each plot
-    cat("#### ", fields$Title, "\n\n")
-    
-    # convert Figure to a clickable hyperlink
-    fields$Figure <- paste0("[", fields$Figure, "](https://forschung.stadtgeschichtebasel.ch/items/", fields$Figure, ".html)")
-    
-    # relative path from project root to the metadata file
-    rel_path <- fs::path_rel(fields$Metadata, start = here())
-
-    # remove "docs/" prefix if it exists
-    rel_path <- gsub("^docs/", "", rel_path)
-
-    # use just the filename as label
-    filename <- fs::path_file(fields$Metadata)
-
-    # create Markdown link
-    fields$Metadata <- paste0("[", filename, "](/", rel_path, ")")
-    
-    # build table (exclude Title, BandKurz, BandNum)
-    df <- data.frame(
-      Key = names(fields)[!(names(fields) %in% c("Title", "BandKurz", "BandNum"))],
-      Value      = unname(unlist(fields[!(names(fields) %in% c("Title", "BandKurz", "BandNum"))])),
-      stringsAsFactors = FALSE
-    )
-    
-    print(knitr::kable(df, format = "markdown"))
-  }
-}
-```
+::: {#plot-list}
+:::
