@@ -30,7 +30,7 @@ To support open research with FAIR data, the RDM team developed a [research data
 
 ### Plots
 
-This GitHub repository provides the source code used to create the plots. In addition to the data already made available on the research data platform, the source code published here makes the figures even more customisable.
+This GitHub repository provides the source code used to create [all plots](/docs/plots.qmd) used in the project. In addition to the data already made available on the research data platform, the source code published here makes the figures even more customisable.
 
 Following the steps below, users can build plots from the book series by themselves. The workflow produces the plots, as published, as `PDF` files in `CMYK` colour mode using the dimensions from the printed volumes. For technical reasons, plots and legends are written to separate PDF files. The plots are not shipped with the project's signature font family, but are generated with a generic system font due to copyright. Users can easily customise the plots' dimensions, colours, labels etc. by changing the parameters in the corresponding source code.
 
@@ -131,7 +131,6 @@ This project is maintained by [@Stadt-Geschichte-Basel](https://github.com/stadt
 
 - archive repository on Zenodo
 - add DOIs
-- add individual `index.qmd` for plots
 
 ## Contributing
 
