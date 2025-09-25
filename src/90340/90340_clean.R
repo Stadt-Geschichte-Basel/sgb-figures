@@ -32,12 +32,13 @@ data90340 <- data90340 %>%
     values_from = Wachstum
   )
 
-save_clean_csv(data90340, vol = 6)
+save_clean_csv(data90340, csv_suffix = 3, vol = 6)
 
 # Create Metadata ------------
 
 meta88415 <- annotate(data = data90340,
                       mediaID = 90340,
+                      csv_suffix = 3,
                       vol = 6,
                       title = "Prozentuales Bevölkerungswachstum in Gross- und Kleinbasel, 1860–1910",
                       column_description = c("Zeitraum, für den die angegebenen Zahlen gelten. Angabe in Jahren unserer Zeitrechnung.",
@@ -52,8 +53,8 @@ meta88415 <- annotate(data = data90340,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1860/1910",
-                      coverage = list("19. Jahrhundert", "20. Jahrhundert"),
-                      source = "Quelle: Bauer, Stephan: Die Bevölkerung des Kantons Basel-Stadt, Basel 1905; Jenny, Oskar Hugo: Die Bevölkerung des Kantons Basel-Stadt. Am 1. Dezember 1910, Basel 1924 (Mitteilungen des Statistischen Amtes des Kantons Basel-Stadt Nr. 28, Ed. 1924)., Tabelle I, 3*–5*. Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "19. Jahrhundert",
+                      source = "Bauer, Stephan: Die Bevölkerung des Kantons Basel-Stadt, Basel 1905; Jenny, Oskar Hugo: Die Bevölkerung des Kantons Basel-Stadt. Am 1. Dezember 1910, Basel 1924 (Mitteilungen des Statistischen Amtes des Kantons Basel-Stadt Nr. 28, Ed. 1924)., Tabelle I, 3*–5*. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m90340_1", "m90340_2")
 )

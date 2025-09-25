@@ -90,4 +90,6 @@ plot81757 <- ggplot(data81757_long, aes(x = Jahr, y = Ausländeranteil,
 
 # Export ---------------------
 
-export_plot(plot81757, 8, 120, 64, 25, 18)
+export_plot(plot81757, 8, 120, 64, 25, 18,
+            plot_suffix = 1,
+            legend_suffix = 2)

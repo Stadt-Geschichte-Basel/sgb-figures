@@ -29,12 +29,13 @@ for (i in spalte5_bereinigen) {
   data41404[i, 5] <- NA
 } 
 
-save_clean_csv(data41404, vol = 3)
+save_clean_csv(data41404, csv_suffix = 3, vol = 3)
 
 # Create Metadata ------------
 
 meta41404 <- annotate(data = data41404,
                       mediaID = 41404,
+                      csv_suffix = 3,
                       vol = 3,
                       title = "Rheinhochwasser bei Basel-Schifflände, 1300–2021",
                       column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Abflussmenge Q in Kubikmetern pro Sekunde", "P, Angabe in Meter über Meer (m. ü. M.)", "100-jähriges gleitendes Hochwasserabflussmittel der rekonstruierten sowie aller gemessenen Jahresabflussmaxima in Kubikmetern pro Sekunde", "Gewässerkorrektionen im jeweilige Jahr: Kanderkorrektion (ab 1714) und Juragewässerkorrektion (ab 1878)"),
@@ -47,7 +48,7 @@ meta41404 <- annotate(data = data41404,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1300/2021",
-                      coverage = "Neuzeit",
+                      coverage = list("Mittelalter", "Frühe Neuzeit", "19. Jahrhundert", "20. Jahrhundert", "21. Jahrhundert"),
                       source = "Wetter, O., Pfister, C., Weingartner, R. u.a.: The largest floods in the High Rhine basin since 1268 assessed from documentary and instrmental evidence, in: Hydrological Sciences Journal 56 (5), 2011, S. 733-758. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m41404_1", "m41404_2")

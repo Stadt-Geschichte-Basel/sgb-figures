@@ -22,12 +22,13 @@ colnames(data17308) <- c("Jahr", "Bevölkerungszahl", "Pestjahr")
 
 data17308$Pestjahr <- ifelse(is.na(data17308$Pestjahr), FALSE, data17308$Pestjahr == "Pest")
 
-save_clean_csv(data17308, vol = 4)
+save_clean_csv(data17308, csv_suffix = 3, vol = 4)
 
 # Create Metadata ------------
 
 meta17308 <- annotate(data = data17308,
                       mediaID = 17308,
+                      csv_suffix = 3,
                       vol = 4,
                       title = "Bevölkerungsentwicklung und Pestepidemien, 1500–1700",
                       column_description = c("Jahreszahl, Angaben bezeichnen jeweils in Jahr unserer Zeitrechnung", "Bevölkerungszahl von Basel in Anzahl Personen", "Jahre, in denen die Pest auftrat (TRUE)"),
@@ -41,7 +42,7 @@ meta17308 <- annotate(data = data17308,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1497/1798",
-                      coverage = "Neuzeit",
+                      coverage = "Frühe Neuzeit",
                       source = "Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500) Basel, Liestal 1977, S. 172–174. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m17308_1", "m17308_2")

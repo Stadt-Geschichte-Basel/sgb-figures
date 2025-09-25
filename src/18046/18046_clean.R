@@ -25,12 +25,13 @@ data18046$`Roggen (in Säcken)` <- data18046$`Roggen (in Säcken)` / 2
 
 colnames(data18046) <- c("Jahr", "Dinkel (in Viernzeln)", "Roggen (in Viernzeln)", "Hafer (in Viernzeln)")
 
-save_clean_csv(data18046, vol = 4)
+save_clean_csv(data18046, csv_suffix = 3, vol = 4)
 
 # Create Metadata ------------
 
 meta18046 <- annotate(data = data18046,
                       mediaID = 18046,
+                      csv_suffix = 3,
                       vol = 4,
                       title = "Getreidevorräte in der Stadt Basel, 1613–1653",
                       column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Vorrat an Dinkel, Angabe in Viernzeln", "Vorrat an Roggen, Angabe in Viernzeln", "Vorrat an Hafer, Angabe in Viernzeln"),
@@ -43,7 +44,7 @@ meta18046 <- annotate(data = data18046,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1613/1653",
-                      coverage = "Neuzeit",
+                      coverage = "Frühe Neuzeit",
                       source = "Stritmatter, Robert: Die Stadt Basel während des Dreissigjährigen Krieges. Politik, Wirtschaft, Finanzen, Basel; Frankfurt a. M.; Las Vegas 1977, S. 115. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m18046_1", "m18046_2")

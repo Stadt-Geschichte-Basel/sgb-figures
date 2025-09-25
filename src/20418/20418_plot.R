@@ -15,7 +15,6 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 # Read Data ------------------
 
-#data20418 <- readr::read_csv(here("Band4", "20418", "20418_Data.csv"))
 source(here("src", "20418", "20418_clean.R"))
 
 # Plot -----------------------
@@ -87,4 +86,6 @@ plot20418 <- ggplot(data = data20418, aes(x = Jahr)) +
 
 # Export ---------------------
 
-export_plot(plot20418, 4, 116, 66, 38, 30)
+export_plot(plot20418, 4, 116, 66, 38, 30,
+            plot_suffix = 1,
+            legend_suffix = 2)

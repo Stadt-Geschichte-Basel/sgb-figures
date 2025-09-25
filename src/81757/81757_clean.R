@@ -19,12 +19,13 @@ data81757 <- read_excel(here("data", "raw", "Band8", "81757", "81757_Data_raw.xl
 
 colnames(data81757)[1] <- "Jahr"
 
-save_clean_csv(data81757, vol = 8)
+save_clean_csv(data81757, csv_suffix = 3, vol = 8)
 
 # Create Metadata ------------
 
 meta81757 <- annotate(data = data81757,
                       mediaID = 81757,
+                      csv_suffix = 3,
                       vol = 8,
                       title = "Anteil an Ausländerinnen und Ausländern im Kanton und in ausgewählten Quartieren, 1960–2020",
                       column_description = c("Jahreszahl nach unserer Zeitrechnung", "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung im Kanton Basel-Stadt im entsprechenden Jahr", "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung im Wohnviertel Matthäus im entsprechenden Jahr", "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung im Wohnviertel St. Johann im entsprechenden Jahr", "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung im Wohnviertel Breite im entsprechenden Jahr", "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung im Wohnviertel Gundeldingen im entsprechenden Jahr", "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung im Wohnviertel Bruderholz im entsprechenden Jahr", "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung in der Gemeinde Riehen im entsprechenden Jahr"),
@@ -38,7 +39,7 @@ meta81757 <- annotate(data = data81757,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1960/2020",
-                      coverage = "Zeitgeschichte",
+                      coverage = "20. Jahrhundert",
                       source = "Statistisches Amt Kanton Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m81757_1", "m81757_2")

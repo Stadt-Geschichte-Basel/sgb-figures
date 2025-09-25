@@ -19,12 +19,13 @@ data15429 <- read_excel(here("data", "raw", "Band7", "15429", "15429_Data_raw.xl
 
 colnames(data15429) <- c("Jahr", "Protestant:innen (Ausland)", "Protestant:innen (Inland)", "Katholik:innen inkl. Christkatholik:innen (Ausland)", "Katholik:innen inkl. Christkatholik:innen (Inland)", "Jüd:innen (Inland und Ausland)", "Andere, ohne Religionszugehörigkeit und ohne Angabe (Inland und Ausland)")
 
-save_clean_csv(data15429, vol = 7)
+save_clean_csv(data15429, csv_suffix = 3, vol = 7)
 
 # Create Metadata ------------
 
 meta15429 <- annotate(data = data15429,
                       mediaID = 15429,
+                      csv_suffix = 3,
                       vol = 7,
                       title = "Wohnbevölkerung im Kanton Basel-Stadt nach Religionszugehörigkeit und Herkunft, 1910–1970",
                       column_description = c("Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung",
@@ -42,8 +43,8 @@ meta15429 <- annotate(data = data15429,
                                          email = "moritz.twente@unibas.ch",
                                          orcid = "0009-0005-7187-9774")),
                       date = "1910/1970",
-                      coverage = "Zeitgeschichte",
-                      source = "Quelle: Statistisches Jahrbuch des Kantons Basel-Stadt 1971 (Volkszählungen). Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "20. Jahrhundert",
+                      source = "Statistisches Jahrbuch des Kantons Basel-Stadt 1971 (Volkszählungen). Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m15429_1", "m15429_2")
                       )

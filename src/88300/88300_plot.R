@@ -123,4 +123,5 @@ plot88300 <- plot88300a + plot_spacer() + plot88300b_joined + plot_layout(ncol =
 
 # Export ---------------------
 
-export_plot(plot88300, 8, 120, 88)
+export_plot(plot88300, 8, 120, 88,
+            plot_suffix = 1)

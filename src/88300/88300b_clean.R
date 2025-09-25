@@ -20,12 +20,13 @@ data88300b <- read_excel(here("data", "raw", "Band8", "88300", "88300_Data_raw.x
 
 data88300b <- data88300b[complete.cases(data88300b), ]
 
-save_clean_csv(data88300b, vol = 8)
+save_clean_csv(data88300b, csv_suffix = 3, vol = 8)
 
 # Create Metadata ------------
 
 meta88300b <- annotate(data = data88300b,
                       mediaID = "88300b",
+                      csv_suffix = 3,
                       vol = 8,
                       title = "Kulturausgaben in Basel-Stadt, 2021",
                       column_description = c("Gruppe der Institutionen, an die im Kanton Basel-Stadt Kulturförderung verteilt wurde",
@@ -40,8 +41,8 @@ meta88300b <- annotate(data = data88300b,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "2021",
-                      coverage = "Zeitgeschichte",
-                      source = "Quelle: Jahresbericht Abteilung Kultur 2021. Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "21. Jahrhundert",
+                      source = "Jahresbericht Abteilung Kultur 2021. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m88300_1", "m88300_2")
 )

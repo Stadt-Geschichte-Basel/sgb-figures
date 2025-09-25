@@ -88,4 +88,6 @@ plot90886 <- ggplot(data = data90886_longer, aes(y = Jahr,
 
 # Export ---------------------
 
-export_plot(plot90886, 6, 120, 55, 45, 27)
+export_plot(plot90886, 6, 120, 55, 45, 27,
+            plot_suffix = 1,
+            legend_suffix = 2)

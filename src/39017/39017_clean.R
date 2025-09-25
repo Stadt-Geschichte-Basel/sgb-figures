@@ -18,12 +18,13 @@ data39017 <- read_excel(here("data", "raw", "Band3", "39017", "39017_Data_raw.xl
 
 colnames(data39017) = c("Jahr", "Summe Ablösungen", "Summe Neueinträge", "Investierte Summe netto")
 
-save_clean_csv(data39017, vol = 3)
+save_clean_csv(data39017, csv_suffix = 3, vol = 3)
 
 # Create Metadata ------------
 
 meta39017 <- annotate(data = data39017,
                       mediaID = 39017,
+                      csv_suffix = 3,
                       vol = 3,
                       title = "Rentengeschäft von Ludwig Kilchmann",
                       column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Summe der Ablösungen im jeweiligen Jahr in Gulden", "Summe der Neueinträge im jeweiligen Jahr in Gulden", "Investierte Summe (netto) im jeweiligen Jahr in Gulden"),
@@ -36,7 +37,7 @@ meta39017 <- annotate(data = data39017,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1484/1521",
-                      coverage = "Neuzeit",
+                      coverage = "Frühe Neuzeit",
                       source = "Signori, Gabriela: Das Schuldbuch des Basler Kaufmanns Ludwig Kilchmann (gest. 1518), Stuttgart 2014. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m39017_1", "m39017_2")

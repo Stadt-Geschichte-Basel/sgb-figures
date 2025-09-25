@@ -69,12 +69,13 @@ data80380 <- add_column(data80380,
                         .before = "1996")
 data80380[6, "1990"] <- NA
 
-save_clean_csv(data80380, vol = 8)
+save_clean_csv(data80380, csv_suffix = 3, vol = 8)
 
 # Create Metadata ------------
 
 meta80380 <- annotate(data = data80380,
                       mediaID = 80380,
+                      csv_suffix = 3,
                       vol = 8,
                       title = "Auflage der Tageszeitungen in der Region Basel, 1966–2020",
                       column_description = c("Name der jeweiligen Tageszeitung", "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage",
@@ -103,7 +104,7 @@ meta80380 <- annotate(data = data80380,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1966/2020",
-                      coverage = "Zeitgeschichte",
+                      coverage = "20. Jahrhundert",
                       source = "WEMF-Archiv: Auflagebulletins. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m80380_1", "m80380_2")

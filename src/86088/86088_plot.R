@@ -84,4 +84,6 @@ plot86088 <- ggplot(data86088_longer, aes(x = Jahr, y = Anzahl,
 
 # Export ---------------------
 
-export_plot(plot86088, 8, 140, 63, 60, 20)
+export_plot(plot86088, 8, 140, 63, 60, 20,
+            plot_suffix = 1,
+            legend_suffix = 2)

@@ -19,12 +19,13 @@ data21433 <- read_excel(here("data", "raw", "Band7", "21433", "21433_Data_raw.xl
 
 colnames(data21433)[1] <- "Jahr"
 
-save_clean_csv(data21433, vol = 7)
+save_clean_csv(data21433, csv_suffix = 3, vol = 7)
 
 # Create Metadata ------------
 
 meta21433 <- annotate(data = data21433,
                       mediaID = 21433,
+                      csv_suffix = 3,
                       vol = 7,
                       title = "Die Bevölkerung von Basel-Stadt, 1912–1966",
                       column_description = c("Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung",
@@ -39,8 +40,8 @@ meta21433 <- annotate(data = data21433,
                                          email = "moritz.twente@unibas.ch",
                                          orcid = "0009-0005-7187-9774")),
                       date = "1912/1966",
-                      coverage = "Zeitgeschichte",
-                      source = "Quelle: Statistisches Jahrbuch des Kantons Basel-Stadt 1970, S. 21. Daten für das Jahr 1912 aus dem Statistischen Jahrbuch des Kantons Basel Stadt 1921, S. 34. Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "20. Jahrhundert",
+                      source = "Statistisches Jahrbuch des Kantons Basel-Stadt 1970, S. 21. Daten für das Jahr 1912 aus dem Statistischen Jahrbuch des Kantons Basel Stadt 1921, S. 34. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m21433_1", "m21433_2")
                       )

@@ -19,12 +19,13 @@ data90894 <- read_excel(here("data", "raw", "Band6", "90894", "90894_Data_raw.xl
 
 colnames(data90894)[1] <- "Zielland"
 
-save_clean_csv(data90894, vol = 6)
+save_clean_csv(data90894, csv_suffix = 3, vol = 6)
 
 # Create Metadata ------------
 
 meta90894 <- annotate(data = data90894,
                       mediaID = 90894,
+                      csv_suffix = 3,
                       vol = 6,
                       title = "Exporte in die wichtigsten Zielländer, 1900",
                       column_description = c("Bezeichnung des Staates, in das exportiert wird",
@@ -41,7 +42,7 @@ meta90894 <- annotate(data = data90894,
                                               orcid = "0009-0005-7187-9774")),
                       date = "1900",
                       coverage = "19. Jahrhundert",
-                      source = "Quelle: Jahresbericht Basler Handelskammer 1901, S. 10. Bearbeitung: Nico Görlich / Moritz Twente",
+                      source = "Jahresbericht Basler Handelskammer 1901, S. 10. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m90894_1", "m90894_2")
 )

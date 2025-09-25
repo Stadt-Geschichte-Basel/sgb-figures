@@ -83,4 +83,6 @@ plot15429 <- ggplot(data15429_longer, aes(x = Jahr, y = Anzahl, fill = Konfessio
 
 # Export ---------------------
 
-export_plot(plot15429, 7, 120, 63, 92, 16)
+export_plot(plot15429, 7, 120, 63, 92, 16,
+            plot_suffix = 1,
+            legend_suffix = 2)

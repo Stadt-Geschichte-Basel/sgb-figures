@@ -62,4 +62,6 @@ plot91203 <- ggplot(data91203_longer, aes(x = Jahr, y = Anzahl, color = Typ)) +
 
 # Export ---------------------
 
-export_plot(plot91203, 6, 120, 63, 32, 11)
+export_plot(plot91203, 6, 120, 63, 32, 11,
+            plot_suffix = 1,
+            legend_suffix = 2)

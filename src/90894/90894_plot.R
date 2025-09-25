@@ -103,4 +103,6 @@ plot90894 <- ggplot(data90894_modified) +
 
 # Export ---------------------
 
-export_plot(plot90894, 6, 120, 55, 33, 20)
+export_plot(plot90894, 6, 120, 55, 33, 20,
+            plot_suffix = 1,
+            legend_suffix = 2)

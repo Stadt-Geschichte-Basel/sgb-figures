@@ -62,4 +62,6 @@ plot22331 <- ggplot(data22331,
 
 # Export ---------------------
 
-export_plot(plot22331, 7, 112, 63, 50, 7)
+export_plot(plot22331, 7, 112, 63, 50, 7,
+            plot_suffix = 1,
+            legend_suffix = 2)

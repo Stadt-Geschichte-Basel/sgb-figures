@@ -69,4 +69,6 @@ plot90340 <- ggplot(data = data90340_longer, aes(x = Zeitraum,
 
 # Export ---------------------
 
-export_plot(plot90340, 6, 120, 70, 21, 8)
+export_plot(plot90340, 6, 120, 70, 21, 8,
+            plot_suffix = 1,
+            legend_suffix = 2)

@@ -105,4 +105,6 @@ plot41404 <- ggplot(data = data41404,
 
 # Export ---------------------
 
-export_plot(plot41404, 3, 140, 55.6, 65, 23)
+export_plot(plot41404, 3, 140, 55.6, 65, 23,
+            plot_suffix = 1,
+            legend_suffix = 2)

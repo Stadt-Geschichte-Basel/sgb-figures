@@ -71,4 +71,6 @@ plot82338 <- ggplot(data82338_longer, aes(x = Jahr, y = Arbeitslosenquote,
 
 # Export ---------------------
 
-export_plot(plot82338, 8, 120, 63, 34, 18)
+export_plot(plot82338, 8, 120, 63, 34, 18,
+            plot_suffix = 1,
+            legend_suffix = 2)

@@ -15,7 +15,6 @@ source(here("src", "Funktionen", "Export_Plot.R"))
 
 # Read Data ------------------
 
-#data14158 <- readr::read_csv(here("Band4", "14158", "14158_Data.csv"))
 source(here("src", "14158", "14158_clean.R"))
 
 # Transform Data -------------
@@ -62,4 +61,6 @@ plot14158 <- ggplot(data14158_longer, aes(x = Jahrhundert, y = value, fill = var
 
 # Export ---------------------
 
-export_plot(plot14158, 4, 113, 57.5, 46, 8)
+export_plot(plot14158, 4, 113, 57.5, 46, 8,
+            plot_suffix = 1,
+            legend_suffix = 2)

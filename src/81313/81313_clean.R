@@ -19,12 +19,13 @@ data81313 <- read_excel(here("data", "raw", "Band8", "81313", "81313_Data_raw.xl
 
 colnames(data81313)[1] <- c("Nationalität")
 
-save_clean_csv(data81313, vol = 8)
+save_clean_csv(data81313, csv_suffix = 3, vol = 8)
 
 # Create Metadata ------------
 
 meta81313 <- annotate(data = data81313,
                       mediaID = 81313,
+                      csv_suffix = 3,
                       vol = 8,
                       title = "Nationalitäten von in Basel-Stadt wohnhaften Ausländerinnen und Ausländern, 1960–2020",
                       column_description = c("Nationalitäten von Personengruppen in Basel-Stadt wohnhaften Ausländerinnen und Ausländern",
@@ -35,7 +36,7 @@ meta81313 <- annotate(data = data81313,
                                              "Anzahl der wohnhaften Ausländer*innen der angegebenen Nationalitäten im entsprechenden Jahr",
                                              "Anzahl der wohnhaften Ausländer*innen der angegebenen Nationalitäten im entsprechenden Jahr",
                                              "Anzahl der wohnhaften Ausländer*innen der angegebenen Nationalitäten im entsprechenden Jahr"),
-                      object_description = "Zwischen 1960 und 1970 verdoppelte sich die Zahl der Einwohnerinnen und Einwohner mit ausländischer Staatsangehörigkeit nahezu. Besonders häufig waren Saisonniers aus Südeuropa. Italienerinnen und Italiener machten 1970 45 Prozent der ausländischen Bevölkerung und acht Prozent der Gesamteinwohnerzahl von Basel aus. Fortan sank ihr Anteil, während der Rezession mussten viele die Schweiz verlassen, später liessen sich auch einige einbürgern. Am Ende des 20. Jahrhunderts kam ein grosser Teil der Einwanderinnen und Einwanderer aus Osteuropa, 1990 stammten vierzen Prozent aller in Basel lebenden Ausländerinnen und Ausländer aus Jugoslawien und dreizehn Prozent aus der Türkei. 2002 führte die Schweiz die Personenfreizügigkeit ein und mit der Globalisierung kamen mehr Menschen aus fernen Ländern; die Bevölkerung wurde diverser. 2020 machte die Gruppe 'Übrigeds Ausland' mit 34 Prozent den grössten Anteil der ausländischen Einwohnerinnen und Einwohner aus, gefolgt von deutschen (22,5 Prozent) und italienischen (zwölf Prozent) Staatsangehörigen.",
+                      object_description = "Zwischen 1960 und 1970 verdoppelte sich die Zahl der Einwohnerinnen und Einwohner mit ausländischer Staatsangehörigkeit nahezu. Besonders häufig waren Saisonniers aus Südeuropa. Italienerinnen und Italiener machten 1970 45 Prozent der ausländischen Bevölkerung und acht Prozent der Gesamteinwohnerzahl von Basel aus. Fortan sank ihr Anteil, während der Rezession mussten viele die Schweiz verlassen, später liessen sich auch einige einbürgern. Am Ende des 20. Jahrhunderts kam ein grosser Teil der Einwanderinnen und Einwanderer aus Osteuropa, 1990 stammten vierzehn Prozent aller in Basel lebenden Ausländerinnen und Ausländer aus Jugoslawien und dreizehn Prozent aus der Türkei. 2002 führte die Schweiz die Personenfreizügigkeit ein und mit der Globalisierung kamen mehr Menschen aus fernen Ländern; die Bevölkerung wurde diverser. 2020 machte die Gruppe 'Übriges Ausland' mit 34 Prozent den grössten Anteil der ausländischen Einwohnerinnen und Einwohner aus, gefolgt von deutschen (22,5 Prozent) und italienischen (zwölf Prozent) Staatsangehörigen.",
                       creator = list(list(name = "Tobias Ehrenbold"),
                                      list(name = "Silas Gusset"),
                                      list(name = "Anina Zahn")),
@@ -45,8 +46,8 @@ meta81313 <- annotate(data = data81313,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1960/2020",
-                      coverage = "Zeitgeschichte",
-                      source = "Quelle: https://statistik.bs.ch/apps/jahrbuch. Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "20. Jahrhundert",
+                      source = "https://statistik.bs.ch/apps/jahrbuch. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m81313_1", "m81313_2")
 )

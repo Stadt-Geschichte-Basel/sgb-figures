@@ -17,12 +17,13 @@ data92492 <- read_excel(here("data", "raw", "Band6", "92492", "92492_Data_raw.xl
 
 colnames(data92492)[6] <- "Andere/Keine/Unbekannt"
 
-save_clean_csv(data92492, vol = 6)
+save_clean_csv(data92492, csv_suffix = 3, vol = 6)
 
 # Create Metadata ------------
 
 meta92492 <- annotate(data = data92492,
                       mediaID = 92492,
+                      csv_suffix = 3,
                       vol = 6,
                       title = "Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910",
                       column_description = c("Angabe des Jahres, für das die jeweiligen Daten gelten. Jahreszahl in unserer Zeitrechnung",
@@ -39,8 +40,8 @@ meta92492 <- annotate(data = data92492,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1860/1910",
-                      coverage = list("19. Jahrhundert", "20. Jahrhundert"),
-                      source = "Quelle: Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924. Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "19. Jahrhundert",
+                      source = "Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m92492_1", "m92492_2")
 )

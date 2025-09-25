@@ -108,4 +108,6 @@ plot80238a <- ggplot(data80238a_longer,
 
 # Export ---------------------
 
-export_plot(plot80238a, 8, 120, 63, 28, 31)
+export_plot(plot80238a, 8, 120, 63, 28, 31,
+            plot_suffix = 1,
+            legend_suffix = 2)

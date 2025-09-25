@@ -17,12 +17,13 @@ source(here("src", "Funktionen", "Export_CSV.R"))
 
 data92209 <- read_excel(here("data", "raw", "Band6", "92209", "92209_Data_raw.xlsx"))
 
-save_clean_csv(data92209, vol = 6)
+save_clean_csv(data92209, csv_suffix = 3, vol = 6)
 
 # Create Metadata ------------
 
 meta92209 <- annotate(data = data92209,
                       mediaID = 92209,
+                      csv_suffix = 3,
                       vol = 6,
                       title = "Bevölkerungsentwicklung des Kantons Basel-Stadt, 1870–1910",
                       column_description = c("Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten.",
@@ -38,8 +39,8 @@ meta92209 <- annotate(data = data92209,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1870/1910",
-                      coverage = list("19. Jahrhundert", "20. Jahrhundert"),
-                      source = "Quelle: Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924. Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "19. Jahrhundert",
+                      source = "Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m92209_1", "m92209_2")
 )

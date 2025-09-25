@@ -34,12 +34,13 @@ data91310 <- data91310 %>%
   mutate(Jahr = as.numeric(Jahr)) %>%
   arrange(Jahr)
 
-save_clean_csv(data91310, vol = 6)
+save_clean_csv(data91310, csv_suffix = 3, vol = 6)
 
 # Create Metadata ------------
 
 meta91310 <- annotate(data = data91310,
                       mediaID = 91310,
+                      csv_suffix = 3,
                       vol = 6,
                       title = "Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914",
                       column_description = c("Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten.",
@@ -56,8 +57,8 @@ meta91310 <- annotate(data = data91310,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1875/1914",
-                      coverage = list("19. Jahrhundert", "20. Jahrhundert"),
-                      source = "Quelle: Liste der Mitglieder des basel-städtischen Regierungsrates seit 1875. Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "19. Jahrhundert",
+                      source = "Liste der Mitglieder des basel-städtischen Regierungsrates seit 1875. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m91310_1", "m91310_2")
 )

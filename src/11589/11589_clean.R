@@ -22,12 +22,13 @@ data11589$Personenwagen <- data11589$Personenwagen / 10
 data11589$Motorräder <- data11589$Motorräder / 10
 data11589$Fahrräder <- data11589$Fahrräder / 10
 
-save_clean_csv(data11589, vol = 7)
+save_clean_csv(data11589, csv_suffix = 3, vol = 7)
 
 # Create Metadata ------------
 
 meta11589 <- annotate(data = data11589,
                       mediaID = 11589,
+                      csv_suffix = 3,
                       vol = 7,
                       title = "Anzahl Verkehrsträger pro 100 Einwohner und Einwohnerinnen im Kanton Basel-Stadt, 1916–1970",
                       column_description = c("Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung",
@@ -42,8 +43,8 @@ meta11589 <- annotate(data = data11589,
                                          email = "moritz.twente@unibas.ch",
                                          orcid = "0009-0005-7187-9774")),
                       date = "1916/1970",
-                      coverage = "Zeitgeschichte",
-                      source = "Quelle: Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge. Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "20. Jahrhundert",
+                      source = "Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m11589_1", "m11589_2")
                       )

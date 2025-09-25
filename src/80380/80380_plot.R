@@ -78,4 +78,6 @@ plot80380 <- ggplot(data_long, aes(x = Jahr, y = Auflage,
 
 # Export ---------------------
 
-export_plot(plot80380, 8, 120, 63, 57, 28)
+export_plot(plot80380, 8, 120, 63, 57, 28,
+            plot_suffix = 1,
+            legend_suffix = 2)

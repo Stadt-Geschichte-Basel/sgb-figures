@@ -16,12 +16,13 @@ source(here("src", "Funktionen", "Export_CSV.R"))
 data84380 <- read_excel(here("data", "raw", "Band8", "84380", "84380_Data_raw.xlsx"),
                         range = "A5:C66")
 
-save_clean_csv(data84380, vol = 8)
+save_clean_csv(data84380, csv_suffix = 3, vol = 8)
 
 # Create Metadata ------------
 
 meta84380 <- annotate(data = data84380,
                       mediaID = 84380,
+                      csv_suffix = 3,
                       vol = 8,
                       title = "Eheschliessungen und Ehescheidungen in Basel-Stadt, 1960–2020",
                       column_description = c("Angabe des Jahres nach unserer Zeitrechnung",
@@ -37,8 +38,8 @@ meta84380 <- annotate(data = data84380,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1960/2020",
-                      coverage = "Zeitgeschichte",
-                      source = "Quelle: Statistisches Jahrbuch des Kantons Basel-Stadt 1960–2020. Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "20. Jahrhundert",
+                      source = "Statistisches Jahrbuch des Kantons Basel-Stadt 1960–2020. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m84380_1", "m84380_2")
 )

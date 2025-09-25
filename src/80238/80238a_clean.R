@@ -23,12 +23,13 @@ colnames(data80238a)[11] <- "NeueLegislatur"
 data80238a$NeueLegislatur <- ifelse(is.na(data80238a$NeueLegislatur), FALSE,
                                        data80238a$NeueLegislatur == "x")
 
-save_clean_csv(data80238a, vol = 8)
+save_clean_csv(data80238a, csv_suffix = 3, vol = 8)
 
 # Create Metadata ------------
 
 meta80238a <- annotate(data = data80238a,
-                       mediaID = "80238a",
+                       mediaID = 80238,
+                       csv_suffix = 3,
                        vol = 8,
                        title = "Regierungsrat in Basel-Stadt, 1960–2024",
                        column_description = c("Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung", "Anzahl der Regierungsrät*innen aus der Partei 'Grüne' im entsprechenden Jahr", "Anzahl der Regierungsrät*innen aus der Partei 'SP' im entsprechenden Jahr", "Anzahl der parteilosen Regierungsrät*innen im entsprechenden Jahr", "Anzahl der Regierungsrät*innen aus der Partei 'GLP' im entsprechenden Jahr", "Anzahl der Regierungsrät*innen aus der Partei 'DSP' im entsprechenden Jahr", "Anzahl der Regierungsrät*innen aus der Partei 'CVP' im entsprechenden Jahr", "Anzahl der Regierungsrät*innen aus der Partei 'FDP' im entsprechenden Jahr", "Anzahl der Regierungsrät*innen aus der Partei 'LDP' im entsprechenden Jahr", "Gesamtzahl der Regierungsrät*innen im entsprechenden Jahr", "Angabe, ob das Jahr der Beginn einer neuen Legislaturperiode markiert"),
@@ -42,8 +43,8 @@ meta80238a <- annotate(data = data80238a,
                                                email = "moritz.twente@unibas.ch",
                                                orcid = "0009-0005-7187-9774")),
                        date = "1960/2024",
-                       coverage = "Zeitgeschichte",
-                       source = "Quelle: https://www.bs.ch/regierungsrat/alt-regierungsraete. Bearbeitung: Nico Görlich / Moritz Twente",
+                       coverage = "20. Jahrhundert",
+                       source = "https://www.bs.ch/regierungsrat/alt-regierungsraete. Bearbeitung: Nico Görlich / Moritz Twente",
                        rights = "Public Domain Mark",
-                       relation = list("m80238a_1", "m80238a_2")
+                       relation = list("m80238_1", "m80238_2")
 )

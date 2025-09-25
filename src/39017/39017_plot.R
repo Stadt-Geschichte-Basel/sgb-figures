@@ -80,4 +80,6 @@ plot39017 <- ggplot() +
 
 # Export ---------------------
 
-export_plot(plot39017, 3, 104.25, 60, 34, 8)
+export_plot(plot39017, 3, 104.25, 60, 34, 8,
+            plot_suffix = 1,
+            legend_suffix = 2)

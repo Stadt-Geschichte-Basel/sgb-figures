@@ -17,12 +17,13 @@ source(here("src", "Funktionen", "Export_CSV.R"))
 data88454 <- read_excel(here("data", "raw", "Band8", "88454", "88454_Data_raw.xlsx"),
                         range = "A6:C82")
 
-save_clean_csv(data88454, vol = 8)
+save_clean_csv(data88454, csv_suffix = 3, vol = 8)
 
 # Create Metadata ------------
 
 meta88454 <- annotate(data = data88454,
                       mediaID = 88454,
+                      csv_suffix = 3,
                       vol = 8,
                       title = "Museumseintritte und Kinobesuche in Basel-Stadt, 1945–2020",
                       column_description = c("Jahreszahl nach unserer Zeitrechnung", "Anzahl der Kinobesuche im Kanton Basel-Stadt im entsprechenden Jahr. Angaben nach der Billetsteuerabrechnung, ab 1999 wegen der Abschaffung der Billetsteuer nur wenige Daten erhältlich. Wegen der COVID-19-Pandemie waren Kinos vom 28.02.2020 bis zum 05.06.2020 geschlossen, danach eingeschränkter Betrieb bezüglich Platz- und Personenzahl.", "Anzahl der Museumseintritte im Kanton Basel-Stadt im entsprechenden Jahr. Daten vor 1980 sind nicht vorhanden. Angabe zu den Eintritten bis inkl. 1991 nach StaBS ED-REG 37a 7-1 (2) Besucherstatistik nach Jahren 1980–2008, Daten ab 1992 aus dem Statistischen Jahrbuch. Im Jahr 2020 reduzierter Betrieb aufgrund der COVID-19-Pandemie."),
@@ -36,7 +37,7 @@ meta88454 <- annotate(data = data88454,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1945/2020",
-                      coverage = "Zeitgeschichte",
+                      coverage = "20. Jahrhundert",
                       source = "Statistisches Jahrbuch des Kantons Basel-Stadt. Daten zu Museumseintritten vor 1992 nach StaBS ED-REG 37a 7-1 (2). Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m88454_1", "m88454_2")

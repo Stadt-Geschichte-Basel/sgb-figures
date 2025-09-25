@@ -18,12 +18,13 @@ data39492 <- read_excel(here("data", "raw", "Band3", "39492", "39492_Data_raw.xl
                         col_names = c("Startjahr", "Endjahr", "Zeitraum", "Summe Bürgeraufnahmen", "Summe Kriegsausgaben in Pfund"),
                         range = "A2:E35")
 
-save_clean_csv(data39492, vol = 3)
+save_clean_csv(data39492, csv_suffix = 3, vol = 3)
 
 # Create Metadata ------------
 
 meta39492 <- annotate(data = data39492,
                       mediaID = 39492,
+                      csv_suffix = 3,
                       vol = 3,
                       title = "Bürgeraufnahmen und Kriegsausgaben, 1360–1530",
                       column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Zeitraum, Angaben in Jahren unserer Zeitrechnung", "Summe der Bürgeraufnahmen im jeweiligen Zeitraum", "Summe der Kriegsausgaben im jeweiligen Zeitraum in Pfund"),
@@ -36,8 +37,8 @@ meta39492 <- annotate(data = data39492,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1360/1525",
-                      coverage = "Neuzeit",
+                      coverage = "Frühe Neuzeit",
                       source = "Portmann, Rolf Ernst: Basler Einbürgerungspolitik 1358–1798. Mit einer Berufs- und Herkunftsstatistik des Mittelalters, Basel 1979, S. 96–99. Rosen, Josef: Kriegsausgaben im Spätmittelalter. Der militärische Aufwand in Basel 1360–1535, in: Vierteljahrschrift für Sozial- und Wirtschaftsgeschichte 71, 1984, S. 477–479. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
-                      relation = list("m39492_1", "m39492_2")
+                      relation = list("m39492_1")
 )

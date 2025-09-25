@@ -19,12 +19,13 @@ data21535 <- read_excel(here("data", "raw", "Band7", "21535", "21535_Data_raw.xl
 
 colnames(data21535)[1] <- "Jahr"
 
-save_clean_csv(data21535, vol = 7)
+save_clean_csv(data21535, csv_suffix = 3, vol = 7)
 
 # Create Metadata ------------
 
 meta21535 <- annotate(data = data21535,
                       mediaID = 21535,
+                      csv_suffix = 3,
                       vol = 7,
                       title = "Die ausländische Wohnbevölkerung von Basel-Stadt nach Heimatnation, 1920–1965",
                       column_description = c("Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung",
@@ -40,8 +41,8 @@ meta21535 <- annotate(data = data21535,
                                          email = "moritz.twente@unibas.ch",
                                          orcid = "0009-0005-7187-9774")),
                       date = "1920/1965",
-                      coverage = "Zeitgeschichte",
-                      source = "Quelle: Statistisches Jahrbuch des Kantons Basel-Stadt 1966, S. 32. Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "20. Jahrhundert",
+                      source = "Statistisches Jahrbuch des Kantons Basel-Stadt 1966, S. 32. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m21535_1", "m21535_2")
                       )

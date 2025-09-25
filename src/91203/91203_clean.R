@@ -27,12 +27,13 @@ colnames(data91203)[2] <- "Gesamtbevölkerung"
 
 data91203 <- merge(data91203, data91203_Stimmberechtigte, by.x = "Jahr", by.y = "...4", all = TRUE)
 
-save_clean_csv(data91203, vol = 6)
+save_clean_csv(data91203, csv_suffix = 3, vol = 6)
 
 # Create Metadata ------------
 
 meta91203 <- annotate(data = data91203,
                       mediaID = 91203,
+                      csv_suffix = 3,
                       vol = 6,
                       title = "Stimmberechtigte und Gesamtbevölkerung, 1870–1910",
                       column_description = c("Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten",
@@ -48,8 +49,8 @@ meta91203 <- annotate(data = data91203,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1870/1910",
-                      coverage = list("19. Jahrhundert", "20. Jahrhundert"),
-                      source = "Quelle: Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924; Kantons-Blatt Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "19. Jahrhundert",
+                      source = "Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924; Kantons-Blatt Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m91203_1", "m91203_2")
 )

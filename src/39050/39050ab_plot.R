@@ -114,7 +114,7 @@ plot39050b <- ggplot(data39050b_longer,
     breaks = seq(1373, 1399, by = 2),
     labels = xlabels39050,
     guide = guide_axis(angle = 45),
-    expand = expand_scale(add = 0.2)) +
+    expand = expansion(add = 0.2)) +
   
   scale_y_continuous(
     limits = c(0, 40000),
@@ -134,8 +134,7 @@ plot39050b <- ggplot(data39050b_longer,
         axis.ticks.x = element_blank(),
         legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
         legend.key.width = unit(5, "mm"), # entspricht 4mm
-        legend.title = element_text(size = 6.5, color = "black"),
-        legend.title.align = 0
+        legend.title = element_text(size = 6.5, color = "black", hjust = 0)
   )
 
 # Combine Plots --------------
@@ -160,4 +159,5 @@ plot39050ab <- plot39050b + legende39050b + plot39050a + legende39050a + plot_la
 
 # Export ---------------------
 
-export_plot(plot39050ab, 3, 175, 139)
+export_plot(plot39050ab, 3, 175, 139,
+            plot_suffix = 1)

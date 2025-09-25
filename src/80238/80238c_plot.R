@@ -95,4 +95,6 @@ plot80238c <- ggplot(data80238c_longer,
 
 # Export ---------------------
 
-export_plot(plot80238c, 8, 120, 63, 42, 26)
+export_plot(plot80238c, 8, 120, 63, 42, 26,
+            plot_suffix = 7,
+            legend_suffix = 8)

@@ -66,4 +66,6 @@ plot77733 <- ggplot() +
 
 # Export ---------------------
 
-export_plot(plot77733, 8, 120, 63, 58.5, 10.5)
+export_plot(plot77733, 8, 120, 63, 58.5, 10.5,
+            plot_suffix = 1,
+            legend_suffix = 2)

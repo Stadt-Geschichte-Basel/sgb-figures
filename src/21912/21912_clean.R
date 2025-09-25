@@ -22,12 +22,13 @@ data21912 <- data21912[-1,]
 colnames(data21912) <- c("Jahr",
                          "Staatsausgaben pro Einwohner:in in CHF")
 
-save_clean_csv(data21912, vol = 7)
+save_clean_csv(data21912, csv_suffix = 3, vol = 7)
 
 # Create Metadata ------------
 
 meta21912 <- annotate(data = data21912,
                       mediaID = 21912,
+                      csv_suffix = 3,
                       vol = 7,
                       title = "Kantonale Staatsausgaben pro Einwohner in CHF, 1920–1966",
                       column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Höhe der Staatsausgaben des Kantons Basel-Stadt in Schweizer Franken pro Einwohner:in im angegebenen Jahr"),
@@ -39,8 +40,8 @@ meta21912 <- annotate(data = data21912,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1920/1966",
-                      coverage = "Zeitgeschichte",
-                      source = "Quelle: Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge. Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "20. Jahrhundert",
+                      source = "Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m21912_1", "m21912_2", "m21892_1", "m21892_2", "m21892_3")
 )

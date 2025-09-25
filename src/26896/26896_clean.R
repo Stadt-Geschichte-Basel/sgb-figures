@@ -20,12 +20,13 @@ data26896 <- read_excel(here("data", "raw", "Band7", "26896", "26896_Data_raw.xl
                                       "aus Deutschland",
                                       "aus Frankreich"))
 
-save_clean_csv(data26896, vol = 7)
+save_clean_csv(data26896, csv_suffix = 3, vol = 7)
 
 # Create Metadata ------------
 
 meta26896 <- annotate(data = data26896,
                       mediaID = 26896,
+                      csv_suffix = 3,
                       vol = 7,
                       title = "Ausgestellte Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger im Kanton Basel-Stadt, 1927–1962",
                       column_description = c("Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung",
@@ -39,8 +40,8 @@ meta26896 <- annotate(data = data26896,
                                          email = "moritz.twente@unibas.ch",
                                          orcid = "0009-0005-7187-9774")),
                       date = "1927/1962",
-                      coverage = "Zeitgeschichte",
-                      source = "Quelle: Banz, Marcel: Die deutschen und französischen Grenzgänger auf dem baselstädtischen Arbeitsmarkt, Basel 1964. Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "20. Jahrhundert",
+                      source = "Banz, Marcel: Die deutschen und französischen Grenzgänger auf dem baselstädtischen Arbeitsmarkt, Basel 1964. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m26896_1", "m26896_2")
                       )

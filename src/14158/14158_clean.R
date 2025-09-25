@@ -28,12 +28,13 @@ colnames(data14158) <- c("Zeitraum", "Total Bürgerrechtsaufnahmen", "Total aufg
 
 data14158 <- data14158[, c("Zeitraum", "Jahrhundert", "Total Bürgerrechtsaufnahmen", "Total aufgenommene Personen")]
 
-save_clean_csv(data14158, vol = 4)
+save_clean_csv(data14158, csv_suffix = 3, vol = 4)
 
 # Create Metadata ------------
 
 meta14158 <- annotate(data = data14158,
                       mediaID = 14158,
+                      csv_suffix = 3,
                       vol = 4,
                       title = "Bürgerrechtsaufnahmen, 1400–1798",
                       column_description = c("Zeitraum zwischen zwei Jahreszahlen, Angaben der Jahre nach unserer Zeitrechnung", "Angabe des Jahrhunderts nach unserer Zeitrechnung", "Anzahl der im entsprechenden Zeitraum bzw. Jahrhundert erfolgten Aufnahmen ins Bürgerrecht", "Anzahl der im entsprechenden Zeitraum bzw. Jahrhundert aufgenommenen Personen"),
@@ -47,7 +48,7 @@ meta14158 <- annotate(data = data14158,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1400/1798",
-                      coverage = "Neuzeit",
+                      coverage = "Frühe Neuzeit",
                       source = "Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500) Basel, Liestal 1977, S. 170. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m14158_1", "m14158_2")

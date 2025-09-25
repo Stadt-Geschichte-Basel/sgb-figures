@@ -32,12 +32,13 @@ data91407 <- data91407 %>%
   mutate(Jahr = as.numeric(Jahr)) %>%
   arrange(Jahr)
 
-save_clean_csv(data91407, vol = 6)
+save_clean_csv(data91407, csv_suffix = 3, vol = 6)
 
 # Create Metadata ------------
 
 meta91407 <- annotate(data = data91407,
                       mediaID = 91407,
+                      csv_suffix = 3,
                       vol = 6,
                       title = "Mandate der Parteien bei Grossratswahlen, 1875–1914",
                       column_description = c("Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten.",
@@ -57,8 +58,8 @@ meta91407 <- annotate(data = data91407,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1875/1914",
-                      coverage = list("19. Jahrhundert", "20. Jahrhundert"),
-                      source = "Quelle: für die Jahre 1875 bis 1902: Lüthi, Walter: Der Basler Freisinn von den Anfängen bis 1914, Basel 1983, S. 175. Ab 1905: Statistisches Amt Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "19. Jahrhundert",
+                      source = "Für die Jahre 1875 bis 1902: Lüthi, Walter: Der Basler Freisinn von den Anfängen bis 1914, Basel 1983, S. 175. Daten ab 1905: Statistisches Amt Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m91407_1", "m91407_2")
 )

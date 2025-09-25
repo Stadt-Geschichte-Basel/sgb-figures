@@ -21,12 +21,13 @@ colnames(data90383)[1] <- "Stadtviertel"
 
 colnames(data90383) <- gsub(" ", "", colnames(data90383))
 
-save_clean_csv(data90383, vol = 6)
+save_clean_csv(data90383, csv_suffix = 3, vol = 6)
 
 # Create Metadata ------------
 
 meta90383 <- annotate(data = data90383,
                       mediaID = 90383,
+                      csv_suffix = 3,
                       vol = 6,
                       title = "Erwerbstätige nach sozialen Klassen im St. Alban und Klybeck",
                       column_description = c("Stadtviertel, für die die Angaben zur Zusammensetzung nach sozialen Klassen gelten",
@@ -46,7 +47,7 @@ meta90383 <- annotate(data = data90383,
                                               orcid = "0009-0005-7187-9774")),
                       date = "1910",
                       coverage = "20. Jahrhundert",
-                      source = "Quelle: Jenny, Oskar Hugo: Die Bevölkerung des Kantons Basel-Stadt. Am 1. Dezember 1910, Basel 1924 (Mitteilungen des Statistischen Amtes des Kantons Basel-Stadt Nr. 28, Ed. 1924), S. 156f. Bearbeitung: Nico Görlich / Moritz Twente",
+                      source = "Jenny, Oskar Hugo: Die Bevölkerung des Kantons Basel-Stadt. Am 1. Dezember 1910, Basel 1924 (Mitteilungen des Statistischen Amtes des Kantons Basel-Stadt Nr. 28, Ed. 1924), S. 156f. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m90383_1", "m90383_2")
 )

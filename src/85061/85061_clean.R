@@ -26,12 +26,13 @@ data85061 <- data85061 %>%
   mutate(Jahr = gsub("'", "", Jahr)) %>%
   mutate(Jahr = as.numeric(Jahr))
 
-save_clean_csv(data85061, vol = 8)
+save_clean_csv(data85061, csv_suffix = 3, vol = 8)
 
 # Create Metadata ------------
 
 meta85061 <- annotate(data = data85061,
                       mediaID = 85061,
+                      csv_suffix = 3,
                       vol = 8,
                       title = "Leerstandsquote, 1960–2020",
                       column_description = c("Angabe des Jahres nach unserer Zeitrechnung",
@@ -46,8 +47,8 @@ meta85061 <- annotate(data = data85061,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1960/2020",
-                      coverage = "Zeitgeschichte",
-                      source = "Quelle: Statistisches Amt Kanton Basel-Stadt Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "20. Jahrhundert",
+                      source = "Statistisches Amt Kanton Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m85061_1", "m85061_2")
                       )

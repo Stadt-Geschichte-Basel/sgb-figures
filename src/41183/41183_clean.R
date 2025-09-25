@@ -22,12 +22,13 @@ data41183 <- read_excel(here("data", "raw", "Band3", "41183", "41183_Data_raw.xl
                                       "Köln: hl in g Ag", "Köln: Malter in Mk", "Köln: hl in Allbus", "Köln: Roggen oder Weizen (hl in fl)"),
                         range = "A7:U64")
 
-save_clean_csv(data41183, vol = 3)
+save_clean_csv(data41183, csv_suffix = 3, vol = 3)
 
 # Create Metadata ------------
 
 meta41183 <- annotate(data = data41183,
                       mediaID = 41183,
+                      csv_suffix = 3,
                       vol = 3,
                       title = "Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500",
                       column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "ß", "d (Pfennig)", "Preis in d (Pfennig)", "Basel: in d", "Basel: in g Ag. Umrechnung nach Schulz 320.", "Basel: Roggen (hl in fl)", "Strasbourg: in d", "Strasbourg: Roggen (hl in fl)", "Strasbourg: in g Ag (1)", "Strasbourg: in g Ag (2)", "Weizen V in d", "Strasbourg: Weizen (hl in fl)", "Nürnberg: Sümmer in d", "Nürnberg: hl in d", "Nürnberg: Sümmer in fl", "Nürnberg: Roggen (hl in fl)", "Köln: hl in g Ag", "Köln: Malter in Mk", "Köln: hl in Allbus", "Köln: Roggen oder Weizen (hl in fl)"),

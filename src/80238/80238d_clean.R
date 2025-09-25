@@ -20,12 +20,13 @@ data80238d <- read_excel(here("data", "raw", "Band8", "80238", "80238_Data_raw.x
 
 colnames(data80238d)[1] <- "Jahr"
 
-save_clean_csv(data80238d, vol = 8)
+save_clean_csv(data80238d, csv_suffix = 12, vol = 8)
 
 # Create Metadata ------------
 
 meta80238d <- annotate(data = data80238d,
-                       mediaID = "80238d",
+                       mediaID = 80238,
+                       csv_suffix = 12,
                        vol = 8,
                        title = "Vertretung Basel-Stadt im Ständerat, 1963–2023",
                        column_description = c("Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung", "Anzahl der baselstädtischen Mitglieder des Ständerats der Partei 'SP' im entsprechenden Jahr", "Anzahl der baselstädtischen Mitglieder des Ständerats der Partei 'FDP' im entsprechenden Jahr"),
@@ -39,8 +40,8 @@ meta80238d <- annotate(data = data80238d,
                                                email = "moritz.twente@unibas.ch",
                                                orcid = "0009-0005-7187-9774")),
                        date = "1963/2019",
-                       coverage = "Zeitgeschichte",
-                       source = "Quelle: Kanton Basel-Stadt: nationale und kantonale Wahlen seit 1919, Bundesamt für Statistik, je-d-17.02.01_12BS, online: https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/tabellen.assetdetail.14836245.html. Bearbeitung: Nico Görlich / Moritz Twente",
+                       coverage = "20. Jahrhundert",
+                       source = "Kanton Basel-Stadt: nationale und kantonale Wahlen seit 1919, Bundesamt für Statistik, je-d-17.02.01_12BS, online: https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/tabellen.assetdetail.14836245.html. Bearbeitung: Nico Görlich / Moritz Twente",
                        rights = "Public Domain Mark",
-                       relation = list("m80238d_1", "m80238d_2")
+                       relation = list("m80238_10", "m80238_11")
 )

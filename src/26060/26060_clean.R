@@ -21,12 +21,13 @@ colnames(data26060) <- c("Branche", "1929", "1939", "1955", "1965")
 data26060 <- data26060[-2,]
 data26060$Branche[5] <- "Dienstleistungen (ohne öffentliche Verwaltung)"
 
-save_clean_csv(data26060, vol = 7)
+save_clean_csv(data26060, csv_suffix = 3, vol = 7)
 
 # Create Metadata ------------
 
 meta26060 <- annotate(data = data26060,
                       mediaID = 26060,
+                      csv_suffix = 3,
                       vol = 7,
                       title = "Beschäftigte nach Wirtschaftszweigen im Kanton Basel-Stadt, 1929–1965",
                       column_description = c("Bezeichnung des Wirtschaftszweigs, für die die angegebenen Zahlen gelten",
@@ -43,7 +44,7 @@ meta26060 <- annotate(data = data26060,
                                               orcid = "0009-0005-7187-9774")),
                       date = "1929/1965",
                       coverage = "20. Jahrhundert",
-                      source = "Quelle: Böhner, Martin: Die Eidgenössische Betriebszählung 1965 aus baslerischer Sicht, Basel 1968, S. 66f. Bearbeitung: Nico Görlich / Moritz Twente",
+                      source = "Böhner, Martin: Die Eidgenössische Betriebszählung 1965 aus baslerischer Sicht, Basel 1968, S. 66f. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m26060_1", "m26060_2")
 )

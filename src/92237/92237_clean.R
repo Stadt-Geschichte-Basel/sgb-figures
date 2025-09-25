@@ -15,12 +15,13 @@ source(here("src", "Funktionen", "Export_CSV.R"))
 
 data92237 <- read_excel(here("data", "raw", "Band6", "92237", "92237_Data_raw.xlsx"))
 
-save_clean_csv(data92237, vol = 6)
+save_clean_csv(data92237, csv_suffix = 3, vol = 6)
 
 # Create Metadata ------------
 
 meta92237 <- annotate(data = data92237,
                       mediaID = 92237,
+                      csv_suffix = 3,
                       vol = 6,
                       title = "Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Glarus, 1850 und 1910",
                       column_description = c("Angabe des Jahres, für das die jeweiligen Daten gelten. Jahreszahl in unserer Zeitrechnung",
@@ -34,8 +35,8 @@ meta92237 <- annotate(data = data92237,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "[1850, 1910]",
-                      coverage = list("19. Jahrhundert", "20. Jahrhundert"),
-                      source = "Quelle: Bickel, Wilhelm: Bevölkerungsgeschichte und Bevölkerungspolitik der Schweiz seit dem Ausgang des Mittelalters, Zürich 1947, S. 135. Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "19. Jahrhundert",
+                      source = "Bickel, Wilhelm: Bevölkerungsgeschichte und Bevölkerungspolitik der Schweiz seit dem Ausgang des Mittelalters, Zürich 1947, S. 135. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m92237_1", "m92237_2")
 )

@@ -25,12 +25,13 @@ data82338 <- data82338 %>%
 
 data82338 <- data82338[, -c(5, 6)] # Plot ohne Waadt und Neuenburg
 
-save_clean_csv(data82338, vol = 8)
+save_clean_csv(data82338, csv_suffix = 3, vol = 8)
 
 # Create Metadata ------------
 
 meta82338 <- annotate(data = data82338,
                       mediaID = 82338,
+                      csv_suffix = 3,
                       vol = 8,
                       title = "Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002",
                       column_description = c("Jahreszahl nach unserer Zeitrechnung", "Anteil der Arbeitslosen an der Gesamtbevölkerung der Schweiz in Prozent im entsprechenden Jahr", "Anteil der Arbeitslosen an der Bevölkerung des Kantons Basel-Stadt in Prozent im entsprechenden Jahr", "Anteil der Arbeitslosen an der Gesamtbevölkerung des Kantons Genf in Prozent im entsprechenden Jahr", "Anteil der Arbeitslosen an der Gesamtbevölkerung des Kantons Zürich in Prozent im entsprechenden Jahr"),
@@ -44,8 +45,8 @@ meta82338 <- annotate(data = data82338,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "1973/2002",
-                      coverage = "Zeitgeschichte",
-                      source = "Statistisches Amt Kanton Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
+                      coverage = "20. Jahrhundert",
+                      source = "Bundesamt für Statistik, Staatssekretariat für Wirtschaft 2024: Arbeitslose nach Kanton. Jahresdurchschnitt. https://www.bfs.admin.ch/asset/de/30245369. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "Public Domain Mark",
                       relation = list("m82338_1", "m82338_2")
 )

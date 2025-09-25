@@ -21,12 +21,13 @@ data92792 <- read_excel(here("data", "raw", "Band9", "92792", "92792_Data_raw.xl
 data92792$Eigentümer[3] <- c("Pensionskasse Basel-Stadt")
 data92792$Eigentümer[23] <- c("GAM Investment Management")
 
-save_clean_csv(data92792, vol = 9)
+save_clean_csv(data92792, csv_suffix = 3, vol = 9)
 
 # Create Metadata ------------
 
 meta92792 <- annotate(data = data92792,
                       mediaID = 92792,
+                      csv_suffix = 3,
                       vol = 9,
                       title = "Privatbesitz an Boden und Wohnraum in Basel, 2021",
                       column_description = c("Namen der auf dem Wohnungsmarkt aktiven Akteure in Basel-Stadt (ausgewählte)", "Anzahl der vom jeweiligen Akteur besessenen Wohnungen im Kanton Basel-Stadt. Angaben der Pensionskasse Basel-Stadt nach Eigendeklaration, im Datensatz sind einige der Grundstücke im Finanzvermögen der Einwohnergemeinde."),
@@ -40,7 +41,7 @@ meta92792 <- annotate(data = data92792,
                                               email = "moritz.twente@unibas.ch",
                                               orcid = "0009-0005-7187-9774")),
                       date = "2021",
-                      coverage = "Zeitgeschichte",
+                      coverage = "21. Jahrhundert",
                       source = "https://reflekt.ch/recherchen/wem-gehoert-basel. Bearbeitung: Nico Görlich / Moritz Twente",
                       rights = "CC BY-SA 4.0",
                       relation = list("m92792_1", "m92792_2")

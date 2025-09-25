@@ -71,4 +71,6 @@ plot81313 <- ggplot(data81313_longer, aes(x = Jahr, y = Anzahl,
 
 # Export ---------------------
 
-export_plot(plot81313, 8, 140, 70, 38, 21)
+export_plot(plot81313, 8, 140, 70, 38, 21,
+            plot_suffix = 1,
+            legend_suffix = 2)
