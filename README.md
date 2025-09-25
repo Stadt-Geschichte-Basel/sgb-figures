@@ -38,7 +38,10 @@ The (mostly numerical) data behind the plots, also available in interactive tabl
 
 <!-- add datamodel -->
 <!-- add mermaid chart with plot pipeline -->
-<!-- add used most important packages / renv / ggplot / patchwork -->
+
+### Software
+
+All plots are produced using [R](https://www.r-project.org/). The R environment including all necessary packages can be restored with the `renv.lock` file. In addition to [ggplot2](https://ggplot2.tidyverse.org/) and other parts of the [tidyverse](https://www.tidyverse.org/), this project uses several other packages for data processing and visualisation, including [here](https://here.r-lib.org/index.html) and [renv](https://rstudio.github.io/renv/index.html) for creating a reproducible environment as well as [csvwr](https://cloud.r-project.org/web/packages/csvwr/index.html) for writing metadata files.
 
 ## Installation
 
