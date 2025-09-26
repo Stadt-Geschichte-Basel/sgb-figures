@@ -1,3 +1,21 @@
+---
+title: "Vertretung Basel-Stadt im Nationalrat, 1963–2023"
+subtitle: Plot and Data Preview
+date-modified: 2025-09-27
+volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
+vol_short: "Stadt.Geschichte.Basel 8"
+plotid: "abb80238_7"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# only source the first_section of the plot script that actually generates the plot
 # Packages -------------------
 
 library(here)
@@ -12,7 +30,6 @@ source(here("src", "Funktionen", "Format_Theme.R"))
 source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
 source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
 source(here("src", "Funktionen", "Export_Plot.R"))
-source(here("src", "Funktionen", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
@@ -94,18 +111,52 @@ plot80238c <- ggplot(data80238c_longer,
     plot.margin = margin(0.5,0.9,0,0.5, "lines")
   )
 
-# Write Info Page ------------
+```
 
-write_info_page(
-  plot_obj = plot80238c,
-  plot_id = 80238,
-  volume = 8,
-  csv_suffix = 9,
-  plot_suffix = 7
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot80238c + theme(legend.position = "right")
+```
+
+```{r table, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Modified"
+  ),
+  Value = c(
+    "[abb80238](https://forschung.stadtgeschichtebasel.ch/items/abb80238.html)",
+    "Vertretung Basel-Stadt im Nationalrat, 1963–2023",
+    "In den 1960er-Jahren verfügte Basel-Stadt über acht Nationalratssitze, ab den Wahlen 1971 sank die Vertretung auf sieben, 1983 auf sechs, 2003 auf fünf, 2023 auf vier. Da in anderen Kantonen die Bevölkerung stark zunahm, war der Stadtkanton immer schwächer vertreten. Relativ konstant blieb die Balance der politischen Vertretung: Basel-Stadt schickte stets ähnlich viele Linke und Bürgerliche in die Grosse Kammer nach Bern",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1963/2019",
+    "20. Jahrhundert",
+    "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 ([Stadt.Geschichte.Basel 8](https://doi.org/10.21255/sgb-08-796384)).",
+    "Kanton Basel-Stadt: nationale und kantonale Wahlen seit 1919, Bundesamt für Statistik, je-d-17.02.01_12BS, online: https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/tabellen.assetdetail.14836245.html. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band8/80238/80238_9_Data.csv-metadata.json](/data/clean/Band8/80238/80238_9_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Vertretung Basel-Stadt im Nationalrat, 1963–2023. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_9>, letzte Aktualisierung: 27.09.2025.",
+    "2025-09-27 01:08:05"
+  ),
+  stringsAsFactors = FALSE
 )
 
-# Export ---------------------
-
-export_plot(plot80238c, 8, 120, 63, 42, 26,
-            plot_suffix = 7,
-            legend_suffix = 8)
+knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+```

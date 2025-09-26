@@ -12,6 +12,7 @@ source(here("src", "Funktionen", "Format_Theme.R"))
 source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
 source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
 source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
@@ -69,6 +70,16 @@ plot80238d <- ggplot(data80238d_longer,
     axis.ticks = element_blank(),
     axis.text.y = element_text(margin = margin(r = 5)),
   )
+
+# Write Info Page ------------
+
+write_info_page(
+  plot_obj = plot80238d,
+  plot_id = 80238,
+  volume = 8,
+  csv_suffix = 12,
+  plot_suffix = 10
+)
 
 # Export ---------------------
 
