@@ -13,6 +13,7 @@ listing:
       - "plotid"
       - "title"
     sort-ui: [title, plotid, vol_short]
+    filter-ui: [title, plotid]
     fields: [plotid, title, volume]
     field-display-names: 
       plotid: "ID"
@@ -26,7 +27,7 @@ For full figure metadata and production-ready PDF files of all plots, refer to t
 
 ## Figure and Data Summaries
 
-The overview pages offered below are intended as summary only and show previews for plots and selected dataset metadata (in German). Each preview is generated from the metadata available in the `json` files as part of the plot workflow.
+The overview pages offered below are intended as summary only and show previews for plots and selected metadata on the datasets (in German). Each preview is generated from the metadata available in the `json` files as part of the plot workflow.
 
 ::: {#plot-list}
 :::
