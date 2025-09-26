@@ -1,5 +1,5 @@
 ---
-title: Available Plots
+title: Available Figures and Datasets
 lang: en
 format: html
 date-modified: last-modified
@@ -7,20 +7,26 @@ listing:
   - id: plot-list
     contents: plots/*.qmd
     type: table
-    sort: "categories"
-    sort-ui: false
-    fields: [title]
+    page-size: 100
+    sort:
+      - "vol_short"
+      - "plotid"
+      - "title"
+    sort-ui: [title, plotid, vol_short]
+    fields: [plotid, title, volume]
     field-display-names: 
-      title: "Available Figures"
+      plotid: "ID"
+      title: "Figure Title"
+      volume: "is Part of"
 ---
 
-Code and data for more than 50 plots are available in this repository. Run `npm run list` to print an overview or take a look at the tables on this page.
+Code and data for more than 50 figures are available in this repository. Run `npm run list` to print an overview or take a look at the summary pages for each figure below.
 
-## Individual Plots with Metadata
+For full figure metadata and production-ready PDF files of all plots, refer to the [Stadt.Geschichte.Basel Open Research Data Platform](https://forschung.stadtgeschichtebasel.ch). The numerical data behind the plots is also available in the form of `csv` datasets. For `csv` files, full metadata is available in this repository in `json` format.
 
-All plots are published on the [Open Research Data Platform](https://forschung.stadtgeschichtebasel.ch) of Stadt.Geschichte.Basel as `pdf` with metadata annotation. The numerical data behind the plots is also available as `csv`. The following section features tables with **selected** metadata on each `csv` file (in German)[^1]. The full `csv` metadata are available in this repository in `json` format.
+## Figure and Data Summaries
 
-[^1]: A few duplicated values are to be expected, because in several cases, multiple `csv` files make up one plot and thus share the same metadata for `title` or `description` etc.
+The overview pages offered below are intended as summary only and show previews for plots and selected dataset metadata (in German). Each preview is generated from the metadata available in the `json` files as part of the plot workflow.
 
 ::: {#plot-list}
 :::
