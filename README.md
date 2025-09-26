@@ -41,7 +41,7 @@ The (mostly numerical) data behind the plots, also available in interactive tabl
 
 ### Software
 
-All plots are produced using [R](https://www.r-project.org/). The R environment including all necessary packages can be restored with the `renv.lock` file. In addition to [ggplot2](https://ggplot2.tidyverse.org/) and other parts of the [tidyverse](https://www.tidyverse.org/), this project uses several other packages for data processing and visualisation, including [here](https://here.r-lib.org/index.html) and [renv](https://rstudio.github.io/renv/index.html) for creating a reproducible environment as well as [csvwr](https://cloud.r-project.org/web/packages/csvwr/index.html) for writing metadata files.
+All plots are produced using [R](https://www.r-project.org/). The R environment including all necessary packages can be restored with the `renv.lock` file. In addition to [ggplot2](https://ggplot2.tidyverse.org/) and other parts of the [tidyverse](https://www.tidyverse.org/), this project uses several packages for data processing and visualisation, including [here](https://here.r-lib.org/index.html) and [renv](https://rstudio.github.io/renv/index.html) for creating a reproducible environment as well as [csvwr](https://cloud.r-project.org/web/packages/csvwr/index.html) for writing metadata files.
 
 ## Installation
 
@@ -65,7 +65,7 @@ Print a list of all plots that can be built from this repository:
 npm run list
 ```
 
-Build an individual plot as PDF – saving the plot to `output/` and the annotated data to `data/clean/`– by running the following command:
+Build an individual plot as PDF – saving the plot to `output/`, the annotated data to `data/clean/` and a summary Quarto file to `docs/plots` – by running the following command:
 
 ```bash
 npm run plot

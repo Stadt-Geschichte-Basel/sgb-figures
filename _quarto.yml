@@ -27,7 +27,7 @@ website:
     left:
       - text: Readme
         href: index.qmd
-      - text: Plots
+      - text: Figures
         href: docs/plots.qmd
       - text: Research Data Platform
         href: https://forschung.stadtgeschichtebasel.ch
