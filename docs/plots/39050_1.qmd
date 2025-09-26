@@ -1,3 +1,21 @@
+---
+title: "Einnahmen der Stadt Basel: Ungelder und Zölle ab 1373"
+subtitle: Plot and Data Preview
+date-modified: 2025-09-27
+volume: "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
+vol_short: "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
+plotid: "abb39050_1"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# only source the first_section of the plot script that actually generates the plot
 # Packages -------------------
 
 library(here)
@@ -158,17 +176,89 @@ legende39050b <- get_legend(plot39050b_with_legend) %>%
 
 plot39050ab <- plot39050b + legende39050b + plot39050a + legende39050a + plot_layout(ncol = 2, widths = c(4, 1))
 
-# Write Info Page ------------
+```
 
-write_info_page(
-  plot_obj = plot39050ab,
-  plot_id = 39050,
-  volume = 3,
-  csv_suffix = c(2, 3),
-  plot_suffix = 1
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot39050ab + theme(legend.position = "right")
+```
+
+### Dataset 1
+
+```{r table_1, results="asis"}
+#| echo: false
+#| message: false
+library(knitr)
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Modified"
+  ),
+  Value = c(
+    "[abb39050](https://forschung.stadtgeschichtebasel.ch/items/abb39050.html)",
+    "Einnahmen der Stadt Basel: Ungelder und Zölle ab 1373",
+    "Die Einnahmen sind jeweils getrennt dargestellt nach ausserordentlichen Einnahmen (direkte Steuern und Anleihen; letztere aufgeschlüsselt nach an den Gläubiger gebundene Leibrenten und verkäufliche Renten) und laufenden Einnahmen (indirekte Steuern und Zölle). Alle Einnahmen in Basler Pfund.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1373/1400",
+    "Frühe Neuzeit",
+    "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3).",
+    "Harms, Bernhard: Die Münz- und Geldpolitik der Stadt Basel im Mittelalter, Tübingen 1907, S. 640–672. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band3/39050/39050_2_Data.csv-metadata.json](/data/clean/Band3/39050/39050_2_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Einnahmen der Stadt Basel: Ungelder und Zölle ab 1373. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_2>, letzte Aktualisierung: 27.09.2025.",
+    "2025-09-27 01:01:22"
+  ),
+  stringsAsFactors = FALSE
 )
+knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+```
 
-# Export ---------------------
+### Dataset 2
 
-export_plot(plot39050ab, 3, 175, 139,
-            plot_suffix = 1)
+```{r table_2, results="asis"}
+#| echo: false
+#| message: false
+library(knitr)
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Modified"
+  ),
+  Value = c(
+    "[abb39050](https://forschung.stadtgeschichtebasel.ch/items/abb39050.html)",
+    "Einnahmen der Stadt Basel: Ungelder und Zölle ab 1424",
+    "Die Einnahmen sind jeweils getrennt dargestellt nach ausserordentlichen Einnahmen (direkte Steuern und Anleihen; letztere aufgeschlüsselt nach an den Gläubiger gebundene Leibrenten und verkäufliche Renten) und laufenden Einnahmen (indirekte Steuern und Zölle). Alle Einnahmen in Basler Pfund.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1373/1400",
+    "Frühe Neuzeit",
+    "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3).",
+    "Harms, Bernhard: Die Münz- und Geldpolitik der Stadt Basel im Mittelalter, Tübingen 1907, S. 640–672. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band3/39050/39050_3_Data.csv-metadata.json](/data/clean/Band3/39050/39050_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Einnahmen der Stadt Basel: Ungelder und Zölle ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_3>, letzte Aktualisierung: 27.09.2025.",
+    "2025-09-27 01:01:22"
+  ),
+  stringsAsFactors = FALSE
+)
+knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+```
