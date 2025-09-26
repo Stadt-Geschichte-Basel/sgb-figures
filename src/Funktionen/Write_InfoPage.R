@@ -8,7 +8,7 @@ library(stringr)
 
 # Function to Write Meta Page for Quarto ---------
 
-write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, has_legend = TRUE) {
+write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix = NULL, has_legend = TRUE) {
   
   # --- Construct Metadata File Path ----
   metadata_file <- here(
@@ -28,7 +28,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, has_legend = 
   publisher <- schema$publisher[[1]]
   publisher_link <- glue("[{publisher}](https://www.wikidata.org/wiki/Q122442230)")
   
-  ## --- Construct Path to Metadata JSON file ---
+  ## --- Construct Path to Metadata JSON file (site-relative link) ---
   rel_path <- fs::path_rel(metadata_file, start = here())
   rel_path <- gsub("^docs/", "", rel_path)
   meta_link <- glue("[{rel_path}](/", rel_path, ")")
@@ -64,40 +64,78 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, has_legend = 
     Modified      = schema$modified[[1]]
   )
   
-  # --- extract script for the actual plot just up to "# Write Info Page" section ----
-  plot_script <- here("src", plot_id, glue("{plot_id}_plot.R"))
+  # --- infer plot object name (string) and subplot script name ----
+  plot_name <- deparse(substitute(plot_obj))   # e.g. "plot80238a" or "plot88300"
+  base_name  <- sub("^plot", "", plot_name)    # e.g. "80238a" or "88300"
+  
+  # Prefer the explicit subplot script <base_name>_plot.R if it exists in src/<plot_id>/
+  candidate_script <- here("src", plot_id, paste0(base_name, "_plot.R"))
+  
+  if (fs::file_exists(candidate_script)) {
+    plot_script <- candidate_script
+  } else {
+    # fallback: try the generic <plot_id>_plot.R (single-script case), otherwise search for any *_plot.R
+    generic_script <- here("src", plot_id, paste0(plot_id, "_plot.R"))
+    if (fs::file_exists(generic_script)) {
+      plot_script <- generic_script
+    } else {
+      # look for any *_plot.R in the directory and try to choose the best match
+      candidates <- dir_ls(here("src", plot_id), regexp = "_plot\\.R$", type = "file")
+      if (length(candidates) == 0) {
+        stop("No plot script found in ", here("src", plot_id))
+      }
+      # prefer a candidate whose basename contains the base_name
+      names_cand <- fs::path_file(candidates)
+      idx <- which(str_detect(names_cand, fixed(base_name)))
+      if (length(idx) == 1) {
+        plot_script <- candidates[idx]
+      } else {
+        # fallback to first candidate
+        plot_script <- candidates[1]
+      }
+    }
+  }
+  
+  # --- read ggplot call up to '# Write Info Page' in the resolved script ----
   script_lines <- readLines(plot_script, warn = FALSE)
   cutoff <- grep("^# Write Info Page", script_lines)
   if (length(cutoff) == 0) {
-    stop("No '# Write Info Page' marker found in ", plot_script)
+    stop("No '# Write Info Page' marker found in ", plot_script, 
+         "\nIf this is a wrapper script, call write_info_page() from the subplot script (e.g. 80238a_plot.R), or add the marker.")
   }
   first_section <- script_lines[seq_len(cutoff - 1)]
   
-  # --- create plot either with or without legend ---
-  plot_object <- if (isTRUE(has_legend)) {
-    c(
+  # --- create plot chunk using the actual object name (works for subplots too) ---
+  if (isTRUE(has_legend)) {
+    plot_chunk <- c(
       "```{r plot_object}",
       "#| echo: false",
       "#| message: false",
       "#| warning: false",
       "#| column: page-right",
       "#| fig-cap: \"Preview only. Refer to the Research Data Platform for full metadata and production-ready files.\"",
-      glue("plot{plot_id} + theme(legend.position = \"right\")"),
+      glue("{plot_name} + theme(legend.position = \"right\")"),
       "```"
     )
   } else {
-    c(
+    plot_chunk <- c(
       "```{r plot_object}",
       "#| echo: false",
       "#| message: false",
       "#| warning: false",
       "#| fig-cap: \"Preview only. Refer to the Research Data Platform for full metadata and production-ready files.\"",
-      glue("plot{plot_id}"),
+      glue("{plot_name}"),
       "```"
     )
   }
   
   # --- build .qmd ----
+  plotid_meta <- if (is.null(plot_suffix)) {
+    glue("abb{plot_id}")
+  } else {
+    glue("abb{plot_id}_{plot_suffix}")
+  }
+  
   qmd_text <- c(
     "---",
     glue("title: \"{schema$title[[1]]}\""),
@@ -105,7 +143,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, has_legend = 
     glue("date-modified: {as.Date(schema$modified[[1]])}"),
     glue("volume: \"{schema$isPartOf$volume[[1]]}\""),
     glue("vol_short: \"{vol_short}\""),
-    glue("plotid: \"abb{plot_id}\""),
+    glue("plotid: \"{plotid_meta}\""),
     "format:",
     "  html:",
     "    fig-width: 8",
@@ -120,7 +158,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, has_legend = 
     paste(first_section, collapse = "\n"),
     "```",
     "",
-    plot_object,
+    plot_chunk,
     "",
     "```{r table, results=\"asis\"}",
     "#| echo: false",
@@ -145,6 +183,11 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, has_legend = 
   outdir <- here("docs", "plots")
   dir_create(outdir)
   
-  outfile <- path(outdir, glue("{plot_id}.qmd"))
+  outfile <- if (is.null(plot_suffix)) {
+    path(outdir, glue("{plot_id}.qmd"))
+  } else {
+    path(outdir, glue("{plot_id}_{plot_suffix}.qmd"))
+  }
+  
   writeLines(qmd_text, outfile)
 }
