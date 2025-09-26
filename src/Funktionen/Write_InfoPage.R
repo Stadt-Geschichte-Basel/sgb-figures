@@ -8,9 +8,17 @@ library(stringr)
 
 # Function to Write Meta Page for Quarto ---------
 
-write_info_page <- function(plot_obj, plot_id, volume, metadata_file, has_legend = TRUE) {
+write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, has_legend = TRUE) {
   
-  # --- metadata ----
+  # --- Construct Metadata File Path ----
+  metadata_file <- here(
+    "data", "clean",
+    glue("Band{volume}"),
+    glue("{plot_id}"),
+    glue("{plot_id}_{csv_suffix}_Data.csv-metadata.json")
+  )
+  
+  # --- Extract Metadata from File ----
   meta <- fromJSON(metadata_file)
   schema <- meta$tables$tableSchema
   
