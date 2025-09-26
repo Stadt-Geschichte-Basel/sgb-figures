@@ -1,13 +1,21 @@
 ---
 title: "Anzahl Verkehrsträger pro 100 Einwohner und Einwohnerinnen im Kanton Basel-Stadt, 1916–1970"
 subtitle: Plot and Data Preview
-format: html
+date-modified: 2025-09-26
+volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
+vol_short: "Stadt.Geschichte.Basel 7"
+plotid: "abb11589"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
 ---
 
 ```{r setup, include=FALSE}
 #| echo: false
 #| message: false
-# only source the preamble of the plot script
+# only source the first_section of the plot script that actually generates the plot
 # Packages -------------------
 
 library(here)
@@ -70,14 +78,16 @@ plot11589 <- ggplot(data = data11589, aes(x = Jahr)) +
 
 ```
 
-```{r}
+```{r plot_object}
 #| echo: false
 #| message: false
 #| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
 plot11589 + theme(legend.position = "right")
 ```
 
-```{r, results="asis"}
+```{r table, results="asis"}
 #| echo: false
 #| message: false
 
@@ -88,23 +98,27 @@ df <- data.frame(
     "Figure",
     "Title",
     "Description",
+    "Publisher",
     "Date",
     "Coverage",
-    "Volume",
+    "is Part of",
     "Source (Dataset)",
     "Metadata (Dataset)",
-    "Citation (Dataset)"
+    "Citation (Dataset)",
+    "Modified"
   ),
   Value = c(
     "[abb11589](https://forschung.stadtgeschichtebasel.ch/items/abb11589.html)",
     "Anzahl Verkehrsträger pro 100 Einwohner und Einwohnerinnen im Kanton Basel-Stadt, 1916–1970",
     "Die Mobilität der Basler und Baslerinnen nahm zu. Die Zahl der Fahrräder überstieg lange alle anderen individuellen Verkehrsmittel. Nach dem Zweiten Weltkrieg schnellte die Zahl der motorisierten Gefährte in die Höhe.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "1916/1970",
     "20. Jahrhundert",
-    "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7).",
+    "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 ([Stadt.Geschichte.Basel 7](https://doi.org/10.21255/sgb-07-663402)).",
     "Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge. Bearbeitung: Nico Görlich / Moritz Twente",
-    "[11589_3_Data.csv-metadata.json](/data/clean/Band7/11589/11589_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Anzahl Verkehrsträger pro 100 Einwohner und Einwohnerinnen im Kanton Basel-Stadt, 1916–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb11589.html#m11589_3>, letzte Aktualisierung: 26.09.2025."
+    "[data/clean/Band7/11589/11589_3_Data.csv-metadata.json](/data/clean/Band7/11589/11589_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Anzahl Verkehrsträger pro 100 Einwohner und Einwohnerinnen im Kanton Basel-Stadt, 1916–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb11589.html#m11589_3>, letzte Aktualisierung: 26.09.2025.",
+    "2025-09-26 21:43:20"
   ),
   stringsAsFactors = FALSE
 )

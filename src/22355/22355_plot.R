@@ -12,6 +12,7 @@ source(here("src", "Funktionen", "Format_Theme.R"))
 source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
 source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
 source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
@@ -94,6 +95,15 @@ plot22355 <- ggplot(data22355_longer,
                                hjust = 1),
     plot.margin = margin(0.5,0.2,0,0, "lines")
   )
+
+# Write Info Page ------------
+
+write_info_page(
+  plot_obj = plot22355,
+  plot_id = 22355,
+  volume = 7,
+  csv_suffix = 3
+)
 
 # Export ---------------------
 

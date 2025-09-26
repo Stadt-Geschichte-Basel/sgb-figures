@@ -1,0 +1,133 @@
+---
+title: "Die ausländische Wohnbevölkerung von Basel-Stadt nach Heimatnation, 1920–1965"
+subtitle: Plot and Data Preview
+date-modified: 2025-09-26
+volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
+vol_short: "Stadt.Geschichte.Basel 7"
+plotid: "abb21535"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# only source the first_section of the plot script that actually generates the plot
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Funktionen", "Format_Theme.R"))
+source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
+source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "21535", "21535_clean.R"))
+
+# Transform Data -------------
+
+data21535_longer <- data21535 %>%
+  pivot_longer(
+    cols = -Jahr,
+    names_to = "Heimatnation",
+    values_to = "Anzahl"
+  )
+
+# Plot -----------------------
+
+plot21535 <- ggplot(data = data21535_longer,
+                    aes(x = Jahr, y = Anzahl, fill = Heimatnation)) +
+  
+  geom_bar(stat = "identity", position = "fill") +
+  
+  scale_fill_manual(name = "Heimatnation",
+    values = c("#F7CB45", "#6195CF", "#90C987", "#777777")) +
+  
+  scale_x_continuous(
+    breaks = data21535$Jahr,
+    labels = seq(1920, 1965, by = 5),
+    guide = guide_axis(angle = 0),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  
+  scale_y_continuous(
+    breaks = breaks_pretty(),
+    labels = label_percent(),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  
+  coord_cartesian(clip = "off") +
+  
+  theme_sgb_basis() +
+  theme(legend.position = "none",
+        legend.title = element_text(color = "black", size = 6.5),
+        legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
+        legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+        legend.key.justification = "top", # FIXME works only from Jan25 on, see https://github.com/tidyverse/ggplot2/pull/6279
+        plot.margin = margin(0.5,0,0,0, "lines"),
+        axis.ticks.x = element_blank(),
+        axis.text.y = element_text(margin = margin(r = 5),
+                                   hjust = 1)
+        )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot21535 + theme(legend.position = "right")
+```
+
+```{r table, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Modified"
+  ),
+  Value = c(
+    "[abb21535](https://forschung.stadtgeschichtebasel.ch/items/abb21535.html)",
+    "Die ausländische Wohnbevölkerung von Basel-Stadt nach Heimatnation, 1920–1965",
+    "Der Anteil der deutschen Staatsangehörigen an der in Basel wohnhaften ausländischen Bevölkerung nahm kontinuierlich ab, jener der italienischen insbesondere in den 1960er-Jahren deutlich zu. Da die Volkszählungen im Dezember stattfanden, waren die ‹Saisonniers›, die sich maximal neun Monate am Stück im Land aufhalten durften, meist nicht eingerechnet. Mit ihnen war die Zahl der italienischen Staatsangehörigen vor allem in den Sommermonaten noch weitaus höher. Ab 1964 fanden die Spanierinnen und Spanier, deren Zahl ab Mitte der 1960er-Jahren deutlich anstieg, separat Eingang ins Statistische Jahrbuch. Vorher wurden sie zur Kategorie ‹Übriges Ausland› gerechnet",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1920/1965",
+    "20. Jahrhundert",
+    "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 ([Stadt.Geschichte.Basel 7](https://doi.org/10.21255/sgb-07-663402)).",
+    "Statistisches Jahrbuch des Kantons Basel-Stadt 1966, S. 32. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band7/21535/21535_3_Data.csv-metadata.json](/data/clean/Band7/21535/21535_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Die ausländische Wohnbevölkerung von Basel-Stadt nach Heimatnation, 1920–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21535.html#m21535_3>, letzte Aktualisierung: 26.09.2025.",
+    "2025-09-26 21:43:21"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+```

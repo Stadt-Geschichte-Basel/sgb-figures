@@ -13,6 +13,7 @@ source(here("src", "Funktionen", "Format_Theme.R"))
 source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
 source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
 source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
@@ -100,6 +101,15 @@ plot90894 <- ggplot(data90894_modified) +
     panel.grid.major.y = element_blank(),
     plot.margin = margin(0.2,0.5,0,0, "lines")
   )
+
+# Write Info Page ------------
+
+write_info_page(
+  plot_obj = plot90894,
+  plot_id = 90894,
+  volume = 6,
+  csv_suffix = 3
+)
 
 # Export ---------------------
 

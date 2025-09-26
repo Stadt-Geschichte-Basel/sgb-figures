@@ -1,13 +1,21 @@
 ---
 title: "Der Fahrzeugbestand in Basel-Stadt, 1920–2020"
 subtitle: Plot and Data Preview
-format: html
+date-modified: 2025-09-26
+volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
+vol_short: "Stadt.Geschichte.Basel 8"
+plotid: "abb77089"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
 ---
 
 ```{r setup, include=FALSE}
 #| echo: false
 #| message: false
-# only source the preamble of the plot script
+# only source the first_section of the plot script that actually generates the plot
 # Packages -------------------
 
 library(here)
@@ -86,14 +94,16 @@ plot77089 <- ggplot() +
 
 ```
 
-```{r}
+```{r plot_object}
 #| echo: false
 #| message: false
 #| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
 plot77089 + theme(legend.position = "right")
 ```
 
-```{r, results="asis"}
+```{r table, results="asis"}
 #| echo: false
 #| message: false
 
@@ -104,23 +114,27 @@ df <- data.frame(
     "Figure",
     "Title",
     "Description",
+    "Publisher",
     "Date",
     "Coverage",
-    "Volume",
+    "is Part of",
     "Source (Dataset)",
     "Metadata (Dataset)",
-    "Citation (Dataset)"
+    "Citation (Dataset)",
+    "Modified"
   ),
   Value = c(
     "[abb77089](https://forschung.stadtgeschichtebasel.ch/items/abb77089.html)",
     "Der Fahrzeugbestand in Basel-Stadt, 1920–2020",
     "Die Motorisierung der Gesellschaft machte sich in den 1960er-Jahren eindrücklich bemerkbar: Der Bestand an Autos nahm in Basel massiv zu, während immer weniger Fahrräder im Einsatz waren. Mitte der 1970er-Jahre wuchs der Bestand an Fahrrädern wieder, ab 1990 wurde er nicht mehr erhoben. Anhaltende Popularität hatte das Auto: Der vermeintliche Einbruch um 1980 geht auf eine neue Zählweise zurück. Hinweis: Die Zahlen entsprechen dem Bestand der Motorfahrzeugkontrolle des Kantons Basel-Stadt. Daten aus dem Statistischen Jahrbuch der Schweiz unterscheiden sich jeweils leicht von den Daten im StAJB BS (vermutlich weil jeweils Bestand 'Ende September 19xx)'",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "1920/2022",
     "20. Jahrhundert",
-    "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8).",
+    "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 ([Stadt.Geschichte.Basel 8](https://doi.org/10.21255/sgb-08-796384)).",
     "https://statistik.bs.ch/apps/jahrbuch; https://statistik.bs.ch/files/webtabellen/t11-1-01.xlsx. Bearbeitung: Nico Görlich / Moritz Twente",
-    "[77089_3_Data.csv-metadata.json](/data/clean/Band8/77089/77089_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Der Fahrzeugbestand in Basel-Stadt, 1920–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77089.html#m77089_3>, letzte Aktualisierung: 26.09.2025."
+    "[data/clean/Band8/77089/77089_3_Data.csv-metadata.json](/data/clean/Band8/77089/77089_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Der Fahrzeugbestand in Basel-Stadt, 1920–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77089.html#m77089_3>, letzte Aktualisierung: 26.09.2025.",
+    "2025-09-26 21:43:24"
   ),
   stringsAsFactors = FALSE
 )

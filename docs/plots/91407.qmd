@@ -1,0 +1,141 @@
+---
+title: "Mandate der Parteien bei Grossratswahlen, 1875–1914"
+subtitle: Plot and Data Preview
+date-modified: 2025-09-26
+volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
+vol_short: "Stadt.Geschichte.Basel 6"
+plotid: "abb91407"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# only source the first_section of the plot script that actually generates the plot
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Funktionen", "Format_Theme.R"))
+source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
+source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "91407", "91407_clean.R"))
+
+# Transform Data -------------
+
+data91407_longer <- pivot_longer(data91407,
+                                 cols = -Jahr,
+                                 names_to = "Partei",
+                                 values_to = "Sitze")
+
+
+data91407_longer$Partei <- factor(data91407_longer$Partei, levels = c("FDP/RDP",
+                                                                      "LP/LDP",
+                                                                      "Zentrum",
+                                                                      "SP",
+                                                                      "KVP/CVP",
+                                                                      "BGP",
+                                                                      "Andere"))
+
+# Diagramm plotten -----------
+
+plot91407 <- ggplot(data = data91407_longer,
+                    aes(x = Jahr, y = Sitze, color = Partei, group = Partei)) +
+  
+  geom_line(linewidth = 0.561) +
+  
+  scale_color_manual(values = c("FDP/RDP" = "#3872B5",
+                               "LP/LDP" = "#618DEA",
+                               "Zentrum" = "#DEAA28", # wie EVP?
+                               "BGP" = "#4B8A3E",
+                               "SP" = "#F0554D",
+                               "KVP/CVP" = "#D6862B",
+                               "Andere" = "#777777")) +
+  
+  scale_x_continuous(
+    breaks = data91407_longer$Jahr,
+    guide = guide_axis(),
+    expand = expansion(mult = c(0, 0))
+  ) +
+
+  scale_y_continuous(
+    limits = c(0, 100),
+    breaks = seq(0, 100, by = 20),
+    expand = expansion(mult = c(0, 0)),
+  ) +
+  
+  coord_cartesian(clip = "off") +
+  
+  theme_sgb_basis() +
+  theme(legend.position = "none",
+        legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
+        legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+        plot.margin = margin(0.5,1.2,0,0.5, "lines"),
+        axis.text.y = element_text(margin = margin(r = 5),
+                                   hjust = 1)
+        )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot91407 + theme(legend.position = "right")
+```
+
+```{r table, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Modified"
+  ),
+  Value = c(
+    "[abb91407](https://forschung.stadtgeschichtebasel.ch/items/abb91407.html)",
+    "Mandate der Parteien bei Grossratswahlen, 1875–1914",
+    "Die Einführung des Proporzes 1905 bedeutete eine Zäsur. Mit dem Erstarken der Sozialdemokratischen Partei (SP) und der Katholischen Volkspartei (KVP) diversifizierte sich die Parteienlandschaft. Davor stand die Wahl von Persönlichkeiten im Vordergrund, die auf Wahllisten für die Freisinnigen (Radikale, Demokraten, FDP/RDP), die liberal-konservative Mitte (Juste Milieu, Zentrum) und die Konservativen (LP, LDP) kandidierten",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1875/1914",
+    "19. Jahrhundert",
+    "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 ([Stadt.Geschichte.Basel 6](https://doi.org/10.21255/sgb-06-810743)).",
+    "Für die Jahre 1875 bis 1902: Lüthi, Walter: Der Basler Freisinn von den Anfängen bis 1914, Basel 1983, S. 175. Daten ab 1905: Statistisches Amt Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band6/91407/91407_3_Data.csv-metadata.json](/data/clean/Band6/91407/91407_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Mandate der Parteien bei Grossratswahlen, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91407.html#m91407_3>, letzte Aktualisierung: 26.09.2025.",
+    "2025-09-26 21:43:26"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+```

@@ -1,0 +1,175 @@
+---
+title: "Bevölkerungsentwicklung und Pestepidemien, 1500–1700"
+subtitle: Plot and Data Preview
+date-modified: 2025-09-26
+volume: "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 (Stadt.Geschichte.Basel 4)."
+vol_short: "Stadt.Geschichte.Basel 4"
+plotid: "abb17308"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# only source the first_section of the plot script that actually generates the plot
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Funktionen", "Format_Theme.R"))
+source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
+source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "17308", "17308_clean.R"))
+
+# Transform Data -------------
+
+data17308_pest <- subset(data17308,
+                         Pestjahr == TRUE,
+                         select = c(Jahr, Bevölkerungszahl))
+
+# Manipulation: zusätzlich 1500 mit Werten von 1501 für bessere x-Achsen-Darstellung
+Zusatzeintrag = list(Jahr = 1500, Bevölkerungszahl = 9500, Pestjahr = FALSE)
+data17308 <- rbind(data17308, Zusatzeintrag)
+
+# Manipulation: Jahre anpassen für bessere x-Achsen-Darstellung
+data17308$Jahr[34] <- 1700 # eigentlich 1699
+
+data17308$Jahr[2] <- 1502 # eigentlich 1501, Label bleibt
+data17308_pest$Jahr[1] <- 1502 # eigentlich 1501, Label bleibt
+
+# Plot -----------------------
+
+plot17308 <- ggplot(data = data17308, aes(x = Jahr)) +
+  
+  geom_segment(
+    data = data17308_pest,
+    aes(x = Jahr, y = max(Bevölkerungszahl),
+        xend = Jahr, yend = Bevölkerungszahl + 120,
+        color = "Pestjahr"),
+    linewidth = 0.8,
+    lineend = "round",
+    key_glyph = "path"
+  ) +
+  
+  geom_text(
+    data = data17308_pest,
+    aes(x = Jahr, y = max(Bevölkerungszahl + 900),
+        label = c(1501, 1517, 1525, 1540, 1552, 1563, 1577, 1582, 1593, 1609, 1627, 1634, 1666)),
+    color = "black", size = 2.14, # ggplot geom_text<>size ratio: x/(14/5) => 6.5/(14/5) = 2.14
+    angle = 90,
+  ) +
+  
+  geom_area(aes(y = Bevölkerungszahl, fill = "Bevölkerungszahl"), show.legend = TRUE) +
+  
+  scale_x_continuous(
+    limits = c(1500, 1700),
+    breaks = c(1500, 1550, 1600, 1650, 1700),
+    guide = guide_axis(angle = 45),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  
+  scale_y_continuous(
+    limits = c(0, 15000),
+    breaks = breaks_pretty(),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  
+  scale_color_manual(
+    values = c("Pestjahr" = "#F7CB45"),
+    labels = c("Pestjahr"),
+    breaks = c("Pestjahr"),
+  ) +
+  
+  scale_fill_manual(
+    values = c("Bevölkerungszahl" = "#7BAFDE"),
+    labels = c("Anzahl Einwohner"),
+    breaks = c("Bevölkerungszahl")
+  ) +
+  
+  guides(
+    fill = guide_legend(order = 1),
+    color = guide_legend(order = 2,
+                         override.aes = list(fill = NA))
+  ) +
+  
+  coord_cartesian(clip = "off") +
+  
+  theme_sgb_basis() +
+  theme(
+    axis.text.y = element_text(margin = margin(r = 5),
+                               hjust = 1),
+    plot.margin = margin(0.5,0.9,0,0, "lines"),
+    legend.position = "none",
+    legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
+    legend.key.width = unit(5, "mm"), # entspricht 4mm
+    legend.box = "vertical",
+    legend.box.just = "left",
+    legend.spacing.y = unit(0.2, "cm"),
+    legend.margin = margin(0,0,0,0, "cm"),
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot17308 + theme(legend.position = "right")
+```
+
+```{r table, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Modified"
+  ),
+  Value = c(
+    "[abb17308](https://forschung.stadtgeschichtebasel.ch/items/abb17308.html)",
+    "Bevölkerungsentwicklung und Pestepidemien, 1500–1700",
+    "Bis ins 17. Jahrhundert brach in der Stadt ungefähr alle fünfzehn Jahre eine Seuche oder die Pest aus und forderte häufig tausende Opfer. So stieg die Zahl der Stadtbewohnerinnen und -bewohner kaum an. Erst nach der letzten grossen Pestwelle 1666/67 setzte ein kontinuierliches Bevölkerungswachstum ein, dem der Rat im 18. Jahrhundert mit einer restriktiven Einwanderungspolitik entgegenwirkte. Bei der Volkszählung im Jahr 1779 wurden 15 040 Personen erfasst. Für die Zeit davor liegen keine exakten Zahlen vor. Mithilfe von Tauf- und Geburtsregistern, Verzeichnissen der Bürgeraufnahmen, Häuserverzeichnissen, Steuerrödeln und des ‹Pestberichts› des Stadtarztes Felix Platter lassen sich aber Näherungswerte abschätzen.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1497/1798",
+    "Frühe Neuzeit",
+    "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 ([Stadt.Geschichte.Basel 4](https://doi.org/10.21255/sgb-04-283636)).",
+    "Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500) Basel, Liestal 1977, S. 172–174. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band4/17308/17308_3_Data.csv-metadata.json](/data/clean/Band4/17308/17308_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Bevölkerungsentwicklung und Pestepidemien, 1500–1700. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb17308.html#m17308_3>, letzte Aktualisierung: 26.09.2025.",
+    "2025-09-26 21:43:20"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+```

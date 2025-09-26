@@ -12,6 +12,7 @@ source(here("src", "Funktionen", "Format_Theme.R"))
 source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
 source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
 source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
@@ -70,6 +71,15 @@ plot21433 <- ggplot(data = data21433_longer,
         legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
         legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
         legend.key.justification = "top") # FIXME works only from Jan25 on, see https://github.com/tidyverse/ggplot2/pull/6279
+
+# Write Info Page ------------
+
+write_info_page(
+  plot_obj = plot21433,
+  plot_id = 21433,
+  volume = 7,
+  csv_suffix = 3
+)
 
 # Export ---------------------
 

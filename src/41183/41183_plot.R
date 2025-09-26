@@ -13,6 +13,7 @@ source(here("src", "Funktionen", "Format_Theme.R"))
 source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
 source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
 source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
@@ -105,6 +106,15 @@ plot41183 <- ggplot(data = data41183, aes(x = Jahr)) +
         axis.text.y = element_text(margin = margin(r = 5),
                                    hjust = 1),
         plot.margin = margin(0.5,1.2,0,0.5, "lines"))
+
+# Write Info Page ------------
+
+write_info_page(
+  plot_obj = plot41183,
+  plot_id = 41183,
+  volume = 3,
+  csv_suffix = 3
+)
 
 # Export ---------------------
 

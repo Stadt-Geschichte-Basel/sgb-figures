@@ -12,10 +12,10 @@ source(here("src", "Funktionen", "Format_Theme.R"))
 source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
 source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
 source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
-#data24528 <- readr::read_csv(here("Band4", "24528", "24528_Data.csv"))
 source(here("src", "24528", "24528_clean.R"))
 
 # Transform Data -------------
@@ -120,6 +120,15 @@ plot24528 <- ggplot(data = data24528, aes(x = Jahr)) +
                                hjust = 1),
     plot.margin = margin(0.5, 0.5, 0, 0, "lines")
   )
+
+# Write Info Page ------------
+
+write_info_page(
+  plot_obj = plot24528,
+  plot_id = 24528,
+  volume = 4,
+  csv_suffix = 3
+)
 
 # Export ---------------------
 

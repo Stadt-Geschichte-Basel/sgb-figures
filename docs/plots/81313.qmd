@@ -1,0 +1,139 @@
+---
+title: "Nationalitäten von in Basel-Stadt wohnhaften Ausländerinnen und Ausländern, 1960–2020"
+subtitle: Plot and Data Preview
+date-modified: 2025-09-26
+volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
+vol_short: "Stadt.Geschichte.Basel 8"
+plotid: "abb81313"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# only source the first_section of the plot script that actually generates the plot
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Funktionen", "Format_Theme.R"))
+source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
+source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "81313", "81313_clean.R"))
+
+# Transform Data -------------
+
+data81313_longer <- data81313 %>%
+  pivot_longer(cols = -Nationalität,
+               names_to = "Jahr",
+               values_to = "Anzahl",
+               names_prefix = "'",
+               names_transform = list(Jahr = as.numeric)) %>%
+  mutate(Jahr = gsub("'", "", Jahr)) %>%
+  mutate(Jahr = as.numeric(Jahr))
+
+# Plot -----------------------
+
+plot81313 <- ggplot(data81313_longer, aes(x = Jahr, y = Anzahl,
+                                          fill = Nationalität)) +
+  
+  geom_area(alpha = 1) +
+  
+  scale_x_continuous(
+    breaks = pretty_breaks(),
+    guide = guide_axis(),
+    expand = expansion(mult = c(0, 0.005))
+  ) +
+  
+  scale_y_continuous(
+    limits = c(0, 80000),
+    breaks = seq(0, 80000, 20000),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  
+  scale_fill_manual(values = c("Italien" = "#90C987",
+                               "Spanien" = "#882E72",
+                               "Portugal" = "#CAACCB",
+                               "Türkei" = "#DC050C",
+                               "Ehemaliges Jugoslawien" = "#F7F056",
+                               "Deutschland" = "#F7CB45",
+                               "Frankreich" = "#6195CF",
+                               "Übriges Ausland" = "#7BAFDE")) +
+    
+  coord_cartesian(clip = "off") + 
+  
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    legend.key.width = unit(5, "mm"), # resultiert in 4 mm
+    legend.key.height = unit(2.5, "mm"), # resultiert in 2 mm
+    axis.text.y = element_text(margin = margin(r = 5),
+                               hjust = 1),
+    plot.margin = margin(0.5,0.9,0,0, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot81313 + theme(legend.position = "right")
+```
+
+```{r table, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Modified"
+  ),
+  Value = c(
+    "[abb81313](https://forschung.stadtgeschichtebasel.ch/items/abb81313.html)",
+    "Nationalitäten von in Basel-Stadt wohnhaften Ausländerinnen und Ausländern, 1960–2020",
+    "Zwischen 1960 und 1970 verdoppelte sich die Zahl der Einwohnerinnen und Einwohner mit ausländischer Staatsangehörigkeit nahezu. Besonders häufig waren Saisonniers aus Südeuropa. Italienerinnen und Italiener machten 1970 45 Prozent der ausländischen Bevölkerung und acht Prozent der Gesamteinwohnerzahl von Basel aus. Fortan sank ihr Anteil, während der Rezession mussten viele die Schweiz verlassen, später liessen sich auch einige einbürgern. Am Ende des 20. Jahrhunderts kam ein grosser Teil der Einwanderinnen und Einwanderer aus Osteuropa, 1990 stammten vierzehn Prozent aller in Basel lebenden Ausländerinnen und Ausländer aus Jugoslawien und dreizehn Prozent aus der Türkei. 2002 führte die Schweiz die Personenfreizügigkeit ein und mit der Globalisierung kamen mehr Menschen aus fernen Ländern; die Bevölkerung wurde diverser. 2020 machte die Gruppe 'Übriges Ausland' mit 34 Prozent den grössten Anteil der ausländischen Einwohnerinnen und Einwohner aus, gefolgt von deutschen (22,5 Prozent) und italienischen (zwölf Prozent) Staatsangehörigen.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1960/2020",
+    "20. Jahrhundert",
+    "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 ([Stadt.Geschichte.Basel 8](https://doi.org/10.21255/sgb-08-796384)).",
+    "https://statistik.bs.ch/apps/jahrbuch. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band8/81313/81313_3_Data.csv-metadata.json](/data/clean/Band8/81313/81313_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Nationalitäten von in Basel-Stadt wohnhaften Ausländerinnen und Ausländern, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb81313.html#m81313_3>, letzte Aktualisierung: 26.09.2025.",
+    "2025-09-26 21:43:24"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+```

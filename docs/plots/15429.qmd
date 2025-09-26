@@ -1,0 +1,151 @@
+---
+title: "Wohnbevölkerung im Kanton Basel-Stadt nach Religionszugehörigkeit und Herkunft, 1910–1970"
+subtitle: Plot and Data Preview
+date-modified: 2025-09-26
+volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
+vol_short: "Stadt.Geschichte.Basel 7"
+plotid: "abb15429"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# only source the first_section of the plot script that actually generates the plot
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Funktionen", "Format_Theme.R"))
+source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
+source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "15429", "15429_clean.R"))
+
+# Transform Data -------------
+
+# Manipulation von 1941 als 1940, damit gleiche Abstände im Plot erzielt werden
+# Label bleibt bei 1941
+data15429$Jahr[4] <- 1940
+
+data15429_longer <- data15429 %>%
+  pivot_longer(
+    cols = -Jahr,
+    names_to = "Konfessionen",
+    values_to = "Anzahl"
+  )
+
+data15429_longer$Konfessionen <- factor(
+  data15429_longer$Konfessionen,
+  levels = c(
+    "Protestant:innen (Ausland)",
+    "Protestant:innen (Inland)",
+    "Katholik:innen inkl. Christkatholik:innen (Ausland)",
+    "Katholik:innen inkl. Christkatholik:innen (Inland)",
+    "Jüd:innen (Inland und Ausland)",
+    "Andere, ohne Religionszugehörigkeit und ohne Angabe (Inland und Ausland)")
+  )
+
+# Plot -----------------------
+
+
+plot15429 <- ggplot(data15429_longer, aes(x = Jahr, y = Anzahl, fill = Konfessionen)) +
+  
+  geom_bar(stat = "identity", position = "fill") +
+  
+  scale_fill_manual(values = c("Protestant:innen (Ausland)" = "#7BAFDE",
+                               "Protestant:innen (Inland)" = "#6195CF",
+                               "Katholik:innen inkl. Christkatholik:innen (Ausland)" =  "#F7F056",
+                               "Katholik:innen inkl. Christkatholik:innen (Inland)" =  "#F7CB45",
+                               "Jüd:innen (Inland und Ausland)" = "#90C987",
+                               "Andere, ohne Religionszugehörigkeit und ohne Angabe (Inland und Ausland)" =  "#777777")) +
+  
+  scale_x_continuous(
+    breaks = data15429$Jahr,
+    labels = c("1910", "1920", "1930", "1941", "1950", "1960", "1970"),
+    guide = guide_axis(angle = 0),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  
+  scale_y_continuous(
+    breaks = breaks_pretty(),
+    labels = label_percent(),
+    expand = expansion(mult = c(0, 0))
+  ) +
+
+  coord_cartesian(clip = "off") +
+  
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
+    legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+    axis.ticks.x = element_blank(),
+    axis.text.y = element_text(margin = margin(r = 5),
+                               hjust = 1),
+    plot.margin = margin(0.5,0.1,0,0, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot15429 + theme(legend.position = "right")
+```
+
+```{r table, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Modified"
+  ),
+  Value = c(
+    "[abb15429](https://forschung.stadtgeschichtebasel.ch/items/abb15429.html)",
+    "Wohnbevölkerung im Kanton Basel-Stadt nach Religionszugehörigkeit und Herkunft, 1910–1970",
+    "Der Anteil der Katholiken und Katholikinnen stieg zwischen 1910 und 1970 von 33 auf 40 Prozent der basel-städtischen Wohnbevölkerung. Bis zum Zweiten Weltkrieg und dann ab 1960 wieder stammten relativ viele von ihnen aus dem Ausland. Der Anteil der Juden und Jüdinnen an der Wohnbevölkerung betrug 1910 knapp zwei, 1970 knapp ein Prozent. Diese Abnahme wird mit der Abwanderung nach 1945 vor allem nach Israel in Zusammenhang gebracht (Erlanger 2005, S. 220–221). Mit zwei bis drei Prozent war der Anteil der als konfessionslos oder als einer anderen Konfession zugehörig registrierten Personen bis in die 1960er-Jahre noch klein. Ihr Anteil stieg bis 1970 auf fünf Prozent und sollte im letzten Drittel des Jahrhunderts markant zu Buche schlagen. Die Kategorien «Inland» und «Ausland» entstammen der Quelle.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1910/1970",
+    "20. Jahrhundert",
+    "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 ([Stadt.Geschichte.Basel 7](https://doi.org/10.21255/sgb-07-663402)).",
+    "Statistisches Jahrbuch des Kantons Basel-Stadt 1971 (Volkszählungen). Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band7/15429/15429_3_Data.csv-metadata.json](/data/clean/Band7/15429/15429_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Wohnbevölkerung im Kanton Basel-Stadt nach Religionszugehörigkeit und Herkunft, 1910–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb15429.html#m15429_3>, letzte Aktualisierung: 26.09.2025.",
+    "2025-09-26 21:43:20"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+```

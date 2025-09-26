@@ -12,6 +12,7 @@ source(here("src", "Funktionen", "Format_Theme.R"))
 source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
 source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
 source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
@@ -49,6 +50,15 @@ plot92792 <- ggplot(data92792, aes(x = `Anzahl Wohnungen`,
     legend.key.width = unit(5, "mm"), # resultiert in 4.5 mm
     legend.key.height = unit(2.5, "mm"), # resultiert in 2 mm
     )
+
+# Write Info Page ------------
+
+write_info_page(
+  plot_obj = plot92792,
+  plot_id = 92792,
+  volume = 9,
+  csv_suffix = 3
+)
 
 # Export ---------------------
 

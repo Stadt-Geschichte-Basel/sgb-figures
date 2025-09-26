@@ -12,6 +12,7 @@ source(here("src", "Funktionen", "Format_Theme.R"))
 source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
 source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
 source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
@@ -70,6 +71,15 @@ plot91407 <- ggplot(data = data91407_longer,
         axis.text.y = element_text(margin = margin(r = 5),
                                    hjust = 1)
         )
+
+# Write Info Page ------------
+
+write_info_page(
+  plot_obj = plot91407,
+  plot_id = 91407,
+  volume = 6,
+  csv_suffix = 3
+)
 
 # Export ---------------------
 

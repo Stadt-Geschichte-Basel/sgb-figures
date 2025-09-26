@@ -1,0 +1,156 @@
+---
+title: "Anteil der Erwerbstätigen in wichtigen Branchen, 1870 und 1910"
+subtitle: Plot and Data Preview
+date-modified: 2025-09-26
+volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
+vol_short: "Stadt.Geschichte.Basel 6"
+plotid: "abb90886"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# only source the first_section of the plot script that actually generates the plot
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Funktionen", "Format_Theme.R"))
+source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
+source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "90886", "90886_clean.R"))
+
+# Transform Data -------------
+
+data90886_longer <- pivot_longer(data90886, cols = c("1870", "1910"),
+                                 names_to = "Jahr",
+                                 values_to = "Anteil")
+
+data90886_longer$Jahr <- factor(data90886_longer$Jahr, levels = rev(c("1870", "1910")))
+
+## Reihenfolge der Branchen anpassen
+data90886_longer$Branche <- factor(data90886_longer$Branche,
+                                   levels = (c("Persönliche Dienste/Dienstboten",
+                                               "Öffentliche Dienste",
+                                               "Verkehr",
+                                               "Handel",
+                                               "Sonstige Gewerbe/Industrie",
+                                               "Chemie",
+                                               "Textilindustrie",
+                                               "Bekleidung/Reinigung",
+                                               "Baugewerbe",
+                                               "Landwirtschaft"
+                                               ))
+                                   )
+                                   
+# Plot -----------------------
+
+plot90886 <- ggplot(data = data90886_longer, aes(y = Jahr,
+                                                 x = Anteil/100,
+                                                 fill = Branche)) +
+
+  geom_bar(stat = "identity", position = "stack") +
+
+  scale_x_continuous(
+    limits = c(0, 1),
+    labels = label_percent(),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  
+  scale_y_discrete(
+    guide = guide_axis(),
+    expand = expansion(mult = c(0, 0)),
+  ) +
+  
+  scale_fill_manual(values = c("Landwirtschaft" = "#90C987",
+                               "Baugewerbe" = "#882E72",
+                               "Bekleidung/Reinigung" = "#994F88",
+                               "Textilindustrie" = "#AA6F9E",
+                               "Chemie" = "#BA8DB4",
+                               "Sonstige Gewerbe/Industrie" = "#D1BBD7",
+                               "Handel" = "#7BAFDE",
+                               "Verkehr" = "#5289C7",
+                               "Öffentliche Dienste" = "#1965B0",
+                               "Persönliche Dienste/Dienstboten" = "#F7CB45"),
+                    guide = guide_legend(reverse = TRUE)) +
+  
+  coord_cartesian(clip = "off") +
+
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
+    legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+    axis.ticks.y = element_blank(),
+    axis.text.y = element_text(margin = margin(r = 5),
+                               hjust = 1),
+    panel.grid.major.x = element_line(color = "black", linewidth = 0.14),
+    panel.grid.major.y = element_blank(),
+    plot.margin = margin(0,1.4,0,0, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot90886 + theme(legend.position = "right")
+```
+
+```{r table, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Modified"
+  ),
+  Value = c(
+    "[abb90886](https://forschung.stadtgeschichtebasel.ch/items/abb90886.html)",
+    "Anteil der Erwerbstätigen in wichtigen Branchen, 1870 und 1910",
+    "Im Vergleich der Jahre 1870 und 1910 zeichnen sich Veränderungen ab: Die Beschäftigten in der Landwirtschaft gehen auf unter 2 Prozent zurück. Das Baugewerbe löst die Textilindustrie als wichtigster gewerblicher Arbeitgeber ab. Der Anteil des Handels steigt auf 20 Prozent, jener von Dienstbotinnen und Dienstboten sinkt deutlich.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "[1870, 1910]",
+    "19. Jahrhundert",
+    "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 ([Stadt.Geschichte.Basel 6](https://doi.org/10.21255/sgb-06-810743)).",
+    "Polivka, Heinz: Basel und seine Wirtschaft. Eine Zeitreise durch 2000 Jahre, Lenzburg 2016, S. 206. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band6/90886/90886_3_Data.csv-metadata.json](/data/clean/Band6/90886/90886_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Anteil der Erwerbstätigen in wichtigen Branchen, 1870 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90886.html#m90886_3>, letzte Aktualisierung: 26.09.2025.",
+    "2025-09-26 21:43:26"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+```

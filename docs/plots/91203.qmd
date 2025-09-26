@@ -1,0 +1,130 @@
+---
+title: "Stimmberechtigte und Gesamtbevölkerung, 1870–1910"
+subtitle: Plot and Data Preview
+date-modified: 2025-09-26
+volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
+vol_short: "Stadt.Geschichte.Basel 6"
+plotid: "abb91203"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# only source the first_section of the plot script that actually generates the plot
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Funktionen", "Format_Theme.R"))
+source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
+source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "91203", "91203_clean.R"))
+
+# Transform Data -------------
+
+data91203_longer <- data91203 %>%
+  pivot_longer(cols = -Jahr, names_to = "Typ", values_to = "Anzahl") %>%
+  filter(!is.na(Anzahl)) %>%
+  mutate(
+    Typ = factor(Typ, levels = c("Gesamtbevölkerung", "Stimmberechtigte"))
+  )
+
+# Plot -----------------------
+
+plot91203 <- ggplot(data91203_longer, aes(x = Jahr, y = Anzahl, color = Typ)) +
+  
+  geom_line(linewidth = 1) +
+  
+  scale_color_manual(
+    values = c("Gesamtbevölkerung" = "#6195CF",
+               "Stimmberechtigte" = "#F7CB45")
+  ) +
+  
+  scale_x_continuous(
+    breaks = pretty_breaks(),
+    guide = guide_axis(),
+    expand = expansion(mult = c(0, 0.005))
+  ) +
+  
+  scale_y_continuous(
+    limits = c(0, 140000),
+    breaks = c(0, 25000, 50000, 100000, 140000),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  
+  coord_cartesian(clip = "off") + 
+  
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    plot.margin = margin(0.5, 0.9, 0, 0, "lines"),
+    axis.text.y = element_text(margin = margin(r = 5),
+                               hjust = 1)
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot91203 + theme(legend.position = "right")
+```
+
+```{r table, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Modified"
+  ),
+  Value = c(
+    "[abb91203](https://forschung.stadtgeschichtebasel.ch/items/abb91203.html)",
+    "Stimmberechtigte und Gesamtbevölkerung, 1870–1910",
+    "Auch wenn das Stimm- und Wahlrecht nach 1875 erweitert wurde, repräsentierten die Stimmberechtigten nur einen Bruchteil der Gesamtbevölkerung. Die Zahlen zur Bevölkerung stammen aus den ‹Mitteilungen des Statistischen Amtes Basel-Stadt›, Nr. 28, Basel 1924, jene zur Anzahl Stimmberechtigter aus dem ‹Kantons-Blatt Basel-Stadt›.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1870/1910",
+    "19. Jahrhundert",
+    "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 ([Stadt.Geschichte.Basel 6](https://doi.org/10.21255/sgb-06-810743)).",
+    "Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924; Kantons-Blatt Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band6/91203/91203_3_Data.csv-metadata.json](/data/clean/Band6/91203/91203_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Stimmberechtigte und Gesamtbevölkerung, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91203.html#m91203_3>, letzte Aktualisierung: 26.09.2025.",
+    "2025-09-26 21:43:26"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+```

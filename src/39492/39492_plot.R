@@ -13,6 +13,7 @@ source(here("src", "Funktionen", "Format_Theme.R"))
 source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
 source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
 source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
@@ -116,6 +117,15 @@ legende39492b <- get_legend(plot39492b_with_legend) %>%
 
 ## Combine Plots with patchwork
 plot39492 <- plot39492a + legende39492a + plot39492b + legende39492b + plot_layout(ncol = 2, widths = c(4, 1))
+
+# Write Info Page ------------
+
+write_info_page(
+  plot_obj = plot39492,
+  plot_id = 39492,
+  volume = 3,
+  csv_suffix = 3
+)
 
 # Export ---------------------
 

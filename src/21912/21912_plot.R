@@ -12,6 +12,7 @@ source(here("src", "Funktionen", "Format_Theme.R"))
 source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
 source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
 source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
@@ -59,6 +60,15 @@ plot21912 <- ggplot(data21912,
         legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
         legend.key.width = unit(5, "mm"), # entspricht 4mm
         plot.margin = margin(0.5,0.2,0,0, "lines"))
+
+# Write Info Page ------------
+
+write_info_page(
+  plot_obj = plot21912,
+  plot_id = 21912,
+  volume = 7,
+  csv_suffix = 3
+)
 
 # Export ---------------------
 

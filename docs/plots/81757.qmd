@@ -1,0 +1,158 @@
+---
+title: "Anteil an Ausländerinnen und Ausländern im Kanton und in ausgewählten Quartieren, 1960–2020"
+subtitle: Plot and Data Preview
+date-modified: 2025-09-26
+volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
+vol_short: "Stadt.Geschichte.Basel 8"
+plotid: "abb81757"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# only source the first_section of the plot script that actually generates the plot
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Funktionen", "Format_Theme.R"))
+source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
+source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "81757", "81757_clean.R"))
+
+# Transform Data -------------
+
+data81757_long <- data81757 %>%
+  pivot_longer(cols = -Jahr,
+               names_to = "Gebiet",
+               values_to = "Ausländeranteil")
+
+data81757_long <- data81757_long %>%
+  mutate(across(.cols = Ausländeranteil, .fns = ~ . / 100))
+
+data81757_long <- data81757_long %>%
+  mutate(Gebiet = factor(Gebiet, levels = c("Kanton", "Matthäus", "St. Johann", 
+                                            "Gundeldingen", "Breite", "Riehen", 
+                                            "Bruderholz")))
+
+# Plot -----------------------
+
+plot81757 <- ggplot(data81757_long, aes(x = Jahr, y = Ausländeranteil,
+                                        color = Gebiet,
+                                        linetype = Gebiet)) +
+  
+  geom_line(data = data81757_long[!is.na(data81757_long$Ausländeranteil),],
+            linewidth = 0.561) +
+  
+  geom_point() +
+  
+  scale_x_continuous(
+    breaks = pretty_breaks(),
+    guide = guide_axis(),
+    expand = expansion(mult = c(0, 0.005))
+  ) +
+  
+  scale_y_continuous(
+    limits = c(0, 0.6001),
+    breaks = pretty_breaks(),
+    expand = expansion(mult = c(0, 0)),
+    labels = percent_format(),
+  ) +
+  
+  scale_color_manual(values = c("Kanton" = "#000000",
+                                "Matthäus" = "#882E72",
+                                "St. Johann" = "#AE76A3",
+                                "Breite" = "#6195CF",
+                                "Gundeldingen" = "#90C987",
+                                "Bruderholz" = "#EE8026",
+                                "Riehen" = "#DC050C")) +
+  
+  scale_linetype_manual(values = c("Kanton" = "solid",
+                                   "Matthäus" = "longdash",
+                                   "St. Johann" = "longdash",
+                                   "Breite" = "longdash",
+                                   "Gundeldingen" = "longdash",
+                                   "Bruderholz" = "longdash",
+                                   "Riehen" = "longdash")) +
+  
+  guides(
+    linetype = guide_legend(override.aes = list(linetype = "solid"))
+  ) +
+  
+  coord_cartesian(clip = "off") + 
+  
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    legend.key.width = unit(5, "mm"), # resultiert in 4 mm
+    legend.key.height = unit(2.5, "mm"), # resultiert in 2 mm
+    axis.text.y = element_text(margin = margin(r = 5),
+                               hjust = 1),
+    plot.margin = margin(0.5,0.9,0,0, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot81757 + theme(legend.position = "right")
+```
+
+```{r table, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Modified"
+  ),
+  Value = c(
+    "[abb81757](https://forschung.stadtgeschichtebasel.ch/items/abb81757.html)",
+    "Anteil an Ausländerinnen und Ausländern im Kanton und in ausgewählten Quartieren, 1960–2020",
+    "Zwischen 1960 und 2020 vervierfachte sich der Anteil an Ausländerinnen und Ausländern an der Basler Bevölkerung nahezu. Den höchsten Anteil wies das Kleinbasler Quartier Matthäus auf, von 1960 bis 2020 stieg er dort von 12,7 auf 50,7 Prozent. Ebenfalls überdurchschnittlich war der Anteil in Gundeldingen und St. Johann, beides dichtbebaute Quartiere. Das Quartier Breite war ein traditionelles Arbeiterquartier mit vielen Genossenschaften, die Ausländerinnen und Ausländer zurückhaltend aufnahmen. Den geringsten Anteil hatten das wohlhabende Bruderholz und die Landgemeinde Riehen, in beiden betrug er 2000 etwa dreizehn Prozent. Insbesondere Riehen verzeichnete in den folgenden Jahren einen markanten Anstieg, der mit der gestiegenen Wirtschaftskraft vieler Einwanderer zusammenhing: Zunehmend gut ausgebildete Fachkräfte aus dem Ausland, sogenannte Expats, zogen in Gegenden mit einem höheren Anteil an Einfamilienhäusern.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1960/2020",
+    "20. Jahrhundert",
+    "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 ([Stadt.Geschichte.Basel 8](https://doi.org/10.21255/sgb-08-796384)).",
+    "Statistisches Amt Kanton Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band8/81757/81757_3_Data.csv-metadata.json](/data/clean/Band8/81757/81757_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Anteil an Ausländerinnen und Ausländern im Kanton und in ausgewählten Quartieren, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb81757.html#m81757_3>, letzte Aktualisierung: 26.09.2025.",
+    "2025-09-26 21:43:25"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+```

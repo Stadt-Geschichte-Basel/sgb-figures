@@ -1,0 +1,131 @@
+---
+title: "Ausgestellte Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger im Kanton Basel-Stadt, 1927–1962"
+subtitle: Plot and Data Preview
+date-modified: 2025-09-26
+volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
+vol_short: "Stadt.Geschichte.Basel 7"
+plotid: "abb26896"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# only source the first_section of the plot script that actually generates the plot
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Funktionen", "Format_Theme.R"))
+source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
+source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "26896", "26896_clean.R"))
+
+# Transform Data -------------
+
+data26896_longer <- data26896 %>%
+  pivot_longer(
+    cols = -Jahr,
+    names_to = "Staat",
+    values_to = "Anzahl"
+  )
+
+# Plot -----------------------
+
+
+plot26896 <- ggplot(data26896_longer, aes(x = Jahr, y = Anzahl, fill = Staat)) +
+  
+  geom_bar(stat = "identity", position = "stack") +
+  
+  scale_fill_manual(values = c("#F7CB45", "#6195CF")) +
+  
+  scale_x_continuous(
+    breaks = seq(1930, 1960, by = 5),
+    labels = seq(1930, 1960, by = 5),
+    guide = guide_axis(angle = 45),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  
+  scale_y_continuous(
+    limits = c(0, 9000),
+    breaks = seq(0, 9000, by = 1000),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  
+  coord_cartesian(clip = "off") +
+  
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
+    legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+    axis.text.y = element_text(margin = margin(r = 5),
+                               hjust = 1),
+    plot.margin = margin(0.5,0.1,0,0, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot26896 + theme(legend.position = "right")
+```
+
+```{r table, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Modified"
+  ),
+  Value = c(
+    "[abb26896](https://forschung.stadtgeschichtebasel.ch/items/abb26896.html)",
+    "Ausgestellte Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger im Kanton Basel-Stadt, 1927–1962",
+    "Die Zahl der ausgestellten Bewilligungen folgt den jeweiligen Konjunkturen: Ab 1932 nahm sie stetig ab. Während des Zweiten Weltkriegs arbeiteten nur noch einzelne Grenzgängerinnen und Grenzgänger in Basel. Auffällig ist insbesondere die starke Zunahme nach 1953.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1927/1962",
+    "20. Jahrhundert",
+    "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 ([Stadt.Geschichte.Basel 7](https://doi.org/10.21255/sgb-07-663402)).",
+    "Banz, Marcel: Die deutschen und französischen Grenzgänger auf dem baselstädtischen Arbeitsmarkt, Basel 1964. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band7/26896/26896_3_Data.csv-metadata.json](/data/clean/Band7/26896/26896_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Ausgestellte Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger im Kanton Basel-Stadt, 1927–1962. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26896.html#m26896_3>, letzte Aktualisierung: 26.09.2025.",
+    "2025-09-26 21:43:22"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+```

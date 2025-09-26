@@ -64,7 +64,7 @@ write_info_page(
   plot_obj = plot11589,
   plot_id = 11589,
   volume = 7,
-  metadata_file = here("data", "clean", "Band7", "11589", "11589_3_Data.csv-metadata.json")
+  csv_suffix = 3
 )
 
 # Export ---------------------

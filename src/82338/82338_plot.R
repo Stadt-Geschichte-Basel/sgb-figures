@@ -12,6 +12,7 @@ source(here("src", "Funktionen", "Format_Theme.R"))
 source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
 source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
 source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
@@ -68,6 +69,15 @@ plot82338 <- ggplot(data82338_longer, aes(x = Jahr, y = Arbeitslosenquote,
                                hjust = 1),
     plot.margin = margin(0.5,0.1,0,0.5, "lines")
   )
+
+# Write Info Page ------------
+
+write_info_page(
+  plot_obj = plot82338,
+  plot_id = 82338,
+  volume = 8,
+  csv_suffix = 3
+)
 
 # Export ---------------------
 

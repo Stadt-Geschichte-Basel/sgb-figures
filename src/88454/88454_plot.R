@@ -12,6 +12,7 @@ source(here("src", "Funktionen", "Format_Theme.R"))
 source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
 source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
 source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
@@ -61,6 +62,16 @@ plot88454 <- ggplot(data88454_longer, aes(x = Jahr, y = Anzahl,
     axis.text.y = element_text(margin = margin(r = 5),
                                hjust = 1),
     plot.margin = margin(0.5,0.9,0,0.4, "lines"))
+
+# Write Info Page ------------
+
+write_info_page(
+  plot_obj = plot88454,
+  plot_id = 88454,
+  volume = 8,
+  csv_suffix = 3
+)
+
 
 # Export ---------------------
 

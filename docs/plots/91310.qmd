@@ -1,0 +1,159 @@
+---
+title: "Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914"
+subtitle: Plot and Data Preview
+date-modified: 2025-09-26
+volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
+vol_short: "Stadt.Geschichte.Basel 6"
+plotid: "abb91310"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# only source the first_section of the plot script that actually generates the plot
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Funktionen", "Format_Theme.R"))
+source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
+source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Funktionen", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "91310", "91310_clean.R"))
+
+# Transform Data -------------
+
+data91310_longer <- data91310 %>%
+  pivot_longer(
+    cols = -Jahr,
+    names_to = "Partei",
+    values_to = "Sitze"
+  )
+
+# Parteien sortieren
+data91310_longer$Partei <- factor(data91310_longer$Partei, levels = rev(c("Parteilos",
+                                                                          "Freisinn",
+                                                                          "Konservative",
+                                                                          "Sozialdemokraten")))
+
+# Plot -----------------------
+
+plot91310 <- ggplot(data = data91310_longer,
+                    aes(x = Jahr, y = Sitze, fill = Partei)) +
+  
+  geom_vline(
+    aes(xintercept = 1888.5, color = "Wechsel des Wahlsystems"),
+    linewidth = 0.45,
+    key_glyph = "path"
+  ) +
+  
+  geom_bar(stat = "identity", position = "stack") +
+  
+  scale_fill_manual(values = c("Freisinn" = "#3872B5",  # entspricht Farbe RDP
+                               "Konservative" = "#4B8A3E", # entspricht Farbe BGP
+                               "Sozialdemokraten" = "#F0554D", # entspricht Farbe SP
+                               "Parteilos" = "#777777")) +
+  
+  scale_color_manual(
+    values = c("Wechsel des Wahlsystems" = "#F6C141"),
+    breaks = c("Wechsel des Wahlsystems"),
+    labels = c("Ab 1890 Wechsel\ndes Wahlsystems,\nneu als Majorzwahl.")
+  ) +
+  
+  guides(
+    fill = guide_legend(order = 1),
+    color = guide_legend(order = 2,
+                         override.aes = list(fill = NA))  # Remove fill from color glyph
+  ) +
+  
+  scale_x_continuous(
+    breaks = data91310_longer$Jahr,
+    guide = guide_axis(),
+    expand = expansion(mult = c(0, 0))
+  ) +
+
+  scale_y_continuous(
+    breaks = pretty_breaks(),
+    expand = expansion(mult = c(0, 0)),
+  ) +
+  
+  coord_cartesian(clip = "off") +
+  
+  theme_sgb_basis() +
+  theme(legend.position = "none",
+        axis.ticks.x = element_blank(),
+        axis.text.y = element_text(margin = margin(r = 5),
+                                   hjust = 1),
+        legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
+        legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+        legend.box = "vertical",
+        legend.box.just = "left",
+        legend.spacing.y = unit(0.2, "cm"),
+        legend.margin = margin(0,0,0,0, "cm"),
+        plot.margin = margin(0.5,0.15,0,0.5, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot91310 + theme(legend.position = "right")
+```
+
+```{r table, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Modified"
+  ),
+  Value = c(
+    "[abb91310](https://forschung.stadtgeschichtebasel.ch/items/abb91310.html)",
+    "Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914",
+    "Die Grafik zeigt die Zusammensetzung des Regierungsrates jeweils nach den Gesamterneuerungswahlen alle drei Jahre. Bis 1887 wählte der Grosse Rat die Regierung. Seit 1890 wählt das Volk den Regierungsrat im Majorzsystem, im Gegensatz zum Grossen Rat, der seit 1905 im Proporzsystem gewählt wird",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1875/1914",
+    "19. Jahrhundert",
+    "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 ([Stadt.Geschichte.Basel 6](https://doi.org/10.21255/sgb-06-810743)).",
+    "Liste der Mitglieder des basel-städtischen Regierungsrates seit 1875. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band6/91310/91310_3_Data.csv-metadata.json](/data/clean/Band6/91310/91310_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91310.html#m91310_3>, letzte Aktualisierung: 26.09.2025.",
+    "2025-09-26 21:43:26"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+```
