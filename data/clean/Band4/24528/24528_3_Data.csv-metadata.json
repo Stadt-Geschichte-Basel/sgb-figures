@@ -70,7 +70,7 @@
 				},
 				{
 					"name": ["Moritz Twente"],
-					"email": ["moritz.twente@unibas.ch"],
+					"email": ["mtwente@protonmail.com"],
 					"orcid": ["0009-0005-7187-9774"]
 				}
 			],
@@ -91,9 +91,9 @@
 			"relation": [["m24528_1"], ["m24528_2"]],
 			"rights": ["In Copyright"],
 			"license": ["https://rightsstatements.org/vocab/InC-RUU/1.0/"],
-			"modified": ["2025-09-27 18:16:57"],
+			"modified": ["2025-09-28 00:42:07"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Temperaturabweichungen in °C, 1444–2011. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb24528.html#m24528_3>, letzte Aktualisierung: 27.09.2025."
+				"Stadt.Geschichte.Basel: Temperaturabweichungen in °C, 1444–2011. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb24528.html#m24528_3>, letzte Aktualisierung: 28.09.2025."
 			]
 		}
 	}
