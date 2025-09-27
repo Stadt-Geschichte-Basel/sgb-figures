@@ -1,7 +1,7 @@
 ---
 title: "Einnahmen der Stadt Basel ab 1424"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-27
+date-modified: 2025-09-28
 volume: "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
 vol_short: "Stadt.Geschichte.Basel 3"
 plotid: "abb39050_6"
@@ -231,15 +231,15 @@ df <- data.frame(
     "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "1424/1484",
-    "Frühe Neuzeit",
+    "Mittelalter",
     "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 ([Stadt.Geschichte.Basel 3](https://doi.org/10.21255/sgb-03-345800)).",
     "Harms, Bernhard: Die Münz- und Geldpolitik der Stadt Basel im Mittelalter, Tübingen 1907, S. 640–672. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band3/39050/39050_9_Data.csv](/data/clean/Band3/39050/39050_9_Data.csv)",
     "[data/clean/Band3/39050/39050_9_Data.csv-metadata.json](/data/clean/Band3/39050/39050_9_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Einnahmen der Stadt Basel ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_9>, letzte Aktualisierung: 27.09.2025.",
+    "Stadt.Geschichte.Basel: Einnahmen der Stadt Basel ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_9>, letzte Aktualisierung: 28.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-27 23:50:22"
+    "2025-09-28 00:31:34"
   ),
   stringsAsFactors = FALSE
 )
@@ -279,15 +279,15 @@ df <- data.frame(
     "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "1424/1484",
-    "Frühe Neuzeit",
+    "Mittelalter",
     "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 ([Stadt.Geschichte.Basel 3](https://doi.org/10.21255/sgb-03-345800)).",
     "Harms, Bernhard: Die Münz- und Geldpolitik der Stadt Basel im Mittelalter, Tübingen 1907, S. 640–672. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band3/39050/39050_10_Data.csv](/data/clean/Band3/39050/39050_10_Data.csv)",
     "[data/clean/Band3/39050/39050_10_Data.csv-metadata.json](/data/clean/Band3/39050/39050_10_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Einnahmen der Stadt Basel ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_10>, letzte Aktualisierung: 27.09.2025.",
+    "Stadt.Geschichte.Basel: Einnahmen der Stadt Basel ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_10>, letzte Aktualisierung: 28.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-27 23:50:22"
+    "2025-09-28 00:31:34"
   ),
   stringsAsFactors = FALSE
 )
