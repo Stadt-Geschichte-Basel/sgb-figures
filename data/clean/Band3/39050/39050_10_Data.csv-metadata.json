@@ -1,42 +1,54 @@
 {
 	"@context": ["http://www.w3.org/ns/csvw"],
 	"tables": {
-		"url": ["39050_3_Data.csv"],
+		"url": ["39050_10_Data.csv"],
 		"tableSchema": {
 			"columns": [
 				{
-					"name": "Jahr",
-					"titles": "Jahr",
+					"name": "Rechnungjahr",
+					"titles": "Rechnungjahr",
 					"datatype": "string",
 					"description": "Jahreszahl, Angabe als Zeitraum in Jahren unserer Zeitrechnung"
 				},
 				{
-					"name": "Steuereinnahmen",
-					"titles": "Steuereinnahmen",
+					"name": "Weinungeld",
+					"titles": "Weinungeld",
 					"datatype": "number",
-					"description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Steuereinnahmen in Basler Pfund"
+					"description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Weinungeld in Basler Pfund"
 				},
 				{
-					"name": "Leibrenten",
-					"titles": "Leibrenten",
+					"name": "Mühlenungeld",
+					"titles": "Mühlenungeld",
 					"datatype": "number",
-					"description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Leibrenten in Basler Pfund"
+					"description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Mühlenungeld in Basler Pfund"
 				},
 				{
-					"name": "verkäufliche Renten",
-					"titles": "verkäufliche Renten",
+					"name": "Weinungeld in Gasthäusern",
+					"titles": "Weinungeld in Gasthäusern",
 					"datatype": "number",
-					"description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: verkäufliche Renten in Basler Pfund"
+					"description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Weinungeld in Gasthäusern in Basler Pfund"
+				},
+				{
+					"name": "Zölle",
+					"titles": "Zölle",
+					"datatype": "number",
+					"description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Zölle in Basler Pfund"
+				},
+				{
+					"name": "Von den Messen",
+					"titles": "Von den Messen",
+					"datatype": "number",
+					"description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Einnahmen von den Messen in Basler Pfund"
 				}
 			],
-			"mediaID": ["m39050_3"],
+			"mediaID": ["m39050_10"],
 			"isPartOf": {
 				"ObjectID": ["abb39050"],
 				"volume": [
 					"Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
 				]
 			},
-			"title": ["Einnahmen der Stadt Basel: Steuern und Anleihen ab 1373"],
+			"title": ["Einnahmen der Stadt Basel ab 1424"],
 			"description": [
 				"Die Einnahmen sind jeweils getrennt dargestellt nach ausserordentlichen Einnahmen (direkte Steuern und Anleihen; letztere aufgeschlüsselt nach an den Gläubiger gebundene Leibrenten und verkäufliche Renten) und laufenden Einnahmen (indirekte Steuern und Zölle). Alle Einnahmen in Basler Pfund."
 			],
@@ -58,7 +70,7 @@
 				}
 			],
 			"publisher": ["Stadt.Geschichte.Basel"],
-			"date": ["1373/1400"],
+			"date": ["1424/1484"],
 			"coverage": ["Frühe Neuzeit"],
 			"type": ["Dataset"],
 			"format": ["text/csv"],
@@ -66,12 +78,12 @@
 				"Harms, Bernhard: Die Münz- und Geldpolitik der Stadt Basel im Mittelalter, Tübingen 1907, S. 640–672. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m39050_1"], ["m39050_2"], ["m39050_4"], ["m39050_5"], ["m39050_6"]],
+			"relation": [["m39050_6"], ["m39050_9"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-27 18:16:58"],
+			"modified": ["2025-09-27 23:50:22"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Einnahmen der Stadt Basel: Steuern und Anleihen ab 1373. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_3>, letzte Aktualisierung: 27.09.2025."
+				"Stadt.Geschichte.Basel: Einnahmen der Stadt Basel ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_10>, letzte Aktualisierung: 27.09.2025."
 			]
 		}
 	}

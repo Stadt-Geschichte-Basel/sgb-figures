@@ -1,10 +1,10 @@
 ---
-title: "Einnahmen der Stadt Basel: Ungelder und Zölle ab 1424"
+title: "Einnahmen der Stadt Basel ab 1424"
 subtitle: Plot and Data Preview
 date-modified: 2025-09-27
 volume: "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
 vol_short: "Stadt.Geschichte.Basel 3"
-plotid: "abb39050_4"
+plotid: "abb39050_6"
 format:
   html:
     fig-width: 8
@@ -77,7 +77,8 @@ data39050d_longer <- data39050d %>%
     !Jahr_einzel,
     names_to = "Typ",
     values_to = "Summe"
-  )
+  ) %>%
+  mutate(Typ = factor(Typ, levels = c("Steuereinnahmen", "Leibrenten", "verkäufliche Renten")))
 
 # Plot 39050c: Weinungeld, Mühlenungeld, Zölle ---------
 
@@ -224,7 +225,7 @@ df <- data.frame(
   ),
   Value = c(
     "abb39050 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb39050.html))",
-    "Einnahmen der Stadt Basel: Ungelder und Zölle ab 1424",
+    "Einnahmen der Stadt Basel ab 1424",
     "Die Einnahmen sind jeweils getrennt dargestellt nach ausserordentlichen Einnahmen (direkte Steuern und Anleihen; letztere aufgeschlüsselt nach an den Gläubiger gebundene Leibrenten und verkäufliche Renten) und laufenden Einnahmen (indirekte Steuern und Zölle). Alle Einnahmen in Basler Pfund.",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "Nico Görlich, Moritz Twente",
@@ -233,17 +234,17 @@ df <- data.frame(
     "Frühe Neuzeit",
     "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 ([Stadt.Geschichte.Basel 3](https://doi.org/10.21255/sgb-03-345800)).",
     "Harms, Bernhard: Die Münz- und Geldpolitik der Stadt Basel im Mittelalter, Tübingen 1907, S. 640–672. Bearbeitung: Nico Görlich / Moritz Twente",
-    "[data/clean/Band3/39050/39050_5_Data.csv](/data/clean/Band3/39050/39050_5_Data.csv)",
-    "[data/clean/Band3/39050/39050_5_Data.csv-metadata.json](/data/clean/Band3/39050/39050_5_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Einnahmen der Stadt Basel: Ungelder und Zölle ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_5>, letzte Aktualisierung: 27.09.2025.",
+    "[data/clean/Band3/39050/39050_9_Data.csv](/data/clean/Band3/39050/39050_9_Data.csv)",
+    "[data/clean/Band3/39050/39050_9_Data.csv-metadata.json](/data/clean/Band3/39050/39050_9_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Einnahmen der Stadt Basel ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_9>, letzte Aktualisierung: 27.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-27 18:16:58"
+    "2025-09-27 23:50:22"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (1/2, Subset 39050_5)")
+knitr::kable(df, format = "markdown", caption = "Dataset Overview (1/2, Subset 39050_9)")
 ```
 ```{r table2, results="asis"}
 #| echo: false
@@ -272,7 +273,7 @@ df <- data.frame(
   ),
   Value = c(
     "abb39050 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb39050.html))",
-    "Einnahmen der Stadt Basel: Steuern und Renten ab 1424",
+    "Einnahmen der Stadt Basel ab 1424",
     "Die Einnahmen sind jeweils getrennt dargestellt nach ausserordentlichen Einnahmen (direkte Steuern und Anleihen; letztere aufgeschlüsselt nach an den Gläubiger gebundene Leibrenten und verkäufliche Renten) und laufenden Einnahmen (indirekte Steuern und Zölle). Alle Einnahmen in Basler Pfund.",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "Nico Görlich, Moritz Twente",
@@ -281,15 +282,15 @@ df <- data.frame(
     "Frühe Neuzeit",
     "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 ([Stadt.Geschichte.Basel 3](https://doi.org/10.21255/sgb-03-345800)).",
     "Harms, Bernhard: Die Münz- und Geldpolitik der Stadt Basel im Mittelalter, Tübingen 1907, S. 640–672. Bearbeitung: Nico Görlich / Moritz Twente",
-    "[data/clean/Band3/39050/39050_6_Data.csv](/data/clean/Band3/39050/39050_6_Data.csv)",
-    "[data/clean/Band3/39050/39050_6_Data.csv-metadata.json](/data/clean/Band3/39050/39050_6_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Einnahmen der Stadt Basel: Steuern und Renten ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_6>, letzte Aktualisierung: 27.09.2025.",
+    "[data/clean/Band3/39050/39050_10_Data.csv](/data/clean/Band3/39050/39050_10_Data.csv)",
+    "[data/clean/Band3/39050/39050_10_Data.csv-metadata.json](/data/clean/Band3/39050/39050_10_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Einnahmen der Stadt Basel ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_10>, letzte Aktualisierung: 27.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-27 18:16:58"
+    "2025-09-27 23:50:22"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (2/2, Subset 39050_6)")
+knitr::kable(df, format = "markdown", caption = "Dataset Overview (2/2, Subset 39050_10)")
 ```

@@ -175,11 +175,11 @@ write_info_page(
   plot_obj = plot39050cd,
   plot_id = 39050,
   volume = 3,
-  csv_suffix = c(5, 6),
-  plot_suffix = 4
+  csv_suffix = c(9, 10),
+  plot_suffix = 6
 )
 
 # Export ---------------------
 
 export_plot(plot39050cd, 3, 205, 139,
-            plot_suffix = 4)
+            plot_suffix = 6)

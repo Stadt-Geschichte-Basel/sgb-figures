@@ -51,7 +51,8 @@ data39050b_longer <- data39050b %>%
     !Jahr_einzel,
     names_to = "Typ",
     values_to = "Summe"
-  )
+  ) %>%
+  mutate(Typ = factor(Typ, levels = c("Steuereinnahmen", "Leibrenten", "verkäufliche Renten")))
 
 # Plot 39050a: Weinungeld, Mühlenungeld, Zölle ---------
 
@@ -165,7 +166,7 @@ write_info_page(
   plot_obj = plot39050ab,
   plot_id = 39050,
   volume = 3,
-  csv_suffix = c(2, 3),
+  csv_suffix = c(4, 5),
   plot_suffix = 1
 )
 

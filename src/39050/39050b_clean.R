@@ -20,15 +20,15 @@ data39050b <- read_excel(here("data", "raw", "Band3", "39050", "39050_Data_raw.x
 
 colnames(data39050b) <- c("Jahr", "Steuereinnahmen", "Leibrenten", "verkäufliche Renten")
 
-save_clean_csv(data39050b, csv_suffix = 3, vol = 3)
+save_clean_csv(data39050b, csv_suffix = 4, vol = 3)
 
 # Create Metadata ------------
 
 meta39050b <- annotate(data = data39050b,
                        mediaID = 39050,
-                       csv_suffix = 3,
+                       csv_suffix = 4,
                        vol = 3,
-                       title = "Einnahmen der Stadt Basel: Steuern und Anleihen ab 1373",
+                       title = "Einnahmen der Stadt Basel ab 1373",
                        column_description = c("Jahreszahl, Angabe als Zeitraum in Jahren unserer Zeitrechnung", "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Steuereinnahmen in Basler Pfund", "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Leibrenten in Basler Pfund", "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: verkäufliche Renten in Basler Pfund"),
                        object_description = c("Die Einnahmen sind jeweils getrennt dargestellt nach ausserordentlichen Einnahmen (direkte Steuern und Anleihen; letztere aufgeschlüsselt nach an den Gläubiger gebundene Leibrenten und verkäufliche Renten) und laufenden Einnahmen (indirekte Steuern und Zölle). Alle Einnahmen in Basler Pfund."),
                        creator = list(list(name = "Benjamin Hitz",
@@ -42,5 +42,5 @@ meta39050b <- annotate(data = data39050b,
                        coverage = "Frühe Neuzeit",
                        source = "Harms, Bernhard: Die Münz- und Geldpolitik der Stadt Basel im Mittelalter, Tübingen 1907, S. 640–672. Bearbeitung: Nico Görlich / Moritz Twente",
                        rights = "Public Domain Mark",
-                       relation = list("m39050_1", "m39050_2", "m39050_4", "m39050_5", "m39050_6")
+                       relation = list("m39050_1", "m39050_5")
                        )
