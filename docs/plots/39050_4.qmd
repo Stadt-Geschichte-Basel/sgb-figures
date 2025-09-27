@@ -197,7 +197,7 @@ plot39050cd <- plot39050d + legende39050d + plot39050c + legende39050c + plot_la
 plot39050cd + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+```{r table1, results="asis"}
 #| echo: false
 #| message: false
 
@@ -213,12 +213,13 @@ df <- data.frame(
     "Coverage",
     "is Part of",
     "Source (Dataset)",
+    "Dataset File",
     "Metadata (Dataset)",
     "Citation (Dataset)",
     "Modified"
   ),
   Value = c(
-    "[abb39050](https://forschung.stadtgeschichtebasel.ch/items/abb39050.html)",
+    "abb39050 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb39050.html))",
     "Einnahmen der Stadt Basel: Ungelder und Zölle ab 1424",
     "Die Einnahmen sind jeweils getrennt dargestellt nach ausserordentlichen Einnahmen (direkte Steuern und Anleihen; letztere aufgeschlüsselt nach an den Gläubiger gebundene Leibrenten und verkäufliche Renten) und laufenden Einnahmen (indirekte Steuern und Zölle). Alle Einnahmen in Basler Pfund.",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
@@ -226,12 +227,55 @@ df <- data.frame(
     "Frühe Neuzeit",
     "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 ([Stadt.Geschichte.Basel 3](https://doi.org/10.21255/sgb-03-345800)).",
     "Harms, Bernhard: Die Münz- und Geldpolitik der Stadt Basel im Mittelalter, Tübingen 1907, S. 640–672. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band3/39050/39050_5_Data.csv](/data/clean/Band3/39050/39050_5_Data.csv)",
     "[data/clean/Band3/39050/39050_5_Data.csv-metadata.json](/data/clean/Band3/39050/39050_5_Data.csv-metadata.json)",
     "Stadt.Geschichte.Basel: Einnahmen der Stadt Basel: Ungelder und Zölle ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_5>, letzte Aktualisierung: 27.09.2025.",
-    "2025-09-27 00:16:52"
+    "2025-09-27 16:20:34"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+knitr::kable(df, format = "markdown", caption = "Dataset Overview (1/2, Subset 39050_5)")
 ```
+
+```{r table2, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Source (Dataset)",
+    "Dataset File",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Modified"
+  ),
+  Value = c(
+    "abb39050 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb39050.html))",
+    "Einnahmen der Stadt Basel: Steuern und Renten ab 1424",
+    "Die Einnahmen sind jeweils getrennt dargestellt nach ausserordentlichen Einnahmen (direkte Steuern und Anleihen; letztere aufgeschlüsselt nach an den Gläubiger gebundene Leibrenten und verkäufliche Renten) und laufenden Einnahmen (indirekte Steuern und Zölle). Alle Einnahmen in Basler Pfund.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1424/1484",
+    "Frühe Neuzeit",
+    "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 ([Stadt.Geschichte.Basel 3](https://doi.org/10.21255/sgb-03-345800)).",
+    "Harms, Bernhard: Die Münz- und Geldpolitik der Stadt Basel im Mittelalter, Tübingen 1907, S. 640–672. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band3/39050/39050_6_Data.csv](/data/clean/Band3/39050/39050_6_Data.csv)",
+    "[data/clean/Band3/39050/39050_6_Data.csv-metadata.json](/data/clean/Band3/39050/39050_6_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Einnahmen der Stadt Basel: Steuern und Renten ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_6>, letzte Aktualisierung: 27.09.2025.",
+    "2025-09-27 16:20:34"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", caption = "Dataset Overview (2/2, Subset 39050_6)")
+```
+

@@ -36,7 +36,7 @@
 					"Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
 				]
 			},
-			"title": ["Einnahmen der Stadt Basel: Ungelder und Zölle ab 1424"],
+			"title": ["Einnahmen der Stadt Basel: Steuern und Renten ab 1424"],
 			"description": [
 				"Die Einnahmen sind jeweils getrennt dargestellt nach ausserordentlichen Einnahmen (direkte Steuern und Anleihen; letztere aufgeschlüsselt nach an den Gläubiger gebundene Leibrenten und verkäufliche Renten) und laufenden Einnahmen (indirekte Steuern und Zölle). Alle Einnahmen in Basler Pfund."
 			],
@@ -69,9 +69,9 @@
 			"relation": [["m39050_1"], ["m39050_2"], ["m39050_3"], ["m39050_4"], ["m39050_5"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-27 01:14:20"],
+			"modified": ["2025-09-27 16:21:39"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Einnahmen der Stadt Basel: Ungelder und Zölle ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_6>, letzte Aktualisierung: 27.09.2025."
+				"Stadt.Geschichte.Basel: Einnahmen der Stadt Basel: Steuern und Renten ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_6>, letzte Aktualisierung: 27.09.2025."
 			]
 		}
 	}

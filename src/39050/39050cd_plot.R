@@ -171,11 +171,11 @@ plot39050cd <- plot39050d + legende39050d + plot39050c + legende39050c + plot_la
 # Write Info Page ------------
 
 write_info_page(
-  plot_obj = plot39050ab,
+  plot_obj = plot39050cd,
   plot_id = 39050,
   volume = 3,
-  csv_suffix = 5,
-  plot_suffix = 1
+  csv_suffix = c(5, 6),
+  plot_suffix = 4
 )
 
 # Export ---------------------
