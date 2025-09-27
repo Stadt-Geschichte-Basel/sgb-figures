@@ -18,6 +18,11 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     glue("{plot_id}_{csv_suffix}_Data.csv-metadata.json")
   )
   
+  ## --- Create Markdown Link for Path to JSON ---
+  rel_path <- fs::path_rel(metadata_file, start = here())
+  rel_path <- gsub("^docs/", "", rel_path)
+  meta_link <- glue("[{rel_path}](/", rel_path, ")")
+  
   # --- Extract Metadata from File ----
   meta <- fromJSON(metadata_file)
   schema <- meta$tables$tableSchema
@@ -28,12 +33,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
   publisher <- schema$publisher[[1]]
   publisher_link <- glue("[{publisher}](https://www.wikidata.org/wiki/Q122442230)")
   
-  ## --- Construct Path to Metadata JSON file (site-relative link) ---
-  rel_path <- fs::path_rel(metadata_file, start = here())
-  rel_path <- gsub("^docs/", "", rel_path)
-  meta_link <- glue("[{rel_path}](/", rel_path, ")")
-  
-  ## --- Map Volume Numbers with Open Access DOIs ---
+  ## --- Map Volume Numbers to Open Access DOIs ---
   vol_text <- schema$isPartOf$volume[[1]]
   vol_short <- str_extract(vol_text, "Stadt\\.Geschichte\\.Basel\\s*\\d+")
   vol_num <- as.integer(str_extract(vol_short, "\\d+"))
@@ -68,7 +68,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
   plot_name <- deparse(substitute(plot_obj))   # e.g. "plot80238a" or "plot88300"
   base_name  <- sub("^plot", "", plot_name)    # e.g. "80238a" or "88300"
   
-  # Prefer the explicit subplot script <base_name>_plot.R if it exists in src/<plot_id>/
+  ## Prefer the explicit subplot script <base_name>_plot.R if it exists in src/<plot_id>/
   candidate_script <- here("src", plot_id, paste0(base_name, "_plot.R"))
   
   if (fs::file_exists(candidate_script)) {
@@ -96,7 +96,8 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     }
   }
   
-  # --- read ggplot call up to '# Write Info Page' in the resolved script ----
+  # --- Create ggplot ----
+  ## --- read ggplot call up to '# Write Info Page' in the resolved script ----
   script_lines <- readLines(plot_script, warn = FALSE)
   cutoff <- grep("^# Write Info Page", script_lines)
   if (length(cutoff) == 0) {
@@ -105,7 +106,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
   }
   first_section <- script_lines[seq_len(cutoff - 1)]
   
-  # --- create plot chunk using the actual object name (works for subplots too) ---
+  ## --- write plot chunk with or without legend ---
   if (isTRUE(has_legend)) {
     plot_chunk <- c(
       "```{r plot_object}",
@@ -129,7 +130,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     )
   }
   
-  # --- build .qmd ----
+  # --- Build .qmd file ----
   plotid_meta <- if (is.null(plot_suffix)) {
     glue("abb{plot_id}")
   } else {
