@@ -42,6 +42,17 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     publisher <- schema$publisher[[1]]
     publisher_link <- glue("[{publisher}](https://www.wikidata.org/wiki/Q122442230)")
     
+    # not parsed at the moment, listing SGB instead
+    #creators <- unlist(schema$creator[[1]])
+    #creators_str <- paste(creators, collapse = ", ")
+    creators_str <- publisher_link
+    
+    contributors <- unlist(schema$contributor[[1]])
+    contributors_str <- paste(contributors, collapse = ", ")
+    
+    license <- schema$license[[1]]
+    license_link <- glue("[{license}]({license})")
+    
     ## --- Map Volume Numbers to Open Access DOIs ---
     vol_text <- schema$isPartOf$volume[[1]]
     vol_short <- str_extract(vol_text, "Stadt\\.Geschichte\\.Basel\\s*\\d+")
@@ -63,13 +74,18 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
       Figure        = fig_link,
       Title         = schema$title[[1]],
       Description   = schema$description[[1]],
+      Creator       = creators_str,
+      Contributors  = contributors_str,
       Publisher     = publisher_link,
       Date          = schema$date[[1]],
       Coverage      = schema$coverage[[1]],
       "is Part of"  = vol_text,
       "Source (Dataset)"       = schema$source[[1]],
+      Dataset       = data_link,
       "Metadata (Dataset)"     = meta_link,
       "Citation (Dataset)"     = schema$bibliographicCitation[[1]],
+      Rights        = schema$rights[[1]],
+      License       = license_link,
       Modified      = schema$modified[[1]]
     )
     
