@@ -44,7 +44,7 @@
 			},
 			"title": ["Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914"],
 			"description": [
-				"Die Grafik zeigt die Zusammensetzung des Regierungsrates jeweils nach den Gesamterneuerungswahlen alle drei Jahre. Bis 1887 wählte der Grosse Rat die Regierung. Seit 1890 wählt das Volk den Regierungsrat im Majorzsystem, im Gegensatz zum Grossen Rat, der seit 1905 im Proporzsystem gewählt wird"
+				"Die Grafik zeigt die Zusammensetzung des Regierungsrates jeweils nach den Gesamterneuerungswahlen alle drei Jahre. Bis 1887 wählte der Grosse Rat die Regierung. Seit 1890 wählt das Volk den Regierungsrat im Majorzsystem, im Gegensatz zum Grossen Rat, der seit 1905 im Proporzsystem gewählt wird."
 			],
 			"creator": [
 				{
@@ -77,9 +77,9 @@
 			"relation": [["m91310_1"], ["m91310_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-26 21:44:16"],
+			"modified": ["2025-09-27 17:54:43"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91310.html#m91310_3>, letzte Aktualisierung: 26.09.2025."
+				"Stadt.Geschichte.Basel: Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91310.html#m91310_3>, letzte Aktualisierung: 27.09.2025."
 			]
 		}
 	}

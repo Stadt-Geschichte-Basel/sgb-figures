@@ -32,7 +32,7 @@
 			},
 			"title": ["Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Glarus, 1850 und 1910"],
 			"description": [
-				"Der Vergleich zwischen Basel-Stadt und Glarus veranschaulicht den sozialen Strukturwandel innerhalb der Schweiz. Um 1850 hatten beide Kantone rund 30 000 Einwohnerinnen und Einwohner. Bis 1910 wuchs die Bevölkerung von Glarus auf etwas über 33 000 Menschen an, während sich die Bevölkerung des Kantons Basel-Stadt auf über 135 000 vervielfachte"
+				"Der Vergleich zwischen Basel-Stadt und Glarus veranschaulicht den sozialen Strukturwandel innerhalb der Schweiz. Um 1850 hatten beide Kantone rund 30 000 Einwohnerinnen und Einwohner. Bis 1910 wuchs die Bevölkerung von Glarus auf etwas über 33 000 Menschen an, während sich die Bevölkerung des Kantons Basel-Stadt auf über 135 000 vervielfachte."
 			],
 			"creator": [
 				{
@@ -62,9 +62,9 @@
 			"relation": [["m92237_1"], ["m92237_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-26 21:43:57"],
+			"modified": ["2025-09-27 17:55:05"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Glarus, 1850 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92237.html#m92237_3>, letzte Aktualisierung: 26.09.2025."
+				"Stadt.Geschichte.Basel: Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Glarus, 1850 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92237.html#m92237_3>, letzte Aktualisierung: 27.09.2025."
 			]
 		}
 	}

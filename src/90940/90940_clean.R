@@ -52,7 +52,7 @@ meta90940 <- annotate(data = data90940,
                                              "Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von 6000-20000 Franken im entsprechenden Jahr",
                                              "Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von >20000 Franken im entsprechenden Jahr"
                                              ),
-                      object_description = "Die Grafik beruht auf den Daten zur Gemeindesteuer. Diese erfasste Haushaltseinkommen ab 800 Franken pro Jahr, der Verdienst der Ehefrau und von minderjährigen Kindern wurde gemeinsam mit dem Einkommen des Mannes versteuert. Die Erhebung war also patriarchal zugeschnitten – und sie erbrachte das Bild einer Bevölkerung, die mehrheitlich am unteren Rand des Möglichen leben musste",
+                      object_description = "Die Grafik beruht auf den Daten zur Gemeindesteuer. Diese erfasste Haushaltseinkommen ab 800 Franken pro Jahr, der Verdienst der Ehefrau und von minderjährigen Kindern wurde gemeinsam mit dem Einkommen des Mannes versteuert. Die Erhebung war also patriarchal zugeschnitten – und sie erbrachte das Bild einer Bevölkerung, die mehrheitlich am unteren Rand des Möglichen leben musste.",
                       creator = list(list(name = "Oliver Kühschelm",
                                           orcid = "0000-0002-3091-5426")),
                       contributor = list(list(name = "Nico Görlich",
