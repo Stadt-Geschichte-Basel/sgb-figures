@@ -37,7 +37,8 @@ data39050a_longer <- data39050a %>%
     !Jahr_einzel,
     names_to = "Typ",
     values_to = "Betrag"
-  )
+  ) %>%
+  mutate(Typ = factor(Typ, levels = c("Weinungeld", "Mühlenungeld", "Zölle")))
 
 ## Transform Data Plot b -----
 
