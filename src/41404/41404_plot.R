@@ -108,7 +108,7 @@ plot41404 <- ggplot(data = data41404,
 
 write_info_page(
   plot_obj = plot41404,
-  plot_id = 41494,
+  plot_id = 41404,
   volume = 3,
   csv_suffix = 3
 )
