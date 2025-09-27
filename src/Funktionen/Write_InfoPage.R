@@ -10,59 +10,77 @@ library(stringr)
 
 write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix = NULL, has_legend = TRUE) {
   
-  # --- Construct Metadata File Path ----
-  metadata_file <- here(
-    "data", "clean",
-    glue("Band{volume}"),
-    glue("{plot_id}"),
-    glue("{plot_id}_{csv_suffix}_Data.csv-metadata.json")
-  )
-  
-  ## --- Create Markdown Link for Path to JSON ---
-  rel_path <- fs::path_rel(metadata_file, start = here())
-  rel_path <- gsub("^docs/", "", rel_path)
-  meta_link <- glue("[{rel_path}](/", rel_path, ")")
-  
-  # --- Extract Metadata from File ----
-  meta <- fromJSON(metadata_file)
-  schema <- meta$tables$tableSchema
-  
-  fig_id <- schema$isPartOf$ObjectID[[1]]
-  fig_link <- glue("[{fig_id}](https://forschung.stadtgeschichtebasel.ch/items/{fig_id}.html)")
-  
-  publisher <- schema$publisher[[1]]
-  publisher_link <- glue("[{publisher}](https://www.wikidata.org/wiki/Q122442230)")
-  
-  ## --- Map Volume Numbers to Open Access DOIs ---
-  vol_text <- schema$isPartOf$volume[[1]]
-  vol_short <- str_extract(vol_text, "Stadt\\.Geschichte\\.Basel\\s*\\d+")
-  vol_num <- as.integer(str_extract(vol_short, "\\d+"))
-  
-  doi_suffixes <- c(
-    "01-406352", "02-404936", "03-345800",
-    "04-283636", "05-155353", "06-810743",
-    "07-663402", "08-796384", "09-486500"
-  )
-  
-  if (!is.na(vol_num) && vol_num >= 1 && vol_num <= length(doi_suffixes)) {
-    vol_link <- glue("[Stadt.Geschichte.Basel {vol_num}](https://doi.org/10.21255/sgb-{doi_suffixes[vol_num]})")
-    vol_text <- sub(vol_short, vol_link, vol_text, fixed = TRUE)
+  # Convert csv_suffix to vector if it's a single value (for backward compatibility)
+  if (length(csv_suffix) == 1) {
+    csv_suffixes <- csv_suffix
+  } else {
+    csv_suffixes <- csv_suffix
   }
   
-  # --- Create Table with Metadata Fields ---
-  fields <- list(
-    Figure        = fig_link,
-    Title         = schema$title[[1]],
-    Description   = schema$description[[1]],
-    Publisher     = publisher_link,
-    Date          = schema$date[[1]],
-    Coverage      = schema$coverage[[1]],
-    "is Part of"  = vol_text,
-    "Source (Dataset)"       = schema$source[[1]],
-    "Metadata (Dataset)"     = meta_link,
-    "Citation (Dataset)"     = schema$bibliographicCitation[[1]],
-    Modified      = schema$modified[[1]]
-  )
+  # Function to process a single metadata file
+  process_metadata <- function(suffix) {
+    # --- Construct Metadata File Path ----
+    metadata_file <- here(
+      "data", "clean",
+      glue("Band{volume}"),
+      glue("{plot_id}"),
+      glue("{plot_id}_{suffix}_Data.csv-metadata.json")
+    )
+    
+    ## --- Create Markdown Link for Path to JSON ---
+    rel_path <- fs::path_rel(metadata_file, start = here())
+    rel_path <- gsub("^docs/", "", rel_path)
+    meta_link <- glue("[{rel_path}](/", rel_path, ")")
+    
+    # --- Extract Metadata from File ----
+    meta <- fromJSON(metadata_file)
+    schema <- meta$tables$tableSchema
+    
+    fig_id <- schema$isPartOf$ObjectID[[1]]
+    fig_link <- glue("[{fig_id}](https://forschung.stadtgeschichtebasel.ch/items/{fig_id}.html)")
+    
+    publisher <- schema$publisher[[1]]
+    publisher_link <- glue("[{publisher}](https://www.wikidata.org/wiki/Q122442230)")
+    
+    ## --- Map Volume Numbers to Open Access DOIs ---
+    vol_text <- schema$isPartOf$volume[[1]]
+    vol_short <- str_extract(vol_text, "Stadt\\.Geschichte\\.Basel\\s*\\d+")
+    vol_num <- as.integer(str_extract(vol_short, "\\d+"))
+    
+    doi_suffixes <- c(
+      "01-406352", "02-404936", "03-345800",
+      "04-283636", "05-155353", "06-810743",
+      "07-663402", "08-796384", "09-486500"
+    )
+    
+    if (!is.na(vol_num) && vol_num >= 1 && vol_num <= length(doi_suffixes)) {
+      vol_link <- glue("[Stadt.Geschichte.Basel {vol_num}](https://doi.org/10.21255/sgb-{doi_suffixes[vol_num]})")
+      vol_text <- sub(vol_short, vol_link, vol_text, fixed = TRUE)
+    }
+    
+    # --- Create Table with Metadata Fields ---
+    fields <- list(
+      Figure        = fig_link,
+      Title         = schema$title[[1]],
+      Description   = schema$description[[1]],
+      Publisher     = publisher_link,
+      Date          = schema$date[[1]],
+      Coverage      = schema$coverage[[1]],
+      "is Part of"  = vol_text,
+      "Source (Dataset)"       = schema$source[[1]],
+      "Metadata (Dataset)"     = meta_link,
+      "Citation (Dataset)"     = schema$bibliographicCitation[[1]],
+      Modified      = schema$modified[[1]]
+    )
+    
+    return(list(fields = fields, schema = schema, vol_short = vol_short))
+  }
+  
+  # Process all metadata files
+  metadata_list <- lapply(csv_suffixes, process_metadata)
+  
+  # Use the first metadata for main document properties (title, date, etc.)
+  main_metadata <- metadata_list[[1]]
   
   # --- infer plot object name (string) and subplot script name ----
   plot_name <- deparse(substitute(plot_obj))   # e.g. "plot80238a" or "plot88300"
@@ -130,6 +148,48 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     )
   }
   
+  # --- Build metadata tables for each dataset ---
+  table_chunks <- c()
+  for (i in seq_along(metadata_list)) {
+    fields <- metadata_list[[i]]$fields
+    
+    table_title <- if (length(metadata_list) > 1) {
+      glue("Dataset Overview {i}/{length(metadata_list)}")
+    } else {
+      "Dataset Overview"
+    }
+    
+    chunk_name <- if (length(metadata_list) > 1) {
+      glue("table{i}")
+    } else {
+      "table"
+    }
+    
+    table_chunk <- c(
+      glue("```{{r {chunk_name}, results=\"asis\"}}"),
+      "#| echo: false",
+      "#| message: false",
+      "",
+      "library(knitr)",
+      "",
+      "df <- data.frame(",
+      "  Key = c(",
+      paste0("    \"", names(fields), "\"", collapse = ",\n"),
+      "  ),",
+      "  Value = c(",
+      paste0("    \"", unlist(fields), "\"", collapse = ",\n"),
+      "  ),",
+      "  stringsAsFactors = FALSE",
+      ")",
+      "",
+      glue("knitr::kable(df, format = \"markdown\", caption = \"{table_title}\")"),
+      "```",
+      ""
+    )
+    
+    table_chunks <- c(table_chunks, table_chunk)
+  }
+  
   # --- Build .qmd file ----
   plotid_meta <- if (is.null(plot_suffix)) {
     glue("abb{plot_id}")
@@ -139,11 +199,11 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
   
   qmd_text <- c(
     "---",
-    glue("title: \"{schema$title[[1]]}\""),
+    glue("title: \"{main_metadata$schema$title[[1]]}\""),
     "subtitle: Plot and Data Preview",
-    glue("date-modified: {as.Date(schema$modified[[1]])}"),
-    glue("volume: \"{schema$isPartOf$volume[[1]]}\""),
-    glue("vol_short: \"{vol_short}\""),
+    glue("date-modified: {as.Date(main_metadata$schema$modified[[1]])}"),
+    glue("volume: \"{main_metadata$schema$isPartOf$volume[[1]]}\""),
+    glue("vol_short: \"{main_metadata$vol_short}\""),
     glue("plotid: \"{plotid_meta}\""),
     "format:",
     "  html:",
@@ -161,24 +221,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     "",
     plot_chunk,
     "",
-    "```{r table, results=\"asis\"}",
-    "#| echo: false",
-    "#| message: false",
-    "",
-    "library(knitr)",
-    "",
-    "df <- data.frame(",
-    "  Key = c(",
-    paste0("    \"", names(fields), "\"", collapse = ",\n"),
-    "  ),",
-    "  Value = c(",
-    paste0("    \"", unlist(fields), "\"", collapse = ",\n"),
-    "  ),",
-    "  stringsAsFactors = FALSE",
-    ")",
-    "",
-    "knitr::kable(df, format = \"markdown\", caption = \"Dataset Overview\")",
-    "```"
+    table_chunks
   )
   
   outdir <- here("docs", "plots")
