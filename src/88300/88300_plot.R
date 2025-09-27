@@ -128,7 +128,7 @@ write_info_page(
   plot_obj = plot88300,
   plot_id = 88300,
   volume = 8,
-  csv_suffix = 3
+  csv_suffix = 2,
 )
 
 # Export ---------------------

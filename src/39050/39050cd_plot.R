@@ -174,7 +174,7 @@ write_info_page(
   plot_obj = plot39050ab,
   plot_id = 39050,
   volume = 3,
-  csv_suffix = c(5, 6),
+  csv_suffix = 5,
   plot_suffix = 1
 )
 
