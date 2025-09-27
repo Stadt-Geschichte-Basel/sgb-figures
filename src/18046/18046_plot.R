@@ -16,7 +16,6 @@ source(here("src", "Funktionen", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
-#data18046 <- readr::read_csv(here("Band4", "18046", "18046_Data.csv"))
 source(here("src", "18046", "18046_clean.R"))
 
 # Transform Data -------------
@@ -88,7 +87,6 @@ write_info_page(
   volume = 4,
   csv_suffix = 3
 )
-
 
 # Export ---------------------
 

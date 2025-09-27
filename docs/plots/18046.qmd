@@ -34,7 +34,6 @@ source(here("src", "Funktionen", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
-#data18046 <- readr::read_csv(here("Band4", "18046", "18046_Data.csv"))
 source(here("src", "18046", "18046_clean.R"))
 
 # Transform Data -------------
@@ -150,7 +149,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Getreidevorräte in der Stadt Basel, 1613–1653. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb18046.html#m18046_3>, letzte Aktualisierung: 27.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-27 18:16:56"
+    "2025-09-27 18:46:55"
   ),
   stringsAsFactors = FALSE
 )

@@ -72,7 +72,6 @@ write_info_page(
   csv_suffix = 3
 )
 
-
 # Export ---------------------
 
 export_plot(plot88454, 8, 120, 63, 27, 6,
