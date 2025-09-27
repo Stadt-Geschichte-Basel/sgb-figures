@@ -19,13 +19,19 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
   
   # Function to process a single metadata file
   process_metadata <- function(suffix) {
-    # --- Construct Metadata File Path ----
-    metadata_file <- here(
-      "data", "clean",
-      glue("Band{volume}"),
-      glue("{plot_id}"),
-      glue("{plot_id}_{suffix}_Data.csv-metadata.json")
-    )
+    # --- Construct Dataset and Metadata File Paths ----
+    
+    dataset_file <- here("data", "clean",
+                      glue("Band{volume}"),
+                      glue("{plot_id}"),
+                      glue("{plot_id}_{suffix}_Data.csv"))
+    
+    metadata_file <- glue("{dataset_file}-metadata.json")
+    
+    ## --- Create Markdown Link for Path to Dataset ---
+    rel_path <- fs::path_rel(dataset_file, start = here())
+    rel_path <- gsub("^docs/", "", rel_path)
+    data_link <- glue("[{rel_path}](/", rel_path, ")")
     
     ## --- Create Markdown Link for Path to JSON ---
     rel_path <- fs::path_rel(metadata_file, start = here())
