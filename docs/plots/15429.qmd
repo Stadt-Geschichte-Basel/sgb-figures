@@ -1,7 +1,7 @@
 ---
 title: "Wohnbevölkerung im Kanton Basel-Stadt nach Religionszugehörigkeit und Herkunft, 1910–1970"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-27
+date-modified: 2025-09-28
 volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
 vol_short: "Stadt.Geschichte.Basel 7"
 plotid: "abb15429"
@@ -128,8 +128,8 @@ df <- data.frame(
     "Date",
     "Coverage",
     "is Part of",
-    "Source (Dataset)",
     "Dataset",
+    "Source (Dataset)",
     "Metadata (Dataset)",
     "Citation (Dataset)",
     "Rights",
@@ -146,13 +146,13 @@ df <- data.frame(
     "1910/1970",
     "20. Jahrhundert",
     "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 ([Stadt.Geschichte.Basel 7](https://doi.org/10.21255/sgb-07-663402)).",
-    "Statistisches Jahrbuch des Kantons Basel-Stadt 1971 (Volkszählungen). Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band7/15429/15429_3_Data.csv](/data/clean/Band7/15429/15429_3_Data.csv)",
+    "Statistisches Jahrbuch des Kantons Basel-Stadt 1971 (Volkszählungen). Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band7/15429/15429_3_Data.csv-metadata.json](/data/clean/Band7/15429/15429_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Wohnbevölkerung im Kanton Basel-Stadt nach Religionszugehörigkeit und Herkunft, 1910–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb15429.html#m15429_3>, letzte Aktualisierung: 27.09.2025.",
+    "Stadt.Geschichte.Basel: Wohnbevölkerung im Kanton Basel-Stadt nach Religionszugehörigkeit und Herkunft, 1910–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb15429.html#m15429_3>, letzte Aktualisierung: 28.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-27 18:16:56"
+    "2025-09-28 00:42:05"
   ),
   stringsAsFactors = FALSE
 )

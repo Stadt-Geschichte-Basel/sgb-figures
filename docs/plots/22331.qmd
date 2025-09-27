@@ -1,7 +1,7 @@
 ---
 title: "Staatliche Ausgaben für Musik und Theater, 1913–1966"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-27
+date-modified: 2025-09-28
 volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
 vol_short: "Stadt.Geschichte.Basel 7"
 plotid: "abb22331"
@@ -107,8 +107,8 @@ df <- data.frame(
     "Date",
     "Coverage",
     "is Part of",
-    "Source (Dataset)",
     "Dataset",
+    "Source (Dataset)",
     "Metadata (Dataset)",
     "Citation (Dataset)",
     "Rights",
@@ -125,13 +125,13 @@ df <- data.frame(
     "1913/1966",
     "20. Jahrhundert",
     "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 ([Stadt.Geschichte.Basel 7](https://doi.org/10.21255/sgb-07-663402)).",
-    "Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge: Daten 1913-1930: Ausgabe 1935, S. 294 'Musik, Theater, Literatur (einschl. Münster, Kreuzgang usw.)'. Daten 1940-1955: Ausgabe 1955, S. 200f. Daten 1956-1963: Ausgabe 1963, S. 188f. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band7/22331/22331_3_Data.csv](/data/clean/Band7/22331/22331_3_Data.csv)",
+    "Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge: Daten 1913-1930: Ausgabe 1935, S. 294 'Musik, Theater, Literatur (einschl. Münster, Kreuzgang usw.)'. Daten 1940-1955: Ausgabe 1955, S. 200f. Daten 1956-1963: Ausgabe 1963, S. 188f. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band7/22331/22331_3_Data.csv-metadata.json](/data/clean/Band7/22331/22331_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Staatliche Ausgaben für Musik und Theater, 1913–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb22331.html#m22331_3>, letzte Aktualisierung: 27.09.2025.",
+    "Stadt.Geschichte.Basel: Staatliche Ausgaben für Musik und Theater, 1913–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb22331.html#m22331_3>, letzte Aktualisierung: 28.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-27 18:16:57"
+    "2025-09-28 00:42:07"
   ),
   stringsAsFactors = FALSE
 )

@@ -1,7 +1,7 @@
 ---
 title: "Kulturausgaben in Basel-Stadt, 2021"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-27
+date-modified: 2025-09-28
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb88300"
@@ -168,8 +168,8 @@ df <- data.frame(
     "Date",
     "Coverage",
     "is Part of",
-    "Source (Dataset)",
     "Dataset",
+    "Source (Dataset)",
     "Metadata (Dataset)",
     "Citation (Dataset)",
     "Rights",
@@ -186,13 +186,13 @@ df <- data.frame(
     "2014",
     "21. Jahrhundert",
     "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 ([Stadt.Geschichte.Basel 8](https://doi.org/10.21255/sgb-08-796384)).",
-    "Bundesamt für Statistik, gd-d-16.02.05.01-2024. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/88300/88300_2_Data.csv](/data/clean/Band8/88300/88300_2_Data.csv)",
+    "Bundesamt für Statistik, gd-d-16.02.05.01-2024. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/88300/88300_2_Data.csv-metadata.json](/data/clean/Band8/88300/88300_2_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_2>, letzte Aktualisierung: 27.09.2025.",
+    "Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_2>, letzte Aktualisierung: 28.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-27 18:17:01"
+    "2025-09-28 00:42:10"
   ),
   stringsAsFactors = FALSE
 )
@@ -216,8 +216,8 @@ df <- data.frame(
     "Date",
     "Coverage",
     "is Part of",
-    "Source (Dataset)",
     "Dataset",
+    "Source (Dataset)",
     "Metadata (Dataset)",
     "Citation (Dataset)",
     "Rights",
@@ -234,13 +234,13 @@ df <- data.frame(
     "2021",
     "21. Jahrhundert",
     "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 ([Stadt.Geschichte.Basel 8](https://doi.org/10.21255/sgb-08-796384)).",
-    "Jahresbericht Abteilung Kultur 2021. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/88300/88300_3_Data.csv](/data/clean/Band8/88300/88300_3_Data.csv)",
+    "Jahresbericht Abteilung Kultur 2021. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/88300/88300_3_Data.csv-metadata.json](/data/clean/Band8/88300/88300_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_3>, letzte Aktualisierung: 27.09.2025.",
+    "Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_3>, letzte Aktualisierung: 28.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-27 18:17:01"
+    "2025-09-28 00:42:10"
   ),
   stringsAsFactors = FALSE
 )

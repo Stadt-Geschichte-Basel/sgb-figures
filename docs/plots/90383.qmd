@@ -1,7 +1,7 @@
 ---
 title: "Erwerbstätige nach sozialen Klassen im St. Alban und Klybeck"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-27
+date-modified: 2025-09-28
 volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 vol_short: "Stadt.Geschichte.Basel 6"
 plotid: "abb90383"
@@ -121,8 +121,8 @@ df <- data.frame(
     "Date",
     "Coverage",
     "is Part of",
-    "Source (Dataset)",
     "Dataset",
+    "Source (Dataset)",
     "Metadata (Dataset)",
     "Citation (Dataset)",
     "Rights",
@@ -139,13 +139,13 @@ df <- data.frame(
     "1910",
     "20. Jahrhundert",
     "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 ([Stadt.Geschichte.Basel 6](https://doi.org/10.21255/sgb-06-810743)).",
-    "Jenny, Oskar Hugo: Die Bevölkerung des Kantons Basel-Stadt. Am 1. Dezember 1910, Basel 1924 (Mitteilungen des Statistischen Amtes des Kantons Basel-Stadt Nr. 28, Ed. 1924), S. 156f. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band6/90383/90383_3_Data.csv](/data/clean/Band6/90383/90383_3_Data.csv)",
+    "Jenny, Oskar Hugo: Die Bevölkerung des Kantons Basel-Stadt. Am 1. Dezember 1910, Basel 1924 (Mitteilungen des Statistischen Amtes des Kantons Basel-Stadt Nr. 28, Ed. 1924), S. 156f. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band6/90383/90383_3_Data.csv-metadata.json](/data/clean/Band6/90383/90383_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Erwerbstätige nach sozialen Klassen im St. Alban und Klybeck. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90383.html#m90383_3>, letzte Aktualisierung: 27.09.2025.",
+    "Stadt.Geschichte.Basel: Erwerbstätige nach sozialen Klassen im St. Alban und Klybeck. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90383.html#m90383_3>, letzte Aktualisierung: 28.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-27 18:17:01"
+    "2025-09-28 00:42:11"
   ),
   stringsAsFactors = FALSE
 )
