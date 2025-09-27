@@ -1,7 +1,7 @@
 ---
 title: "Rentengeschäft von Ludwig Kilchmann"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-26
+date-modified: 2025-09-27
 volume: "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
 vol_short: "Stadt.Geschichte.Basel 3"
 plotid: "abb39017"
@@ -119,30 +119,40 @@ df <- data.frame(
     "Figure",
     "Title",
     "Description",
+    "Creator",
+    "Contributors",
     "Publisher",
     "Date",
     "Coverage",
     "is Part of",
     "Source (Dataset)",
+    "Dataset",
     "Metadata (Dataset)",
     "Citation (Dataset)",
+    "Rights",
+    "License",
     "Modified"
   ),
   Value = c(
-    "[abb39017](https://forschung.stadtgeschichtebasel.ch/items/abb39017.html)",
+    "abb39017 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb39017.html))",
     "Rentengeschäft von Ludwig Kilchmann",
     "Die Grafik zeigt die Gesamtsumme (in Gulden) des in Renten angelegten Vermögens von Ludwig Kilchmann, dazu die Summen der jährlich erfolgten Ablösungen und Neukäufe. Dank regelmässiger Zinszahlungen fuhr Kilchmann gut mit seiner Anlagestrategie, er konnte in den Jahren des Wachstums die investierte Summe um über vier Prozent pro Jahr steigern (erstellt auf der Basis von Signori 2014; Umrechnung nach Harms 1907).",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "1484/1521",
     "Frühe Neuzeit",
     "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 ([Stadt.Geschichte.Basel 3](https://doi.org/10.21255/sgb-03-345800)).",
     "Signori, Gabriela: Das Schuldbuch des Basler Kaufmanns Ludwig Kilchmann (gest. 1518), Stuttgart 2014. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band3/39017/39017_3_Data.csv](/data/clean/Band3/39017/39017_3_Data.csv)",
     "[data/clean/Band3/39017/39017_3_Data.csv-metadata.json](/data/clean/Band3/39017/39017_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Rentengeschäft von Ludwig Kilchmann. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39017.html#m39017_3>, letzte Aktualisierung: 26.09.2025.",
-    "2025-09-26 21:43:22"
+    "Stadt.Geschichte.Basel: Rentengeschäft von Ludwig Kilchmann. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39017.html#m39017_3>, letzte Aktualisierung: 27.09.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-09-27 18:16:58"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+knitr::kable(df, format = "markdown", caption = "Dataset Overview (39017_3)")
 ```

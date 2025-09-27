@@ -1,7 +1,7 @@
 ---
 title: "Museumseintritte und Kinobesuche in Basel-Stadt, 1945–2020"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-26
+date-modified: 2025-09-27
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb88454"
@@ -103,30 +103,40 @@ df <- data.frame(
     "Figure",
     "Title",
     "Description",
+    "Creator",
+    "Contributors",
     "Publisher",
     "Date",
     "Coverage",
     "is Part of",
     "Source (Dataset)",
+    "Dataset",
     "Metadata (Dataset)",
     "Citation (Dataset)",
+    "Rights",
+    "License",
     "Modified"
   ),
   Value = c(
-    "[abb88454](https://forschung.stadtgeschichtebasel.ch/items/abb88454.html)",
+    "abb88454 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb88454.html))",
     "Museumseintritte und Kinobesuche in Basel-Stadt, 1945–2020",
     "In der zweiten Hälfte des 20. Jahrhunderts öffneten sich die Museen zunehmend für breitere Bevölkerungskreise und entwickelten Angebote für die ganze Familie. Das manifestierte sich auch in den Besucherzahlen, insbesondere ab den 1990er-Jahren. Ein gegenläufiger Trend war bei den Kinos zu beobachten. Das Fernsehen, später auch Videos, DVDs und Streamingdienste mit Flatrate-Angeboten wurden für viele eine günstige Alternative. 2005 besuchten nur noch eine Million Menschen Filmvorführungen (1957: 4.2 Millionen), die Zahl der Kinos sank von 19 (1957) auf 7 (2020). Als 2023 mit dem Multiplexkino Küchlin das letzte Lichtspielhaus in der Steinenvorstadt schliessen musste, war in den Medien die Rede vom «Tod der Kinostrasse».",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "1945/2020",
     "20. Jahrhundert",
     "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 ([Stadt.Geschichte.Basel 8](https://doi.org/10.21255/sgb-08-796384)).",
     "Statistisches Jahrbuch des Kantons Basel-Stadt. Daten zu Museumseintritten vor 1992 nach StaBS ED-REG 37a 7-1 (2). Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band8/88454/88454_3_Data.csv](/data/clean/Band8/88454/88454_3_Data.csv)",
     "[data/clean/Band8/88454/88454_3_Data.csv-metadata.json](/data/clean/Band8/88454/88454_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Museumseintritte und Kinobesuche in Basel-Stadt, 1945–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88454.html#m88454_3>, letzte Aktualisierung: 26.09.2025.",
-    "2025-09-26 21:43:26"
+    "Stadt.Geschichte.Basel: Museumseintritte und Kinobesuche in Basel-Stadt, 1945–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88454.html#m88454_3>, letzte Aktualisierung: 27.09.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-09-27 18:17:01"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+knitr::kable(df, format = "markdown", caption = "Dataset Overview (88454_3)")
 ```

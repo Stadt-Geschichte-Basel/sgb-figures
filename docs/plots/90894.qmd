@@ -1,7 +1,7 @@
 ---
 title: "Exporte in die wichtigsten Zielländer, 1900"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-26
+date-modified: 2025-09-27
 volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 vol_short: "Stadt.Geschichte.Basel 6"
 plotid: "abb90894"
@@ -142,30 +142,40 @@ df <- data.frame(
     "Figure",
     "Title",
     "Description",
+    "Creator",
+    "Contributors",
     "Publisher",
     "Date",
     "Coverage",
     "is Part of",
     "Source (Dataset)",
+    "Dataset",
     "Metadata (Dataset)",
     "Citation (Dataset)",
+    "Rights",
+    "License",
     "Modified"
   ),
   Value = c(
-    "[abb90894](https://forschung.stadtgeschichtebasel.ch/items/abb90894.html)",
+    "abb90894 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb90894.html))",
     "Exporte in die wichtigsten Zielländer, 1900",
     "Die Seidenbandindustrie exportierte im Jahr 1900 Waren im Wert von 31 Millionen Franken. Rund 87 Prozent gingen in die drei wichtigsten Zielländer, so wie auch im Fall des aus Seidenabfällen hergestellten Schappegarns. Die Exporte der Farbenindustrie verweisen bereits auf den Aufstieg der chemischen Industrie. Sie betrugen zwar mit 15 Millionen Franken weniger als die Hälfte des mit Seidenbändern erzielten Exports. Dafür streuten sich die Abnehmerländer breiter. Nur 55 Prozent gingen in die drei wichtigsten Märkte.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "1900",
     "19. Jahrhundert",
     "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 ([Stadt.Geschichte.Basel 6](https://doi.org/10.21255/sgb-06-810743)).",
     "Jahresbericht Basler Handelskammer 1901, S. 10. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band6/90894/90894_3_Data.csv](/data/clean/Band6/90894/90894_3_Data.csv)",
     "[data/clean/Band6/90894/90894_3_Data.csv-metadata.json](/data/clean/Band6/90894/90894_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Exporte in die wichtigsten Zielländer, 1900. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90894.html#m90894_3>, letzte Aktualisierung: 26.09.2025.",
-    "2025-09-26 21:43:26"
+    "Stadt.Geschichte.Basel: Exporte in die wichtigsten Zielländer, 1900. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90894.html#m90894_3>, letzte Aktualisierung: 27.09.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-09-27 18:17:01"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+knitr::kable(df, format = "markdown", caption = "Dataset Overview (90894_3)")
 ```

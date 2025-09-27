@@ -1,7 +1,7 @@
 ---
 title: "Bürgerrechtsaufnahmen, 1400–1798"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-26
+date-modified: 2025-09-27
 volume: "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 (Stadt.Geschichte.Basel 4)."
 vol_short: "Stadt.Geschichte.Basel 4"
 plotid: "abb14158"
@@ -100,30 +100,40 @@ df <- data.frame(
     "Figure",
     "Title",
     "Description",
+    "Creator",
+    "Contributors",
     "Publisher",
     "Date",
     "Coverage",
     "is Part of",
     "Source (Dataset)",
+    "Dataset",
     "Metadata (Dataset)",
     "Citation (Dataset)",
+    "Rights",
+    "License",
     "Modified"
   ),
   Value = c(
-    "[abb14158](https://forschung.stadtgeschichtebasel.ch/items/abb14158.html)",
+    "abb14158 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb14158.html))",
     "Bürgerrechtsaufnahmen, 1400–1798",
     "Basels Einbürgerungspolitik wurde im Laufe der Frühen Neuzeit immer restriktiver. Im 18. Jahrhundert kam es kaum noch zu Neuaufnahmen ins Bürgerrecht (Angaben nach Gschwind 1977, S. 170).",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "1400/1798",
     "Frühe Neuzeit",
     "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 ([Stadt.Geschichte.Basel 4](https://doi.org/10.21255/sgb-04-283636)).",
     "Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500). Basel, Liestal 1977, S. 170. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band4/14158/14158_3_Data.csv](/data/clean/Band4/14158/14158_3_Data.csv)",
     "[data/clean/Band4/14158/14158_3_Data.csv-metadata.json](/data/clean/Band4/14158/14158_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Bürgerrechtsaufnahmen, 1400–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb14158.html#m14158_3>, letzte Aktualisierung: 26.09.2025.",
-    "2025-09-26 21:43:20"
+    "Stadt.Geschichte.Basel: Bürgerrechtsaufnahmen, 1400–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb14158.html#m14158_3>, letzte Aktualisierung: 27.09.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-09-27 18:16:55"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+knitr::kable(df, format = "markdown", caption = "Dataset Overview (14158_3)")
 ```

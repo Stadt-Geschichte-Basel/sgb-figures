@@ -1,7 +1,7 @@
 ---
 title: "Privatbesitz an Boden und Wohnraum in Basel, 2021"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-26
+date-modified: 2025-09-27
 volume: "Baur, Esther; Gafner, Lina (Hg.): Stadträume. Offen und begrenzt, gestaltet und umkämpft. Basel 2025 (Stadt.Geschichte.Basel 9)."
 vol_short: "Stadt.Geschichte.Basel 9"
 plotid: "abb92792"
@@ -91,30 +91,40 @@ df <- data.frame(
     "Figure",
     "Title",
     "Description",
+    "Creator",
+    "Contributors",
     "Publisher",
     "Date",
     "Coverage",
     "is Part of",
     "Source (Dataset)",
+    "Dataset",
     "Metadata (Dataset)",
     "Citation (Dataset)",
+    "Rights",
+    "License",
     "Modified"
   ),
   Value = c(
-    "[abb92792](https://forschung.stadtgeschichtebasel.ch/items/abb92792.html)",
+    "abb92792 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb92792.html))",
     "Privatbesitz an Boden und Wohnraum in Basel, 2021",
     "Wem gehört Basel heute? Die Darstellung zeigt die grössten Privatplayer auf dem baselstädtischen Boden- und Wohnungsmarkt. Nach einer Recherche von reflect.ch und Bajour aus dem Jahr 2021 gehört rund ein Drittel aller Wohnungen in Basel-Stadt mittlerweile institutionellen, renditeorientierten Unternehmen. Dem Staat gehörten 2016 etwa 24 Prozent der bebau-baren Kantonsfläche (Berechnung der Initiant:innen der kantonalen ‹Neuen Bodeninitiative› von 2016).",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "2021",
     "21. Jahrhundert",
     "Baur, Esther; Gafner, Lina (Hg.): Stadträume. Offen und begrenzt, gestaltet und umkämpft. Basel 2025 ([Stadt.Geschichte.Basel 9](https://doi.org/10.21255/sgb-09-486500)).",
     "https://reflekt.ch/recherchen/wem-gehoert-basel. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band9/92792/92792_3_Data.csv](/data/clean/Band9/92792/92792_3_Data.csv)",
     "[data/clean/Band9/92792/92792_3_Data.csv-metadata.json](/data/clean/Band9/92792/92792_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Privatbesitz an Boden und Wohnraum in Basel, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92792.html#m92792_3>, letzte Aktualisierung: 26.09.2025.",
-    "2025-09-26 21:43:27"
+    "Stadt.Geschichte.Basel: Privatbesitz an Boden und Wohnraum in Basel, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92792.html#m92792_3>, letzte Aktualisierung: 27.09.2025.",
+    "CC BY-SA 4.0",
+    "[https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/)",
+    "2025-09-27 18:17:02"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+knitr::kable(df, format = "markdown", caption = "Dataset Overview (92792_3)")
 ```

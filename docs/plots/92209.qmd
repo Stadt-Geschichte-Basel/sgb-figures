@@ -1,7 +1,7 @@
 ---
 title: "Bevölkerungsentwicklung des Kantons Basel-Stadt, 1870–1910"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-26
+date-modified: 2025-09-27
 volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 vol_short: "Stadt.Geschichte.Basel 6"
 plotid: "abb92209"
@@ -104,30 +104,40 @@ df <- data.frame(
     "Figure",
     "Title",
     "Description",
+    "Creator",
+    "Contributors",
     "Publisher",
     "Date",
     "Coverage",
     "is Part of",
     "Source (Dataset)",
+    "Dataset",
     "Metadata (Dataset)",
     "Citation (Dataset)",
+    "Rights",
+    "License",
     "Modified"
   ),
   Value = c(
-    "[abb92209](https://forschung.stadtgeschichtebasel.ch/items/abb92209.html)",
+    "abb92209 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb92209.html))",
     "Bevölkerungsentwicklung des Kantons Basel-Stadt, 1870–1910",
-    "Dank der liberalen Einbürgerungspraxis stieg der Anteil der Menschen mit Basler Bürgerrecht von 1900 bis 1910 von rund 17 000 auf 45 000 Personen an. Der Anteil von Einwohner:innen mit ausländischer Staatsbürgerschaft lag um 1910 bei rund 38 Prozent",
+    "Dank der liberalen Einbürgerungspraxis stieg der Anteil der Menschen mit Basler Bürgerrecht von 1900 bis 1910 von rund 17 000 auf 45 000 Personen an. Der Anteil von Einwohner:innen mit ausländischer Staatsbürgerschaft lag um 1910 bei rund 38 Prozent.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "1870/1910",
     "19. Jahrhundert",
     "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 ([Stadt.Geschichte.Basel 6](https://doi.org/10.21255/sgb-06-810743)).",
     "Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band6/92209/92209_3_Data.csv](/data/clean/Band6/92209/92209_3_Data.csv)",
     "[data/clean/Band6/92209/92209_3_Data.csv-metadata.json](/data/clean/Band6/92209/92209_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Bevölkerungsentwicklung des Kantons Basel-Stadt, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92209.html#m92209_3>, letzte Aktualisierung: 26.09.2025.",
-    "2025-09-26 21:43:26"
+    "Stadt.Geschichte.Basel: Bevölkerungsentwicklung des Kantons Basel-Stadt, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92209.html#m92209_3>, letzte Aktualisierung: 27.09.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-09-27 18:17:02"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+knitr::kable(df, format = "markdown", caption = "Dataset Overview (92209_3)")
 ```

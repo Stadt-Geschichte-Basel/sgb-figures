@@ -1,7 +1,7 @@
 ---
 title: "Die ausländische Wohnbevölkerung von Basel-Stadt nach Heimatnation, 1920–1965"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-26
+date-modified: 2025-09-27
 volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
 vol_short: "Stadt.Geschichte.Basel 7"
 plotid: "abb21535"
@@ -104,30 +104,40 @@ df <- data.frame(
     "Figure",
     "Title",
     "Description",
+    "Creator",
+    "Contributors",
     "Publisher",
     "Date",
     "Coverage",
     "is Part of",
     "Source (Dataset)",
+    "Dataset",
     "Metadata (Dataset)",
     "Citation (Dataset)",
+    "Rights",
+    "License",
     "Modified"
   ),
   Value = c(
-    "[abb21535](https://forschung.stadtgeschichtebasel.ch/items/abb21535.html)",
+    "abb21535 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb21535.html))",
     "Die ausländische Wohnbevölkerung von Basel-Stadt nach Heimatnation, 1920–1965",
-    "Der Anteil der deutschen Staatsangehörigen an der in Basel wohnhaften ausländischen Bevölkerung nahm kontinuierlich ab, jener der italienischen insbesondere in den 1960er-Jahren deutlich zu. Da die Volkszählungen im Dezember stattfanden, waren die ‹Saisonniers›, die sich maximal neun Monate am Stück im Land aufhalten durften, meist nicht eingerechnet. Mit ihnen war die Zahl der italienischen Staatsangehörigen vor allem in den Sommermonaten noch weitaus höher. Ab 1964 fanden die Spanierinnen und Spanier, deren Zahl ab Mitte der 1960er-Jahren deutlich anstieg, separat Eingang ins Statistische Jahrbuch. Vorher wurden sie zur Kategorie ‹Übriges Ausland› gerechnet",
+    "Der Anteil der deutschen Staatsangehörigen an der in Basel wohnhaften ausländischen Bevölkerung nahm kontinuierlich ab, jener der italienischen insbesondere in den 1960er-Jahren deutlich zu. Da die Volkszählungen im Dezember stattfanden, waren die ‹Saisonniers›, die sich maximal neun Monate am Stück im Land aufhalten durften, meist nicht eingerechnet. Mit ihnen war die Zahl der italienischen Staatsangehörigen vor allem in den Sommermonaten noch weitaus höher. Ab 1964 fanden die Spanierinnen und Spanier, deren Zahl ab Mitte der 1960er-Jahren deutlich anstieg, separat Eingang ins Statistische Jahrbuch. Vorher wurden sie zur Kategorie ‹Übriges Ausland› gerechnet.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "1920/1965",
     "20. Jahrhundert",
     "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 ([Stadt.Geschichte.Basel 7](https://doi.org/10.21255/sgb-07-663402)).",
     "Statistisches Jahrbuch des Kantons Basel-Stadt 1966, S. 32. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band7/21535/21535_3_Data.csv](/data/clean/Band7/21535/21535_3_Data.csv)",
     "[data/clean/Band7/21535/21535_3_Data.csv-metadata.json](/data/clean/Band7/21535/21535_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Die ausländische Wohnbevölkerung von Basel-Stadt nach Heimatnation, 1920–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21535.html#m21535_3>, letzte Aktualisierung: 26.09.2025.",
-    "2025-09-26 21:43:21"
+    "Stadt.Geschichte.Basel: Die ausländische Wohnbevölkerung von Basel-Stadt nach Heimatnation, 1920–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21535.html#m21535_3>, letzte Aktualisierung: 27.09.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-09-27 18:16:57"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+knitr::kable(df, format = "markdown", caption = "Dataset Overview (21535_3)")
 ```

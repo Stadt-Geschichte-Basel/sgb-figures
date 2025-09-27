@@ -1,7 +1,7 @@
 ---
 title: "Bürgeraufnahmen und Kriegsausgaben, 1360–1530"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-26
+date-modified: 2025-09-27
 volume: "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
 vol_short: "Stadt.Geschichte.Basel 3"
 plotid: "abb39492"
@@ -158,30 +158,40 @@ df <- data.frame(
     "Figure",
     "Title",
     "Description",
+    "Creator",
+    "Contributors",
     "Publisher",
     "Date",
     "Coverage",
     "is Part of",
     "Source (Dataset)",
+    "Dataset",
     "Metadata (Dataset)",
     "Citation (Dataset)",
+    "Rights",
+    "License",
     "Modified"
   ),
   Value = c(
-    "[abb39492](https://forschung.stadtgeschichtebasel.ch/items/abb39492.html)",
+    "abb39492 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb39492.html))",
     "Bürgeraufnahmen und Kriegsausgaben, 1360–1530",
-    "Der Zusammenhang zwischen Bürgeraufnahmen und Kriegszügen wird aus der Gegenüberstellung mit den städtischen Kriegsausgaben klar ersichtlich. Bis weit ins 15. Jahrhundert richtete sich die Einbürgerungspolitik nach den Bedürfnissen der Stadt im Kriegsfall und nicht nach der Migration. Entsprechend verging wohl für viele Zugezogene eine lange Zeit zwischen Zuwanderung und Einbürgerung (Daten nach: Portmann 1979, S. 96–99. Rosen 1984, S. 477–479)",
+    "Der Zusammenhang zwischen Bürgeraufnahmen und Kriegszügen wird aus der Gegenüberstellung mit den städtischen Kriegsausgaben klar ersichtlich. Bis weit ins 15. Jahrhundert richtete sich die Einbürgerungspolitik nach den Bedürfnissen der Stadt im Kriegsfall und nicht nach der Migration. Entsprechend verging wohl für viele Zugezogene eine lange Zeit zwischen Zuwanderung und Einbürgerung (Daten nach: Portmann 1979, S. 96–99. Rosen 1984, S. 477–479).",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "1360/1525",
     "Frühe Neuzeit",
     "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 ([Stadt.Geschichte.Basel 3](https://doi.org/10.21255/sgb-03-345800)).",
     "Portmann, Rolf Ernst: Basler Einbürgerungspolitik 1358–1798. Mit einer Berufs- und Herkunftsstatistik des Mittelalters, Basel 1979, S. 96–99. Rosen, Josef: Kriegsausgaben im Spätmittelalter. Der militärische Aufwand in Basel 1360–1535, in: Vierteljahrschrift für Sozial- und Wirtschaftsgeschichte 71, 1984, S. 477–479. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band3/39492/39492_3_Data.csv](/data/clean/Band3/39492/39492_3_Data.csv)",
     "[data/clean/Band3/39492/39492_3_Data.csv-metadata.json](/data/clean/Band3/39492/39492_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Bürgeraufnahmen und Kriegsausgaben, 1360–1530. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39492.html#m39492_3>, letzte Aktualisierung: 26.09.2025.",
-    "2025-09-26 21:43:23"
+    "Stadt.Geschichte.Basel: Bürgeraufnahmen und Kriegsausgaben, 1360–1530. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39492.html#m39492_3>, letzte Aktualisierung: 27.09.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-09-27 18:16:59"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+knitr::kable(df, format = "markdown", caption = "Dataset Overview (39492_3)")
 ```

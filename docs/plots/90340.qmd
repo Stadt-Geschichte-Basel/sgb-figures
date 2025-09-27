@@ -1,7 +1,7 @@
 ---
 title: "Prozentuales Bevölkerungswachstum in Gross- und Kleinbasel, 1860–1910"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-26
+date-modified: 2025-09-27
 volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 vol_short: "Stadt.Geschichte.Basel 6"
 plotid: "abb90340"
@@ -108,30 +108,40 @@ df <- data.frame(
     "Figure",
     "Title",
     "Description",
+    "Creator",
+    "Contributors",
     "Publisher",
     "Date",
     "Coverage",
     "is Part of",
     "Source (Dataset)",
+    "Dataset",
     "Metadata (Dataset)",
     "Citation (Dataset)",
+    "Rights",
+    "License",
     "Modified"
   ),
   Value = c(
-    "[abb90340](https://forschung.stadtgeschichtebasel.ch/items/abb90340.html)",
+    "abb90340 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb90340.html))",
     "Prozentuales Bevölkerungswachstum in Gross- und Kleinbasel, 1860–1910",
-    "Innerhalb eines halben Jahrhunderts wuchs die Bevölkerung der Stadt von 37 915 um beinahe 100 000 Einwohnerinnen und Einwohner. Während sich in Grossbasel die Bevölkerung verdreifachte, entsprach die Zunahme im Kleinbasel von 10 283 auf 48 455 Einwohnerinnen und Einwohner nahezu einer Verfünffachung. Die Einwohner:innen Kleinhüningens werden ab 1900 dem Kleinbasel zugerechnet",
+    "Innerhalb eines halben Jahrhunderts wuchs die Bevölkerung der Stadt von 37 915 um beinahe 100 000 Einwohnerinnen und Einwohner. Während sich in Grossbasel die Bevölkerung verdreifachte, entsprach die Zunahme im Kleinbasel von 10 283 auf 48 455 Einwohnerinnen und Einwohner nahezu einer Verfünffachung. Die Einwohner:innen Kleinhüningens werden ab 1900 dem Kleinbasel zugerechnet.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "1860/1910",
     "19. Jahrhundert",
     "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 ([Stadt.Geschichte.Basel 6](https://doi.org/10.21255/sgb-06-810743)).",
     "Bauer, Stephan: Die Bevölkerung des Kantons Basel-Stadt, Basel 1905; Jenny, Oskar Hugo: Die Bevölkerung des Kantons Basel-Stadt. Am 1. Dezember 1910, Basel 1924 (Mitteilungen des Statistischen Amtes des Kantons Basel-Stadt Nr. 28, Ed. 1924)., Tabelle I, 3*–5*. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band6/90340/90340_3_Data.csv](/data/clean/Band6/90340/90340_3_Data.csv)",
     "[data/clean/Band6/90340/90340_3_Data.csv-metadata.json](/data/clean/Band6/90340/90340_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Prozentuales Bevölkerungswachstum in Gross- und Kleinbasel, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90340.html#m90340_3>, letzte Aktualisierung: 26.09.2025.",
-    "2025-09-26 21:43:26"
+    "Stadt.Geschichte.Basel: Prozentuales Bevölkerungswachstum in Gross- und Kleinbasel, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90340.html#m90340_3>, letzte Aktualisierung: 27.09.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-09-27 18:17:01"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+knitr::kable(df, format = "markdown", caption = "Dataset Overview (90340_3)")
 ```

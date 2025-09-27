@@ -1,7 +1,7 @@
 ---
 title: "Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-26
+date-modified: 2025-09-27
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb82338"
@@ -110,30 +110,40 @@ df <- data.frame(
     "Figure",
     "Title",
     "Description",
+    "Creator",
+    "Contributors",
     "Publisher",
     "Date",
     "Coverage",
     "is Part of",
     "Source (Dataset)",
+    "Dataset",
     "Metadata (Dataset)",
     "Citation (Dataset)",
+    "Rights",
+    "License",
     "Modified"
   ),
   Value = c(
-    "[abb82338](https://forschung.stadtgeschichtebasel.ch/items/abb82338.html)",
+    "abb82338 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb82338.html))",
     "Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002",
     "Die Erfassung der Arbeitslosigkeit ist voller Tücken. In der Statistik werden nur Menschen erfasst, die Anspruch auf Arbeitslosenentschädigungen haben. Der Anteil an Erwerbslosen war während der Rezession Mitte der 1970er-Jahre jedoch wesentlich höher, als es die erhobene Arbeitslosenquote von 0.5 bis 1.5 Prozent vermuten lässt. Die Zahlen blieben niedrig, weil viele ausländische Arbeitnehmerinnen und Arbeitnehmer mit ihrem Stellenverlust auch ihr Aufenthaltsrecht verloren. Im Vergleich zum Landesdurchschnitt verzeichnete der Kanton Basel-Stadt Mitte der 1980er-Jahre eine hohe Arbeitslosenquote von knapp drei Prozent. In der Krise der 1990er-Jahre stieg sie auf fast sechs Prozent, im Kanton Zürich lag sie tiefer, in Westschweizer Kantonen wie Genf noch höher.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "1973/2002",
     "20. Jahrhundert",
     "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 ([Stadt.Geschichte.Basel 8](https://doi.org/10.21255/sgb-08-796384)).",
     "Bundesamt für Statistik, Staatssekretariat für Wirtschaft 2024: Arbeitslose nach Kanton. Jahresdurchschnitt. https://www.bfs.admin.ch/asset/de/30245369. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band8/82338/82338_3_Data.csv](/data/clean/Band8/82338/82338_3_Data.csv)",
     "[data/clean/Band8/82338/82338_3_Data.csv-metadata.json](/data/clean/Band8/82338/82338_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb82338.html#m82338_3>, letzte Aktualisierung: 26.09.2025.",
-    "2025-09-26 21:43:25"
+    "Stadt.Geschichte.Basel: Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb82338.html#m82338_3>, letzte Aktualisierung: 27.09.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-09-27 18:17:00"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+knitr::kable(df, format = "markdown", caption = "Dataset Overview (82338_3)")
 ```

@@ -111,30 +111,40 @@ df <- data.frame(
     "Figure",
     "Title",
     "Description",
+    "Creator",
+    "Contributors",
     "Publisher",
     "Date",
     "Coverage",
     "is Part of",
     "Source (Dataset)",
+    "Dataset",
     "Metadata (Dataset)",
     "Citation (Dataset)",
+    "Rights",
+    "License",
     "Modified"
   ),
   Value = c(
-    "[abb80238](https://forschung.stadtgeschichtebasel.ch/items/abb80238.html)",
+    "abb80238 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb80238.html))",
     "Vertretung Basel-Stadt im Ständerat, 1963–2023",
-    "Als Halbkanton steht Basel-Stadt nur ein Sitz im Ständerat zu. Nach dem Freisinnigen Eugen Dietschi (1960–1967) trugen dieses Amt über Jahrzehnte nur noch Vertreterinnen und Vertreter der SP: Willi Wenk (1967–1979), Carl Miville (1979–1991), Gian-Reto Plattner (1991–2003), Anita Fetz (2003–2019), Eva Herzog (seit 2019)",
+    "Als Halbkanton steht Basel-Stadt nur ein Sitz im Ständerat zu. Nach dem Freisinnigen Eugen Dietschi (1960–1967) trugen dieses Amt über Jahrzehnte nur noch Vertreterinnen und Vertreter der SP: Willi Wenk (1967–1979), Carl Miville (1979–1991), Gian-Reto Plattner (1991–2003), Anita Fetz (2003–2019), Eva Herzog (seit 2019).",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "1963/2019",
     "20. Jahrhundert",
     "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 ([Stadt.Geschichte.Basel 8](https://doi.org/10.21255/sgb-08-796384)).",
     "Kanton Basel-Stadt: nationale und kantonale Wahlen seit 1919, Bundesamt für Statistik, je-d-17.02.01_12BS, online: https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/tabellen.assetdetail.14836245.html. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band8/80238/80238_12_Data.csv](/data/clean/Band8/80238/80238_12_Data.csv)",
     "[data/clean/Band8/80238/80238_12_Data.csv-metadata.json](/data/clean/Band8/80238/80238_12_Data.csv-metadata.json)",
     "Stadt.Geschichte.Basel: Vertretung Basel-Stadt im Ständerat, 1963–2023. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_12>, letzte Aktualisierung: 27.09.2025.",
-    "2025-09-27 01:08:05"
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-09-27 18:17:00"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+knitr::kable(df, format = "markdown", caption = "Dataset Overview (80238_12)")
 ```

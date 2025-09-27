@@ -1,7 +1,7 @@
 ---
 title: "Hauptberuflich Beschäftigte im Dienstleistungssektor im Kanton Basel-Stadt, 1929–1965"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-26
+date-modified: 2025-09-27
 volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
 vol_short: "Stadt.Geschichte.Basel 7"
 plotid: "abb26375"
@@ -140,30 +140,40 @@ df <- data.frame(
     "Figure",
     "Title",
     "Description",
+    "Creator",
+    "Contributors",
     "Publisher",
     "Date",
     "Coverage",
     "is Part of",
     "Source (Dataset)",
+    "Dataset",
     "Metadata (Dataset)",
     "Citation (Dataset)",
+    "Rights",
+    "License",
     "Modified"
   ),
   Value = c(
-    "[abb26375](https://forschung.stadtgeschichtebasel.ch/items/abb26375.html)",
+    "abb26375 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb26375.html))",
     "Hauptberuflich Beschäftigte im Dienstleistungssektor im Kanton Basel-Stadt, 1929–1965",
-    "Die Beschäftigten im Dienstleistungssektor nahmen mit jeder Zählung zu, sprunghaft insbesondere in der Nachkriegszeit. 1965 wurden erstmals auch die Zahlen der Beschäftigten der öffentlichen Verwaltung im Rahmen der eidgenössischen Betriebszählungen separat erhoben",
+    "Die Beschäftigten im Dienstleistungssektor nahmen mit jeder Zählung zu, sprunghaft insbesondere in der Nachkriegszeit. 1965 wurden erstmals auch die Zahlen der Beschäftigten der öffentlichen Verwaltung im Rahmen der eidgenössischen Betriebszählungen separat erhoben.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "1929/1965",
     "20. Jahrhundert",
     "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 ([Stadt.Geschichte.Basel 7](https://doi.org/10.21255/sgb-07-663402)).",
     "Böhner, Martin: Die Eidgenössische Betriebszählung 1965 aus baslerischer Sicht, Basel 1968, S. 66f; Eidgenössisches Statistisches Amt (Hg.): Beschäftigte in den Gemeinden: nach Wirtschaftsfaktoren, Bern 1968 S. 59. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band7/26375/26375_3_Data.csv](/data/clean/Band7/26375/26375_3_Data.csv)",
     "[data/clean/Band7/26375/26375_3_Data.csv-metadata.json](/data/clean/Band7/26375/26375_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Hauptberuflich Beschäftigte im Dienstleistungssektor im Kanton Basel-Stadt, 1929–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26375.html#m26375_3>, letzte Aktualisierung: 26.09.2025.",
-    "2025-09-26 21:43:22"
+    "Stadt.Geschichte.Basel: Hauptberuflich Beschäftigte im Dienstleistungssektor im Kanton Basel-Stadt, 1929–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26375.html#m26375_3>, letzte Aktualisierung: 27.09.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-09-27 18:16:58"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+knitr::kable(df, format = "markdown", caption = "Dataset Overview (26375_3)")
 ```

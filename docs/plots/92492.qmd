@@ -1,7 +1,7 @@
 ---
 title: "Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-26
+date-modified: 2025-09-27
 volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 vol_short: "Stadt.Geschichte.Basel 6"
 plotid: "abb92492"
@@ -111,30 +111,40 @@ df <- data.frame(
     "Figure",
     "Title",
     "Description",
+    "Creator",
+    "Contributors",
     "Publisher",
     "Date",
     "Coverage",
     "is Part of",
     "Source (Dataset)",
+    "Dataset",
     "Metadata (Dataset)",
     "Citation (Dataset)",
+    "Rights",
+    "License",
     "Modified"
   ),
   Value = c(
-    "[abb92492](https://forschung.stadtgeschichtebasel.ch/items/abb92492.html)",
+    "abb92492 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb92492.html))",
     "Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910",
-    "Der Anteil der Protestantinnen und Protestanten an der Bevölkerung verringerte sich von 75 Prozent 1860 auf 63,4 Prozent 1910. Im gleichen Zeitraum stieg der Anteil der Katholikinnen und Katholiken von einem Viertel auf einen Drittel und die jüdische Bevölkerung vergrösserte sich beinahe um den Faktor fünf",
+    "Der Anteil der Protestantinnen und Protestanten an der Bevölkerung verringerte sich von 75 Prozent 1860 auf 63,4 Prozent 1910. Im gleichen Zeitraum stieg der Anteil der Katholikinnen und Katholiken von einem Viertel auf einen Drittel und die jüdische Bevölkerung vergrösserte sich beinahe um den Faktor fünf.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "1860/1910",
     "19. Jahrhundert",
     "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 ([Stadt.Geschichte.Basel 6](https://doi.org/10.21255/sgb-06-810743)).",
     "Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band6/92492/92492_3_Data.csv](/data/clean/Band6/92492/92492_3_Data.csv)",
     "[data/clean/Band6/92492/92492_3_Data.csv-metadata.json](/data/clean/Band6/92492/92492_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92492.html#m92492_3>, letzte Aktualisierung: 26.09.2025.",
-    "2025-09-26 21:43:27"
+    "Stadt.Geschichte.Basel: Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92492.html#m92492_3>, letzte Aktualisierung: 27.09.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-09-27 18:17:02"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+knitr::kable(df, format = "markdown", caption = "Dataset Overview (92492_3)")
 ```

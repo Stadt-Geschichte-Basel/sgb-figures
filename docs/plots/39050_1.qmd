@@ -198,20 +198,26 @@ df <- data.frame(
     "Figure",
     "Title",
     "Description",
+    "Creator",
+    "Contributors",
     "Publisher",
     "Date",
     "Coverage",
     "is Part of",
     "Source (Dataset)",
-    "Dataset File",
+    "Dataset",
     "Metadata (Dataset)",
     "Citation (Dataset)",
+    "Rights",
+    "License",
     "Modified"
   ),
   Value = c(
     "abb39050 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb39050.html))",
     "Einnahmen der Stadt Basel: Ungelder und Zölle ab 1373",
     "Die Einnahmen sind jeweils getrennt dargestellt nach ausserordentlichen Einnahmen (direkte Steuern und Anleihen; letztere aufgeschlüsselt nach an den Gläubiger gebundene Leibrenten und verkäufliche Renten) und laufenden Einnahmen (indirekte Steuern und Zölle). Alle Einnahmen in Basler Pfund.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "1373/1400",
     "Frühe Neuzeit",
@@ -220,14 +226,15 @@ df <- data.frame(
     "[data/clean/Band3/39050/39050_2_Data.csv](/data/clean/Band3/39050/39050_2_Data.csv)",
     "[data/clean/Band3/39050/39050_2_Data.csv-metadata.json](/data/clean/Band3/39050/39050_2_Data.csv-metadata.json)",
     "Stadt.Geschichte.Basel: Einnahmen der Stadt Basel: Ungelder und Zölle ab 1373. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_2>, letzte Aktualisierung: 27.09.2025.",
-    "2025-09-27 16:20:34"
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-09-27 18:16:58"
   ),
   stringsAsFactors = FALSE
 )
 
 knitr::kable(df, format = "markdown", caption = "Dataset Overview (1/2, Subset 39050_2)")
 ```
-
 ```{r table2, results="asis"}
 #| echo: false
 #| message: false
@@ -239,20 +246,26 @@ df <- data.frame(
     "Figure",
     "Title",
     "Description",
+    "Creator",
+    "Contributors",
     "Publisher",
     "Date",
     "Coverage",
     "is Part of",
     "Source (Dataset)",
-    "Dataset File",
+    "Dataset",
     "Metadata (Dataset)",
     "Citation (Dataset)",
+    "Rights",
+    "License",
     "Modified"
   ),
   Value = c(
     "abb39050 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb39050.html))",
     "Einnahmen der Stadt Basel: Steuern und Anleihen ab 1373",
     "Die Einnahmen sind jeweils getrennt dargestellt nach ausserordentlichen Einnahmen (direkte Steuern und Anleihen; letztere aufgeschlüsselt nach an den Gläubiger gebundene Leibrenten und verkäufliche Renten) und laufenden Einnahmen (indirekte Steuern und Zölle). Alle Einnahmen in Basler Pfund.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "1373/1400",
     "Frühe Neuzeit",
@@ -261,11 +274,12 @@ df <- data.frame(
     "[data/clean/Band3/39050/39050_3_Data.csv](/data/clean/Band3/39050/39050_3_Data.csv)",
     "[data/clean/Band3/39050/39050_3_Data.csv-metadata.json](/data/clean/Band3/39050/39050_3_Data.csv-metadata.json)",
     "Stadt.Geschichte.Basel: Einnahmen der Stadt Basel: Steuern und Anleihen ab 1373. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_3>, letzte Aktualisierung: 27.09.2025.",
-    "2025-09-27 16:20:34"
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-09-27 18:16:58"
   ),
   stringsAsFactors = FALSE
 )
 
 knitr::kable(df, format = "markdown", caption = "Dataset Overview (2/2, Subset 39050_3)")
 ```
-

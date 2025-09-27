@@ -1,7 +1,7 @@
 ---
 title: "Publikumszahlen an Konzerten und FCB-Spielen im St. Jakob-Stadion, 1960–2022"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-26
+date-modified: 2025-09-27
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb88415"
@@ -143,30 +143,40 @@ df <- data.frame(
     "Figure",
     "Title",
     "Description",
+    "Creator",
+    "Contributors",
     "Publisher",
     "Date",
     "Coverage",
     "is Part of",
     "Source (Dataset)",
+    "Dataset",
     "Metadata (Dataset)",
     "Citation (Dataset)",
+    "Rights",
+    "License",
     "Modified"
   ),
   Value = c(
-    "[abb88415](https://forschung.stadtgeschichtebasel.ch/items/abb88415.html)",
+    "abb88415 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb88415.html))",
     "Publikumszahlen an Konzerten und FCB-Spielen im St. Jakob-Stadion, 1960–2022",
     "In den 1980er-Jahren rutschte der FC Basel in eine veritable Krise, die 1988 im Abstieg in die Nationalliga B mündete. Die Spiele besuchten jeweils nur noch etwa 5000 Menschen, deutlich mehr gingen inzwischen für die Grössen der Pop- und Rockmusik ins Stadion. Im 2001 eröffneten neuen St. Jakob-Park fanden Open-Air-Konzerte nur noch selten statt, während bis zu 30 000 Menschen Woche um Woche den FCB bejubelten, der wieder gross aufspielte. Der Einbruch im Jahr 2020 ist auf die Corona-Pandemie zurückzuführen.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "1960/2022",
     "20. Jahrhundert",
     "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 ([Stadt.Geschichte.Basel 8](https://doi.org/10.21255/sgb-08-796384)).",
     "Genossenschaft Stadion St. Jakob-Park (Hg.): Kraft der Visionen: die Genossenschaft Stadion St. Jakob-Park, Basel, 1953–2003. Basel 2004. S. 275; FC Basel-Archiv (www.fcb-archiv.ch). Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band8/88415/88415_3_Data.csv](/data/clean/Band8/88415/88415_3_Data.csv)",
     "[data/clean/Band8/88415/88415_3_Data.csv-metadata.json](/data/clean/Band8/88415/88415_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Publikumszahlen an Konzerten und FCB-Spielen im St. Jakob-Stadion, 1960–2022. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88415.html#m88415_3>, letzte Aktualisierung: 26.09.2025.",
-    "2025-09-26 21:43:25"
+    "Stadt.Geschichte.Basel: Publikumszahlen an Konzerten und FCB-Spielen im St. Jakob-Stadion, 1960–2022. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88415.html#m88415_3>, letzte Aktualisierung: 27.09.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-09-27 18:17:01"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview")
+knitr::kable(df, format = "markdown", caption = "Dataset Overview (88415_3)")
 ```
