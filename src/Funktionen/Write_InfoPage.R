@@ -37,7 +37,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     schema <- meta$tables$tableSchema
     
     fig_id <- schema$isPartOf$ObjectID[[1]]
-    fig_link <- glue("[{fig_id}](https://forschung.stadtgeschichtebasel.ch/items/{fig_id}.html)")
+    fig_link <- glue("{fig_id} ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/{fig_id}.html))")
     
     publisher <- schema$publisher[[1]]
     publisher_link <- glue("[{publisher}](https://www.wikidata.org/wiki/Q122442230)")
