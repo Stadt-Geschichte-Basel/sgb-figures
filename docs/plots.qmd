@@ -21,13 +21,21 @@ listing:
       volume: "is Part of"
 ---
 
-Code and data for more than 50 figures are available in this repository. Run `npm run list` to print an overview or take a look at the summary pages for each figure below.
+```{r setup}
+#| echo: false
+#| message: false
+library(here)
+```
 
-For full figure metadata and production-ready PDF files of all plots, refer to the [Stadt.Geschichte.Basel Open Research Data Platform](https://forschung.stadtgeschichtebasel.ch). The numerical data behind the plots is also available in the form of `csv` datasets. For `csv` files, full metadata is available in this repository in `json` format.
+Code and data for `{r} length(list.files(here("docs", "plots"),pattern='qmd'))` figures are available in this repository. Run `npm run list` to print an overview or take a look at the summary pages for each figure below.
+
+Refer to the [Stadt.Geschichte.Basel Open Research Data Platform](https://forschung.stadtgeschichtebasel.ch) for full figure metadata and production-ready `pdf` files of all plots.
+
+The numerical data behind the plots is also available in the form of `csv` datasets. For `csv` files, full metadata is available in this repository in `json` format.
 
 ## Figure and Data Summaries
 
-The overview pages offered below are intended as summary only and show previews for plots and selected metadata on the datasets (in German). Each preview is generated from the metadata available in the `json` files as part of the plot workflow.
+The overview pages offered below are intended as summary only and show previews for plots and selected metadata on the datasets (in German). These visualizations might differ from the version in the book series in terms of look and feel, especially regarding the figures' dimensions. Each preview is generated from the metadata available in the `json` files as part of the plot workflow.
 
 ::: {#plot-list}
 :::
