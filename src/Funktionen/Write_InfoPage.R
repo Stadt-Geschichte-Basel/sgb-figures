@@ -176,9 +176,9 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     fields <- metadata_list[[i]]$fields
     
     table_title <- if (length(metadata_list) > 1) {
-      glue("Dataset Overview {i}/{length(metadata_list)}")
+      glue("Dataset Overview ({i}/{length(metadata_list)}, Subset {plot_id}_{csv_suffixes[i]})")
     } else {
-      "Dataset Overview"
+      glue("Dataset Overview ({plot_id}_{csv_suffixes[i]})")
     }
     
     chunk_name <- if (length(metadata_list) > 1) {
@@ -205,8 +205,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
       ")",
       "",
       glue("knitr::kable(df, format = \"markdown\", caption = \"{table_title}\")"),
-      "```",
-      ""
+      "```"
     )
     
     table_chunks <- c(table_chunks, table_chunk)
