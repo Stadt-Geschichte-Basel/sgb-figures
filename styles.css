@@ -113,12 +113,12 @@ h1 {
 
 .callout-tip,
 .callout-note {
-	border: 1.5px solid rgba(255, 232, 128, 0.85) !important;
+	border: 1.5px solid rgba(255, 232, 128, 0.55) !important;
 	border-left-width: 5px !important;
 }
 
 .callout-header {
-	background-color: #ffe880 !important;
+	background-color: rgba(255, 232, 128, 0.55) !important;
 }
 
 .col-centered {
@@ -133,4 +133,20 @@ h1 {
 		background-color: #ffe880;
 		border-color: #3a1e3e;
 	}
+}
+
+hr {
+	border: none;
+	height: 4px;
+	color: #3a1e3e;
+	background-color: #3a1e3e;
+	opacity: 1;
+}
+
+.datatable-frame {
+	border: 4px solid #ffe880;
+	border-radius: 8px;
+	padding: 0.5em;
+	background-color: none; /* soft yellow background */
+	margin: none; /* spacing from other content */
 }

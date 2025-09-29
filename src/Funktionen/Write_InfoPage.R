@@ -185,21 +185,80 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
   table_chunks <- c()
   for (i in seq_along(metadata_list)) {
     fields <- metadata_list[[i]]$fields
+    current_suffix <- csv_suffixes[i]
     
-    table_title <- if (length(metadata_list) > 1) {
-      glue("Dataset Overview ({i}/{length(metadata_list)}, Subset {plot_id}_{csv_suffixes[i]})")
+    ## --- set up table and chunk names ---
+    
+    data_table_title <- if (length(metadata_list) > 1) {
+      glue("Dataset {plot_id}_{current_suffix} (Subset {i}/{length(metadata_list)})")
     } else {
-      glue("Dataset Overview ({plot_id}_{csv_suffixes[i]})")
+      glue("Dataset {plot_id}_{current_suffix}")
     }
     
-    chunk_name <- if (length(metadata_list) > 1) {
-      glue("table{i}")
+    datatable_chunk_name <- if (length(metadata_list) > 1) {
+      glue("datatable{i}")
     } else {
-      "table"
+      "datatable"
     }
     
-    table_chunk <- c(
-      glue("```{{r {chunk_name}, results=\"asis\"}}"),
+    metadata_table_title <- if (length(metadata_list) > 1) {
+      glue("Selected Metadata for {data_table_title}")
+    } else {
+      glue("Selected Metadata for {data_table_title}")
+    }
+    
+    metadata_chunk_name <- if (length(metadata_list) > 1) {
+      glue("metatable{i}")
+    } else {
+      "metatable"
+    }
+    
+    data_var_name <- glue("data{plot_id}_{current_suffix}")
+    
+    ## --- Build Datatable Chunk ----
+    datatable_chunk <- c(
+      glue("```{{r {datatable_chunk_name}}}"),
+      "#| echo: false",
+      "#| message: false",
+      "#| warning: false",
+      "",
+      "library(readr)",
+      "library(DT)",
+      "",
+      glue("# Read CSV file for {plot_id}_{current_suffix}"),
+      glue("dataset_file_{i} <- here(\"data\", \"clean\", \"Band{volume}\", \"{plot_id}\", \"{plot_id}_{current_suffix}_Data.csv\")"),
+      "",
+      glue("{data_var_name} <- read_csv(dataset_file_{i})"),
+      "",
+      "# Wrap datatable in a custom div",
+      "htmltools::div(",
+      "  class = 'datatable-frame',",
+      "  DT::datatable(",
+      glue("    {data_var_name},"),
+      "    rownames = FALSE,",
+      "    options = list(",
+      "      scrollX = TRUE,",
+      "      scrollCollapse = TRUE,",
+      "      scrollY = '400px',",
+      "      paging = FALSE,",
+      "      dom = 't'",
+      "    ),",
+      "    caption = htmltools::tags$caption(",
+      "      style = 'caption-side: top; text-align: left;',",
+      glue("      '{data_table_title}'"),
+      "    )",
+      "  ),",
+      ")",
+      "```",
+      "",
+      "::: {.callout-tip title=\"Column Descriptions\" icon=\"false\" collapse=\"true\"}",
+      glue("{metadata_list[[i]]$col_description}"),
+      ":::"
+    )
+    
+    ## --- Build Metadata Table Chunk ----
+    metatable_chunk <- c(
+      glue("```{{r {metadata_chunk_name}, results=\"asis\"}}"),
       "#| echo: false",
       "#| message: false",
       "",
@@ -219,10 +278,26 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
       "```"
     )
     
-    table_chunks <- c(table_chunks, table_chunk)
-  }
-  
-  # --- Build .qmd file ----
+    # --- Join Data and Metadata Chunks ----
+    if (length(metadata_list) > 1) {
+      # For multiple datasets, add horizontal line between dataset sections
+      if (i == 1) {
+        # First dataset: no line before, but add line after metadata
+        table_chunks <- c(table_chunks, datatable_chunk, metatable_chunk, "", "---", "")
+      } else if (i == length(metadata_list)) {
+        # Last dataset: no line after
+        table_chunks <- c(table_chunks, datatable_chunk, metatable_chunk)
+      } else {
+        # Middle datasets: add line after metadata
+        table_chunks <- c(table_chunks, datatable_chunk, metatable_chunk, "", "---", "")
+      }
+    } else {
+      # Single dataset: no horizontal lines needed
+      table_chunks <- c(table_chunks, datatable_chunk, metatable_chunk)
+    }
+  }  
+
+  # --- Build .qmd File ----
   plotid_meta <- if (is.null(plot_suffix)) {
     glue("abb{plot_id}")
   } else {
