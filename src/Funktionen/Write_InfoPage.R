@@ -29,14 +29,14 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     metadata_file <- glue("{dataset_file}-metadata.json")
     
     ## --- Create Markdown Link for Path to Dataset ---
-    rel_path <- fs::path_rel(dataset_file, start = here())
-    rel_path <- gsub("^docs/", "", rel_path)
-    data_link <- glue("[{rel_path}](/", rel_path, ")")
+    data_rel_path <- fs::path_rel(dataset_file, start = here())
+    data_rel_path <- gsub("^docs/", "", data_rel_path)
+    data_link <- glue("[{data_rel_path}](/", data_rel_path, ")")
     
     ## --- Create Markdown Link for Path to JSON ---
-    rel_path <- fs::path_rel(metadata_file, start = here())
-    rel_path <- gsub("^docs/", "", rel_path)
-    meta_link <- glue("[{rel_path}](/", rel_path, ")")
+    meta_rel_path <- fs::path_rel(metadata_file, start = here())
+    meta_rel_path <- gsub("^docs/", "", meta_rel_path)
+    meta_link <- glue("[{meta_rel_path}](/", meta_rel_path, ")")
     
     # --- Extract Metadata from File ----
     meta <- fromJSON(metadata_file)
