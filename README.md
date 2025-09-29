@@ -134,6 +134,7 @@ This project is maintained by [@Stadt-Geschichte-Basel](https://github.com/stadt
 
 - archive repository on Zenodo
 - add DOIs
+- add alt-text to plots
 
 ## Contributing
 
