@@ -58,6 +58,14 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     
     license <- schema$license[[1]]
     license_link <- glue("[{license}]({license})")
+
+    ## --- Read Column Descriptions ---
+    columns_info <- schema$columns[c("name", "description")]
+    
+    # collapse into one string with <br> for HTML line breaks
+    columns_str <- paste(apply(columns_info, 1, function(row) {
+      paste0("- **", row["name"], ":** ", row["description"])
+    }), collapse = "\n")
     
     ## --- Map Volume Numbers to Open Access DOIs ---
     vol_text <- schema$isPartOf$volume[[1]]
@@ -95,7 +103,10 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
       Modified      = schema$modified[[1]]
     )
     
-    return(list(fields = fields, schema = schema, vol_short = vol_short))
+    return(list(fields = fields,
+                schema = schema,
+                vol_short = vol_short,
+                col_description = columns_str))
   }
   
   ## Process all metadata files
