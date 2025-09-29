@@ -80,15 +80,15 @@
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
-				"Vettori, Arthur: Finanzhaushalt und Wirtschaftsverwaltung Basels (1689–1798). Wirtschafts - und Lebensverhältnisse einer Gesellschaft zwischen Tradition und Umbruch, Basel; Frankfurt a. M. 1984, S. 211–215, 334–340. Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500) Basel, Liestal 1977, S. 173–174, 639–641. Bearbeitung: Nico Görlich / Moritz Twente"
+				"Vettori, Arthur: Finanzhaushalt und Wirtschaftsverwaltung Basels (1689–1798). Wirtschafts - und Lebensverhältnisse einer Gesellschaft zwischen Tradition und Umbruch, Basel; Frankfurt a. M. 1984, S. 211–215, 334–340. Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500). Basel, Liestal 1977, S. 173–174, 639–641. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
 			"relation": [["m20418_1"], ["m20418_2"]],
 			"rights": ["CC BY-SA 4.0"],
 			"license": ["https://creativecommons.org/licenses/by-sa/4.0/"],
-			"modified": ["2025-09-28 00:42:05"],
+			"modified": ["2025-09-30 00:07:23"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Exportabgaben und Konsumsteuern, 1690–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb20418.html#m20418_3>, letzte Aktualisierung: 28.09.2025."
+				"Stadt.Geschichte.Basel: Exportabgaben und Konsumsteuern, 1690–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb20418.html#m20418_3>, letzte Aktualisierung: 30.09.2025."
 			]
 		}
 	}
