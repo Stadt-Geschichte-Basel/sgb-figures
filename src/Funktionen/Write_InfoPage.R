@@ -274,8 +274,10 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
       "  stringsAsFactors = FALSE",
       ")",
       "",
-      glue("knitr::kable(df, format = \"markdown\", caption = \"{table_title}\")"),
-      "```"
+      glue("knitr::kable(df, format = \"markdown\", escape = FALSE, 
+           caption = \"{metadata_table_title}\")"),
+      "```",
+      ""
     )
     
     # --- Join Data and Metadata Chunks ----
