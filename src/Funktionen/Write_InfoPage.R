@@ -98,10 +98,10 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     return(list(fields = fields, schema = schema, vol_short = vol_short))
   }
   
-  # Process all metadata files
+  ## Process all metadata files
   metadata_list <- lapply(csv_suffixes, process_metadata)
   
-  # Use the first metadata for main document properties (title, date, etc.)
+  ## Use the first metadata for main document properties (title, date, etc.)
   main_metadata <- metadata_list[[1]]
   
   # --- infer plot object name (string) and subplot script name ----
@@ -146,7 +146,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
   }
   first_section <- script_lines[seq_len(cutoff - 1)]
   
-  ## --- write plot chunk with or without legend ---
+  ## --- Build Plot Chunk (with or without legend) ---
   if (isTRUE(has_legend)) {
     plot_chunk <- c(
       "```{r plot_object}",
@@ -170,7 +170,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     )
   }
   
-  # --- Build metadata tables for each dataset ---
+  # --- Build Data and Metadata Table Chunks for All Datasets ----
   table_chunks <- c()
   for (i in seq_along(metadata_list)) {
     fields <- metadata_list[[i]]$fields
@@ -245,6 +245,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     table_chunks
   )
   
+  # --- Write .qmd File ---
   outdir <- here("docs", "plots")
   dir_create(outdir)
   
