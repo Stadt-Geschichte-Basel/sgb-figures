@@ -1,7 +1,7 @@
 ---
 title: "Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
 vol_short: "Stadt.Geschichte.Basel 3"
 plotid: "abb41183"
@@ -136,7 +136,66 @@ plot41183 <- ggplot(data = data41183, aes(x = Jahr)) +
 plot41183 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb41183 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 41183_3
+dataset_file_1 <- here("data", "clean", "Band3", "41183", "41183_3_Data.csv")
+
+data41183_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data41183_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 41183_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
+- **ß:** ß
+- **d:** d (Pfennig)
+- **Preis in d:** Preis in d (Pfennig)
+- **Basel: in d:** Basel: in d
+- **Basel: in g Ag:** Basel: in g Ag. Umrechnung nach Schulz 320.
+- **Basel: Roggen (hl in fl):** Basel: Roggen (hl in fl)
+- **Strasbourg: in d:** Strasbourg: in d
+- **Strasbourg: Roggen (hl in fl):** Strasbourg: Roggen (hl in fl)
+- **Strasbourg: in g Ag (1):** Strasbourg: in g Ag (1)
+- **Strasbourg: in g Ag (2):** Strasbourg: in g Ag (2)
+- **Weizen V in d:** Weizen V in d
+- **Strasbourg: Weizen (hl in fl):** Strasbourg: Weizen (hl in fl)
+- **Nürnberg: Sümmer in d:** Nürnberg: Sümmer in d
+- **Nürnberg: hl in d:** Nürnberg: hl in d
+- **Nürnberg: Sümmer in fl:** Nürnberg: Sümmer in fl
+- **Nürnberg: Roggen (hl in fl):** Nürnberg: Roggen (hl in fl)
+- **Köln: hl in g Ag:** Köln: hl in g Ag
+- **Köln: Malter in Mk:** Köln: Malter in Mk
+- **Köln: hl in Allbus:** Köln: hl in Allbus
+- **Köln: Roggen oder Weizen (hl in fl):** Köln: Roggen oder Weizen (hl in fl)
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -174,13 +233,15 @@ df <- data.frame(
     "[data/clean/Band3/41183/41183_3_Data.csv](/data/clean/Band3/41183/41183_3_Data.csv)",
     "Simon-Muscheid, Katharina: Gewalt und Ehre im spätmittelalterlichen Handwerk am Beispiel Basels, in: Zeitschrift für historische Forschung 18, 1991, S. 1–31, hier S. 30 f. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band3/41183/41183_3_Data.csv-metadata.json](/data/clean/Band3/41183/41183_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41183.html#m41183_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41183.html#m41183_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:08"
+    "2025-09-30 00:16:33"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (41183_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 41183_3")
 ```
+

@@ -1,7 +1,7 @@
 ---
 title: "Museumseintritte und Kinobesuche in Basel-Stadt, 1945–2020"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb88454"
@@ -92,7 +92,48 @@ plot88454 <- ggplot(data88454_longer, aes(x = Jahr, y = Anzahl,
 plot88454 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb88454 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 88454_3
+dataset_file_1 <- here("data", "clean", "Band8", "88454", "88454_3_Data.csv")
+
+data88454_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data88454_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 88454_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Jahreszahl nach unserer Zeitrechnung
+- **Kinobesuche:** Anzahl der Kinobesuche im Kanton Basel-Stadt im entsprechenden Jahr. Angaben nach der Billetsteuerabrechnung, ab 1999 wegen der Abschaffung der Billetsteuer nur wenige Daten erhältlich. Wegen der COVID-19-Pandemie waren Kinos vom 28.02.2020 bis zum 05.06.2020 geschlossen, danach eingeschränkter Betrieb bezüglich Platz- und Personenzahl.
+- **Museumseintritte:** Anzahl der Museumseintritte im Kanton Basel-Stadt im entsprechenden Jahr. Daten vor 1980 sind nicht vorhanden. Angabe zu den Eintritten bis inkl. 1991 nach StaBS ED-REG 37a 7-1 (2) Besucherstatistik nach Jahren 1980–2008, Daten ab 1992 aus dem Statistischen Jahrbuch. Im Jahr 2020 reduzierter Betrieb aufgrund der COVID-19-Pandemie.
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -130,13 +171,15 @@ df <- data.frame(
     "[data/clean/Band8/88454/88454_3_Data.csv](/data/clean/Band8/88454/88454_3_Data.csv)",
     "Statistisches Jahrbuch des Kantons Basel-Stadt. Daten zu Museumseintritten vor 1992 nach StaBS ED-REG 37a 7-1 (2). Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/88454/88454_3_Data.csv-metadata.json](/data/clean/Band8/88454/88454_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Museumseintritte und Kinobesuche in Basel-Stadt, 1945–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88454.html#m88454_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Museumseintritte und Kinobesuche in Basel-Stadt, 1945–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88454.html#m88454_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:10"
+    "2025-09-30 00:16:35"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (88454_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 88454_3")
 ```
+

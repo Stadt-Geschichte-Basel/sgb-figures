@@ -1,7 +1,7 @@
 ---
 title: "Bürgeraufnahmen und Kriegsausgaben, 1360–1530"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
 vol_short: "Stadt.Geschichte.Basel 3"
 plotid: "abb39492"
@@ -147,7 +147,50 @@ plot39492 <- plot39492a + legende39492a + plot39492b + legende39492b + plot_layo
 plot39492 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb39492 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 39492_3
+dataset_file_1 <- here("data", "clean", "Band3", "39492", "39492_3_Data.csv")
+
+data39492_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data39492_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 39492_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Startjahr:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
+- **Endjahr:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
+- **Zeitraum:** Zeitraum, Angaben in Jahren unserer Zeitrechnung
+- **Summe Bürgeraufnahmen:** Summe der Bürgeraufnahmen im jeweiligen Zeitraum
+- **Summe Kriegsausgaben in Pfund:** Summe der Kriegsausgaben im jeweiligen Zeitraum in Pfund
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -185,13 +228,15 @@ df <- data.frame(
     "[data/clean/Band3/39492/39492_3_Data.csv](/data/clean/Band3/39492/39492_3_Data.csv)",
     "Portmann, Rolf Ernst: Basler Einbürgerungspolitik 1358–1798. Mit einer Berufs- und Herkunftsstatistik des Mittelalters, Basel 1979, S. 96–99. Rosen, Josef: Kriegsausgaben im Spätmittelalter. Der militärische Aufwand in Basel 1360–1535, in: Vierteljahrschrift für Sozial- und Wirtschaftsgeschichte 71, 1984, S. 477–479. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band3/39492/39492_3_Data.csv-metadata.json](/data/clean/Band3/39492/39492_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Bürgeraufnahmen und Kriegsausgaben, 1360–1530. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39492.html#m39492_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Bürgeraufnahmen und Kriegsausgaben, 1360–1530. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39492.html#m39492_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:08"
+    "2025-09-30 00:16:33"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (39492_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 39492_3")
 ```
+

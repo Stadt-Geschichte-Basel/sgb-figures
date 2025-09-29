@@ -1,7 +1,7 @@
 ---
 title: "Bürgerrechtsaufnahmen, 1400–1798"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 (Stadt.Geschichte.Basel 4)."
 vol_short: "Stadt.Geschichte.Basel 4"
 plotid: "abb14158"
@@ -89,7 +89,49 @@ plot14158 <- ggplot(data14158_longer, aes(x = Jahrhundert, y = value, fill = var
 plot14158 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb14158 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 14158_3
+dataset_file_1 <- here("data", "clean", "Band4", "14158", "14158_3_Data.csv")
+
+data14158_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data14158_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 14158_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Zeitraum:** Zeitraum zwischen zwei Jahreszahlen, Angaben der Jahre nach unserer Zeitrechnung
+- **Jahrhundert:** Angabe des Jahrhunderts nach unserer Zeitrechnung
+- **Total Bürgerrechtsaufnahmen:** Anzahl der im entsprechenden Zeitraum bzw. Jahrhundert erfolgten Aufnahmen ins Bürgerrecht
+- **Total aufgenommene Personen:** Anzahl der im entsprechenden Zeitraum bzw. Jahrhundert aufgenommenen Personen
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -127,13 +169,15 @@ df <- data.frame(
     "[data/clean/Band4/14158/14158_3_Data.csv](/data/clean/Band4/14158/14158_3_Data.csv)",
     "Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500). Basel, Liestal 1977, S. 170. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band4/14158/14158_3_Data.csv-metadata.json](/data/clean/Band4/14158/14158_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Bürgerrechtsaufnahmen, 1400–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb14158.html#m14158_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Bürgerrechtsaufnahmen, 1400–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb14158.html#m14158_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:05"
+    "2025-09-30 00:17:02"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (14158_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 14158_3")
 ```
+

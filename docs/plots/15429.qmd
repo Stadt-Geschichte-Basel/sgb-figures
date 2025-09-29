@@ -1,7 +1,7 @@
 ---
 title: "Wohnbevölkerung im Kanton Basel-Stadt nach Religionszugehörigkeit und Herkunft, 1910–1970"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
 vol_short: "Stadt.Geschichte.Basel 7"
 plotid: "abb15429"
@@ -111,7 +111,52 @@ plot15429 <- ggplot(data15429_longer, aes(x = Jahr, y = Anzahl, fill = Konfessio
 plot15429 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb15429 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 15429_3
+dataset_file_1 <- here("data", "clean", "Band7", "15429", "15429_3_Data.csv")
+
+data15429_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data15429_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 15429_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung
+- **Protestant:innen (Ausland):** Anzahl der aus dem Ausland stammenden Protestant:innen im Kanton Basel-Stadt im angegebenen Jahr
+- **Protestant:innen (Inland):** Anzahl der aus dem Inland stammenden Protestant:innen im Kanton Basel-Stadt im angegebenen Jahr
+- **Katholik:innen inkl. Christkatholik:innen (Ausland):** Anzahl der aus dem Ausland stammenden Katholik:innen inkl. Christkatholik:innen im Kanton Basel-Stadt im angegebenen Jahr
+- **Katholik:innen inkl. Christkatholik:innen (Inland):** Anzahl der aus dem Inland stammenden Katholik:innen inkl. Christkatholik:innen im Kanton Basel-Stadt im angegebenen Jahr
+- **Jüd:innen (Inland und Ausland):** Anzahl der aus dem In- und Ausland stammenden Jüd:innen im Kanton Basel-Stadt im angegebenen Jahr
+- **Andere, ohne Religionszugehörigkeit und ohne Angabe (Inland und Ausland):** Anzahl der aus dem In- und Ausland stammenden Menschen mit anderer Religionszugehörigkeit, ohne Religionszugehörigkeit oder mit fehlender Angabe im Kanton Basel-Stadt im angegebenen Jahr
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -149,13 +194,15 @@ df <- data.frame(
     "[data/clean/Band7/15429/15429_3_Data.csv](/data/clean/Band7/15429/15429_3_Data.csv)",
     "Statistisches Jahrbuch des Kantons Basel-Stadt 1971 (Volkszählungen). Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band7/15429/15429_3_Data.csv-metadata.json](/data/clean/Band7/15429/15429_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Wohnbevölkerung im Kanton Basel-Stadt nach Religionszugehörigkeit und Herkunft, 1910–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb15429.html#m15429_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Wohnbevölkerung im Kanton Basel-Stadt nach Religionszugehörigkeit und Herkunft, 1910–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb15429.html#m15429_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:05"
+    "2025-09-30 00:16:30"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (15429_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 15429_3")
 ```
+

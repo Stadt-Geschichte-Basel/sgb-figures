@@ -1,7 +1,7 @@
 ---
 title: "Mandate der Parteien bei Grossratswahlen, 1875–1914"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 vol_short: "Stadt.Geschichte.Basel 6"
 plotid: "abb91407"
@@ -101,7 +101,53 @@ plot91407 <- ggplot(data = data91407_longer,
 plot91407 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb91407 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 91407_3
+dataset_file_1 <- here("data", "clean", "Band6", "91407", "91407_3_Data.csv")
+
+data91407_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data91407_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 91407_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten.
+- **FDP/RDP:** Anzahl der Mandate der FDP/RDP nach den Grossratswahlen im angegebenen Jahr. Sitze der Demokratischen Partei (1908: 1 / 1911:2) werden dem Freisinn (FDP/RDP) zugerechnet
+- **LP/LDP:** Anzahl der Mandate der LP/LDP nach den Grossratswahlen im angegebenen Jahr
+- **Zentrum:** Anzahl der Mandate des Zentrums nach den Grossratswahlen im angegebenen Jahr
+- **BGP:** Anzahl der Mandate der BGP nach den Grossratswahlen im angegebenen Jahr
+- **SP:** Anzahl der Mandate der SP nach den Grossratswahlen im angegebenen Jahr
+- **KVP/CVP:** Anzahl der Mandate der KVP/CPV nach den Grossratswahlen im angegebenen Jahr
+- **Andere:** Anzahl der Mandate für übrige Parteien/Kandidaturen nach den Grossratswahlen im angegebenen Jahr
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -139,13 +185,15 @@ df <- data.frame(
     "[data/clean/Band6/91407/91407_3_Data.csv](/data/clean/Band6/91407/91407_3_Data.csv)",
     "Für die Jahre 1875 bis 1902: Lüthi, Walter: Der Basler Freisinn von den Anfängen bis 1914, Basel 1983, S. 175. Daten ab 1905: Statistisches Amt Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band6/91407/91407_3_Data.csv-metadata.json](/data/clean/Band6/91407/91407_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Mandate der Parteien bei Grossratswahlen, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91407.html#m91407_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Mandate der Parteien bei Grossratswahlen, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91407.html#m91407_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:11"
+    "2025-09-30 00:16:36"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (91407_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 91407_3")
 ```
+

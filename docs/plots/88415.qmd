@@ -1,7 +1,7 @@
 ---
 title: "Publikumszahlen an Konzerten und FCB-Spielen im St. Jakob-Stadion, 1960–2022"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb88415"
@@ -132,7 +132,49 @@ plot88415 <- ggplot(data88415_longer) +
 plot88415 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb88415 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 88415_3
+dataset_file_1 <- here("data", "clean", "Band8", "88415", "88415_3_Data.csv")
+
+data88415_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data88415_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 88415_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Angabe des Jahres nach unserer Zeitrechnung
+- **Zuschauer:innen FCB-Heimspiele:** Anzahl der Zuschauer:innen bei Heimspielen des FC Basel im angegebenen Jahr, ab 1967/1968 im St. Jakob-Station, davor im Landhof, 1999-2001 auf der Schützenmatte
+- **Zuschauer:innen Konzerte:** Anzahl der Zuschauer:innen bei Konzerten im angegebenen Jahr
+- **Anzahl Heimspiele:** Anzahl der Heimspiele des FC Basel im angegebenen Jahr
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -170,13 +212,15 @@ df <- data.frame(
     "[data/clean/Band8/88415/88415_3_Data.csv](/data/clean/Band8/88415/88415_3_Data.csv)",
     "Genossenschaft Stadion St. Jakob-Park (Hg.): Kraft der Visionen: die Genossenschaft Stadion St. Jakob-Park, Basel, 1953–2003. Basel 2004. S. 275; FC Basel-Archiv (www.fcb-archiv.ch). Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/88415/88415_3_Data.csv-metadata.json](/data/clean/Band8/88415/88415_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Publikumszahlen an Konzerten und FCB-Spielen im St. Jakob-Stadion, 1960–2022. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88415.html#m88415_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Publikumszahlen an Konzerten und FCB-Spielen im St. Jakob-Stadion, 1960–2022. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88415.html#m88415_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:10"
+    "2025-09-30 00:16:35"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (88415_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 88415_3")
 ```
+

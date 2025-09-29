@@ -1,7 +1,7 @@
 ---
 title: "Temperaturabweichungen in °C, 1444–2011"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 (Stadt.Geschichte.Basel 4)."
 vol_short: "Stadt.Geschichte.Basel 4"
 plotid: "abb24528"
@@ -150,7 +150,51 @@ plot24528 <- ggplot(data = data24528, aes(x = Jahr)) +
 plot24528 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb24528 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 24528_3
+dataset_file_1 <- here("data", "clean", "Band4", "24528", "24528_3_Data.csv")
+
+data24528_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data24528_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 24528_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
+- **Swiss GHD DOY:** Nummer des Tages im jeweiligen Jahr (DOY, Day of Year), an dem die Weinlese begonnen wurde (GHD, Grape Harvest Date)
+- **Mittlere April-Juli-Temperatur:** Abweichung der mittleren April-Juli-Temperatur verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius
+- **11-jährig gleitendes Temperaturmittel:** Abweichung des elfjährig gleitenden Temperaturmittels verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius
+- **oberer doppelter Standard-Temperaturschätzfehler:** oberer doppelter Standard-Temperaturschätzfehler verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius
+- **unterer doppelter Standard-Temperaturschätzfehler:** unterer doppelter Standard-Temperaturschätzfehler verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -188,13 +232,15 @@ df <- data.frame(
     "[data/clean/Band4/24528/24528_3_Data.csv](/data/clean/Band4/24528/24528_3_Data.csv)",
     "Wetter, Oliver; Pfister, Christian: Spring–summer Temperatures Reconstructed for Northern Switzerland and Southwestern Germany from Winter Rye Harvest Dates, 1454–1970, in: Climate of the Past 7 (4), 2011, S. 1307–1326. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band4/24528/24528_3_Data.csv-metadata.json](/data/clean/Band4/24528/24528_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Temperaturabweichungen in °C, 1444–2011. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb24528.html#m24528_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Temperaturabweichungen in °C, 1444–2011. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb24528.html#m24528_3>, letzte Aktualisierung: 30.09.2025.",
     "In Copyright",
     "[https://rightsstatements.org/vocab/InC-RUU/1.0/](https://rightsstatements.org/vocab/InC-RUU/1.0/)",
-    "2025-09-28 00:42:07"
+    "2025-09-30 00:16:32"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (24528_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 24528_3")
 ```
+

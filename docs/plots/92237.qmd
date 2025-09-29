@@ -1,7 +1,7 @@
 ---
 title: "Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Glarus, 1850 und 1910"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 vol_short: "Stadt.Geschichte.Basel 6"
 plotid: "abb92237"
@@ -91,7 +91,48 @@ plot92237 <- ggplot(data = data92237_longer, aes(x = Jahr,
 plot92237 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb92237 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 92237_3
+dataset_file_1 <- here("data", "clean", "Band6", "92237", "92237_3_Data.csv")
+
+data92237_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data92237_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 92237_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Angabe des Jahres, für das die jeweiligen Daten gelten. Jahreszahl in unserer Zeitrechnung
+- **Basel-Stadt:** Anzahl der Einwohnerinnen und Einwohner des Kantons Basel-Stadt im angegebenen Jahr
+- **Glarus:** Anzahl der Einwohnerinnen und Einwohner des Kantons Glarus im angegebenen Jahr
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -129,13 +170,15 @@ df <- data.frame(
     "[data/clean/Band6/92237/92237_3_Data.csv](/data/clean/Band6/92237/92237_3_Data.csv)",
     "Bickel, Wilhelm: Bevölkerungsgeschichte und Bevölkerungspolitik der Schweiz seit dem Ausgang des Mittelalters, Zürich 1947, S. 135. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band6/92237/92237_3_Data.csv-metadata.json](/data/clean/Band6/92237/92237_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Glarus, 1850 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92237.html#m92237_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Glarus, 1850 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92237.html#m92237_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:11"
+    "2025-09-30 00:16:37"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (92237_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 92237_3")
 ```
+

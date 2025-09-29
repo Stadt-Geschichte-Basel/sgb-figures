@@ -1,7 +1,7 @@
 ---
 title: "Die Bevölkerung von Basel-Stadt, 1912–1966"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
 vol_short: "Stadt.Geschichte.Basel 7"
 plotid: "abb21433"
@@ -101,7 +101,49 @@ plot21433 <- ggplot(data = data21433_longer,
 plot21433 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb21433 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 21433_3
+dataset_file_1 <- here("data", "clean", "Band7", "21433", "21433_3_Data.csv")
+
+data21433_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data21433_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 21433_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung
+- **Basler Bürgerrecht:** Zahl der Einwohner:innen von Basel-Stadt mit Basler Bürgerrecht im entsprechenden Jahr
+- **Bürgerrecht eines anderen Schweizer Kantons:** Zahl der Einwohner:innen von Basel-Stadt mit Bürgerrecht eines anderen Schweizer Kantons im entsprechenden Jahr
+- **Ausländische Staatsbürgerschaft:** Zahl der Einwohner:innen von Basel-Stadt mit ausländischer Staatsbürgerschaft im entsprechenden Jahr
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -139,13 +181,15 @@ df <- data.frame(
     "[data/clean/Band7/21433/21433_3_Data.csv](/data/clean/Band7/21433/21433_3_Data.csv)",
     "Statistisches Jahrbuch des Kantons Basel-Stadt 1970, S. 21. Daten für das Jahr 1912 aus dem Statistischen Jahrbuch des Kantons Basel Stadt 1921, S. 34. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band7/21433/21433_3_Data.csv-metadata.json](/data/clean/Band7/21433/21433_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Die Bevölkerung von Basel-Stadt, 1912–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21433.html#m21433_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Die Bevölkerung von Basel-Stadt, 1912–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21433.html#m21433_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:06"
+    "2025-09-30 00:16:31"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (21433_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 21433_3")
 ```
+

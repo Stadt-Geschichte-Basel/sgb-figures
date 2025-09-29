@@ -1,7 +1,7 @@
 ---
 title: "Anzahl Verkehrsträger pro 100 Einwohner und Einwohnerinnen im Kanton Basel-Stadt, 1916–1970"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
 vol_short: "Stadt.Geschichte.Basel 7"
 plotid: "abb11589"
@@ -87,7 +87,49 @@ plot11589 <- ggplot(data = data11589, aes(x = Jahr)) +
 plot11589 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb11589 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 11589_3
+dataset_file_1 <- here("data", "clean", "Band7", "11589", "11589_3_Data.csv")
+
+data11589_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data11589_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 11589_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung
+- **Personenwagen:** Anzahl der Personenwagen pro 100 Einwohner*innen im Kanton Basel-Stadt im angegebenen Jahr
+- **Motorräder:** Anzahl der Motorräder pro 100 Einwohner*innen im Kanton Basel-Stadt im angegebenen Jahr
+- **Fahrräder:** Anzahl der Fahrräder pro 100 Einwohner*innen im Kanton Basel-Stadt im angegebenen Jahr
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -125,13 +167,15 @@ df <- data.frame(
     "[data/clean/Band7/11589/11589_3_Data.csv](/data/clean/Band7/11589/11589_3_Data.csv)",
     "Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band7/11589/11589_3_Data.csv-metadata.json](/data/clean/Band7/11589/11589_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Anzahl Verkehrsträger pro 100 Einwohner und Einwohnerinnen im Kanton Basel-Stadt, 1916–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb11589.html#m11589_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Anzahl Verkehrsträger pro 100 Einwohner und Einwohnerinnen im Kanton Basel-Stadt, 1916–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb11589.html#m11589_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:04"
+    "2025-09-30 00:16:29"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (11589_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 11589_3")
 ```
+

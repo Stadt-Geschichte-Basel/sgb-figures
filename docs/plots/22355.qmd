@@ -1,7 +1,7 @@
 ---
 title: "Grossratsmandate nach Parteien, 1911–1964"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
 vol_short: "Stadt.Geschichte.Basel 7"
 plotid: "abb22355"
@@ -125,7 +125,55 @@ plot22355 <- ggplot(data22355_longer,
 plot22355 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb22355 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 22355_3
+dataset_file_1 <- here("data", "clean", "Band7", "22355", "22355_3_Data.csv")
+
+data22355_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data22355_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 22355_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung
+- **Liberaldemokratische Bürgerpartei:** Anzahl der Grossratsmitglieder der Partei 'Liberaldemokratische Bürgerpartei' im entsprechenden Jahr. bis 1956 Liberale Partei, ab 1943 gemeinsame Liste mit der Bürger- und Gewerbe-Partei, seit 1957 eine Partei
+- **Bürger- und Gewerbepartei:** Anzahl der Grossratsmitglieder der Partei 'Bürger- und Gewerbepartei' im entsprechenden Jahr. bis 1941 Nationale Volkspartei (bis 1941), ab 1957 vereinigt mit der vormaligen Liberalen Partei zur Liberaldemokratischen Bürgerpartei
+- **Radikaldemokratische Partei:** Anzahl der Grossratsmitglieder der Partei 'Radikaldemokratische Partei' im entsprechenden Jahr
+- **Vereinigung Evangelischer Wähler:** Anzahl der Grossratsmitglieder der Partei 'Vereinigung Evangelischer Wähler' im entsprechenden Jahr. bis 1947 Evangelische Volkspartei
+- **Partei der Arbeit:** Anzahl der Grossratsmitglieder der Partei 'Partei der Arbeit' im entsprechenden Jahr. bis 1940 Kommunistische Partei; 1944 Liste der Arbeit; seit 1945 Partei der Arbeit (1960: und parteilose Gewerkschafter)
+- **Sozialdemokratische Partei:** Anzahl der Grossratsmitglieder der Partei 'Sozialdemokratische Partei' im entsprechenden Jahr. bis 1963 Sozialdemokratische Partei: 1964 Sozialdemokraten und Gewerkschafter
+- **Kath. und Christlich-soziale Volkspartei:** Anzahl der Grossratsmitglieder der Partei 'Kath. und Christlich-Soziale Volkspartei' im entsprechenden Jahr. bis 1961 Katholische Volkspartei; seit 1963 Katholische und Christlichsoziale Volkspartei
+- **Landesring der Unabhängigen:** Anzahl der Grossratsmitglieder der Partei 'Landesring der Unabhängigen' im entsprechenden Jahr
+- **Andere Parteien:** Anzahl der Grossratsmitglieder anderer Parteien im entsprechenden Jahr
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -163,13 +211,15 @@ df <- data.frame(
     "[data/clean/Band7/22355/22355_3_Data.csv](/data/clean/Band7/22355/22355_3_Data.csv)",
     "Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge: Daten 1911-1920: Ausgabe 1930. Daten 1923-1941: Ausgabe 1942, S. 195. Daten 1944-1964: Ausgabe 1966, S. 167. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band7/22355/22355_3_Data.csv-metadata.json](/data/clean/Band7/22355/22355_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Grossratsmandate nach Parteien, 1911–1964. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb22355.html#m22355_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Grossratsmandate nach Parteien, 1911–1964. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb22355.html#m22355_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:07"
+    "2025-09-30 00:16:31"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (22355_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 22355_3")
 ```
+

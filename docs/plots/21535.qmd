@@ -1,7 +1,7 @@
 ---
 title: "Die ausländische Wohnbevölkerung von Basel-Stadt nach Heimatnation, 1920–1965"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
 vol_short: "Stadt.Geschichte.Basel 7"
 plotid: "abb21535"
@@ -93,7 +93,50 @@ plot21535 <- ggplot(data = data21535_longer,
 plot21535 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb21535 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 21535_3
+dataset_file_1 <- here("data", "clean", "Band7", "21535", "21535_3_Data.csv")
+
+data21535_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data21535_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 21535_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung
+- **Deutschland:** Anteil der deutschen Staatsangehörigen an der in Basel wohnhaften ausländischen Bevölkerung in Prozent im angegebenen Jahr
+- **Frankreich:** Anteil der französischen Staatsangehörigen an der in Basel wohnhaften ausländischen Bevölkerung in Prozent im angegebenen Jahr
+- **Italien:** Anteil der italienischen Staatsangehörigen an der in Basel wohnhaften ausländischen Bevölkerung in Prozent im angegebenen Jahr
+- **Übriges Ausland:** Anteil der Staatsangehörigen übriger Staaten an der in Basel wohnhaften ausländischen Bevölkerung in Prozent im angegebenen Jahr
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -131,13 +174,15 @@ df <- data.frame(
     "[data/clean/Band7/21535/21535_3_Data.csv](/data/clean/Band7/21535/21535_3_Data.csv)",
     "Statistisches Jahrbuch des Kantons Basel-Stadt 1966, S. 32. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band7/21535/21535_3_Data.csv-metadata.json](/data/clean/Band7/21535/21535_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Die ausländische Wohnbevölkerung von Basel-Stadt nach Heimatnation, 1920–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21535.html#m21535_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Die ausländische Wohnbevölkerung von Basel-Stadt nach Heimatnation, 1920–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21535.html#m21535_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:06"
+    "2025-09-30 00:16:31"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (21535_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 21535_3")
 ```
+

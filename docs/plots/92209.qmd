@@ -1,7 +1,7 @@
 ---
 title: "Bevölkerungsentwicklung des Kantons Basel-Stadt, 1870–1910"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 vol_short: "Stadt.Geschichte.Basel 6"
 plotid: "abb92209"
@@ -93,7 +93,50 @@ plot92209 <- ggplot(data = data92209_longer,
 plot92209 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb92209 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 92209_3
+dataset_file_1 <- here("data", "clean", "Band6", "92209", "92209_3_Data.csv")
+
+data92209_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data92209_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 92209_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten.
+- **Basler Bürgerrecht:** Zahl der Einwohner:innen von Basel-Stadt mit Basler Bürgerrecht im entsprechenden Jahr
+- **Bürgerrecht eines anderen Schweizer Kantons:** Zahl der Einwohner:innen von Basel-Stadt mit Bürgerrecht eines anderen Schweizer Kantons im entsprechenden Jahr
+- **Ausländische Staatsbürgerschaft:** Zahl der Einwohner:innen von Basel-Stadt mit ausländischer Staatsbürgerschaft im entsprechenden Jahr
+- **Total:** Gesamtsumme der Zahl der Einwohner:innen von Basel-Stadt im entsprechenden Jahr
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -131,13 +174,15 @@ df <- data.frame(
     "[data/clean/Band6/92209/92209_3_Data.csv](/data/clean/Band6/92209/92209_3_Data.csv)",
     "Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band6/92209/92209_3_Data.csv-metadata.json](/data/clean/Band6/92209/92209_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Bevölkerungsentwicklung des Kantons Basel-Stadt, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92209.html#m92209_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Bevölkerungsentwicklung des Kantons Basel-Stadt, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92209.html#m92209_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:11"
+    "2025-09-30 00:16:36"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (92209_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 92209_3")
 ```
+

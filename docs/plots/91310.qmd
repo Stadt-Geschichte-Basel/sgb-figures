@@ -1,7 +1,7 @@
 ---
 title: "Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 vol_short: "Stadt.Geschichte.Basel 6"
 plotid: "abb91310"
@@ -119,7 +119,50 @@ plot91310 <- ggplot(data = data91310_longer,
 plot91310 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb91310 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 91310_3
+dataset_file_1 <- here("data", "clean", "Band6", "91310", "91310_3_Data.csv")
+
+data91310_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data91310_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 91310_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten.
+- **Freisinn:** Anzahl der freisinnigen Mitglieder des Regierungsrats des Kantons Basel-Stadt nach den Gesamterneuerungswahlen im angegebenen Jahr
+- **Konservative:** Anzahl der konservativen Mitglieder des Regierungsrats des Kantons Basel-Stadt nach den Gesamterneuerungswahlen im angegebenen Jahr
+- **Sozialdemokraten:** Anzahl der sozialdemokratischen Mitglieder des Regierungsrats des Kantons Basel-Stadt nach den Gesamterneuerungswahlen im angegebenen Jahr
+- **Parteilos:** Anzahl der parteilosen Mitglieder des Regierungsrats des Kantons Basel-Stadt nach den Gesamterneuerungswahlen im angegebenen Jahr
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -157,13 +200,15 @@ df <- data.frame(
     "[data/clean/Band6/91310/91310_3_Data.csv](/data/clean/Band6/91310/91310_3_Data.csv)",
     "Liste der Mitglieder des basel-städtischen Regierungsrates seit 1875. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band6/91310/91310_3_Data.csv-metadata.json](/data/clean/Band6/91310/91310_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91310.html#m91310_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91310.html#m91310_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:11"
+    "2025-09-30 00:16:36"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (91310_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 91310_3")
 ```
+

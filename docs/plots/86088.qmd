@@ -1,7 +1,7 @@
 ---
 title: "Religionszugehörigkeiten in Basel-Stadt, 1950–2020"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb86088"
@@ -112,7 +112,54 @@ plot86088 <- ggplot(data86088_longer, aes(x = Jahr, y = Anzahl,
 plot86088 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb86088 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 86088_3
+dataset_file_1 <- here("data", "clean", "Band8", "86088", "86088_3_Data.csv")
+
+data86088_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data86088_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 86088_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Angabe des Jahres nach unserer Zeitrechnung
+- **Evangelisch-reformiert:** Anzahl der Angehörigen evangelisch-reformierter Glaubensgemeinschaften im Kanton Basel-Stadt im angegebenen Jahr
+- **Römisch-katholisch:** Anzahl der Angehörigen römisch-katholischer Glaubensgemeinschaften im Kanton Basel-Stadt im angegebenen Jahr
+- **Andere christliche Glaubensgemeinschaften:** Anzahl der Angehörigen anderer christlicher Glaubensgemeinschaften (weder evangelisch-reformiert, noch römisch-katholisch) im Kanton Basel-Stadt im angegebenen Jahr
+- **Jüdische Glaubensgemeinschaften:** Anzahl der Angehörigen jüdischer Glaubensgemeinschaften im Kanton Basel-Stadt im angegebenen Jahr
+- **Islamische Glaubensgemeinschaften:** Anzahl der Angehörigen islamischer Glaubensgemeinschaften im Kanton Basel-Stadt im angegebenen Jahr
+- **Andere Religionsgemeinschaften:** Anzahl der Angehörigen anderer Glaubensgemeinschaften im Kanton Basel-Stadt im angegebenen Jahr
+- **Konfessionslos:** Anzahl der konfessionslosen Menschen im Kanton Basel-Stadt im angegebenen Jahr
+- **Ohne Angabe:** Anzahl der Menschen ohne Angabe zur Religionszugehörigkeit im Kanton Basel-Stadt im angegebenen Jahr
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -150,13 +197,15 @@ df <- data.frame(
     "[data/clean/Band8/86088/86088_3_Data.csv](/data/clean/Band8/86088/86088_3_Data.csv)",
     "Statistisches Amt des Kantons Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/86088/86088_3_Data.csv-metadata.json](/data/clean/Band8/86088/86088_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Religionszugehörigkeiten in Basel-Stadt, 1950–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb86088.html#m86088_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Religionszugehörigkeiten in Basel-Stadt, 1950–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb86088.html#m86088_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:10"
+    "2025-09-30 00:16:35"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (86088_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 86088_3")
 ```
+

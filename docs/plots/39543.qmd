@@ -1,7 +1,7 @@
 ---
 title: "Verbannungsurteile, 1376–1455"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
 vol_short: "Stadt.Geschichte.Basel 3"
 plotid: "abb39543"
@@ -113,7 +113,58 @@ plot39543 <- ggplot(data39543_longer,
 plot39543 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb39543 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 39543_3
+dataset_file_1 <- here("data", "clean", "Band3", "39543", "39543_3_Data.csv")
+
+data39543_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data39543_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 39543_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Startjahr:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
+- **Endjahr:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
+- **Zeitraum:** Zeitraum, Angabe von Start- und Endjahr als Jahreszahl unserer Zeitrechnung
+- **Gotteslästerung:** Anzahl der Verbannungsurteile wegen Gotteslästerung im angegebenen Zeitraum
+- **Ehrverletzung:** Anzahl der Verbannungsurteile wegen Ehrverletzung im angegebenen Zeitraum
+- **Meineid:** Anzahl der Verbannungsurteile wegen Meineid im angegebenen Zeitraum
+- **Ungehorsam:** Anzahl der Verbannungsurteile wegen Ungehorsam im angegebenen Zeitraum
+- **Jugenddelikt:** Anzahl der Verbannungsurteile wegen Jugenddelikten im angegebenen Zeitraum
+- **Eigentum:** Anzahl der Verbannungsurteile wegen Eigentumsdelikten im angegebenen Zeitraum
+- **Sexualdelikt:** Anzahl der Verbannungsurteile wegen Sexualdelikten im angegebenen Zeitraum
+- **«Geloiff» (Tumult):** Anzahl der Verbannungsurteile wegen Geloiff (Tumult) im angegebenen Zeitraum
+- **Totschlag:** Anzahl der Verbannungsurteile wegen Totschlag im angegebenen Zeitraum
+- **Wundtat:** Anzahl der Verbannungsurteile wegen Wundtaten im angegebenen Zeitraum
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -151,13 +202,15 @@ df <- data.frame(
     "[data/clean/Band3/39543/39543_3_Data.csv](/data/clean/Band3/39543/39543_3_Data.csv)",
     "Simon-Muscheid, Katharina: Gewalt und Ehre im spätmittelalterlichen Handwerk am Beispiel Basels, in: Zeitschrift für historische Forschung 18, 1991, S. 1–31, hier S. 30 f. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band3/39543/39543_3_Data.csv-metadata.json](/data/clean/Band3/39543/39543_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Verbannungsurteile, 1376–1455. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39543.html#m39543_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Verbannungsurteile, 1376–1455. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39543.html#m39543_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:08"
+    "2025-09-30 00:16:33"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (39543_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 39543_3")
 ```
+

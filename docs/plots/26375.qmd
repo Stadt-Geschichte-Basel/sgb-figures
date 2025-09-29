@@ -1,7 +1,7 @@
 ---
 title: "Hauptberuflich Beschäftigte im Dienstleistungssektor im Kanton Basel-Stadt, 1929–1965"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
 vol_short: "Stadt.Geschichte.Basel 7"
 plotid: "abb26375"
@@ -129,7 +129,50 @@ plot26375 <- ggplot(data26375_longer) +
 plot26375 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb26375 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 26375_3
+dataset_file_1 <- here("data", "clean", "Band7", "26375", "26375_3_Data.csv")
+
+data26375_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data26375_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 26375_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Branche:** Bezeichnung der Branche, für die die angegebenen Zahlen gelten
+- **1929:** Anzahl der im angegebenen Bereich beschäftigten Personen im Kanton Basel-Stadt im Jahr 1929
+- **1939:** Anzahl der im angegebenen Bereich beschäftigten Personen im Kanton Basel-Stadt im Jahr 1939
+- **1955:** Anzahl der im angegebenen Bereich beschäftigten Personen im Kanton Basel-Stadt im Jahr 1955
+- **1965:** Anzahl der im angegebenen Bereich beschäftigten Personen im Kanton Basel-Stadt im Jahr 1965
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -167,13 +210,15 @@ df <- data.frame(
     "[data/clean/Band7/26375/26375_3_Data.csv](/data/clean/Band7/26375/26375_3_Data.csv)",
     "Böhner, Martin: Die Eidgenössische Betriebszählung 1965 aus baslerischer Sicht, Basel 1968, S. 66f; Eidgenössisches Statistisches Amt (Hg.): Beschäftigte in den Gemeinden: nach Wirtschaftsfaktoren, Bern 1968 S. 59. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band7/26375/26375_3_Data.csv-metadata.json](/data/clean/Band7/26375/26375_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Hauptberuflich Beschäftigte im Dienstleistungssektor im Kanton Basel-Stadt, 1929–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26375.html#m26375_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Hauptberuflich Beschäftigte im Dienstleistungssektor im Kanton Basel-Stadt, 1929–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26375.html#m26375_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:07"
+    "2025-09-30 00:16:32"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (26375_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 26375_3")
 ```
+

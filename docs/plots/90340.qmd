@@ -1,7 +1,7 @@
 ---
 title: "Prozentuales Bevölkerungswachstum in Gross- und Kleinbasel, 1860–1910"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 vol_short: "Stadt.Geschichte.Basel 6"
 plotid: "abb90340"
@@ -97,7 +97,48 @@ plot90340 <- ggplot(data = data90340_longer, aes(x = Zeitraum,
 plot90340 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb90340 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 90340_3
+dataset_file_1 <- here("data", "clean", "Band6", "90340", "90340_3_Data.csv")
+
+data90340_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data90340_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 90340_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Zeitraum:** Zeitraum, für den die angegebenen Zahlen gelten. Angabe in Jahren unserer Zeitrechnung.
+- **Grossbasel:** Zunahme der Bevölkerungszahl im Grossbasel im angegebenen Zeitraum, Angaben in Prozent
+- **Kleinbasel:** Zunahme der Bevölkerungszahl im Kleinbasel im angegebenen Zeitraum, Angaben in Prozent
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -135,13 +176,15 @@ df <- data.frame(
     "[data/clean/Band6/90340/90340_3_Data.csv](/data/clean/Band6/90340/90340_3_Data.csv)",
     "Bauer, Stephan: Die Bevölkerung des Kantons Basel-Stadt, Basel 1905; Jenny, Oskar Hugo: Die Bevölkerung des Kantons Basel-Stadt. Am 1. Dezember 1910, Basel 1924 (Mitteilungen des Statistischen Amtes des Kantons Basel-Stadt Nr. 28, Ed. 1924)., Tabelle I, 3*–5*. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band6/90340/90340_3_Data.csv-metadata.json](/data/clean/Band6/90340/90340_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Prozentuales Bevölkerungswachstum in Gross- und Kleinbasel, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90340.html#m90340_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Prozentuales Bevölkerungswachstum in Gross- und Kleinbasel, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90340.html#m90340_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:11"
+    "2025-09-30 00:16:36"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (90340_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 90340_3")
 ```
+

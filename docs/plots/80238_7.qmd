@@ -1,7 +1,7 @@
 ---
 title: "Vertretung Basel-Stadt im Nationalrat, 1963–2023"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb80238_7"
@@ -123,7 +123,59 @@ plot80238c <- ggplot(data80238c_longer,
 plot80238c + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb80238_7 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 80238_9
+dataset_file_1 <- here("data", "clean", "Band8", "80238", "80238_9_Data.csv")
+
+data80238_9 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data80238_9,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 80238_9'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung
+- **POB:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'POB' im entsprechenden Jahr
+- **GP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'GP' im entsprechenden Jahr
+- **SP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'SP' im entsprechenden Jahr
+- **LdU:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'LdU' im entsprechenden Jahr
+- **GLP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'GLP' im entsprechenden Jahr
+- **CVP 
+(ab 2021 Die Mitte):** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'CVP' im entsprechenden Jahr. Ab 2021 unter dem Namen 'Die Mitte'
+- **FDP 
+(bis 1973 RDP):** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'FDP' im entsprechenden Jahr. Bis 1973 unter dem Namen 'RDP'
+- **LDP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'LDP' im entsprechenden Jahr
+- **SVP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'SVP' im entsprechenden Jahr
+- **NA (ab 1991 UVP, ab 1982 SD):** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'NA' im entsprechenden Jahr. Ab 1991 unter dem Namen 'UVP', ab 1992 unter dem Namen 'SD'
+- **Total:** Gesamtzahl der baselstädtischen Mitglieder des Nationalrats im entsprechenden Jahr. Reduzierung der Anzahl der Mandate auf die Jahre 1971, 1983, 2003
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -161,13 +213,15 @@ df <- data.frame(
     "[data/clean/Band8/80238/80238_9_Data.csv](/data/clean/Band8/80238/80238_9_Data.csv)",
     "Kanton Basel-Stadt: nationale und kantonale Wahlen seit 1919, Bundesamt für Statistik, je-d-17.02.01_12BS, online: https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/tabellen.assetdetail.14836245.html. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/80238/80238_9_Data.csv-metadata.json](/data/clean/Band8/80238/80238_9_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Vertretung Basel-Stadt im Nationalrat, 1963–2023. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_9>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Vertretung Basel-Stadt im Nationalrat, 1963–2023. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_9>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:09"
+    "2025-09-30 00:16:34"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (80238_9)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 80238_9")
 ```
+

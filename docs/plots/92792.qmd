@@ -1,7 +1,7 @@
 ---
 title: "Privatbesitz an Boden und Wohnraum in Basel, 2021"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Baur, Esther; Gafner, Lina (Hg.): Stadträume. Offen und begrenzt, gestaltet und umkämpft. Basel 2025 (Stadt.Geschichte.Basel 9)."
 vol_short: "Stadt.Geschichte.Basel 9"
 plotid: "abb92792"
@@ -80,7 +80,47 @@ plot92792 <- ggplot(data92792, aes(x = `Anzahl Wohnungen`,
 plot92792 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb92792 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 92792_3
+dataset_file_1 <- here("data", "clean", "Band9", "92792", "92792_3_Data.csv")
+
+data92792_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data92792_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 92792_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Eigentümer:** Namen der auf dem Wohnungsmarkt aktiven Akteure in Basel-Stadt (ausgewählte)
+- **Anzahl Wohnungen:** Anzahl der vom jeweiligen Akteur besessenen Wohnungen im Kanton Basel-Stadt. Angaben der Pensionskasse Basel-Stadt nach Eigendeklaration, im Datensatz sind einige der Grundstücke im Finanzvermögen der Einwohnergemeinde.
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -118,13 +158,15 @@ df <- data.frame(
     "[data/clean/Band9/92792/92792_3_Data.csv](/data/clean/Band9/92792/92792_3_Data.csv)",
     "https://reflekt.ch/recherchen/wem-gehoert-basel. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band9/92792/92792_3_Data.csv-metadata.json](/data/clean/Band9/92792/92792_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Privatbesitz an Boden und Wohnraum in Basel, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92792.html#m92792_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Privatbesitz an Boden und Wohnraum in Basel, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92792.html#m92792_3>, letzte Aktualisierung: 30.09.2025.",
     "CC BY-SA 4.0",
     "[https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/)",
-    "2025-09-28 00:42:12"
+    "2025-09-30 00:16:37"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (92792_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 92792_3")
 ```
+

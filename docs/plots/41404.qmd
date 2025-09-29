@@ -1,7 +1,7 @@
 ---
 title: "Rheinhochwasser bei Basel-Schifflände, 1300–2021"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
 vol_short: "Stadt.Geschichte.Basel 3"
 plotid: "abb41404"
@@ -133,7 +133,50 @@ plot41404 <- ggplot(data = data41404,
 plot41404 + theme(legend.position = "right")
 ```
 
-```{r table, results="asis"}
+Plot abb41404 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 41404_3
+dataset_file_1 <- here("data", "clean", "Band3", "41404", "41404_3_Data.csv")
+
+data41404_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data41404_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 41404_3'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
+- **Q [m3/s]:** Abflussmenge Q in Kubikmetern pro Sekunde
+- **P [m ü. M.]:** P, Angabe in Meter über Meer (m. ü. M.)
+- **gleitender 100 jähriger MW:** 100-jähriges gleitendes Hochwasserabflussmittel der rekonstruierten sowie aller gemessenen Jahresabflussmaxima in Kubikmetern pro Sekunde
+- **Gewässerkorrektionen:** Gewässerkorrektionen im jeweilige Jahr: Kanderkorrektion (ab 1714) und Juragewässerkorrektion (ab 1878)
+:::
+```{r metatable, results="asis"}
 #| echo: false
 #| message: false
 
@@ -171,13 +214,15 @@ df <- data.frame(
     "[data/clean/Band3/41404/41404_3_Data.csv](/data/clean/Band3/41404/41404_3_Data.csv)",
     "Wetter, O., Pfister, C., Weingartner, R. u.a.: The largest floods in the High Rhine basin since 1268 assessed from documentary and instrmental evidence, in: Hydrological Sciences Journal 56 (5), 2011, S. 733-758. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band3/41404/41404_3_Data.csv-metadata.json](/data/clean/Band3/41404/41404_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Rheinhochwasser bei Basel-Schifflände, 1300–2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41404.html#m41404_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Rheinhochwasser bei Basel-Schifflände, 1300–2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41404.html#m41404_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:08"
+    "2025-09-30 00:16:33"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (41404_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 41404_3")
 ```
+

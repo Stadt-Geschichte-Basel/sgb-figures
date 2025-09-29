@@ -1,7 +1,7 @@
 ---
 title: "Kulturausgaben in Basel-Stadt, 2021"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-28
+date-modified: 2025-09-30
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb88300"
@@ -151,7 +151,47 @@ plot88300 <- plot88300a + plot_spacer() + plot88300b_joined + plot_layout(ncol =
 plot88300 + theme(legend.position = "right")
 ```
 
-```{r table1, results="asis"}
+Plot abb88300 was built using the following data:
+
+```{r datatable1}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 88300_2
+dataset_file_1 <- here("data", "clean", "Band8", "88300", "88300_2_Data.csv")
+
+data88300_2 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data88300_2,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 88300_2 (Subset 1/2)'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Kanton:** Name des Kantons, für den Angaben zur Kulturförderung gemacht werden
+- **Kultursubventionen pro Kopf in Franken (2021):** Summe der Kulturförderung in Schweizer Franken im Jahr 2021
+:::
+```{r metatable1, results="asis"}
 #| echo: false
 #| message: false
 
@@ -189,17 +229,60 @@ df <- data.frame(
     "[data/clean/Band8/88300/88300_2_Data.csv](/data/clean/Band8/88300/88300_2_Data.csv)",
     "Bundesamt für Statistik, gd-d-16.02.05.01-2024. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/88300/88300_2_Data.csv-metadata.json](/data/clean/Band8/88300/88300_2_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_2>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_2>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:10"
+    "2025-09-30 00:16:35"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (1/2, Subset 88300_2)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 88300_2 (Subset 1/2)")
 ```
-```{r table2, results="asis"}
+
+
+---
+
+```{r datatable2}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 88300_3
+dataset_file_2 <- here("data", "clean", "Band8", "88300", "88300_3_Data.csv")
+
+data88300_3 <- read_csv(dataset_file_2)
+
+# Wrap datatable in a custom div
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data88300_3,
+    rownames = FALSE,
+    options = list(
+      scrollX = TRUE,
+      scrollCollapse = TRUE,
+      scrollY = '400px',
+      paging = FALSE,
+      dom = 't'
+    ),
+    caption = htmltools::tags$caption(
+      style = 'caption-side: top; text-align: left;',
+      'Dataset 88300_3 (Subset 2/2)'
+    )
+  ),
+)
+```
+
+::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Empfänger:** Gruppe der Institutionen, an die im Kanton Basel-Stadt Kulturförderung verteilt wurde
+- **Ausgaben in CHF (2021):** Summe der Förderung in Schweizer Franken im Jahr 2021. Zahlen ohne Beträge aus dem Swisslos-Fonds Basel-Stadt
+:::
+```{r metatable2, results="asis"}
 #| echo: false
 #| message: false
 
@@ -237,13 +320,15 @@ df <- data.frame(
     "[data/clean/Band8/88300/88300_3_Data.csv](/data/clean/Band8/88300/88300_3_Data.csv)",
     "Jahresbericht Abteilung Kultur 2021. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/88300/88300_3_Data.csv-metadata.json](/data/clean/Band8/88300/88300_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_3>, letzte Aktualisierung: 28.09.2025.",
+    "Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-28 00:42:10"
+    "2025-09-30 00:16:35"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", caption = "Dataset Overview (2/2, Subset 88300_3)")
+knitr::kable(df, format = "markdown", escape = FALSE, 
+caption = "Selected Metadata for Dataset 88300_3 (Subset 2/2)")
 ```
+
