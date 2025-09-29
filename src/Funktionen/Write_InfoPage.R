@@ -330,6 +330,8 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     "",
     plot_chunk,
     "",
+    glue("Plot {plotid_meta} was built using the following data:"),
+    "",
     table_chunks
   )
   
