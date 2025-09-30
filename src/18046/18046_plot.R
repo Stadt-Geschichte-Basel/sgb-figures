@@ -20,8 +20,12 @@ source(here("src", "18046", "18046_clean.R"))
 
 # Transform Data -------------
 
-# (Jahr 1652 als 1653 auf Achse laut Regieanweisung)
-data18046$Jahr[40] <- 1653
+# Jahr 1652 auf der x-Achse mit Label 1653
+data18046 <- data18046 %>%
+  mutate(Jahr = case_when(
+    Jahr == 1652 ~ 1653,
+    TRUE ~ Jahr
+  ))
 
 # Plot -----------------------
 
