@@ -121,6 +121,11 @@ h1 {
 	background-color: rgba(255, 232, 128, 0.55) !important;
 }
 
+#callout-col-description {
+	margin-top: 0.8rem;
+	margin-bottom: 0.8rem;
+}
+
 .col-centered {
 	float: none;
 	margin-top: auto;
