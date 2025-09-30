@@ -250,7 +250,6 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
       ")",
       "```",
       "",
-      "# Display callout block with column descriptions.",
       "::: {#callout-col-description .callout-tip title=\"Column Descriptions\" icon=\"false\" collapse=\"true\"}",
       glue("{metadata_list[[i]]$col_description}"),
       ":::"
