@@ -1,5 +1,4 @@
 # Packages ---------
-# These are the required packages for this script to run.
 library(here) # For creating file paths relative to the project root
 library(jsonlite) # For reading and parsing JSON metadata files
 library(fs) # For file system operations like creating paths and checking for file existence
@@ -20,7 +19,6 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
   }
 
   # Define a nested function to process a single metadata file associated with a dataset.
-  # This modular approach keeps the main function cleaner.
   process_metadata <- function(suffix) {
     # --- Construct Dataset and Metadata File Paths ----
     # Build absolute paths to the data (.csv) and metadata (.json) files
@@ -37,13 +35,13 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     ## --- Create Markdown Link for Path to Dataset ---
     # Generate a relative path for the dataset to use in the .qmd file.
     data_rel_path <- fs::path_rel(dataset_file, start = here())
-    data_rel_path <- gsub("^docs/", "", data_rel_path) # Remove 'docs/' prefix if present
+    data_rel_path <- gsub("^docs/", "", data_rel_path)
     data_link <- glue("[{data_rel_path}](/", data_rel_path, ")")
 
     ## --- Create Markdown Link for Path to JSON ---
     # Generate a relative path for the metadata file.
     meta_rel_path <- fs::path_rel(metadata_file, start = here())
-    meta_rel_path <- gsub("^docs/", "", meta_rel_path) # Remove 'docs/' prefix if present
+    meta_rel_path <- gsub("^docs/", "", meta_rel_path)
     meta_link <- glue("[{meta_rel_path}](/", meta_rel_path, ")")
 
     # --- Extract Metadata from File ----
@@ -58,7 +56,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     publisher <- schema$publisher[[1]]
     publisher_link <- glue("[{publisher}](https://www.wikidata.org/wiki/Q122442230)")
 
-    # Creator is currently hardcoded to the publisher link.
+    # individual authors are not parsed at the moment, listing SGB instead
     creators_str <- publisher_link
 
     # Process contributors list.
@@ -73,18 +71,17 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     # Extract column names and their descriptions from the schema.
     columns_info <- schema$columns[c("name", "description")]
 
-    # Collapse the column info into a single formatted string for display.
+    # Collapse the column info into a bullet point list md string for display.
     columns_str <- paste(apply(columns_info, 1, function(row) {
       paste0("- **", row["name"], ":** ", row["description"])
     }), collapse = "\n")
 
     ## --- Map Volume Numbers to Open Access DOIs ---
-    # This section links the book volume to its specific DOI.
     vol_text <- schema$isPartOf$volume[[1]]
     vol_short <- str_extract(vol_text, "Stadt\\.Geschichte\\.Basel\\s*\\d+")
     vol_num <- as.integer(str_extract(vol_short, "\\d+"))
 
-    # A predefined list of DOI suffixes for each volume.
+    # Predefined list of DOI suffixes for each volume.
     doi_suffixes <- c(
       "01-406352", "02-404936", "03-345800",
       "04-283636", "05-155353", "06-810743",
@@ -97,7 +94,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
       vol_text <- sub(vol_short, vol_link, vol_text, fixed = TRUE)
     }
 
-    # --- Create a list of all processed metadata fields ---
+    # --- Create a list of metadata fields to appear in the metadata table ---
     fields <- list(
       Figure = fig_link,
       Title = schema$title[[1]],
@@ -253,6 +250,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
       ")",
       "```",
       "",
+      "# Display callout block with column descriptions.",
       "::: {#callout-col-description .callout-tip title=\"Column Descriptions\" icon=\"false\" collapse=\"true\"}",
       glue("{metadata_list[[i]]$col_description}"),
       ":::"
