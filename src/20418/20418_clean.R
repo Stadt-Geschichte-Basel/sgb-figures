@@ -30,7 +30,7 @@ save_clean_csv(data20418, csv_suffix = 3, vol = 4)
 
 meta20418 <- annotate(
   data = data20418,
-  mediaID = 20418,
+  media_id = 20418,
   csv_suffix = 3,
   vol = 4,
   title = "Exportabgaben und Konsumsteuern, 1690–1798",

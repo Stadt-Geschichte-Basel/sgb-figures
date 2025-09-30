@@ -26,7 +26,7 @@ save_clean_csv(data21892, csv_suffix = 3, vol = 7)
 
 meta21892 <- annotate(
   data = data21892,
-  mediaID = 21892,
+  media_id = 21892,
   csv_suffix = 3,
   vol = 7,
   title = "Öffentliches Personal des Kantons auf 1000 Einwohnerinnen und Einwohner, 1912–1963",

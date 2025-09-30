@@ -29,7 +29,7 @@ save_clean_csv(data17308, csv_suffix = 3, vol = 4)
 
 meta17308 <- annotate(
   data = data17308,
-  mediaID = 17308,
+  media_id = 17308,
   csv_suffix = 3,
   vol = 4,
   title = "Bevölkerungsentwicklung und Pestepidemien, 1500–1700",

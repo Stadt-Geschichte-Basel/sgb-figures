@@ -40,7 +40,7 @@ save_clean_csv(data39543, csv_suffix = 3, vol = 3)
 
 meta39543 <- annotate(
   data = data39543,
-  mediaID = 39543,
+  media_id = 39543,
   csv_suffix = 3,
   vol = 3,
   title = "Verbannungsurteile, 1376–1455",

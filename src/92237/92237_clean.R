@@ -21,7 +21,7 @@ save_clean_csv(data92237, csv_suffix = 3, vol = 6)
 
 meta92237 <- annotate(
   data = data92237,
-  mediaID = 92237,
+  media_id = 92237,
   csv_suffix = 3,
   vol = 6,
   title = "Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Glarus, 1850 und 1910",

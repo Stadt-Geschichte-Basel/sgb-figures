@@ -39,7 +39,7 @@ save_clean_csv(data91407, csv_suffix = 3, vol = 6)
 
 meta91407 <- annotate(
   data = data91407,
-  mediaID = 91407,
+  media_id = 91407,
   csv_suffix = 3,
   vol = 6,
   title = "Mandate der Parteien bei Grossratswahlen, 1875–1914",

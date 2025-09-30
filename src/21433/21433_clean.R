@@ -26,7 +26,7 @@ save_clean_csv(data21433, csv_suffix = 3, vol = 7)
 
 meta21433 <- annotate(
   data = data21433,
-  mediaID = 21433,
+  media_id = 21433,
   csv_suffix = 3,
   vol = 7,
   title = "Die Bevölkerung von Basel-Stadt, 1912–1966",

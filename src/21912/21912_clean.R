@@ -31,7 +31,7 @@ save_clean_csv(data21912, csv_suffix = 3, vol = 7)
 
 meta21912 <- annotate(
   data = data21912,
-  mediaID = 21912,
+  media_id = 21912,
   csv_suffix = 3,
   vol = 7,
   title = "Kantonale Staatsausgaben pro Einwohner in CHF, 1920–1966",

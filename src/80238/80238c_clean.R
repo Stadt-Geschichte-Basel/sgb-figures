@@ -28,7 +28,7 @@ save_clean_csv(data80238c, csv_suffix = 9, vol = 8)
 
 meta80238c <- annotate(
   data = data80238c,
-  mediaID = 80238,
+  media_id = 80238,
   csv_suffix = 9,
   vol = 8,
   title = "Vertretung Basel-Stadt im Nationalrat, 1963–2023",

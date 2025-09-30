@@ -26,7 +26,7 @@ save_clean_csv(data77733, csv_suffix = 3, vol = 8)
 
 meta77733 <- annotate(
   data = data77733,
-  mediaID = 77733,
+  media_id = 77733,
   csv_suffix = 3,
   vol = 8,
   title = "Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Basel-Landschaft, 1940–2020",

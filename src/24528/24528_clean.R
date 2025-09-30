@@ -28,7 +28,7 @@ save_clean_csv(data24528, csv_suffix = 3, vol = 4)
 
 meta24528 <- annotate(
   data = data24528,
-  mediaID = 24528,
+  media_id = 24528,
   csv_suffix = 3,
   vol = 4,
   title = "Temperaturabweichungen in °C, 1444–2011",

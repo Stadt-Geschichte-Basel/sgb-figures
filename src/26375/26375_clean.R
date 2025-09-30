@@ -24,7 +24,7 @@ save_clean_csv(data26375, csv_suffix = 3, vol = 7)
 
 meta26375 <- annotate(
   data = data26375,
-  mediaID = 26375,
+  media_id = 26375,
   csv_suffix = 3,
   vol = 7,
   title = "Hauptberuflich Beschäftigte im Dienstleistungssektor im Kanton Basel-Stadt, 1929–1965",

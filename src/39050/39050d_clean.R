@@ -25,7 +25,7 @@ save_clean_csv(data39050d, csv_suffix = 9, vol = 3)
 
 meta39050d <- annotate(
   data = data39050d,
-  mediaID = 39050,
+  media_id = 39050,
   csv_suffix = 9,
   vol = 3,
   title = "Einnahmen der Stadt Basel ab 1424",

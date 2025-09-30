@@ -25,7 +25,7 @@ save_clean_csv(data39017, csv_suffix = 3, vol = 3)
 
 meta39017 <- annotate(
   data = data39017,
-  mediaID = 39017,
+  media_id = 39017,
   csv_suffix = 3,
   vol = 3,
   title = "Rentengeschäft von Ludwig Kilchmann",

@@ -32,7 +32,7 @@ save_clean_csv(data82338, csv_suffix = 3, vol = 8)
 
 meta82338 <- annotate(
   data = data82338,
-  mediaID = 82338,
+  media_id = 82338,
   csv_suffix = 3,
   vol = 8,
   title = "Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002",

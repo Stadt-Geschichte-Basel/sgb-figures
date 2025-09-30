@@ -28,7 +28,7 @@ save_clean_csv(data92792, csv_suffix = 3, vol = 9)
 
 meta92792 <- annotate(
   data = data92792,
-  mediaID = 92792,
+  media_id = 92792,
   csv_suffix = 3,
   vol = 9,
   title = "Privatbesitz an Boden und Wohnraum in Basel, 2021",

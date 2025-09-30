@@ -44,7 +44,7 @@ save_clean_csv(data90940, csv_suffix = 3, vol = 6)
 
 meta90940 <- annotate(
   data = data90940,
-  mediaID = 90940,
+  media_id = 90940,
   csv_suffix = 3,
   vol = 6,
   title = "Soziale Klassen in Basel, 1888–1904",

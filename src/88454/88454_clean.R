@@ -24,7 +24,7 @@ save_clean_csv(data88454, csv_suffix = 3, vol = 8)
 
 meta88454 <- annotate(
   data = data88454,
-  mediaID = 88454,
+  media_id = 88454,
   csv_suffix = 3,
   vol = 8,
   title = "Museumseintritte und Kinobesuche in Basel-Stadt, 1945–2020",

@@ -36,7 +36,7 @@ save_clean_csv(data41404, csv_suffix = 3, vol = 3)
 
 meta41404 <- annotate(
   data = data41404,
-  mediaID = 41404,
+  media_id = 41404,
   csv_suffix = 3,
   vol = 3,
   title = "Rheinhochwasser bei Basel-Schifflände, 1300–2021",

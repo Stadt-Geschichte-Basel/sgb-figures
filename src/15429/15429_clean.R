@@ -26,7 +26,7 @@ save_clean_csv(data15429, csv_suffix = 3, vol = 7)
 
 meta15429 <- annotate(
   data = data15429,
-  mediaID = 15429,
+  media_id = 15429,
   csv_suffix = 3,
   vol = 7,
   title = "Wohnbevölkerung im Kanton Basel-Stadt nach Religionszugehörigkeit und Herkunft, 1910–1970",

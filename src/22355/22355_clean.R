@@ -30,7 +30,7 @@ save_clean_csv(data22355, csv_suffix = 3, vol = 7)
 
 meta22355 <- annotate(
   data = data22355,
-  mediaID = 22355,
+  media_id = 22355,
   csv_suffix = 3,
   vol = 7,
   title = "Grossratsmandate nach Parteien, 1911–1964",

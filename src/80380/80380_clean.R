@@ -84,7 +84,7 @@ save_clean_csv(data80380, csv_suffix = 3, vol = 8)
 
 meta80380 <- annotate(
   data = data80380,
-  mediaID = 80380,
+  media_id = 80380,
   csv_suffix = 3,
   vol = 8,
   title = "Auflage der Tageszeitungen in der Region Basel, 1966–2020",

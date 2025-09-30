@@ -47,7 +47,7 @@ save_clean_csv(data34278, csv_suffix = 3, vol = 2)
 
 meta34278 <- annotate(
   data = data34278,
-  mediaID = 34278,
+  media_id = 34278,
   csv_suffix = 3,
   vol = 2,
   title = "Schema der Dreifelderwirtschaft",

@@ -26,7 +26,7 @@ save_clean_csv(data81757, csv_suffix = 3, vol = 8)
 
 meta81757 <- annotate(
   data = data81757,
-  mediaID = 81757,
+  media_id = 81757,
   csv_suffix = 3,
   vol = 8,
   title = "Anteil an Ausländerinnen und Ausländern im Kanton und in ausgewählten Quartieren, 1960–2020",

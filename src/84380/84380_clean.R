@@ -23,7 +23,7 @@ save_clean_csv(data84380, csv_suffix = 3, vol = 8)
 
 meta84380 <- annotate(
   data = data84380,
-  mediaID = 84380,
+  media_id = 84380,
   csv_suffix = 3,
   vol = 8,
   title = "Eheschliessungen und Ehescheidungen in Basel-Stadt, 1960–2020",

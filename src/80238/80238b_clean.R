@@ -25,7 +25,7 @@ save_clean_csv(data80238b, csv_suffix = 6, vol = 8)
 
 meta80238b <- annotate(
   data = data80238b,
-  mediaID = 80238,
+  media_id = 80238,
   csv_suffix = 6,
   vol = 8,
   title = "Grosser Rat in Basel-Stadt, 1960–2024",

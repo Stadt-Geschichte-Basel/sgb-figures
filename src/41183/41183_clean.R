@@ -31,7 +31,7 @@ save_clean_csv(data41183, csv_suffix = 3, vol = 3)
 
 meta41183 <- annotate(
   data = data41183,
-  mediaID = 41183,
+  media_id = 41183,
   csv_suffix = 3,
   vol = 3,
   title = "Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500",

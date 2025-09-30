@@ -35,7 +35,7 @@ save_clean_csv(data14158, csv_suffix = 3, vol = 4)
 
 meta14158 <- annotate(
   data = data14158,
-  mediaID = 14158,
+  media_id = 14158,
   csv_suffix = 3,
   vol = 4,
   title = "Bürgerrechtsaufnahmen, 1400–1798",

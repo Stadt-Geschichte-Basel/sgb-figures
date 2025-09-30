@@ -26,7 +26,7 @@ save_clean_csv(data77089, csv_suffix = 3, vol = 8)
 
 meta77089 <- annotate(
   data = data77089,
-  mediaID = 77089,
+  media_id = 77089,
   csv_suffix = 3,
   vol = 8,
   title = "Der Fahrzeugbestand in Basel-Stadt, 1920–2020",

@@ -28,7 +28,7 @@ save_clean_csv(data26060, csv_suffix = 3, vol = 7)
 
 meta26060 <- annotate(
   data = data26060,
-  mediaID = 26060,
+  media_id = 26060,
   csv_suffix = 3,
   vol = 7,
   title = "Beschäftigte nach Wirtschaftszweigen im Kanton Basel-Stadt, 1929–1965",

@@ -25,7 +25,7 @@ save_clean_csv(data39492, csv_suffix = 3, vol = 3)
 
 meta39492 <- annotate(
   data = data39492,
-  mediaID = 39492,
+  media_id = 39492,
   csv_suffix = 3,
   vol = 3,
   title = "Bürgeraufnahmen und Kriegsausgaben, 1360–1530",

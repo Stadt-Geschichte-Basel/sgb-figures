@@ -23,7 +23,7 @@ save_clean_csv(data86088, csv_suffix = 3, vol = 8)
 
 meta86088 <- annotate(
   data = data86088,
-  mediaID = 86088,
+  media_id = 86088,
   csv_suffix = 3,
   vol = 8,
   title = "Religionszugehörigkeiten in Basel-Stadt, 1950–2020",

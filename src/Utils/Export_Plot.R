@@ -9,7 +9,7 @@ library(ggpubr)
 export_plot <- function(plot, volume, plot_width_mm, plot_height_mm,
                         legend_width_mm = NULL, legend_height_mm = NULL,
                         plot_suffix = NULL, legend_suffix = NULL) {
-  # Extract plot name and derive mediaID
+  # Extract plot name and derive media_id
   plot_name <- deparse(substitute(plot))
   raw_media_id <- sub("plot(\\d{5}[a-zA-Z]*)$", "\\1", plot_name)
   base_id <- sub("^(\\d{5}).*$", "\\1", raw_media_id) # strip any trailing letters
