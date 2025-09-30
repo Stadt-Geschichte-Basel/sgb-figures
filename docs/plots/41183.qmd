@@ -1,7 +1,7 @@
 ---
 title: "Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-30
+date-modified: 2025-10-01
 volume: "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
 vol_short: "Stadt.Geschichte.Basel 3"
 plotid: "abb41183"
@@ -15,7 +15,7 @@ fig-cap-location: top
 ```{r setup, include=FALSE}
 #| echo: false
 #| message: false
-# only source the first_section of the plot script that actually generates the plot
+# Source the extracted plot generation code to create the plot object.
 # Packages -------------------
 
 library(here)
@@ -41,89 +41,100 @@ source(here("src", "41183", "41183_clean.R"))
 
 # gleitende Durchschnitte
 data41183 <- data41183 %>%
-  mutate(BS_Roggen_glD = rollmean(`Basel: Roggen (hl in fl)`,
-                                  k = 3, fill = "extend", align = "right"),
-         Str_Roggen_glD = rollmean(`Strasbourg: Roggen (hl in fl)`,
-                                   k = 3, fill = "extend", align = "right"),
-         Str_Weizen_glD = rollmean(`Strasbourg: Weizen (hl in fl)`,
-                                   k = 3, fill = "extend", align = "right"),
-         Nürn_Roggen_glD = rollmean(`Nürnberg: Roggen (hl in fl)`,
-                                    k = 3, fill = "extend", align = "right"),
-         Köln_RoggenWeizen_glD = rollmean(`Köln: Roggen oder Weizen (hl in fl)`,
-                                          k = 3, fill = "extend", align = "right"))
+  mutate(
+    BS_Roggen_glD = rollmean(`Basel: Roggen (hl in fl)`,
+      k = 3, fill = "extend", align = "right"
+    ),
+    Str_Roggen_glD = rollmean(`Strasbourg: Roggen (hl in fl)`,
+      k = 3, fill = "extend", align = "right"
+    ),
+    Str_Weizen_glD = rollmean(`Strasbourg: Weizen (hl in fl)`,
+      k = 3, fill = "extend", align = "right"
+    ),
+    Nürn_Roggen_glD = rollmean(`Nürnberg: Roggen (hl in fl)`,
+      k = 3, fill = "extend", align = "right"
+    ),
+    Köln_RoggenWeizen_glD = rollmean(`Köln: Roggen oder Weizen (hl in fl)`,
+      k = 3, fill = "extend", align = "right"
+    )
+  )
 
 # Plot -----------------------
 
 plot41183 <- ggplot(data = data41183, aes(x = Jahr)) +
-  
   geom_line(aes(x = Jahr, y = BS_Roggen_glD, colour = "grün"),
-            data = data41183,
-            linewidth = 0.561) +
-  
+    data = data41183,
+    linewidth = 0.561
+  ) +
   geom_line(aes(x = Jahr, y = Str_Roggen_glD, colour = "blau13_1"),
-            data = data41183,
-            linewidth = 0.561) +
-  
+    data = data41183,
+    linewidth = 0.561
+  ) +
   geom_line(aes(x = Jahr, y = Str_Weizen_glD, colour = "blau13_2"),
-            data = data41183,
-            linewidth = 0.561,
-            linetype = "dashed") +
-  
+    data = data41183,
+    linewidth = 0.561,
+    linetype = "dashed"
+  ) +
   geom_line(aes(x = Jahr, y = Nürn_Roggen_glD, colour = "lila8"),
-            data = data41183,
-            linewidth = 0.561) +
-  
+    data = data41183,
+    linewidth = 0.561
+  ) +
   geom_line(aes(x = Jahr, y = Köln_RoggenWeizen_glD, colour = "gelb19"),
-            data = data41183,
-            linewidth = 0.561) +
-  
+    data = data41183,
+    linewidth = 0.561
+  ) +
+
   # unsichtbares Element für zusätzlichen Text in der Legende
   geom_blank(aes(x = 1440, y = 0, color = "text_note")) +
-  
   scale_colour_manual("",
-                      values = c("grün" = "#5f9883", # Basel
-                                 "blau13_1" = "#6195CF", # Strassburg
-                                 "blau13_2" = "#6195CF", # Strassburg
-                                 "lila8" =  "#994F88", # Nürnberg
-                                 "gelb19" = "#F7CB45", # Köln
-                                 "text_note" = "transparent"), # Notiz unter der Legende
-                        
-                      labels = c("grün" = "Basel: Roggen",
-                                 "blau13_1" = "Strassburg: Roggen",
-                                 "blau13_2" = "Strassburg: Weizen",
-                                 "lila8" = "Nürnberg: Roggen",
-                                 "gelb19" = "Köln: Roggen oder Weizen",
-                                 "text_note" = "Alle Preise pro hl in fl."),
-                      
-                      breaks = c("grün", "blau13_1", "blau13_2", "lila8", "gelb19", "text_note"),
-                      
-                      guide = guide_legend(override.aes = list(linetype = c("solid",
-                                                                            "solid",
-                                                                            "dashed",
-                                                                            "solid",
-                                                                            "solid",
-                                                                            "blank")))) +
+    values = c(
+      "grün" = "#5f9883", # Basel
+      "blau13_1" = "#6195CF", # Strassburg
+      "blau13_2" = "#6195CF", # Strassburg
+      "lila8" = "#994F88", # Nürnberg
+      "gelb19" = "#F7CB45", # Köln
+      "text_note" = "transparent"
+    ), # Notiz unter der Legende
 
+    labels = c(
+      "grün" = "Basel: Roggen",
+      "blau13_1" = "Strassburg: Roggen",
+      "blau13_2" = "Strassburg: Weizen",
+      "lila8" = "Nürnberg: Roggen",
+      "gelb19" = "Köln: Roggen oder Weizen",
+      "text_note" = "Alle Preise pro hl in fl."
+    ),
+    breaks = c("grün", "blau13_1", "blau13_2", "lila8", "gelb19", "text_note"),
+    guide = guide_legend(override.aes = list(linetype = c(
+      "solid",
+      "solid",
+      "dashed",
+      "solid",
+      "solid",
+      "blank"
+    )))
+  ) +
   scale_x_continuous(
     breaks = seq(1440, 1500, 5),
     guide = guide_axis(angle = 0),
     expand = expansion(mult = c(0, 0))
   ) +
-
   scale_y_continuous(
     limits = c(0, 1),
     breaks = seq(0, 1, by = 0.25),
     expand = expansion(mult = c(0, 0)),
     labels = ch_numbers
   ) +
-  
   coord_cartesian(clip = "off") +
-  
   theme_sgb_basis() +
-  theme(legend.position = "none",
-        axis.text.y = element_text(margin = margin(r = 5),
-                                   hjust = 1),
-        plot.margin = margin(0.5,1.2,0,0.5, "lines"))
+  theme(
+    legend.position = "none",
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 1.2, 0, 0.5, "lines")
+  )
 
 ```
 
@@ -148,31 +159,23 @@ library(DT)
 
 # Read CSV file for 41183_3
 dataset_file_1 <- here("data", "clean", "Band3", "41183", "41183_3_Data.csv")
-
 data41183_3 <- read_csv(dataset_file_1)
 
-# Wrap datatable in a custom div
+# Wrap datatable in a custom div for styling.
 htmltools::div(
   class = 'datatable-frame',
   DT::datatable(
     data41183_3,
     rownames = FALSE,
-    options = list(
-      scrollX = TRUE,
-      scrollCollapse = TRUE,
-      scrollY = '400px',
-      paging = FALSE,
-      dom = 't'
-    ),
-    caption = htmltools::tags$caption(
-      style = 'caption-side: top; text-align: left;',
-      'Dataset 41183_3'
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 41183_3'
     )
-  ),
+  )
 )
 ```
 
-::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Jahr:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
 - **ß:** ß
 - **d:** d (Pfennig)
@@ -233,15 +236,14 @@ df <- data.frame(
     "[data/clean/Band3/41183/41183_3_Data.csv](/data/clean/Band3/41183/41183_3_Data.csv)",
     "Holzwart-Schäfer, Iris: Getreideanbau im Elsass, Versorgungslage Strassburgs und Basels und der Handel mit elsässischem Korn (14.–16. Jahrhundert), Tübingen 2000. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band3/41183/41183_3_Data.csv-metadata.json](/data/clean/Band3/41183/41183_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41183.html#m41183_3>, letzte Aktualisierung: 30.09.2025.",
+    "Stadt.Geschichte.Basel: Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41183.html#m41183_3>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-30 13:55:17"
+    "2025-10-01 00:29:53"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", escape = FALSE, 
-caption = "Selected Metadata for Dataset 41183_3")
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 41183_3")
 ```
 

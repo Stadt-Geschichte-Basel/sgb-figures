@@ -107,7 +107,7 @@
 					"description": "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage"
 				}
 			],
-			"mediaID": ["m80380_3"],
+			"media_id": ["m80380_3"],
 			"isPartOf": {
 				"ObjectID": ["abb80380"],
 				"volume": [
@@ -150,9 +150,9 @@
 			"relation": [["m80380_1"], ["m80380_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 13:26:53"],
+			"modified": ["2025-10-01T00:29:54"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Auflage der Tageszeitungen in der Region Basel, 1966–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80380.html#m80380_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Auflage der Tageszeitungen in der Region Basel, 1966–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80380.html#m80380_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

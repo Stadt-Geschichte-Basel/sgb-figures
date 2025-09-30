@@ -1,7 +1,7 @@
 ---
 title: "Verbannungsurteile, 1376–1455"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-30
+date-modified: 2025-10-01
 volume: "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
 vol_short: "Stadt.Geschichte.Basel 3"
 plotid: "abb39543"
@@ -15,7 +15,7 @@ fig-cap-location: top
 ```{r setup, include=FALSE}
 #| echo: false
 #| message: false
-# only source the first_section of the plot script that actually generates the plot
+# Source the extracted plot generation code to create the plot object.
 # Packages -------------------
 
 library(here)
@@ -39,7 +39,7 @@ source(here("src", "39543", "39543_clean.R"))
 
 # Transform Data -------------
 
-data39543_longer <- data39543[,-2:-3]
+data39543_longer <- data39543[, -2:-3]
 
 data39543_longer <- data39543_longer %>%
   pivot_longer(
@@ -48,59 +48,64 @@ data39543_longer <- data39543_longer %>%
     values_to = "Anzahl"
   )
 
-data39543_longer$Urteilstyp <- factor(data39543_longer$Urteilstyp, 
-                                      levels = c("Gotteslästerung", 
-                                                 "Ehrverletzung",
-                                                 "Meineid",
-                                                 "Ungehorsam",
-                                                 "Jugenddelikt",
-                                                 "Eigentum",
-                                                 "Sexualdelikt",
-                                                 "«Geloiff» (Tumult)",
-                                                 "Totschlag",
-                                                 "Wundtat"))
+data39543_longer$Urteilstyp <- factor(data39543_longer$Urteilstyp,
+  levels = c(
+    "Gotteslästerung",
+    "Ehrverletzung",
+    "Meineid",
+    "Ungehorsam",
+    "Jugenddelikt",
+    "Eigentum",
+    "Sexualdelikt",
+    "«Geloiff» (Tumult)",
+    "Totschlag",
+    "Wundtat"
+  )
+)
 
 # Plot -----------------------
 
-plot39543 <- ggplot(data39543_longer,
-                    aes(x = Startjahr, y = Anzahl, fill = Urteilstyp)) +
-  
+plot39543 <- ggplot(
+  data39543_longer,
+  aes(x = Startjahr, y = Anzahl, fill = Urteilstyp)
+) +
   geom_bar(stat = "identity", position = "fill") +
-
-    scale_fill_manual(values = c("Gotteslästerung" = "#777777",
-                                "Ehrverletzung" = "#90C987",
-                                "Meineid" =  "#FAE7B5",
-                                "Ungehorsam" = "#F7CB45",
-                                "Jugenddelikt" = "#A5170E",
-                                "Eigentum" = "#E8601C",
-                                "Sexualdelikt" = "#994F88",
-                                "«Geloiff» (Tumult)" = "#4EB265",
-                                "Totschlag" = "#b3c1d4", 
-                                "Wundtat" = "#7BAFDE")) +
-  
+  scale_fill_manual(values = c(
+    "Gotteslästerung" = "#777777",
+    "Ehrverletzung" = "#90C987",
+    "Meineid" = "#FAE7B5",
+    "Ungehorsam" = "#F7CB45",
+    "Jugenddelikt" = "#A5170E",
+    "Eigentum" = "#E8601C",
+    "Sexualdelikt" = "#994F88",
+    "«Geloiff» (Tumult)" = "#4EB265",
+    "Totschlag" = "#b3c1d4",
+    "Wundtat" = "#7BAFDE"
+  )) +
   scale_x_continuous(
     breaks = data39543$Startjahr,
     labels = data39543$Zeitraum,
     guide = guide_axis(angle = 0),
     expand = expansion(mult = c(0, 0))
   ) +
-
   scale_y_continuous(
     breaks = breaks_pretty(),
     labels = label_percent(),
     expand = expansion(mult = c(0, 0))
   ) +
-  
   coord_cartesian(clip = "off") +
-  
   theme_sgb_basis() +
-  theme(legend.position = "none",
-        axis.ticks.x = element_blank(),
-        axis.text.y = element_text(margin = margin(r = 5),
-                                   hjust = 1),
-        legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
-        legend.key.width = unit(5, "mm"), # entspricht 4mm
-        plot.margin = margin(0.5,0.2,0,0, "lines"))
+  theme(
+    legend.position = "none",
+    axis.ticks.x = element_blank(),
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
+    legend.key.width = unit(5, "mm"), # entspricht 4mm
+    plot.margin = margin(0.5, 0.2, 0, 0, "lines")
+  )
 
 ```
 
@@ -125,31 +130,23 @@ library(DT)
 
 # Read CSV file for 39543_3
 dataset_file_1 <- here("data", "clean", "Band3", "39543", "39543_3_Data.csv")
-
 data39543_3 <- read_csv(dataset_file_1)
 
-# Wrap datatable in a custom div
+# Wrap datatable in a custom div for styling.
 htmltools::div(
   class = 'datatable-frame',
   DT::datatable(
     data39543_3,
     rownames = FALSE,
-    options = list(
-      scrollX = TRUE,
-      scrollCollapse = TRUE,
-      scrollY = '400px',
-      paging = FALSE,
-      dom = 't'
-    ),
-    caption = htmltools::tags$caption(
-      style = 'caption-side: top; text-align: left;',
-      'Dataset 39543_3'
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 39543_3'
     )
-  ),
+  )
 )
 ```
 
-::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Startjahr:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
 - **Endjahr:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
 - **Zeitraum:** Zeitraum, Angabe von Start- und Endjahr als Jahreszahl unserer Zeitrechnung
@@ -202,15 +199,14 @@ df <- data.frame(
     "[data/clean/Band3/39543/39543_3_Data.csv](/data/clean/Band3/39543/39543_3_Data.csv)",
     "Simon-Muscheid, Katharina: Gewalt und Ehre im spätmittelalterlichen Handwerk am Beispiel Basels, in: Zeitschrift für historische Forschung 18, 1991, S. 1–31, hier S. 30 f. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band3/39543/39543_3_Data.csv-metadata.json](/data/clean/Band3/39543/39543_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Verbannungsurteile, 1376–1455. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39543.html#m39543_3>, letzte Aktualisierung: 30.09.2025.",
+    "Stadt.Geschichte.Basel: Verbannungsurteile, 1376–1455. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39543.html#m39543_3>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-30 00:16:33"
+    "2025-10-01 00:29:53"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", escape = FALSE, 
-caption = "Selected Metadata for Dataset 39543_3")
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 39543_3")
 ```
 

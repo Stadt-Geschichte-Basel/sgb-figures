@@ -1,7 +1,7 @@
 ---
 title: "Grosser Rat in Basel-Stadt, 1960–2024"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-30
+date-modified: 2025-10-01
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb80238_4"
@@ -15,7 +15,7 @@ fig-cap-location: top
 ```{r setup, include=FALSE}
 #| echo: false
 #| message: false
-# only source the first_section of the plot script that actually generates the plot
+# Source the extracted plot generation code to create the plot object.
 # Packages -------------------
 
 library(here)
@@ -38,7 +38,7 @@ source(here("src", "80238", "80238b_clean.R"))
 
 # Transform Data -------------
 
-data80238b <- data80238b[,-18]
+data80238b <- data80238b[, -18]
 
 colnames(data80238b)[5] <- "GB (Grünes Bündnis aus\nGrüne & BastA, ab 2021 GAB)"
 colnames(data80238b)[11] <- "CVP (ab 2021 Die Mitte)"
@@ -47,81 +47,82 @@ colnames(data80238b)[13] <- "FDP (bis 1973 RDP)"
 colnames(data80238b)[16] <- "NA (ab 1991 UVP, ab 1992 SD)"
 
 data80238b_longer <- data80238b %>%
-  pivot_longer(cols = -Jahr,
-               names_to = "Partei",
-               values_to = "Grossratssitze",
-               names_prefix = "'",
-               names_transform = list(Jahr = as.numeric)) %>%
+  pivot_longer(
+    cols = -Jahr,
+    names_to = "Partei",
+    values_to = "Grossratssitze",
+    names_prefix = "'",
+    names_transform = list(Jahr = as.numeric)
+  ) %>%
   mutate(Jahr = gsub("'", "", Jahr)) %>%
   mutate(Jahr = as.numeric(Jahr))
 
 # Plot -----------------------
 
-plot80238b <- ggplot(data80238b_longer,
-                    aes(x = Jahr,
-                        y = Grossratssitze,
-                        fill = factor(Partei, levels = c("POB",
-                                                         "FraB",
-                                                         "PdA",
-                                                         "GB (Grünes Bündnis aus\nGrüne & BastA, ab 2021 GAB)",
-                                                         "GP",
-                                                         "SP",
-                                                         "LdU",
-                                                         "GLP",
-                                                         "DSP",
-                                                         "CVP (ab 2021 Die Mitte)",
-                                                         "EVP (bis 2006 VEW)",
-                                                         "FDP (bis 1973 RDP)",
-                                                         "LDP",
-                                                         "SVP",
-                                                         "NA (ab 1991 UVP, ab 1992 SD)",
-                                                         "Andere")))) +
-  
+plot80238b <- ggplot(
+  data80238b_longer,
+  aes(
+    x = Jahr,
+    y = Grossratssitze,
+    fill = factor(Partei, levels = c(
+      "POB",
+      "FraB",
+      "PdA",
+      "GB (Grünes Bündnis aus\nGrüne & BastA, ab 2021 GAB)",
+      "GP",
+      "SP",
+      "LdU",
+      "GLP",
+      "DSP",
+      "CVP (ab 2021 Die Mitte)",
+      "EVP (bis 2006 VEW)",
+      "FDP (bis 1973 RDP)",
+      "LDP",
+      "SVP",
+      "NA (ab 1991 UVP, ab 1992 SD)",
+      "Andere"
+    ))
+  )
+) +
   geom_bar(stat = "identity", position = "stack") +
-  
   scale_x_continuous(
-    breaks = seq(1960, 2020, 4) - 1.8,  # shift breaks to the left edge of bars
+    breaks = seq(1960, 2020, 4) - 1.8, # shift breaks to the left edge of bars
     labels = seq(1960, 2020, 4),
     guide = guide_axis(),
     expand = expansion(mult = c(0, 0.005))
   ) +
-  
   scale_y_continuous(
     limits = c(0, 130),
     breaks = seq(10, 130, 10),
     expand = expansion(mult = c(0, 0)),
     labels = ch_numbers
   ) +
-  
-  scale_fill_manual(values = c("POB" = "#88519C",
-                               "FraB" = "#8C2736",
-                               "PdA" = "#BF3939",
-                               "GB (Grünes Bündnis aus\nGrüne & BastA, ab 2021 GAB)" = "#84B547",
-                               "GP" = "#487F5A",
-                               "SP" = "#F0554D",
-                               "LdU" = "#1BAA6E",
-                               "GLP" = "#C4C43D",
-                               "DSP" = "#BF3939",
-                               "CVP (ab 2021 Die Mitte)" = "#D6862B",
-                               "EVP (bis 2006 VEW)" = "#DEAA28",
-                               "FDP (bis 1973 RDP)" = "#3872B5",
-                               "LDP" = "#618DEA",
-                               "SVP" = "#4B8A3E",
-                               "NA (ab 1991 UVP, ab 1992 SD)" = "#5A3827",
-                               "Andere" = "#B8B8B8")) +
-  
-  guides(color = guide_legend(keyheight = unit(4.8, "mm"), # results in ca. 3mm
-                              ncol = 1)) +
-
-  coord_cartesian(clip = "off") + 
-  
+  scale_fill_manual(values = c(
+    "POB" = "#88519C",
+    "FraB" = "#8C2736",
+    "PdA" = "#BF3939",
+    "GB (Grünes Bündnis aus\nGrüne & BastA, ab 2021 GAB)" = "#84B547",
+    "GP" = "#487F5A",
+    "SP" = "#F0554D",
+    "LdU" = "#1BAA6E",
+    "GLP" = "#C4C43D",
+    "DSP" = "#BF3939",
+    "CVP (ab 2021 Die Mitte)" = "#D6862B",
+    "EVP (bis 2006 VEW)" = "#DEAA28",
+    "FDP (bis 1973 RDP)" = "#3872B5",
+    "LDP" = "#618DEA",
+    "SVP" = "#4B8A3E",
+    "NA (ab 1991 UVP, ab 1992 SD)" = "#5A3827",
+    "Andere" = "#B8B8B8"
+  )) +
+  coord_cartesian(clip = "off") +
   theme_sgb_basis() +
   theme(
     legend.position = "none",
     legend.key.width = unit(5, "mm"), # resultiert in 4 mm
     legend.key.height = unit(2.5, "mm"), # resultiert in 2 mm
     axis.text.y = element_text(margin = margin(r = 5)),
-    plot.margin = margin(0.5,0.1,0,0.5, "lines"),
+    plot.margin = margin(0.5, 0.1, 0, 0.5, "lines"),
   )
 
 ```
@@ -147,31 +148,23 @@ library(DT)
 
 # Read CSV file for 80238_6
 dataset_file_1 <- here("data", "clean", "Band8", "80238", "80238_6_Data.csv")
-
 data80238_6 <- read_csv(dataset_file_1)
 
-# Wrap datatable in a custom div
+# Wrap datatable in a custom div for styling.
 htmltools::div(
   class = 'datatable-frame',
   DT::datatable(
     data80238_6,
     rownames = FALSE,
-    options = list(
-      scrollX = TRUE,
-      scrollCollapse = TRUE,
-      scrollY = '400px',
-      paging = FALSE,
-      dom = 't'
-    ),
-    caption = htmltools::tags$caption(
-      style = 'caption-side: top; text-align: left;',
-      'Dataset 80238_6'
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 80238_6'
     )
-  ),
+  )
 )
 ```
 
-::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Jahr:** Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung
 - **POB:** Anzahl der Grossratsmitglieder der Partei 'POB' im entsprechenden Jahr
 - **FraB:** Anzahl der Grossratsmitglieder der Partei 'FraB' im entsprechenden Jahr
@@ -234,15 +227,14 @@ df <- data.frame(
     "[data/clean/Band8/80238/80238_6_Data.csv](/data/clean/Band8/80238/80238_6_Data.csv)",
     "Sitzverteilung im Grossen Rat seit 1905, Entwicklung Frauenanteil im Grossen Rat, t17.3.05, Statistisches Amt BS, online: https://grosserrat.bs.ch/parlament/ratsgeschichte/entwicklung-der-parteien; Parteien, Jungeparteien und Listenvereinigungen seit 1971, t17.1.01, Statistisches Amt BS, online: https://grosserrat.bs.ch/parlament/ratsgeschichte/entwicklung-der-parteien; Nationale und kantonale Wahlen seit 1919, Bundesamt für Statistik, je-d-17.02.01_12BS, online: https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/tabellen.assetdetail.14836245.html. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/80238/80238_6_Data.csv-metadata.json](/data/clean/Band8/80238/80238_6_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Grosser Rat in Basel-Stadt, 1960–2024. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_6>, letzte Aktualisierung: 30.09.2025.",
+    "Stadt.Geschichte.Basel: Grosser Rat in Basel-Stadt, 1960–2024. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_6>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-30 00:16:34"
+    "2025-10-01 00:29:53"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", escape = FALSE, 
-caption = "Selected Metadata for Dataset 80238_6")
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 80238_6")
 ```
 

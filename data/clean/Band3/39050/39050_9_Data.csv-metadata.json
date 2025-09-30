@@ -29,7 +29,7 @@
 					"description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: verkäufliche Renten in Basler Pfund"
 				}
 			],
-			"mediaID": ["m39050_9"],
+			"media_id": ["m39050_9"],
 			"isPartOf": {
 				"ObjectID": ["abb39050"],
 				"volume": [
@@ -69,9 +69,9 @@
 			"relation": [["m39050_6"], ["m39050_10"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:33"],
+			"modified": ["2025-10-01T00:29:52"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Einnahmen der Stadt Basel ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_9>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Einnahmen der Stadt Basel ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_9>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

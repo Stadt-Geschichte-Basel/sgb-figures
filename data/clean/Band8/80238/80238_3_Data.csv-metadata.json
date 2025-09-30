@@ -71,7 +71,7 @@
 					"description": "Angabe, ob das Jahr der Beginn einer neuen Legislaturperiode markiert"
 				}
 			],
-			"mediaID": ["m80238_3"],
+			"media_id": ["m80238_3"],
 			"isPartOf": {
 				"ObjectID": ["abb80238"],
 				"volume": [
@@ -116,9 +116,9 @@
 			"relation": [["m80238_1"], ["m80238_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:34"],
+			"modified": ["2025-10-01T00:29:53"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Regierungsrat in Basel-Stadt, 1960–2024. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Regierungsrat in Basel-Stadt, 1960–2024. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

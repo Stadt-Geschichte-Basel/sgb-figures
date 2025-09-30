@@ -23,7 +23,7 @@
 					"description": "Anzahl der die Wohnbevölkerung des Kantons Basel-Landschaft bildenden Menschen im entsprechenden Jahr. Ab dem Jahr 1994 inklusive Laufental"
 				}
 			],
-			"mediaID": ["m77733_3"],
+			"media_id": ["m77733_3"],
 			"isPartOf": {
 				"ObjectID": ["abb77733"],
 				"volume": [
@@ -70,9 +70,9 @@
 			"relation": [["m77733_1"], ["m77733_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:34"],
+			"modified": ["2025-10-01T00:29:53"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Basel-Landschaft, 1940–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77733.html#m77733_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Basel-Landschaft, 1940–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77733.html#m77733_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

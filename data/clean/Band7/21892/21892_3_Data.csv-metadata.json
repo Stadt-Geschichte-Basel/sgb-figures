@@ -17,7 +17,7 @@
 					"description": "Anzahl der vom Kanton Basel-Stadt angestellten Menschen gerechnet auf 1000 Einwohner:innen und Einwohner am Ende des jeweiligen Jahres"
 				}
 			],
-			"mediaID": ["m21892_3"],
+			"media_id": ["m21892_3"],
 			"isPartOf": {
 				"ObjectID": ["abb21892"],
 				"volume": [
@@ -58,9 +58,9 @@
 			"relation": [["m21892_1"], ["m21892_2"], ["m21912_1"], ["m21912_2"], ["m21912_3"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:31"],
+			"modified": ["2025-10-01T00:29:51"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Öffentliches Personal des Kantons auf 1000 Einwohnerinnen und Einwohner, 1912–1963. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21892.html#m21892_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Öffentliches Personal des Kantons auf 1000 Einwohnerinnen und Einwohner, 1912–1963. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21892.html#m21892_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

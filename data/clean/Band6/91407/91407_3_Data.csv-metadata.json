@@ -53,7 +53,7 @@
 					"description": "Anzahl der Mandate für übrige Parteien/Kandidaturen nach den Grossratswahlen im angegebenen Jahr"
 				}
 			],
-			"mediaID": ["m91407_3"],
+			"media_id": ["m91407_3"],
 			"isPartOf": {
 				"ObjectID": ["abb91407"],
 				"volume": [
@@ -95,9 +95,9 @@
 			"relation": [["m91407_1"], ["m91407_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:36"],
+			"modified": ["2025-10-01T00:29:56"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Mandate der Parteien bei Grossratswahlen, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91407.html#m91407_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Mandate der Parteien bei Grossratswahlen, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91407.html#m91407_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

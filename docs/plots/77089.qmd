@@ -1,7 +1,7 @@
 ---
 title: "Der Fahrzeugbestand in Basel-Stadt, 1920–2020"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-30
+date-modified: 2025-10-01
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb77089"
@@ -15,7 +15,7 @@ fig-cap-location: top
 ```{r setup, include=FALSE}
 #| echo: false
 #| message: false
-# only source the first_section of the plot script that actually generates the plot
+# Source the extracted plot generation code to create the plot object.
 # Packages -------------------
 
 library(here)
@@ -38,58 +38,65 @@ source(here("src", "77089", "77089_clean.R"))
 
 # Transform Data -------------
 
-data77089_Personenwagen <- data77089[,-3:-4]
+data77089_personenwagen <- data77089 |>
+  select(Jahr, Personenwagen)
 
-data77089_Motorräder_inkl_Mofas <- data77089 %>%
+data77089_motorrad_inkl_mofa <- data77089 |>
   select(Jahr, "Motorräder inkl. Mofas")
 
-data77089_Fahrräder <- data77089 %>%
-  select(Jahr, "Fahrräder") %>%
+data77089_velo <- data77089 |>
+  select(Jahr, "Fahrräder") |>
   na.omit()
 
 # Plot -----------------------
 
 plot77089 <- ggplot() +
-  
-  geom_line(data = data77089_Personenwagen, aes(x = Jahr, y = Personenwagen, color = "Personenwagen"),
-            linewidth = 0.561) +
-  
-  geom_line(data = data77089_Motorräder_inkl_Mofas, aes(x = Jahr, y = `Motorräder inkl. Mofas`,
-                                                        color = "Motorräder inkl. Mofas"),
-            linewidth = 0.561) +
-  
-  geom_line(data = data77089_Fahrräder, aes(x = Jahr, y = Fahrräder,
-                                            color = "Fahrräder"),
-            linewidth = 0.561) +
-  
+  geom_line(
+    data = data77089_personenwagen, aes(x = Jahr, y = Personenwagen, color = "Personenwagen"),
+    linewidth = 0.561
+  ) +
+  geom_line(
+    data = data77089_motorrad_inkl_mofa, aes(
+      x = Jahr, y = `Motorräder inkl. Mofas`,
+      color = "Motorräder inkl. Mofas"
+    ),
+    linewidth = 0.561
+  ) +
+  geom_line(
+    data = data77089_velo, aes(
+      x = Jahr, y = Fahrräder,
+      color = "Fahrräder"
+    ),
+    linewidth = 0.561
+  ) +
   scale_x_continuous(
     breaks = pretty_breaks(),
     guide = guide_axis(),
     expand = expansion(mult = c(0, 0.005))
   ) +
-  
   scale_y_continuous(
     limits = c(0, 90000),
     breaks = c(0, 30000, 60000, 90000),
     expand = expansion(mult = c(0, 0)),
     labels = ch_numbers
   ) +
-  
-  scale_color_manual(values = c("Personenwagen" = "#6195CF",
-                                "Motorräder inkl. Mofas" = "#F7CB45",
-                                "Fahrräder" = "#bc5231")) +
-
-  coord_cartesian(clip = "off") + 
-  
+  scale_color_manual(values = c(
+    "Personenwagen" = "#6195CF",
+    "Motorräder inkl. Mofas" = "#F7CB45",
+    "Fahrräder" = "#bc5231"
+  )) +
+  coord_cartesian(clip = "off") +
   guides(color = guide_legend(keyheight = unit(4.8, "mm"))) + # results in ca. 3mm
-  
+
   theme_sgb_basis() +
   theme(
     legend.position = "none",
     legend.key.height = unit(1.64, "mm"),
-    axis.text.y = element_text(margin = margin(r = 5),
-                               hjust = 1),
-    plot.margin = margin(0.5,0.9,0,0, "lines")
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 0.9, 0, 0, "lines")
   )
 
 ```
@@ -115,31 +122,23 @@ library(DT)
 
 # Read CSV file for 77089_3
 dataset_file_1 <- here("data", "clean", "Band8", "77089", "77089_3_Data.csv")
-
 data77089_3 <- read_csv(dataset_file_1)
 
-# Wrap datatable in a custom div
+# Wrap datatable in a custom div for styling.
 htmltools::div(
   class = 'datatable-frame',
   DT::datatable(
     data77089_3,
     rownames = FALSE,
-    options = list(
-      scrollX = TRUE,
-      scrollCollapse = TRUE,
-      scrollY = '400px',
-      paging = FALSE,
-      dom = 't'
-    ),
-    caption = htmltools::tags$caption(
-      style = 'caption-side: top; text-align: left;',
-      'Dataset 77089_3'
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 77089_3'
     )
-  ),
+  )
 )
 ```
 
-::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Jahr:** Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung
 - **Personenwagen:** Anzahl der Personenwagen (Automobile) im Fahrzeugbestand im Kanton Basel-Stadt im entsprechenden Jahr. Ab dem Jahr 2019 werden in dieser Kategorie auch E-Autos mitgezählt. Die Zahlen stellen bis inkl. 1953 'Erteilte Fahrzeugausweise auf Jahresende' dar, ab inkl. 1954 dann 'Motorfahrzeug- und Fahrrad-Höchstbestände'. Die Angabe für 1920 ist eine Schätzung auf Basis der Daten von 1921 und Angaben von https://hsso.ch/2012/n/12. Für die Jahre 1924, 1927, 1929, 1930, 1931, 1932, 1934, 1965–1953, 1960, 1961: Abweichende Angaben in früheren oder späteren Berichten.
 - **Motorräder inkl. Mofas:** Anzahl an Motorrädern (inklusive Mofas) im Fahrzeugbestand im Kanton Basel-Stadt im entsprechenden Jahr. Die Zahlen stellen bis inkl. 1953 'Erteilte Fahrzeugausweise auf Jahresende' dar, ab inkl. 1954 dann 'Motorfahrzeug- und Fahrrad-Höchstbestände'. Ab 1954 weiterhin neu exkl. Dreiräder (davor jeweils max. 25). Für die Jahre 1924, 1925, 1927, 1928, 1929, 1930, 1931, 1933, 1935, 1939, 1940, 1946–1954, 1960, 1961: Abweichende Angaben in früheren oder späteren Berichten.
@@ -173,7 +172,7 @@ df <- data.frame(
   Value = c(
     "abb77089 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb77089.html))",
     "Der Fahrzeugbestand in Basel-Stadt, 1920–2020",
-    "Die Motorisierung der Gesellschaft machte sich in den 1960er-Jahren eindrücklich bemerkbar: Der Bestand an Autos nahm in Basel massiv zu, während immer weniger Fahrräder im Einsatz waren. Mitte der 1970er-Jahre wuchs der Bestand an Fahrrädern wieder, ab 1990 wurde er nicht mehr erhoben. Anhaltende Popularität hatte das Auto: Der vermeintliche Einbruch um 1980 geht auf eine neue Zählweise zurück. Hinweis: Die Zahlen entsprechen dem Bestand der Motorfahrzeugkontrolle des Kantons Basel-Stadt. Daten aus dem Statistischen Jahrbuch der Schweiz unterscheiden sich jeweils leicht von den Daten im StAJB BS (vermutlich weil jeweils Bestand 'Ende September 19xx)'.",
+    "Die Motorisierung der Gesellschaft machte sich in den 1960er-Jahren eindrücklich bemerkbar: Der Bestand an Autos nahm in Basel massiv zu, während immer weniger Fahrräder im Einsatz waren. Mitte der 1970er-Jahre wuchs der Bestand an Fahrrädern wieder, ab 1990 wurde er nicht mehr erhoben. Anhaltende Popularität hatte das Auto: Der vermeintliche Einbruch um 1980 geht auf eine neue Zählweise zurück. Hinweis: Die Zahlen entsprechen dem Bestand der Motorfahrzeugkontrolle des Kantons Basel-Stadt. Daten aus dem Statistischen Jahrbuch der Schweiz unterscheiden sich jeweils leicht von den Daten im StAJB BS (vermutlich weil jeweils Bestand 'Ende September 19xx').",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
@@ -183,15 +182,14 @@ df <- data.frame(
     "[data/clean/Band8/77089/77089_3_Data.csv](/data/clean/Band8/77089/77089_3_Data.csv)",
     "https://statistik.bs.ch/apps/jahrbuch; https://statistik.bs.ch/files/webtabellen/t11-1-01.xlsx. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/77089/77089_3_Data.csv-metadata.json](/data/clean/Band8/77089/77089_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Der Fahrzeugbestand in Basel-Stadt, 1920–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77089.html#m77089_3>, letzte Aktualisierung: 30.09.2025.",
+    "Stadt.Geschichte.Basel: Der Fahrzeugbestand in Basel-Stadt, 1920–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77089.html#m77089_3>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-30 00:16:33"
+    "2025-10-01 00:29:53"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", escape = FALSE, 
-caption = "Selected Metadata for Dataset 77089_3")
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 77089_3")
 ```
 

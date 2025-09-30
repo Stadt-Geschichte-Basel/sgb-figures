@@ -29,7 +29,7 @@
 					"description": "Zahl der Einwohner:innen von Basel-Stadt mit ausländischer Staatsbürgerschaft im entsprechenden Jahr"
 				}
 			],
-			"mediaID": ["m21433_3"],
+			"media_id": ["m21433_3"],
 			"isPartOf": {
 				"ObjectID": ["abb21433"],
 				"volume": [
@@ -68,9 +68,9 @@
 			"relation": [["m21433_1"], ["m21433_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:31"],
+			"modified": ["2025-10-01T00:29:50"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Die Bevölkerung von Basel-Stadt, 1912–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21433.html#m21433_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Die Bevölkerung von Basel-Stadt, 1912–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21433.html#m21433_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

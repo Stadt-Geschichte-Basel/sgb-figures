@@ -29,7 +29,7 @@
 					"description": "Investierte Summe (netto) im jeweiligen Jahr in Gulden"
 				}
 			],
-			"mediaID": ["m39017_3"],
+			"media_id": ["m39017_3"],
 			"isPartOf": {
 				"ObjectID": ["abb39017"],
 				"volume": [
@@ -69,9 +69,9 @@
 			"relation": [["m39017_1"], ["m39017_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:32"],
+			"modified": ["2025-10-01T00:29:52"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Rentengeschäft von Ludwig Kilchmann. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39017.html#m39017_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Rentengeschäft von Ludwig Kilchmann. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39017.html#m39017_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

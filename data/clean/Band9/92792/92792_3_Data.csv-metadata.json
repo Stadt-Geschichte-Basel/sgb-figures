@@ -17,7 +17,7 @@
 					"description": "Anzahl der vom jeweiligen Akteur besessenen Wohnungen im Kanton Basel-Stadt. Angaben der Pensionskasse Basel-Stadt nach Eigendeklaration, im Datensatz sind einige der Grundstücke im Finanzvermögen der Einwohnergemeinde."
 				}
 			],
-			"mediaID": ["m92792_3"],
+			"media_id": ["m92792_3"],
 			"isPartOf": {
 				"ObjectID": ["abb92792"],
 				"volume": [
@@ -62,9 +62,9 @@
 			"relation": [["m92792_1"], ["m92792_2"]],
 			"rights": ["CC BY-SA 4.0"],
 			"license": ["https://creativecommons.org/licenses/by-sa/4.0/"],
-			"modified": ["2025-09-30 00:16:37"],
+			"modified": ["2025-10-01T00:29:57"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Privatbesitz an Boden und Wohnraum in Basel, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92792.html#m92792_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Privatbesitz an Boden und Wohnraum in Basel, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92792.html#m92792_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

@@ -131,7 +131,7 @@
 					"description": "Köln: Roggen oder Weizen (hl in fl)"
 				}
 			],
-			"mediaID": ["m41183_3"],
+			"media_id": ["m41183_3"],
 			"isPartOf": {
 				"ObjectID": ["abb41183"],
 				"volume": [
@@ -171,9 +171,9 @@
 			"relation": [["m41183_1"], ["m41183_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 13:55:17"],
+			"modified": ["2025-10-01T00:29:53"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41183.html#m41183_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41183.html#m41183_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

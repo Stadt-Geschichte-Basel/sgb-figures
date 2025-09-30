@@ -1,7 +1,7 @@
 ---
 title: "Nationalitäten von in Basel-Stadt wohnhaften Ausländerinnen und Ausländern, 1960–2020"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-30
+date-modified: 2025-10-01
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb81313"
@@ -15,7 +15,7 @@ fig-cap-location: top
 ```{r setup, include=FALSE}
 #| echo: false
 #| message: false
-# only source the first_section of the plot script that actually generates the plot
+# Source the extracted plot generation code to create the plot object.
 # Packages -------------------
 
 library(here)
@@ -39,53 +39,55 @@ source(here("src", "81313", "81313_clean.R"))
 # Transform Data -------------
 
 data81313_longer <- data81313 %>%
-  pivot_longer(cols = -Nationalität,
-               names_to = "Jahr",
-               values_to = "Anzahl",
-               names_prefix = "'",
-               names_transform = list(Jahr = as.numeric)) %>%
+  pivot_longer(
+    cols = -Nationalität,
+    names_to = "Jahr",
+    values_to = "Anzahl",
+    names_prefix = "'",
+    names_transform = list(Jahr = as.numeric)
+  ) %>%
   mutate(Jahr = gsub("'", "", Jahr)) %>%
   mutate(Jahr = as.numeric(Jahr))
 
 # Plot -----------------------
 
-plot81313 <- ggplot(data81313_longer, aes(x = Jahr, y = Anzahl,
-                                          fill = Nationalität)) +
-  
+plot81313 <- ggplot(data81313_longer, aes(
+  x = Jahr, y = Anzahl,
+  fill = Nationalität
+)) +
   geom_area(alpha = 1) +
-  
   scale_x_continuous(
     breaks = pretty_breaks(),
     guide = guide_axis(),
     expand = expansion(mult = c(0, 0.005))
   ) +
-  
   scale_y_continuous(
     limits = c(0, 80000),
     breaks = seq(0, 80000, 20000),
     expand = expansion(mult = c(0, 0)),
     labels = ch_numbers
   ) +
-  
-  scale_fill_manual(values = c("Italien" = "#90C987",
-                               "Spanien" = "#882E72",
-                               "Portugal" = "#CAACCB",
-                               "Türkei" = "#DC050C",
-                               "Ehemaliges Jugoslawien" = "#F7F056",
-                               "Deutschland" = "#F7CB45",
-                               "Frankreich" = "#6195CF",
-                               "Übriges Ausland" = "#7BAFDE")) +
-    
-  coord_cartesian(clip = "off") + 
-  
+  scale_fill_manual(values = c(
+    "Italien" = "#90C987",
+    "Spanien" = "#882E72",
+    "Portugal" = "#CAACCB",
+    "Türkei" = "#DC050C",
+    "Ehemaliges Jugoslawien" = "#F7F056",
+    "Deutschland" = "#F7CB45",
+    "Frankreich" = "#6195CF",
+    "Übriges Ausland" = "#7BAFDE"
+  )) +
+  coord_cartesian(clip = "off") +
   theme_sgb_basis() +
   theme(
     legend.position = "none",
     legend.key.width = unit(5, "mm"), # resultiert in 4 mm
     legend.key.height = unit(2.5, "mm"), # resultiert in 2 mm
-    axis.text.y = element_text(margin = margin(r = 5),
-                               hjust = 1),
-    plot.margin = margin(0.5,0.9,0,0, "lines")
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 0.9, 0, 0, "lines")
   )
 
 ```
@@ -111,31 +113,23 @@ library(DT)
 
 # Read CSV file for 81313_3
 dataset_file_1 <- here("data", "clean", "Band8", "81313", "81313_3_Data.csv")
-
 data81313_3 <- read_csv(dataset_file_1)
 
-# Wrap datatable in a custom div
+# Wrap datatable in a custom div for styling.
 htmltools::div(
   class = 'datatable-frame',
   DT::datatable(
     data81313_3,
     rownames = FALSE,
-    options = list(
-      scrollX = TRUE,
-      scrollCollapse = TRUE,
-      scrollY = '400px',
-      paging = FALSE,
-      dom = 't'
-    ),
-    caption = htmltools::tags$caption(
-      style = 'caption-side: top; text-align: left;',
-      'Dataset 81313_3'
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 81313_3'
     )
-  ),
+  )
 )
 ```
 
-::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Nationalität:** Nationalitäten von Personengruppen in Basel-Stadt wohnhaften Ausländerinnen und Ausländern
 - **1960:** Anzahl der wohnhaften Ausländer*innen der angegebenen Nationalitäten im entsprechenden Jahr
 - **1970:** Anzahl der wohnhaften Ausländer*innen der angegebenen Nationalitäten im entsprechenden Jahr
@@ -183,15 +177,14 @@ df <- data.frame(
     "[data/clean/Band8/81313/81313_3_Data.csv](/data/clean/Band8/81313/81313_3_Data.csv)",
     "https://statistik.bs.ch/apps/jahrbuch. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/81313/81313_3_Data.csv-metadata.json](/data/clean/Band8/81313/81313_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Nationalitäten von in Basel-Stadt wohnhaften Ausländerinnen und Ausländern, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb81313.html#m81313_3>, letzte Aktualisierung: 30.09.2025.",
+    "Stadt.Geschichte.Basel: Nationalitäten von in Basel-Stadt wohnhaften Ausländerinnen und Ausländern, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb81313.html#m81313_3>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-30 00:16:34"
+    "2025-10-01 00:29:54"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", escape = FALSE, 
-caption = "Selected Metadata for Dataset 81313_3")
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 81313_3")
 ```
 

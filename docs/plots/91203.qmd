@@ -1,7 +1,7 @@
 ---
 title: "Stimmberechtigte und Gesamtbevölkerung, 1870–1910"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-30
+date-modified: 2025-10-01
 volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 vol_short: "Stadt.Geschichte.Basel 6"
 plotid: "abb91203"
@@ -15,7 +15,7 @@ fig-cap-location: top
 ```{r setup, include=FALSE}
 #| echo: false
 #| message: false
-# only source the first_section of the plot script that actually generates the plot
+# Source the extracted plot generation code to create the plot object.
 # Packages -------------------
 
 library(here)
@@ -48,35 +48,33 @@ data91203_longer <- data91203 %>%
 # Plot -----------------------
 
 plot91203 <- ggplot(data91203_longer, aes(x = Jahr, y = Anzahl, color = Typ)) +
-  
   geom_line(linewidth = 1) +
-  
   scale_color_manual(
-    values = c("Gesamtbevölkerung" = "#6195CF",
-               "Stimmberechtigte" = "#F7CB45")
+    values = c(
+      "Gesamtbevölkerung" = "#6195CF",
+      "Stimmberechtigte" = "#F7CB45"
+    )
   ) +
-  
   scale_x_continuous(
     breaks = pretty_breaks(),
     guide = guide_axis(),
     expand = expansion(mult = c(0, 0.005))
   ) +
-  
   scale_y_continuous(
     limits = c(0, 140000),
     breaks = c(0, 25000, 50000, 100000, 140000),
     expand = expansion(mult = c(0, 0)),
     labels = ch_numbers
   ) +
-  
-  coord_cartesian(clip = "off") + 
-  
+  coord_cartesian(clip = "off") +
   theme_sgb_basis() +
   theme(
     legend.position = "none",
     plot.margin = margin(0.5, 0.9, 0, 0, "lines"),
-    axis.text.y = element_text(margin = margin(r = 5),
-                               hjust = 1)
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    )
   )
 
 ```
@@ -102,31 +100,23 @@ library(DT)
 
 # Read CSV file for 91203_3
 dataset_file_1 <- here("data", "clean", "Band6", "91203", "91203_3_Data.csv")
-
 data91203_3 <- read_csv(dataset_file_1)
 
-# Wrap datatable in a custom div
+# Wrap datatable in a custom div for styling.
 htmltools::div(
   class = 'datatable-frame',
   DT::datatable(
     data91203_3,
     rownames = FALSE,
-    options = list(
-      scrollX = TRUE,
-      scrollCollapse = TRUE,
-      scrollY = '400px',
-      paging = FALSE,
-      dom = 't'
-    ),
-    caption = htmltools::tags$caption(
-      style = 'caption-side: top; text-align: left;',
-      'Dataset 91203_3'
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 91203_3'
     )
-  ),
+  )
 )
 ```
 
-::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Jahr:** Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten
 - **Gesamtbevölkerung:** Angabe der Gesamtbevölkerung des Kantons Basel-Stadt im entsprechenden Jahr
 - **Stimmberechtigte:** Angabe der Zahl der stimmberechtigten Einwohner des Kantons Basel-Stadt im entsprechenden Jahr
@@ -169,15 +159,14 @@ df <- data.frame(
     "[data/clean/Band6/91203/91203_3_Data.csv](/data/clean/Band6/91203/91203_3_Data.csv)",
     "Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924; Kantons-Blatt Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band6/91203/91203_3_Data.csv-metadata.json](/data/clean/Band6/91203/91203_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Stimmberechtigte und Gesamtbevölkerung, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91203.html#m91203_3>, letzte Aktualisierung: 30.09.2025.",
+    "Stadt.Geschichte.Basel: Stimmberechtigte und Gesamtbevölkerung, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91203.html#m91203_3>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-30 00:16:36"
+    "2025-10-01 00:29:56"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", escape = FALSE, 
-caption = "Selected Metadata for Dataset 91203_3")
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 91203_3")
 ```
 

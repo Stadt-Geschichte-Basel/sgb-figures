@@ -17,7 +17,7 @@
 					"description": "Summe der Förderung in Schweizer Franken im Jahr 2021. Zahlen ohne Beträge aus dem Swisslos-Fonds Basel-Stadt"
 				}
 			],
-			"mediaID": ["m88300_3"],
+			"media_id": ["m88300_3"],
 			"isPartOf": {
 				"ObjectID": ["abb88300"],
 				"volume": [
@@ -60,9 +60,9 @@
 			"relation": [["m88300_1"], ["m88300_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:35"],
+			"modified": ["2025-10-01T00:29:55"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

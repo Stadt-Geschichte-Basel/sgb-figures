@@ -47,7 +47,7 @@
 					"description": "Anzahl der aus dem In- und Ausland stammenden Menschen mit anderer Religionszugehörigkeit, ohne Religionszugehörigkeit oder mit fehlender Angabe im Kanton Basel-Stadt im angegebenen Jahr"
 				}
 			],
-			"mediaID": ["m15429_3"],
+			"media_id": ["m15429_3"],
 			"isPartOf": {
 				"ObjectID": ["abb15429"],
 				"volume": [
@@ -88,9 +88,9 @@
 			"relation": [["m15429_1"], ["m15429_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:30"],
+			"modified": ["2025-10-01T00:29:49"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Wohnbevölkerung im Kanton Basel-Stadt nach Religionszugehörigkeit und Herkunft, 1910–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb15429.html#m15429_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Wohnbevölkerung im Kanton Basel-Stadt nach Religionszugehörigkeit und Herkunft, 1910–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb15429.html#m15429_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

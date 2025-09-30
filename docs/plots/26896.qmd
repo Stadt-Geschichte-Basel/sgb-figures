@@ -1,7 +1,7 @@
 ---
 title: "Ausgestellte Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger im Kanton Basel-Stadt, 1927–1962"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-30
+date-modified: 2025-10-01
 volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
 vol_short: "Stadt.Geschichte.Basel 7"
 plotid: "abb26896"
@@ -15,7 +15,7 @@ fig-cap-location: top
 ```{r setup, include=FALSE}
 #| echo: false
 #| message: false
-# only source the first_section of the plot script that actually generates the plot
+# Source the extracted plot generation code to create the plot object.
 # Packages -------------------
 
 library(here)
@@ -49,35 +49,31 @@ data26896_longer <- data26896 %>%
 
 
 plot26896 <- ggplot(data26896_longer, aes(x = Jahr, y = Anzahl, fill = Staat)) +
-  
   geom_bar(stat = "identity", position = "stack") +
-  
   scale_fill_manual(values = c("#F7CB45", "#6195CF")) +
-  
   scale_x_continuous(
     breaks = seq(1930, 1960, by = 5),
     labels = seq(1930, 1960, by = 5),
     guide = guide_axis(angle = 45),
     expand = expansion(mult = c(0, 0))
   ) +
-  
   scale_y_continuous(
     limits = c(0, 9000),
     breaks = seq(0, 9000, by = 1000),
     expand = expansion(mult = c(0, 0)),
     labels = ch_numbers
   ) +
-  
   coord_cartesian(clip = "off") +
-  
   theme_sgb_basis() +
   theme(
     legend.position = "none",
     legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
     legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
-    axis.text.y = element_text(margin = margin(r = 5),
-                               hjust = 1),
-    plot.margin = margin(0.5,0.1,0,0, "lines")
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 0.1, 0, 0, "lines")
   )
 
 ```
@@ -103,31 +99,23 @@ library(DT)
 
 # Read CSV file for 26896_3
 dataset_file_1 <- here("data", "clean", "Band7", "26896", "26896_3_Data.csv")
-
 data26896_3 <- read_csv(dataset_file_1)
 
-# Wrap datatable in a custom div
+# Wrap datatable in a custom div for styling.
 htmltools::div(
   class = 'datatable-frame',
   DT::datatable(
     data26896_3,
     rownames = FALSE,
-    options = list(
-      scrollX = TRUE,
-      scrollCollapse = TRUE,
-      scrollY = '400px',
-      paging = FALSE,
-      dom = 't'
-    ),
-    caption = htmltools::tags$caption(
-      style = 'caption-side: top; text-align: left;',
-      'Dataset 26896_3'
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 26896_3'
     )
-  ),
+  )
 )
 ```
 
-::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Jahr:** Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung
 - **aus Deutschland:** Anzahl der ausgestellten Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger aus Deutschland im angegebenen Jahr
 - **aus Frankreich:** Anzahl der ausgestellten Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger aus Frankreich im angegebenen Jahr
@@ -170,15 +158,14 @@ df <- data.frame(
     "[data/clean/Band7/26896/26896_3_Data.csv](/data/clean/Band7/26896/26896_3_Data.csv)",
     "Banz, Marcel: Die deutschen und französischen Grenzgänger auf dem baselstädtischen Arbeitsmarkt, Basel 1964. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band7/26896/26896_3_Data.csv-metadata.json](/data/clean/Band7/26896/26896_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Ausgestellte Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger im Kanton Basel-Stadt, 1927–1962. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26896.html#m26896_3>, letzte Aktualisierung: 30.09.2025.",
+    "Stadt.Geschichte.Basel: Ausgestellte Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger im Kanton Basel-Stadt, 1927–1962. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26896.html#m26896_3>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-30 00:16:32"
+    "2025-10-01 00:29:51"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", escape = FALSE, 
-caption = "Selected Metadata for Dataset 26896_3")
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 26896_3")
 ```
 

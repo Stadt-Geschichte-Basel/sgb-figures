@@ -35,7 +35,7 @@
 					"description": "Anteil der Arbeitslosen an der Gesamtbevölkerung des Kantons Zürich in Prozent im entsprechenden Jahr"
 				}
 			],
-			"mediaID": ["m82338_3"],
+			"media_id": ["m82338_3"],
 			"isPartOf": {
 				"ObjectID": ["abb82338"],
 				"volume": [
@@ -82,9 +82,9 @@
 			"relation": [["m82338_1"], ["m82338_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:35"],
+			"modified": ["2025-10-01T00:29:54"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb82338.html#m82338_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb82338.html#m82338_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

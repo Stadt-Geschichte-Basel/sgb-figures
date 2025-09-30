@@ -1,7 +1,7 @@
 ---
 title: "Mandate der Parteien bei Grossratswahlen, 1875–1914"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-30
+date-modified: 2025-10-01
 volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 vol_short: "Stadt.Geschichte.Basel 6"
 plotid: "abb91407"
@@ -15,7 +15,7 @@ fig-cap-location: top
 ```{r setup, include=FALSE}
 #| echo: false
 #| message: false
-# only source the first_section of the plot script that actually generates the plot
+# Source the extracted plot generation code to create the plot object.
 # Packages -------------------
 
 library(here)
@@ -39,56 +39,60 @@ source(here("src", "91407", "91407_clean.R"))
 # Transform Data -------------
 
 data91407_longer <- pivot_longer(data91407,
-                                 cols = -Jahr,
-                                 names_to = "Partei",
-                                 values_to = "Sitze")
+  cols = -Jahr,
+  names_to = "Partei",
+  values_to = "Sitze"
+)
 
 
-data91407_longer$Partei <- factor(data91407_longer$Partei, levels = c("FDP/RDP",
-                                                                      "LP/LDP",
-                                                                      "Zentrum",
-                                                                      "SP",
-                                                                      "KVP/CVP",
-                                                                      "BGP",
-                                                                      "Andere"))
+data91407_longer$Partei <- factor(data91407_longer$Partei, levels = c(
+  "FDP/RDP",
+  "LP/LDP",
+  "Zentrum",
+  "SP",
+  "KVP/CVP",
+  "BGP",
+  "Andere"
+))
 
 # Diagramm plotten -----------
 
-plot91407 <- ggplot(data = data91407_longer,
-                    aes(x = Jahr, y = Sitze, color = Partei, group = Partei)) +
-  
+plot91407 <- ggplot(
+  data = data91407_longer,
+  aes(x = Jahr, y = Sitze, color = Partei, group = Partei)
+) +
   geom_line(linewidth = 0.561) +
-  
-  scale_color_manual(values = c("FDP/RDP" = "#3872B5",
-                               "LP/LDP" = "#618DEA",
-                               "Zentrum" = "#DEAA28", # wie EVP?
-                               "BGP" = "#4B8A3E",
-                               "SP" = "#F0554D",
-                               "KVP/CVP" = "#D6862B",
-                               "Andere" = "#777777")) +
-  
+  scale_color_manual(values = c(
+    "FDP/RDP" = "#3872B5",
+    "LP/LDP" = "#618DEA",
+    "Zentrum" = "#DEAA28", # wie EVP?
+    "BGP" = "#4B8A3E",
+    "SP" = "#F0554D",
+    "KVP/CVP" = "#D6862B",
+    "Andere" = "#777777"
+  )) +
   scale_x_continuous(
     breaks = data91407_longer$Jahr,
     guide = guide_axis(),
     expand = expansion(mult = c(0, 0))
   ) +
-
   scale_y_continuous(
     limits = c(0, 100),
     breaks = seq(0, 100, by = 20),
     expand = expansion(mult = c(0, 0)),
   ) +
-  
   coord_cartesian(clip = "off") +
-  
   theme_sgb_basis() +
-  theme(legend.position = "none",
-        legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
-        legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
-        plot.margin = margin(0.5,1.2,0,0.5, "lines"),
-        axis.text.y = element_text(margin = margin(r = 5),
-                                   hjust = 1)
-        )
+  theme(
+    legend.position = "none",
+    legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
+    legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+    plot.margin = margin(0.5, 1.2, 0, 0.5, "lines"),
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    )
+  )
 
 ```
 
@@ -113,31 +117,23 @@ library(DT)
 
 # Read CSV file for 91407_3
 dataset_file_1 <- here("data", "clean", "Band6", "91407", "91407_3_Data.csv")
-
 data91407_3 <- read_csv(dataset_file_1)
 
-# Wrap datatable in a custom div
+# Wrap datatable in a custom div for styling.
 htmltools::div(
   class = 'datatable-frame',
   DT::datatable(
     data91407_3,
     rownames = FALSE,
-    options = list(
-      scrollX = TRUE,
-      scrollCollapse = TRUE,
-      scrollY = '400px',
-      paging = FALSE,
-      dom = 't'
-    ),
-    caption = htmltools::tags$caption(
-      style = 'caption-side: top; text-align: left;',
-      'Dataset 91407_3'
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 91407_3'
     )
-  ),
+  )
 )
 ```
 
-::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Jahr:** Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten.
 - **FDP/RDP:** Anzahl der Mandate der FDP/RDP nach den Grossratswahlen im angegebenen Jahr. Sitze der Demokratischen Partei (1908: 1 / 1911:2) werden dem Freisinn (FDP/RDP) zugerechnet
 - **LP/LDP:** Anzahl der Mandate der LP/LDP nach den Grossratswahlen im angegebenen Jahr
@@ -185,15 +181,14 @@ df <- data.frame(
     "[data/clean/Band6/91407/91407_3_Data.csv](/data/clean/Band6/91407/91407_3_Data.csv)",
     "Für die Jahre 1875 bis 1902: Lüthi, Walter: Der Basler Freisinn von den Anfängen bis 1914, Basel 1983, S. 175. Daten ab 1905: Statistisches Amt Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band6/91407/91407_3_Data.csv-metadata.json](/data/clean/Band6/91407/91407_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Mandate der Parteien bei Grossratswahlen, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91407.html#m91407_3>, letzte Aktualisierung: 30.09.2025.",
+    "Stadt.Geschichte.Basel: Mandate der Parteien bei Grossratswahlen, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91407.html#m91407_3>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-30 00:16:36"
+    "2025-10-01 00:29:56"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", escape = FALSE, 
-caption = "Selected Metadata for Dataset 91407_3")
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 91407_3")
 ```
 

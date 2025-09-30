@@ -1,7 +1,7 @@
 ---
 title: "Vertretung Basel-Stadt im Ständerat, 1963–2023"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-30
+date-modified: 2025-10-01
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb80238_10"
@@ -15,7 +15,7 @@ fig-cap-location: top
 ```{r setup, include=FALSE}
 #| echo: false
 #| message: false
-# only source the first_section of the plot script that actually generates the plot
+# Source the extracted plot generation code to create the plot object.
 # Packages -------------------
 
 library(here)
@@ -39,52 +39,53 @@ source(here("src", "80238", "80238d_clean.R"))
 # Transform Data -------------
 
 data80238d_longer <- data80238d %>%
-  pivot_longer(cols = -Jahr,
-               names_to = "Partei",
-               values_to = "Ständeratssitze",
-               names_prefix = "'",
-               names_transform = list(Jahr = as.numeric)) %>%
+  pivot_longer(
+    cols = -Jahr,
+    names_to = "Partei",
+    values_to = "Ständeratssitze",
+    names_prefix = "'",
+    names_transform = list(Jahr = as.numeric)
+  ) %>%
   mutate(Jahr = gsub("'", "", Jahr)) %>%
   mutate(Jahr = as.numeric(Jahr))
 
 # Plot -----------------------
 
-plot80238d <- ggplot(data80238d_longer,
-                    aes(x = Jahr,
-                        y = Ständeratssitze,
-                        fill = factor(Partei, levels = c("SP",
-                                                         "FDP")))) +
-                      
+plot80238d <- ggplot(
+  data80238d_longer,
+  aes(
+    x = Jahr,
+    y = Ständeratssitze,
+    fill = factor(Partei, levels = c(
+      "SP",
+      "FDP"
+    ))
+  )
+) +
   geom_bar(stat = "identity", position = "stack") +
-  
   scale_x_continuous(
     breaks = seq(1963, 2019, 4) - 1.8,
     labels = seq(1963, 2019, 4),
     guide = guide_axis(),
     expand = expansion(mult = c(0, 0.005))
   ) +
-  
   scale_y_continuous(
     limits = c(0, 1),
     breaks = c(0, 1),
     expand = expansion(mult = c(0, 0)),
     labels = ch_numbers
   ) +
-  
-  scale_fill_manual(values = c("SP" = "#F0554D",
-                               "FDP" = "#3872B5")) +
-  
-  guides(color = guide_legend(keyheight = unit(4.8, "mm"), # results in ca. 3mm
-                              ncol = 1)) +
-  
-  coord_cartesian(clip = "off") + 
-  
+  scale_fill_manual(values = c(
+    "SP" = "#F0554D",
+    "FDP" = "#3872B5"
+  )) +
+  coord_cartesian(clip = "off") +
   theme_sgb_basis() +
   theme(
     legend.position = "none",
     legend.key.width = unit(5, "mm"), # resultiert in 4 mm
     legend.key.height = unit(2.5, "mm"), # resultiert in 2 mm
-    plot.margin = margin(0.5,0.9,0,0.4, "lines"),
+    plot.margin = margin(0.5, 0.9, 0, 0.4, "lines"),
     axis.ticks = element_blank(),
     axis.text.y = element_text(margin = margin(r = 5)),
   )
@@ -112,31 +113,23 @@ library(DT)
 
 # Read CSV file for 80238_12
 dataset_file_1 <- here("data", "clean", "Band8", "80238", "80238_12_Data.csv")
-
 data80238_12 <- read_csv(dataset_file_1)
 
-# Wrap datatable in a custom div
+# Wrap datatable in a custom div for styling.
 htmltools::div(
   class = 'datatable-frame',
   DT::datatable(
     data80238_12,
     rownames = FALSE,
-    options = list(
-      scrollX = TRUE,
-      scrollCollapse = TRUE,
-      scrollY = '400px',
-      paging = FALSE,
-      dom = 't'
-    ),
-    caption = htmltools::tags$caption(
-      style = 'caption-side: top; text-align: left;',
-      'Dataset 80238_12'
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 80238_12'
     )
-  ),
+  )
 )
 ```
 
-::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Jahr:** Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung
 - **SP:** Anzahl der baselstädtischen Mitglieder des Ständerats der Partei 'SP' im entsprechenden Jahr
 - **FDP:** Anzahl der baselstädtischen Mitglieder des Ständerats der Partei 'FDP' im entsprechenden Jahr
@@ -179,15 +172,14 @@ df <- data.frame(
     "[data/clean/Band8/80238/80238_12_Data.csv](/data/clean/Band8/80238/80238_12_Data.csv)",
     "Kanton Basel-Stadt: nationale und kantonale Wahlen seit 1919, Bundesamt für Statistik, je-d-17.02.01_12BS, online: https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/tabellen.assetdetail.14836245.html. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/80238/80238_12_Data.csv-metadata.json](/data/clean/Band8/80238/80238_12_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Vertretung Basel-Stadt im Ständerat, 1963–2023. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_12>, letzte Aktualisierung: 30.09.2025.",
+    "Stadt.Geschichte.Basel: Vertretung Basel-Stadt im Ständerat, 1963–2023. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_12>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-30 00:16:34"
+    "2025-10-01 00:29:54"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", escape = FALSE, 
-caption = "Selected Metadata for Dataset 80238_12")
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 80238_12")
 ```
 

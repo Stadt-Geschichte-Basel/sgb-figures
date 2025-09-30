@@ -29,7 +29,7 @@
 					"description": "Anzahl der im entsprechenden Zeitraum bzw. Jahrhundert aufgenommenen Personen"
 				}
 			],
-			"mediaID": ["m14158_3"],
+			"media_id": ["m14158_3"],
 			"isPartOf": {
 				"ObjectID": ["abb14158"],
 				"volume": [
@@ -74,9 +74,9 @@
 			"relation": [["m14158_1"], ["m14158_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:17:02"],
+			"modified": ["2025-10-01T00:29:49"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Bürgerrechtsaufnahmen, 1400–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb14158.html#m14158_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Bürgerrechtsaufnahmen, 1400–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb14158.html#m14158_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

@@ -29,7 +29,7 @@
 					"description": "Anzahl an Fahrrädern im Fahrzeugbestand im Kanton Basel-Stadt im entsprechenden Jahr. Für das Jahr 1961: Abweichende Angaben in späteren Berichten"
 				}
 			],
-			"mediaID": ["m77089_3"],
+			"media_id": ["m77089_3"],
 			"isPartOf": {
 				"ObjectID": ["abb77089"],
 				"volume": [
@@ -74,9 +74,9 @@
 			"relation": [["m77089_1"], ["m77089_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30T22:17:31"],
+			"modified": ["2025-10-01T00:29:53"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Der Fahrzeugbestand in Basel-Stadt, 1920–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77089.html#m77089_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Der Fahrzeugbestand in Basel-Stadt, 1920–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77089.html#m77089_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

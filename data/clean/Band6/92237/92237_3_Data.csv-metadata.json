@@ -23,7 +23,7 @@
 					"description": "Anzahl der Einwohnerinnen und Einwohner des Kantons Glarus im angegebenen Jahr"
 				}
 			],
-			"mediaID": ["m92237_3"],
+			"media_id": ["m92237_3"],
 			"isPartOf": {
 				"ObjectID": ["abb92237"],
 				"volume": [
@@ -62,9 +62,9 @@
 			"relation": [["m92237_1"], ["m92237_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:37"],
+			"modified": ["2025-10-01T00:29:56"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Glarus, 1850 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92237.html#m92237_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Glarus, 1850 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92237.html#m92237_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

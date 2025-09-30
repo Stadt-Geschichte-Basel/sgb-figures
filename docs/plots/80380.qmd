@@ -1,7 +1,7 @@
 ---
 title: "Auflage der Tageszeitungen in der Region Basel, 1966–2020"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-30
+date-modified: 2025-10-01
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb80380"
@@ -15,7 +15,7 @@ fig-cap-location: top
 ```{r setup, include=FALSE}
 #| echo: false
 #| message: false
-# only source the first_section of the plot script that actually generates the plot
+# Source the extracted plot generation code to create the plot object.
 # Packages -------------------
 
 library(here)
@@ -38,61 +38,64 @@ source(here("src", "80380", "80380_clean.R"))
 
 # Transform Data -------------
 
-colnames(data80380) <- c("Tageszeitungen\n(total verkaufte Auflage Print,\nexkl. Gratisauflage)",
-                         1966, 1971, 1972, 1973, 1975, 1978, 1984, 1985, 1990, 1991, 1992, 1996, 2002, 2008, 2014, 2020)
+colnames(data80380) <- c(
+  "Tageszeitungen\n(total verkaufte Auflage Print,\nexkl. Gratisauflage)",
+  1966, 1971, 1972, 1973, 1975, 1978, 1984, 1985, 1990, 1991, 1992, 1996, 2002, 2008, 2014, 2020
+)
 
 ## fix cutoff
 data80380$`Tageszeitungen\n(total verkaufte Auflage Print,\nexkl. Gratisauflage)`[4] <- "Basellandschaftliche Zeitung\n(ab 2019 bz – Zeitung für die Region Basel)"
 
-data_long <- data80380 %>%
-  pivot_longer(cols = -`Tageszeitungen\n(total verkaufte Auflage Print,\nexkl. Gratisauflage)`,
-               names_to = "Jahr",
-               values_to = "Auflage",
-               names_prefix = "'",
-               names_transform = list(Jahr = as.numeric)) %>%
-  mutate(Jahr = gsub("'", "", Jahr)) %>%
-  mutate(Jahr = as.numeric(Jahr))
+data80380_longer <- data80380 |>
+  pivot_longer(
+  cols = -`Tageszeitungen\n(total verkaufte Auflage Print,\nexkl. Gratisauflage)`,
+  names_to = "Jahr",
+  values_to = "Auflage"
+  ) |>
+  mutate(Jahr = as.integer(Jahr))
 
 # Create Plot ------------------
 
-plot80380 <- ggplot(data_long, aes(x = Jahr, y = Auflage,
-                                  color = `Tageszeitungen\n(total verkaufte Auflage Print,\nexkl. Gratisauflage)`,
-                                  group = `Tageszeitungen\n(total verkaufte Auflage Print,\nexkl. Gratisauflage)`)) +
-  geom_line(data = na.omit(data_long),
-            linewidth = 0.561) +
-            
+plot80380 <- ggplot(data80380_longer, aes(
+  x = Jahr, y = Auflage,
+  color = `Tageszeitungen\n(total verkaufte Auflage Print,\nexkl. Gratisauflage)`,
+  group = `Tageszeitungen\n(total verkaufte Auflage Print,\nexkl. Gratisauflage)`
+)) +
+  geom_line(
+    data = na.omit(data80380_longer),
+    linewidth = 0.561
+  ) +
   geom_point() +
-
   scale_x_continuous(
     breaks = pretty_breaks(),
     guide = guide_axis(),
     expand = expansion(mult = c(0, 0.005))
   ) +
-  
   scale_y_continuous(
     limits = c(0, 120000),
     breaks = pretty_breaks(),
     expand = expansion(mult = c(0, 0)),
     labels = ch_numbers
   ) +
-  
-  scale_color_manual(values = c("AZ Abend-Zeitung (Daten nur bis 1984)" = "#CAACCB",
-                                "Basellandschaftliche Zeitung\n(ab 2019 bz – Zeitung für die Region Basel)" = "#6195CF",
-                                "Basler Nachrichten" = "#4EB265",
-                                "Basler Volksblatt (ab 1982 Nordschweiz)" = "#EE8026",
-                                "Basler Zeitung" = "#A5170E",
-                                "National-Zeitung" = "#F7CB45")) +
-  
+  scale_color_manual(values = c(
+    "AZ Abend-Zeitung (Daten nur bis 1984)" = "#CAACCB",
+    "Basellandschaftliche Zeitung\n(ab 2019 bz – Zeitung für die Region Basel)" = "#6195CF",
+    "Basler Nachrichten" = "#4EB265",
+    "Basler Volksblatt (ab 1982 Nordschweiz)" = "#EE8026",
+    "Basler Zeitung" = "#A5170E",
+    "National-Zeitung" = "#F7CB45"
+  )) +
   coord_cartesian(clip = "off") +
-  
   guides(color = guide_legend(keyheight = unit(4.8, "mm"))) + # results in ca. 3mm
-    
+
   theme_sgb_basis() +
   theme(
     legend.position = "none",
-    axis.text.y = element_text(margin = margin(r = 5),
-                               hjust = 1),
-    plot.margin = margin(0.5,0.9,0,0, "lines")
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 0.9, 0, 0, "lines")
   )
 
 ```
@@ -118,31 +121,23 @@ library(DT)
 
 # Read CSV file for 80380_3
 dataset_file_1 <- here("data", "clean", "Band8", "80380", "80380_3_Data.csv")
-
 data80380_3 <- read_csv(dataset_file_1)
 
-# Wrap datatable in a custom div
+# Wrap datatable in a custom div for styling.
 htmltools::div(
   class = 'datatable-frame',
   DT::datatable(
     data80380_3,
     rownames = FALSE,
-    options = list(
-      scrollX = TRUE,
-      scrollCollapse = TRUE,
-      scrollY = '400px',
-      paging = FALSE,
-      dom = 't'
-    ),
-    caption = htmltools::tags$caption(
-      style = 'caption-side: top; text-align: left;',
-      'Dataset 80380_3'
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 80380_3'
     )
-  ),
+  )
 )
 ```
 
-::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Tageszeitungen (total verkaufte Auflage Print, exkl. Gratisauflage):** Name der jeweiligen Tageszeitung
 - **1966:** Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
 - **1971:** Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
@@ -199,15 +194,14 @@ df <- data.frame(
     "[data/clean/Band8/80380/80380_3_Data.csv](/data/clean/Band8/80380/80380_3_Data.csv)",
     "WEMF-Archiv: Auflagebulletins. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/80380/80380_3_Data.csv-metadata.json](/data/clean/Band8/80380/80380_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Auflage der Tageszeitungen in der Region Basel, 1966–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80380.html#m80380_3>, letzte Aktualisierung: 30.09.2025.",
+    "Stadt.Geschichte.Basel: Auflage der Tageszeitungen in der Region Basel, 1966–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80380.html#m80380_3>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-30 13:26:53"
+    "2025-10-01 00:29:54"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", escape = FALSE, 
-caption = "Selected Metadata for Dataset 80380_3")
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 80380_3")
 ```
 

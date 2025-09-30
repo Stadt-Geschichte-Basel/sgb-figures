@@ -23,7 +23,7 @@
 					"description": "Angabe der Zahl der stimmberechtigten Einwohner des Kantons Basel-Stadt im entsprechenden Jahr"
 				}
 			],
-			"mediaID": ["m91203_3"],
+			"media_id": ["m91203_3"],
 			"isPartOf": {
 				"ObjectID": ["abb91203"],
 				"volume": [
@@ -65,9 +65,9 @@
 			"relation": [["m91203_1"], ["m91203_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:36"],
+			"modified": ["2025-10-01T00:29:56"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Stimmberechtigte und Gesamtbevölkerung, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91203.html#m91203_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Stimmberechtigte und Gesamtbevölkerung, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91203.html#m91203_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

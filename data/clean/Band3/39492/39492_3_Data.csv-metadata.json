@@ -35,7 +35,7 @@
 					"description": "Summe der Kriegsausgaben im jeweiligen Zeitraum in Pfund"
 				}
 			],
-			"mediaID": ["m39492_3"],
+			"media_id": ["m39492_3"],
 			"isPartOf": {
 				"ObjectID": ["abb39492"],
 				"volume": [
@@ -75,9 +75,9 @@
 			"relation": [["m39492_1"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:33"],
+			"modified": ["2025-10-01T00:29:52"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Bürgeraufnahmen und Kriegsausgaben, 1360–1530. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39492.html#m39492_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Bürgeraufnahmen und Kriegsausgaben, 1360–1530. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39492.html#m39492_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

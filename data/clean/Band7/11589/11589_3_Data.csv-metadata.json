@@ -29,7 +29,7 @@
 					"description": "Anzahl der Fahrräder pro 100 Einwohner*innen im Kanton Basel-Stadt im angegebenen Jahr"
 				}
 			],
-			"mediaID": ["m11589_3"],
+			"media_id": ["m11589_3"],
 			"isPartOf": {
 				"ObjectID": ["abb11589"],
 				"volume": [
@@ -70,9 +70,9 @@
 			"relation": [["m11589_1"], ["m11589_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:29"],
+			"modified": ["2025-10-01T00:29:49"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Anzahl Verkehrsträger pro 100 Einwohner und Einwohnerinnen im Kanton Basel-Stadt, 1916–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb11589.html#m11589_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Anzahl Verkehrsträger pro 100 Einwohner und Einwohnerinnen im Kanton Basel-Stadt, 1916–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb11589.html#m11589_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

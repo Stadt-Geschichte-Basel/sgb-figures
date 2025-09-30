@@ -35,7 +35,7 @@
 					"description": "Anteil der Staatsangehörigen übriger Staaten an der in Basel wohnhaften ausländischen Bevölkerung in Prozent im angegebenen Jahr"
 				}
 			],
-			"mediaID": ["m21535_3"],
+			"media_id": ["m21535_3"],
 			"isPartOf": {
 				"ObjectID": ["abb21535"],
 				"volume": [
@@ -74,9 +74,9 @@
 			"relation": [["m21535_1"], ["m21535_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:31"],
+			"modified": ["2025-10-01T00:29:51"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Die ausländische Wohnbevölkerung von Basel-Stadt nach Heimatnation, 1920–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21535.html#m21535_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Die ausländische Wohnbevölkerung von Basel-Stadt nach Heimatnation, 1920–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21535.html#m21535_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

@@ -83,7 +83,7 @@
 					"description": "Anzahl der Verbannungsurteile wegen Wundtaten im angegebenen Zeitraum"
 				}
 			],
-			"mediaID": ["m39543_3"],
+			"media_id": ["m39543_3"],
 			"isPartOf": {
 				"ObjectID": ["abb39543"],
 				"volume": [
@@ -123,9 +123,9 @@
 			"relation": [["m39543_1"], ["m39543_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:33"],
+			"modified": ["2025-10-01T00:29:53"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Verbannungsurteile, 1376–1455. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39543.html#m39543_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Verbannungsurteile, 1376–1455. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39543.html#m39543_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

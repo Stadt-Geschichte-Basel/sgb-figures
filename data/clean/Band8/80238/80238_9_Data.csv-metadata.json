@@ -77,7 +77,7 @@
 					"description": "Gesamtzahl der baselstädtischen Mitglieder des Nationalrats im entsprechenden Jahr. Reduzierung der Anzahl der Mandate auf die Jahre 1971, 1983, 2003"
 				}
 			],
-			"mediaID": ["m80238_9"],
+			"media_id": ["m80238_9"],
 			"isPartOf": {
 				"ObjectID": ["abb80238"],
 				"volume": [
@@ -122,9 +122,9 @@
 			"relation": [["m80238_7"], ["m80238_8"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:34"],
+			"modified": ["2025-10-01T00:29:54"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Vertretung Basel-Stadt im Nationalrat, 1963–2023. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_9>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Vertretung Basel-Stadt im Nationalrat, 1963–2023. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_9>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

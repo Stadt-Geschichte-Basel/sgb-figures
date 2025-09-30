@@ -23,7 +23,7 @@
 					"description": "Anzahl der Museumseintritte im Kanton Basel-Stadt im entsprechenden Jahr. Daten vor 1980 sind nicht vorhanden. Angabe zu den Eintritten bis inkl. 1991 nach StaBS ED-REG 37a 7-1 (2) Besucherstatistik nach Jahren 1980–2008, Daten ab 1992 aus dem Statistischen Jahrbuch. Im Jahr 2020 reduzierter Betrieb aufgrund der COVID-19-Pandemie."
 				}
 			],
-			"mediaID": ["m88454_3"],
+			"media_id": ["m88454_3"],
 			"isPartOf": {
 				"ObjectID": ["abb88454"],
 				"volume": [
@@ -68,9 +68,9 @@
 			"relation": [["m88454_1"], ["m88454_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:35"],
+			"modified": ["2025-10-01T00:29:55"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Museumseintritte und Kinobesuche in Basel-Stadt, 1945–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88454.html#m88454_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Museumseintritte und Kinobesuche in Basel-Stadt, 1945–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88454.html#m88454_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

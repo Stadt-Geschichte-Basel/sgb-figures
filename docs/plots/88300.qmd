@@ -1,7 +1,7 @@
 ---
 title: "Kulturausgaben in Basel-Stadt, 2021"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-30
+date-modified: 2025-10-01
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb88300"
@@ -15,7 +15,7 @@ fig-cap-location: top
 ```{r setup, include=FALSE}
 #| echo: false
 #| message: false
-# only source the first_section of the plot script that actually generates the plot
+# Source the extracted plot generation code to create the plot object.
 # Packages -------------------
 
 library(here)
@@ -53,63 +53,64 @@ data88300b <- data88300b %>%
   )
 
 data88300b$Legend_Label <- factor(data88300b$Legend_Label,
-                                 levels = rev(c(
-                                   data88300b$Legend_Label[order(data88300b$`Ausgaben in CHF (2021)`,
-                                                                decreasing = FALSE)
-                                                          & data88300b$Empfänger != "Diverses"],
-                                   "Diverses (13.5%)"))
-                                 )
+  levels = rev(c(
+    data88300b$Legend_Label[order(
+      data88300b$`Ausgaben in CHF (2021)`,
+      decreasing = FALSE
+    ) &
+      data88300b$Empfänger != "Diverses"],
+    "Diverses (13.5%)"
+  ))
+)
 
-color_mapping <- c("Museen (42.2%)" =           "#F7CB45",
-                   "Theater und Tanz (31%)" =   "#6195CF",
-                   "Musik (7.9%)" =             "#EE8026",
-                   "Literatur (5.3%)" =         "#882E72",
-                   "Diverses (13.5%)" =         "#777777"
-                   )
+color_mapping <- c(
+  "Museen (42.2%)" = "#F7CB45",
+  "Theater und Tanz (31%)" = "#6195CF",
+  "Musik (7.9%)" = "#EE8026",
+  "Literatur (5.3%)" = "#882E72",
+  "Diverses (13.5%)" = "#777777"
+)
 
 # Plot -----------------------
 
-plot88300a <- ggplot(data88300a, aes(x = Kanton,
-                                   y = `Kultursubventionen pro Kopf in Franken (2021)`,
-                                   fill = "#cc4a23")) + # Bandfarbe 8
-  
+plot88300a <- ggplot(data88300a, aes(
+  x = Kanton,
+  y = `Kultursubventionen pro Kopf in Franken (2021)`,
+  fill = "#cc4a23"
+)) + # Bandfarbe 8
+
   geom_bar(stat = "identity") +
-  
   ggtitle("CHF/pro Kopf") +
-  
   scale_y_continuous(
     limits = c(0, 409),
     breaks = seq(0, 400, 100),
     expand = expansion(mult = c(0, 0)),
     labels = ch_numbers
   ) +
-  
   theme_sgb_basis() +
   theme(
     axis.ticks.x = element_blank(),
     axis.text.y = element_text(margin = margin(r = 5)),
     panel.grid.major.y = element_line(color = "black", linewidth = 0.14),
     panel.grid.major.x = element_blank(),
-    plot.title = element_text(size = 6.5,
-                              color = "black",
-                              margin = unit(c(2.2, 0, 4, 0), "pt"),
-                              hjust = 0),
-    legend.position = "none")
+    plot.title = element_text(
+      size = 6.5,
+      color = "black",
+      margin = unit(c(2.2, 0, 4, 0), "pt"),
+      hjust = 0
+    ),
+    legend.position = "none"
+  )
 
 ## Create Plot B (Subventionsempfängerinnen in Basel-Stadt)
 plot88300b <- ggplot(data88300b) +
-  
   geom_bar(aes(x = "", y = `Ausgaben in CHF (2021)`, fill = Legend_Label),
-           stat = "identity", width = 1) +
-  
+    stat = "identity", width = 1
+  ) +
   scale_y_continuous(breaks = NULL) +
-  
   scale_fill_manual(values = color_mapping) +
-  
   coord_polar("y", start = 0) +
-  
   guides(fill = guide_legend(ncol = 2, reverse = TRUE)) +
-  
   theme_void() +
   theme(
     axis.line.x.bottom = element_blank(),
@@ -133,12 +134,16 @@ legende88300b <- get_legend(plot88300b_with_legend) %>%
   as_ggplot()
 
 ## Join legend and plot to a new single plot for better appearance in combination with plot88300a
-plot88300b_joined <- plot88300b + plot_spacer() + legende88300b + plot_layout(ncol = 1,
-                                                                              heights = c(12, 0.7, 0.2))
+plot88300b_joined <- plot88300b + plot_spacer() + legende88300b + plot_layout(
+  ncol = 1,
+  heights = c(12, 0.7, 0.2)
+)
 
 ## Combine Plots with patchwork package
-plot88300 <- plot88300a + plot_spacer() + plot88300b_joined + plot_layout(ncol = 3,
-                                                                          widths = c(1.2, 0.2, 1.9))
+plot88300 <- plot88300a + plot_spacer() + plot88300b_joined + plot_layout(
+  ncol = 3,
+  widths = c(1.2, 0.2, 1.9)
+)
 
 ```
 
@@ -163,31 +168,23 @@ library(DT)
 
 # Read CSV file for 88300_2
 dataset_file_1 <- here("data", "clean", "Band8", "88300", "88300_2_Data.csv")
-
 data88300_2 <- read_csv(dataset_file_1)
 
-# Wrap datatable in a custom div
+# Wrap datatable in a custom div for styling.
 htmltools::div(
   class = 'datatable-frame',
   DT::datatable(
     data88300_2,
     rownames = FALSE,
-    options = list(
-      scrollX = TRUE,
-      scrollCollapse = TRUE,
-      scrollY = '400px',
-      paging = FALSE,
-      dom = 't'
-    ),
-    caption = htmltools::tags$caption(
-      style = 'caption-side: top; text-align: left;',
-      'Dataset 88300_2 (Subset 1/2)'
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 88300_2 (Subset 1/2)'
     )
-  ),
+  )
 )
 ```
 
-::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Kanton:** Name des Kantons, für den Angaben zur Kulturförderung gemacht werden
 - **Kultursubventionen pro Kopf in Franken (2021):** Summe der Kulturförderung in Schweizer Franken im Jahr 2021
 :::
@@ -229,16 +226,15 @@ df <- data.frame(
     "[data/clean/Band8/88300/88300_2_Data.csv](/data/clean/Band8/88300/88300_2_Data.csv)",
     "Bundesamt für Statistik, gd-d-16.02.05.01-2024. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/88300/88300_2_Data.csv-metadata.json](/data/clean/Band8/88300/88300_2_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_2>, letzte Aktualisierung: 30.09.2025.",
+    "Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_2>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-30 00:16:35"
+    "2025-10-01 00:29:55"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", escape = FALSE, 
-caption = "Selected Metadata for Dataset 88300_2 (Subset 1/2)")
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 88300_2 (Subset 1/2)")
 ```
 
 
@@ -254,31 +250,23 @@ library(DT)
 
 # Read CSV file for 88300_3
 dataset_file_2 <- here("data", "clean", "Band8", "88300", "88300_3_Data.csv")
-
 data88300_3 <- read_csv(dataset_file_2)
 
-# Wrap datatable in a custom div
+# Wrap datatable in a custom div for styling.
 htmltools::div(
   class = 'datatable-frame',
   DT::datatable(
     data88300_3,
     rownames = FALSE,
-    options = list(
-      scrollX = TRUE,
-      scrollCollapse = TRUE,
-      scrollY = '400px',
-      paging = FALSE,
-      dom = 't'
-    ),
-    caption = htmltools::tags$caption(
-      style = 'caption-side: top; text-align: left;',
-      'Dataset 88300_3 (Subset 2/2)'
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 88300_3 (Subset 2/2)'
     )
-  ),
+  )
 )
 ```
 
-::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Empfänger:** Gruppe der Institutionen, an die im Kanton Basel-Stadt Kulturförderung verteilt wurde
 - **Ausgaben in CHF (2021):** Summe der Förderung in Schweizer Franken im Jahr 2021. Zahlen ohne Beträge aus dem Swisslos-Fonds Basel-Stadt
 :::
@@ -320,15 +308,14 @@ df <- data.frame(
     "[data/clean/Band8/88300/88300_3_Data.csv](/data/clean/Band8/88300/88300_3_Data.csv)",
     "Jahresbericht Abteilung Kultur 2021. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/88300/88300_3_Data.csv-metadata.json](/data/clean/Band8/88300/88300_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_3>, letzte Aktualisierung: 30.09.2025.",
+    "Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_3>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-30 00:16:35"
+    "2025-10-01 00:29:55"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", escape = FALSE, 
-caption = "Selected Metadata for Dataset 88300_3 (Subset 2/2)")
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 88300_3 (Subset 2/2)")
 ```
 

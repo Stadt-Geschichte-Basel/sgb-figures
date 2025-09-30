@@ -17,7 +17,7 @@
 					"description": "Leerstandsquote in Basel-Stadt in Prozent"
 				}
 			],
-			"mediaID": ["m85061_3"],
+			"media_id": ["m85061_3"],
 			"isPartOf": {
 				"ObjectID": ["abb85061"],
 				"volume": [
@@ -60,9 +60,9 @@
 			"relation": [["m85061_1"], ["m85061_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:35"],
+			"modified": ["2025-10-01T00:29:55"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Leerstandsquote, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb85061.html#m85061_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Leerstandsquote, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb85061.html#m85061_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

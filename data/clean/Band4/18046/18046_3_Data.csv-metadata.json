@@ -29,7 +29,7 @@
 					"description": "Vorrat an Hafer, Angabe in Viernzeln"
 				}
 			],
-			"mediaID": ["m18046_3"],
+			"media_id": ["m18046_3"],
 			"isPartOf": {
 				"ObjectID": ["abb18046"],
 				"volume": [
@@ -71,9 +71,9 @@
 			"relation": [["m18046_1"], ["m18046_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:30"],
+			"modified": ["2025-10-01T00:29:50"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Getreidevorräte in der Stadt Basel, 1613–1653. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb18046.html#m18046_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Getreidevorräte in der Stadt Basel, 1613–1653. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb18046.html#m18046_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

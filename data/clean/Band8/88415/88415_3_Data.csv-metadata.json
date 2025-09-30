@@ -29,7 +29,7 @@
 					"description": "Anzahl der Heimspiele des FC Basel im angegebenen Jahr"
 				}
 			],
-			"mediaID": ["m88415_3"],
+			"media_id": ["m88415_3"],
 			"isPartOf": {
 				"ObjectID": ["abb88415"],
 				"volume": [
@@ -74,9 +74,9 @@
 			"relation": [["m88415_1"], ["m88415_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:35"],
+			"modified": ["2025-10-01T00:29:55"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Publikumszahlen an Konzerten und FCB-Spielen im St. Jakob-Stadion, 1960–2022. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88415.html#m88415_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Publikumszahlen an Konzerten und FCB-Spielen im St. Jakob-Stadion, 1960–2022. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88415.html#m88415_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

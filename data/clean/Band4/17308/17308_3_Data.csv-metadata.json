@@ -23,7 +23,7 @@
 					"description": "Jahre, in denen die Pest auftrat (TRUE)"
 				}
 			],
-			"mediaID": ["m17308_3"],
+			"media_id": ["m17308_3"],
 			"isPartOf": {
 				"ObjectID": ["abb17308"],
 				"volume": [
@@ -68,9 +68,9 @@
 			"relation": [["m17308_1"], ["m17308_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:30"],
+			"modified": ["2025-10-01T00:29:49"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Bevölkerungsentwicklung und Pestepidemien, 1500–1700. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb17308.html#m17308_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Bevölkerungsentwicklung und Pestepidemien, 1500–1700. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb17308.html#m17308_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

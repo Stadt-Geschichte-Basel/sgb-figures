@@ -41,7 +41,7 @@
 					"description": "Anteil Angehöriger anderer, keiner oder unbekannter Religionen bzw. Konfessionen an der Gesamtbevölkerung in Prozent"
 				}
 			],
-			"mediaID": ["m92492_3"],
+			"media_id": ["m92492_3"],
 			"isPartOf": {
 				"ObjectID": ["abb92492"],
 				"volume": [
@@ -80,9 +80,9 @@
 			"relation": [["m92492_1"], ["m92492_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:37"],
+			"modified": ["2025-10-01T00:29:57"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92492.html#m92492_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92492.html#m92492_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

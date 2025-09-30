@@ -1,7 +1,7 @@
 ---
 title: "Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-30
+date-modified: 2025-10-01
 volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 vol_short: "Stadt.Geschichte.Basel 6"
 plotid: "abb92492"
@@ -15,7 +15,7 @@ fig-cap-location: top
 ```{r setup, include=FALSE}
 #| echo: false
 #| message: false
-# only source the first_section of the plot script that actually generates the plot
+# Source the extracted plot generation code to create the plot object.
 # Packages -------------------
 
 library(here)
@@ -39,55 +39,60 @@ source(here("src", "92492", "92492_clean.R"))
 # Transform Data -------------
 
 data92492_longer <- pivot_longer(data92492,
-                                 cols = !Jahr,
-                                 names_to = "Konfessionen",
-                                 values_to = "Anteil")
+  cols = !Jahr,
+  names_to = "Konfessionen",
+  values_to = "Anteil"
+)
 
 # to force equal distribution on x-axis
 data92492_longer$Jahr <- factor(data92492_longer$Jahr)
 
 data92492_longer$Konfessionen <- factor(data92492_longer$Konfessionen,
-                                        levels = c("Protestantisch",
-                                                   "Katholisch",
-                                                   "Christkatholisch",
-                                                   "Jüdisch",
-                                                   "Andere/Keine/Unbekannt"))
+  levels = c(
+    "Protestantisch",
+    "Katholisch",
+    "Christkatholisch",
+    "Jüdisch",
+    "Andere/Keine/Unbekannt"
+  )
+)
 
 # Plot -----------------------
 
-plot92492 <- ggplot(data = data92492_longer,
-                    aes(x = Jahr, y = Anteil, fill = Konfessionen)) +
-  
+plot92492 <- ggplot(
+  data = data92492_longer,
+  aes(x = Jahr, y = Anteil, fill = Konfessionen)
+) +
   geom_bar(stat = "identity", position = position_fill()) +
-  
-  scale_fill_manual(values = c("Protestantisch" = "#6195CF",
-                               "Katholisch" = "#F7CB45",
-                               "Christkatholisch" = "#F7F056",
-                               "Jüdisch" = "#90C987",
-                               "Andere/Keine/Unbekannt" = "#777777")) +
-  
+  scale_fill_manual(values = c(
+    "Protestantisch" = "#6195CF",
+    "Katholisch" = "#F7CB45",
+    "Christkatholisch" = "#F7F056",
+    "Jüdisch" = "#90C987",
+    "Andere/Keine/Unbekannt" = "#777777"
+  )) +
   scale_x_discrete(
     guide = guide_axis(),
     expand = expansion(mult = c(0, 0))
   ) +
-
   scale_y_continuous(
     breaks = pretty_breaks(),
     expand = expansion(mult = c(0, 0)),
     labels = label_percent()
   ) +
-  
   coord_cartesian(clip = "off") +
-  
   theme_sgb_basis() +
-  theme(legend.position = "none",
-        legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
-        legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
-        axis.text.y = element_text(margin = margin(r = 5),
-                                   hjust = 1),
-        axis.ticks.x = element_blank(),
-        plot.margin = margin(0.5,0.15,0,0, "lines")
-        )
+  theme(
+    legend.position = "none",
+    legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
+    legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    axis.ticks.x = element_blank(),
+    plot.margin = margin(0.5, 0.15, 0, 0, "lines")
+  )
 
 ```
 
@@ -112,31 +117,23 @@ library(DT)
 
 # Read CSV file for 92492_3
 dataset_file_1 <- here("data", "clean", "Band6", "92492", "92492_3_Data.csv")
-
 data92492_3 <- read_csv(dataset_file_1)
 
-# Wrap datatable in a custom div
+# Wrap datatable in a custom div for styling.
 htmltools::div(
   class = 'datatable-frame',
   DT::datatable(
     data92492_3,
     rownames = FALSE,
-    options = list(
-      scrollX = TRUE,
-      scrollCollapse = TRUE,
-      scrollY = '400px',
-      paging = FALSE,
-      dom = 't'
-    ),
-    caption = htmltools::tags$caption(
-      style = 'caption-side: top; text-align: left;',
-      'Dataset 92492_3'
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 92492_3'
     )
-  ),
+  )
 )
 ```
 
-::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Jahr:** Angabe des Jahres, für das die jeweiligen Daten gelten. Jahreszahl in unserer Zeitrechnung
 - **Protestantisch:** Anteil der Protestantinnen und Protestanten an der Gesamtbevölkerung in Prozent
 - **Katholisch:** Anteil der Katholikinnen und Katholiken an der Gesamtbevölkerung in Prozent
@@ -182,15 +179,14 @@ df <- data.frame(
     "[data/clean/Band6/92492/92492_3_Data.csv](/data/clean/Band6/92492/92492_3_Data.csv)",
     "Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band6/92492/92492_3_Data.csv-metadata.json](/data/clean/Band6/92492/92492_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92492.html#m92492_3>, letzte Aktualisierung: 30.09.2025.",
+    "Stadt.Geschichte.Basel: Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92492.html#m92492_3>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-30 00:16:37"
+    "2025-10-01 00:29:57"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", escape = FALSE, 
-caption = "Selected Metadata for Dataset 92492_3")
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 92492_3")
 ```
 

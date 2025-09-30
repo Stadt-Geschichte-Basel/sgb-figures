@@ -1,7 +1,7 @@
 ---
 title: "Kantonale Staatsausgaben pro Einwohner in CHF, 1920–1966"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-30
+date-modified: 2025-10-01
 volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
 vol_short: "Stadt.Geschichte.Basel 7"
 plotid: "abb21912"
@@ -15,7 +15,7 @@ fig-cap-location: top
 ```{r setup, include=FALSE}
 #| echo: false
 #| message: false
-# only source the first_section of the plot script that actually generates the plot
+# Source the extracted plot generation code to create the plot object.
 # Packages -------------------
 
 library(here)
@@ -38,46 +38,45 @@ source(here("src", "21912", "21912_clean.R"))
 
 # Plot -----------------------
 
-plot21912 <- ggplot(data21912,
-                    aes(x = Jahr, y = `Staatsausgaben pro Einwohner:in in CHF`)) +
-  
+plot21912 <- ggplot(
+  data21912,
+  aes(x = Jahr, y = `Staatsausgaben pro Einwohner:in in CHF`)
+) +
   geom_bar(aes(fill = "Staatsausgaben"), stat = "identity") +
-  
   scale_fill_manual(
     values = c("Staatsausgaben" = "#6195CF"),
     labels = c("Staatsausgaben\npro Einwohner:in in CHF")
   ) +
-  
   scale_x_continuous(
     breaks = c(1920, 1930, 1940, 1950, 1960, 1966),
     guide = guide_axis(angle = 0),
     expand = expansion(mult = c(0, 0))
   ) +
-
   scale_y_continuous(
     limits = c(0, 2500),
     breaks = seq(0, 2500, by = 500),
     expand = expansion(mult = c(0, 0)),
     labels = ch_numbers
   ) +
-  
   scale_color_identity(
     name = "",
     breaks = c("#6195CF"),
     labels = c("Staatsausgaben in CHF pro Einwohner:in"),
     guide = "legend"
   ) +
-  
   coord_cartesian(clip = "off") +
-  
   theme_sgb_basis() +
-  theme(legend.position = "none",
-        axis.ticks.x = element_blank(),
-        axis.text.y = element_text(margin = margin(r = 5),
-                                   hjust = 1),
-        legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
-        legend.key.width = unit(5, "mm"), # entspricht 4mm
-        plot.margin = margin(0.5,0.2,0,0, "lines"))
+  theme(
+    legend.position = "none",
+    axis.ticks.x = element_blank(),
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
+    legend.key.width = unit(5, "mm"), # entspricht 4mm
+    plot.margin = margin(0.5, 0.2, 0, 0, "lines")
+  )
 
 ```
 
@@ -102,31 +101,23 @@ library(DT)
 
 # Read CSV file for 21912_3
 dataset_file_1 <- here("data", "clean", "Band7", "21912", "21912_3_Data.csv")
-
 data21912_3 <- read_csv(dataset_file_1)
 
-# Wrap datatable in a custom div
+# Wrap datatable in a custom div for styling.
 htmltools::div(
   class = 'datatable-frame',
   DT::datatable(
     data21912_3,
     rownames = FALSE,
-    options = list(
-      scrollX = TRUE,
-      scrollCollapse = TRUE,
-      scrollY = '400px',
-      paging = FALSE,
-      dom = 't'
-    ),
-    caption = htmltools::tags$caption(
-      style = 'caption-side: top; text-align: left;',
-      'Dataset 21912_3'
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 21912_3'
     )
-  ),
+  )
 )
 ```
 
-::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Jahr:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
 - **Staatsausgaben pro Einwohner:in in CHF:** Höhe der Staatsausgaben des Kantons Basel-Stadt in Schweizer Franken pro Einwohner:in im angegebenen Jahr
 :::
@@ -168,15 +159,14 @@ df <- data.frame(
     "[data/clean/Band7/21912/21912_3_Data.csv](/data/clean/Band7/21912/21912_3_Data.csv)",
     "Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band7/21912/21912_3_Data.csv-metadata.json](/data/clean/Band7/21912/21912_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Kantonale Staatsausgaben pro Einwohner in CHF, 1920–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21912.html#m21912_3>, letzte Aktualisierung: 30.09.2025.",
+    "Stadt.Geschichte.Basel: Kantonale Staatsausgaben pro Einwohner in CHF, 1920–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21912.html#m21912_3>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-30 00:16:31"
+    "2025-10-01 00:29:51"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", escape = FALSE, 
-caption = "Selected Metadata for Dataset 21912_3")
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 21912_3")
 ```
 

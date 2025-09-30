@@ -17,7 +17,7 @@
 					"description": "Höhe der Staatsausgaben des Kantons Basel-Stadt für Musik und Theater in Schweizer Franken pro Kopf im angegebenen Jahr. In den Jahren 1913 bis 1930 beinhalten die Ausgaben neben Musik und Theater auch noch die Literaturförderung. Für das Jahr 1913 wurden zur Berechnung die Bevölkerungszahlen aus der Volkszählung 1910 verwendet (ganzer Kanton, da sich die Staatsausgaben auch auf den Kanton und nicht nur die Stadt Basel beziehen)"
 				}
 			],
-			"mediaID": ["m22331_3"],
+			"media_id": ["m22331_3"],
 			"isPartOf": {
 				"ObjectID": ["abb22331"],
 				"volume": [
@@ -56,9 +56,9 @@
 			"relation": [["m22331_1"], ["m22331_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:31"],
+			"modified": ["2025-10-01T00:29:51"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Staatliche Ausgaben für Musik und Theater, 1913–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb22331.html#m22331_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Staatliche Ausgaben für Musik und Theater, 1913–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb22331.html#m22331_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

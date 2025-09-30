@@ -65,7 +65,7 @@
 					"description": "Anzahl der Grossratsmitglieder anderer Parteien im entsprechenden Jahr"
 				}
 			],
-			"mediaID": ["m22355_3"],
+			"media_id": ["m22355_3"],
 			"isPartOf": {
 				"ObjectID": ["abb22355"],
 				"volume": [
@@ -104,9 +104,9 @@
 			"relation": [["m22355_1"], ["m22355_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:31"],
+			"modified": ["2025-10-01T00:29:51"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Grossratsmandate nach Parteien, 1911–1964. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb22355.html#m22355_3>, letzte Aktualisierung: 30.09.2025."
+				"Stadt.Geschichte.Basel: Grossratsmandate nach Parteien, 1911–1964. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb22355.html#m22355_3>, letzte Aktualisierung: 01.10.2025."
 			]
 		}
 	}

@@ -1,7 +1,7 @@
 ---
 title: "Hauptberuflich Beschäftigte im Dienstleistungssektor im Kanton Basel-Stadt, 1929–1965"
 subtitle: Plot and Data Preview
-date-modified: 2025-09-30
+date-modified: 2025-10-01
 volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
 vol_short: "Stadt.Geschichte.Basel 7"
 plotid: "abb26375"
@@ -15,7 +15,7 @@ fig-cap-location: top
 ```{r setup, include=FALSE}
 #| echo: false
 #| message: false
-# only source the first_section of the plot script that actually generates the plot
+# Source the extracted plot generation code to create the plot object.
 # Packages -------------------
 
 library(here)
@@ -60,62 +60,68 @@ branche_order <- c(
 )
 
 data26375_longer$Branche <- factor(data26375_longer$Branche,
-                                   levels = rev(branche_order))
+  levels = rev(branche_order)
+)
 
 # Plot -----------------------
 
 plot26375 <- ggplot(data26375_longer) +
-  
   geom_col(aes(x = Jahr, y = Beschäftigte, fill = Branche)) +
-  
-  scale_fill_manual(values = c("Banken, Finanzgesellschaften und Versicherungen" = "#F1932D",
-                               "Grosshandel" = "#437DBF",
-                               "Detailhandel" = "#7BAFDE",
-                               "Verkehr, PTT, Radio" = "#f7cb45",
-                               "Gastgewerbe" = "#4eb265",
-                               "Gesundheits- und Körperpflege" = "#CAE0AB",
-                               "Öffentliche Verwaltung" = "#CAACCB",
-                               "Übrige Dienstleistungen" = "#777777"),
-                    breaks = c("Banken, Finanzgesellschaften und Versicherungen",
-                               "Grosshandel",
-                               "Detailhandel",
-                               "Verkehr, PTT, Radio",
-                               "Gastgewerbe",
-                               "Gesundheits- und Körperpflege",
-                               "Öffentliche Verwaltung",
-                               "Übrige Dienstleistungen"),
-                    labels = c("Banken, Finanzgesellschaften,\nVersicherungen",
-                               "Grosshandel",
-                               "Detailhandel",
-                               "Verkehr, PTT, Radio",
-                               "Gastgewerbe",
-                               "Gesundheits- und Körperpflege",
-                               "Öffentliche Verwaltung",
-                               "Übrige Dienstleistungen")) +
-  
+  scale_fill_manual(
+    values = c(
+      "Banken, Finanzgesellschaften und Versicherungen" = "#F1932D",
+      "Grosshandel" = "#437DBF",
+      "Detailhandel" = "#7BAFDE",
+      "Verkehr, PTT, Radio" = "#f7cb45",
+      "Gastgewerbe" = "#4eb265",
+      "Gesundheits- und Körperpflege" = "#CAE0AB",
+      "Öffentliche Verwaltung" = "#CAACCB",
+      "Übrige Dienstleistungen" = "#777777"
+    ),
+    breaks = c(
+      "Banken, Finanzgesellschaften und Versicherungen",
+      "Grosshandel",
+      "Detailhandel",
+      "Verkehr, PTT, Radio",
+      "Gastgewerbe",
+      "Gesundheits- und Körperpflege",
+      "Öffentliche Verwaltung",
+      "Übrige Dienstleistungen"
+    ),
+    labels = c(
+      "Banken, Finanzgesellschaften,\nVersicherungen",
+      "Grosshandel",
+      "Detailhandel",
+      "Verkehr, PTT, Radio",
+      "Gastgewerbe",
+      "Gesundheits- und Körperpflege",
+      "Öffentliche Verwaltung",
+      "Übrige Dienstleistungen"
+    )
+  ) +
   scale_x_continuous(
     breaks = c(1929, 1939, 1955, 1965),
     guide = guide_axis(angle = 0),
-    expand = expansion(mult = c(0, 0))) +
-
+    expand = expansion(mult = c(0, 0))
+  ) +
   scale_y_continuous(
     limits = c(0, 70000),
     breaks = seq(0, 70000, 10000),
     expand = expansion(mult = c(0, 0)),
     labels = ch_numbers
   ) +
-  
   coord_cartesian(clip = "off") +
-
   theme_sgb_basis() +
   theme(
     legend.position = "none",
     legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
     legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
     axis.ticks.x = element_blank(),
-    axis.text.y = element_text(margin = margin(r = 5),
-                               hjust = 1),
-    plot.margin = margin(0.5,0.1,0,0, "lines")
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 0.1, 0, 0, "lines")
   )
 
 ```
@@ -141,31 +147,23 @@ library(DT)
 
 # Read CSV file for 26375_3
 dataset_file_1 <- here("data", "clean", "Band7", "26375", "26375_3_Data.csv")
-
 data26375_3 <- read_csv(dataset_file_1)
 
-# Wrap datatable in a custom div
+# Wrap datatable in a custom div for styling.
 htmltools::div(
   class = 'datatable-frame',
   DT::datatable(
     data26375_3,
     rownames = FALSE,
-    options = list(
-      scrollX = TRUE,
-      scrollCollapse = TRUE,
-      scrollY = '400px',
-      paging = FALSE,
-      dom = 't'
-    ),
-    caption = htmltools::tags$caption(
-      style = 'caption-side: top; text-align: left;',
-      'Dataset 26375_3'
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 26375_3'
     )
-  ),
+  )
 )
 ```
 
-::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Branche:** Bezeichnung der Branche, für die die angegebenen Zahlen gelten
 - **1929:** Anzahl der im angegebenen Bereich beschäftigten Personen im Kanton Basel-Stadt im Jahr 1929
 - **1939:** Anzahl der im angegebenen Bereich beschäftigten Personen im Kanton Basel-Stadt im Jahr 1939
@@ -210,15 +208,14 @@ df <- data.frame(
     "[data/clean/Band7/26375/26375_3_Data.csv](/data/clean/Band7/26375/26375_3_Data.csv)",
     "Böhner, Martin: Die Eidgenössische Betriebszählung 1965 aus baslerischer Sicht, Basel 1968, S. 66f; Eidgenössisches Statistisches Amt (Hg.): Beschäftigte in den Gemeinden: nach Wirtschaftsfaktoren, Bern 1968 S. 59. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band7/26375/26375_3_Data.csv-metadata.json](/data/clean/Band7/26375/26375_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Hauptberuflich Beschäftigte im Dienstleistungssektor im Kanton Basel-Stadt, 1929–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26375.html#m26375_3>, letzte Aktualisierung: 30.09.2025.",
+    "Stadt.Geschichte.Basel: Hauptberuflich Beschäftigte im Dienstleistungssektor im Kanton Basel-Stadt, 1929–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26375.html#m26375_3>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-30 00:16:32"
+    "2025-10-01 00:29:51"
   ),
   stringsAsFactors = FALSE
 )
 
-knitr::kable(df, format = "markdown", escape = FALSE, 
-caption = "Selected Metadata for Dataset 26375_3")
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 26375_3")
 ```
 
