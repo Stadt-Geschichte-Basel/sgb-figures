@@ -6,6 +6,7 @@ library(tidyr)
 library(scales)
 library(dplyr)
 library(patchwork)
+library(ggpubr)
 
 # Functions ------------------
 
