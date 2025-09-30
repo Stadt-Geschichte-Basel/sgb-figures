@@ -1,4 +1,14 @@
 # Packages ---------
+
+## --- Ensure required packages are installed ---
+required_packages <- c("here", "jsonlite", "fs", "glue", "stringr")
+for (pkg in required_packages) {
+  if (!requireNamespace(pkg, quietly = TRUE)) {
+    message(paste("Restoring package:", pkg, " from renv lockfile."))
+    renv::restore()
+  }
+}
+
 library(here) # For creating file paths relative to the project root
 library(jsonlite) # For reading and parsing JSON metadata files
 library(fs) # For file system operations like creating paths and checking for file existence

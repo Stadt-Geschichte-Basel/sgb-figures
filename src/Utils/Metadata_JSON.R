@@ -1,3 +1,20 @@
+# Packages ---------
+
+## --- Ensure required packages are installed ---
+required_packages <- c("here", "csvwr", "jsonlite")
+for (pkg in required_packages) {
+  if (!requireNamespace(pkg, quietly = TRUE)) {
+    message(paste("Restoring package:", pkg, " from renv lockfile."))
+    renv::restore()
+  }
+}
+
+library(here)
+library(csvwr)
+library(jsonlite)
+
+# Function to Create Metadata ---------
+
 annotate <- function(data, media_id, csv_suffix, vol, title, column_description, object_description, creator,
                      contributor, date, coverage, source, relation, rights) {
   # derive folder ID from media_id (first 5 digits only)

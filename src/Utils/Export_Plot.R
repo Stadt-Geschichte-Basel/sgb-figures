@@ -1,5 +1,14 @@
 # Packages ---------
 
+## --- Ensure required packages are installed ---
+required_packages <- c("here", "ggplot2", "ggpubr")
+for (pkg in required_packages) {
+  if (!requireNamespace(pkg, quietly = TRUE)) {
+    message(paste("Restoring package:", pkg, " from renv lockfile."))
+    renv::restore()
+  }
+}
+
 library(here)
 library(ggplot2)
 library(ggpubr)

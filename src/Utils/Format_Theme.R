@@ -4,6 +4,18 @@
 
 # Verwendung im Skript: p + theme_sgb_basis() + theme(...)
 
+# Packages ---------
+
+## --- Ensure required packages are installed ---
+required_packages <- c("ggplot2")
+for (pkg in required_packages) {
+  if (!requireNamespace(pkg, quietly = TRUE)) {
+    message(paste("Restoring package:", pkg, " from renv lockfile."))
+    renv::restore()
+  }
+}
+
+library(ggplot2)
 
 # Definition des Themes ----
 theme_sgb_basis <- function() {

@@ -15,8 +15,8 @@
 required_packages <- c("styler", "lintr")
 for (pkg in required_packages) {
   if (!requireNamespace(pkg, quietly = TRUE)) {
-    message(paste("Installing package:", pkg))
-    install.packages(pkg)
+    message(paste("Restoring package:", pkg, " from renv lockfile."))
+    renv::restore()
   }
 }
 
