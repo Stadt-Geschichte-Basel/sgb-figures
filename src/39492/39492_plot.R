@@ -85,7 +85,7 @@ plot39492b <- ggplot(data39492, aes(x = Startjahr)) +
     breaks = seq(1360, 1525, by = 5),
     labels = everysecond(data39492$Zeitraum),
     guide = guide_axis(angle = 45),
-    expand = expansion(mult = c(0, 0)),
+    expand = expansion(mult = c(0, 0))
   ) +
   scale_y_continuous(
     limits = c(0, 1200),
