@@ -86,10 +86,6 @@ plot80238c <- ggplot(
     "SVP" = "#4B8A3E",
     "NA (ab 1991 UVP, ab 1982 SD)" = "#777777"
   )) +
-  guides(color = guide_legend(
-    keyheight = unit(4.8, "mm"), # results in ca. 3mm
-    ncol = 1
-  )) +
   coord_cartesian(clip = "off") +
   theme_sgb_basis() +
   theme(

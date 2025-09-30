@@ -97,10 +97,6 @@ plot80238b <- ggplot(
     "NA (ab 1991 UVP, ab 1992 SD)" = "#5A3827",
     "Andere" = "#B8B8B8"
   )) +
-  guides(color = guide_legend(
-    keyheight = unit(4.8, "mm"), # results in ca. 3mm
-    ncol = 1
-  )) +
   coord_cartesian(clip = "off") +
   theme_sgb_basis() +
   theme(

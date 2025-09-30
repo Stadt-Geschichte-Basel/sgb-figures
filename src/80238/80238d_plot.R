@@ -61,10 +61,6 @@ plot80238d <- ggplot(
     "SP" = "#F0554D",
     "FDP" = "#3872B5"
   )) +
-  guides(color = guide_legend(
-    keyheight = unit(4.8, "mm"), # results in ca. 3mm
-    ncol = 1
-  )) +
   coord_cartesian(clip = "off") +
   theme_sgb_basis() +
   theme(
