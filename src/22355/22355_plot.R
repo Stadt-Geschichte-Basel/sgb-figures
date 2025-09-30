@@ -21,9 +21,13 @@ source(here("src", "22355", "22355_clean.R"))
 # Transform Data -------------
 
 # Manipulation von 1960 als 1959 und 1964 als 1962, damit gleiche Abstände im Plot erzielt werden
-# Label bleibt bei Original-Daten
-data22355$Jahr[17] <- 1959
-data22355$Jahr[18] <- 1962
+# Label zeigt weiterhin die Original-Jahreszahlen
+data22355 <- data22355 %>%
+  mutate(Jahr = case_when(
+    Jahr == 1960 ~ 1959,
+    Jahr == 1964 ~ 1962,
+    TRUE ~ Jahr
+  ))
 
 data22355_longer <- data22355 %>%
   pivot_longer(
