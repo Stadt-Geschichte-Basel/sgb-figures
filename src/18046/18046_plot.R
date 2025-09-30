@@ -43,7 +43,7 @@ plot18046 <- ggplot(data = data18046, aes(x = Jahr)) +
   ) +
   xlab("Jahr") +
   scale_y_continuous(
-    limits = c(min(data18046, na.rm = T), 8000),
+    limits = c(min(data18046, na.rm = TRUE), 8000),
     breaks = seq(0, 8000, by = 1000),
     expand = expansion(mult = c(0, 0)),
     labels = ch_numbers
