@@ -103,7 +103,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
       vol_link <- glue("[Stadt.Geschichte.Basel {vol_num}](https://doi.org/10.21255/sgb-{doi_suffixes[vol_num]})")
       vol_text <- sub(vol_short, vol_link, vol_text, fixed = TRUE)
     }
-    
+
     ## Parse schema$modified and reformat for output
     date_modified <- schema$modified[[1]] |>
       as.POSIXct(format = "%Y-%m-%dT%H:%M:%S") |>

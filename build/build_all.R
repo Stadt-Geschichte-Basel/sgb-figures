@@ -9,7 +9,7 @@ src_subdirs <- setdiff(src_subdirs, "Utils")
 for (plot in src_subdirs) {
   plot_script <- here("src", plot, paste0(plot, "_plot.R"))
   if (file.exists(plot_script)) {
-    message(sprintf("Running plot script: %s", plot_script))
+    message(sprintf("Aktuell laufendes Skript: %s", plot_script))
     tryCatch(
       {
         source(plot_script)

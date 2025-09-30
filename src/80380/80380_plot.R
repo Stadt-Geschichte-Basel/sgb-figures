@@ -30,9 +30,9 @@ data80380$`Tageszeitungen\n(total verkaufte Auflage Print,\nexkl. Gratisauflage)
 
 data80380_longer <- data80380 |>
   pivot_longer(
-  cols = -`Tageszeitungen\n(total verkaufte Auflage Print,\nexkl. Gratisauflage)`,
-  names_to = "Jahr",
-  values_to = "Auflage"
+    cols = -`Tageszeitungen\n(total verkaufte Auflage Print,\nexkl. Gratisauflage)`,
+    names_to = "Jahr",
+    values_to = "Auflage"
   ) |>
   mutate(Jahr = as.integer(Jahr))
 
