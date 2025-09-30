@@ -38,7 +38,7 @@
 			},
 			"title": ["Der Fahrzeugbestand in Basel-Stadt, 1920–2020"],
 			"description": [
-				"Die Motorisierung der Gesellschaft machte sich in den 1960er-Jahren eindrücklich bemerkbar: Der Bestand an Autos nahm in Basel massiv zu, während immer weniger Fahrräder im Einsatz waren. Mitte der 1970er-Jahre wuchs der Bestand an Fahrrädern wieder, ab 1990 wurde er nicht mehr erhoben. Anhaltende Popularität hatte das Auto: Der vermeintliche Einbruch um 1980 geht auf eine neue Zählweise zurück. Hinweis: Die Zahlen entsprechen dem Bestand der Motorfahrzeugkontrolle des Kantons Basel-Stadt. Daten aus dem Statistischen Jahrbuch der Schweiz unterscheiden sich jeweils leicht von den Daten im StAJB BS (vermutlich weil jeweils Bestand 'Ende September 19xx)'."
+				"Die Motorisierung der Gesellschaft machte sich in den 1960er-Jahren eindrücklich bemerkbar: Der Bestand an Autos nahm in Basel massiv zu, während immer weniger Fahrräder im Einsatz waren. Mitte der 1970er-Jahre wuchs der Bestand an Fahrrädern wieder, ab 1990 wurde er nicht mehr erhoben. Anhaltende Popularität hatte das Auto: Der vermeintliche Einbruch um 1980 geht auf eine neue Zählweise zurück. Hinweis: Die Zahlen entsprechen dem Bestand der Motorfahrzeugkontrolle des Kantons Basel-Stadt. Daten aus dem Statistischen Jahrbuch der Schweiz unterscheiden sich jeweils leicht von den Daten im StAJB BS (vermutlich weil jeweils Bestand 'Ende September 19xx')."
 			],
 			"creator": [
 				{
@@ -74,7 +74,7 @@
 			"relation": [["m77089_1"], ["m77089_2"]],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-30 00:16:33"],
+			"modified": ["2025-09-30T22:17:31"],
 			"bibliographicCitation": [
 				"Stadt.Geschichte.Basel: Der Fahrzeugbestand in Basel-Stadt, 1920–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77089.html#m77089_3>, letzte Aktualisierung: 30.09.2025."
 			]
