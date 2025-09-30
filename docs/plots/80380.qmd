@@ -145,21 +145,21 @@ htmltools::div(
 ::: {.callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Tageszeitungen (total verkaufte Auflage Print, exkl. Gratisauflage):** Name der jeweiligen Tageszeitung
 - **1966:** Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
-- **1971:** Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
-- **1972:** Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
-- **1973:** Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
-- **1975:** Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
-- **1978:** Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
-- **1984:** Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
-- **1985:** Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
-- **1990:** Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
-- **1991:** Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
-- **1992:** Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
-- **1996:** Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
-- **2002:** Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
-- **2008:** Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
-- **2014:** Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
-- **2020:** Total verkaufte Auflage der jeweiligen Zeitung im enstprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
+- **1971:** Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
+- **1972:** Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
+- **1973:** Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
+- **1975:** Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
+- **1978:** Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
+- **1984:** Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
+- **1985:** Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
+- **1990:** Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
+- **1991:** Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
+- **1992:** Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
+- **1996:** Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
+- **2002:** Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
+- **2008:** Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
+- **2014:** Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
+- **2020:** Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage
 :::
 ```{r metatable, results="asis"}
 #| echo: false
@@ -202,7 +202,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Auflage der Tageszeitungen in der Region Basel, 1966–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80380.html#m80380_3>, letzte Aktualisierung: 30.09.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-09-30 00:16:34"
+    "2025-09-30 13:26:53"
   ),
   stringsAsFactors = FALSE
 )
