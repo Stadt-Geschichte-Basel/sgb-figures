@@ -28,26 +28,23 @@ colnames(data80380) <- c(
 ## fix cutoff
 data80380$`Tageszeitungen\n(total verkaufte Auflage Print,\nexkl. Gratisauflage)`[4] <- "Basellandschaftliche Zeitung\n(ab 2019 bz – Zeitung für die Region Basel)"
 
-data_long <- data80380 %>%
+data80380_longer <- data80380 |>
   pivot_longer(
-    cols = -`Tageszeitungen\n(total verkaufte Auflage Print,\nexkl. Gratisauflage)`,
-    names_to = "Jahr",
-    values_to = "Auflage",
-    names_prefix = "'",
-    names_transform = list(Jahr = as.numeric)
-  ) %>%
-  mutate(Jahr = gsub("'", "", Jahr)) %>%
-  mutate(Jahr = as.numeric(Jahr))
+  cols = -`Tageszeitungen\n(total verkaufte Auflage Print,\nexkl. Gratisauflage)`,
+  names_to = "Jahr",
+  values_to = "Auflage"
+  ) |>
+  mutate(Jahr = as.integer(Jahr))
 
 # Create Plot ------------------
 
-plot80380 <- ggplot(data_long, aes(
+plot80380 <- ggplot(data80380_longer, aes(
   x = Jahr, y = Auflage,
   color = `Tageszeitungen\n(total verkaufte Auflage Print,\nexkl. Gratisauflage)`,
   group = `Tageszeitungen\n(total verkaufte Auflage Print,\nexkl. Gratisauflage)`
 )) +
   geom_line(
-    data = na.omit(data_long),
+    data = na.omit(data80380_longer),
     linewidth = 0.561
   ) +
   geom_point() +
