@@ -41,7 +41,6 @@ extract_title <- function(json_content) {
 # Collect all titles for one plot_id
 get_titles_for_plot <- function(plot_id) {
   plot_folder <- path(data_path, plot_id)
-  collected_titles <- character()
 
   if (!dir_exists(plot_folder)) {
     return("[Kein Titel gefunden]")
