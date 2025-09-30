@@ -36,13 +36,14 @@ data88300b <- data88300b %>%
 
 data88300b$Legend_Label <- factor(data88300b$Legend_Label,
   levels = rev(c(
-    data88300b$Legend_Label[order(data88300b$`Ausgaben in CHF (2021)`,
-                                  decreasing = FALSE
-                                  ) &
-                              data88300b$Empfänger != "Diverses"],
+    data88300b$Legend_Label[order(
+      data88300b$`Ausgaben in CHF (2021)`,
+      decreasing = FALSE
+    ) &
+      data88300b$Empfänger != "Diverses"],
     "Diverses (13.5%)"
-    ))
-  )
+  ))
+)
 
 color_mapping <- c(
   "Museen (42.2%)" = "#F7CB45",

@@ -22,7 +22,6 @@ theme_sgb_basis <- function() {
   theme_grey() %+replace%
 
     theme(
-
       plot.title = element_blank(),
       plot.title.position = "plot", # Beschriftung an Plot-Grenzen ausrichten
 
@@ -48,7 +47,6 @@ theme_sgb_basis <- function() {
       legend.key = element_rect(fill = "transparent", colour = NA),
       legend.direction = "vertical",
       legend.background = element_blank(),
-
       legend.title = element_blank(),
       legend.text = element_text(color = "black", size = 6.5),
     )

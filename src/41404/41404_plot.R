@@ -64,7 +64,6 @@ plot41404 <- ggplot(
     expand = expansion(mult = c(0, 0)),
     labels = ch_numbers
   ) +
-
   scale_color_manual(
     name = "",
     values = c(
