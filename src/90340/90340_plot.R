@@ -44,7 +44,6 @@ plot90340 <- ggplot(data = data90340_longer, aes(
   ) +
   scale_fill_manual(values = c("#F7CB45", "#6195CF")) +
   scale_x_discrete(
-    # breaks = c(1850, 1910),
     guide = guide_axis(),
     expand = expansion(mult = c(0, 0.005))
   ) +

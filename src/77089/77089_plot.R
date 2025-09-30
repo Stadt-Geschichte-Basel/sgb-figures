@@ -20,12 +20,12 @@ source(here("src", "77089", "77089_clean.R"))
 
 # Transform Data -------------
 
-data77089_Personenwagen <- data77089[, -3:-4]
+data77089_personenwagen <- data77089[, -3:-4]
 
-data77089_Motorräder_inkl_Mofas <- data77089 %>%
+data77089_motorräder_inkl_mofas <- data77089 %>%
   select(Jahr, "Motorräder inkl. Mofas")
 
-data77089_Fahrräder <- data77089 %>%
+data77089_velo <- data77089 %>%
   select(Jahr, "Fahrräder") %>%
   na.omit()
 
@@ -33,18 +33,18 @@ data77089_Fahrräder <- data77089 %>%
 
 plot77089 <- ggplot() +
   geom_line(
-    data = data77089_Personenwagen, aes(x = Jahr, y = Personenwagen, color = "Personenwagen"),
+    data = data77089_personenwagen, aes(x = Jahr, y = Personenwagen, color = "Personenwagen"),
     linewidth = 0.561
   ) +
   geom_line(
-    data = data77089_Motorräder_inkl_Mofas, aes(
+    data = data77089_motorräder_inkl_mofas, aes(
       x = Jahr, y = `Motorräder inkl. Mofas`,
       color = "Motorräder inkl. Mofas"
     ),
     linewidth = 0.561
   ) +
   geom_line(
-    data = data77089_Fahrräder, aes(
+    data = data77089_velo, aes(
       x = Jahr, y = Fahrräder,
       color = "Fahrräder"
     ),

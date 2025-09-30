@@ -26,8 +26,8 @@ data17308_pest <- subset(data17308,
 )
 
 # Manipulation: zusätzlich 1500 mit Werten von 1501 für bessere x-Achsen-Darstellung
-Zusatzeintrag <- list(Jahr = 1500, Bevölkerungszahl = 9500, Pestjahr = FALSE)
-data17308 <- rbind(data17308, Zusatzeintrag)
+additional_entry <- list(Jahr = 1500, Bevölkerungszahl = 9500, Pestjahr = FALSE)
+data17308 <- rbind(data17308, additional_entry)
 
 # Manipulation: Jahre anpassen für bessere x-Achsen-Darstellung
 data17308$Jahr[34] <- 1700 # eigentlich 1699

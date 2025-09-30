@@ -17,15 +17,15 @@ data91203 <- read_excel(here("data", "raw", "Band6", "91203", "91203_Data_raw.xl
 
 # Process Data ---------------
 
-data91203_Stimmberechtigte <- data91203[, c("Stimmberechtigte", "...4")]
+data91203_stimmberechtigte <- data91203[, c("Stimmberechtigte", "...4")]
 
-data91203_Stimmberechtigte$...4[4] <- 1900
-data91203_Stimmberechtigte$...4[5] <- 1910
+data91203_stimmberechtigte$...4[4] <- 1900
+data91203_stimmberechtigte$...4[5] <- 1910
 
 data91203 <- data91203[, -3:-4]
 colnames(data91203)[2] <- "Gesamtbevölkerung"
 
-data91203 <- merge(data91203, data91203_Stimmberechtigte, by.x = "Jahr", by.y = "...4", all = TRUE)
+data91203 <- merge(data91203, data91203_stimmberechtigte, by.x = "Jahr", by.y = "...4", all = TRUE)
 
 save_clean_csv(data91203, csv_suffix = 3, vol = 6)
 

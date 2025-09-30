@@ -1,7 +1,7 @@
-annotate <- function(data, mediaID, csv_suffix, vol, title, column_description, object_description, creator,
+annotate <- function(data, media_id, csv_suffix, vol, title, column_description, object_description, creator,
                      contributor, date, coverage, source, relation, rights) {
-  # derive folder ID from mediaID (first 5 digits only)
-  folderID <- sub("^(\\d{5}).*$", "\\1", mediaID)
+  # derive folder ID from media_id (first 5 digits only)
+  folder_id <- sub("^(\\d{5}).*$", "\\1", media_id)
 
   # Build suffix part
   suffix_part <- if (!is.null(csv_suffix)) paste0("_", csv_suffix) else ""
@@ -23,9 +23,9 @@ annotate <- function(data, mediaID, csv_suffix, vol, title, column_description, 
   metadata <- derive_table_schema(data)
 
   # add Stadt.Geschichte.Basel Data Model
-  metadata$mediaID <- paste0("m", folderID, suffix_part)
+  metadata$media_id <- paste0("m", folder_id, suffix_part)
   metadata$isPartOf <- list(
-    ObjectID = paste0("abb", folderID),
+    ObjectID = paste0("abb", folder_id),
     volume = switch(vol,
       "Lassau, Guido; Schwarz, Peter-Andrew (Hg.): Auf dem langen Weg zur Stadt. 50 000 v. Chr.–800 n. Chr. Basel 2024 (Stadt.Geschichte.Basel 1).",
       "Sieber-Lehmann, Claudius; Schwarz, Peter-Andrew (Hg.): Eine Bischofsstadt zwischen Oberrhein und Jura. 800–1273. Basel 2024 (Stadt.Geschichte.Basel 2).",
@@ -55,19 +55,19 @@ annotate <- function(data, mediaID, csv_suffix, vol, title, column_description, 
   metadata$license <- license_url
   metadata$modified <- Sys.time()
   metadata$bibliographicCitation <- paste0(
-    "Stadt.Geschichte.Basel: ", title, ". Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb", folderID, ".html#m", folderID, suffix_part, ">, letzte Aktualisierung: ", format(Sys.Date(), format = "%d.%m.%Y"), "."
+    "Stadt.Geschichte.Basel: ", title, ". Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb", folder_id, ".html#m", folder_id, suffix_part, ">, letzte Aktualisierung: ", format(Sys.Date(), format = "%d.%m.%Y"), "."
   )
 
   # Build folder path
-  json_folder <- here("data", "clean", paste0("Band", vol), folderID)
+  json_folder <- here("data", "clean", paste0("Band", vol), folder_id)
 
   # Create folder if needed
   if (!dir.exists(json_folder)) {
     dir.create(json_folder, recursive = TRUE)
   }
 
-  # File name uses pure folderID + optional suffix
-  csv_filename <- paste0(folderID, suffix_part, "_Data.csv")
+  # File name uses pure folder_id + optional suffix
+  csv_filename <- paste0(folder_id, suffix_part, "_Data.csv")
   json_file <- file.path(json_folder, paste0(csv_filename, "-metadata.json"))
 
   # write JSON

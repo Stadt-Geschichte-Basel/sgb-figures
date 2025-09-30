@@ -21,7 +21,7 @@ source(here("src", "88415", "88415_clean.R"))
 # Transform Data -------------
 
 ## Create data frame for mapping number of home games
-data88415_Heimspiele <- data88415 %>%
+data88415_heimspiele <- data88415 %>%
   filter(Jahr %in% c(1965, 1982, 1999, 2016)) %>%
   select(Jahr, `Anzahl Heimspiele`) %>%
   mutate(Mapping = 550000)
@@ -56,7 +56,7 @@ plot88415 <- ggplot(data88415_longer) +
 
   # Construct for number of home games with segment, point and text
   geom_segment(
-    data = data88415_Heimspiele, aes(
+    data = data88415_heimspiele, aes(
       x = Jahr,
       xend = Jahr,
       y = 0,
@@ -66,7 +66,7 @@ plot88415 <- ggplot(data88415_longer) +
     linewidth = 0.25
   ) +
   geom_point(
-    data = data88415_Heimspiele, aes(
+    data = data88415_heimspiele, aes(
       x = Jahr,
       y = Mapping,
       color = "Anzahl Heimspiele"
@@ -74,7 +74,7 @@ plot88415 <- ggplot(data88415_longer) +
     size = 4
   ) +
   geom_text(
-    data = data88415_Heimspiele, aes(
+    data = data88415_heimspiele, aes(
       x = Jahr,
       y = Mapping,
       label = `Anzahl Heimspiele`

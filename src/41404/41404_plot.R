@@ -65,14 +65,6 @@ plot41404 <- ggplot(
     labels = ch_numbers
   ) +
 
-  #  scale_color_identity(
-  #    name = "",
-  #    breaks = c("#A5170E", "#777777"),
-  #    labels = c("100-jähriges gleitendes Hochwasserabflussmittel  \n der rekonstruierten sowie aller gemessenen  \n Jahresabflussmaxima",
-  #               bquote("Abflussmenge Q in" ~ m^3/s)),
-  #    guide = "legend"
-  #  ) +
-
   scale_color_manual(
     name = "",
     values = c(

@@ -11,11 +11,11 @@ export_plot <- function(plot, volume, plot_width_mm, plot_height_mm,
                         plot_suffix = NULL, legend_suffix = NULL) {
   # Extract plot name and derive mediaID
   plot_name <- deparse(substitute(plot))
-  raw_mediaID <- sub("plot(\\d{5}[a-zA-Z]*)$", "\\1", plot_name)
-  baseID <- sub("^(\\d{5}).*$", "\\1", raw_mediaID) # strip any trailing letters
+  raw_media_id <- sub("plot(\\d{5}[a-zA-Z]*)$", "\\1", plot_name)
+  base_id <- sub("^(\\d{5}).*$", "\\1", raw_media_id) # strip any trailing letters
 
   # Folder ID for saving
-  folderID <- baseID
+  folder_id <- base_id
 
   # Convert mm to inches
   plot_width_in <- plot_width_mm / 25.4
@@ -23,7 +23,7 @@ export_plot <- function(plot, volume, plot_width_mm, plot_height_mm,
 
   # Output folder
   volume_folder <- paste0("Band", volume)
-  media_folder <- here("output", volume_folder, folderID)
+  media_folder <- here("output", volume_folder, folder_id)
   if (!dir.exists(media_folder)) dir.create(media_folder, recursive = TRUE)
 
   # Helper: build filename with optional suffix
@@ -36,7 +36,7 @@ export_plot <- function(plot, volume, plot_width_mm, plot_height_mm,
   }
 
   # ---- Export Plot ----
-  plot_file <- file.path(media_folder, build_filename(baseID, plot_suffix, "Plot"))
+  plot_file <- file.path(media_folder, build_filename(base_id, plot_suffix, "Plot"))
   pdf(
     file = plot_file, bg = "transparent", pointsize = 6.5, colormodel = "cmyk",
     width = plot_width_in, height = plot_height_in
@@ -51,7 +51,7 @@ export_plot <- function(plot, volume, plot_width_mm, plot_height_mm,
     plot_with_legend <- plot + theme(legend.position = "bottom")
     separate_legend <- get_legend(plot_with_legend) |> as_ggplot()
 
-    legend_file <- file.path(media_folder, build_filename(baseID, legend_suffix, "Legende"))
+    legend_file <- file.path(media_folder, build_filename(base_id, legend_suffix, "Legende"))
     pdf(
       file = legend_file, bg = "transparent", colormodel = "cmyk",
       width = legend_width_in, height = legend_height_in
@@ -61,8 +61,8 @@ export_plot <- function(plot, volume, plot_width_mm, plot_height_mm,
   }
 
   message(
-    "Objekt ", baseID, ": Plot als PDF im Ordner ", here(media_folder), " gespeichert.\n",
+    "Objekt ", base_id, ": Plot als PDF im Ordner ", here(media_folder), " gespeichert.\n",
     "Die Daten sind auch auf der Forschungsdatenplattform von Stadt.Geschichte.Basel verfügbar:\n",
-    "https://forschung.stadtgeschichtebasel.ch/items/abb", folderID, ".html"
+    "https://forschung.stadtgeschichtebasel.ch/items/abb", folder_id, ".html"
   )
 }
