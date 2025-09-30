@@ -20,13 +20,14 @@ source(here("src", "77089", "77089_clean.R"))
 
 # Transform Data -------------
 
-data77089_personenwagen <- data77089[, -3:-4]
+data77089_personenwagen <- data77089 |>
+  select(Jahr, Personenwagen)
 
-data77089_motorrad_inkl_mofa <- data77089 %>%
+data77089_motorrad_inkl_mofa <- data77089 |>
   select(Jahr, "Motorräder inkl. Mofas")
 
-data77089_velo <- data77089 %>%
-  select(Jahr, "Fahrräder") %>%
+data77089_velo <- data77089 |>
+  select(Jahr, "Fahrräder") |>
   na.omit()
 
 # Plot -----------------------
