@@ -70,7 +70,7 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
   metadata$relation <- relation
   metadata$rights <- rights
   metadata$license <- license_url
-  metadata$modified <- Sys.time()
+  metadata$modified <- format(Sys.time(), "%Y-%m-%dT%H:%M:%S")
   metadata$bibliographicCitation <- paste0(
     "Stadt.Geschichte.Basel: ", title, ". Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb", folder_id, ".html#m", folder_id, suffix_part, ">, letzte Aktualisierung: ", format(Sys.Date(), format = "%d.%m.%Y"), "."
   )
