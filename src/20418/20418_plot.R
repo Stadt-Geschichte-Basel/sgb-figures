@@ -29,7 +29,7 @@ plot20418 <- ggplot(data = data20418, aes(x = Jahr)) +
   ) +
 
   # unsichtbares Element für zusätzlichen Text in der Legende
-  geom_blank(aes(x = 1690, y = 0, color = "Alle Angaben in Pfund.")) +
+  geom_blank(aes(x = 1690, y = 1, color = "Alle Angaben in Pfund.")) +
   scale_x_continuous(
     breaks = seq(1690, 1795, 10),
     guide = guide_axis(angle = 45),
