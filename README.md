@@ -137,6 +137,12 @@ Build all plots that are available in this repository:
 npm run all
 ```
 
+Format all R scripts using `styler` and `lintr`:
+
+```bash
+npm run format:r
+```
+
 ## Usage
 
 These data are openly available to everyone and can be used for any research or educational purpose. If you use this data in your research, please cite as specified in [CITATION.cff](CITATION.cff). <!-- The following citation formats are also available through _Zenodo_: -->
