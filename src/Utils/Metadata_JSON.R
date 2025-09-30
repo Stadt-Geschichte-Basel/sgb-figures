@@ -91,9 +91,9 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
   list(
     url = csv_filename,
     tableSchema = metadata
-  ) %>%
-    create_metadata() %>%
-    toJSON() %>%
-    prettify() %>%
+  ) |>
+    create_metadata() |>
+    toJSON() |>
+    prettify() |>
     write(json_file)
 }
