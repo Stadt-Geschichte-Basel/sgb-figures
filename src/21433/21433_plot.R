@@ -75,9 +75,8 @@ plot21433 <- ggplot(
       hjust = 1
     ),
     legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
-    legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
-    legend.key.justification = "top"
-  ) # FIXME works only from Jan25 on, see https://github.com/tidyverse/ggplot2/pull/6279
+    legend.key.width = unit(5, "mm") # entspricht 4.5 mm
+    )
 
 # Write Info Page ------------
 

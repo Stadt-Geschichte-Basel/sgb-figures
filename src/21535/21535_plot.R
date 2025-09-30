@@ -56,7 +56,6 @@ plot21535 <- ggplot(
     legend.title = element_text(color = "black", size = 6.5),
     legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
     legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
-    legend.key.justification = "top", # FIXME works only from Jan25 on, see https://github.com/tidyverse/ggplot2/pull/6279
     plot.margin = margin(0.5, 0, 0, 0, "lines"),
     axis.ticks.x = element_blank(),
     axis.text.y = element_text(
