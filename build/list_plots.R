@@ -8,7 +8,7 @@ library(stringr)
 src_path <- here("src")
 data_path <- here("data", "clean")
 
-# get all folders in src/ except 'Funktionen'
+# get all folders in src/ except 'Utils'
 plot_dirs <- dir_ls(src_path, type = "directory", regexp = "[0-9]+$") %>%
   path_file() %>%
   sort()

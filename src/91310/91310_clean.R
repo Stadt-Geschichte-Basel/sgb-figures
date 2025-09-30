@@ -10,8 +10,8 @@ library(dplyr)
 
 # Functions ------------------
 
-source(here("src", "Funktionen", "Metadata_JSON.R"))
-source(here("src", "Funktionen", "Export_CSV.R"))
+source(here("src", "Utils", "Metadata_JSON.R"))
+source(here("src", "Utils", "Export_CSV.R"))
 
 # Process Data ---------------
 

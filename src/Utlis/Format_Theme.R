@@ -3,7 +3,7 @@
 # basiert auf ggplot-Thema theme_grey() mit untenstehenden Änderungen.
 
 # Einbindung im Skript -----
-# source(here("Funktionen/Format_Theme.R"))
+# source(here("Utils/Format_Theme.R"))
 
 # Verwendung im Skript -----
 # p + theme_sgb_basis()

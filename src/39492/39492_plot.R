@@ -9,11 +9,11 @@ library(patchwork)
 
 # Functions ------------------
 
-source(here("src", "Funktionen", "Format_Theme.R"))
-source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
-source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
-source(here("src", "Funktionen", "Export_Plot.R"))
-source(here("src", "Funktionen", "Write_InfoPage.R"))
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
