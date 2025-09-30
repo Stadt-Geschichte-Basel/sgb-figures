@@ -115,12 +115,12 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     )
 
     # Return all processed information for this dataset.
-    return(list(
+    list(
       fields = fields,
       schema = schema,
       vol_short = vol_short,
       col_description = columns_str
-    ))
+    )
   }
 
   ## Process all specified metadata files using the nested function.

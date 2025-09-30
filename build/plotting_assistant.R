@@ -1,11 +1,10 @@
 typeline <- function(msg) {
   if (interactive()) {
-    txt <- readline(msg)
+    readline(msg)
   } else {
     cat(msg)
-    txt <- readLines("stdin", n = 1)
+    readLines("stdin", n = 1)
   }
-  return(txt)
 }
 
 txt <- typeline("Bitte ID des Plots eingeben (z.B. 39017 für abb39017): ")

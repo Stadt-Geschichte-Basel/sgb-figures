@@ -79,6 +79,4 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
     toJSON() %>%
     prettify() %>%
     write(json_file)
-
-  return(metadata)
 }
