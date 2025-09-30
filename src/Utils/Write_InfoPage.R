@@ -1,17 +1,16 @@
 # Packages ---------
 # These are the required packages for this script to run.
-library(here)      # For creating file paths relative to the project root
-library(jsonlite)  # For reading and parsing JSON metadata files
-library(fs)        # For file system operations like creating paths and checking for file existence
-library(glue)      # For easy string interpolation
-library(stringr)   # For string manipulation, like extracting patterns
+library(here) # For creating file paths relative to the project root
+library(jsonlite) # For reading and parsing JSON metadata files
+library(fs) # For file system operations like creating paths and checking for file existence
+library(glue) # For easy string interpolation
+library(stringr) # For string manipulation, like extracting patterns
 
 # Function to Write Meta Page for Quarto ---------
 # This function generates a Quarto (.qmd) file that serves as a detailed information
 # page for a given plot. The page includes metadata, a preview of the plot,
 # and interactive tables of the underlying datasets.
 write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix = NULL, has_legend = TRUE) {
-  
   # Ensure csv_suffix is a vector to handle single or multiple dataset files.
   # This allows the function to process one or more data sources for a single plot.
   if (length(csv_suffix) == 1) {
@@ -19,51 +18,53 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
   } else {
     csv_suffixes <- csv_suffix
   }
-  
+
   # Define a nested function to process a single metadata file associated with a dataset.
   # This modular approach keeps the main function cleaner.
   process_metadata <- function(suffix) {
     # --- Construct Dataset and Metadata File Paths ----
     # Build absolute paths to the data (.csv) and metadata (.json) files
     # using the project's directory structure.
-    dataset_file <- here("data", "clean",
-                      glue("Band{volume}"),
-                      glue("{plot_id}"),
-                      glue("{plot_id}_{suffix}_Data.csv"))
-    
+    dataset_file <- here(
+      "data", "clean",
+      glue("Band{volume}"),
+      glue("{plot_id}"),
+      glue("{plot_id}_{suffix}_Data.csv")
+    )
+
     metadata_file <- glue("{dataset_file}-metadata.json")
-    
+
     ## --- Create Markdown Link for Path to Dataset ---
     # Generate a relative path for the dataset to use in the .qmd file.
     data_rel_path <- fs::path_rel(dataset_file, start = here())
     data_rel_path <- gsub("^docs/", "", data_rel_path) # Remove 'docs/' prefix if present
     data_link <- glue("[{data_rel_path}](/", data_rel_path, ")")
-    
+
     ## --- Create Markdown Link for Path to JSON ---
     # Generate a relative path for the metadata file.
     meta_rel_path <- fs::path_rel(metadata_file, start = here())
     meta_rel_path <- gsub("^docs/", "", meta_rel_path) # Remove 'docs/' prefix if present
     meta_link <- glue("[{meta_rel_path}](/", meta_rel_path, ")")
-    
+
     # --- Extract Metadata from File ----
     # Read the JSON file and extract the schema information.
     meta <- fromJSON(metadata_file)
     schema <- meta$tables$tableSchema
-    
+
     # Extract specific metadata fields and create formatted links where applicable.
     fig_id <- schema$isPartOf$ObjectID[[1]]
     fig_link <- glue("{fig_id} ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/{fig_id}.html))")
-    
+
     publisher <- schema$publisher[[1]]
     publisher_link <- glue("[{publisher}](https://www.wikidata.org/wiki/Q122442230)")
-    
+
     # Creator is currently hardcoded to the publisher link.
     creators_str <- publisher_link
-    
+
     # Process contributors list.
     contributors <- unlist(schema$contributor[[1]])
     contributors_str <- paste(contributors, collapse = ", ")
-    
+
     # Create a clickable link for the license.
     license <- schema$license[[1]]
     license_link <- glue("[{license}]({license})")
@@ -71,73 +72,75 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     ## --- Read Column Descriptions ---
     # Extract column names and their descriptions from the schema.
     columns_info <- schema$columns[c("name", "description")]
-    
+
     # Collapse the column info into a single formatted string for display.
     columns_str <- paste(apply(columns_info, 1, function(row) {
       paste0("- **", row["name"], ":** ", row["description"])
     }), collapse = "\n")
-    
+
     ## --- Map Volume Numbers to Open Access DOIs ---
     # This section links the book volume to its specific DOI.
     vol_text <- schema$isPartOf$volume[[1]]
     vol_short <- str_extract(vol_text, "Stadt\\.Geschichte\\.Basel\\s*\\d+")
     vol_num <- as.integer(str_extract(vol_short, "\\d+"))
-    
+
     # A predefined list of DOI suffixes for each volume.
     doi_suffixes <- c(
       "01-406352", "02-404936", "03-345800",
       "04-283636", "05-155353", "06-810743",
       "07-663402", "08-796384", "09-486500"
     )
-    
+
     # If a valid volume number is found, create a DOI link.
     if (!is.na(vol_num) && vol_num >= 1 && vol_num <= length(doi_suffixes)) {
       vol_link <- glue("[Stadt.Geschichte.Basel {vol_num}](https://doi.org/10.21255/sgb-{doi_suffixes[vol_num]})")
       vol_text <- sub(vol_short, vol_link, vol_text, fixed = TRUE)
     }
-    
+
     # --- Create a list of all processed metadata fields ---
     fields <- list(
-      Figure        = fig_link,
-      Title         = schema$title[[1]],
-      Description   = schema$description[[1]],
-      Creator       = creators_str,
-      Contributors  = contributors_str,
-      Publisher     = publisher_link,
-      Date          = schema$date[[1]],
-      Coverage      = schema$coverage[[1]],
-      "is Part of"  = vol_text,
-      Dataset       = data_link,
-      "Source (Dataset)"       = schema$source[[1]],
-      "Metadata (Dataset)"     = meta_link,
-      "Citation (Dataset)"     = schema$bibliographicCitation[[1]],
-      Rights        = schema$rights[[1]],
-      License       = license_link,
-      Modified      = schema$modified[[1]]
+      Figure = fig_link,
+      Title = schema$title[[1]],
+      Description = schema$description[[1]],
+      Creator = creators_str,
+      Contributors = contributors_str,
+      Publisher = publisher_link,
+      Date = schema$date[[1]],
+      Coverage = schema$coverage[[1]],
+      "is Part of" = vol_text,
+      Dataset = data_link,
+      "Source (Dataset)" = schema$source[[1]],
+      "Metadata (Dataset)" = meta_link,
+      "Citation (Dataset)" = schema$bibliographicCitation[[1]],
+      Rights = schema$rights[[1]],
+      License = license_link,
+      Modified = schema$modified[[1]]
     )
-    
+
     # Return all processed information for this dataset.
-    return(list(fields = fields,
-                schema = schema,
-                vol_short = vol_short,
-                col_description = columns_str))
+    return(list(
+      fields = fields,
+      schema = schema,
+      vol_short = vol_short,
+      col_description = columns_str
+    ))
   }
-  
+
   ## Process all specified metadata files using the nested function.
   metadata_list <- lapply(csv_suffixes, process_metadata)
-  
+
   ## Use the metadata from the first dataset for the main document properties (e.g., title).
   main_metadata <- metadata_list[[1]]
-  
+
   # --- Infer plot object name and locate the corresponding plot script ----
   plot_name <- deparse(substitute(plot_obj)) # Get the variable name of the plot object as a string.
-  base_name  <- sub("^plot", "", plot_name)  # Extract the base ID from the plot name.
-  
+  base_name <- sub("^plot", "", plot_name) # Extract the base ID from the plot name.
+
   # The script now searches for the R script that generated the plot. This logic is
   # designed to handle different project structures (e.g., one plot per script vs. multiple).
   ## Prefer the explicit subplot script <base_name>_plot.R if it exists.
   candidate_script <- here("src", plot_id, paste0(base_name, "_plot.R"))
-  
+
   if (fs::file_exists(candidate_script)) {
     plot_script <- candidate_script
   } else {
@@ -162,19 +165,21 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
       }
     }
   }
-  
+
   # --- Extract Plot Generation Code ---
   ## Read the plot script and extract the code needed to generate the plot object.
   ## This relies on a specific comment marker to know where to stop reading.
   script_lines <- readLines(plot_script, warn = FALSE)
   cutoff <- grep("^# Write Info Page", script_lines)
   if (length(cutoff) == 0) {
-    stop("No '# Write Info Page' marker found in ", plot_script, 
-         "\nThis marker is required to separate plot generation from info page writing.")
+    stop(
+      "No '# Write Info Page' marker found in ", plot_script,
+      "\nThis marker is required to separate plot generation from info page writing."
+    )
   }
   # Keep only the lines before the marker.
   first_section <- script_lines[seq_len(cutoff - 1)]
-  
+
   ## --- Build Plot Chunk for Quarto ---
   # This creates the R code chunk that will display the plot in the .qmd file.
   # It includes an option to adjust the legend position.
@@ -200,14 +205,14 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
       "```"
     )
   }
-  
+
   # --- Build Data and Metadata Table Chunks for All Datasets ----
   # Loop through each processed dataset to create corresponding datatables and metadata tables.
   table_chunks <- c()
   for (i in seq_along(metadata_list)) {
     fields <- metadata_list[[i]]$fields
     current_suffix <- csv_suffixes[i]
-    
+
     # Dynamically set titles and chunk names to avoid conflicts if there are multiple datasets.
     data_table_title <- if (length(metadata_list) > 1) {
       glue("Dataset {plot_id}_{current_suffix} (Subset {i}/{length(metadata_list)})")
@@ -218,7 +223,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     metadata_table_title <- glue("Selected Metadata for {data_table_title}")
     metadata_chunk_name <- if (length(metadata_list) > 1) glue("metatable{i}") else "metatable"
     data_var_name <- glue("data{plot_id}_{current_suffix}")
-    
+
     ## --- Build Datatable Chunk ----
     # This chunk reads the CSV and displays it as an interactive DT::datatable.
     datatable_chunk <- c(
@@ -250,7 +255,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
       glue("{metadata_list[[i]]$col_description}"),
       ":::"
     )
-    
+
     ## --- Build Metadata Table Chunk ----
     # This chunk creates a markdown table of key-value metadata pairs.
     metatable_chunk <- c(
@@ -270,7 +275,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
       "```",
       ""
     )
-    
+
     # --- Combine Data and Metadata Chunks ----
     # Add horizontal rules between sections if there are multiple datasets.
     if (length(metadata_list) > 1) {
@@ -282,12 +287,12 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     } else {
       table_chunks <- c(table_chunks, datatable_chunk, metatable_chunk)
     }
-  }  
+  }
 
   # --- Build the complete .qmd File Content ----
   # Define the plot ID for use in the YAML header.
   plotid_meta <- if (is.null(plot_suffix)) glue("abb{plot_id}") else glue("abb{plot_id}_{plot_suffix}")
-  
+
   # Assemble the YAML front matter and the body of the Quarto document.
   qmd_text <- c(
     "---",
@@ -317,18 +322,18 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     "",
     table_chunks
   )
-  
+
   # --- Write the .qmd File to Disk ---
   outdir <- here("docs", "plots")
   dir_create(outdir) # Ensure the output directory exists.
-  
+
   # Construct the final output file path.
   outfile <- if (is.null(plot_suffix)) {
     path(outdir, glue("{plot_id}.qmd"))
   } else {
     path(outdir, glue("{plot_id}_{plot_suffix}.qmd"))
   }
-  
+
   # Write the generated content to the file.
   writeLines(qmd_text, outfile)
 }

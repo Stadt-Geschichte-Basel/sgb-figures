@@ -31,65 +31,79 @@ data88415 <- data88415 %>%
 
 ## Transform original data frame
 data88415_longer <- data88415 %>%
-  pivot_longer(cols = -Jahr,
-               names_to = "Veranstaltung",
-               values_to = "Zuschauer",
-               names_prefix = "'",
-               names_transform = list(Jahr = as.numeric))
+  pivot_longer(
+    cols = -Jahr,
+    names_to = "Veranstaltung",
+    values_to = "Zuschauer",
+    names_prefix = "'",
+    names_transform = list(Jahr = as.numeric)
+  )
 
 # Plot -----------------------
 
 plot88415 <- ggplot(data88415_longer) +
-  
-  geom_bar(aes(x = Jahr, y = Zuschauer,
-               fill = factor(Veranstaltung, levels = c("Zuschauer:innen FCB-Heimspiele",
-                                                       "Zuschauer:innen Konzerte"))),
-           stat = "identity",
-           position = position_dodge()) +
-  
-  # Construct for number of home games with segment, point and text
-  geom_segment(data = data88415_Heimspiele, aes(x = Jahr,
-                                                xend = Jahr,
-                                                y = 0,
-                                                yend = Mapping),
-               color = "#000000",
-               linewidth = 0.25) +
+  geom_bar(
+    aes(
+      x = Jahr, y = Zuschauer,
+      fill = factor(Veranstaltung, levels = c(
+        "Zuschauer:innen FCB-Heimspiele",
+        "Zuschauer:innen Konzerte"
+      ))
+    ),
+    stat = "identity",
+    position = position_dodge()
+  ) +
 
-  geom_point(data = data88415_Heimspiele, aes(x = Jahr,
-                                              y = Mapping,
-                                              color = "Anzahl Heimspiele"),
-             size = 4) +
-  
-  geom_text(data = data88415_Heimspiele, aes(x = Jahr,
-                                             y = Mapping,
-                                             label = `Anzahl Heimspiele`),
-            size = 2.3,
-            hjust = 0.55,
-            color = "#ffffff") +
-  
+  # Construct for number of home games with segment, point and text
+  geom_segment(
+    data = data88415_Heimspiele, aes(
+      x = Jahr,
+      xend = Jahr,
+      y = 0,
+      yend = Mapping
+    ),
+    color = "#000000",
+    linewidth = 0.25
+  ) +
+  geom_point(
+    data = data88415_Heimspiele, aes(
+      x = Jahr,
+      y = Mapping,
+      color = "Anzahl Heimspiele"
+    ),
+    size = 4
+  ) +
+  geom_text(
+    data = data88415_Heimspiele, aes(
+      x = Jahr,
+      y = Mapping,
+      label = `Anzahl Heimspiele`
+    ),
+    size = 2.3,
+    hjust = 0.55,
+    color = "#ffffff"
+  ) +
   scale_x_continuous(
     breaks = seq(1960, 2022, 6),
     guide = guide_axis(),
     expand = expansion(mult = c(0, 0.005))
   ) +
-  
   scale_y_continuous(
     limits = c(0, 600000),
     breaks = seq(0, 600000, 100000),
     expand = expansion(mult = c(0, 0)),
     labels = ch_numbers
   ) +
-  
-  scale_fill_manual(values = c("Zuschauer:innen FCB-Heimspiele" = "#6195CF",
-                               "Zuschauer:innen Konzerte" = "#F7CB45")) +
-  
+  scale_fill_manual(values = c(
+    "Zuschauer:innen FCB-Heimspiele" = "#6195CF",
+    "Zuschauer:innen Konzerte" = "#F7CB45"
+  )) +
   scale_color_manual(values = c("Anzahl Heimspiele" = "#4EB265")) +
-  
-  guides(fill = guide_legend(order = 1), 
-         color = guide_legend(order = 2)) +
-  
-  coord_cartesian(clip = "off") + 
-  
+  guides(
+    fill = guide_legend(order = 1),
+    color = guide_legend(order = 2)
+  ) +
+  coord_cartesian(clip = "off") +
   theme_sgb_basis() +
   theme(
     legend.position = "none",
@@ -98,10 +112,13 @@ plot88415 <- ggplot(data88415_longer) +
     legend.box = "vertical",
     legend.box.just = "left",
     legend.spacing.y = unit(0, "cm"),
-    legend.margin = margin(0,0,0,0, "cm"),
-    axis.text.y = element_text(margin = margin(r = 5),
-                               hjust = 1),
-    plot.margin = margin(0.5,0.9,0,0.4, "lines"))
+    legend.margin = margin(0, 0, 0, 0, "cm"),
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 0.9, 0, 0.4, "lines")
+  )
 
 # Write Info Page ------------
 
@@ -115,5 +132,6 @@ write_info_page(
 # Export ---------------------
 
 export_plot(plot88415, 8, 120, 63, 46, 10,
-            plot_suffix = 1,
-            legend_suffix = 2)
+  plot_suffix = 1,
+  legend_suffix = 2
+)

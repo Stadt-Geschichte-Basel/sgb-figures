@@ -9,7 +9,7 @@
 ch_numbers <- function(y) {
   out <- prettyNum(y, big.interval = 3L, big.mark = " ", scientific = FALSE)
 
-  ifelse (y <= 9999, y, out)
+  ifelse(y <= 9999, y, out)
 }
 
 # Funktion, um ein Sechstelgeviert als Tausendertrennzeichen
@@ -17,6 +17,6 @@ ch_numbers <- function(y) {
 
 ch_numbers_sechstelgeviert <- function(y) {
   out <- prettyNum(y, big.interval = 3L, big.mark = "\U2006", scientific = FALSE)
-  
-  ifelse (y <= 9999, y, out)
+
+  ifelse(y <= 9999, y, out)
 }

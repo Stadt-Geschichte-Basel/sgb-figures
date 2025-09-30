@@ -2,7 +2,7 @@ typeline <- function(msg) {
   if (interactive()) {
     txt <- readline(msg)
   } else {
-    cat(msg);
+    cat(msg)
     txt <- readLines("stdin", n = 1)
   }
   return(txt)

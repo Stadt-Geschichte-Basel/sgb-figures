@@ -3,7 +3,7 @@
 
 # Ziel: Achsenbeschriftungen entwirren
 
-everysecond <- function(x){
+everysecond <- function(x) {
   x <- sort(unique(x))
   x[seq(2, length(x), 2)] <- ""
   x
@@ -12,8 +12,10 @@ everysecond <- function(x){
 # Anwendung der folgenden Funktion in ggplot:
 # scale_x_discrete(breaks = every_nth(n = 3))
 
-# Alternative: 
+# Alternative:
 # funktioniert offenbar noch nicht so wie gedacht
 every_nth <- function(n) {
-  return(function(x) {x[c(TRUE, rep(FALSE, n - 1))]})
+  return(function(x) {
+    x[c(TRUE, rep(FALSE, n - 1))]
+  })
 }

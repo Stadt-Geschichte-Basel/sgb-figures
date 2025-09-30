@@ -14,7 +14,8 @@
 		"list": "Rscript build/list_plots.R",
 		"plot": "Rscript -e 'source(here::here(\"build\", \"build_plot.R\"))'",
 		"all": "Rscript build/build_all.R",
-		"vol": "Rscript build/build_volume.R"
+		"vol": "Rscript build/build_volume.R",
+		"format:r": "Rscript src/Utils/Format_R_Scripts.R"
 	},
 	"devDependencies": {
 		"commitizen": "^4.3.1",

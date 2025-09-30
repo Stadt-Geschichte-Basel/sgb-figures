@@ -28,24 +28,33 @@ save_clean_csv(data20418, csv_suffix = 3, vol = 4)
 
 # Create Metadata ------------
 
-meta20418 <- annotate(data = data20418,
-                      mediaID = 20418,
-                      csv_suffix = 3,
-                      vol = 4,
-                      title = "Exportabgaben und Konsumsteuern, 1690–1798",
-                      column_description = c("Jahreszahl, Angaben bezeichnen jeweils ein Jahr unserer Zeitrechnung", "Handels- und Marktabgaben. Angaben in Pfund", "Konsumabgaben der Stadt. Angaben in Pfund", "Konsumabgaben der Landschaft. Angaben in Pfund", "Einwohnerzahl der Stadt in Personen. Angaben übernommen aus abb17308", "Alternative Angaben zur Einwohnerzahl der Stadt in Personen. Angaben von S. Burghartz"),
-                      object_description = "Die logarithmische Darstellung verdeutlicht das exponentielle Wachstum der Abgaben auf Export- und Handelswaren im Vergleich zu den Konsumabgaben. Seit den 1770er-Jahren übertrafen die Konsumabgaben der Landschaft diejenigen der Stadt.",
-                      creator = list(list(name = "Susanna Burghartz"),
-                                     list(name = "Marcus Sandl"),
-                                     list(name = "Daniel Sidler")),
-                      contributor = list(list(name = "Nico Görlich",
-                                              orcid = "0000-0003-3860-1488"),
-                                         list(name = "Moritz Twente",
-                                              email = "mtwente@protonmail.com",
-                                              orcid = "0009-0005-7187-9774")),
-                      date = "1689/1797",
-                      coverage = "Frühe Neuzeit",
-                      source = "Vettori, Arthur: Finanzhaushalt und Wirtschaftsverwaltung Basels (1689–1798). Wirtschafts - und Lebensverhältnisse einer Gesellschaft zwischen Tradition und Umbruch, Basel; Frankfurt a. M. 1984, S. 211–215, 334–340. Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500). Basel, Liestal 1977, S. 173–174, 639–641. Bearbeitung: Nico Görlich / Moritz Twente",
-                      rights = "CC BY-SA 4.0",
-                      relation = list("m20418_1", "m20418_2")
+meta20418 <- annotate(
+  data = data20418,
+  mediaID = 20418,
+  csv_suffix = 3,
+  vol = 4,
+  title = "Exportabgaben und Konsumsteuern, 1690–1798",
+  column_description = c("Jahreszahl, Angaben bezeichnen jeweils ein Jahr unserer Zeitrechnung", "Handels- und Marktabgaben. Angaben in Pfund", "Konsumabgaben der Stadt. Angaben in Pfund", "Konsumabgaben der Landschaft. Angaben in Pfund", "Einwohnerzahl der Stadt in Personen. Angaben übernommen aus abb17308", "Alternative Angaben zur Einwohnerzahl der Stadt in Personen. Angaben von S. Burghartz"),
+  object_description = "Die logarithmische Darstellung verdeutlicht das exponentielle Wachstum der Abgaben auf Export- und Handelswaren im Vergleich zu den Konsumabgaben. Seit den 1770er-Jahren übertrafen die Konsumabgaben der Landschaft diejenigen der Stadt.",
+  creator = list(
+    list(name = "Susanna Burghartz"),
+    list(name = "Marcus Sandl"),
+    list(name = "Daniel Sidler")
+  ),
+  contributor = list(
+    list(
+      name = "Nico Görlich",
+      orcid = "0000-0003-3860-1488"
+    ),
+    list(
+      name = "Moritz Twente",
+      email = "mtwente@protonmail.com",
+      orcid = "0009-0005-7187-9774"
+    )
+  ),
+  date = "1689/1797",
+  coverage = "Frühe Neuzeit",
+  source = "Vettori, Arthur: Finanzhaushalt und Wirtschaftsverwaltung Basels (1689–1798). Wirtschafts - und Lebensverhältnisse einer Gesellschaft zwischen Tradition und Umbruch, Basel; Frankfurt a. M. 1984, S. 211–215, 334–340. Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500). Basel, Liestal 1977, S. 173–174, 639–641. Bearbeitung: Nico Görlich / Moritz Twente",
+  rights = "CC BY-SA 4.0",
+  relation = list("m20418_1", "m20418_2")
 )

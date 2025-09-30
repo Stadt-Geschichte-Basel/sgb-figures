@@ -32,7 +32,7 @@ data39050c$Jahr_einzel <- as.numeric(substr(data39050c$Rechnungjahr, 1, 4))
 xlabels39050c <- data39050c[data39050c$Jahr_einzel %% 5 == 0, 1]
 xlabels39050c <- unlist(xlabels39050c$Rechnungjahr)
 
-data39050c <- data39050c[,-1]
+data39050c <- data39050c[, -1]
 
 # Spaltenreihenfolge: Weinungeld 1, Mühlenungeld 2, Gasthäuser 3, Zölle 4, Messen 5, Jahr 6
 # für Print: Messen 5, Gasthäuser 3, Wein 1, Mühlen 2, Zölle 4, Jahr 6
@@ -64,103 +64,114 @@ data39050d_longer <- data39050d %>%
 
 # Plot 39050c: Weinungeld, Mühlenungeld, Zölle ---------
 
-plot39050c <- ggplot(data39050c_longer,
-                     aes(x = Jahr_einzel, y = Betrag, fill = Typ)) +
-  
+plot39050c <- ggplot(
+  data39050c_longer,
+  aes(x = Jahr_einzel, y = Betrag, fill = Typ)
+) +
   geom_area(alpha = 1) +
-  
-  geom_vline(xintercept = vertical_lines,
-             color = "#777777", linewidth = 0.14,
-             linetype = "longdash") +
-  
-  scale_fill_manual(values = c("#7BAFDE", # von den Messen
-                               "#F7F056", # Weinungeld in Gasthäusern
-                               "#F7CB45", # Weinungeld
-                               "#90C987", # Mühlenungeld
-                               "#6195CF")) + # Zölle
-  
+  geom_vline(
+    xintercept = vertical_lines,
+    color = "#777777", linewidth = 0.14,
+    linetype = "longdash"
+  ) +
+  scale_fill_manual(values = c(
+    "#7BAFDE", # von den Messen
+    "#F7F056", # Weinungeld in Gasthäusern
+    "#F7CB45", # Weinungeld
+    "#90C987", # Mühlenungeld
+    "#6195CF"
+  )) + # Zölle
+
   scale_x_continuous(
     breaks = seq(1425, 1484, by = 5),
     labels = xlabels39050c,
     guide = guide_axis(angle = 45), # zentriert Labels passend zu ticks
     expand = expansion(add = 0.65)
   ) +
-  
   scale_y_continuous(
     limits = c(0, 25000),
     breaks = pretty_breaks(),
     expand = expansion(mult = c(0, 0)),
     labels = ch_numbers
   ) +
-  
   coord_cartesian(clip = "off") +
-  
   theme_sgb_basis() +
-  
-  theme(legend.position = "none",
-        legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
-        legend.key.width = unit(5, "mm"), # entspricht 4mm
-        axis.text.y = element_text(margin = margin(r = 5),
-                                   hjust = 1),
-        plot.margin = margin(0.5,0.5,0,0, "lines"))
+  theme(
+    legend.position = "none",
+    legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
+    legend.key.width = unit(5, "mm"), # entspricht 4mm
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 0.5, 0, 0, "lines")
+  )
 
 # Plot 39050d: Steuereinnahmen, Leibrenten, verk. Renten ---------
 
-plot39050d <- ggplot(data39050d_longer,
-                     aes(x = Jahr_einzel, y = Summe, fill = Typ)) +
-  
+plot39050d <- ggplot(
+  data39050d_longer,
+  aes(x = Jahr_einzel, y = Summe, fill = Typ)
+) +
   geom_bar(stat = "identity", position = "stack") +
-  
-  geom_vline(xintercept = vertical_lines,
-             color = "#777777", linewidth = 0.14,
-             linetype = "longdash") +
-  
-  scale_fill_manual(name = "1424-1484",
-                    values = c("#777777", # Steuereinnahmen
-                               "#AE76A3", # Leibrenten
-                               "#D1BBD7")) + # verkäufliche Renten
-  
+  geom_vline(
+    xintercept = vertical_lines,
+    color = "#777777", linewidth = 0.14,
+    linetype = "longdash"
+  ) +
+  scale_fill_manual(
+    name = "1424-1484",
+    values = c(
+      "#777777", # Steuereinnahmen
+      "#AE76A3", # Leibrenten
+      "#D1BBD7"
+    )
+  ) + # verkäufliche Renten
+
   scale_x_continuous(
     breaks = seq(1425, 1484, by = 5),
     labels = xlabels39050d,
     guide = guide_axis(angle = 45),
     expand = expansion(add = 0.2)
   ) +
-
   scale_y_continuous(
     limits = c(0, 40000),
     breaks = pretty_breaks(),
     expand = expansion(mult = c(0, 0)),
     labels = ch_numbers
   ) +
-  
   coord_cartesian(clip = "off") +
-  
   theme_sgb_basis() +
-  
-  theme(plot.margin = margin(0.5,0.5,0,0, "lines"),
-        legend.position = "none",
-        axis.text.x = element_blank(),
-        axis.text.y = element_text(margin = margin(r = 5),
-                                   hjust = 1),
-        axis.ticks.x = element_blank(),
-        legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
-        legend.key.width = unit(5, "mm"), # entspricht 4mm
-        legend.title = element_text(size = 6.5, color = "black", hjust = 0)
+  theme(
+    plot.margin = margin(0.5, 0.5, 0, 0, "lines"),
+    legend.position = "none",
+    axis.text.x = element_blank(),
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    axis.ticks.x = element_blank(),
+    legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
+    legend.key.width = unit(5, "mm"), # entspricht 4mm
+    legend.title = element_text(size = 6.5, color = "black", hjust = 0)
   )
 
 # Combine Plots --------------
 
 ## Plot 39050c: get legend
-plot39050c_with_legend <- plot39050c + theme(legend.position = "right",
-                                             legend.justification = c("left", "bottom"))
+plot39050c_with_legend <- plot39050c + theme(
+  legend.position = "right",
+  legend.justification = c("left", "bottom")
+)
 
 legende39050c <- get_legend(plot39050c_with_legend) %>%
   as_ggplot()
 
 ## Plot 39050d: get legend
-plot39050d_with_legend <- plot39050d + theme(legend.position = "right",
-                                             legend.justification = c("left", "bottom"))
+plot39050d_with_legend <- plot39050d + theme(
+  legend.position = "right",
+  legend.justification = c("left", "bottom")
+)
 
 legende39050d <- get_legend(plot39050d_with_legend) %>%
   as_ggplot()
@@ -182,4 +193,5 @@ write_info_page(
 # Export ---------------------
 
 export_plot(plot39050cd, 3, 205, 139,
-            plot_suffix = 6)
+  plot_suffix = 6
+)

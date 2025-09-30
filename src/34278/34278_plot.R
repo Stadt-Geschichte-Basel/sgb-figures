@@ -20,9 +20,10 @@ source(here("src", "34278", "34278_clean.R"))
 # Transform Data -------------
 
 data34278_longer <- pivot_longer(data34278,
-                                 cols = 2:25,
-                                 names_to = "Monat",
-                                 values_to = "Bewirtschaftung")
+  cols = 2:25,
+  names_to = "Monat",
+  values_to = "Bewirtschaftung"
+)
 
 # change month names to numbers
 data34278_longer$Monat[data34278_longer$Monat == "Januar"] <- 1
@@ -52,46 +53,44 @@ data34278_longer$Monat[data34278_longer$Monat == "Dezember15"] <- 12.5
 
 data34278_longer$Bewirtschaftung <- as.factor(data34278_longer$Bewirtschaftung)
 data34278_longer$Monat <- factor(data34278_longer$Monat,
-                                 levels = as.character(seq(1, 12.5, by = 0.5)))
+  levels = as.character(seq(1, 12.5, by = 0.5))
+)
 
 # vertikale Linien zur besseren Ablesbarkeit
 vertical_lines <- seq(1, 12, 1)
 
-hjust_value = 2
+hjust_value <- 2
 
 # Plot -----------------------
 
-plot34278 <- ggplot(data34278_longer, aes(x = as.numeric(as.character(Monat)) -0.25, y = Feldtyp, fill = Bewirtschaftung)) +
-  
+plot34278 <- ggplot(data34278_longer, aes(x = as.numeric(as.character(Monat)) - 0.25, y = Feldtyp, fill = Bewirtschaftung)) +
   geom_tile() +
-  
-  geom_vline(xintercept = vertical_lines + 0.5,
-             color = "#777777", linewidth = 0.14,
-             linetype = "longdash") +
-  
+  geom_vline(
+    xintercept = vertical_lines + 0.5,
+    color = "#777777", linewidth = 0.14,
+    linetype = "longdash"
+  ) +
   scale_fill_manual(values = c("#CAE0AB", "#D1BBD7", "#F4A736", "#F7CB45")) +
-  
   scale_x_continuous(
     breaks = c(seq(1.25, 9.25, by = 1), seq(10.5, 12.5, by = 1)),
     labels = as.character(1:12),
     expand = expansion(mult = c(0, 0))
   ) +
-
   scale_y_discrete(
     expand = expansion(mult = c(0, 0))
   ) +
-  
   coord_cartesian(clip = "off") +
-  
   theme_sgb_basis() +
-  theme(legend.position = "none",
-        axis.ticks.x = element_blank(),
-        axis.ticks.y = element_blank(),
-        axis.text.x = element_text(hjust = hjust_value),
-        axis.text.y = element_text(margin = margin(r = 5)),
-        plot.margin = margin(0.05,0,0,0.5, "lines"),
-        legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
-        legend.key.width = unit(5, "mm")) # entspricht 4mm
+  theme(
+    legend.position = "none",
+    axis.ticks.x = element_blank(),
+    axis.ticks.y = element_blank(),
+    axis.text.x = element_text(hjust = hjust_value),
+    axis.text.y = element_text(margin = margin(r = 5)),
+    plot.margin = margin(0.05, 0, 0, 0.5, "lines"),
+    legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
+    legend.key.width = unit(5, "mm")
+  ) # entspricht 4mm
 
 # Write Info Page ------------
 
@@ -105,5 +104,6 @@ write_info_page(
 # Export ---------------------
 
 export_plot(plot34278, 2, 120, 35.75, 23, 13,
-            plot_suffix = 1,
-            legend_suffix = 2)
+  plot_suffix = 1,
+  legend_suffix = 2
+)

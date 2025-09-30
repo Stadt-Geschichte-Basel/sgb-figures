@@ -39,47 +39,46 @@ data15429_longer$Konfessionen <- factor(
     "Katholik:innen inkl. Christkatholik:innen (Ausland)",
     "Katholik:innen inkl. Christkatholik:innen (Inland)",
     "Jüd:innen (Inland und Ausland)",
-    "Andere, ohne Religionszugehörigkeit und ohne Angabe (Inland und Ausland)")
+    "Andere, ohne Religionszugehörigkeit und ohne Angabe (Inland und Ausland)"
   )
+)
 
 # Plot -----------------------
 
 
 plot15429 <- ggplot(data15429_longer, aes(x = Jahr, y = Anzahl, fill = Konfessionen)) +
-  
   geom_bar(stat = "identity", position = "fill") +
-  
-  scale_fill_manual(values = c("Protestant:innen (Ausland)" = "#7BAFDE",
-                               "Protestant:innen (Inland)" = "#6195CF",
-                               "Katholik:innen inkl. Christkatholik:innen (Ausland)" =  "#F7F056",
-                               "Katholik:innen inkl. Christkatholik:innen (Inland)" =  "#F7CB45",
-                               "Jüd:innen (Inland und Ausland)" = "#90C987",
-                               "Andere, ohne Religionszugehörigkeit und ohne Angabe (Inland und Ausland)" =  "#777777")) +
-  
+  scale_fill_manual(values = c(
+    "Protestant:innen (Ausland)" = "#7BAFDE",
+    "Protestant:innen (Inland)" = "#6195CF",
+    "Katholik:innen inkl. Christkatholik:innen (Ausland)" = "#F7F056",
+    "Katholik:innen inkl. Christkatholik:innen (Inland)" = "#F7CB45",
+    "Jüd:innen (Inland und Ausland)" = "#90C987",
+    "Andere, ohne Religionszugehörigkeit und ohne Angabe (Inland und Ausland)" = "#777777"
+  )) +
   scale_x_continuous(
     breaks = data15429$Jahr,
     labels = c("1910", "1920", "1930", "1941", "1950", "1960", "1970"),
     guide = guide_axis(angle = 0),
     expand = expansion(mult = c(0, 0))
   ) +
-  
   scale_y_continuous(
     breaks = breaks_pretty(),
     labels = label_percent(),
     expand = expansion(mult = c(0, 0))
   ) +
-
   coord_cartesian(clip = "off") +
-  
   theme_sgb_basis() +
   theme(
     legend.position = "none",
     legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
     legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
     axis.ticks.x = element_blank(),
-    axis.text.y = element_text(margin = margin(r = 5),
-                               hjust = 1),
-    plot.margin = margin(0.5,0.1,0,0, "lines")
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 0.1, 0, 0, "lines")
   )
 
 # Write Info Page ------------
@@ -94,5 +93,6 @@ write_info_page(
 # Export ---------------------
 
 export_plot(plot15429, 7, 120, 63, 92, 16,
-            plot_suffix = 1,
-            legend_suffix = 2)
+  plot_suffix = 1,
+  legend_suffix = 2
+)
