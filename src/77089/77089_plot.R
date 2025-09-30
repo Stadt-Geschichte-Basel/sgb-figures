@@ -22,7 +22,7 @@ source(here("src", "77089", "77089_clean.R"))
 
 data77089_personenwagen <- data77089[, -3:-4]
 
-data77089_motorräder_inkl_mofas <- data77089 %>%
+data77089_motorrad_inkl_mofa <- data77089 %>%
   select(Jahr, "Motorräder inkl. Mofas")
 
 data77089_velo <- data77089 %>%
@@ -37,7 +37,7 @@ plot77089 <- ggplot() +
     linewidth = 0.561
   ) +
   geom_line(
-    data = data77089_motorräder_inkl_mofas, aes(
+    data = data77089_motorrad_inkl_mofa, aes(
       x = Jahr, y = `Motorräder inkl. Mofas`,
       color = "Motorräder inkl. Mofas"
     ),
