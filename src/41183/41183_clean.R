@@ -54,7 +54,7 @@ meta41183 <- annotate(
   ),
   date = "1443/1500",
   coverage = "Mittelalter",
-  source = "Simon-Muscheid, Katharina: Gewalt und Ehre im spätmittelalterlichen Handwerk am Beispiel Basels, in: Zeitschrift für historische Forschung 18, 1991, S. 1–31, hier S. 30 f. Bearbeitung: Nico Görlich / Moritz Twente",
+  source = "Holzwart-Schäfer, Iris: Getreideanbau im Elsass, Versorgungslage Strassburgs und Basels und der Handel mit elsässischem Korn (14.–16. Jahrhundert), Tübingen 2000. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
   relation = list("m41183_1", "m41183_2")
 )
