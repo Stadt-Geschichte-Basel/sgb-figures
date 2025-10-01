@@ -12,7 +12,7 @@ This repository contains code and data for creating plots used in the [Stadt.Ges
 
 ## Repository Structure
 
-The structure of this repository follows the [Advanced Structure for Data Analysis](https://the-turing-way.netlify.app/project-design/project-repo/project-repo-advanced.html) from _The Turing Way_ and is organized as follows:
+The structure of this repository is based on our [Open Research Data Template](https://maehr.github.io/open-research-data-template/), follows the [Advanced Structure for Data Analysis](https://the-turing-way.netlify.app/project-design/project-repo/project-repo-advanced.html) from _The Turing Way_ and is organized as follows:
 
 - `build/`: scripts and notebooks used to build the data
 - `data/`: data files
@@ -28,62 +28,13 @@ One task of the Stadt.Geschichte.Basel RDM team is to provide visualisations for
 
 To support open research with FAIR data, the RDM team developed a [research data platform](https://forschung.stadtgeschichtebasel.ch) to ensure open, long-term access to sources and research data regarding the history of Basel. The platform facilitates access to the data behind the publication, with metadata annotation following the [Manual for Creating Non-Discriminatory Metadata for Historical Sources and Research Data](https://maehr.github.io/diskriminierungsfreie-metadaten/) developed by Stadt.Geschichte.Basel.
 
-### Data Model
-
-The repository uses a structured approach to manage its data. Each dataset is associated with a specific plot and is accompanied by a detailed metadata file. Here's a breakdown of the data model based on the files in the repository:
-
-- **Data Storage**: The data is stored in CSV format. Each plot or figure has its own corresponding data file. These files are organized into directories based on the volume and figure number from the "Stadt.Geschichte.Basel" book series. For example, `data/clean/Band2/34278/34278_Data.csv`.
-
-- **Metadata**: Each CSV file is paired with a JSON metadata file that conforms to the [W3C CSV on the Web (CSVW)](https://www.w3.org/ns/csvw) standard. This file describes the schema of the CSV file, including column names, data types, and descriptions, as well as providing rich contextual metadata about the dataset.
-
-- **Example Schema**: Let's look at the schema for `39017_Data.csv`, which is about Ludwig Kilchmann's annuity business. The data contains the following columns:
-  - `Jahr`: The year (numeric).
-  - `Summe Ablösungen`: The total sum of redeemed annuities in that year, in Gulden (numeric).
-  - `Summe Neueinträge`: The total sum of new annuities in that year, in Gulden (numeric).
-  - `Investierte Summe netto`: The net invested sum in annuities for that year, in Gulden (numeric).
-
-This structured approach with CSV and CSVW files makes the data FAIR (Findable, Accessible, Interoperable, and Reusable).
-
 ### Plots
 
 This GitHub repository provides the source code used to create [all plots](/docs/plots.qmd) used in the project. In addition to the data already made available on the research data platform, the source code published here makes the figures even more customisable.
 
 Following the steps below, users can build plots from the book series by themselves. The workflow produces the plots, as published, as `PDF` files in `CMYK` colour mode using the dimensions from the printed volumes. For technical reasons, plots and legends are written to separate PDF files. The plots are not shipped with the project's signature font family, but are generated with a generic system font due to copyright. Users can easily customise the plots' dimensions, colours, labels, etc. by changing the parameters in the corresponding source code.
 
-The (mostly numerical) data behind the plots, also available in interactive tables on the research data platform, is additionally stored in this repository in `CSV` format. For each dataset, a `JSON` file is generated, providing metadata according to the [W3C standard for tabular data and metadata on the web](https://w3c.github.io/csvw/syntax/).
-
-```{mermaid}
-graph TD
-    subgraph User Interaction
-        A[User runs 'npm run plot <ID>']
-    end
-
-    subgraph Build Process
-        B{plot_pipeline.R}
-        C{Finds R script in 'src/<ID>/'}
-        D[Executes '<ID>_plot.R']
-    end
-
-    subgraph Data and Source
-        E[Reads data from 'data/clean/<Band>/<ID>/']
-        F[Generates plot using ggplot2 and other R packages]
-    end
-
-    subgraph Output
-        G[Saves plot as PDF in 'output/']
-    end
-
-    A --> B;
-    B --> C;
-    C --> D;
-    D --> E;
-    D --> F;
-    F --> G;
-```
-
-### Software
-
-All plots are produced using [R](https://www.r-project.org/). The R environment including all necessary packages can be restored with the `renv.lock` file. In addition to [ggplot2](https://ggplot2.tidyverse.org/) and other parts of the [tidyverse](https://www.tidyverse.org/), this project uses several packages for data processing and visualisation, including [here](https://here.r-lib.org/index.html) and [renv](https://rstudio.github.io/renv/index.html) for creating a reproducible environment as well as [csvwr](https://cloud.r-project.org/web/packages/csvwr/index.html) for writing metadata files.
+The (mostly numerical) data behind the plots, available in interactive tables on the research data platform, is additionally stored in this repository in `CSV` format. An integral part of the [visualization workflow](/docs/workflow.qmd), a `JSON` file is generated for each plot, using the Stadt.Geschichte.Basel data model to provide metadata according to the [W3C standard for tabular data and metadata on the web](https://w3c.github.io/csvw/syntax/).
 
 ## Installation
 
@@ -93,7 +44,7 @@ Install Node.js, Quarto and R. Run the following commands in the root directory 
 npm install
 ```
 
-Set up the R environment using renv:
+Set up the R environment using `renv`:
 
 ```bash
 npm run setup
@@ -143,9 +94,15 @@ Format all R scripts using `styler` and `lintr`:
 npm run format:r
 ```
 
+Format all other files using `prettier`:
+
+```bash
+npm run format
+```
+
 ## Usage
 
-These data are openly available to everyone and can be used for any research or educational purpose. If you use this data in your research, please cite as specified in [CITATION.cff](CITATION.cff). <!-- The following citation formats are also available through _Zenodo_: -->
+These data are openly available to everyone and can be used for any research or educational purpose. For working with the generated plots and data in your own research, we recommend referring to the [Research Data Platform](https://forschung.stadtgeschichtebasel.ch) for full metadata and production-ready files. If you use the code and data stored in this repository in your research, please cite as specified in [CITATION.cff](CITATION.cff). <!-- The following citation formats are also available through _Zenodo_: -->
 
 <!--
 - [BibTeX](https://zenodo.org/record/ZENODO_RECORD/export/hx)
@@ -180,9 +137,9 @@ This project is maintained by [@Stadt-Geschichte-Basel](https://github.com/stadt
 
 ## Roadmap
 
-- [] Archive repository on Zenodo
-- [] Add DOIs
-- [] Add alt-text to plots
+- [ ] Archive repository on Zenodo
+- [ ] Add DOIs
+- [ ] Add alt-text to plots
 
 ## Contributing
 
