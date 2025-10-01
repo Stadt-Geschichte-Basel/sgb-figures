@@ -10,6 +10,10 @@ format:
     fig-width: 8
     title-block-categories: false
 fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/86088'
+    text: abb86088 Source Code
+    icon: github
 ---
 
 ```{r setup, include=FALSE}
@@ -200,7 +204,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Religionszugehörigkeiten in Basel-Stadt, 1950–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb86088.html#m86088_3>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-01 00:29:55"
+    "2025-10-01 12:42:32"
   ),
   stringsAsFactors = FALSE
 )

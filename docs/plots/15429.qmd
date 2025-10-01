@@ -10,6 +10,10 @@ format:
     fig-width: 8
     title-block-categories: false
 fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/15429'
+    text: abb15429 Source Code
+    icon: github
 ---
 
 ```{r setup, include=FALSE}
@@ -188,7 +192,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Wohnbevölkerung im Kanton Basel-Stadt nach Religionszugehörigkeit und Herkunft, 1910–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb15429.html#m15429_3>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-01 00:29:49"
+    "2025-10-01 12:42:27"
   ),
   stringsAsFactors = FALSE
 )

@@ -10,6 +10,10 @@ format:
     fig-width: 8
     title-block-categories: false
 fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/26060'
+    text: abb26060 Source Code
+    icon: github
 ---
 
 ```{r setup, include=FALSE}
@@ -192,7 +196,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Beschäftigte nach Wirtschaftszweigen im Kanton Basel-Stadt, 1929–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26060.html#m26060_3>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-01 00:29:51"
+    "2025-10-01 12:42:29"
   ),
   stringsAsFactors = FALSE
 )

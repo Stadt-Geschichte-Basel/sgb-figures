@@ -19,6 +19,14 @@ listing:
       plotid: "ID"
       title: "Figure Title"
       volume: "is Part of"
+other-links:
+  - text: Research Data Platform
+    icon: house
+    href: 'https://forschung.stadtgeschichtebasel.ch/'
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/'
+    text: Source Code for Plots
+    icon: github
 ---
 
 ```{r setup}

@@ -10,6 +10,10 @@ format:
     fig-width: 8
     title-block-categories: false
 fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/92492'
+    text: abb92492 Source Code
+    icon: github
 ---
 
 ```{r setup, include=FALSE}
@@ -182,7 +186,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92492.html#m92492_3>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-01 00:29:57"
+    "2025-10-01 12:42:34"
   ),
   stringsAsFactors = FALSE
 )

@@ -10,6 +10,10 @@ format:
     fig-width: 8
     title-block-categories: false
 fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/91203'
+    text: abb91203 Source Code
+    icon: github
 ---
 
 ```{r setup, include=FALSE}
@@ -162,7 +166,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Stimmberechtigte und Gesamtbevölkerung, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91203.html#m91203_3>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-01 00:29:56"
+    "2025-10-01 12:42:33"
   ),
   stringsAsFactors = FALSE
 )

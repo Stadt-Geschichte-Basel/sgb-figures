@@ -10,6 +10,10 @@ format:
     fig-width: 8
     title-block-categories: false
 fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/39050'
+    text: abb39050 Source Code
+    icon: github
 ---
 
 ```{r setup, include=FALSE}
@@ -284,7 +288,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Einnahmen der Stadt Basel ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_9>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-01 00:29:52"
+    "2025-10-01 12:42:30"
   ),
   stringsAsFactors = FALSE
 )
@@ -370,7 +374,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Einnahmen der Stadt Basel ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_10>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-01 00:29:52"
+    "2025-10-01 12:42:30"
   ),
   stringsAsFactors = FALSE
 )

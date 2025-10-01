@@ -10,6 +10,10 @@ format:
     fig-width: 8
     title-block-categories: false
 fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/92792'
+    text: abb92792 Source Code
+    icon: github
 ---
 
 ```{r setup, include=FALSE}
@@ -156,7 +160,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Privatbesitz an Boden und Wohnraum in Basel, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92792.html#m92792_3>, letzte Aktualisierung: 01.10.2025.",
     "CC BY-SA 4.0",
     "[https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/)",
-    "2025-10-01 00:29:57"
+    "2025-10-01 12:42:34"
   ),
   stringsAsFactors = FALSE
 )

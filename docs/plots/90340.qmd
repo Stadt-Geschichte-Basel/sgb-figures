@@ -10,6 +10,10 @@ format:
     fig-width: 8
     title-block-categories: false
 fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/90340'
+    text: abb90340 Source Code
+    icon: github
 ---
 
 ```{r setup, include=FALSE}
@@ -170,7 +174,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Prozentuales Bevölkerungswachstum in Gross- und Kleinbasel, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90340.html#m90340_3>, letzte Aktualisierung: 01.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-01 00:29:55"
+    "2025-10-01 12:42:33"
   ),
   stringsAsFactors = FALSE
 )

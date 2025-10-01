@@ -10,6 +10,10 @@ format:
     fig-width: 8
     title-block-categories: false
 fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/20418'
+    text: abb20418 Source Code
+    icon: github
 ---
 
 ```{r setup, include=FALSE}
@@ -187,7 +191,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Exportabgaben und Konsumsteuern, 1690–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb20418.html#m20418_3>, letzte Aktualisierung: 01.10.2025.",
     "CC BY-SA 4.0",
     "[https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/)",
-    "2025-10-01 00:29:50"
+    "2025-10-01 12:42:27"
   ),
   stringsAsFactors = FALSE
 )
