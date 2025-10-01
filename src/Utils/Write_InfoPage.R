@@ -106,7 +106,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
 
     ## Parse schema$modified and reformat for output
     date_modified <- schema$modified[[1]] |>
-      as.POSIXct(format = "%Y-%m-%dT%H:%M:%S") |>
+      as.POSIXct(format = "%Y-%m-%dT%H:%M:%S%z") |>
       format("%Y-%m-%d %H:%M:%S")
 
     # --- Create a list of metadata fields to appear in the metadata table ---
