@@ -58,7 +58,7 @@ plot81757 <- ggplot(data81757_long, aes(
     limits = c(0, 0.6001),
     breaks = pretty_breaks(),
     expand = expansion(mult = c(0, 0)),
-    labels = percent_format(),
+    labels = percent_format()
   ) +
   scale_color_manual(values = c(
     "Kanton" = "#000000",

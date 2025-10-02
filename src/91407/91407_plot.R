@@ -61,7 +61,7 @@ plot91407 <- ggplot(
   scale_y_continuous(
     limits = c(0, 100),
     breaks = seq(0, 100, by = 20),
-    expand = expansion(mult = c(0, 0)),
+    expand = expansion(mult = c(0, 0))
   ) +
   coord_cartesian(clip = "off") +
   theme_sgb_basis() +

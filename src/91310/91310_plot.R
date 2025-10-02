@@ -72,7 +72,7 @@ plot91310 <- ggplot(
   ) +
   scale_y_continuous(
     breaks = pretty_breaks(),
-    expand = expansion(mult = c(0, 0)),
+    expand = expansion(mult = c(0, 0))
   ) +
   coord_cartesian(clip = "off") +
   theme_sgb_basis() +
