@@ -29,6 +29,8 @@ website:
         href: docs/plots.qmd
       - text: Workflow
         href: docs/workflow.qmd
+      - text: Design
+        href: docs/design/index.qmd
       - text: Research Data Platform
         href: https://forschung.stadtgeschichtebasel.ch
       - text: RDM Documentation
