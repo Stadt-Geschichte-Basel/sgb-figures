@@ -1,7 +1,7 @@
 ---
 title: "Vertretung Basel-Stadt im Ständerat, 1963–2023"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-01
+date-modified: 2025-10-02
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb80238_10"
@@ -176,10 +176,10 @@ df <- data.frame(
     "[data/clean/Band8/80238/80238_12_Data.csv](/data/clean/Band8/80238/80238_12_Data.csv)",
     "Kanton Basel-Stadt: nationale und kantonale Wahlen seit 1919, Bundesamt für Statistik, je-d-17.02.01_12BS, online: https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/tabellen.assetdetail.14836245.html. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/80238/80238_12_Data.csv-metadata.json](/data/clean/Band8/80238/80238_12_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Vertretung Basel-Stadt im Ständerat, 1963–2023. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_12>, letzte Aktualisierung: 01.10.2025.",
+    "Stadt.Geschichte.Basel: Vertretung Basel-Stadt im Ständerat, 1963–2023. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_12>, letzte Aktualisierung: 02.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-01 12:42:31"
+    "2025-10-02 17:35:57"
   ),
   stringsAsFactors = FALSE
 )

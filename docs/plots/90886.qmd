@@ -1,7 +1,7 @@
 ---
 title: "Anteil der Erwerbstätigen in wichtigen Branchen, 1870 und 1910"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-01
+date-modified: 2025-10-02
 volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 vol_short: "Stadt.Geschichte.Basel 6"
 plotid: "abb90886"
@@ -196,10 +196,10 @@ df <- data.frame(
     "[data/clean/Band6/90886/90886_3_Data.csv](/data/clean/Band6/90886/90886_3_Data.csv)",
     "Polivka, Heinz: Basel und seine Wirtschaft. Eine Zeitreise durch 2000 Jahre, Lenzburg 2016, S. 206. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band6/90886/90886_3_Data.csv-metadata.json](/data/clean/Band6/90886/90886_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Anteil der Erwerbstätigen in wichtigen Branchen, 1870 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90886.html#m90886_3>, letzte Aktualisierung: 01.10.2025.",
+    "Stadt.Geschichte.Basel: Anteil der Erwerbstätigen in wichtigen Branchen, 1870 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90886.html#m90886_3>, letzte Aktualisierung: 02.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-01 12:42:33"
+    "2025-10-02 17:35:59"
   ),
   stringsAsFactors = FALSE
 )

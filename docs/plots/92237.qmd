@@ -1,7 +1,7 @@
 ---
 title: "Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Glarus, 1850 und 1910"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-01
+date-modified: 2025-10-02
 volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 vol_short: "Stadt.Geschichte.Basel 6"
 plotid: "abb92237"
@@ -167,10 +167,10 @@ df <- data.frame(
     "[data/clean/Band6/92237/92237_3_Data.csv](/data/clean/Band6/92237/92237_3_Data.csv)",
     "Bickel, Wilhelm: Bevölkerungsgeschichte und Bevölkerungspolitik der Schweiz seit dem Ausgang des Mittelalters, Zürich 1947, S. 135. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band6/92237/92237_3_Data.csv-metadata.json](/data/clean/Band6/92237/92237_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Glarus, 1850 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92237.html#m92237_3>, letzte Aktualisierung: 01.10.2025.",
+    "Stadt.Geschichte.Basel: Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Glarus, 1850 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92237.html#m92237_3>, letzte Aktualisierung: 02.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-01 12:42:34"
+    "2025-10-02 17:36:00"
   ),
   stringsAsFactors = FALSE
 )

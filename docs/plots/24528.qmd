@@ -1,7 +1,7 @@
 ---
 title: "Temperaturabweichungen in °C, 1444–2011"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-01
+date-modified: 2025-10-02
 volume: "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 (Stadt.Geschichte.Basel 4)."
 vol_short: "Stadt.Geschichte.Basel 4"
 plotid: "abb24528"
@@ -231,10 +231,10 @@ df <- data.frame(
     "[data/clean/Band4/24528/24528_3_Data.csv](/data/clean/Band4/24528/24528_3_Data.csv)",
     "Wetter, Oliver; Pfister, Christian: Spring–summer Temperatures Reconstructed for Northern Switzerland and Southwestern Germany from Winter Rye Harvest Dates, 1454–1970, in: Climate of the Past 7 (4), 2011, S. 1307–1326. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band4/24528/24528_3_Data.csv-metadata.json](/data/clean/Band4/24528/24528_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Temperaturabweichungen in °C, 1444–2011. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb24528.html#m24528_3>, letzte Aktualisierung: 01.10.2025.",
+    "Stadt.Geschichte.Basel: Temperaturabweichungen in °C, 1444–2011. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb24528.html#m24528_3>, letzte Aktualisierung: 02.10.2025.",
     "In Copyright",
     "[https://rightsstatements.org/vocab/InC-RUU/1.0/](https://rightsstatements.org/vocab/InC-RUU/1.0/)",
-    "2025-10-01 12:42:29"
+    "2025-10-02 17:35:54"
   ),
   stringsAsFactors = FALSE
 )

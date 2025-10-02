@@ -1,7 +1,7 @@
 ---
 title: "Privatbesitz an Boden und Wohnraum in Basel, 2021"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-01
+date-modified: 2025-10-02
 volume: "Baur, Esther; Gafner, Lina (Hg.): Stadträume. Offen und begrenzt, gestaltet und umkämpft. Basel 2025 (Stadt.Geschichte.Basel 9)."
 vol_short: "Stadt.Geschichte.Basel 9"
 plotid: "abb92792"
@@ -157,10 +157,10 @@ df <- data.frame(
     "[data/clean/Band9/92792/92792_3_Data.csv](/data/clean/Band9/92792/92792_3_Data.csv)",
     "https://reflekt.ch/recherchen/wem-gehoert-basel. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band9/92792/92792_3_Data.csv-metadata.json](/data/clean/Band9/92792/92792_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Privatbesitz an Boden und Wohnraum in Basel, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92792.html#m92792_3>, letzte Aktualisierung: 01.10.2025.",
+    "Stadt.Geschichte.Basel: Privatbesitz an Boden und Wohnraum in Basel, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92792.html#m92792_3>, letzte Aktualisierung: 02.10.2025.",
     "CC BY-SA 4.0",
     "[https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/)",
-    "2025-10-01 12:42:34"
+    "2025-10-02 17:36:00"
   ),
   stringsAsFactors = FALSE
 )
