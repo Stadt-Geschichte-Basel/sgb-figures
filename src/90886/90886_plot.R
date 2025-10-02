@@ -59,7 +59,7 @@ plot90886 <- ggplot(data = data90886_longer, aes(
   ) +
   scale_y_discrete(
     guide = guide_axis(),
-    expand = expansion(mult = c(0, 0)),
+    expand = expansion(mult = c(0, 0))
   ) +
   scale_fill_manual(
     values = c(

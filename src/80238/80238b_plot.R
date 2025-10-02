@@ -104,7 +104,7 @@ plot80238b <- ggplot(
     legend.key.width = unit(5, "mm"), # resultiert in 4 mm
     legend.key.height = unit(2.5, "mm"), # resultiert in 2 mm
     axis.text.y = element_text(margin = margin(r = 5)),
-    plot.margin = margin(0.5, 0.1, 0, 0.5, "lines"),
+    plot.margin = margin(0.5, 0.1, 0, 0.5, "lines")
   )
 
 # Write Info Page ------------
