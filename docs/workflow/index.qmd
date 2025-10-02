@@ -157,27 +157,23 @@ The first step of the workflow is processing the raw data and creating an annota
 %%| label: fig-cleaning
 %%| fig-cap: The first steps include processing the raw data to produce an annotated dataset.
 
-flowchart
-    subgraph Data Wrangling
+flowchart LR
         clean_script <--->|load data| rawdata([01313_Data_raw.xlsx])
         clean_script([01313_clean.R]) -->|clean data| data01313(data01313)
         clean_script -->|annotate<br>data| meta01313(meta01313)
         data01313 -->|export data| csv01313([01313_3_Data.csv])
         meta01313 -->|export<br>metadata| json01313([01313_3_Data.csv-metadata.json])
-    end
 
     style csv01313 fill:#ffe880
     style json01313 fill:#fff3e0
     style clean_script fill:#86bbd8,stroke:#86bbd8
     style data01313 fill:#c0dceb,stroke:#c0dceb
     style meta01313 fill:#c0dceb,stroke:#c0dceb
-
-
 ```
 
 ### Plotting
 
-After the dataset is processed, it can be used for building a plot (@fig-plotting). This is done by executing the script in `src/01313/01313_plot.R`. This sources the cleaning script first, making sure the plot is being drawn using up-to-date files. The data is loaded into R as `data01313` again. If necessary, further transformations are applied (e.g. creating custom labels, aggregating columns, manipulating data for better readability etc.). The plot object `plot01313` is created using `ggplot2`. For technical reasons, plot and legend must be exported to separate files[^2]. Therefore, the `separate_legend` object is created in R using ggpubr [@kassambaraGgpubrGgplot2Based2025]. Both objects are then saved as `pdf` files `01313_1_Plot.pdf` and `01313_2_Legende.pdf` to `output/Band<n>/01313.`
+After the dataset is processed, it can be used for building a plot (@fig-plotting). This is done by executing the script in `src/01313/01313_plot.R`. This sources the cleaning script first, making sure the plot is being drawn using up-to-date files. The data is loaded into R as `data01313` again. If necessary, further transformations are applied (e.g. creating custom labels, aggregating columns, manipulating data for better readability etc.). The plot object `plot01313` is created using `ggplot2`. For technical reasons, plot and legend must be exported to separate files[^2]. Therefore, the `separate_legend` object is created in R using [ggpubr](https://rpkgs.datanovia.com/ggpubr/) [@kassambaraGgpubrGgplot2Based2025]. Both objects are then saved as `pdf` files `01313_1_Plot.pdf` and `01313_2_Legende.pdf` to `output/Band<n>/01313.`
 
 [^2]: For technical reasons, the actual plot and the corresponding legend are often stored in separate PDF files during the book production process. These two files are represented as one object programmatically (`plot01313`) and are collectively referred to as one object in this context.
 
@@ -187,9 +183,7 @@ For the print edition of Stadt.Geschichte.Basel, light post-processing was done 
 %%| label: fig-plotting
 %%| fig-cap: The plot is built with the processed dataset, producing PDF files and preview documentation.
 
-flowchart
-
-    subgraph Plot Creation
+flowchart LR
         plot_script([01313_plot.R]) <--> |source to<br>load data| clean_script([01313_clean.R])
         plot_script --> |transform data| data01313(data01313)
         data01313 -->|create plot<br>object| plot01313(plot01313)
@@ -197,7 +191,6 @@ flowchart
         plot01313 --->|export plot| export01313([01313_1_Plot.pdf])
         legend01313 -->|export legend| exportlegend([01313_2_Legende.pdf])
         plot_script ----->|build preview| infopage([01313.qmd])
-    end
 
 style clean_script fill:#86bbd8,stroke:#86bbd8
 style plot_script fill:#86bbd8,stroke:#86bbd8
