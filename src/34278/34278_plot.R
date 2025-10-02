@@ -89,8 +89,8 @@ plot34278 <- ggplot(data34278_longer, aes(x = as.numeric(as.character(Monat)) - 
     axis.text.y = element_text(margin = margin(r = 5)),
     plot.margin = margin(0.05, 0, 0, 0.5, "lines"),
     legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
-    legend.key.width = unit(5, "mm")
-  ) # entspricht 4mm
+    legend.key.width = unit(5, "mm") # entspricht 4mm
+  )
 
 # Write Info Page ------------
 
