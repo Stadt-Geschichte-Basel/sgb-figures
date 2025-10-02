@@ -94,13 +94,13 @@ sgb-figures/
 ├── data
 │   └── clean/
 │       └── <volID>/
-│           └── <mediaID>
+│           └── <media_id>
 |               └── *.csv    <- dataset file
 |               └── *.json   <- metadata file
 ├── data
 │   └── raw/
 │       └── <volID>/
-│           └── <mediaID>/
+│           └── <media_id>/
 |               └── *.xlsx   <- raw data file
 ├── docs
 │   └── design/
@@ -112,11 +112,11 @@ sgb-figures/
 │       └── index.qmd        <- workflow and data model description
 ├── output
 │   └── <volID>/
-│       └── <mediaID>/
+│       └── <media_id>/
 │           └── *.pdf        <- built plot files
 ├── renv                     <- R package library
 ├── src                      
-│   └── <mediaID>/           <- source files
+│   └── <media_id>/           <- source files
 ├── _quarto.yml              <- Quarto project settings 
 ├── .gitignore               <- files excluded from git version control
 ├── .prettierrc              <- linting settings
