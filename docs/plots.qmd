@@ -22,7 +22,7 @@ listing:
       volume: "is Part of"
 other-links:
   - text: Research Data Platform
-    icon: house
+    icon: archive
     href: 'https://forschung.stadtgeschichtebasel.ch/'
 code-links:
   - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/'
@@ -44,7 +44,7 @@ The numerical data behind the plots is also available in the form of `csv` datas
 
 ## Figure and Data Summaries
 
-The overview pages offered below are intended as summary only and show previews for plots and selected metadata on the datasets (in German). These visualizations might differ from the version in the book series in terms of look and feel, especially regarding the figures' dimensions. Each preview is generated from the metadata available in the `json` files as part of the [plot workflow](/docs/workflow.qmd).
+The overview pages offered below are intended as summary only and show previews for plots and selected metadata on the datasets (in German). These visualizations might differ from the version in the book series in terms of [look and feel](/docs/design/index.qmd), especially regarding the figures' dimensions. Each preview is generated from the metadata available in the `json` files as part of the [plot workflow](/docs/workflow/index.qmd).
 
 ::: {#plot-list}
 :::

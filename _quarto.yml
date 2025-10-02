@@ -28,13 +28,15 @@ website:
       - text: Figures
         href: docs/plots.qmd
       - text: Workflow
-        href: docs/workflow.qmd
+        href: docs/workflow/index.qmd
       - text: Design
         href: docs/design/index.qmd
       - text: Research Data Platform
         href: https://forschung.stadtgeschichtebasel.ch
-      - text: RDM Documentation
+        target: _blank
+      - text: Stadt.Geschichte.Basel RDM
         href: https://stadt-geschichte-basel.github.io
+        target: _blank
 
   sidebar:
     contents:
