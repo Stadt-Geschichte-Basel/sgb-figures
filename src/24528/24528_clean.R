@@ -54,5 +54,5 @@ meta24528 <- annotate(
   coverage = list("Frühe Neuzeit", "19. Jahrhundert", "20. Jahrhundert", "21. Jahrhundert"),
   source = "Wetter, Oliver; Pfister, Christian: Spring–summer Temperatures Reconstructed for Northern Switzerland and Southwestern Germany from Winter Rye Harvest Dates, 1454–1970, in: Climate of the Past 7 (4), 2011, S. 1307–1326. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "In Copyright",
-  relation = list("m24528_1", "m24528_2")
+  relation = c("m24528_1", "m24528_2")
 )

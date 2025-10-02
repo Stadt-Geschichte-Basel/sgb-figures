@@ -50,5 +50,5 @@ meta88454 <- annotate(
   coverage = "20. Jahrhundert",
   source = "Statistisches Jahrbuch des Kantons Basel-Stadt. Daten zu Museumseintritten vor 1992 nach StaBS ED-REG 37a 7-1 (2). Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m88454_1", "m88454_2")
+  relation = c("m88454_1", "m88454_2")
 )

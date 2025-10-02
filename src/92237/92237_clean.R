@@ -47,5 +47,5 @@ meta92237 <- annotate(
   coverage = "19. Jahrhundert",
   source = "Bickel, Wilhelm: Bevölkerungsgeschichte und Bevölkerungspolitik der Schweiz seit dem Ausgang des Mittelalters, Zürich 1947, S. 135. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m92237_1", "m92237_2")
+  relation = c("m92237_1", "m92237_2")
 )

@@ -53,5 +53,5 @@ meta21433 <- annotate(
   coverage = "20. Jahrhundert",
   source = "Statistisches Jahrbuch des Kantons Basel-Stadt 1970, S. 21. Daten für das Jahr 1912 aus dem Statistischen Jahrbuch des Kantons Basel Stadt 1921, S. 34. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m21433_1", "m21433_2")
+  relation = c("m21433_1", "m21433_2")
 )

@@ -78,10 +78,10 @@
 				"Mangold, Fritz: Basels Staatseinahmen und Steuerverteilung 1888–1903, tabellarisch dargestellt, Basel 1905, Tab. XIX. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m90940_1"], ["m90940_2"]],
+			"relation": ["m90940_1", "m90940_2"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-10-02T17:35:59+0200"],
+			"modified": ["2025-10-02T18:37:15+0200"],
 			"bibliographicCitation": [
 				"Stadt.Geschichte.Basel: Soziale Klassen in Basel, 1888–1904. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90940.html#m90940_3>, letzte Aktualisierung: 02.10.2025."
 			]

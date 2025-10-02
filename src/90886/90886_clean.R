@@ -59,5 +59,5 @@ meta90886 <- annotate(
   coverage = "19. Jahrhundert",
   source = "Polivka, Heinz: Basel und seine Wirtschaft. Eine Zeitreise durch 2000 Jahre, Lenzburg 2016, S. 206. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m90886_1", "m90886_2")
+  relation = c("m90886_1", "m90886_2")
 )

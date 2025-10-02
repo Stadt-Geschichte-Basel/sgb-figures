@@ -52,5 +52,5 @@ meta26375 <- annotate(
   coverage = "20. Jahrhundert",
   source = "Böhner, Martin: Die Eidgenössische Betriebszählung 1965 aus baslerischer Sicht, Basel 1968, S. 66f; Eidgenössisches Statistisches Amt (Hg.): Beschäftigte in den Gemeinden: nach Wirtschaftsfaktoren, Bern 1968 S. 59. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m26375_1", "m26375_2")
+  relation = c("m26375_1", "m26375_2")
 )

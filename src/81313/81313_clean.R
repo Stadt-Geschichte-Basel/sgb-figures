@@ -61,5 +61,5 @@ meta81313 <- annotate(
   coverage = "20. Jahrhundert",
   source = "https://statistik.bs.ch/apps/jahrbuch. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m81313_1", "m81313_2")
+  relation = c("m81313_1", "m81313_2")
 )

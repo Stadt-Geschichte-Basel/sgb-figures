@@ -71,10 +71,10 @@
 				"https://statistik.bs.ch/apps/jahrbuch; https://statistik.bs.ch/files/webtabellen/t11-1-01.xlsx. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m77089_1"], ["m77089_2"]],
+			"relation": ["m77089_1", "m77089_2"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-10-02T17:35:56+0200"],
+			"modified": ["2025-10-02T18:37:13+0200"],
 			"bibliographicCitation": [
 				"Stadt.Geschichte.Basel: Der Fahrzeugbestand in Basel-Stadt, 1920–2022. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77089.html#m77089_3>, letzte Aktualisierung: 02.10.2025."
 			]

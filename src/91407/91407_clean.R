@@ -73,5 +73,5 @@ meta91407 <- annotate(
   coverage = "19. Jahrhundert",
   source = "Für die Jahre 1875 bis 1902: Lüthi, Walter: Der Basler Freisinn von den Anfängen bis 1914, Basel 1983, S. 175. Daten ab 1905: Statistisches Amt Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m91407_1", "m91407_2")
+  relation = c("m91407_1", "m91407_2")
 )

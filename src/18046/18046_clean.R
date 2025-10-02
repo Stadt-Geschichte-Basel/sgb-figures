@@ -57,5 +57,5 @@ meta18046 <- annotate(
   coverage = "Frühe Neuzeit",
   source = "Stritmatter, Robert: Die Stadt Basel während des Dreissigjährigen Krieges. Politik, Wirtschaft, Finanzen, Basel; Frankfurt a. M.; Las Vegas 1977, S. 115. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m18046_1", "m18046_2")
+  relation = c("m18046_1", "m18046_2")
 )

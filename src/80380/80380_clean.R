@@ -127,5 +127,5 @@ meta80380 <- annotate(
   coverage = "20. Jahrhundert",
   source = "WEMF-Archiv: Auflagebulletins. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m80380_1", "m80380_2")
+  relation = c("m80380_1", "m80380_2")
 )

@@ -52,5 +52,5 @@ meta77733 <- annotate(
   coverage = "20. Jahrhundert",
   source = "Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge. Moll, Christa; Sandtner, Martin; Saner, Dorothea: Zahlenmeer – mehr als Zahlen. Basel-Stadt – 100 Jahre statistisch begleitet, Basel 2002, Anhang 2.1. https://statistik.bl.ch/web_portal/1_9. https://statistik.bl.ch/web_portal/1_1_3?sheet=6&Jahr=34. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m77733_1", "m77733_2")
+  relation = c("m77733_1", "m77733_2")
 )

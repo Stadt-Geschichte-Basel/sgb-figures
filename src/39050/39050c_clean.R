@@ -50,5 +50,5 @@ meta39050c <- annotate(
   coverage = "Mittelalter",
   source = "Harms, Bernhard: Die Münz- und Geldpolitik der Stadt Basel im Mittelalter, Tübingen 1907, S. 640–672. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m39050_6", "m39050_9")
+  relation = c("m39050_6", "m39050_9")
 )

@@ -59,5 +59,5 @@ meta86088 <- annotate(
   coverage = "20. Jahrhundert",
   source = "Statistisches Amt des Kantons Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m86088_1", "m86088_2")
+  relation = c("m86088_1", "m86088_2")
 )

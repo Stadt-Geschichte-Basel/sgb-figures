@@ -53,5 +53,5 @@ meta21912 <- annotate(
   coverage = "20. Jahrhundert",
   source = "Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m21912_1", "m21912_2", "m21892_1", "m21892_2", "m21892_3")
+  relation = c("m21912_1", "m21912_2", "m21892_1", "m21892_2", "m21892_3")
 )

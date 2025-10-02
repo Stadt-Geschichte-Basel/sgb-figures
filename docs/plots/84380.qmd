@@ -170,7 +170,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Eheschliessungen und Ehescheidungen in Basel-Stadt, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb84380.html#m84380_3>, letzte Aktualisierung: 02.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-02 17:35:58"
+    "2025-10-02 18:37:14"
   ),
   stringsAsFactors = FALSE
 )

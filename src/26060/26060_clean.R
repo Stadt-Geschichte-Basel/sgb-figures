@@ -56,5 +56,5 @@ meta26060 <- annotate(
   coverage = "20. Jahrhundert",
   source = "Böhner, Martin: Die Eidgenössische Betriebszählung 1965 aus baslerischer Sicht, Basel 1968, S. 66f. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m26060_1", "m26060_2")
+  relation = c("m26060_1", "m26060_2")
 )

@@ -56,5 +56,5 @@ meta41183 <- annotate(
   coverage = "Mittelalter",
   source = "Holzwart-Schäfer, Iris: Getreideanbau im Elsass, Versorgungslage Strassburgs und Basels und der Handel mit elsässischem Korn (14.–16. Jahrhundert), Tübingen 2000. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m41183_1", "m41183_2")
+  relation = c("m41183_1", "m41183_2")
 )

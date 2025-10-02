@@ -56,5 +56,5 @@ meta90894 <- annotate(
   coverage = "19. Jahrhundert",
   source = "Jahresbericht Basler Handelskammer 1901, S. 10. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m90894_1", "m90894_2")
+  relation = c("m90894_1", "m90894_2")
 )

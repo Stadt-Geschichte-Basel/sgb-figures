@@ -57,5 +57,5 @@ meta88300a <- annotate(
   coverage = "21. Jahrhundert",
   source = "Bundesamt für Statistik, gd-d-16.02.05.01-2024. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m88300_1", "m88300_3")
+  relation = c("m88300_1", "m88300_3")
 )

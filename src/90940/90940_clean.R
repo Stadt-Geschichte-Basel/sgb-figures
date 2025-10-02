@@ -76,5 +76,5 @@ meta90940 <- annotate(
   coverage = "19. Jahrhundert",
   source = "Mangold, Fritz: Basels Staatseinahmen und Steuerverteilung 1888–1903, tabellarisch dargestellt, Basel 1905, Tab. XIX. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m90940_1", "m90940_2")
+  relation = c("m90940_1", "m90940_2")
 )

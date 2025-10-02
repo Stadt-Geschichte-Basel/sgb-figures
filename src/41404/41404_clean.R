@@ -61,5 +61,5 @@ meta41404 <- annotate(
   coverage = list("Mittelalter", "Frühe Neuzeit", "19. Jahrhundert", "20. Jahrhundert", "21. Jahrhundert"),
   source = "Wetter, O., Pfister, C., Weingartner, R. u.a.: The largest floods in the High Rhine basin since 1268 assessed from documentary and instrmental evidence, in: Hydrological Sciences Journal 56 (5), 2011, S. 733-758. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m41404_1", "m41404_2")
+  relation = c("m41404_1", "m41404_2")
 )

@@ -58,5 +58,5 @@ meta82338 <- annotate(
   coverage = "20. Jahrhundert",
   source = "Bundesamt für Statistik, Staatssekretariat für Wirtschaft 2024: Arbeitslose nach Kanton. Jahresdurchschnitt. https://www.bfs.admin.ch/asset/de/30245369. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m82338_1", "m82338_2")
+  relation = c("m82338_1", "m82338_2")
 )

@@ -73,10 +73,10 @@
 				"Böhner, Martin: Die Eidgenössische Betriebszählung 1965 aus baslerischer Sicht, Basel 1968, S. 66f; Eidgenössisches Statistisches Amt (Hg.): Beschäftigte in den Gemeinden: nach Wirtschaftsfaktoren, Bern 1968 S. 59. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m26375_1"], ["m26375_2"]],
+			"relation": ["m26375_1", "m26375_2"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-10-02T17:35:55+0200"],
+			"modified": ["2025-10-02T18:37:11+0200"],
 			"bibliographicCitation": [
 				"Stadt.Geschichte.Basel: Hauptberuflich Beschäftigte im Dienstleistungssektor im Kanton Basel-Stadt, 1929–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26375.html#m26375_3>, letzte Aktualisierung: 02.10.2025."
 			]

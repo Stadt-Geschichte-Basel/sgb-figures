@@ -56,5 +56,5 @@ meta88300b <- annotate(
   coverage = "21. Jahrhundert",
   source = "Jahresbericht Abteilung Kultur 2021. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m88300_1", "m88300_2")
+  relation = c("m88300_1", "m88300_2")
 )

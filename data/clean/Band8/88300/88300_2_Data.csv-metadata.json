@@ -59,10 +59,10 @@
 				"Bundesamt für Statistik, gd-d-16.02.05.01-2024. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m88300_1"], ["m88300_3"]],
+			"relation": ["m88300_1", "m88300_3"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-10-02T17:35:58+0200"],
+			"modified": ["2025-10-02T18:37:15+0200"],
 			"bibliographicCitation": [
 				"Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_2>, letzte Aktualisierung: 02.10.2025."
 			]

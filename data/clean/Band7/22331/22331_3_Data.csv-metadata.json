@@ -53,10 +53,10 @@
 				"Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge: Daten 1913-1930: Ausgabe 1935, S. 294 'Musik, Theater, Literatur (einschl. Münster, Kreuzgang usw.)'. Daten 1940-1955: Ausgabe 1955, S. 200f. Daten 1956-1963: Ausgabe 1963, S. 188f. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m22331_1"], ["m22331_2"]],
+			"relation": ["m22331_1", "m22331_2"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-10-02T17:35:54+0200"],
+			"modified": ["2025-10-02T18:37:11+0200"],
 			"bibliographicCitation": [
 				"Stadt.Geschichte.Basel: Staatliche Ausgaben für Musik und Theater, 1913–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb22331.html#m22331_3>, letzte Aktualisierung: 02.10.2025."
 			]

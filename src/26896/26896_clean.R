@@ -55,5 +55,5 @@ meta26896 <- annotate(
   coverage = "20. Jahrhundert",
   source = "Banz, Marcel: Die deutschen und französischen Grenzgänger auf dem baselstädtischen Arbeitsmarkt, Basel 1964. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m26896_1", "m26896_2")
+  relation = c("m26896_1", "m26896_2")
 )

@@ -98,5 +98,5 @@ meta34278 <- annotate(
   coverage = "Mittelalter",
   source = "Abel, Wilhelm: Geschichte der deutschen Landwirtschaft vom frühen Mittelalter bis zum 19. Jahrhundert (Deutsche Agrargeschichte), Stuttgart 1978, S. 40. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m34278_1", "m34278_2")
+  relation = c("m34278_1", "m34278_2")
 )

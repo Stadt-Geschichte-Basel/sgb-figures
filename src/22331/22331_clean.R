@@ -61,5 +61,5 @@ meta22331 <- annotate(
   coverage = "20. Jahrhundert",
   source = "Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge: Daten 1913-1930: Ausgabe 1935, S. 294 'Musik, Theater, Literatur (einschl. Münster, Kreuzgang usw.)'. Daten 1940-1955: Ausgabe 1955, S. 200f. Daten 1956-1963: Ausgabe 1963, S. 188f. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m22331_1", "m22331_2")
+  relation = c("m22331_1", "m22331_2")
 )

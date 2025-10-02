@@ -52,5 +52,5 @@ meta92492 <- annotate(
   coverage = "19. Jahrhundert",
   source = "Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m92492_1", "m92492_2")
+  relation = c("m92492_1", "m92492_2")
 )

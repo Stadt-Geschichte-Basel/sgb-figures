@@ -60,5 +60,5 @@ meta90383 <- annotate(
   coverage = "20. Jahrhundert",
   source = "Jenny, Oskar Hugo: Die Bevölkerung des Kantons Basel-Stadt. Am 1. Dezember 1910, Basel 1924 (Mitteilungen des Statistischen Amtes des Kantons Basel-Stadt Nr. 28, Ed. 1924), S. 156f. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = list("m90383_1", "m90383_2")
+  relation = c("m90383_1", "m90383_2")
 )

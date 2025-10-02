@@ -54,5 +54,5 @@ meta92792 <- annotate(
   coverage = "21. Jahrhundert",
   source = "https://reflekt.ch/recherchen/wem-gehoert-basel. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "CC BY-SA 4.0",
-  relation = list("m92792_1", "m92792_2")
+  relation = c("m92792_1", "m92792_2")
 )
