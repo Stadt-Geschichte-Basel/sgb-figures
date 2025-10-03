@@ -8,7 +8,7 @@ This repository contains code and data for creating plots used in the [Stadt.Ges
 [![Code license](https://img.shields.io/badge/Code-AGPL--3.0-orange)](LICENSE-AGPL.md)
 [![Plot license](https://img.shields.io/badge/Plots-CC_BY--SA_4.0-green)](LICENSE-CCBY.md)
 
-<!-- [![DOI](https://zenodo.org/badge/949870855.svg)](https://zenodo.org/badge/latestdoi/ZENODO_RECORD) -->
+<!-- [![DOI](https://zenodo.org/badge/949870855.svg)](https://zenodo.org/badge/latestdoi/949870855) -->
 
 ## Repository Structure
 
@@ -26,15 +26,15 @@ This repository stores data and R code used by the [Team for Research Data Manag
 
 One task of the Stadt.Geschichte.Basel RDM team is to provide visualisations for data used by the individual authors to support their arguments. Using raw data provided by the researchers, the RDM team created maps, diagrams, and other types of visualisations for publication in the [print](https://www.merianverlag.ch/buecher/stadt.geschichte.basel.html) and [online (OA)](https://emono.unibas.ch/stadtgeschichtebasel) versions of Stadt.Geschichte.Basel.
 
-To support open research with FAIR data, the RDM team developed a [research data platform](https://forschung.stadtgeschichtebasel.ch) to ensure open, long-term access to sources and research data regarding the history of Basel. The platform facilitates access to the data behind the publication, with metadata annotation following the [Manual for Creating Non-Discriminatory Metadata for Historical Sources and Research Data](https://maehr.github.io/diskriminierungsfreie-metadaten/) developed by Stadt.Geschichte.Basel.
+In support of open research with FAIR data, the RDM team developed a [research data platform](https://forschung.stadtgeschichtebasel.ch) to ensure open, long-term access to sources and research data regarding the history of Basel. The platform facilitates access to the data behind the publication, with metadata annotation following the [Manual for Creating Non-Discriminatory Metadata for Historical Sources and Research Data](https://maehr.github.io/diskriminierungsfreie-metadaten/) developed by Stadt.Geschichte.Basel.
 
 ### Plots
 
 This GitHub repository provides the source code used to create [all plots](/docs/plots.qmd) used in the project. In addition to the data already made available on the research data platform, the source code published here makes the figures even more customisable.
 
-Following the steps below, users can build plots from the book series by themselves. The [workflow](/docs/workflow/index.qmd) produces the plots, as published, as `PDF` files in `CMYK` colour mode using the dimensions from the printed volumes. For technical reasons, plots and legends are written to separate PDF files. The plots are not shipped with the project's signature font family, but are generated with a generic system font due to copyright. Users can easily customise the plots' dimensions, colours, labels, etc. by changing the parameters in the corresponding source code.
+Following the steps below, users can build plots from the book series by themselves. The [workflow](/docs/workflow/index.qmd) produces the plots, as published, as `pdf` files in `CMYK` colour mode using the dimensions from the printed volumes. For technical reasons, plots and legends are written to separate PDF files. The plots are not shipped with the project's signature font family, but are generated with a generic system font. Users can easily customize the plots' dimensions, colours, labels, etc. by changing the parameters in the corresponding source code.
 
-The (mostly numerical) data behind the plots, available in interactive tables on the research data platform, is additionally stored in this repository in `CSV` format. An integral part of the visualization workflow, a `JSON` file is generated for each plot, using the Stadt.Geschichte.Basel data model to provide metadata according to the [W3C standard for tabular data and metadata on the web](https://w3c.github.io/csvw/syntax/).
+The (mostly numerical) data behind the plots, available in interactive tables on the research data platform, is additionally stored in this repository in `csv` format. An integral part of the visualization workflow, a `json` file is generated for each plot, using the Stadt.Geschichte.Basel data model to provide metadata according to the [W3C standard for tabular data and metadata on the web](https://w3c.github.io/csvw/syntax/).
 
 ## Installation
 
@@ -66,7 +66,7 @@ npm run plot
 
 Specify the ID of the plot when prompted, e.g.:
 
-```text
+```bash
 Bitte ID des Plots eingeben (z.B. 39017 für abb39017): 39017
 ```
 

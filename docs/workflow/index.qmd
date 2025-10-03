@@ -25,7 +25,7 @@ code-links:
 
 This repository stores data and R code used by the [Team for Research Data Management and Public History](https://dokumentation.stadtgeschichtebasel.ch/team.html) of the Stadt.Geschichte.Basel project to create figures published in the [nine-volume book series](https://stadtgeschichtebasel.ch/baende).
 
-To support open research with FAIR data, the RDM team developed a [research data platform](https://forschung.stadtgeschichtebasel.ch) [@mahrStadtGeschichteBaselResearchData2024] to ensure open, long-term access to sources and research data regarding the history of Basel. The platform facilitates access to the data behind the publication and features rich metadata annotation (cf. [Data Model](#data-model)).
+To support open research with FAIR data, the RDM team developed a [research data platform](https://forschung.stadtgeschichtebasel.ch) [@mahrStadtGeschichteBaselResearchData2024] ensuring open, long-term access to sources and research data regarding the history of Basel. The platform facilitates access to the data behind the publication and features rich metadata annotation (cf. [Data Model](#data-model)).
 
 Using raw data provided by the individual authors of Stadt.Geschichte.Basel, the RDM team created maps, diagrams, and other types of visualizations [@mahr2022d] for publication in the [print](https://www.merianverlag.ch/buecher/stadt.geschichte.basel.html) and [online (OA)](https://emono.unibas.ch/stadtgeschichtebasel) versions of the book series. The sgb-figures repository stores code and data for charts and diagrams only (referred to as plots or figures). For other types of data visualization in the context of Stadt.Geschichte.Basel, refer to the extensive [RDM Documentation](https://dokumentation.stadtgeschichtebasel.ch) (in German).
 
@@ -116,7 +116,7 @@ sgb-figures/
 │           └── *.pdf        <- built plot files
 ├── renv                     <- R package library
 ├── src                      
-│   └── <media_id>/           <- source files
+│   └── <media_id>/          <- source files
 ├── _quarto.yml              <- Quarto project settings 
 ├── .gitignore               <- files excluded from git version control
 ├── .prettierrc              <- linting settings
@@ -173,11 +173,11 @@ flowchart LR
 
 ### Plotting
 
-After the dataset is processed, it can be used for building a plot (@fig-plotting). This is done by executing the script in `src/01313/01313_plot.R`. This sources the cleaning script first, making sure the plot is being drawn using up-to-date files. The data is loaded into R as `data01313` again. If necessary, further transformations are applied (e.g. creating custom labels, aggregating columns, manipulating data for better readability etc.). The plot object `plot01313` is created using `ggplot2`. For technical reasons, plot and legend must be exported to separate files[^2]. Therefore, the `separate_legend` object is created in R using [ggpubr](https://rpkgs.datanovia.com/ggpubr/) [@kassambaraGgpubrGgplot2Based2025]. Both objects are then saved as `pdf` files `01313_1_Plot.pdf` and `01313_2_Legende.pdf` to `output/Band<n>/01313.`
+After the dataset is processed, it can be used for building a plot (@fig-plotting). This is done by executing the script in `src/01313/01313_plot.R`. This sources the cleaning script first, making sure the plot is being drawn using up-to-date files. The data is loaded into R as `data01313` again. If necessary, further transformations are applied (e.g. creating custom labels, aggregating columns, manipulating data for better readability etc.). The plot object `plot01313` is created using `ggplot2`. For technical reasons, plot and legend must be exported to separate files[^2]. To this end, a `separate_legend` object is created in R using [ggpubr](https://rpkgs.datanovia.com/ggpubr/) [@kassambaraGgpubrGgplot2Based2025]. Both objects are then saved as `pdf` files `01313_1_Plot.pdf` and `01313_2_Legende.pdf` to `output/Band<n>/01313.` When using the scripts in this repository, the plots are not shipped with the project's [signature font family](https://dokumentation.stadtgeschichtebasel.ch/products/interna/corporate-identity/#schriftarten) but with a generic system font.
 
 [^2]: For technical reasons, the actual plot and the corresponding legend are often stored in separate PDF files during the book production process. These two files are represented as one object programmatically (`plot01313`) and are collectively referred to as one object in this context.
 
-For the print edition of Stadt.Geschichte.Basel, light post-processing was done by the RDM Team before delivering the figures to the typesetter for publication to accommodate further technical requirements, last-minute changes by authors etc.
+For the print edition of Stadt.Geschichte.Basel, light post-processing using Adobe Illustrator was done by the RDM Team before delivering the figures to the typesetter for publication, incorporating further technical requirements, last-minute changes by authors etc.
 
 ```{mermaid fig-plotting}
 %%| label: fig-plotting
@@ -202,9 +202,9 @@ style exportlegend fill:#ffe880
 style infopage fill:#fff3e0
 ```
 
-In addition to the plot itself, the `01313_plot.R` script builds a separate `qmd` file in `docs/plots/`. This page is rendered when deploying the sgb-figures repository to GitHub Pages to provide preview renderings of plot and data. This Quarto file contains a preview rendering of the figure itself, a table displaying the dataset used for creating the plot, as well as selected metadata on the dataset parsed from the `json` file. Metadata describing the plot (media object) itself is only available on the [Research Data Platform](https://forschung.stadtgeschichtebasel.ch).
+In addition to the plot itself, the `01313_plot.R` script builds a separate `qmd` file in `docs/plots/`. This page is rendered when deploying the sgb-figures repository to GitHub Pages and provides previews of plot and data. The Quarto file contains a preview rendering of the figure itself, a table displaying the dataset used for creating the plot, as well as selected metadata on the dataset parsed from the `json` file. Metadata describing the plot (media object) itself is only available on the [Research Data Platform](https://forschung.stadtgeschichtebasel.ch).
 
-Users can take advantage of a range of [npm scripts](https://docs.npmjs.com/cli/v8/using-npm/scripts) to make it easier to build the plots directly from the command line. Running `npm run list` will print a list of all available plots with a corresponding media ID. Using this ID, the plot, metadata and `qmd` files can be generated using `npm run plot <ID>`. A full list of all available npm scripts is available in the [README](/index.qmd#build).
+Users can take advantage of a range of [npm scripts](https://docs.npmjs.com/cli/v8/using-npm/scripts), making it easier to build the plots directly from the command line. Running `npm run list` will print an overview of all available plots with a corresponding media ID. Using this ID, the plot, metadata and `qmd` files can be generated using `npm run plot <ID>`. A full list of all available npm scripts is available in the [README](/index.qmd#build).
 
 ## Data Model {#data-model}
 
@@ -212,9 +212,9 @@ Metadata for research data of Stadt.Geschichte.Basel is provided according to a 
 
 For the data in sgb-figures, the model was slightly adapted to align with the requirements of publishing tabular data. To this end, recommendations as outlined in the W3C standard for tabular data and metadata on the web [@w3cModelTabularData2022] were consulted and implemented using the [csvwr](https://robsteranium.github.io/csvwr/) R package.
 
-Metadata for the `csv` datasets used for creating the figures is stored in a separate `json` file. By using an example metadata object `abb01313`, @fig-datamodel illustrates how this annotation integrates with the Stadt.Geschichte.Basel data model used for the research data platform. In this example, `abb01313` has one child media object `m01313`. `m01313` is a sgb-figures plot built using the dataset `m01313_3` which in turn is described by the metadata file `01313_3_Data.csv-metadata.json`.
+Metadata for the `csv` datasets used for creating the figures is stored in a separate `json` file. Again using the example metadata object `abb01313`, @fig-datamodel illustrates how this annotation integrates with the Stadt.Geschichte.Basel data model used for the research data platform. In this example, `abb01313` has one child media object `m01313`. `m01313` is a sgb-figures plot built using the dataset `01313_3` which in turn is described by the metadata file `01313_3_Data.csv-metadata.json`.
 
-Each `json` metadata file annotates one `csv` dataset. Each dataset is used for one figure, but a figure may be built taking multiple datasets as input. Each figure is represented as one media object on the Stadt.Geschichte.Basel Research Data Platform. This (child) media object is then part of a parent metadata object, alongside zero or more other child media objects. If a parent metadata object has more than one child media object, their `id` values are numbered consecutively (`m01313_1`, `m01313_2`, etc.).
+Each `json` metadata file annotates one `csv` dataset. Each dataset is used for one figure, but a figure may be built taking multiple datasets as input. Each figure is represented as one media object on the Stadt.Geschichte.Basel Research Data Platform. This (child) media object is then part of a parent metadata object, alongside zero or more other child media objects. If a parent metadata object has more than one child media object, their `id` values -- as well as the `id` values of the corresponding dataset(s) and metadata file(s) -- are numbered consecutively (`m01313_1`, `m01313_2`, etc.).
 
 ```{mermaid fig-datamodel}
 %%| label: fig-datamodel

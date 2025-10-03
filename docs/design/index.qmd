@@ -28,22 +28,22 @@ other-links:
 ---
 
 ::: {.callout-tip title="About This Document" icon="false"}
-The content of this page is a translated assemblage of selected content on Stadt.Geschichte.Basel's corporate identity, colour palettes and overall design philosophy. Only the colour palette for print products -- since it is used in sgb-figures -- is covered here. Refer to the [RDM Documentation](https://dokumentation.stadtgeschichtebasel.ch) for full coverage of Stadt.Geschichte.Basel's design and corporate identity guidelines (in German).
+The content of this page is a translated assemblage of selected content on Stadt.Geschichte.Basel's RDM corporate identity, colour palettes and overall design philosophy. Only the colour palette for print products -- since it is used in sgb-figures -- is covered here. Refer to the [RDM Documentation](https://dokumentation.stadtgeschichtebasel.ch) for full coverage of Stadt.Geschichte.Basel's design and corporate identity guidelines (in German).
 :::
 
 ## Colour Concept
 
 For the visual identity of print products such as the figures in this repository, consideration had to be given to the design and printing specifications of the publisher and book designers (even more so than in the context of online products). As an integral part of these considerations, a color concept was developed for this purpose with the following requirements in mind.
 
-* Colours must be usable online and in print for graphics and maps. They must therefore exist in both the RGB and CMYK color spaces.
-* They should also be distinguishable in illustrations (e.g., in scales) for people with visual impairments and must therefore meet minimum contrast requirements in combinations (inclusive design).
-* Furthermore, no copyright-protected special colors (Pantone or similar) may be used. Due to the different requirements for print and web content, two different color palettes have to be defined.
-* In addition, a visual unity should be recognizable -- on the one hand in relation to the distinctive color of the respective band, and on the other hand across bands. Color semantics also plays an important role in this regard. For example, bodies of water are represented in blue, with the respective shade of blue varying depending on whether areas (seas) or lines (rivers) are represented. Traditional colors are also used for religious communities (e.g., shades of green for Islam). On the other hand, color combinations that reproduce gender-specific clichés (e.g., blue/red combinations for male/female dichotomies) were avoided.
+-   Colours must be usable online and in print for graphics and maps. They must therefore exist in both the RGB and CMYK color spaces.
+-   They should also be distinguishable in illustrations (e.g., in scales) for people with visual impairments and must therefore meet minimum contrast requirements in combinations (inclusive design).
+-   Furthermore, no copyright-protected special colors (Pantone or similar) may be used. Due to the different requirements for print and web content, two different color palettes have to be defined.
+-   In addition, a visual unity should be recognizable -- on the one hand in relation to the distinctive color of the respective band, and on the other hand across bands. Color semantics also plays an important role in this regard. For example, bodies of water are represented in blue, with the respective shade of blue varying depending on whether areas (seas) or lines (rivers) are represented. Traditional colors are also used for religious communities (e.g., shades of green for Islam). On the other hand, color combinations that reproduce gender-specific clichés (e.g., blue/red combinations for male/female dichotomies) were avoided.
 
 Apart from requirements strictly regarding colours, technical constraints were also part of the development process because of their influence on the overall appearance on the visualizations:
 
-* The dimensions of all illustrations are based on the layout concept and the space available, as arranged by the book designers. This limits the use of specific colours.
-* The content and historical arguments to be conveyed are defined by the authors and depend heavily on the basic data provided. The space available in the book defines the technically possible or necessary resolution of the data depicted.
+-   The dimensions of all illustrations are based on the layout concept and the space available, as arranged by the book designers. This limits the use of specific colours.
+-   The content and historical arguments to be conveyed are defined by the authors and depend heavily on the basic data provided. The space available in the book defines the technically possible or necessary resolution of the data depicted.
 
 From an accessibility perspective, the [WCAG standards](https://www.w3.org/WAI/standards-guidelines/wcag/glance/) are central to the design of online products. In addition, the design principles of Will Soward's [Neurodiversity Design System](https://neurodiversity.design/) were taken into account, but were [given lower priority](https://github.com/Stadt-Geschichte-Basel/stadtgeschichtebasel.ch/issues/107) than other requirements in cases of doubt.
 
@@ -51,7 +51,7 @@ From an accessibility perspective, the [WCAG standards](https://www.w3.org/WAI/s
 
 For the ten volumes of Stadt.Geschichte.Basel, the research data management team edited and created over 100 graphics, mainly [maps](https://dokumentation.stadtgeschichtebasel.ch/products/research-data/geodata/) and the [figures in this repository](/docs/plots.qmd). In terms of color design, in addition to the requirements already mentioned, there was also the challenge of finding a consistent design language that would be recognizable across all volumes. However, this proved to be a difficult undertaking due to the large number of image types (maps, bar charts, network visualizations, etc.), discipline-specific conventions for the use of scientific visualizations, and technical differences in the accuracy and completeness of basic data [cf. @twenteNavigatingDisconcertmentMapMaking2025].
 
-The original approach of selecting a color palette from existing examples of good practice for accessible color design could therefore not be implemented directly. Furthermore, after processing the first data sets, it quickly became apparent that they  varied greatly from each other in terms of structure to use a universally applicable basis (e.g., requirements for visualizing discrete data versus continuous data).
+The original approach of selecting a color palette from existing examples of good practice for accessible color design could therefore not be implemented directly. Furthermore, after processing the first data sets, it quickly became apparent that they varied greatly from each other in terms of structure to use a universally applicable basis (e.g., requirements for visualizing discrete data versus continuous data).
 
 A color palette was selected as the basis for the design of the scientific illustrations for the print products of Stadt.Geschichte.Basel – in two variants, with 23 and 14 colors respectively, plus a gray value. Paul Tol's [Discrete Rainbow Color Scheme 19](https://sronpersonalpages.nl/~pault/#fig:scheme_rainbow_discrete) is “reasonably clear” for color-blind people [@tolSequentialColourSchemes2022], provided that the color values are not interpolated. For graphic design in R, the palette is also [available](https://packages.tesselle.org/khroma/articles/tol.html#rainbow) in the khroma package [@frerebeauPaulTolsColour2025].
 
