@@ -4,9 +4,9 @@
 cff-version: 1.2.0
 title: sgb-figures
 message: >-
-  If you use this dataset, please cite it using the metadata
-  from this file.
-type: dataset
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
 authors:
   - given-names: Moritz
     family-names: Twente
@@ -18,8 +18,8 @@ authors:
 #    value: 10.5281/zenodo.FIXME
 #    description: FIXME
 repository-code: 'https://github.com/stadt-geschichte-basel/sgb-figures'
-url: 'https://forschung.stadtgeschichtebasel.ch'
-repository: 'https://github.com/stadt-geschichte-basel/sgb-figures'
+url: 'https://dokumentation.stadtgeschichtebasel.ch/sgb-figures'
+repository: 'https://forschung.stadtgeschichtebasel.ch'
 abstract: >-
   This repository contains data and source code to make
   figures from the Stadt.Geschichte.Basel research project
@@ -27,5 +27,7 @@ abstract: >-
 keywords:
   - Basel
   - Stadt.Geschichte.Basel
+  - urban history
+  - research data
   - data visualisation
 license: AGPL-3.0-or-later
