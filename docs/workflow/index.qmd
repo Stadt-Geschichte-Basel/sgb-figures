@@ -234,7 +234,7 @@ classDiagram
     media "m" <-- "n" metadata2
 
     class csv {
-        id &lpar;m01313_3&rpar;
+        id &lpar;01313_3&rpar;
     }
 
     class metadata {
