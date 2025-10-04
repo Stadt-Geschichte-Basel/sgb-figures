@@ -187,8 +187,8 @@ flowchart LR
         plot_script([01313_plot.R]) <--> |source to<br>load data| clean_script([01313_clean.R])
         plot_script --> |transform data| data01313(data01313)
         data01313 -->|create plot<br>object| plot01313(plot01313)
-        plot01313 -->|extract legend| legend01313(separate_legend)
         plot01313 --->|export plot| export01313([01313_1_Plot.pdf])
+        plot01313 -->|extract legend| legend01313(separate_legend)
         legend01313 -->|export legend| exportlegend([01313_2_Legende.pdf])
         plot_script ----->|build preview| infopage([01313.qmd])
 
