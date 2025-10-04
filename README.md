@@ -58,7 +58,7 @@ Print a list of all plots that can be built from this repository:
 npm run list
 ```
 
-Build an individual plot as PDF — saving the plot to `output/`, the annotated data to `data/clean/`, and a summary Quarto file to `docs/plots` — by running the following command:
+Build an individual plot as PDF — saving the plot to `output/`, the annotated data to `data/clean/`, and a summary Quarto file to `docs/plots/` — by running the following command:
 
 ```bash
 npm run plot
