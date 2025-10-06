@@ -1,7 +1,7 @@
 ---
 title: "Auflage der Tageszeitungen in der Region Basel, 1966–2020"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-02
+date-modified: 2025-10-06
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb80380"
@@ -195,13 +195,13 @@ df <- data.frame(
     "1966/2020",
     "20. Jahrhundert",
     "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 ([Stadt.Geschichte.Basel 8](https://doi.org/10.21255/sgb-08-796384)).",
-    "[data/clean/Band8/80380/80380_3_Data.csv](/data/clean/Band8/80380/80380_3_Data.csv)",
+    "[data/clean/Band8/80380/80380_3_Data.csv](../../data/clean/Band8/80380/80380_3_Data.csv)",
     "WEMF-Archiv: Auflagebulletins. Bearbeitung: Nico Görlich / Moritz Twente",
-    "[data/clean/Band8/80380/80380_3_Data.csv-metadata.json](/data/clean/Band8/80380/80380_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Auflage der Tageszeitungen in der Region Basel, 1966–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80380.html#m80380_3>, letzte Aktualisierung: 02.10.2025.",
+    "[data/clean/Band8/80380/80380_3_Data.csv-metadata.json](../../data/clean/Band8/80380/80380_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Auflage der Tageszeitungen in der Region Basel, 1966–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80380.html#m80380_3>, letzte Aktualisierung: 06.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-02 18:37:14"
+    "2025-10-06 16:36:19"
   ),
   stringsAsFactors = FALSE
 )

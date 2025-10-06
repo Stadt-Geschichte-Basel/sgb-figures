@@ -1,7 +1,7 @@
 ---
 title: "Mandate der Parteien bei Grossratswahlen, 1875–1914"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-02
+date-modified: 2025-10-06
 volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 vol_short: "Stadt.Geschichte.Basel 6"
 plotid: "abb91407"
@@ -182,13 +182,13 @@ df <- data.frame(
     "1875/1914",
     "19. Jahrhundert",
     "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 ([Stadt.Geschichte.Basel 6](https://doi.org/10.21255/sgb-06-810743)).",
-    "[data/clean/Band6/91407/91407_3_Data.csv](/data/clean/Band6/91407/91407_3_Data.csv)",
+    "[data/clean/Band6/91407/91407_3_Data.csv](../../data/clean/Band6/91407/91407_3_Data.csv)",
     "Für die Jahre 1875 bis 1902: Lüthi, Walter: Der Basler Freisinn von den Anfängen bis 1914, Basel 1983, S. 175. Daten ab 1905: Statistisches Amt Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
-    "[data/clean/Band6/91407/91407_3_Data.csv-metadata.json](/data/clean/Band6/91407/91407_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Mandate der Parteien bei Grossratswahlen, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91407.html#m91407_3>, letzte Aktualisierung: 02.10.2025.",
+    "[data/clean/Band6/91407/91407_3_Data.csv-metadata.json](../../data/clean/Band6/91407/91407_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Mandate der Parteien bei Grossratswahlen, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91407.html#m91407_3>, letzte Aktualisierung: 06.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-02 18:59:28"
+    "2025-10-06 16:36:22"
   ),
   stringsAsFactors = FALSE
 )

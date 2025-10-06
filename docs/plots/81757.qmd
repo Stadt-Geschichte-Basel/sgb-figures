@@ -1,7 +1,7 @@
 ---
 title: "Anteil an Ausländerinnen und Ausländern im Kanton und in ausgewählten Quartieren, 1960–2020"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-02
+date-modified: 2025-10-06
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb81757"
@@ -200,13 +200,13 @@ df <- data.frame(
     "1960/2020",
     "20. Jahrhundert",
     "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 ([Stadt.Geschichte.Basel 8](https://doi.org/10.21255/sgb-08-796384)).",
-    "[data/clean/Band8/81757/81757_3_Data.csv](/data/clean/Band8/81757/81757_3_Data.csv)",
+    "[data/clean/Band8/81757/81757_3_Data.csv](../../data/clean/Band8/81757/81757_3_Data.csv)",
     "Statistisches Amt Kanton Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
-    "[data/clean/Band8/81757/81757_3_Data.csv-metadata.json](/data/clean/Band8/81757/81757_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Anteil an Ausländerinnen und Ausländern im Kanton und in ausgewählten Quartieren, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb81757.html#m81757_3>, letzte Aktualisierung: 02.10.2025.",
+    "[data/clean/Band8/81757/81757_3_Data.csv-metadata.json](../../data/clean/Band8/81757/81757_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Anteil an Ausländerinnen und Ausländern im Kanton und in ausgewählten Quartieren, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb81757.html#m81757_3>, letzte Aktualisierung: 06.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-02 18:59:26"
+    "2025-10-06 16:36:20"
   ),
   stringsAsFactors = FALSE
 )

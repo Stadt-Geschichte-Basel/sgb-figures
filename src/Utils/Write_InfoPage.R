@@ -44,15 +44,13 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
 
     ## --- Create Markdown Link for Path to Dataset ---
     # Generate a relative path for the dataset to use in the .qmd file.
-    data_rel_path <- fs::path_rel(dataset_file, start = here())
-    data_rel_path <- gsub("^docs/", "", data_rel_path)
-    data_link <- glue("[{data_rel_path}](/", data_rel_path, ")")
+    data_rel_path <- fs::path_rel(dataset_file, start = here("docs", "plots"))
+    data_link <- glue("[{fs::path_rel(dataset_file, start = here())}](", data_rel_path, ")")
 
     ## --- Create Markdown Link for Path to JSON ---
     # Generate a relative path for the metadata file.
-    meta_rel_path <- fs::path_rel(metadata_file, start = here())
-    meta_rel_path <- gsub("^docs/", "", meta_rel_path)
-    meta_link <- glue("[{meta_rel_path}](/", meta_rel_path, ")")
+    meta_rel_path <- fs::path_rel(metadata_file, start = here("docs", "plots"))
+    meta_link <- glue("[{fs::path_rel(metadata_file, start = here())}](", meta_rel_path, ")")
 
     # --- Extract Metadata from File ----
     # Read the JSON file and extract the schema information.
