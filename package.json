@@ -14,15 +14,16 @@
 		"list": "Rscript build/list_plots.R",
 		"plot": "Rscript -e 'source(here::here(\"build\", \"build_plot.R\"))'",
 		"all": "Rscript build/build_all.R",
-		"vol": "Rscript build/build_volume.R"
+		"vol": "Rscript build/build_volume.R",
+		"format:r": "Rscript src/Utils/Format_R_Scripts.R"
 	},
 	"devDependencies": {
 		"commitizen": "^4.3.1",
 		"cz": "^1.8.2",
 		"cz-conventional-changelog": "^3.3.0",
-		"git-cliff": "^2.8.0",
+		"git-cliff": "^2.10.1",
 		"husky": "^9.1.7",
-		"prettier": "^3.5.3"
+		"prettier": "^3.6.2"
 	},
 	"type": "module",
 	"config": {

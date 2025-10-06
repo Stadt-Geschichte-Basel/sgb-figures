@@ -23,7 +23,7 @@
 					"description": "Anzahl der Ehescheidungen im Kanton Basel-Stadt im angegebenen Jahr"
 				}
 			],
-			"mediaID": ["m84380_3"],
+			"media_id": ["m84380_3"],
 			"isPartOf": {
 				"ObjectID": ["abb84380"],
 				"volume": [
@@ -52,7 +52,7 @@
 				},
 				{
 					"name": ["Moritz Twente"],
-					"email": ["moritz.twente@unibas.ch"],
+					"email": ["mtwente@protonmail.com"],
 					"orcid": ["0009-0005-7187-9774"]
 				}
 			],
@@ -65,12 +65,12 @@
 				"Statistisches Jahrbuch des Kantons Basel-Stadt 1960–2020. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m84380_1"], ["m84380_2"]],
+			"relation": ["m84380_1", "m84380_2"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-24 23:24:45"],
+			"modified": ["2025-10-06T16:43:52+0200"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Eheschliessungen und Ehescheidungen in Basel-Stadt, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb84380.html#m84380_3>, letzte Aktualisierung: 24.09.2025."
+				"Stadt.Geschichte.Basel: Eheschliessungen und Ehescheidungen in Basel-Stadt, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb84380.html#m84380_3>, letzte Aktualisierung: 06.10.2025."
 			]
 		}
 	}

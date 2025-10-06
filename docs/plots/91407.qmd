@@ -1,0 +1,198 @@
+---
+title: "Mandate der Parteien bei Grossratswahlen, 1875–1914"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
+vol_short: "Stadt.Geschichte.Basel 6"
+plotid: "abb91407"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/91407'
+    text: abb91407 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "91407", "91407_clean.R"))
+
+# Transform Data -------------
+
+data91407_longer <- pivot_longer(data91407,
+  cols = -Jahr,
+  names_to = "Partei",
+  values_to = "Sitze"
+)
+
+
+data91407_longer$Partei <- factor(data91407_longer$Partei, levels = c(
+  "FDP/RDP",
+  "LP/LDP",
+  "Zentrum",
+  "SP",
+  "KVP/CVP",
+  "BGP",
+  "Andere"
+))
+
+# Diagramm plotten -----------
+
+plot91407 <- ggplot(
+  data = data91407_longer,
+  aes(x = Jahr, y = Sitze, color = Partei, group = Partei)
+) +
+  geom_line(linewidth = 0.561) +
+  scale_color_manual(values = c(
+    "FDP/RDP" = "#3872B5",
+    "LP/LDP" = "#618DEA",
+    "Zentrum" = "#DEAA28", # wie EVP?
+    "BGP" = "#4B8A3E",
+    "SP" = "#F0554D",
+    "KVP/CVP" = "#D6862B",
+    "Andere" = "#777777"
+  )) +
+  scale_x_continuous(
+    breaks = data91407_longer$Jahr,
+    guide = guide_axis(),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  scale_y_continuous(
+    limits = c(0, 100),
+    breaks = seq(0, 100, by = 20),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
+    legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+    plot.margin = margin(0.5, 1.2, 0, 0.5, "lines"),
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    )
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot91407 + theme(legend.position = "right")
+```
+
+Plot abb91407 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 91407_3
+dataset_file_1 <- here("data", "clean", "Band6", "91407", "91407_3_Data.csv")
+data91407_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data91407_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 91407_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten.
+- **FDP/RDP:** Anzahl der Mandate der FDP/RDP nach den Grossratswahlen im angegebenen Jahr. Sitze der Demokratischen Partei (1908: 1 / 1911:2) werden dem Freisinn (FDP/RDP) zugerechnet
+- **LP/LDP:** Anzahl der Mandate der LP/LDP nach den Grossratswahlen im angegebenen Jahr
+- **Zentrum:** Anzahl der Mandate des Zentrums nach den Grossratswahlen im angegebenen Jahr
+- **BGP:** Anzahl der Mandate der BGP nach den Grossratswahlen im angegebenen Jahr
+- **SP:** Anzahl der Mandate der SP nach den Grossratswahlen im angegebenen Jahr
+- **KVP/CVP:** Anzahl der Mandate der KVP/CPV nach den Grossratswahlen im angegebenen Jahr
+- **Andere:** Anzahl der Mandate für übrige Parteien/Kandidaturen nach den Grossratswahlen im angegebenen Jahr
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb91407 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb91407.html))",
+    "Mandate der Parteien bei Grossratswahlen, 1875–1914",
+    "Die Einführung des Proporzes 1905 bedeutete eine Zäsur. Mit dem Erstarken der Sozialdemokratischen Partei (SP) und der Katholischen Volkspartei (KVP) diversifizierte sich die Parteienlandschaft. Davor stand die Wahl von Persönlichkeiten im Vordergrund, die auf Wahllisten für die Freisinnigen (Radikale, Demokraten, FDP/RDP), die liberal-konservative Mitte (Juste Milieu, Zentrum) und die Konservativen (LP, LDP) kandidierten.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1875/1914",
+    "19. Jahrhundert",
+    "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 ([Stadt.Geschichte.Basel 6](https://doi.org/10.21255/sgb-06-810743)).",
+    "[data/clean/Band6/91407/91407_3_Data.csv](../../data/clean/Band6/91407/91407_3_Data.csv)",
+    "Für die Jahre 1875 bis 1902: Lüthi, Walter: Der Basler Freisinn von den Anfängen bis 1914, Basel 1983, S. 175. Daten ab 1905: Statistisches Amt Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band6/91407/91407_3_Data.csv-metadata.json](../../data/clean/Band6/91407/91407_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Mandate der Parteien bei Grossratswahlen, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91407.html#m91407_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:22"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 91407_3")
+```
+

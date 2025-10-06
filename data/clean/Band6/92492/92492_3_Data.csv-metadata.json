@@ -41,7 +41,7 @@
 					"description": "Anteil Angehöriger anderer, keiner oder unbekannter Religionen bzw. Konfessionen an der Gesamtbevölkerung in Prozent"
 				}
 			],
-			"mediaID": ["m92492_3"],
+			"media_id": ["m92492_3"],
 			"isPartOf": {
 				"ObjectID": ["abb92492"],
 				"volume": [
@@ -50,7 +50,7 @@
 			},
 			"title": ["Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910"],
 			"description": [
-				"Der Anteil der Protestantinnen und Protestanten an der Bevölkerung verringerte sich von 75 Prozent 1860 auf 63,4 Prozent 1910. Im gleichen Zeitraum stieg der Anteil der Katholikinnen und Katholiken von einem Viertel auf einen Drittel und die jüdische Bevölkerung vergrösserte sich beinahe um den Faktor fünf"
+				"Der Anteil der Protestantinnen und Protestanten an der Bevölkerung verringerte sich von 75 Prozent 1860 auf 63,4 Prozent 1910. Im gleichen Zeitraum stieg der Anteil der Katholikinnen und Katholiken von einem Viertel auf einen Drittel und die jüdische Bevölkerung vergrösserte sich beinahe um den Faktor fünf."
 			],
 			"creator": [
 				{
@@ -64,7 +64,7 @@
 				},
 				{
 					"name": ["Moritz Twente"],
-					"email": ["moritz.twente@unibas.ch"],
+					"email": ["mtwente@protonmail.com"],
 					"orcid": ["0009-0005-7187-9774"]
 				}
 			],
@@ -77,12 +77,12 @@
 				"Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m92492_1"], ["m92492_2"]],
+			"relation": ["m92492_1", "m92492_2"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-24 23:24:46"],
+			"modified": ["2025-10-06T16:43:29+0200"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92492.html#m92492_3>, letzte Aktualisierung: 24.09.2025."
+				"Stadt.Geschichte.Basel: Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92492.html#m92492_3>, letzte Aktualisierung: 06.10.2025."
 			]
 		}
 	}

@@ -2,14 +2,14 @@ renv::load(".")
 
 library(here)
 
-# List all subdirectories in src/, excluding "Funktionen"
+# List all subdirectories in src/, excluding "Utils"
 src_subdirs <- list.dirs(here("src"), full.names = FALSE, recursive = FALSE)
-src_subdirs <- setdiff(src_subdirs, "Funktionen")
+src_subdirs <- setdiff(src_subdirs, "Utils")
 
 for (plot in src_subdirs) {
   plot_script <- here("src", plot, paste0(plot, "_plot.R"))
   if (file.exists(plot_script)) {
-    message(sprintf("Running plot script: %s", plot_script))
+    message(sprintf("Aktuell laufendes Skript: %s", plot_script))
     tryCatch(
       {
         source(plot_script)

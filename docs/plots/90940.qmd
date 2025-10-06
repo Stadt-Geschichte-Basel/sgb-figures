@@ -1,0 +1,200 @@
+---
+title: "Soziale Klassen in Basel, 1888–1904"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
+vol_short: "Stadt.Geschichte.Basel 6"
+plotid: "abb90940"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/90940'
+    text: abb90940 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+library(forcats)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "90940", "90940_clean.R"))
+
+# Transform Data -------------
+
+data90940_longer <- pivot_longer(data90940,
+  cols = -Jahr,
+  names_to = "Jahreseinkommen",
+  values_to = "Anzahl"
+)
+
+data90940_longer$Jahr <- as.numeric(data90940_longer$Jahr)
+
+data90940_longer$Jahreseinkommen <- factor(data90940_longer$Jahreseinkommen,
+  levels = c(
+    ">20 000 Franken",
+    "6000–20 000 Franken",
+    "3000–6000 Franken",
+    "1500–3000 Franken",
+    "800–1500 Franken"
+  )
+)
+
+# Plot -----------------------
+
+plot90940 <- ggplot(
+  data = data90940_longer,
+  aes(x = Jahr, y = Anzahl, fill = Jahreseinkommen)
+) +
+  geom_area(alpha = 1) +
+  scale_fill_manual(
+    values = c(
+      "#F9CF5A",
+      "#FEE971",
+      "#A8BEA2",
+      "#6195CF",
+      "#7BAFDE"
+    ),
+    name = "Haushaltseinkommen"
+  ) +
+  scale_x_continuous(
+    guide = guide_axis(),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  scale_y_continuous(
+    limits = c(0, 35000),
+    breaks = pretty_breaks(),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
+    legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+    legend.title = element_text(color = "black", size = 6.5, hjust = 0),
+    plot.margin = margin(0.5, 1.2, 0, 0.5, "lines"),
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    )
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot90940 + theme(legend.position = "right")
+```
+
+Plot abb90940 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 90940_3
+dataset_file_1 <- here("data", "clean", "Band6", "90940", "90940_3_Data.csv")
+data90940_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data90940_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 90940_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten
+- **800–1500 Franken:** Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von 800-1500 Franken im entsprechenden Jahr
+- **1500–3000 Franken:** Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von 1500-3000 Franken im entsprechenden Jahr
+- **3000–6000 Franken:** Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von 3000-6000 Franken im entsprechenden Jahr
+- **6000–20 000 Franken:** Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von 6000-20000 Franken im entsprechenden Jahr
+- **>20 000 Franken:** Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von >20000 Franken im entsprechenden Jahr
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb90940 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb90940.html))",
+    "Soziale Klassen in Basel, 1888–1904",
+    "Die Grafik beruht auf den Daten zur Gemeindesteuer. Diese erfasste Haushaltseinkommen ab 800 Franken pro Jahr, der Verdienst der Ehefrau und von minderjährigen Kindern wurde gemeinsam mit dem Einkommen des Mannes versteuert. Die Erhebung war also patriarchal zugeschnitten – und sie erbrachte das Bild einer Bevölkerung, die mehrheitlich am unteren Rand des Möglichen leben musste.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1888/1904",
+    "19. Jahrhundert",
+    "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 ([Stadt.Geschichte.Basel 6](https://doi.org/10.21255/sgb-06-810743)).",
+    "[data/clean/Band6/90940/90940_3_Data.csv](../../data/clean/Band6/90940/90940_3_Data.csv)",
+    "Mangold, Fritz: Basels Staatseinahmen und Steuerverteilung 1888–1903, tabellarisch dargestellt, Basel 1905, Tab. XIX. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band6/90940/90940_3_Data.csv-metadata.json](../../data/clean/Band6/90940/90940_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Soziale Klassen in Basel, 1888–1904. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90940.html#m90940_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:21"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 90940_3")
+```
+

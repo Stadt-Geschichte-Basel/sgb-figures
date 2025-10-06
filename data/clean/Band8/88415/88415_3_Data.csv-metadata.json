@@ -29,7 +29,7 @@
 					"description": "Anzahl der Heimspiele des FC Basel im angegebenen Jahr"
 				}
 			],
-			"mediaID": ["m88415_3"],
+			"media_id": ["m88415_3"],
 			"isPartOf": {
 				"ObjectID": ["abb88415"],
 				"volume": [
@@ -58,7 +58,7 @@
 				},
 				{
 					"name": ["Moritz Twente"],
-					"email": ["moritz.twente@unibas.ch"],
+					"email": ["mtwente@protonmail.com"],
 					"orcid": ["0009-0005-7187-9774"]
 				}
 			],
@@ -71,12 +71,12 @@
 				"Genossenschaft Stadion St. Jakob-Park (Hg.): Kraft der Visionen: die Genossenschaft Stadion St. Jakob-Park, Basel, 1953–2003. Basel 2004. S. 275; FC Basel-Archiv (www.fcb-archiv.ch). Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m88415_1"], ["m88415_2"]],
+			"relation": ["m88415_1", "m88415_2"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-24 23:24:45"],
+			"modified": ["2025-10-06T16:44:48+0200"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Publikumszahlen an Konzerten und FCB-Spielen im St. Jakob-Stadion, 1960–2022. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88415.html#m88415_3>, letzte Aktualisierung: 24.09.2025."
+				"Stadt.Geschichte.Basel: Publikumszahlen an Konzerten und FCB-Spielen im St. Jakob-Stadion, 1960–2022. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88415.html#m88415_3>, letzte Aktualisierung: 06.10.2025."
 			]
 		}
 	}

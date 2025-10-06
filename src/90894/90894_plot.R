@@ -9,10 +9,11 @@ library(forcats)
 
 # Functions ------------------
 
-source(here("src", "Funktionen", "Format_Theme.R"))
-source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
-source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
-source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
@@ -55,38 +56,38 @@ data90894_modified <- data90894_long %>%
 data90894_modified <- data90894_modified %>%
   mutate(
     Ware = factor(Ware, levels = c("Teerfarben", "Schappe", "Seidenband")),
-    Zielland = factor(Zielland, levels = c("England",
-                                           "USA",
-                                           "Frankreich",
-                                           "Deutschland",
-                                           "Übrige")),
-    Summe = Summe / 1000  # convert to millions
+    Zielland = factor(Zielland, levels = c(
+      "England",
+      "USA",
+      "Frankreich",
+      "Deutschland",
+      "Übrige"
+    )),
+    Summe = Summe / 1000 # convert to millions
   )
 
 # Plot -----------------------
 
 plot90894 <- ggplot(data90894_modified) +
-  
   geom_col(aes(x = Summe, y = Ware, fill = Zielland)) +
-  
-  scale_fill_manual(name = "Exporte in Millionen Franken",
-                    values = c("England" = "#F7CB45",
-                               "Deutschland" = "#90C987",
-                               "USA" = "#F7F056",
-                               "Frankreich" = "#6195CF",
-                               "Übrige" = "#777777")) +
-  
+  scale_fill_manual(
+    name = "Exporte in Millionen Franken",
+    values = c(
+      "England" = "#F7CB45",
+      "Deutschland" = "#90C987",
+      "USA" = "#F7F056",
+      "Frankreich" = "#6195CF",
+      "Übrige" = "#777777"
+    )
+  ) +
   scale_x_continuous(
     breaks = seq(0, 35, 5),
     limits = c(0, 35.1),
     expand = expansion(mult = c(0, 0)),
     labels = ch_numbers
   ) +
-  
   scale_y_discrete(expand = expansion(mult = c(0, 0))) +
-
   coord_cartesian(clip = "off") +
-
   theme_sgb_basis() +
   theme(
     legend.position = "none",
@@ -94,15 +95,27 @@ plot90894 <- ggplot(data90894_modified) +
     legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
     legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
     axis.ticks.y = element_blank(),
-    axis.text.y = element_text(margin = margin(r = 5),
-                               hjust = 1),
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
     panel.grid.major.x = element_line(color = "black", linewidth = 0.14),
     panel.grid.major.y = element_blank(),
-    plot.margin = margin(0.2,0.5,0,0, "lines")
+    plot.margin = margin(0.2, 0.5, 0, 0, "lines")
   )
+
+# Write Info Page ------------
+
+write_info_page(
+  plot_obj = plot90894,
+  plot_id = 90894,
+  volume = 6,
+  csv_suffix = 3
+)
 
 # Export ---------------------
 
 export_plot(plot90894, 6, 120, 55, 33, 20,
-            plot_suffix = 1,
-            legend_suffix = 2)
+  plot_suffix = 1,
+  legend_suffix = 2
+)

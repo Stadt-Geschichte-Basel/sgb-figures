@@ -1,0 +1,198 @@
+---
+title: "Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
+vol_short: "Stadt.Geschichte.Basel 8"
+plotid: "abb82338"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/82338'
+    text: abb82338 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "82338", "82338_clean.R"))
+
+# Transform Data -------------
+
+data82338_longer <- data82338 %>%
+  pivot_longer(
+    cols = -Jahr,
+    names_to = "Kanton",
+    values_to = "Arbeitslosenquote"
+  ) %>%
+  mutate(
+    Jahr = as.numeric(Jahr),
+    Arbeitslosenquote = Arbeitslosenquote / 100
+  )
+
+data82338_longer$Kanton <- factor(data82338_longer$Kanton, levels = c(
+  "Kanton Zürich",
+  "Kanton Genf",
+  "Kanton Basel-Stadt",
+  "Gesamte Schweiz"
+))
+
+# Plot -----------------------
+
+plot82338 <- ggplot(data82338_longer, aes(
+  x = Jahr, y = Arbeitslosenquote,
+  color = Kanton,
+  group = Kanton
+)) +
+  geom_line(linewidth = 0.561) +
+  scale_x_continuous(
+    breaks = pretty_breaks(),
+    guide = guide_axis(),
+    expand = expansion(mult = c(0, 0.005))
+  ) +
+  scale_y_continuous(
+    limits = c(0, 0.08),
+    breaks = pretty_breaks(),
+    expand = expansion(mult = c(0, 0)),
+    labels = percent_format()
+  ) +
+  scale_color_manual(values = c(
+    "Gesamte Schweiz" = "#DC050C",
+    "Kanton Basel-Stadt" = "#000000",
+    "Kanton Genf" = "#F7CB45",
+    "Kanton Zürich" = "#6195CF"
+  )) +
+  guides(color = guide_legend(
+    reverse = TRUE,
+    keyheight = unit(4.8, "mm")
+  )) + # results in ca. 3mm
+
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 0.1, 0, 0.5, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot82338 + theme(legend.position = "right")
+```
+
+Plot abb82338 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 82338_3
+dataset_file_1 <- here("data", "clean", "Band8", "82338", "82338_3_Data.csv")
+data82338_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data82338_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 82338_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Jahreszahl nach unserer Zeitrechnung
+- **Gesamte Schweiz:** Anteil der Arbeitslosen an der Gesamtbevölkerung der Schweiz in Prozent im entsprechenden Jahr
+- **Kanton Basel-Stadt:** Anteil der Arbeitslosen an der Bevölkerung des Kantons Basel-Stadt in Prozent im entsprechenden Jahr
+- **Kanton Genf:** Anteil der Arbeitslosen an der Gesamtbevölkerung des Kantons Genf in Prozent im entsprechenden Jahr
+- **Kanton Zürich:** Anteil der Arbeitslosen an der Gesamtbevölkerung des Kantons Zürich in Prozent im entsprechenden Jahr
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb82338 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb82338.html))",
+    "Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002",
+    "Die Erfassung der Arbeitslosigkeit ist voller Tücken. In der Statistik werden nur Menschen erfasst, die Anspruch auf Arbeitslosenentschädigungen haben. Der Anteil an Erwerbslosen war während der Rezession Mitte der 1970er-Jahre jedoch wesentlich höher, als es die erhobene Arbeitslosenquote von 0.5 bis 1.5 Prozent vermuten lässt. Die Zahlen blieben niedrig, weil viele ausländische Arbeitnehmerinnen und Arbeitnehmer mit ihrem Stellenverlust auch ihr Aufenthaltsrecht verloren. Im Vergleich zum Landesdurchschnitt verzeichnete der Kanton Basel-Stadt Mitte der 1980er-Jahre eine hohe Arbeitslosenquote von knapp drei Prozent. In der Krise der 1990er-Jahre stieg sie auf fast sechs Prozent, im Kanton Zürich lag sie tiefer, in Westschweizer Kantonen wie Genf noch höher.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1973/2002",
+    "20. Jahrhundert",
+    "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 ([Stadt.Geschichte.Basel 8](https://doi.org/10.21255/sgb-08-796384)).",
+    "[data/clean/Band8/82338/82338_3_Data.csv](../../data/clean/Band8/82338/82338_3_Data.csv)",
+    "Bundesamt für Statistik, Staatssekretariat für Wirtschaft 2024: Arbeitslose nach Kanton. Jahresdurchschnitt. https://www.bfs.admin.ch/asset/de/30245369. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band8/82338/82338_3_Data.csv-metadata.json](../../data/clean/Band8/82338/82338_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb82338.html#m82338_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:20"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 82338_3")
+```
+

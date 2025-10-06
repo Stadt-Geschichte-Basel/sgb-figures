@@ -9,10 +9,11 @@ library(forcats)
 
 # Functions ------------------
 
-source(here("src", "Funktionen", "Format_Theme.R"))
-source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
-source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
-source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
@@ -38,52 +39,66 @@ branche_order <- c(
 )
 
 data26060_longer$Branche <- factor(data26060_longer$Branche,
-                                   levels = rev(branche_order))
+  levels = rev(branche_order)
+)
 
 # Plot -----------------------
 
 plot26060 <- ggplot(data26060_longer) +
-  
   geom_col(aes(x = Jahr, y = Beschäftigte, fill = Branche)) +
-  
-  scale_fill_manual(values = c("Land- und Forstwirtschaft" = "#90C987",
-                               "Industrie und Handwerk" = "#F7CB45",
-                               "Baugewerbe" = "#EE8026",
-                               "Elektrizitäts-, Gas- und Wasserversorgung" = "#72190E",
-                               "Dienstleistungen (ohne öffentliche Verwaltung)" = "#6195CF"),
-                    labels = c("Land- und Forstwirtschaft",
-                               "Industrie und Handwerk",
-                               "Baugewerbe",
-                               "Elektrizitäts-, Gas- und\nWasserversorgung",
-                               "Dienstleistungen (ohne\nöffentliche Verwaltung)")) +
-  
+  scale_fill_manual(
+    values = c(
+      "Land- und Forstwirtschaft" = "#90C987",
+      "Industrie und Handwerk" = "#F7CB45",
+      "Baugewerbe" = "#EE8026",
+      "Elektrizitäts-, Gas- und Wasserversorgung" = "#72190E",
+      "Dienstleistungen (ohne öffentliche Verwaltung)" = "#6195CF"
+    ),
+    labels = c(
+      "Land- und Forstwirtschaft",
+      "Industrie und Handwerk",
+      "Baugewerbe",
+      "Elektrizitäts-, Gas- und\nWasserversorgung",
+      "Dienstleistungen (ohne\nöffentliche Verwaltung)"
+    )
+  ) +
   scale_x_continuous(
     breaks = c(1929, 1939, 1955, 1965),
     guide = guide_axis(angle = 0),
-    expand = expansion(mult = c(0, 0))) +
-
+    expand = expansion(mult = c(0, 0))
+  ) +
   scale_y_continuous(
     limits = c(0, 140000),
     breaks = seq(0, 140000, 20000),
     expand = expansion(mult = c(0, 0)),
     labels = ch_numbers
   ) +
-  
   coord_cartesian(clip = "off") +
-
   theme_sgb_basis() +
   theme(
     legend.position = "none",
     legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
     legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
     axis.ticks.x = element_blank(),
-    axis.text.y = element_text(margin = margin(r = 5),
-                               hjust = 1),
-    plot.margin = margin(0.5,0.1,0,0, "lines")
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 0.1, 0, 0, "lines")
   )
+
+# Write Info Page ------------
+
+write_info_page(
+  plot_obj = plot26060,
+  plot_id = 26060,
+  volume = 7,
+  csv_suffix = 3
+)
 
 # Export ---------------------
 
 export_plot(plot26060, 7, 120, 55, 36, 19,
-            plot_suffix = 1,
-            legend_suffix = 2)
+  plot_suffix = 1,
+  legend_suffix = 2
+)

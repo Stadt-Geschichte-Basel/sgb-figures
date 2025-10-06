@@ -25,14 +25,18 @@ website:
         url: https://github.com/stadt-geschichte-basel/sgb-figures/
         aria-label: GitHub-Repository
     left:
-      - text: Plots
-        href: index.qmd
+      - text: Figures
+        href: docs/plots.qmd
+      - text: Workflow
+        href: docs/workflow/index.qmd
+      - text: Design
+        href: docs/design/index.qmd
       - text: Research Data Platform
         href: https://forschung.stadtgeschichtebasel.ch
-      - text: RDM Documentation
+        target: _blank
+      - text: Stadt.Geschichte.Basel RDM
         href: https://stadt-geschichte-basel.github.io
-      - text: About
-        href: index.qmd
+        target: _blank
 
   sidebar:
     contents:
@@ -61,6 +65,8 @@ format:
     code-overflow: wrap
     css: styles.css
     mainfont: Euclid Circular B
+    mermaid:
+      theme: neutral
 
 freeze: true
 

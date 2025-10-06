@@ -53,7 +53,7 @@
 					"description": "Anzahl der wohnhaften Ausländer*innen der angegebenen Nationalitäten im entsprechenden Jahr"
 				}
 			],
-			"mediaID": ["m81313_3"],
+			"media_id": ["m81313_3"],
 			"isPartOf": {
 				"ObjectID": ["abb81313"],
 				"volume": [
@@ -84,7 +84,7 @@
 				},
 				{
 					"name": ["Moritz Twente"],
-					"email": ["moritz.twente@unibas.ch"],
+					"email": ["mtwente@protonmail.com"],
 					"orcid": ["0009-0005-7187-9774"]
 				}
 			],
@@ -97,12 +97,12 @@
 				"https://statistik.bs.ch/apps/jahrbuch. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m81313_1"], ["m81313_2"]],
+			"relation": ["m81313_1", "m81313_2"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-24 23:24:44"],
+			"modified": ["2025-10-06T16:43:12+0200"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Nationalitäten von in Basel-Stadt wohnhaften Ausländerinnen und Ausländern, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb81313.html#m81313_3>, letzte Aktualisierung: 24.09.2025."
+				"Stadt.Geschichte.Basel: Nationalitäten von in Basel-Stadt wohnhaften Ausländerinnen und Ausländern, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb81313.html#m81313_3>, letzte Aktualisierung: 06.10.2025."
 			]
 		}
 	}

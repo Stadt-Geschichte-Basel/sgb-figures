@@ -35,7 +35,7 @@
 					"description": "Anzahl der parteilosen Mitglieder des Regierungsrats des Kantons Basel-Stadt nach den Gesamterneuerungswahlen im angegebenen Jahr"
 				}
 			],
-			"mediaID": ["m91310_3"],
+			"media_id": ["m91310_3"],
 			"isPartOf": {
 				"ObjectID": ["abb91310"],
 				"volume": [
@@ -44,7 +44,7 @@
 			},
 			"title": ["Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914"],
 			"description": [
-				"Die Grafik zeigt die Zusammensetzung des Regierungsrates jeweils nach den Gesamterneuerungswahlen alle drei Jahre. Bis 1887 wählte der Grosse Rat die Regierung. Seit 1890 wählt das Volk den Regierungsrat im Majorzsystem, im Gegensatz zum Grossen Rat, der seit 1905 im Proporzsystem gewählt wird"
+				"Die Grafik zeigt die Zusammensetzung des Regierungsrates jeweils nach den Gesamterneuerungswahlen alle drei Jahre. Bis 1887 wählte der Grosse Rat die Regierung. Seit 1890 wählt das Volk den Regierungsrat im Majorzsystem, im Gegensatz zum Grossen Rat, der seit 1905 im Proporzsystem gewählt wird."
 			],
 			"creator": [
 				{
@@ -61,7 +61,7 @@
 				},
 				{
 					"name": ["Moritz Twente"],
-					"email": ["moritz.twente@unibas.ch"],
+					"email": ["mtwente@protonmail.com"],
 					"orcid": ["0009-0005-7187-9774"]
 				}
 			],
@@ -74,12 +74,12 @@
 				"Liste der Mitglieder des basel-städtischen Regierungsrates seit 1875. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m91310_1"], ["m91310_2"]],
+			"relation": ["m91310_1", "m91310_2"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-24 23:24:46"],
+			"modified": ["2025-10-06T16:42:52+0200"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91310.html#m91310_3>, letzte Aktualisierung: 24.09.2025."
+				"Stadt.Geschichte.Basel: Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91310.html#m91310_3>, letzte Aktualisierung: 06.10.2025."
 			]
 		}
 	}

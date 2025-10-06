@@ -1,0 +1,325 @@
+---
+title: "Kulturausgaben in Basel-Stadt, 2021"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
+vol_short: "Stadt.Geschichte.Basel 8"
+plotid: "abb88300"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/88300'
+    text: abb88300 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+library(patchwork)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "88300", "88300a_clean.R"))
+source(here("src", "88300", "88300b_clean.R"))
+
+# Transform Data -------------
+
+## Plot A: Kultursubventionen pro Kopf je Kanton
+data88300a <- data88300a %>%
+  mutate(Kanton = factor(Kanton, levels = rev(unique(Kanton))))
+
+## Plot B: Subventionsempfängerinnen in Basel-Stadt
+data88300b <- data88300b %>%
+  mutate(
+    Proportion = `Ausgaben in CHF (2021)` / sum(`Ausgaben in CHF (2021)`),
+    Proportion_Label = paste0(round(Proportion * 100, 1), "%"),
+    Legend_Label = paste0(Empfänger, " (", Proportion_Label, ")")
+  )
+
+data88300b$Legend_Label <- factor(data88300b$Legend_Label,
+  levels = rev(c(
+    data88300b$Legend_Label[order(
+      data88300b$`Ausgaben in CHF (2021)`,
+      decreasing = FALSE
+    ) &
+      data88300b$Empfänger != "Diverses"],
+    "Diverses (13.5%)"
+  ))
+)
+
+color_mapping <- c(
+  "Museen (42.2%)" = "#F7CB45",
+  "Theater und Tanz (31%)" = "#6195CF",
+  "Musik (7.9%)" = "#EE8026",
+  "Literatur (5.3%)" = "#882E72",
+  "Diverses (13.5%)" = "#777777"
+)
+
+# Plot -----------------------
+
+plot88300a <- ggplot(data88300a, aes(
+  x = Kanton,
+  y = `Kultursubventionen pro Kopf in Franken (2021)`,
+  fill = "#cc4a23"
+)) + # Bandfarbe 8
+
+  geom_bar(stat = "identity") +
+  ggtitle("CHF/pro Kopf") +
+  scale_y_continuous(
+    limits = c(0, 409),
+    breaks = seq(0, 400, 100),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  theme_sgb_basis() +
+  theme(
+    axis.ticks.x = element_blank(),
+    axis.text.y = element_text(margin = margin(r = 5)),
+    panel.grid.major.y = element_line(color = "black", linewidth = 0.14),
+    panel.grid.major.x = element_blank(),
+    plot.title = element_text(
+      size = 6.5,
+      color = "black",
+      margin = unit(c(2.2, 0, 4, 0), "pt"),
+      hjust = 0
+    ),
+    legend.position = "none"
+  )
+
+## Create Plot B (Subventionsempfängerinnen in Basel-Stadt)
+plot88300b <- ggplot(data88300b) +
+  geom_bar(aes(x = "", y = `Ausgaben in CHF (2021)`, fill = Legend_Label),
+    stat = "identity", width = 1
+  ) +
+  scale_y_continuous(breaks = NULL) +
+  scale_fill_manual(values = color_mapping) +
+  coord_polar("y", start = 0) +
+  guides(fill = guide_legend(ncol = 2, reverse = TRUE)) +
+  theme_void() +
+  theme(
+    axis.line.x.bottom = element_blank(),
+    axis.line.y.left = element_blank(),
+    axis.ticks.y = element_blank(),
+    legend.position = "none",
+    legend.key = element_rect(fill = "transparent", colour = NA),
+    legend.key.width = unit(5, "mm"), # resultiert in 4 mm
+    legend.key.height = unit(2.5, "mm"), # resultiert in 2 mm
+    legend.text = element_text(size = 6.5),
+    legend.direction = "vertical",
+    legend.title = element_blank()
+  )
+
+# Combine Plots --------------
+
+## Plot 88300b: get legend
+plot88300b_with_legend <- plot88300b + theme(legend.position = "right")
+
+legende88300b <- get_legend(plot88300b_with_legend) %>%
+  as_ggplot()
+
+## Join legend and plot to a new single plot for better appearance in combination with plot88300a
+plot88300b_joined <- plot88300b + plot_spacer() + legende88300b + plot_layout(
+  ncol = 1,
+  heights = c(12, 0.7, 0.2)
+)
+
+## Combine Plots with patchwork package
+plot88300 <- plot88300a + plot_spacer() + plot88300b_joined + plot_layout(
+  ncol = 3,
+  widths = c(1.2, 0.2, 1.9)
+)
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot88300 + theme(legend.position = "right")
+```
+
+Plot abb88300 was built using the following data:
+
+```{r datatable1}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 88300_2
+dataset_file_1 <- here("data", "clean", "Band8", "88300", "88300_2_Data.csv")
+data88300_2 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data88300_2,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 88300_2 (Subset 1/2)'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Kanton:** Name des Kantons, für den Angaben zur Kulturförderung gemacht werden
+- **Kultursubventionen pro Kopf in Franken (2021):** Summe der Kulturförderung in Schweizer Franken im Jahr 2021
+:::
+```{r metatable1, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb88300 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb88300.html))",
+    "Kulturausgaben in Basel-Stadt, 2021",
+    "Basels Selbstverständnis als Kulturstadt wird im kantonalen Vergleich der Kultursubventionen deutlich. 2021 betrugen diese in Basel-Stadt 408 Franken pro Kopf, im zweitplatzierten Kanton Genf waren es 117 Franken, im Kanton Zürich 81 Franken.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "2014",
+    "21. Jahrhundert",
+    "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 ([Stadt.Geschichte.Basel 8](https://doi.org/10.21255/sgb-08-796384)).",
+    "[data/clean/Band8/88300/88300_2_Data.csv](../../data/clean/Band8/88300/88300_2_Data.csv)",
+    "Bundesamt für Statistik, gd-d-16.02.05.01-2024. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band8/88300/88300_2_Data.csv-metadata.json](../../data/clean/Band8/88300/88300_2_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_2>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:20"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 88300_2 (Subset 1/2)")
+```
+
+
+---
+
+```{r datatable2}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 88300_3
+dataset_file_2 <- here("data", "clean", "Band8", "88300", "88300_3_Data.csv")
+data88300_3 <- read_csv(dataset_file_2)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data88300_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 88300_3 (Subset 2/2)'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Empfänger:** Gruppe der Institutionen, an die im Kanton Basel-Stadt Kulturförderung verteilt wurde
+- **Ausgaben in CHF (2021):** Summe der Förderung in Schweizer Franken im Jahr 2021. Zahlen ohne Beträge aus dem Swisslos-Fonds Basel-Stadt
+:::
+```{r metatable2, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb88300 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb88300.html))",
+    "Kulturausgaben in Basel-Stadt, 2021",
+    "Basels Selbstverständnis als Kulturstadt wird in der Betrachtung der Kultursubventionen deutlich. 2021 betrugen diese in Basel-Stadt 408 Franken pro Kopf. Die öffentliche Hand subventionierte verschiedene Kultureinrichtungen; mit Abstand am meisten Gelder erhielten in Basel das Theater, das Sinfonieorchester und die fünf staatlichen Museen.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "2021",
+    "21. Jahrhundert",
+    "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 ([Stadt.Geschichte.Basel 8](https://doi.org/10.21255/sgb-08-796384)).",
+    "[data/clean/Band8/88300/88300_3_Data.csv](../../data/clean/Band8/88300/88300_3_Data.csv)",
+    "Jahresbericht Abteilung Kultur 2021. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band8/88300/88300_3_Data.csv-metadata.json](../../data/clean/Band8/88300/88300_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:20"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 88300_3 (Subset 2/2)")
+```
+

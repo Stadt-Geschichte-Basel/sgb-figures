@@ -1,6 +1,9 @@
 # Quarto
+/.quarto/
 .quarto/
 _site/
+_freeze/
+**/*.quarto_ipynb
 
 # PDF plot output
 output/*
@@ -256,7 +259,7 @@ vignettes/*.pdf
 .Renviron
 
 # pkgdown site
-docs/
+#docs/
 
 # translation temp files
 po/*~

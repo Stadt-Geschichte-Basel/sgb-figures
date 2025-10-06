@@ -1,0 +1,231 @@
+---
+title: "Schema der Dreifelderwirtschaft"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Sieber-Lehmann, Claudius; Schwarz, Peter-Andrew (Hg.): Eine Bischofsstadt zwischen Oberrhein und Jura. 800–1273. Basel 2024 (Stadt.Geschichte.Basel 2)."
+vol_short: "Stadt.Geschichte.Basel 2"
+plotid: "abb34278"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/34278'
+    text: abb34278 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "34278", "34278_clean.R"))
+
+# Transform Data -------------
+
+data34278_longer <- pivot_longer(data34278,
+  cols = 2:25,
+  names_to = "Monat",
+  values_to = "Bewirtschaftung"
+)
+
+# change month names to numbers
+data34278_longer$Monat[data34278_longer$Monat == "Januar"] <- 1
+data34278_longer$Monat[data34278_longer$Monat == "Januar15"] <- 1.5
+data34278_longer$Monat[data34278_longer$Monat == "Februar"] <- 2
+data34278_longer$Monat[data34278_longer$Monat == "Februar15"] <- 2.5
+data34278_longer$Monat[data34278_longer$Monat == "März"] <- 3
+data34278_longer$Monat[data34278_longer$Monat == "März15"] <- 3.5
+data34278_longer$Monat[data34278_longer$Monat == "April"] <- 4
+data34278_longer$Monat[data34278_longer$Monat == "April15"] <- 4.5
+data34278_longer$Monat[data34278_longer$Monat == "Mai"] <- 5
+data34278_longer$Monat[data34278_longer$Monat == "Mai15"] <- 5.5
+data34278_longer$Monat[data34278_longer$Monat == "Juni"] <- 6
+data34278_longer$Monat[data34278_longer$Monat == "Juni15"] <- 6.5
+data34278_longer$Monat[data34278_longer$Monat == "Juli"] <- 7
+data34278_longer$Monat[data34278_longer$Monat == "Juli15"] <- 7.5
+data34278_longer$Monat[data34278_longer$Monat == "August"] <- 8
+data34278_longer$Monat[data34278_longer$Monat == "August15"] <- 8.5
+data34278_longer$Monat[data34278_longer$Monat == "September"] <- 9
+data34278_longer$Monat[data34278_longer$Monat == "September15"] <- 9.5
+data34278_longer$Monat[data34278_longer$Monat == "Oktober"] <- 10
+data34278_longer$Monat[data34278_longer$Monat == "Oktober15"] <- 10.5
+data34278_longer$Monat[data34278_longer$Monat == "November"] <- 11
+data34278_longer$Monat[data34278_longer$Monat == "November15"] <- 11.5
+data34278_longer$Monat[data34278_longer$Monat == "Dezember"] <- 12
+data34278_longer$Monat[data34278_longer$Monat == "Dezember15"] <- 12.5
+
+data34278_longer$Bewirtschaftung <- as.factor(data34278_longer$Bewirtschaftung)
+data34278_longer$Monat <- factor(data34278_longer$Monat,
+  levels = as.character(seq(1, 12.5, by = 0.5))
+)
+
+# vertikale Linien zur besseren Ablesbarkeit
+vertical_lines <- seq(1, 12, 1)
+
+hjust_value <- 2
+
+# Plot -----------------------
+
+plot34278 <- ggplot(data34278_longer, aes(x = as.numeric(as.character(Monat)) - 0.25, y = Feldtyp, fill = Bewirtschaftung)) +
+  geom_tile() +
+  geom_vline(
+    xintercept = vertical_lines + 0.5,
+    color = "#777777", linewidth = 0.14,
+    linetype = "longdash"
+  ) +
+  scale_fill_manual(values = c("#CAE0AB", "#D1BBD7", "#F4A736", "#F7CB45")) +
+  scale_x_continuous(
+    breaks = c(seq(1.25, 9.25, by = 1), seq(10.5, 12.5, by = 1)),
+    labels = as.character(1:12),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  scale_y_discrete(
+    expand = expansion(mult = c(0, 0))
+  ) +
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    axis.ticks.x = element_blank(),
+    axis.ticks.y = element_blank(),
+    axis.text.x = element_text(hjust = hjust_value),
+    axis.text.y = element_text(margin = margin(r = 5)),
+    plot.margin = margin(0.05, 0, 0, 0.5, "lines"),
+    legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
+    legend.key.width = unit(5, "mm") # entspricht 4mm
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot34278 + theme(legend.position = "right")
+```
+
+Plot abb34278 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 34278_3
+dataset_file_1 <- here("data", "clean", "Band2", "34278", "34278_3_Data.csv")
+data34278_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data34278_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 34278_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Feldtyp:** Typ des bewirtschafteten Feldes
+- **Januar:** Zustand des jeweiligen Feldes in der ersten Hälfte des ersten Monats
+- **Januar15:** Zustand des jeweiligen Feldes in der zweiten Hälfte des ersten Monats
+- **Februar:** Zustand des jeweiligen Feldes in der ersten Hälfte des zweiten Monats
+- **Februar15:** Zustand des jeweiligen Feldes in der zweiten Hälfte des zweiten Monats
+- **März:** Zustand des jeweiligen Feldes in der ersten Hälfte des dritten Monats
+- **März15:** Zustand des jeweiligen Feldes in der zweiten Hälfte des dritten Monats
+- **April:** Zustand des jeweiligen Feldes in der ersten Hälfte des vierten Monats
+- **April15:** Zustand des jeweiligen Feldes in der zweiten Hälfte des vierten Monats
+- **Mai:** Zustand des jeweiligen Feldes in der ersten Hälfte des fünften Monats
+- **Mai15:** Zustand des jeweiligen Feldes in der zweiten Hälfte des fünften Monats
+- **Juni:** Zustand des jeweiligen Feldes in der ersten Hälfte des sechsten Monats
+- **Juni15:** Zustand des jeweiligen Feldes in der zweiten Hälfte des sechsten Monats
+- **Juli:** Zustand des jeweiligen Feldes in der ersten Hälfte des siebten Monats
+- **Juli15:** Zustand des jeweiligen Feldes in der zweiten Hälfte des siebten Monats
+- **August:** Zustand des jeweiligen Feldes in der ersten Hälfte des achten Monats
+- **August15:** Zustand des jeweiligen Feldes in der zweiten Hälfte des achten Monats
+- **September:** Zustand des jeweiligen Feldes in der ersten Hälfte des neunten Monats
+- **September15:** Zustand des jeweiligen Feldes in der zweiten Hälfte des neunten Monats
+- **Oktober:** Zustand des jeweiligen Feldes in der ersten Hälfte des zehnten Monats
+- **Oktober15:** Zustand des jeweiligen Feldes in der zweiten Hälfte des zehnten Monats
+- **November:** Zustand des jeweiligen Feldes in der ersten Hälfte des elften Monats
+- **November15:** Zustand des jeweiligen Feldes in der zweiten Hälfte des elften Monats
+- **Dezember:** Zustand des jeweiligen Feldes in der ersten Hälfte des zwölften Monats
+- **Dezember15:** Zustand des jeweiligen Feldes in der zweiten Hälfte des zwölften Monats
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb34278 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb34278.html))",
+    "Schema der Dreifelderwirtschaft",
+    "Die zeitlich verschobene Bewirtschaftung der drei Felder benötigte einen grossen organisatorischen Aufwand und verbindliche Absprachen innerhalb der Dorfgemeinschaft.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1000~",
+    "Mittelalter",
+    "Sieber-Lehmann, Claudius; Schwarz, Peter-Andrew (Hg.): Eine Bischofsstadt zwischen Oberrhein und Jura. 800–1273. Basel 2024 ([Stadt.Geschichte.Basel 2](https://doi.org/10.21255/sgb-02-404936)).",
+    "[data/clean/Band2/34278/34278_3_Data.csv](../../data/clean/Band2/34278/34278_3_Data.csv)",
+    "Abel, Wilhelm: Geschichte der deutschen Landwirtschaft vom frühen Mittelalter bis zum 19. Jahrhundert (Deutsche Agrargeschichte), Stuttgart 1978, S. 40. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band2/34278/34278_3_Data.csv-metadata.json](../../data/clean/Band2/34278/34278_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Schema der Dreifelderwirtschaft. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb34278.html#m34278_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:17"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 34278_3")
+```
+

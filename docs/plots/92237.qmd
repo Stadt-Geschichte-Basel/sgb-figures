@@ -1,0 +1,180 @@
+---
+title: "Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Glarus, 1850 und 1910"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
+vol_short: "Stadt.Geschichte.Basel 6"
+plotid: "abb92237"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/92237'
+    text: abb92237 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "92237", "92237_clean.R"))
+
+# Transform Data -------------
+
+data92237_longer <- pivot_longer(data92237,
+  cols = c("Basel-Stadt", Glarus),
+  names_to = "Kanton",
+  values_to = "EW"
+)
+
+# Plot -----------------------
+
+plot92237 <- ggplot(data = data92237_longer, aes(
+  x = Jahr,
+  y = EW,
+  fill = Kanton
+)) +
+  geom_bar(
+    stat = "identity",
+    position = position_dodge2(preserve = "single")
+  ) +
+  scale_fill_manual(values = c("#F7CB45", "#6195CF")) +
+  scale_x_continuous(
+    breaks = c(1850, 1910),
+    guide = guide_axis(),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  scale_y_continuous(
+    limits = c(0, 150000),
+    breaks = c(0, 30000, 50000, 100000, 150000),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
+    legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    axis.ticks.x = element_blank(),
+    plot.margin = margin(0.5, 0.2, 0, 0, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot92237 + theme(legend.position = "right")
+```
+
+Plot abb92237 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 92237_3
+dataset_file_1 <- here("data", "clean", "Band6", "92237", "92237_3_Data.csv")
+data92237_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data92237_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 92237_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Angabe des Jahres, für das die jeweiligen Daten gelten. Jahreszahl in unserer Zeitrechnung
+- **Basel-Stadt:** Anzahl der Einwohnerinnen und Einwohner des Kantons Basel-Stadt im angegebenen Jahr
+- **Glarus:** Anzahl der Einwohnerinnen und Einwohner des Kantons Glarus im angegebenen Jahr
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb92237 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb92237.html))",
+    "Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Glarus, 1850 und 1910",
+    "Der Vergleich zwischen Basel-Stadt und Glarus veranschaulicht den sozialen Strukturwandel innerhalb der Schweiz. Um 1850 hatten beide Kantone rund 30 000 Einwohnerinnen und Einwohner. Bis 1910 wuchs die Bevölkerung von Glarus auf etwas über 33 000 Menschen an, während sich die Bevölkerung des Kantons Basel-Stadt auf über 135 000 vervielfachte.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "[1850, 1910]",
+    "19. Jahrhundert",
+    "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 ([Stadt.Geschichte.Basel 6](https://doi.org/10.21255/sgb-06-810743)).",
+    "[data/clean/Band6/92237/92237_3_Data.csv](../../data/clean/Band6/92237/92237_3_Data.csv)",
+    "Bickel, Wilhelm: Bevölkerungsgeschichte und Bevölkerungspolitik der Schweiz seit dem Ausgang des Mittelalters, Zürich 1947, S. 135. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band6/92237/92237_3_Data.csv-metadata.json](../../data/clean/Band6/92237/92237_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Glarus, 1850 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92237.html#m92237_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:22"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 92237_3")
+```
+

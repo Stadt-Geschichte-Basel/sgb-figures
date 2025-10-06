@@ -1,0 +1,206 @@
+---
+title: "Beschäftigte nach Wirtschaftszweigen im Kanton Basel-Stadt, 1929–1965"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
+vol_short: "Stadt.Geschichte.Basel 7"
+plotid: "abb26060"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/26060'
+    text: abb26060 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+library(forcats)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "26060", "26060_clean.R"))
+
+# Transform Data -------------
+
+data26060_longer <- data26060 %>%
+  pivot_longer(
+    cols = -Branche,
+    names_to = "Jahr",
+    values_to = "Beschäftigte"
+  )
+
+data26060_longer$Jahr <- as.numeric(data26060_longer$Jahr)
+
+branche_order <- c(
+  "Dienstleistungen (ohne öffentliche Verwaltung)",
+  "Elektrizitäts-, Gas- und Wasserversorgung",
+  "Baugewerbe",
+  "Industrie und Handwerk",
+  "Land- und Forstwirtschaft"
+)
+
+data26060_longer$Branche <- factor(data26060_longer$Branche,
+  levels = rev(branche_order)
+)
+
+# Plot -----------------------
+
+plot26060 <- ggplot(data26060_longer) +
+  geom_col(aes(x = Jahr, y = Beschäftigte, fill = Branche)) +
+  scale_fill_manual(
+    values = c(
+      "Land- und Forstwirtschaft" = "#90C987",
+      "Industrie und Handwerk" = "#F7CB45",
+      "Baugewerbe" = "#EE8026",
+      "Elektrizitäts-, Gas- und Wasserversorgung" = "#72190E",
+      "Dienstleistungen (ohne öffentliche Verwaltung)" = "#6195CF"
+    ),
+    labels = c(
+      "Land- und Forstwirtschaft",
+      "Industrie und Handwerk",
+      "Baugewerbe",
+      "Elektrizitäts-, Gas- und\nWasserversorgung",
+      "Dienstleistungen (ohne\nöffentliche Verwaltung)"
+    )
+  ) +
+  scale_x_continuous(
+    breaks = c(1929, 1939, 1955, 1965),
+    guide = guide_axis(angle = 0),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  scale_y_continuous(
+    limits = c(0, 140000),
+    breaks = seq(0, 140000, 20000),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
+    legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+    axis.ticks.x = element_blank(),
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 0.1, 0, 0, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot26060 + theme(legend.position = "right")
+```
+
+Plot abb26060 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 26060_3
+dataset_file_1 <- here("data", "clean", "Band7", "26060", "26060_3_Data.csv")
+data26060_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data26060_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 26060_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Branche:** Bezeichnung des Wirtschaftszweigs, für die die angegebenen Zahlen gelten
+- **1929:** Anzahl der im jeweiligen Wirtschaftszweig beschäftigten Personen im Kanton Basel-Stadt im Jahr 1929
+- **1939:** Anzahl der im jeweiligen Wirtschaftszweig beschäftigten Personen im Kanton Basel-Stadt im Jahr 1939
+- **1955:** Anzahl der im jeweiligen Wirtschaftszweig beschäftigten Personen im Kanton Basel-Stadt im Jahr 1955
+- **1965:** Anzahl der im jeweiligen Wirtschaftszweig beschäftigten Personen im Kanton Basel-Stadt im Jahr 1965
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb26060 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb26060.html))",
+    "Beschäftigte nach Wirtschaftszweigen im Kanton Basel-Stadt, 1929–1965",
+    "Zehn Jahre sollte der Abstand zwischen den einzelnen Zählungen betragen, was die beiden Weltkriege jedoch verhinderten. Trotz beträchtlicher zeitlicher Abstände untersuchten die Statistiker die erhobenen Daten auf Kontinuitäten und Veränderungen. Bei der Zusammenstellung der vier Zählungen von 1965 fällt auf, dass 1939 – als Folge der Wirtschaftskrise der 1930er Jahre – die Zahl der Beschäftigten tiefer ist als 1929, obschon im selben Zeitraum der Kanton einen Bevölkerungszuwachs erfuhr. Von einer deutlichen Zunahme der Beschäftigten während der Hochkonjunktur hingegen zeugen die Daten von 1955 und 1965. Die Zahl der Beschäftigten in «Bergbau, Steinbrüche, Gruben» ist dermassen klein (zwischen 25 und 10), dass sie in der Grafik nicht erscheint.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1929/1965",
+    "20. Jahrhundert",
+    "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 ([Stadt.Geschichte.Basel 7](https://doi.org/10.21255/sgb-07-663402)).",
+    "[data/clean/Band7/26060/26060_3_Data.csv](../../data/clean/Band7/26060/26060_3_Data.csv)",
+    "Böhner, Martin: Die Eidgenössische Betriebszählung 1965 aus baslerischer Sicht, Basel 1968, S. 66f. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band7/26060/26060_3_Data.csv-metadata.json](../../data/clean/Band7/26060/26060_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Beschäftigte nach Wirtschaftszweigen im Kanton Basel-Stadt, 1929–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26060.html#m26060_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:17"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 26060_3")
+```
+

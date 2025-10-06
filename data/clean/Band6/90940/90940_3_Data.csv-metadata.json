@@ -41,7 +41,7 @@
 					"description": "Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von >20000 Franken im entsprechenden Jahr"
 				}
 			],
-			"mediaID": ["m90940_3"],
+			"media_id": ["m90940_3"],
 			"isPartOf": {
 				"ObjectID": ["abb90940"],
 				"volume": [
@@ -50,7 +50,7 @@
 			},
 			"title": ["Soziale Klassen in Basel, 1888–1904"],
 			"description": [
-				"Die Grafik beruht auf den Daten zur Gemeindesteuer. Diese erfasste Haushaltseinkommen ab 800 Franken pro Jahr, der Verdienst der Ehefrau und von minderjährigen Kindern wurde gemeinsam mit dem Einkommen des Mannes versteuert. Die Erhebung war also patriarchal zugeschnitten – und sie erbrachte das Bild einer Bevölkerung, die mehrheitlich am unteren Rand des Möglichen leben musste"
+				"Die Grafik beruht auf den Daten zur Gemeindesteuer. Diese erfasste Haushaltseinkommen ab 800 Franken pro Jahr, der Verdienst der Ehefrau und von minderjährigen Kindern wurde gemeinsam mit dem Einkommen des Mannes versteuert. Die Erhebung war also patriarchal zugeschnitten – und sie erbrachte das Bild einer Bevölkerung, die mehrheitlich am unteren Rand des Möglichen leben musste."
 			],
 			"creator": [
 				{
@@ -65,7 +65,7 @@
 				},
 				{
 					"name": ["Moritz Twente"],
-					"email": ["moritz.twente@unibas.ch"],
+					"email": ["mtwente@protonmail.com"],
 					"orcid": ["0009-0005-7187-9774"]
 				}
 			],
@@ -78,12 +78,12 @@
 				"Mangold, Fritz: Basels Staatseinahmen und Steuerverteilung 1888–1903, tabellarisch dargestellt, Basel 1905, Tab. XIX. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m90940_1"], ["m90940_2"]],
+			"relation": ["m90940_1", "m90940_2"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-24 23:24:46"],
+			"modified": ["2025-10-06T16:45:47+0200"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Soziale Klassen in Basel, 1888–1904. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90940.html#m90940_3>, letzte Aktualisierung: 24.09.2025."
+				"Stadt.Geschichte.Basel: Soziale Klassen in Basel, 1888–1904. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90940.html#m90940_3>, letzte Aktualisierung: 06.10.2025."
 			]
 		}
 	}

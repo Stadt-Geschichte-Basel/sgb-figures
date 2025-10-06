@@ -53,7 +53,7 @@
 					"description": "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung in der Gemeinde Riehen im entsprechenden Jahr"
 				}
 			],
-			"mediaID": ["m81757_3"],
+			"media_id": ["m81757_3"],
 			"isPartOf": {
 				"ObjectID": ["abb81757"],
 				"volume": [
@@ -84,7 +84,7 @@
 				},
 				{
 					"name": ["Moritz Twente"],
-					"email": ["moritz.twente@unibas.ch"],
+					"email": ["mtwente@protonmail.com"],
 					"orcid": ["0009-0005-7187-9774"]
 				}
 			],
@@ -95,12 +95,12 @@
 			"format": ["text/csv"],
 			"source": ["Statistisches Amt Kanton Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente"],
 			"language": ["de"],
-			"relation": [["m81757_1"], ["m81757_2"]],
+			"relation": ["m81757_1", "m81757_2"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-24 23:24:44"],
+			"modified": ["2025-10-06T16:44:56+0200"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Anteil an Ausländerinnen und Ausländern im Kanton und in ausgewählten Quartieren, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb81757.html#m81757_3>, letzte Aktualisierung: 24.09.2025."
+				"Stadt.Geschichte.Basel: Anteil an Ausländerinnen und Ausländern im Kanton und in ausgewählten Quartieren, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb81757.html#m81757_3>, letzte Aktualisierung: 06.10.2025."
 			]
 		}
 	}

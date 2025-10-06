@@ -131,7 +131,7 @@
 					"description": "Köln: Roggen oder Weizen (hl in fl)"
 				}
 			],
-			"mediaID": ["m41183_3"],
+			"media_id": ["m41183_3"],
 			"isPartOf": {
 				"ObjectID": ["abb41183"],
 				"volume": [
@@ -155,7 +155,7 @@
 				},
 				{
 					"name": ["Moritz Twente"],
-					"email": ["moritz.twente@unibas.ch"],
+					"email": ["mtwente@protonmail.com"],
 					"orcid": ["0009-0005-7187-9774"]
 				}
 			],
@@ -165,15 +165,15 @@
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
-				"Simon-Muscheid, Katharina: Gewalt und Ehre im spätmittelalterlichen Handwerk am Beispiel Basels, in: Zeitschrift für historische Forschung 18, 1991, S. 1–31, hier S. 30 f. Bearbeitung: Nico Görlich / Moritz Twente"
+				"Holzwart-Schäfer, Iris: Getreideanbau im Elsass, Versorgungslage Strassburgs und Basels und der Handel mit elsässischem Korn (14.–16. Jahrhundert), Tübingen 2000. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m41183_1"], ["m41183_2"]],
+			"relation": ["m41183_1", "m41183_2"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-08-13 16:21:06"],
+			"modified": ["2025-10-06T16:44:12+0200"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41183.html#m41183_3>, letzte Aktualisierung: 13.08.2025."
+				"Stadt.Geschichte.Basel: Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41183.html#m41183_3>, letzte Aktualisierung: 06.10.2025."
 			]
 		}
 	}

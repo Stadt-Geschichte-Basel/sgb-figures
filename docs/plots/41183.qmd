@@ -1,0 +1,253 @@
+---
+title: "Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
+vol_short: "Stadt.Geschichte.Basel 3"
+plotid: "abb41183"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/41183'
+    text: abb41183 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+library(zoo)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "41183", "41183_clean.R"))
+
+# Transform Data -------------
+
+# gleitende Durchschnitte
+data41183 <- data41183 %>%
+  mutate(
+    BS_Roggen_glD = rollmean(`Basel: Roggen (hl in fl)`,
+      k = 3, fill = "extend", align = "right"
+    ),
+    Str_Roggen_glD = rollmean(`Strasbourg: Roggen (hl in fl)`,
+      k = 3, fill = "extend", align = "right"
+    ),
+    Str_Weizen_glD = rollmean(`Strasbourg: Weizen (hl in fl)`,
+      k = 3, fill = "extend", align = "right"
+    ),
+    Nürn_Roggen_glD = rollmean(`Nürnberg: Roggen (hl in fl)`,
+      k = 3, fill = "extend", align = "right"
+    ),
+    Köln_RoggenWeizen_glD = rollmean(`Köln: Roggen oder Weizen (hl in fl)`,
+      k = 3, fill = "extend", align = "right"
+    )
+  )
+
+# Plot -----------------------
+
+plot41183 <- ggplot(data = data41183, aes(x = Jahr)) +
+  geom_line(aes(x = Jahr, y = BS_Roggen_glD, colour = "grün"),
+    data = data41183,
+    linewidth = 0.561
+  ) +
+  geom_line(aes(x = Jahr, y = Str_Roggen_glD, colour = "blau13_1"),
+    data = data41183,
+    linewidth = 0.561
+  ) +
+  geom_line(aes(x = Jahr, y = Str_Weizen_glD, colour = "blau13_2"),
+    data = data41183,
+    linewidth = 0.561,
+    linetype = "dashed"
+  ) +
+  geom_line(aes(x = Jahr, y = Nürn_Roggen_glD, colour = "lila8"),
+    data = data41183,
+    linewidth = 0.561
+  ) +
+  geom_line(aes(x = Jahr, y = Köln_RoggenWeizen_glD, colour = "gelb19"),
+    data = data41183,
+    linewidth = 0.561
+  ) +
+
+  # unsichtbares Element für zusätzlichen Text in der Legende
+  geom_blank(aes(x = 1440, y = 0, color = "text_note")) +
+  scale_colour_manual("",
+    values = c(
+      "grün" = "#5f9883", # Basel
+      "blau13_1" = "#6195CF", # Strassburg
+      "blau13_2" = "#6195CF", # Strassburg
+      "lila8" = "#994F88", # Nürnberg
+      "gelb19" = "#F7CB45", # Köln
+      "text_note" = "transparent"
+    ), # Notiz unter der Legende
+
+    labels = c(
+      "grün" = "Basel: Roggen",
+      "blau13_1" = "Strassburg: Roggen",
+      "blau13_2" = "Strassburg: Weizen",
+      "lila8" = "Nürnberg: Roggen",
+      "gelb19" = "Köln: Roggen oder Weizen",
+      "text_note" = "Alle Preise pro hl in fl."
+    ),
+    breaks = c("grün", "blau13_1", "blau13_2", "lila8", "gelb19", "text_note"),
+    guide = guide_legend(override.aes = list(linetype = c(
+      "solid",
+      "solid",
+      "dashed",
+      "solid",
+      "solid",
+      "blank"
+    )))
+  ) +
+  scale_x_continuous(
+    breaks = seq(1440, 1500, 5),
+    guide = guide_axis(angle = 0),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  scale_y_continuous(
+    limits = c(0, 1),
+    breaks = seq(0, 1, by = 0.25),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 1.2, 0, 0.5, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot41183 + theme(legend.position = "right")
+```
+
+Plot abb41183 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 41183_3
+dataset_file_1 <- here("data", "clean", "Band3", "41183", "41183_3_Data.csv")
+data41183_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data41183_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 41183_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
+- **ß:** ß
+- **d:** d (Pfennig)
+- **Preis in d:** Preis in d (Pfennig)
+- **Basel: in d:** Basel: in d
+- **Basel: in g Ag:** Basel: in g Ag. Umrechnung nach Schulz 320.
+- **Basel: Roggen (hl in fl):** Basel: Roggen (hl in fl)
+- **Strasbourg: in d:** Strasbourg: in d
+- **Strasbourg: Roggen (hl in fl):** Strasbourg: Roggen (hl in fl)
+- **Strasbourg: in g Ag (1):** Strasbourg: in g Ag (1)
+- **Strasbourg: in g Ag (2):** Strasbourg: in g Ag (2)
+- **Weizen V in d:** Weizen V in d
+- **Strasbourg: Weizen (hl in fl):** Strasbourg: Weizen (hl in fl)
+- **Nürnberg: Sümmer in d:** Nürnberg: Sümmer in d
+- **Nürnberg: hl in d:** Nürnberg: hl in d
+- **Nürnberg: Sümmer in fl:** Nürnberg: Sümmer in fl
+- **Nürnberg: Roggen (hl in fl):** Nürnberg: Roggen (hl in fl)
+- **Köln: hl in g Ag:** Köln: hl in g Ag
+- **Köln: Malter in Mk:** Köln: Malter in Mk
+- **Köln: hl in Allbus:** Köln: hl in Allbus
+- **Köln: Roggen oder Weizen (hl in fl):** Köln: Roggen oder Weizen (hl in fl)
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb41183 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb41183.html))",
+    "Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500",
+    "Zu den Jahren 1481/82 hielt der in Basel tätige Jurist Johannes Ursi fest, alles – ausser Fisch – sei teuer geworden. Viele seien an Hunger gestorben (BChr, Bd. 7, S. 179). Grund waren Missernten in den Jahren 1478 bis 1482. Ursis Angaben konnten in einer Untersuchung zu den Preisen für Korn in verschiedenen Städten bestätigt werden. Die in der Grafik ersichtlichen Durchschnittspreise korrelierten in Basel und Strassburg besonders eng. Dabei spielten verschiedene Ursachen zusammen: ähnliche Ertragsgebiete, intensiver Handel und rascher Austausch von Preisnachrichten (Holzwart-Schäfer 2000).",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1443/1500",
+    "Mittelalter",
+    "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 ([Stadt.Geschichte.Basel 3](https://doi.org/10.21255/sgb-03-345800)).",
+    "[data/clean/Band3/41183/41183_3_Data.csv](../../data/clean/Band3/41183/41183_3_Data.csv)",
+    "Holzwart-Schäfer, Iris: Getreideanbau im Elsass, Versorgungslage Strassburgs und Basels und der Handel mit elsässischem Korn (14.–16. Jahrhundert), Tübingen 2000. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band3/41183/41183_3_Data.csv-metadata.json](../../data/clean/Band3/41183/41183_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41183.html#m41183_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:18"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 41183_3")
+```
+

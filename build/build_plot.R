@@ -3,7 +3,7 @@ args <- commandArgs(trailingOnly = TRUE)
 renv::load(".")
 
 src_subdirs <- list.dirs(here::here("src"), full.names = FALSE, recursive = FALSE)
-src_subdirs <- setdiff(src_subdirs, "Funktionen")
+src_subdirs <- setdiff(src_subdirs, "Utils")
 
 if (length(args) == 1) {
   plot <- args[1]

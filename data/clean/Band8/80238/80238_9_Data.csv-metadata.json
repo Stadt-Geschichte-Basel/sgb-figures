@@ -77,7 +77,7 @@
 					"description": "Gesamtzahl der baselstädtischen Mitglieder des Nationalrats im entsprechenden Jahr. Reduzierung der Anzahl der Mandate auf die Jahre 1971, 1983, 2003"
 				}
 			],
-			"mediaID": ["m80238_9"],
+			"media_id": ["m80238_9"],
 			"isPartOf": {
 				"ObjectID": ["abb80238"],
 				"volume": [
@@ -86,7 +86,7 @@
 			},
 			"title": ["Vertretung Basel-Stadt im Nationalrat, 1963–2023"],
 			"description": [
-				"In den 1960er-Jahren verfügte Basel-Stadt über acht Nationalratssitze, ab den Wahlen 1971 sank die Vertretung auf sieben, 1983 auf sechs, 2003 auf fünf, 2023 auf vier. Da in anderen Kantonen die Bevölkerung stark zunahm, war der Stadtkanton immer schwächer vertreten. Relativ konstant blieb die Balance der politischen Vertretung: Basel-Stadt schickte stets ähnlich viele Linke und Bürgerliche in die Grosse Kammer nach Bern"
+				"In den 1960er-Jahren verfügte Basel-Stadt über acht Nationalratssitze, ab den Wahlen 1971 sank die Vertretung auf sieben, 1983 auf sechs, 2003 auf fünf, 2023 auf vier. Da in anderen Kantonen die Bevölkerung stark zunahm, war der Stadtkanton immer schwächer vertreten. Relativ konstant blieb die Balance der politischen Vertretung: Basel-Stadt schickte stets ähnlich viele Linke und Bürgerliche in die Grosse Kammer nach Bern."
 			],
 			"creator": [
 				{
@@ -106,7 +106,7 @@
 				},
 				{
 					"name": ["Moritz Twente"],
-					"email": ["moritz.twente@unibas.ch"],
+					"email": ["mtwente@protonmail.com"],
 					"orcid": ["0009-0005-7187-9774"]
 				}
 			],
@@ -119,12 +119,12 @@
 				"Kanton Basel-Stadt: nationale und kantonale Wahlen seit 1919, Bundesamt für Statistik, je-d-17.02.01_12BS, online: https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/tabellen.assetdetail.14836245.html. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m80238_7"], ["m80238_8"]],
+			"relation": ["m80238_7", "m80238_8"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-24 23:24:44"],
+			"modified": ["2025-10-06T16:43:32+0200"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Vertretung Basel-Stadt im Nationalrat, 1963–2023. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_9>, letzte Aktualisierung: 24.09.2025."
+				"Stadt.Geschichte.Basel: Vertretung Basel-Stadt im Nationalrat, 1963–2023. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_9>, letzte Aktualisierung: 06.10.2025."
 			]
 		}
 	}

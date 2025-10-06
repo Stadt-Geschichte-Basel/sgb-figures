@@ -1,0 +1,211 @@
+---
+title: "Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
+vol_short: "Stadt.Geschichte.Basel 6"
+plotid: "abb91310"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/91310'
+    text: abb91310 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "91310", "91310_clean.R"))
+
+# Transform Data -------------
+
+data91310_longer <- data91310 %>%
+  pivot_longer(
+    cols = -Jahr,
+    names_to = "Partei",
+    values_to = "Sitze"
+  )
+
+# Parteien sortieren
+data91310_longer$Partei <- factor(data91310_longer$Partei, levels = rev(c(
+  "Parteilos",
+  "Freisinn",
+  "Konservative",
+  "Sozialdemokraten"
+)))
+
+# Plot -----------------------
+
+plot91310 <- ggplot(
+  data = data91310_longer,
+  aes(x = Jahr, y = Sitze, fill = Partei)
+) +
+  geom_vline(
+    aes(xintercept = 1888.5, color = "Wechsel des Wahlsystems"),
+    linewidth = 0.45,
+    key_glyph = "path"
+  ) +
+  geom_bar(stat = "identity", position = "stack") +
+  scale_fill_manual(values = c(
+    "Freisinn" = "#3872B5", # entspricht Farbe RDP
+    "Konservative" = "#4B8A3E", # entspricht Farbe BGP
+    "Sozialdemokraten" = "#F0554D", # entspricht Farbe SP
+    "Parteilos" = "#777777"
+  )) +
+  scale_color_manual(
+    values = c("Wechsel des Wahlsystems" = "#F6C141"),
+    breaks = c("Wechsel des Wahlsystems"),
+    labels = c("Ab 1890 Wechsel\ndes Wahlsystems,\nneu als Majorzwahl.")
+  ) +
+  guides(
+    fill = guide_legend(order = 1),
+    color = guide_legend(
+      order = 2,
+      override.aes = list(fill = NA)
+    ) # Remove fill from color glyph
+  ) +
+  scale_x_continuous(
+    breaks = data91310_longer$Jahr,
+    guide = guide_axis(),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  scale_y_continuous(
+    breaks = pretty_breaks(),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    axis.ticks.x = element_blank(),
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
+    legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+    legend.box = "vertical",
+    legend.box.just = "left",
+    legend.spacing.y = unit(0.2, "cm"),
+    legend.margin = margin(0, 0, 0, 0, "cm"),
+    plot.margin = margin(0.5, 0.15, 0, 0.5, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot91310 + theme(legend.position = "right")
+```
+
+Plot abb91310 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 91310_3
+dataset_file_1 <- here("data", "clean", "Band6", "91310", "91310_3_Data.csv")
+data91310_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data91310_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 91310_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten.
+- **Freisinn:** Anzahl der freisinnigen Mitglieder des Regierungsrats des Kantons Basel-Stadt nach den Gesamterneuerungswahlen im angegebenen Jahr
+- **Konservative:** Anzahl der konservativen Mitglieder des Regierungsrats des Kantons Basel-Stadt nach den Gesamterneuerungswahlen im angegebenen Jahr
+- **Sozialdemokraten:** Anzahl der sozialdemokratischen Mitglieder des Regierungsrats des Kantons Basel-Stadt nach den Gesamterneuerungswahlen im angegebenen Jahr
+- **Parteilos:** Anzahl der parteilosen Mitglieder des Regierungsrats des Kantons Basel-Stadt nach den Gesamterneuerungswahlen im angegebenen Jahr
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb91310 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb91310.html))",
+    "Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914",
+    "Die Grafik zeigt die Zusammensetzung des Regierungsrates jeweils nach den Gesamterneuerungswahlen alle drei Jahre. Bis 1887 wählte der Grosse Rat die Regierung. Seit 1890 wählt das Volk den Regierungsrat im Majorzsystem, im Gegensatz zum Grossen Rat, der seit 1905 im Proporzsystem gewählt wird.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1875/1914",
+    "19. Jahrhundert",
+    "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 ([Stadt.Geschichte.Basel 6](https://doi.org/10.21255/sgb-06-810743)).",
+    "[data/clean/Band6/91310/91310_3_Data.csv](../../data/clean/Band6/91310/91310_3_Data.csv)",
+    "Liste der Mitglieder des basel-städtischen Regierungsrates seit 1875. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band6/91310/91310_3_Data.csv-metadata.json](../../data/clean/Band6/91310/91310_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91310.html#m91310_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:22"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 91310_3")
+```
+

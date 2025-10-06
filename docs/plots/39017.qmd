@@ -1,0 +1,201 @@
+---
+title: "Rentengeschäft von Ludwig Kilchmann"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
+vol_short: "Stadt.Geschichte.Basel 3"
+plotid: "abb39017"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/39017'
+    text: abb39017 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "39017", "39017_clean.R"))
+
+# Transform Data -------------
+
+subset39017 <- data39017 %>%
+  select(Jahr, `Summe Ablösungen`, `Summe Neueinträge`) %>%
+  pivot_longer(
+    cols = c(`Summe Ablösungen`, `Summe Neueinträge`),
+    names_to = "type",
+    values_to = "value"
+  )
+
+# Plot -----------------------
+
+plot39017 <- ggplot() +
+  geom_bar(aes(x = Jahr, y = value, fill = type),
+    position = position_dodge2(
+      preserve = "total",
+      padding = 0
+    ),
+    stat = "identity",
+    data = subset39017
+  ) +
+  geom_line(aes(x = Jahr, y = `Investierte Summe netto`, color = "Investierte Summe netto"),
+    data = data39017,
+    linewidth = 0.561
+  ) +
+  scale_fill_manual(
+    values = c("#F7CB45", "#6195CF"),
+    name = "Kategorie"
+  ) +
+  scale_color_manual(
+    values = c("Investierte Summe netto" = "#DC050C"),
+    name = "Kategorie"
+  ) +
+  scale_x_continuous(
+    breaks = seq(1484, 1521, 5),
+    guide = guide_axis(angle = 0),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  scale_y_continuous(
+    limits = c(0, 10000),
+    breaks = seq(0, 10000, by = 2000),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  guides(
+    fill = guide_legend(order = 2),
+    color = guide_legend(order = 1)
+  ) +
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
+    legend.key.width = unit(5, "mm"), # entspricht 4mm
+    legend.box = "vertical",
+    legend.box.just = "left",
+    legend.spacing.y = unit(0, "cm"),
+    legend.margin = margin(0, 0, 0, 0, "cm"),
+    plot.margin = margin(0.5, 0, 0, 0, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot39017 + theme(legend.position = "right")
+```
+
+Plot abb39017 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 39017_3
+dataset_file_1 <- here("data", "clean", "Band3", "39017", "39017_3_Data.csv")
+data39017_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data39017_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 39017_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
+- **Summe Ablösungen:** Summe der Ablösungen im jeweiligen Jahr in Gulden
+- **Summe Neueinträge:** Summe der Neueinträge im jeweiligen Jahr in Gulden
+- **Investierte Summe netto:** Investierte Summe (netto) im jeweiligen Jahr in Gulden
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb39017 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb39017.html))",
+    "Rentengeschäft von Ludwig Kilchmann",
+    "Die Grafik zeigt die Gesamtsumme (in Gulden) des in Renten angelegten Vermögens von Ludwig Kilchmann, dazu die Summen der jährlich erfolgten Ablösungen und Neukäufe. Dank regelmässiger Zinszahlungen fuhr Kilchmann gut mit seiner Anlagestrategie, er konnte in den Jahren des Wachstums die investierte Summe um über vier Prozent pro Jahr steigern (erstellt auf der Basis von Signori 2014; Umrechnung nach Harms 1907).",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1484/1521",
+    "Frühe Neuzeit",
+    "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 ([Stadt.Geschichte.Basel 3](https://doi.org/10.21255/sgb-03-345800)).",
+    "[data/clean/Band3/39017/39017_3_Data.csv](../../data/clean/Band3/39017/39017_3_Data.csv)",
+    "Signori, Gabriela: Das Schuldbuch des Basler Kaufmanns Ludwig Kilchmann (gest. 1518), Stuttgart 2014. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band3/39017/39017_3_Data.csv-metadata.json](../../data/clean/Band3/39017/39017_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Rentengeschäft von Ludwig Kilchmann. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39017.html#m39017_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:17"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 39017_3")
+```
+

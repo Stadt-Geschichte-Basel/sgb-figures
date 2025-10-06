@@ -35,7 +35,7 @@
 					"description": "Gesamtsumme der Zahl der Einwohner:innen von Basel-Stadt im entsprechenden Jahr"
 				}
 			],
-			"mediaID": ["m92209_3"],
+			"media_id": ["m92209_3"],
 			"isPartOf": {
 				"ObjectID": ["abb92209"],
 				"volume": [
@@ -44,7 +44,7 @@
 			},
 			"title": ["Bevölkerungsentwicklung des Kantons Basel-Stadt, 1870–1910"],
 			"description": [
-				"Dank der liberalen Einbürgerungspraxis stieg der Anteil der Menschen mit Basler Bürgerrecht von 1900 bis 1910 von rund 17 000 auf 45 000 Personen an. Der Anteil von Einwohner:innen mit ausländischer Staatsbürgerschaft lag um 1910 bei rund 38 Prozent"
+				"Dank der liberalen Einbürgerungspraxis stieg der Anteil der Menschen mit Basler Bürgerrecht von 1900 bis 1910 von rund 17 000 auf 45 000 Personen an. Der Anteil von Einwohner:innen mit ausländischer Staatsbürgerschaft lag um 1910 bei rund 38 Prozent."
 			],
 			"creator": [
 				{
@@ -58,7 +58,7 @@
 				},
 				{
 					"name": ["Moritz Twente"],
-					"email": ["moritz.twente@unibas.ch"],
+					"email": ["mtwente@protonmail.com"],
 					"orcid": ["0009-0005-7187-9774"]
 				}
 			],
@@ -71,12 +71,12 @@
 				"Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m92209_1"], ["m92209_2"]],
+			"relation": ["m92209_1", "m92209_2"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-24 23:24:46"],
+			"modified": ["2025-10-06T16:42:48+0200"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Bevölkerungsentwicklung des Kantons Basel-Stadt, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92209.html#m92209_3>, letzte Aktualisierung: 24.09.2025."
+				"Stadt.Geschichte.Basel: Bevölkerungsentwicklung des Kantons Basel-Stadt, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92209.html#m92209_3>, letzte Aktualisierung: 06.10.2025."
 			]
 		}
 	}

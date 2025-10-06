@@ -1,0 +1,196 @@
+---
+title: "Die Bevölkerung von Basel-Stadt, 1912–1966"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
+vol_short: "Stadt.Geschichte.Basel 7"
+plotid: "abb21433"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/21433'
+    text: abb21433 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "21433", "21433_clean.R"))
+
+# Transform Data -------------
+
+data21433_longer <- pivot_longer(data21433,
+  cols = !Jahr,
+  names_to = "Bürgerrecht",
+  values_to = "Anzahl"
+)
+
+data21433_longer$Bürgerrecht <- factor(
+  data21433_longer$Bürgerrecht,
+  levels = c(
+    "Basler Bürgerrecht",
+    "Bürgerrecht eines anderen Schweizer Kantons",
+    "Ausländische Staatsbürgerschaft"
+  )
+)
+
+# Plot -----------------------
+
+plot21433 <- ggplot(
+  data = data21433_longer,
+  aes(x = Jahr, y = Anzahl, fill = Bürgerrecht)
+) +
+  geom_area(alpha = 1) +
+  scale_fill_manual(
+    values = c(
+      "Ausländische Staatsbürgerschaft" = "#F7CB45",
+      "Basler Bürgerrecht" = "#6195CF",
+      "Bürgerrecht eines anderen Schweizer Kantons" = "#90C987"
+    ),
+    labels = c(
+      "Basler Bürgerrecht",
+      "Bürgerrecht eines anderen\nSchweizer Kantons",
+      "Ausländische Staatsbürgerschaft"
+    )
+  ) +
+  scale_x_continuous(
+    breaks = pretty_breaks(),
+    guide = guide_axis(),
+    expand = expansion(mult = c(0, 0.005))
+  ) +
+  scale_y_continuous(
+    limits = c(0, 250000),
+    breaks = pretty_breaks(),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    plot.margin = margin(0.5, 0.15, 0, 0.5, "lines"),
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
+    legend.key.width = unit(5, "mm") # entspricht 4.5 mm
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot21433 + theme(legend.position = "right")
+```
+
+Plot abb21433 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 21433_3
+dataset_file_1 <- here("data", "clean", "Band7", "21433", "21433_3_Data.csv")
+data21433_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data21433_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 21433_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung
+- **Basler Bürgerrecht:** Zahl der Einwohner:innen von Basel-Stadt mit Basler Bürgerrecht im entsprechenden Jahr
+- **Bürgerrecht eines anderen Schweizer Kantons:** Zahl der Einwohner:innen von Basel-Stadt mit Bürgerrecht eines anderen Schweizer Kantons im entsprechenden Jahr
+- **Ausländische Staatsbürgerschaft:** Zahl der Einwohner:innen von Basel-Stadt mit ausländischer Staatsbürgerschaft im entsprechenden Jahr
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb21433 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb21433.html))",
+    "Die Bevölkerung von Basel-Stadt, 1912–1966",
+    "Obwohl die Einwohnerschaft mit ausländischer Staatsangehörigkeit in den 1960er-Jahren deutlich zunahm – 1966 lag ihr Anteil bei 15.3 Prozent – blieb sie selbst in absoluten Zahlen unter dem Wert von 1912.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1912/1966",
+    "20. Jahrhundert",
+    "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 ([Stadt.Geschichte.Basel 7](https://doi.org/10.21255/sgb-07-663402)).",
+    "[data/clean/Band7/21433/21433_3_Data.csv](../../data/clean/Band7/21433/21433_3_Data.csv)",
+    "Statistisches Jahrbuch des Kantons Basel-Stadt 1970, S. 21. Daten für das Jahr 1912 aus dem Statistischen Jahrbuch des Kantons Basel Stadt 1921, S. 34. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band7/21433/21433_3_Data.csv-metadata.json](../../data/clean/Band7/21433/21433_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Die Bevölkerung von Basel-Stadt, 1912–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21433.html#m21433_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:16"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 21433_3")
+```
+

@@ -1,0 +1,176 @@
+---
+title: "Stimmberechtigte und Gesamtbevölkerung, 1870–1910"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
+vol_short: "Stadt.Geschichte.Basel 6"
+plotid: "abb91203"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/91203'
+    text: abb91203 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "91203", "91203_clean.R"))
+
+# Transform Data -------------
+
+data91203_longer <- data91203 %>%
+  pivot_longer(cols = -Jahr, names_to = "Typ", values_to = "Anzahl") %>%
+  filter(!is.na(Anzahl)) %>%
+  mutate(
+    Typ = factor(Typ, levels = c("Gesamtbevölkerung", "Stimmberechtigte"))
+  )
+
+# Plot -----------------------
+
+plot91203 <- ggplot(data91203_longer, aes(x = Jahr, y = Anzahl, color = Typ)) +
+  geom_line(linewidth = 1) +
+  scale_color_manual(
+    values = c(
+      "Gesamtbevölkerung" = "#6195CF",
+      "Stimmberechtigte" = "#F7CB45"
+    )
+  ) +
+  scale_x_continuous(
+    breaks = pretty_breaks(),
+    guide = guide_axis(),
+    expand = expansion(mult = c(0, 0.005))
+  ) +
+  scale_y_continuous(
+    limits = c(0, 140000),
+    breaks = c(0, 25000, 50000, 100000, 140000),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    plot.margin = margin(0.5, 0.9, 0, 0, "lines"),
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    )
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot91203 + theme(legend.position = "right")
+```
+
+Plot abb91203 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 91203_3
+dataset_file_1 <- here("data", "clean", "Band6", "91203", "91203_3_Data.csv")
+data91203_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data91203_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 91203_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten
+- **Gesamtbevölkerung:** Angabe der Gesamtbevölkerung des Kantons Basel-Stadt im entsprechenden Jahr
+- **Stimmberechtigte:** Angabe der Zahl der stimmberechtigten Einwohner des Kantons Basel-Stadt im entsprechenden Jahr
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb91203 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb91203.html))",
+    "Stimmberechtigte und Gesamtbevölkerung, 1870–1910",
+    "Auch wenn das Stimm- und Wahlrecht nach 1875 erweitert wurde, repräsentierten die Stimmberechtigten nur einen Bruchteil der Gesamtbevölkerung. Die Zahlen zur Bevölkerung stammen aus den ‹Mitteilungen des Statistischen Amtes Basel-Stadt›, Nr. 28, Basel 1924, jene zur Anzahl Stimmberechtigter aus dem ‹Kantons-Blatt Basel-Stadt›.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1870/1910",
+    "19. Jahrhundert",
+    "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 ([Stadt.Geschichte.Basel 6](https://doi.org/10.21255/sgb-06-810743)).",
+    "[data/clean/Band6/91203/91203_3_Data.csv](../../data/clean/Band6/91203/91203_3_Data.csv)",
+    "Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924; Kantons-Blatt Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band6/91203/91203_3_Data.csv-metadata.json](../../data/clean/Band6/91203/91203_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Stimmberechtigte und Gesamtbevölkerung, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91203.html#m91203_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:22"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 91203_3")
+```
+

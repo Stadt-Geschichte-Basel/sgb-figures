@@ -1,0 +1,50 @@
+---
+title: Available Figures
+subtitle: Plots, Datasets and Metadata
+lang: en
+format: html
+date-modified: last-modified
+listing:
+  - id: plot-list
+    contents: plots/*.qmd
+    type: table
+    page-size: 100
+    sort:
+      - "vol_short"
+      - "plotid"
+      - "title"
+    sort-ui: [title, plotid, vol_short]
+    filter-ui: [title, plotid]
+    fields: [plotid, title, volume]
+    field-display-names: 
+      plotid: "ID"
+      title: "Figure Title"
+      volume: "is Part of"
+other-links:
+  - text: Research Data Platform
+    icon: archive
+    href: 'https://forschung.stadtgeschichtebasel.ch/'
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/'
+    text: Source Code for Plots
+    icon: github
+---
+
+```{r setup}
+#| echo: false
+#| message: false
+library(here)
+```
+
+Code and data for `{r} length(list.files(here("docs", "plots"),pattern='qmd'))` figures are available in this repository. Run `npm run list` to print an overview or take a look at the summary pages for each figure below.
+
+Refer to the [Stadt.Geschichte.Basel Open Research Data Platform](https://forschung.stadtgeschichtebasel.ch) for full figure metadata and production-ready `pdf` files of all plots.
+
+The numerical data behind the plots is also available in the form of `csv` datasets. For `csv` files, full metadata is available in this repository in `json` format.
+
+## Figure and Data Summaries
+
+The overview pages offered below are intended as summary only and show previews for plots and selected metadata on the datasets (in German). These visualizations might differ from the version in the book series in terms of [look and feel](/docs/design/index.qmd), especially regarding the figures' dimensions. Each preview is generated from the metadata available in the `json` files as part of the [plot workflow](/docs/workflow/index.qmd).
+
+::: {#plot-list}
+:::

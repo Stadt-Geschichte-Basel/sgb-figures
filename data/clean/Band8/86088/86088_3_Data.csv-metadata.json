@@ -59,7 +59,7 @@
 					"description": "Anzahl der Menschen ohne Angabe zur Religionszugehörigkeit im Kanton Basel-Stadt im angegebenen Jahr"
 				}
 			],
-			"mediaID": ["m86088_3"],
+			"media_id": ["m86088_3"],
 			"isPartOf": {
 				"ObjectID": ["abb86088"],
 				"volume": [
@@ -88,7 +88,7 @@
 				},
 				{
 					"name": ["Moritz Twente"],
-					"email": ["moritz.twente@unibas.ch"],
+					"email": ["mtwente@protonmail.com"],
 					"orcid": ["0009-0005-7187-9774"]
 				}
 			],
@@ -101,12 +101,12 @@
 				"Statistisches Amt des Kantons Basel-Stadt. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m86088_1"], ["m86088_2"]],
+			"relation": ["m86088_1", "m86088_2"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-24 23:24:45"],
+			"modified": ["2025-10-06T16:45:34+0200"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Religionszugehörigkeiten in Basel-Stadt, 1950–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb86088.html#m86088_3>, letzte Aktualisierung: 24.09.2025."
+				"Stadt.Geschichte.Basel: Religionszugehörigkeiten in Basel-Stadt, 1950–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb86088.html#m86088_3>, letzte Aktualisierung: 06.10.2025."
 			]
 		}
 	}

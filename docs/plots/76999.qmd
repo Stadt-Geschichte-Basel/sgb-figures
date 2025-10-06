@@ -1,0 +1,170 @@
+---
+title: "Privatbesitz an Boden und Wohnraum in Basel, 2021"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Baur, Esther; Gafner, Lina (Hg.): Stadträume. Offen und begrenzt, gestaltet und umkämpft. Basel 2025 (Stadt.Geschichte.Basel 9)."
+vol_short: "Stadt.Geschichte.Basel 9"
+plotid: "abb76999"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/76999'
+    text: abb76999 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "76999", "76999_clean.R"))
+
+# Plot -----------------------
+
+plot76999 <- ggplot(data76999, aes(
+  x = `Anzahl Wohnungen`,
+  y = reorder(Eigentümer, `Anzahl Wohnungen`)
+)) +
+  geom_bar(
+    stat = "identity",
+    aes(fill = "Anzahl Wohnungen")
+  ) +
+  scale_x_continuous(
+    limits = c(0, 3001.5),
+    breaks = seq(0, 3000, 500),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  scale_fill_manual(
+    values = c("Anzahl Wohnungen" = "#3f7653")
+  ) + # Bandfarbe 9
+
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    panel.grid.major.x = element_line(color = "black", linewidth = 0.14),
+    panel.grid.major.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.1, 1.15, 0, 0.4, "lines"),
+    legend.position = "none",
+    legend.key.width = unit(5, "mm"), # resultiert in 4.5 mm
+    legend.key.height = unit(2.5, "mm"), # resultiert in 2 mm
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot76999 + theme(legend.position = "right")
+```
+
+Plot abb76999 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 76999_3
+dataset_file_1 <- here("data", "clean", "Band9", "76999", "76999_3_Data.csv")
+data76999_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data76999_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 76999_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Eigentümer:** Namen der auf dem Wohnungsmarkt aktiven Akteure in Basel-Stadt (ausgewählte)
+- **Anzahl Wohnungen:** Anzahl der vom jeweiligen Akteur besessenen Wohnungen im Kanton Basel-Stadt. Angaben der Pensionskasse Basel-Stadt nach Eigendeklaration, im Datensatz sind einige der Grundstücke im Finanzvermögen der Einwohnergemeinde.
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb76999 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb76999.html))",
+    "Privatbesitz an Boden und Wohnraum in Basel, 2021",
+    "Wem gehört Basel heute? Die Darstellung zeigt die grössten Privatplayer auf dem baselstädtischen Boden- und Wohnungsmarkt. Nach einer Recherche von reflect.ch und Bajour aus dem Jahr 2021 gehört rund ein Drittel aller Wohnungen in Basel-Stadt mittlerweile institutionellen, renditeorientierten Unternehmen. Dem Staat gehörten 2016 etwa 24 Prozent der bebau-baren Kantonsfläche (Berechnung der Initiant:innen der kantonalen ‹Neuen Bodeninitiative› von 2016).",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "2021",
+    "21. Jahrhundert",
+    "Baur, Esther; Gafner, Lina (Hg.): Stadträume. Offen und begrenzt, gestaltet und umkämpft. Basel 2025 ([Stadt.Geschichte.Basel 9](https://doi.org/10.21255/sgb-09-486500)).",
+    "[data/clean/Band9/76999/76999_3_Data.csv](../../data/clean/Band9/76999/76999_3_Data.csv)",
+    "https://reflekt.ch/recherchen/wem-gehoert-basel. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band9/76999/76999_3_Data.csv-metadata.json](../../data/clean/Band9/76999/76999_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Privatbesitz an Boden und Wohnraum in Basel, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb76999.html#m76999_3>, letzte Aktualisierung: 06.10.2025.",
+    "CC BY-SA 4.0",
+    "[https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/)",
+    "2025-10-06 16:36:18"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 76999_3")
+```
+

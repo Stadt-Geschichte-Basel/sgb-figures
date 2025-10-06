@@ -1,0 +1,225 @@
+---
+title: "Vertretung Basel-Stadt im Nationalrat, 1963–2023"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
+vol_short: "Stadt.Geschichte.Basel 8"
+plotid: "abb80238_7"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/80238'
+    text: abb80238 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "80238", "80238c_clean.R"))
+
+# Transform Data -------------
+
+data80238c <- data80238c[, -12]
+
+colnames(data80238c) <- c(
+  "Jahr", "POB", "Grüne", "SP",
+  "LdU", "GLP", "CVP (ab 2021 Die Mitte)",
+  "FDP (bis 1973 RDP)", "LDP",
+  "SVP", "NA (ab 1991 UVP, ab 1982 SD)"
+)
+
+data80238c_longer <- data80238c %>%
+  pivot_longer(
+    cols = -Jahr,
+    names_to = "Partei",
+    values_to = "Nationalratssitze",
+    names_prefix = "'",
+    names_transform = list(Jahr = as.numeric)
+  ) %>%
+  mutate(Jahr = gsub("'", "", Jahr)) %>%
+  mutate(Jahr = as.numeric(Jahr))
+
+# Plot -----------------------
+
+plot80238c <- ggplot(
+  data80238c_longer,
+  aes(
+    x = Jahr,
+    y = Nationalratssitze,
+    fill = factor(Partei, levels = c(
+      "POB",
+      "Grüne",
+      "SP",
+      "LdU",
+      "GLP",
+      "CVP (ab 2021 Die Mitte)",
+      "FDP (bis 1973 RDP)",
+      "LDP",
+      "SVP",
+      "NA (ab 1991 UVP, ab 1982 SD)"
+    ))
+  )
+) +
+  geom_bar(stat = "identity", position = "stack") +
+  scale_x_continuous(
+    breaks = seq(1963, 2019, 4) - 1.8, # shift breaks to the left edge of bars
+    labels = seq(1963, 2019, 4),
+    guide = guide_axis(),
+    expand = expansion(mult = c(0, 0.005))
+  ) +
+  scale_y_continuous(
+    limits = c(0, 8),
+    breaks = seq(0, 8, 2),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  scale_fill_manual(values = c(
+    "POB" = "#88519C",
+    "Grüne" = "#84B547",
+    "SP" = "#F0554D",
+    "LdU" = "#1BAA6E",
+    "GLP" = "#C4C43D",
+    "CVP (ab 2021 Die Mitte)" = "#D6862B",
+    "FDP (bis 1973 RDP)" = "#3872B5",
+    "LDP" = "#618DEA",
+    "SVP" = "#4B8A3E",
+    "NA (ab 1991 UVP, ab 1982 SD)" = "#777777"
+  )) +
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    legend.key.width = unit(5, "mm"), # resultiert in 4 mm
+    legend.key.height = unit(2.5, "mm"), # resultiert in 2 mm
+    axis.ticks = element_blank(),
+    axis.text.y = element_text(margin = margin(r = 5)),
+    plot.margin = margin(0.5, 0.9, 0, 0.5, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot80238c + theme(legend.position = "right")
+```
+
+Plot abb80238_7 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 80238_9
+dataset_file_1 <- here("data", "clean", "Band8", "80238", "80238_9_Data.csv")
+data80238_9 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data80238_9,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 80238_9'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung
+- **POB:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'POB' im entsprechenden Jahr
+- **GP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'GP' im entsprechenden Jahr
+- **SP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'SP' im entsprechenden Jahr
+- **LdU:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'LdU' im entsprechenden Jahr
+- **GLP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'GLP' im entsprechenden Jahr
+- **CVP 
+(ab 2021 Die Mitte):** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'CVP' im entsprechenden Jahr. Ab 2021 unter dem Namen 'Die Mitte'
+- **FDP 
+(bis 1973 RDP):** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'FDP' im entsprechenden Jahr. Bis 1973 unter dem Namen 'RDP'
+- **LDP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'LDP' im entsprechenden Jahr
+- **SVP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'SVP' im entsprechenden Jahr
+- **NA (ab 1991 UVP, ab 1982 SD):** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'NA' im entsprechenden Jahr. Ab 1991 unter dem Namen 'UVP', ab 1992 unter dem Namen 'SD'
+- **Total:** Gesamtzahl der baselstädtischen Mitglieder des Nationalrats im entsprechenden Jahr. Reduzierung der Anzahl der Mandate auf die Jahre 1971, 1983, 2003
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb80238 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb80238.html))",
+    "Vertretung Basel-Stadt im Nationalrat, 1963–2023",
+    "In den 1960er-Jahren verfügte Basel-Stadt über acht Nationalratssitze, ab den Wahlen 1971 sank die Vertretung auf sieben, 1983 auf sechs, 2003 auf fünf, 2023 auf vier. Da in anderen Kantonen die Bevölkerung stark zunahm, war der Stadtkanton immer schwächer vertreten. Relativ konstant blieb die Balance der politischen Vertretung: Basel-Stadt schickte stets ähnlich viele Linke und Bürgerliche in die Grosse Kammer nach Bern.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1963/2019",
+    "20. Jahrhundert",
+    "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 ([Stadt.Geschichte.Basel 8](https://doi.org/10.21255/sgb-08-796384)).",
+    "[data/clean/Band8/80238/80238_9_Data.csv](../../data/clean/Band8/80238/80238_9_Data.csv)",
+    "Kanton Basel-Stadt: nationale und kantonale Wahlen seit 1919, Bundesamt für Statistik, je-d-17.02.01_12BS, online: https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/tabellen.assetdetail.14836245.html. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band8/80238/80238_9_Data.csv-metadata.json](../../data/clean/Band8/80238/80238_9_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Vertretung Basel-Stadt im Nationalrat, 1963–2023. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_9>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:19"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 80238_9")
+```
+

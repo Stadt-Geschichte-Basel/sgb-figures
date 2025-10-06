@@ -1,0 +1,219 @@
+---
+title: "Rheinhochwasser bei Basel-Schifflände, 1300–2021"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
+vol_short: "Stadt.Geschichte.Basel 3"
+plotid: "abb41404"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/41404'
+    text: abb41404 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "41404", "41404_clean.R"))
+
+# Transform Data -------------
+
+data41404_korrektionen <- subset(
+  data41404,
+  !(is.na(Gewässerkorrektionen))
+)
+
+# Plot -----------------------
+
+plot41404 <- ggplot(
+  data = data41404,
+  aes(x = Jahr)
+) +
+  geom_segment(
+    data = data41404_korrektionen,
+    aes(
+      x = Jahr, y = 0,
+      xend = Jahr, yend = max(`Q [m3/s]`),
+      color = "Korrekturen"
+    ),
+    linewidth = 0.8415
+  ) +
+  geom_line(
+    aes(y = `gleitender 100 jähriger MW`, color = "MW_100"),
+    linewidth = 0.561
+  ) +
+  geom_segment(
+    aes(
+      x = Jahr, y = 0,
+      xend = Jahr, yend = `Q [m3/s]`,
+      color = "Q_m3s"
+    ),
+    linewidth = 0.185,
+    alpha = 0.8
+  ) +
+  scale_x_continuous(
+    breaks = seq(1300, 2021, by = 50),
+    guide = guide_axis(angle = 0),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  scale_y_continuous(
+    limits = c(0, 8000),
+    breaks = seq(0, 8000, by = 2000),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  scale_color_manual(
+    name = "",
+    values = c(
+      "Korrekturen" = "#F7CB45",
+      "MW_100" = "#A5170E",
+      "Q_m3s" = "#777777"
+    ),
+    breaks = c(
+      "MW_100",
+      "Q_m3s",
+      "Korrekturen"
+    ),
+    labels = c(
+      "100-jähriges gleitendes Hochwasserabflussmittel  \n der rekonstruierten sowie aller gemessenen  \n Jahresabflussmaxima",
+      bquote("Abflussmenge Q in" ~ m^3 / s),
+      "Gewässerkorrektionen:  \n ab 1714: Kanderkorrektion  \n ab 1878: Juragewässerkorrektion"
+    ),
+    guide = guide_legend(
+      override.aes = list(
+        linewidth = c(0.561, 0.185, 0.8415),
+        alpha = c(1, 0.8, 1)
+      ),
+      ncol = 1
+    )
+  ) +
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 0.5, 0, 0.3, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot41404 + theme(legend.position = "right")
+```
+
+Plot abb41404 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 41404_3
+dataset_file_1 <- here("data", "clean", "Band3", "41404", "41404_3_Data.csv")
+data41404_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data41404_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 41404_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
+- **Q [m3/s]:** Abflussmenge Q in Kubikmetern pro Sekunde
+- **P [m ü. M.]:** P, Angabe in Meter über Meer (m. ü. M.)
+- **gleitender 100 jähriger MW:** 100-jähriges gleitendes Hochwasserabflussmittel der rekonstruierten sowie aller gemessenen Jahresabflussmaxima in Kubikmetern pro Sekunde
+- **Gewässerkorrektionen:** Gewässerkorrektionen im jeweilige Jahr: Kanderkorrektion (ab 1714) und Juragewässerkorrektion (ab 1878)
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb41404 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb41404.html))",
+    "Rheinhochwasser bei Basel-Schifflände, 1300–2021",
+    "Visualisierung der rekonstruierten und gemessenen Hochwasserstände. Gelbe Balken: die Kanderkorrektion (ab 1714) und die Juragewässerkorrektion (ab 1878). Rote Kurve: 100-jähriges gleitendes Hochwasserabflussmittel der rekonstruierten sowie aller gemessenen Jahresabflussmaxima. Graue Balken: 100-jähriges gleitendes Hochwasserabflussmittel der rekonstruierten sowie der höchsten gemessenen Jahresabflussmaxima.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1300/2021",
+    "Mittelalter",
+    "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 ([Stadt.Geschichte.Basel 3](https://doi.org/10.21255/sgb-03-345800)).",
+    "[data/clean/Band3/41404/41404_3_Data.csv](../../data/clean/Band3/41404/41404_3_Data.csv)",
+    "Wetter, O., Pfister, C., Weingartner, R. u.a.: The largest floods in the High Rhine basin since 1268 assessed from documentary and instrmental evidence, in: Hydrological Sciences Journal 56 (5), 2011, S. 733-758. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band3/41404/41404_3_Data.csv-metadata.json](../../data/clean/Band3/41404/41404_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Rheinhochwasser bei Basel-Schifflände, 1300–2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41404.html#m41404_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:18"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 41404_3")
+```
+

@@ -1,0 +1,180 @@
+---
+title: "Eheschliessungen und Ehescheidungen in Basel-Stadt, 1960–2020"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
+vol_short: "Stadt.Geschichte.Basel 8"
+plotid: "abb84380"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/84380'
+    text: abb84380 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "84380", "84380_clean.R"))
+
+# Plot -----------------------
+
+plot84380 <- ggplot() +
+  geom_line(
+    data = data84380, aes(
+      x = Jahr, y = Eheschliessungen,
+      color = "Eheschliessungen"
+    ),
+    linewidth = 0.561
+  ) +
+  geom_line(
+    data = data84380, aes(
+      x = Jahr, y = Ehescheidungen,
+      color = "Ehescheidungen"
+    ),
+    linewidth = 0.561
+  ) +
+  scale_x_continuous(
+    breaks = pretty_breaks(),
+    guide = guide_axis(),
+    expand = expansion(mult = c(0, 0.005))
+  ) +
+  scale_y_continuous(
+    limits = c(0, 3000),
+    breaks = seq(0, 3000, 1000),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  scale_color_manual(values = c(
+    "Eheschliessungen" = "#6195CF",
+    "Ehescheidungen" = "#F7CB45"
+  )) +
+  coord_cartesian(clip = "off") +
+  guides(color = guide_legend(keyheight = unit(4.8, "mm"))) + # results in ca. 3mm
+
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 1, 0, 0.4, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot84380 + theme(legend.position = "right")
+```
+
+Plot abb84380 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 84380_3
+dataset_file_1 <- here("data", "clean", "Band8", "84380", "84380_3_Data.csv")
+data84380_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data84380_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 84380_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Angabe des Jahres nach unserer Zeitrechnung
+- **Eheschliessungen:** Anzahl der Eheschliessungen im Kanton Basel-Stadt im angegebenen Jahr
+- **Ehescheidungen:** Anzahl der Ehescheidungen im Kanton Basel-Stadt im angegebenen Jahr
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb84380 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb84380.html))",
+    "Eheschliessungen und Ehescheidungen in Basel-Stadt, 1960–2020",
+    "Zwischen 1965 und 1975 sank die Zahl der Eheschliessungen in Basel-Stadt um die Hälfte, von über 2000 auf rund 1000 pro Jahr. Gleichzeitig erhöhte sich die Scheidungsrate, die über dem nationalen Schnitt lag: 1960 siebzehn Prozent (Schweiz: elf Prozent), 1980 38 (Schweiz 31). Mit der Abschaffung des Konkubinatsverbots 1978 war die Ehe nicht mehr Voraussetzung für ein gemeinsames Zusammenleben, zudem waren Trennungen weniger stigmatisierend als früher.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1960/2020",
+    "20. Jahrhundert",
+    "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 ([Stadt.Geschichte.Basel 8](https://doi.org/10.21255/sgb-08-796384)).",
+    "[data/clean/Band8/84380/84380_3_Data.csv](../../data/clean/Band8/84380/84380_3_Data.csv)",
+    "Statistisches Jahrbuch des Kantons Basel-Stadt 1960–2020. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band8/84380/84380_3_Data.csv-metadata.json](../../data/clean/Band8/84380/84380_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Eheschliessungen und Ehescheidungen in Basel-Stadt, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb84380.html#m84380_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:20"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 84380_3")
+```
+

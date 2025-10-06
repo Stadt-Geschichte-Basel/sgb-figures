@@ -17,7 +17,7 @@
 					"description": "Höhe der Staatsausgaben des Kantons Basel-Stadt in Schweizer Franken pro Einwohner:in im angegebenen Jahr"
 				}
 			],
-			"mediaID": ["m21912_3"],
+			"media_id": ["m21912_3"],
 			"isPartOf": {
 				"ObjectID": ["abb21912"],
 				"volume": [
@@ -40,7 +40,7 @@
 				},
 				{
 					"name": ["Moritz Twente"],
-					"email": ["moritz.twente@unibas.ch"],
+					"email": ["mtwente@protonmail.com"],
 					"orcid": ["0009-0005-7187-9774"]
 				}
 			],
@@ -53,12 +53,12 @@
 				"Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m21912_1"], ["m21912_2"], ["m21892_1"], ["m21892_2"], ["m21892_3"]],
+			"relation": ["m21912_1", "m21912_2", "m21892_1", "m21892_2", "m21892_3"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-08-13 16:21:04"],
+			"modified": ["2025-10-06T16:45:00+0200"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Kantonale Staatsausgaben pro Einwohner in CHF, 1920–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21912.html#m21912_3>, letzte Aktualisierung: 13.08.2025."
+				"Stadt.Geschichte.Basel: Kantonale Staatsausgaben pro Einwohner in CHF, 1920–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21912.html#m21912_3>, letzte Aktualisierung: 06.10.2025."
 			]
 		}
 	}

@@ -1,0 +1,222 @@
+---
+title: "Exporte in die wichtigsten Zielländer, 1900"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
+vol_short: "Stadt.Geschichte.Basel 6"
+plotid: "abb90894"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/90894'
+    text: abb90894 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+library(forcats)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "90894", "90894_clean.R"))
+
+# Transform Data -------------
+
+top_ziellaender <- c("England", "USA", "Frankreich", "Deutschland")
+
+# Collapse minor countries into "Übrige" and summarise
+data90894_processed <- data90894 %>%
+  mutate(Zielland = if_else(Zielland %in% top_ziellaender, Zielland, "Übrige")) %>%
+  group_by(Zielland) %>%
+  summarise(across(c(Seidenband, Schappe, Teerfarben), sum), .groups = "drop")
+
+# Pivot to long format
+data90894_long <- data90894_processed %>%
+  pivot_longer(cols = Seidenband:Teerfarben, names_to = "Ware", values_to = "Summe")
+
+# Keep only top3 Zielländer, add fourth to "Übrige"
+data90894_modified <- data90894_long %>%
+  group_by(Ware) %>%
+  # Identify the Zielland with the minimum value (excluding "Übrige")
+  mutate(
+    min_value = min(Summe[Zielland != "Übrige"]),
+    min_country = Zielland[which.min(replace(Summe, Zielland == "Übrige", Inf))]
+  ) %>%
+  ungroup() %>%
+  mutate(
+    Summe = case_when(
+      Zielland == "Übrige" ~ Summe + min_value,
+      Zielland == min_country ~ NA_real_,
+      TRUE ~ Summe
+    )
+  ) %>%
+  filter(!is.na(Summe)) %>%
+  select(Zielland, Ware, Summe)
+
+# Factor ordering and rescaling
+data90894_modified <- data90894_modified %>%
+  mutate(
+    Ware = factor(Ware, levels = c("Teerfarben", "Schappe", "Seidenband")),
+    Zielland = factor(Zielland, levels = c(
+      "England",
+      "USA",
+      "Frankreich",
+      "Deutschland",
+      "Übrige"
+    )),
+    Summe = Summe / 1000 # convert to millions
+  )
+
+# Plot -----------------------
+
+plot90894 <- ggplot(data90894_modified) +
+  geom_col(aes(x = Summe, y = Ware, fill = Zielland)) +
+  scale_fill_manual(
+    name = "Exporte in Millionen Franken",
+    values = c(
+      "England" = "#F7CB45",
+      "Deutschland" = "#90C987",
+      "USA" = "#F7F056",
+      "Frankreich" = "#6195CF",
+      "Übrige" = "#777777"
+    )
+  ) +
+  scale_x_continuous(
+    breaks = seq(0, 35, 5),
+    limits = c(0, 35.1),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  scale_y_discrete(expand = expansion(mult = c(0, 0))) +
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    legend.title = element_text(color = "black", size = 6.5),
+    legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
+    legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+    axis.ticks.y = element_blank(),
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    panel.grid.major.x = element_line(color = "black", linewidth = 0.14),
+    panel.grid.major.y = element_blank(),
+    plot.margin = margin(0.2, 0.5, 0, 0, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot90894 + theme(legend.position = "right")
+```
+
+Plot abb90894 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 90894_3
+dataset_file_1 <- here("data", "clean", "Band6", "90894", "90894_3_Data.csv")
+data90894_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data90894_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 90894_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Zielland:** Bezeichnung des Staates, in das exportiert wird
+- **Seidenband:** Export von Seidenband in das entsprechende Zielland. Angaben in Millionen Franken
+- **Schappe:** Export von Schappe in das entsprechende Zielland. Angaben in Millionen Franken
+- **Teerfarben:** Export von Teerfarben in das entsprechende Zielland. Angaben in Millionen Franken
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb90894 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb90894.html))",
+    "Exporte in die wichtigsten Zielländer, 1900",
+    "Die Seidenbandindustrie exportierte im Jahr 1900 Waren im Wert von 31 Millionen Franken. Rund 87 Prozent gingen in die drei wichtigsten Zielländer, so wie auch im Fall des aus Seidenabfällen hergestellten Schappegarns. Die Exporte der Farbenindustrie verweisen bereits auf den Aufstieg der chemischen Industrie. Sie betrugen zwar mit 15 Millionen Franken weniger als die Hälfte des mit Seidenbändern erzielten Exports. Dafür streuten sich die Abnehmerländer breiter. Nur 55 Prozent gingen in die drei wichtigsten Märkte.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1900",
+    "19. Jahrhundert",
+    "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 ([Stadt.Geschichte.Basel 6](https://doi.org/10.21255/sgb-06-810743)).",
+    "[data/clean/Band6/90894/90894_3_Data.csv](../../data/clean/Band6/90894/90894_3_Data.csv)",
+    "Jahresbericht Basler Handelskammer 1901, S. 10. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band6/90894/90894_3_Data.csv-metadata.json](../../data/clean/Band6/90894/90894_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Exporte in die wichtigsten Zielländer, 1900. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90894.html#m90894_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:21"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 90894_3")
+```
+

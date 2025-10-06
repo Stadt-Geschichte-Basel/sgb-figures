@@ -1,0 +1,184 @@
+---
+title: "Prozentuales Bevölkerungswachstum in Gross- und Kleinbasel, 1860–1910"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
+vol_short: "Stadt.Geschichte.Basel 6"
+plotid: "abb90340"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/90340'
+    text: abb90340 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "90340", "90340_clean.R"))
+
+# Transform Data -------------
+
+data90340_longer <- pivot_longer(
+  data90340,
+  cols = c("Grossbasel", "Kleinbasel"),
+  names_to = "Stadtteil",
+  values_to = "Wachstum"
+)
+
+# Normalize values for percent plot (if needed)
+data90340_longer <- data90340_longer %>%
+  mutate(Wachstum = Wachstum / 100)
+
+# Plot (relative) -----------------------
+
+plot90340 <- ggplot(data = data90340_longer, aes(
+  x = Zeitraum,
+  y = Wachstum,
+  fill = Stadtteil
+)) +
+  geom_bar(
+    stat = "identity",
+    position = position_dodge2(preserve = "single")
+  ) +
+  scale_fill_manual(values = c("#F7CB45", "#6195CF")) +
+  scale_x_discrete(
+    guide = guide_axis(),
+    expand = expansion(mult = c(0, 0.005))
+  ) +
+  scale_y_continuous(
+    limits = c(0, 1),
+    breaks = pretty_breaks(),
+    expand = expansion(mult = c(0, 0)),
+    labels = label_percent()
+  ) +
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
+    legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+    axis.ticks.x = element_blank(),
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 0.1, 0, 0.5, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot90340 + theme(legend.position = "right")
+```
+
+Plot abb90340 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 90340_3
+dataset_file_1 <- here("data", "clean", "Band6", "90340", "90340_3_Data.csv")
+data90340_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data90340_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 90340_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Zeitraum:** Zeitraum, für den die angegebenen Zahlen gelten. Angabe in Jahren unserer Zeitrechnung.
+- **Grossbasel:** Zunahme der Bevölkerungszahl im Grossbasel im angegebenen Zeitraum, Angaben in Prozent
+- **Kleinbasel:** Zunahme der Bevölkerungszahl im Kleinbasel im angegebenen Zeitraum, Angaben in Prozent
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb90340 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb90340.html))",
+    "Prozentuales Bevölkerungswachstum in Gross- und Kleinbasel, 1860–1910",
+    "Innerhalb eines halben Jahrhunderts wuchs die Bevölkerung der Stadt von 37 915 um beinahe 100 000 Einwohnerinnen und Einwohner. Während sich in Grossbasel die Bevölkerung verdreifachte, entsprach die Zunahme im Kleinbasel von 10 283 auf 48 455 Einwohnerinnen und Einwohner nahezu einer Verfünffachung. Die Einwohner:innen Kleinhüningens werden ab 1900 dem Kleinbasel zugerechnet.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1860/1910",
+    "19. Jahrhundert",
+    "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 ([Stadt.Geschichte.Basel 6](https://doi.org/10.21255/sgb-06-810743)).",
+    "[data/clean/Band6/90340/90340_3_Data.csv](../../data/clean/Band6/90340/90340_3_Data.csv)",
+    "Bauer, Stephan: Die Bevölkerung des Kantons Basel-Stadt, Basel 1905; Jenny, Oskar Hugo: Die Bevölkerung des Kantons Basel-Stadt. Am 1. Dezember 1910, Basel 1924 (Mitteilungen des Statistischen Amtes des Kantons Basel-Stadt Nr. 28, Ed. 1924)., Tabelle I, 3*–5*. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band6/90340/90340_3_Data.csv-metadata.json](../../data/clean/Band6/90340/90340_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Prozentuales Bevölkerungswachstum in Gross- und Kleinbasel, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90340.html#m90340_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:21"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 90340_3")
+```
+

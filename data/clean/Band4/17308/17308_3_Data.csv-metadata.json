@@ -23,7 +23,7 @@
 					"description": "Jahre, in denen die Pest auftrat (TRUE)"
 				}
 			],
-			"mediaID": ["m17308_3"],
+			"media_id": ["m17308_3"],
 			"isPartOf": {
 				"ObjectID": ["abb17308"],
 				"volume": [
@@ -52,7 +52,7 @@
 				},
 				{
 					"name": ["Moritz Twente"],
-					"email": ["moritz.twente@unibas.ch"],
+					"email": ["mtwente@protonmail.com"],
 					"orcid": ["0009-0005-7187-9774"]
 				}
 			],
@@ -62,15 +62,15 @@
 			"type": ["Dataset"],
 			"format": ["text/csv"],
 			"source": [
-				"Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500) Basel, Liestal 1977, S. 172–174. Bearbeitung: Nico Görlich / Moritz Twente"
+				"Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500). Basel, Liestal 1977, S. 172–174. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m17308_1"], ["m17308_2"]],
+			"relation": ["m17308_1", "m17308_2"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-08-13 16:21:03"],
+			"modified": ["2025-10-06T16:44:39+0200"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Bevölkerungsentwicklung und Pestepidemien, 1500–1700. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb17308.html#m17308_3>, letzte Aktualisierung: 13.08.2025."
+				"Stadt.Geschichte.Basel: Bevölkerungsentwicklung und Pestepidemien, 1500–1700. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb17308.html#m17308_3>, letzte Aktualisierung: 06.10.2025."
 			]
 		}
 	}

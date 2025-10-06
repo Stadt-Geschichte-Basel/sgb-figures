@@ -1,0 +1,198 @@
+---
+title: "Getreidevorräte in der Stadt Basel, 1613–1653"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 (Stadt.Geschichte.Basel 4)."
+vol_short: "Stadt.Geschichte.Basel 4"
+plotid: "abb18046"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/18046'
+    text: abb18046 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "18046", "18046_clean.R"))
+
+# Transform Data -------------
+
+# Jahr 1652 auf der x-Achse mit Label 1653
+data18046 <- data18046 %>%
+  mutate(Jahr = case_when(
+    Jahr == 1652 ~ 1653,
+    TRUE ~ Jahr
+  ))
+
+# Plot -----------------------
+
+plot18046 <- ggplot(data = data18046, aes(x = Jahr)) +
+  geom_line(aes(y = `Dinkel (in Viernzeln)`, color = "Dinkel (in Viernzeln)"), linewidth = 0.561) +
+  geom_line(aes(y = `Roggen (in Viernzeln)`, color = "Roggen (in Viernzeln)"), linewidth = 0.561) +
+  geom_line(aes(y = `Hafer (in Viernzeln)`, color = "Hafer (in Viernzeln)"), linewidth = 0.561) +
+
+  # unsichtbares Element für zusätzlichen Text in der Legende
+  geom_blank(aes(x = 1613, y = 0, color = "Ein 'Viernzel' entsprach\nzwei 'Säcken' à je 137 l.")) +
+  scale_x_continuous(
+    breaks = c(1613, 1623, 1633, 1643, 1653),
+    guide = guide_axis(angle = 45), # zentriert Labels passend zu ticks
+    expand = expansion(mult = c(0, 0))
+  ) +
+  xlab("Jahr") +
+  scale_y_continuous(
+    limits = c(min(data18046, na.rm = TRUE), 8000),
+    breaks = seq(0, 8000, by = 1000),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  scale_color_manual(
+    name = "",
+    values = c(
+      "Dinkel (in Viernzeln)" = "#6195CF",
+      "Roggen (in Viernzeln)" = "#F7CB45",
+      "Hafer (in Viernzeln)" = "#90C987",
+      "Ein 'Viernzel' entsprach\nzwei 'Säcken' à je 137 l." = "transparent"
+    ),
+    breaks = c(
+      "Dinkel (in Viernzeln)",
+      "Roggen (in Viernzeln)",
+      "Hafer (in Viernzeln)",
+      "Ein 'Viernzel' entsprach\nzwei 'Säcken' à je 137 l."
+    ),
+    guide = guide_legend(override.aes = list(
+      linetype = c(1, 1, 1, 0)
+    ))
+  ) +
+  coord_cartesian(clip = "off") + # Cut-Off an den Rändern deaktivieren
+
+  guides(color = guide_legend(keyheight = unit(4.8, "mm"))) + # results in ca. 3mm
+
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 0.9, 0, 0, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot18046 + theme(legend.position = "right")
+```
+
+Plot abb18046 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 18046_3
+dataset_file_1 <- here("data", "clean", "Band4", "18046", "18046_3_Data.csv")
+data18046_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data18046_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 18046_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
+- **Dinkel (in Viernzeln):** Vorrat an Dinkel, Angabe in Viernzeln
+- **Roggen (in Viernzeln):** Vorrat an Roggen, Angabe in Viernzeln
+- **Hafer (in Viernzeln):** Vorrat an Hafer, Angabe in Viernzeln
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb18046 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb18046.html))",
+    "Getreidevorräte in der Stadt Basel, 1613–1653",
+    "Dinkel und – in geringerem Masse – Roggen zum Backen von Brot sowie Hafer als Futter für die Pferde waren für die Versorgung der Stadt und ihrer Bewohnerinnen und Bewohner essenziell. Um Engpässe ausgleichen zu können, legte die Obrigkeit in ertragreichen Jahren Getreidevorräte an, die sie in Krisenzeiten vergünstigt an die Bevölkerung abgab. 1621 etwa – im vierten Jahr des Dreissigjährigen Kriegs – versorgte die Stadt auf diese Weise zahlreiche Flüchtlinge.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1613/1653",
+    "Frühe Neuzeit",
+    "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 ([Stadt.Geschichte.Basel 4](https://doi.org/10.21255/sgb-04-283636)).",
+    "[data/clean/Band4/18046/18046_3_Data.csv](../../data/clean/Band4/18046/18046_3_Data.csv)",
+    "Stritmatter, Robert: Die Stadt Basel während des Dreissigjährigen Krieges. Politik, Wirtschaft, Finanzen, Basel; Frankfurt a. M.; Las Vegas 1977, S. 115. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band4/18046/18046_3_Data.csv-metadata.json](../../data/clean/Band4/18046/18046_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Getreidevorräte in der Stadt Basel, 1613–1653. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb18046.html#m18046_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:14"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 18046_3")
+```
+

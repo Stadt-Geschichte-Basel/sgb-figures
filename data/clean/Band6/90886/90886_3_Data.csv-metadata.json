@@ -23,7 +23,7 @@
 					"description": "Anteil der jeweiligen Branche an der Gesamtsumme der in den genannten Branchen Erwerbstätigen im Jahr 1910, Angabe in Prozent"
 				}
 			],
-			"mediaID": ["m90886_3"],
+			"media_id": ["m90886_3"],
 			"isPartOf": {
 				"ObjectID": ["abb90886"],
 				"volume": [
@@ -47,7 +47,7 @@
 				},
 				{
 					"name": ["Moritz Twente"],
-					"email": ["moritz.twente@unibas.ch"],
+					"email": ["mtwente@protonmail.com"],
 					"orcid": ["0009-0005-7187-9774"]
 				}
 			],
@@ -60,12 +60,12 @@
 				"Polivka, Heinz: Basel und seine Wirtschaft. Eine Zeitreise durch 2000 Jahre, Lenzburg 2016, S. 206. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m90886_1"], ["m90886_2"]],
+			"relation": ["m90886_1", "m90886_2"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-24 23:24:46"],
+			"modified": ["2025-10-06T16:44:43+0200"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Anteil der Erwerbstätigen in wichtigen Branchen, 1870 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90886.html#m90886_3>, letzte Aktualisierung: 24.09.2025."
+				"Stadt.Geschichte.Basel: Anteil der Erwerbstätigen in wichtigen Branchen, 1870 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90886.html#m90886_3>, letzte Aktualisierung: 06.10.2025."
 			]
 		}
 	}

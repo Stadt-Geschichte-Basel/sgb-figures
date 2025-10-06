@@ -23,7 +23,7 @@
 					"description": "Anzahl der die Wohnbevölkerung des Kantons Basel-Landschaft bildenden Menschen im entsprechenden Jahr. Ab dem Jahr 1994 inklusive Laufental"
 				}
 			],
-			"mediaID": ["m77733_3"],
+			"media_id": ["m77733_3"],
 			"isPartOf": {
 				"ObjectID": ["abb77733"],
 				"volume": [
@@ -54,7 +54,7 @@
 				},
 				{
 					"name": ["Moritz Twente"],
-					"email": ["moritz.twente@unibas.ch"],
+					"email": ["mtwente@protonmail.com"],
 					"orcid": ["0009-0005-7187-9774"]
 				}
 			],
@@ -67,12 +67,12 @@
 				"Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge. Moll, Christa; Sandtner, Martin; Saner, Dorothea: Zahlenmeer – mehr als Zahlen. Basel-Stadt – 100 Jahre statistisch begleitet, Basel 2002, Anhang 2.1. https://statistik.bl.ch/web_portal/1_9. https://statistik.bl.ch/web_portal/1_1_3?sheet=6&Jahr=34. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m77733_1"], ["m77733_2"]],
+			"relation": ["m77733_1", "m77733_2"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-24 23:24:44"],
+			"modified": ["2025-10-06T16:43:04+0200"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Basel-Landschaft, 1940–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77733.html#m77733_3>, letzte Aktualisierung: 24.09.2025."
+				"Stadt.Geschichte.Basel: Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Basel-Landschaft, 1940–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77733.html#m77733_3>, letzte Aktualisierung: 06.10.2025."
 			]
 		}
 	}

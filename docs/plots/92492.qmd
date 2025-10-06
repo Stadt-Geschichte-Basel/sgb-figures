@@ -1,0 +1,196 @@
+---
+title: "Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
+vol_short: "Stadt.Geschichte.Basel 6"
+plotid: "abb92492"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/92492'
+    text: abb92492 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "92492", "92492_clean.R"))
+
+# Transform Data -------------
+
+data92492_longer <- pivot_longer(data92492,
+  cols = !Jahr,
+  names_to = "Konfessionen",
+  values_to = "Anteil"
+)
+
+# to force equal distribution on x-axis
+data92492_longer$Jahr <- factor(data92492_longer$Jahr)
+
+data92492_longer$Konfessionen <- factor(data92492_longer$Konfessionen,
+  levels = c(
+    "Protestantisch",
+    "Katholisch",
+    "Christkatholisch",
+    "Jüdisch",
+    "Andere/Keine/Unbekannt"
+  )
+)
+
+# Plot -----------------------
+
+plot92492 <- ggplot(
+  data = data92492_longer,
+  aes(x = Jahr, y = Anteil, fill = Konfessionen)
+) +
+  geom_bar(stat = "identity", position = position_fill()) +
+  scale_fill_manual(values = c(
+    "Protestantisch" = "#6195CF",
+    "Katholisch" = "#F7CB45",
+    "Christkatholisch" = "#F7F056",
+    "Jüdisch" = "#90C987",
+    "Andere/Keine/Unbekannt" = "#777777"
+  )) +
+  scale_x_discrete(
+    guide = guide_axis(),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  scale_y_continuous(
+    breaks = pretty_breaks(),
+    expand = expansion(mult = c(0, 0)),
+    labels = label_percent()
+  ) +
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
+    legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    axis.ticks.x = element_blank(),
+    plot.margin = margin(0.5, 0.15, 0, 0, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot92492 + theme(legend.position = "right")
+```
+
+Plot abb92492 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 92492_3
+dataset_file_1 <- here("data", "clean", "Band6", "92492", "92492_3_Data.csv")
+data92492_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data92492_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 92492_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Angabe des Jahres, für das die jeweiligen Daten gelten. Jahreszahl in unserer Zeitrechnung
+- **Protestantisch:** Anteil der Protestantinnen und Protestanten an der Gesamtbevölkerung in Prozent
+- **Katholisch:** Anteil der Katholikinnen und Katholiken an der Gesamtbevölkerung in Prozent
+- **Christkatholisch:** Anteil der Christkatholikinnen und Christkatholiken an der Gesamtbevölkerung in Prozent
+- **Jüdisch:** Anteil der Jüdinnen und Juden an der Gesamtbevölkerung in Prozent
+- **Andere/Keine/Unbekannt:** Anteil Angehöriger anderer, keiner oder unbekannter Religionen bzw. Konfessionen an der Gesamtbevölkerung in Prozent
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb92492 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb92492.html))",
+    "Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910",
+    "Der Anteil der Protestantinnen und Protestanten an der Bevölkerung verringerte sich von 75 Prozent 1860 auf 63,4 Prozent 1910. Im gleichen Zeitraum stieg der Anteil der Katholikinnen und Katholiken von einem Viertel auf einen Drittel und die jüdische Bevölkerung vergrösserte sich beinahe um den Faktor fünf.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1860/1910",
+    "19. Jahrhundert",
+    "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 ([Stadt.Geschichte.Basel 6](https://doi.org/10.21255/sgb-06-810743)).",
+    "[data/clean/Band6/92492/92492_3_Data.csv](../../data/clean/Band6/92492/92492_3_Data.csv)",
+    "Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band6/92492/92492_3_Data.csv-metadata.json](../../data/clean/Band6/92492/92492_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92492.html#m92492_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:22"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 92492_3")
+```
+

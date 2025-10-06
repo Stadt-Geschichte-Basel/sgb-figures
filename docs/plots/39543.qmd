@@ -1,0 +1,216 @@
+---
+title: "Verbannungsurteile, 1376–1455"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
+vol_short: "Stadt.Geschichte.Basel 3"
+plotid: "abb39543"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/39543'
+    text: abb39543 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+library(zoo)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "39543", "39543_clean.R"))
+
+# Transform Data -------------
+
+data39543_longer <- data39543[, -2:-3]
+
+data39543_longer <- data39543_longer %>%
+  pivot_longer(
+    !Startjahr,
+    names_to = "Urteilstyp",
+    values_to = "Anzahl"
+  )
+
+data39543_longer$Urteilstyp <- factor(data39543_longer$Urteilstyp,
+  levels = c(
+    "Gotteslästerung",
+    "Ehrverletzung",
+    "Meineid",
+    "Ungehorsam",
+    "Jugenddelikt",
+    "Eigentum",
+    "Sexualdelikt",
+    "«Geloiff» (Tumult)",
+    "Totschlag",
+    "Wundtat"
+  )
+)
+
+# Plot -----------------------
+
+plot39543 <- ggplot(
+  data39543_longer,
+  aes(x = Startjahr, y = Anzahl, fill = Urteilstyp)
+) +
+  geom_bar(stat = "identity", position = "fill") +
+  scale_fill_manual(values = c(
+    "Gotteslästerung" = "#777777",
+    "Ehrverletzung" = "#90C987",
+    "Meineid" = "#FAE7B5",
+    "Ungehorsam" = "#F7CB45",
+    "Jugenddelikt" = "#A5170E",
+    "Eigentum" = "#E8601C",
+    "Sexualdelikt" = "#994F88",
+    "«Geloiff» (Tumult)" = "#4EB265",
+    "Totschlag" = "#b3c1d4",
+    "Wundtat" = "#7BAFDE"
+  )) +
+  scale_x_continuous(
+    breaks = data39543$Startjahr,
+    labels = data39543$Zeitraum,
+    guide = guide_axis(angle = 0),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  scale_y_continuous(
+    breaks = breaks_pretty(),
+    labels = label_percent(),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    axis.ticks.x = element_blank(),
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
+    legend.key.width = unit(5, "mm"), # entspricht 4mm
+    plot.margin = margin(0.5, 0.2, 0, 0, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot39543 + theme(legend.position = "right")
+```
+
+Plot abb39543 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 39543_3
+dataset_file_1 <- here("data", "clean", "Band3", "39543", "39543_3_Data.csv")
+data39543_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data39543_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 39543_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Startjahr:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
+- **Endjahr:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
+- **Zeitraum:** Zeitraum, Angabe von Start- und Endjahr als Jahreszahl unserer Zeitrechnung
+- **Gotteslästerung:** Anzahl der Verbannungsurteile wegen Gotteslästerung im angegebenen Zeitraum
+- **Ehrverletzung:** Anzahl der Verbannungsurteile wegen Ehrverletzung im angegebenen Zeitraum
+- **Meineid:** Anzahl der Verbannungsurteile wegen Meineid im angegebenen Zeitraum
+- **Ungehorsam:** Anzahl der Verbannungsurteile wegen Ungehorsam im angegebenen Zeitraum
+- **Jugenddelikt:** Anzahl der Verbannungsurteile wegen Jugenddelikten im angegebenen Zeitraum
+- **Eigentum:** Anzahl der Verbannungsurteile wegen Eigentumsdelikten im angegebenen Zeitraum
+- **Sexualdelikt:** Anzahl der Verbannungsurteile wegen Sexualdelikten im angegebenen Zeitraum
+- **«Geloiff» (Tumult):** Anzahl der Verbannungsurteile wegen Geloiff (Tumult) im angegebenen Zeitraum
+- **Totschlag:** Anzahl der Verbannungsurteile wegen Totschlag im angegebenen Zeitraum
+- **Wundtat:** Anzahl der Verbannungsurteile wegen Wundtaten im angegebenen Zeitraum
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb39543 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb39543.html))",
+    "Verbannungsurteile, 1376–1455",
+    "Die weitaus umfangreichste Urteilskategorie bildeten über den ganzen Zeitraum die Wundtaten, auch Totschläge waren häufig. Demzufolge waren mehr als die Hälfte aller Verbannungen auf Gewalttaten zurückzuführen, obwohl diese im Gegensatz etwa zu Eigentumsdelikten nicht ehrrührig waren (Hagemann 1981, Bd. 1, S. 155f.; Wackernagel 1907-1924, Bd. 2.1, S. 345; Rippmann; Simon-Murscheid 1991, S. 24). Der Frauenanteil unter den Verbannten stieg im Verlauf der untersuchten Zeit tendenziell an, wobei die Täterinnen von Sexualdelikten in der zweiten Hälfte die Täterinnen von Eigentumsdelikten als die grösste Gruppe ablösten (Datengrundlage: Simon-Muscheid 1991, S. 30f.)",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1376/1455",
+    "Frühe Neuzeit",
+    "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 ([Stadt.Geschichte.Basel 3](https://doi.org/10.21255/sgb-03-345800)).",
+    "[data/clean/Band3/39543/39543_3_Data.csv](../../data/clean/Band3/39543/39543_3_Data.csv)",
+    "Simon-Muscheid, Katharina: Gewalt und Ehre im spätmittelalterlichen Handwerk am Beispiel Basels, in: Zeitschrift für historische Forschung 18, 1991, S. 1–31, hier S. 30 f. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band3/39543/39543_3_Data.csv-metadata.json](../../data/clean/Band3/39543/39543_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Verbannungsurteile, 1376–1455. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39543.html#m39543_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:18"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 39543_3")
+```
+

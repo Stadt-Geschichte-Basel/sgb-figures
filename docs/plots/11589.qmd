@@ -1,0 +1,172 @@
+---
+title: "Anzahl Verkehrsträger pro 100 Einwohner und Einwohnerinnen im Kanton Basel-Stadt, 1916–1970"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
+vol_short: "Stadt.Geschichte.Basel 7"
+plotid: "abb11589"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/11589'
+    text: abb11589 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "11589", "11589_clean.R"))
+
+# Plot -----------------------
+
+plot11589 <- ggplot(data = data11589, aes(x = Jahr)) +
+  geom_line(aes(y = Personenwagen, color = "#6195CF"), linewidth = 0.561) +
+  geom_line(aes(y = Motorräder, color = "#F7CB45"), linewidth = 0.561) +
+  geom_line(aes(y = Fahrräder, color = "#90C987"), linewidth = 0.561) +
+  scale_x_continuous(
+    breaks = seq(1920, 1970, by = 5),
+    guide = guide_axis(angle = 45),
+    expand = expansion(mult = c(0, 0.005))
+  ) +
+  scale_y_continuous(
+    limits = c(0, 50),
+    breaks = seq(0, 50, by = 10),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  scale_color_identity(
+    name = "",
+    breaks = c("#6195CF", "#F7CB45", "#90C987"),
+    labels = c("Personenwagen", "Motorräder", "Fahrräder"),
+    guide = "legend"
+  ) +
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
+    legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 0.2, 0, 0, "lines"),
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot11589 + theme(legend.position = "right")
+```
+
+Plot abb11589 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 11589_3
+dataset_file_1 <- here("data", "clean", "Band7", "11589", "11589_3_Data.csv")
+data11589_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data11589_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 11589_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung
+- **Personenwagen:** Anzahl der Personenwagen pro 100 Einwohner*innen im Kanton Basel-Stadt im angegebenen Jahr
+- **Motorräder:** Anzahl der Motorräder pro 100 Einwohner*innen im Kanton Basel-Stadt im angegebenen Jahr
+- **Fahrräder:** Anzahl der Fahrräder pro 100 Einwohner*innen im Kanton Basel-Stadt im angegebenen Jahr
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb11589 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb11589.html))",
+    "Anzahl Verkehrsträger pro 100 Einwohner und Einwohnerinnen im Kanton Basel-Stadt, 1916–1970",
+    "Die Mobilität der Basler und Baslerinnen nahm zu. Die Zahl der Fahrräder überstieg lange alle anderen individuellen Verkehrsmittel. Nach dem Zweiten Weltkrieg schnellte die Zahl der motorisierten Gefährte in die Höhe.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1916/1970",
+    "20. Jahrhundert",
+    "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 ([Stadt.Geschichte.Basel 7](https://doi.org/10.21255/sgb-07-663402)).",
+    "[data/clean/Band7/11589/11589_3_Data.csv](../../data/clean/Band7/11589/11589_3_Data.csv)",
+    "Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band7/11589/11589_3_Data.csv-metadata.json](../../data/clean/Band7/11589/11589_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Anzahl Verkehrsträger pro 100 Einwohner und Einwohnerinnen im Kanton Basel-Stadt, 1916–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb11589.html#m11589_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:13"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 11589_3")
+```
+

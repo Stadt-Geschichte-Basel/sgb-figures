@@ -41,37 +41,40 @@ extract_title <- function(json_content) {
 # Collect all titles for one plot_id
 get_titles_for_plot <- function(plot_id) {
   plot_folder <- path(data_path, plot_id)
-  collected_titles <- character()
-  
-  if (!dir_exists(plot_folder)) return("[Kein Titel gefunden]")
-  
+
+  if (!dir_exists(plot_folder)) {
+    return("[Kein Titel gefunden]")
+  }
+
   filename_pattern <- paste0("^", plot_id, "(?:_([0-9]+))?_Data\\.csv-metadata\\.json$")
-  metadata_files   <- dir_ls(plot_folder, type = "file", regexp = "_Data\\.csv-metadata\\.json$")
-  metadata_files   <- metadata_files[str_detect(path_file(metadata_files), filename_pattern)]
-  
-  if (length(metadata_files) == 0) return("[Kein Titel gefunden]")
-  
+  metadata_files <- dir_ls(plot_folder, type = "file", regexp = "_Data\\.csv-metadata\\.json$")
+  metadata_files <- metadata_files[str_detect(path_file(metadata_files), filename_pattern)]
+
+  if (length(metadata_files) == 0) {
+    return("[Kein Titel gefunden]")
+  }
+
   metadata_rows <- lapply(metadata_files, function(file_path) {
     base_name <- path_file(file_path)
     match_info <- str_match(base_name, filename_pattern)
     suffix_number <- ifelse(is.na(match_info[1, 2]), 0L, as.integer(match_info[1, 2]))
-    
+
     json_content <- tryCatch(fromJSON(file_path), error = function(e) NULL)
     title <- if (!is.null(json_content)) extract_title(json_content) else NA_character_
-    
+
     data.frame(
       suffix = suffix_number,
-      title  = title,
+      title = title,
       stringsAsFactors = FALSE
     )
   })
-  
+
   metadata_df <- do.call(rbind, metadata_rows)
   metadata_df <- metadata_df[order(metadata_df$suffix), , drop = FALSE]
-  
+
   titles <- metadata_df$title
   titles <- titles[!is.na(titles) & nchar(trimws(titles)) > 0]
-  
+
   if (length(titles) == 0) "[Kein Titel gefunden]" else paste(unique(titles), collapse = " | ")
 }
 

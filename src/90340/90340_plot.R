@@ -8,10 +8,11 @@ library(dplyr)
 
 # Functions ------------------
 
-source(here("src", "Funktionen", "Format_Theme.R"))
-source(here("src", "Funktionen", "Format_Tausendertrennzeichen.R"))
-source(here("src", "Funktionen", "Format_Achsenbeschriftung.R"))
-source(here("src", "Funktionen", "Export_Plot.R"))
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
@@ -28,47 +29,56 @@ data90340_longer <- pivot_longer(
 
 # Normalize values for percent plot (if needed)
 data90340_longer <- data90340_longer %>%
-   mutate(Wachstum = Wachstum / 100)
+  mutate(Wachstum = Wachstum / 100)
 
 # Plot (relative) -----------------------
 
-plot90340 <- ggplot(data = data90340_longer, aes(x = Zeitraum,
-                                                 y = Wachstum,
-                                                 fill = Stadtteil)) +
-  
-  geom_bar(stat = "identity",
-           position = position_dodge2(preserve = "single")) +
-  
+plot90340 <- ggplot(data = data90340_longer, aes(
+  x = Zeitraum,
+  y = Wachstum,
+  fill = Stadtteil
+)) +
+  geom_bar(
+    stat = "identity",
+    position = position_dodge2(preserve = "single")
+  ) +
   scale_fill_manual(values = c("#F7CB45", "#6195CF")) +
-  
   scale_x_discrete(
-    #breaks = c(1850, 1910),
     guide = guide_axis(),
     expand = expansion(mult = c(0, 0.005))
   ) +
-  
   scale_y_continuous(
     limits = c(0, 1),
     breaks = pretty_breaks(),
     expand = expansion(mult = c(0, 0)),
     labels = label_percent()
   ) +
-  
-  coord_cartesian(clip = "off") + 
-  
+  coord_cartesian(clip = "off") +
   theme_sgb_basis() +
   theme(
     legend.position = "none",
     legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
     legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
     axis.ticks.x = element_blank(),
-    axis.text.y = element_text(margin = margin(r = 5),
-                               hjust = 1),
-    plot.margin = margin(0.5,0.1,0,0.5, "lines")
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 0.1, 0, 0.5, "lines")
   )
+
+# Write Info Page ------------
+
+write_info_page(
+  plot_obj = plot90340,
+  plot_id = 90340,
+  volume = 6,
+  csv_suffix = 3
+)
 
 # Export ---------------------
 
 export_plot(plot90340, 6, 120, 70, 21, 8,
-            plot_suffix = 1,
-            legend_suffix = 2)
+  plot_suffix = 1,
+  legend_suffix = 2
+)

@@ -1,0 +1,244 @@
+---
+title: "Temperaturabweichungen in °C, 1444–2011"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 (Stadt.Geschichte.Basel 4)."
+vol_short: "Stadt.Geschichte.Basel 4"
+plotid: "abb24528"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/24528'
+    text: abb24528 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "24528", "24528_clean.R"))
+
+# Transform Data -------------
+
+# Subset mit Extremjahren
+data24528_extrem <- subset(data24528,
+  Jahr %in% c(1540, 1718, 1822, 1865, 1945, 2003),
+  select = c(Jahr, `Mittlere April-Juli-Temperatur`)
+)
+
+# Plot -----------------------
+
+plot24528 <- ggplot(data = data24528, aes(x = Jahr)) +
+  geom_segment(
+    data = data24528_extrem,
+    aes(
+      x = Jahr, y = `Mittlere April-Juli-Temperatur` + 0.2,
+      xend = Jahr, yend = max(`Mittlere April-Juli-Temperatur`) + 0.7
+    ),
+    color = "#F7CB45",
+    linewidth = 0.2805,
+    lineend = "round"
+  ) +
+  geom_point(
+    data = data24528_extrem,
+    aes(x = Jahr, y = `Mittlere April-Juli-Temperatur` + 0.2),
+    color = "#F7CB45",
+    shape = 20,
+    size = 0.4,
+    show.legend = FALSE
+  ) +
+  geom_text(
+    data = data24528_extrem,
+    aes(x = Jahr, y = max(`Mittlere April-Juli-Temperatur`) + 1.1),
+    label = c(1540, 1718, 1822, 1865, 1945, 2003),
+    color = "black", size = 2.32,
+    angle = 0,
+  ) +
+  geom_line(aes(
+    y = `Mittlere April-Juli-Temperatur`,
+    color = "#777777"
+  ), linewidth = 0.14) +
+  geom_line(aes(
+    y = `11-jährig gleitendes Temperaturmittel`,
+    color = "#A5170E"
+  ), linewidth = 0.561) +
+
+  # Unsichtbare Elemente für zusätzliche Legendentexte
+  geom_blank(aes(x = 1444, y = 0, color = "text_note")) +
+  geom_line(aes(y = 0, color = "black"), linewidth = 0.2805) +
+
+  # Extra-Punkt für einzelnen Temperatur-Wert aus dem Jahr 1444
+  geom_point(aes(x = 1444, y = `Mittlere April-Juli-Temperatur`[1], color = "#777777"),
+    shape = 20,
+    size = 0.18,
+    alpha = 0.8,
+    show.legend = FALSE
+  ) +
+  scale_x_continuous(
+    limits = c(min(data24528$Jahr), max(data24528$Jahr)),
+    breaks = seq(1444, 2008, by = 50),
+    guide = guide_axis(angle = 45),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  scale_y_continuous(
+    limits = c(-4, 8),
+    breaks = seq(-4, 8, by = 2),
+    expand = expansion(mult = c(0, 0)),
+    labels = label_number(
+      accuracy = 0.01,
+      decimal.mark = ".",
+      style_positive = "plus"
+    )
+  ) +
+  scale_color_manual(
+    values = c(
+      "#777777" = "#777777",
+      "#A5170E" = "#A5170E",
+      "text_note" = "transparent"
+    ),
+    breaks = c(
+      "#777777",
+      "#A5170E",
+      "text_note"
+    ),
+    labels = c(
+      "Mittlere April-Juli-Temperatur",
+      "11-jährig gleitendes Temperaturmittel",
+      "\nkalibriert mit den monatlichen\nAnomalien des Mittelwerts 1901-2000"
+    ),
+    guide = guide_legend(override.aes = list(
+      linetype = c(1, 1, 0),
+      size = c(0.14, 0.561, 0)
+    ))
+  ) +
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    legend.key.width = unit(5, "mm"),
+    legend.key.height = unit(2.05, "mm"),
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    plot.margin = margin(0.5, 0.5, 0, 0, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot24528 + theme(legend.position = "right")
+```
+
+Plot abb24528 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 24528_3
+dataset_file_1 <- here("data", "clean", "Band4", "24528", "24528_3_Data.csv")
+data24528_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data24528_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 24528_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahr:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
+- **Swiss GHD DOY:** Nummer des Tages im jeweiligen Jahr (DOY, Day of Year), an dem die Weinlese begonnen wurde (GHD, Grape Harvest Date)
+- **Mittlere April-Juli-Temperatur:** Abweichung der mittleren April-Juli-Temperatur verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius
+- **11-jährig gleitendes Temperaturmittel:** Abweichung des elfjährig gleitenden Temperaturmittels verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius
+- **oberer doppelter Standard-Temperaturschätzfehler:** oberer doppelter Standard-Temperaturschätzfehler verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius
+- **unterer doppelter Standard-Temperaturschätzfehler:** unterer doppelter Standard-Temperaturschätzfehler verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb24528 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb24528.html))",
+    "Temperaturabweichungen in °C, 1444–2011",
+    "Die Temperaturrekonstruktion zeigt, dass die Anomalie im Jahr 1540, der keine langanhaltende Klimaerwärmung folgte, sogar den «bisher heissesten» Sommer 2003 übertraf.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1444/2011",
+    "Frühe Neuzeit",
+    "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 ([Stadt.Geschichte.Basel 4](https://doi.org/10.21255/sgb-04-283636)).",
+    "[data/clean/Band4/24528/24528_3_Data.csv](../../data/clean/Band4/24528/24528_3_Data.csv)",
+    "Wetter, Oliver; Pfister, Christian: Spring–summer Temperatures Reconstructed for Northern Switzerland and Southwestern Germany from Winter Rye Harvest Dates, 1454–1970, in: Climate of the Past 7 (4), 2011, S. 1307–1326. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band4/24528/24528_3_Data.csv-metadata.json](../../data/clean/Band4/24528/24528_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Temperaturabweichungen in °C, 1444–2011. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb24528.html#m24528_3>, letzte Aktualisierung: 06.10.2025.",
+    "In Copyright",
+    "[https://rightsstatements.org/vocab/InC-RUU/1.0/](https://rightsstatements.org/vocab/InC-RUU/1.0/)",
+    "2025-10-06 17:29:31"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 24528_3")
+```
+

@@ -1,0 +1,175 @@
+---
+title: "Öffentliches Personal des Kantons auf 1000 Einwohnerinnen und Einwohner, 1912–1963"
+subtitle: Plot and Data Preview
+date-modified: 2025-10-06
+volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
+vol_short: "Stadt.Geschichte.Basel 7"
+plotid: "abb21892"
+format:
+  html:
+    fig-width: 8
+    title-block-categories: false
+fig-cap-location: top
+code-links:
+  - href: 'https://github.com/Stadt-Geschichte-Basel/sgb-figures/tree/main/src/21892'
+    text: abb21892 Source Code
+    icon: github
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+#| message: false
+# Source the extracted plot generation code to create the plot object.
+# Packages -------------------
+
+library(here)
+library(ggplot2)
+library(tidyr)
+library(scales)
+library(dplyr)
+
+# Functions ------------------
+
+source(here("src", "Utils", "Format_Theme.R"))
+source(here("src", "Utils", "Format_Tausendertrennzeichen.R"))
+source(here("src", "Utils", "Format_Achsenbeschriftung.R"))
+source(here("src", "Utils", "Export_Plot.R"))
+source(here("src", "Utils", "Write_InfoPage.R"))
+
+# Read Data ------------------
+
+source(here("src", "21892", "21892_clean.R"))
+
+# Plot -----------------------
+
+plot21892 <- ggplot(data = data21892) +
+  geom_line(
+    aes(
+      x = Jahresende,
+      y = `Öffentliches Personal auf 1000 Einwohner`,
+      color = "#6195CF"
+    ),
+    linewidth = 0.561
+  ) +
+  scale_x_continuous(
+    breaks = c(1912, 1920, 1930, 1940, 1950, 1963),
+    limits = c(1912, 1963),
+    guide = guide_axis(angle = 0),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  scale_y_continuous(
+    limits = c(25, 50),
+    breaks = seq(0, 50, by = 5),
+    expand = expansion(mult = c(0, 0)),
+    labels = ch_numbers
+  ) +
+  scale_color_identity(
+    breaks = c("#6195CF"),
+    labels = c("Öffentliches Personal\npro 1000 Einwohner:innen"),
+    guide = "legend"
+  ) +
+  coord_cartesian(clip = "off") +
+  theme_sgb_basis() +
+  theme(
+    legend.position = "none",
+    axis.text.y = element_text(
+      margin = margin(r = 5),
+      hjust = 1
+    ),
+    legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
+    legend.key.width = unit(5, "mm"), # entspricht 4mm
+    plot.margin = margin(0.5, 1.2, 0, 0, "lines")
+  )
+
+```
+
+```{r plot_object}
+#| echo: false
+#| message: false
+#| warning: false
+#| column: page-right
+#| fig-cap: "Preview only. Refer to the Research Data Platform for full metadata and production-ready files."
+plot21892 + theme(legend.position = "right")
+```
+
+Plot abb21892 was built using the following data:
+
+```{r datatable}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+# Read CSV file for 21892_3
+dataset_file_1 <- here("data", "clean", "Band7", "21892", "21892_3_Data.csv")
+data21892_3 <- read_csv(dataset_file_1)
+
+# Wrap datatable in a custom div for styling.
+htmltools::div(
+  class = 'datatable-frame',
+  DT::datatable(
+    data21892_3,
+    rownames = FALSE,
+    options = list(scrollX = TRUE, scrollCollapse = TRUE, scrollY = '400px', paging = FALSE, dom = 't'),
+    caption = htmltools::tags$caption(style = 'caption-side: top; text-align: left;',
+'Dataset 21892_3'
+    )
+  )
+)
+```
+
+::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
+- **Jahresende:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
+- **Öffentliches Personal auf 1000 Einwohner:** Anzahl der vom Kanton Basel-Stadt angestellten Menschen gerechnet auf 1000 Einwohner:innen und Einwohner am Ende des jeweiligen Jahres
+:::
+```{r metatable, results="asis"}
+#| echo: false
+#| message: false
+
+library(knitr)
+
+df <- data.frame(
+  Key = c(
+    "Figure",
+    "Title",
+    "Description",
+    "Creator",
+    "Contributors",
+    "Publisher",
+    "Date",
+    "Coverage",
+    "is Part of",
+    "Dataset",
+    "Source (Dataset)",
+    "Metadata (Dataset)",
+    "Citation (Dataset)",
+    "Rights",
+    "License",
+    "Modified"
+  ),
+  Value = c(
+    "abb21892 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb21892.html))",
+    "Öffentliches Personal des Kantons auf 1000 Einwohnerinnen und Einwohner, 1912–1963",
+    "Die Zahl der Staatsangestellten und die Staatsausgaben wuchsen zwischen 1912 und 1966 deutlich überproportional im Verhältnis zur Einwohnerschaft.",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "Nico Görlich, Moritz Twente",
+    "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
+    "1911/1963",
+    "20. Jahrhundert",
+    "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 ([Stadt.Geschichte.Basel 7](https://doi.org/10.21255/sgb-07-663402)).",
+    "[data/clean/Band7/21892/21892_3_Data.csv](../../data/clean/Band7/21892/21892_3_Data.csv)",
+    "Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge: Daten 1911-1945: Ausgabe 1945, S. 203. Daten 1946-1950: Ausgabe 1950, S. 199. Daten 1951-1955: Ausgabe 1955, S. 192. Daten 1956-1960: Ausgabe 1960, S. 182. Daten 1961-1963: Ausgabe 1963, S. 180. Bearbeitung: Nico Görlich / Moritz Twente",
+    "[data/clean/Band7/21892/21892_3_Data.csv-metadata.json](../../data/clean/Band7/21892/21892_3_Data.csv-metadata.json)",
+    "Stadt.Geschichte.Basel: Öffentliches Personal des Kantons auf 1000 Einwohnerinnen und Einwohner, 1912–1963. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21892.html#m21892_3>, letzte Aktualisierung: 06.10.2025.",
+    "Public Domain Mark",
+    "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
+    "2025-10-06 16:36:16"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(df, format = "markdown", escape = FALSE, caption = "Selected Metadata for Dataset 21892_3")
+```
+

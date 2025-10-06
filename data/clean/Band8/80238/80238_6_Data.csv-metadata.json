@@ -113,7 +113,7 @@
 					"description": "Gesamtzahl der Grossratsmitglieder. Reduzierung der Anzahl der Mandate im Jahr 2008"
 				}
 			],
-			"mediaID": ["m80238_6"],
+			"media_id": ["m80238_6"],
 			"isPartOf": {
 				"ObjectID": ["abb80238"],
 				"volume": [
@@ -122,7 +122,7 @@
 			},
 			"title": ["Grosser Rat in Basel-Stadt, 1960–2024"],
 			"description": [
-				"Die Parteienlandschaft in Basel hat sich seit 1960 stark verändert, mit Auswirkungen auf die Sitzverteilung im Basler Grossrat. Besonders stark waren die­ Umwälzungen in den 1990er-Jahren: Traditionsreiche Parteien wie die PdA und die LdU verloren ihre letzten Sitze, aufstrebende Parteien wie die Grünen und die SVP gewannen in kurzer Zeit viele Mandate. 2005 nahm das Stimmvolk die neue Kantonsverfassung an, eine gewichtige Folge davon war die Verkleinerung des Grossen Rates auf hundert Mitglieder"
+				"Die Parteienlandschaft in Basel hat sich seit 1960 stark verändert, mit Auswirkungen auf die Sitzverteilung im Basler Grossrat. Besonders stark waren die Umwälzungen in den 1990er-Jahren: Traditionsreiche Parteien wie die PdA und die LdU verloren ihre letzten Sitze, aufstrebende Parteien wie die Grünen und die SVP gewannen in kurzer Zeit viele Mandate. 2005 nahm das Stimmvolk die neue Kantonsverfassung an, eine gewichtige Folge davon war die Verkleinerung des Grossen Rates auf hundert Mitglieder."
 			],
 			"creator": [
 				{
@@ -142,7 +142,7 @@
 				},
 				{
 					"name": ["Moritz Twente"],
-					"email": ["moritz.twente@unibas.ch"],
+					"email": ["mtwente@protonmail.com"],
 					"orcid": ["0009-0005-7187-9774"]
 				}
 			],
@@ -155,12 +155,12 @@
 				"Sitzverteilung im Grossen Rat seit 1905, Entwicklung Frauenanteil im Grossen Rat, t17.3.05, Statistisches Amt BS, online: https://grosserrat.bs.ch/parlament/ratsgeschichte/entwicklung-der-parteien; Parteien, Jungeparteien und Listenvereinigungen seit 1971, t17.1.01, Statistisches Amt BS, online: https://grosserrat.bs.ch/parlament/ratsgeschichte/entwicklung-der-parteien; Nationale und kantonale Wahlen seit 1919, Bundesamt für Statistik, je-d-17.02.01_12BS, online: https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/tabellen.assetdetail.14836245.html. Bearbeitung: Nico Görlich / Moritz Twente"
 			],
 			"language": ["de"],
-			"relation": [["m80238_4"], ["m80238_5"]],
+			"relation": ["m80238_4", "m80238_5"],
 			"rights": ["Public Domain Mark"],
 			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-09-24 23:24:44"],
+			"modified": ["2025-10-06T17:22:15+0200"],
 			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Grosser Rat in Basel-Stadt, 1960–2024. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_6>, letzte Aktualisierung: 24.09.2025."
+				"Stadt.Geschichte.Basel: Grosser Rat in Basel-Stadt, 1960–2024. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_6>, letzte Aktualisierung: 06.10.2025."
 			]
 		}
 	}

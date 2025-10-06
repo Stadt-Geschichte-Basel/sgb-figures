@@ -1,0 +1,229 @@
+---
+title: Design Principles
+subtitle: Visual Identity and Colour Scheme
+lang: en
+format: html
+author: 
+- name: Cristina Münch
+  affiliation: University of Basel
+  orcid: 0000-0003-3885-248X
+- name: Nico Görlich
+  affiliation: University of Basel
+  orcid: 0000-0003-3860-1488
+- name: Moritz Mähr
+  email: moritz.maehr@gmail.com
+  affiliation: University of Basel
+  orcid: 0000-0002-1367-1618
+- name: Moritz Twente
+  affiliation: University of Basel
+  orcid: 0009-0005-7187-9774
+  email: mtwente@protonmail.com
+date: 2023-04-17
+date-modified: last-modified
+bibliography: references.bib
+other-links:
+  - text: RDM Documentation
+    icon: journal-code
+    href: 'https://dokumentation.stadtgeschichtebasel.ch/'
+---
+
+::: {.callout-tip title="About This Document" icon="false"}
+The content of this page is a translated assemblage of selected content on Stadt.Geschichte.Basel's RDM corporate identity, colour palettes and overall design philosophy. Only the colour palette for print products -- since it is used in sgb-figures -- is covered here. Refer to the [RDM Documentation](https://dokumentation.stadtgeschichtebasel.ch) for full coverage of Stadt.Geschichte.Basel's design and corporate identity guidelines (in German).
+:::
+
+## Colour Concept
+
+For the visual identity of print products such as the figures in this repository, consideration had to be given to the design and printing specifications of the publisher and book designers (even more so than in the context of online products). As an integral part of these considerations, a color concept was developed for this purpose with the following requirements in mind.
+
+-   Colours must be usable online and in print for graphics and maps. They must therefore exist in both the RGB and CMYK color spaces.
+-   They should also be distinguishable in illustrations (e.g., in scales) for people with visual impairments and must therefore meet minimum contrast requirements in combinations (inclusive design).
+-   Furthermore, no copyright-protected special colors (Pantone or similar) may be used. Due to the different requirements for print and web content, two different color palettes have to be defined.
+-   In addition, a visual unity should be recognizable -- on the one hand in relation to the distinctive color of the respective band, and on the other hand across bands. Color semantics also plays an important role in this regard. For example, bodies of water are represented in blue, with the respective shade of blue varying depending on whether areas (seas) or lines (rivers) are represented. Traditional colors are also used for religious communities (e.g., shades of green for Islam). On the other hand, color combinations that reproduce gender-specific clichés (e.g., blue/red combinations for male/female dichotomies) were avoided.
+
+Apart from requirements strictly regarding colours, technical constraints were also part of the development process because of their influence on the overall appearance on the visualizations:
+
+-   The dimensions of all illustrations are based on the layout concept and the space available, as arranged by the book designers. This limits the use of specific colours.
+-   The content and historical arguments to be conveyed are defined by the authors and depend heavily on the basic data provided. The space available in the book defines the technically possible or necessary resolution of the data depicted.
+
+From an accessibility perspective, the [WCAG standards](https://www.w3.org/WAI/standards-guidelines/wcag/glance/) are central to the design of online products. In addition, the design principles of Will Soward's [Neurodiversity Design System](https://neurodiversity.design/) were taken into account, but were [given lower priority](https://github.com/Stadt-Geschichte-Basel/stadtgeschichtebasel.ch/issues/107) than other requirements in cases of doubt.
+
+## Colour Palette (Print)
+
+For the ten volumes of Stadt.Geschichte.Basel, the research data management team edited and created over 100 graphics, mainly [maps](https://dokumentation.stadtgeschichtebasel.ch/products/research-data/geodata/) and the [figures in this repository](/docs/plots.qmd). In terms of color design, in addition to the requirements already mentioned, there was also the challenge of finding a consistent design language that would be recognizable across all volumes. However, this proved to be a difficult undertaking due to the large number of image types (maps, bar charts, network visualizations, etc.), discipline-specific conventions for the use of scientific visualizations, and technical differences in the accuracy and completeness of basic data [cf. @twenteNavigatingDisconcertmentMapMaking2025].
+
+The original approach of selecting a color palette from existing examples of good practice for accessible color design could therefore not be implemented directly. Furthermore, after processing the first data sets, it quickly became apparent that they varied greatly from each other in terms of structure to use a universally applicable basis (e.g., requirements for visualizing discrete data versus continuous data).
+
+A color palette was selected as the basis for the design of the scientific illustrations for the print products of Stadt.Geschichte.Basel – in two variants, with 23 and 14 colors respectively, plus a gray value. Paul Tol's [Discrete Rainbow Color Scheme 19](https://sronpersonalpages.nl/~pault/#fig:scheme_rainbow_discrete) is “reasonably clear” for color-blind people [@tolSequentialColourSchemes2022], provided that the color values are not interpolated. For graphic design in R, the palette is also [available](https://packages.tesselle.org/khroma/articles/tol.html#rainbow) in the khroma package [@frerebeauPaulTolsColour2025].
+
+The starting point for the design of a color palette for digital applications is violet, which serves as the background color for the book covers of all volumes of Stadt.Geschichte.Basel.
+
+### Discrete Rainbow Colour Scheme 19 (with 23+1 Colours)
+
+| Colour    | No. | CMYK       | HEX     | RGB         | Preview  |
+|-----------|-----|------------|---------|-------------|:---------|
+| Off White | 1   | 8 6 0 2    | #e8ecfb | 232 236 251 | <span style="display:block; width:30%; background-color:#e8ecfb; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+| Violet    | 2   | 4 10 0 11  | #d9cce3 | 217 204 227 | <span style="display:block; width:30%; background-color:#d9cce3; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|           | 4   | 0 15 0 20  | #caaccb | 202 172 203 | <span style="display:block; width:30%; background-color:#caaccb; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|           | 5   | 0 24 3 27  | #ba8db4 | 186 141 180 | <span style="display:block; width:30%; background-color:#ba8db4; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|           | 7   | 0 35 7 33  | #aa6f9e | 170 111 158 | <span style="display:block; width:30%; background-color:#aa6f9e; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|           | 8   | 0 48 11 40 | #994f88 | 153 79 136  | <span style="display:block; width:30%; background-color:#994f88; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|           | 9   | 0 66 16 47 | #882e72 | 136 46 114  | <span style="display:block; width:30%; background-color:#882e72; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+| Blue      | 10  | 86 43 0 31 | #1965b0 | 25 101 176  | <span style="display:block; width:30%; background-color:#1965b0; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|           | 11  | 65 35 0 25 | #437dbf | 67 125 191  | <span style="display:block; width:30%; background-color:#437dbf; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|           | 13  | 53 28 0 19 | #6195cf | 97 149 207  | <span style="display:block; width:30%; background-color:#6195cf; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|           | 14  | 45 21 0 13 | #7bafde | 123 175 222 | <span style="display:block; width:30%; background-color:#7bafde; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+| Green     | 15  | 56 0 43 30 | #4eb265 | 78 178 101  | <span style="display:block; width:30%; background-color:#4eb265; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|           | 16  | 28 0 33 21 | #90c987 | 144 201 135 | <span style="display:block; width:30%; background-color:#90c987; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|           | 17  | 10 0 24 12 | #cae0ab | 202 224 171 | <span style="display:block; width:30%; background-color:#cae0ab; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+| Yellow    | 18  | 0 3 65 3   | #f7f056 | 247 240 86  | <span style="display:block; width:30%; background-color:#f7f056; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+| Orange    | 19  | 0 18 72 3  | #f7cb45 | 247 203 69  | <span style="display:block; width:30%; background-color:#f7cb45; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|           | 21  | 0 32 78 4  | #f4a736 | 244 167 54  | <span style="display:block; width:30%; background-color:#f4a736; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|           | 23  | 0 46 84 7  | #ee8026 | 238 128 38  | <span style="display:block; width:30%; background-color:#ee8026; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+| Red       | 25  | 0 63 90 10 | #e65518 | 230 85 24   | <span style="display:block; width:30%; background-color:#e65518; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|           | 26  | 0 98 95 14 | #dc050c | 220 5 12    | <span style="display:block; width:30%; background-color:#dc050c; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|           | 27  | 0 86 92 35 | #a5170e | 165 23 14   | <span style="display:block; width:30%; background-color:#a5170e; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|           | 28  | 0 78 88 55 | #72190e | 114 25 14   | <span style="display:block; width:30%; background-color:#72190e; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|           | 29  | 0 68 85 74 | #42150a | 66 21 10    | <span style="display:block; width:30%; background-color:#42150a; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+| Gray      | 30  | 0 0 0 53   | #777777 | 119 119 119 | <span style="display:block; width:30%; background-color:#777777; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+
+: Print colour palette with 23 colours and gray [adapted from @tolSequentialColourSchemes2022] {#tbl-sgbprint23 .hover .sm .col-centered}
+
+::: {.callout-tip title="Copy-Paste Colour Configuration (CSV Including 23+1 Colours)" icon="false" collapse="true"}
+``` html
+ID,CMYK,HEX,RGB
+1,"8 6 0 2",#e8ecfb,"232 236 251"
+2,"4 10 0 11",#d9cce3,"217 204 227"
+4,"0 15 0 20",#caaccb,"202 172 203"
+5,"0 24 3 27",#ba8db4,"186 141 180"
+7,"0 35 7 33",#aa6f9e,"170 111 158"
+8,"0 48 11 40",#994f88,"153 79 136"
+9,"0 66 16 47",#882e72,"136 46 114"
+10,"86 43 0 31",#1965b0,"25 101 176"
+11,"65 35 0 25",#437dbf,"67 125 191"
+13,"53 28 0 19",#6195cf,"97 149 207"
+14,"45 21 0 13",#7bafde,"123 175 222"
+15,"56 0 43 30",#4eb265,"78 178 101"
+16,"28 0 33 21",#90c987,"144 201 135"
+17,"10 0 24 12",#cae0ab,"202 224 171"
+18,"0 3 65 3",#f7f056,"247 240 86"
+19,"0 18 72 3",#f7cb45,"247 203 69"
+21,"0 32 78 4",#f4a736,"244 167 54"
+23,"0 46 84 7",#ee8026,"238 128 38"
+25,"0 63 90 10",#e65518,"230 85 24"
+26,"0 98 95 14",#dc050c,"220 5 12"
+27,"0 86 92 35",#a5170e,"165 23 14"
+28,"0 78 88 55",#72190e,"114 25 14"
+29,"0 68 85 74",#42150a,"66 21 10"
+30,"0 0 0 53",#777777,"119 119 119"
+```
+:::
+
+### Discrete Rainbow Colour Scheme 19 (with 14+1 Colours)
+
+| Colour | No. | CMYK       | HEX     | RGB         | Preview   |
+|--------|-----|------------|---------|-------------|:---------|
+| Violet | 3   | 3 13 0 16  | #d1bbd7 | 209 198 215 | <span style="display:block; width:30%; background-color:#d1bbd7; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|        | 6   | 0 32 6 32  | #ae76a3 | 174 118 163 | <span style="display:block; width:30%; background-color:#ae76a3; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|        | 9   | 0 66 16 47 | #882e72 | 136 46 114  | <span style="display:block; width:30%; background-color:#882e72; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+| Blue   | 10  | 86 43 0 31 | #1965b0 | 25 101 176  | <span style="display:block; width:30%; background-color:#1965b0; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|        | 12  | 59 31 0 22 | #5289c7 | 82 137 199  | <span style="display:block; width:30%; background-color:#5289c7; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|        | 14  | 45 21 0 13 | #7bafde | 123 175 222 | <span style="display:block; width:30%; background-color:#7bafde; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+| Green  | 15  | 56 0 43 30 | #4eb265 | 78 178 101  | <span style="display:block; width:30%; background-color:#4eb265; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|        | 16  | 28 0 33 21 | #90c987 | 144 201 135 | <span style="display:block; width:30%; background-color:#90c987; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|        | 17  | 10 0 24 12 | #cae0ab | 202 224 171 | <span style="display:block; width:30%; background-color:#cae0ab; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+| Yellow | 18  | 0 3 65 3   | #f7f056 | 247 240 86  | <span style="display:block; width:30%; background-color:#f7f056; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+| Orange | 20  | 0 22 74 4  | #f6c141 | 246 193 65  | <span style="display:block; width:30%; background-color:#f6c141; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|        | 22  | 0 39 81 5  | #f1932d | 241 147 45  | <span style="display:block; width:30%; background-color:#f1932d; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+| Red    | 24  | 0 59 88 9  | #e8601c | 232 96 28   | <span style="display:block; width:30%; background-color:#e8601c; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+|        | 26  | 0 98 95 14 | #dc050c | 220 5 12    | <span style="display:block; width:30%; background-color:#dc050c; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+| Gray   | 30  | 0 0 0 53   | #777777 | 119 119 119 | <span style="display:block; width:30%; background-color:#777777; border:1px solid #000; aspect-ratio:1/1;"></span>         |
+
+: Print colour palette with 14 colours und gray [adapted from @tolSequentialColourSchemes2022] {#tbl-sgbprint14 .hover .sm .col-centered}
+
+::: {.callout-tip title="Copy-Paste Colour Configuration (CSV Including 14+1 Colours)" icon="false" collapse="true"}
+``` html
+ID,CMYK,HEX,RGB
+3,"3 13 0 16",#d1bbd7,"209 198 215"
+6,"0 32 6 32",#ae76a3,"174 118 163"
+9,"0 66 16 47",#882e72,"136 46 114"
+10,"86 43 0 31",#1965b0,"25 101 176"
+12,"59 31 0 22",#5289c7,"82 137 199"
+14,"45 21 0 13",#7bafde,"123 175 222"
+15,"56 0 43 30",#4eb265,"78 178 101"
+16,"28 0 33 21",#90c987,"144 201 135"
+17,"10 0 24 12",#cae0ab,"202 224 171"
+18,"0 3 65 3",#f7f056,"247 240 86"
+20,"0 22 74 4",#f6c141,"246 193 65"
+22,"0 39 81 5",#f1932d,"241 147 45"
+24,"0 59 88 9",#e8601c,"232 96 28"
+26,"0 98 95 14",#dc050c,"220 5 12"
+30,"0 0 0 53",#777777,"119 119 119"
+```
+:::
+
+### Usage
+
+This color scheme is suitable for use in print products in both variants and meets the requirements for a color palette that is recognizable to colorblind people. For illustrations in which certain color tones are undesirable, e.g., due to aesthetic requirements or content associations, individual color values can be omitted. In these cases, @tolSequentialColourSchemes2022 recommends using specific subsets (@fig-pyramid) of the color palette. In this way, a printable color palette with up to 23 color values suitable for color blind people can be generated.
+
+```{r echo=FALSE, message=FALSE}
+#| label: fig-pyramid
+#| fig-cap: "Variants of the color palette depending on the number of color levels required [adapted from @tolSequentialColourSchemes2022]"
+
+library(ggplot2)
+library(readr)
+library(dplyr)
+library(tidyr)
+library(plotly)
+
+# Read colour data from local files
+color_scheme_full <- read_csv("color_scheme_19.csv")
+color_scheme_subset <- read_csv("color_scheme_19_subset.csv")
+
+color_map <- bind_rows(color_scheme_full, color_scheme_subset) %>%
+  distinct(Nummer, .keep_all = TRUE)  # Remove duplicate rows based on 'Nummer'
+
+pyramid <- read_delim("color_scheme_19_selection.csv", delim=";", col_names = FALSE, na = "")
+
+# Add row numbers first (before pivoting)
+pyramid <- pyramid %>% mutate(row = row_number())
+
+# Convert wide format to long format
+pyramid_long <- pyramid %>%
+  pivot_longer(cols = -row, names_to = "col", values_to = "value", values_drop_na = TRUE) %>%
+  mutate(col = as.integer(gsub("X", "", col)))  # Convert column names to integers
+
+# Merge the color map to get the hex colors for each square
+pyramid_long <- pyramid_long %>%
+  left_join(color_map, by = c("value" = "Nummer"))
+
+# Calculate correct x positions to center the pyramid
+pyramid_long <- pyramid_long %>%
+  group_by(row) %>%
+  mutate(x = row_number() + (max(row) - row) / 2 - 0.5) %>%
+  ungroup()
+
+# Specify colour numbers that should have black text labels
+black_text_values <- c(1, 2, 3, 4, 5, 6, 7, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24)
+
+# Add text aesthetic for tooltip
+pyramid_long <- pyramid_long %>%
+  mutate(tooltip = paste0("Colour ID: ", value, "\nCMYK: ", CMYK, "\nHEX: ", HEX, "\nRGB: ", RGB))
+
+pyramid_plot <- ggplot(pyramid_long, aes(x = x, y = -row, label = value, fill = HEX, text = tooltip)) +  
+  geom_tile(color = "black", width = 1, height = 1) +
+  geom_text(aes(color = ifelse(value %in% black_text_values, "black", "white")), size = 3) +
+  scale_fill_identity() +
+  scale_color_identity() +
+  theme_void() +
+  theme(axis.line = element_blank()) +
+  coord_fixed(ratio = 1)
+
+ggplotly(pyramid_plot, tooltip = "text") %>%
+  config(locale = "en",
+  		modeBarButtonsToRemove = c("hoverCompareCartesian", "lasso2d"),
+		toImageButtonOptions = list(format = "svg")) %>%
+  layout(showlegend = FALSE,
+      	xaxis = list(showgrid = FALSE, showticklabels = FALSE, zeroline = FALSE, autorange = TRUE),
+    	yaxis = list(showgrid = FALSE, showticklabels = FALSE, zeroline = FALSE)
+  )
+```
