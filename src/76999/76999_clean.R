@@ -14,21 +14,21 @@ source(here("src", "Utils", "Export_CSV.R"))
 
 # Process Data ---------------
 
-data92792 <- read_excel(here("data", "raw", "Band9", "92792", "92792_Data_raw.xlsx"),
+data76999 <- read_excel(here("data", "raw", "Band9", "76999", "76999_Data_raw.xlsx"),
   range = "A2:B26",
   col_names = c("Eigentümer", "Anzahl Wohnungen")
 )
 
-data92792$Eigentümer[3] <- c("Pensionskasse Basel-Stadt")
-data92792$Eigentümer[23] <- c("GAM Investment Management")
+data76999$Eigentümer[3] <- c("Pensionskasse Basel-Stadt")
+data76999$Eigentümer[23] <- c("GAM Investment Management")
 
-save_clean_csv(data92792, csv_suffix = 3, vol = 9)
+save_clean_csv(data76999, csv_suffix = 3, vol = 9)
 
 # Create Metadata ------------
 
-meta92792 <- annotate(
-  data = data92792,
-  media_id = 92792,
+meta76999 <- annotate(
+  data = data76999,
+  media_id = 76999,
   csv_suffix = 3,
   vol = 9,
   title = "Privatbesitz an Boden und Wohnraum in Basel, 2021",
@@ -54,5 +54,5 @@ meta92792 <- annotate(
   coverage = "21. Jahrhundert",
   source = "https://reflekt.ch/recherchen/wem-gehoert-basel. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "CC BY-SA 4.0",
-  relation = c("m92792_1", "m92792_2")
+  relation = c("m76999_1", "m76999_2")
 )

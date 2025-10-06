@@ -16,11 +16,11 @@ source(here("src", "Utils", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
-source(here("src", "92792", "92792_clean.R"))
+source(here("src", "76999", "76999_clean.R"))
 
 # Plot -----------------------
 
-plot92792 <- ggplot(data92792, aes(
+plot76999 <- ggplot(data76999, aes(
   x = `Anzahl Wohnungen`,
   y = reorder(Eigentümer, `Anzahl Wohnungen`)
 )) +
@@ -57,15 +57,15 @@ plot92792 <- ggplot(data92792, aes(
 # Write Info Page ------------
 
 write_info_page(
-  plot_obj = plot92792,
-  plot_id = 92792,
+  plot_obj = plot76999,
+  plot_id = 76999,
   volume = 9,
   csv_suffix = 3
 )
 
 # Export ---------------------
 
-export_plot(plot92792, 9, 144, 116, 30, 5,
+export_plot(plot76999, 9, 144, 116, 30, 5,
   plot_suffix = 1,
   legend_suffix = 2
 )
