@@ -69,7 +69,7 @@ plot80238d <- ggplot(
     legend.key.height = unit(2.5, "mm"), # resultiert in 2 mm
     plot.margin = margin(0.5, 0.9, 0, 0.4, "lines"),
     axis.ticks = element_blank(),
-    axis.text.y = element_text(margin = margin(r = 5)),
+    axis.text.y = element_text(margin = margin(r = 5))
   )
 
 # Write Info Page ------------
