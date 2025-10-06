@@ -221,7 +221,7 @@ df <- data.frame(
   Value = c(
     "abb80238 ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/abb80238.html))",
     "Grosser Rat in Basel-Stadt, 1960–2024",
-    "Die Parteienlandschaft in Basel hat sich seit 1960 stark verändert, mit Auswirkungen auf die Sitzverteilung im Basler Grossrat. Besonders stark waren die­ Umwälzungen in den 1990er-Jahren: Traditionsreiche Parteien wie die PdA und die LdU verloren ihre letzten Sitze, aufstrebende Parteien wie die Grünen und die SVP gewannen in kurzer Zeit viele Mandate. 2005 nahm das Stimmvolk die neue Kantonsverfassung an, eine gewichtige Folge davon war die Verkleinerung des Grossen Rates auf hundert Mitglieder.",
+    "Die Parteienlandschaft in Basel hat sich seit 1960 stark verändert, mit Auswirkungen auf die Sitzverteilung im Basler Grossrat. Besonders stark waren die Umwälzungen in den 1990er-Jahren: Traditionsreiche Parteien wie die PdA und die LdU verloren ihre letzten Sitze, aufstrebende Parteien wie die Grünen und die SVP gewannen in kurzer Zeit viele Mandate. 2005 nahm das Stimmvolk die neue Kantonsverfassung an, eine gewichtige Folge davon war die Verkleinerung des Grossen Rates auf hundert Mitglieder.",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
     "Nico Görlich, Moritz Twente",
     "[Stadt.Geschichte.Basel](https://www.wikidata.org/wiki/Q122442230)",
@@ -234,7 +234,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Grosser Rat in Basel-Stadt, 1960–2024. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_6>, letzte Aktualisierung: 06.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-06 16:36:19"
+    "2025-10-06 17:22:15"
   ),
   stringsAsFactors = FALSE
 )
