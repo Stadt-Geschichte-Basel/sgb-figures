@@ -84,10 +84,10 @@ plot24528 <- ggplot(data = data24528, aes(x = Jahr)) +
     limits = c(-4, 8),
     breaks = seq(-4, 8, by = 2),
     expand = expansion(mult = c(0, 0)),
-    labels = number_format(
+    labels = label_number(
       accuracy = 0.01,
       decimal.mark = ".",
-      style_positive = c("plus")
+      style_positive = "plus"
     )
   ) +
   scale_color_manual(

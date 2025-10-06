@@ -106,10 +106,10 @@ plot24528 <- ggplot(data = data24528, aes(x = Jahr)) +
     limits = c(-4, 8),
     breaks = seq(-4, 8, by = 2),
     expand = expansion(mult = c(0, 0)),
-    labels = number_format(
+    labels = label_number(
       accuracy = 0.01,
       decimal.mark = ".",
-      style_positive = c("plus")
+      style_positive = "plus"
     )
   ) +
   scale_color_manual(
@@ -234,7 +234,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Temperaturabweichungen in °C, 1444–2011. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb24528.html#m24528_3>, letzte Aktualisierung: 06.10.2025.",
     "In Copyright",
     "[https://rightsstatements.org/vocab/InC-RUU/1.0/](https://rightsstatements.org/vocab/InC-RUU/1.0/)",
-    "2025-10-06 16:36:16"
+    "2025-10-06 17:29:31"
   ),
   stringsAsFactors = FALSE
 )
