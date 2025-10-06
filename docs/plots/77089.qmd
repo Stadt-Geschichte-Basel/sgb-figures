@@ -144,7 +144,7 @@ htmltools::div(
 
 ::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Jahr:** Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung
-- **Personenwagen:** Anzahl der Personenwagen (Automobile) im Fahrzeugbestand im Kanton Basel-Stadt im entsprechenden Jahr. Ab dem Jahr 2019 werden in dieser Kategorie auch E-Autos mitgezählt. Die Zahlen stellen bis inkl. 1953 'Erteilte Fahrzeugausweise auf Jahresende' dar, ab inkl. 1954 dann 'Motorfahrzeug- und Fahrrad-Höchstbestände'. Die Angabe für 1920 ist eine Schätzung auf Basis der Daten von 1921 und Angaben von https://hsso.ch/2012/n/12. Für die Jahre 1924, 1927, 1929, 1930, 1931, 1932, 1934, 1965–1953, 1960, 1961: Abweichende Angaben in früheren oder späteren Berichten.
+- **Personenwagen:** Anzahl der Personenwagen (Automobile) im Fahrzeugbestand im Kanton Basel-Stadt im entsprechenden Jahr. Ab dem Jahr 2019 werden in dieser Kategorie auch E-Autos mitgezählt. Die Zahlen stellen bis inkl. 1953 'Erteilte Fahrzeugausweise auf Jahresende' dar, ab inkl. 1954 dann 'Motorfahrzeug- und Fahrrad-Höchstbestände'. Die Angabe für 1920 ist eine Schätzung auf Basis der Daten von 1921 und Angaben von https://hsso.ch/2012/n/12. Für die Jahre 1924, 1927, 1929, 1930, 1931, 1932, 1934, 1946–1953, 1960, 1961: Abweichende Angaben in früheren oder späteren Berichten.
 - **Motorräder inkl. Mofas:** Anzahl an Motorrädern (inklusive Mofas) im Fahrzeugbestand im Kanton Basel-Stadt im entsprechenden Jahr. Die Zahlen stellen bis inkl. 1953 'Erteilte Fahrzeugausweise auf Jahresende' dar, ab inkl. 1954 dann 'Motorfahrzeug- und Fahrrad-Höchstbestände'. Ab 1954 weiterhin neu exkl. Dreiräder (davor jeweils max. 25). Für die Jahre 1924, 1925, 1927, 1928, 1929, 1930, 1931, 1933, 1935, 1939, 1940, 1946–1954, 1960, 1961: Abweichende Angaben in früheren oder späteren Berichten.
 - **Fahrräder:** Anzahl an Fahrrädern im Fahrzeugbestand im Kanton Basel-Stadt im entsprechenden Jahr. Für das Jahr 1961: Abweichende Angaben in späteren Berichten
 :::
@@ -189,7 +189,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Der Fahrzeugbestand in Basel-Stadt, 1920–2022. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77089.html#m77089_3>, letzte Aktualisierung: 06.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-06 16:36:19"
+    "2025-10-06 17:21:50"
   ),
   stringsAsFactors = FALSE
 )
