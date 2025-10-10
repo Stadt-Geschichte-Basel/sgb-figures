@@ -60,8 +60,8 @@ annotate2 <- function(data, media_id, csv_suffix, vol, title, column_description
     col_name <- colnames(data)[i]
     list(
       name = col_name,
-      titles = setNames(list(col_name), lang),
-      `dc:description` = setNames(list(column_description[[i]]), lang),
+      titles = col_name,
+      `dc:description` = column_description[[i]],
       datatype = infer_datatype(data[[i]])
     )
   })
