@@ -21,7 +21,7 @@ save_clean_csv(data92492, csv_suffix = 3, vol = 6)
 
 # Create Metadata ------------
 
-meta92492 <- annotate2(
+meta92492 <- annotate(
   data = data92492,
   media_id = 92492,
   csv_suffix = 3,
