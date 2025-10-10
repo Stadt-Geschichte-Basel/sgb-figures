@@ -6,24 +6,26 @@
 		}
 	],
 	"url": "92492_3_Data.csv",
+	"dc:identifier": "m92492_3",
 	"dc:title": {
 		"de": "Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910"
+	},
+	"dc:isPartOf": {
+		"object_id": "abb92492",
+		"volume": "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 	},
 	"dc:description": {
 		"de": "Der Anteil der Protestantinnen und Protestanten an der Bevölkerung verringerte sich von 75 Prozent 1860 auf 63,4 Prozent 1910. Im gleichen Zeitraum stieg der Anteil der Katholikinnen und Katholiken von einem Viertel auf einen Drittel und die jüdische Bevölkerung vergrösserte sich beinahe um den Faktor fünf."
 	},
+	"dc:creator": {
+		"schema:name": "Benedikt Pfister"
+	},
 	"dc:publisher": {
 		"schema:name": "Stadt.Geschichte.Basel",
 		"schema:url": {
-			"@id": "https://forschung.stadtgeschichtebasel.ch"
+			"@id": "https://www.wikidata.org/wiki/Q122442230"
 		}
 	},
-	"dcat:keyword": ["Basel", "Stadtgeschichte", "Forschungsdaten"],
-	"dc:creator": [
-		{
-			"schema:name": "Benedikt Pfister"
-		}
-	],
 	"dc:contributor": [
 		{
 			"schema:name": "Nico Görlich",
@@ -39,82 +41,57 @@
 			"schema:email": "mtwente@protonmail.com"
 		}
 	],
+	"dc:date": "1860/1910",
+	"dc:coverage": "19. Jahrhundert",
+	"dc:type": "Dataset",
+	"dc:format": "text/csv",
+	"dc:source": "Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924. Bearbeitung: Nico Görlich / Moritz Twente",
+	"dc:language": "de",
+	"dc:relation": ["m92492_1", "m92492_2"],
+	"dc:rights": "Public Domain Mark",
 	"dc:license": {
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
-	"dc:coverage": {
-		"de": "19. Jahrhundert"
-	},
-	"dc:date": "1860/1910",
-	"dc:source": {
-		"de": "Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924. Bearbeitung: Nico Görlich / Moritz Twente"
-	},
-	"dc:rights": "Public Domain Mark",
-	"dc:relation": ["m92492_1", "m92492_2"],
 	"dc:modified": {
-		"@value": "2025-10-10T16:21:21+0200",
+		"@value": "2025-10-11T00:21:34+0200",
 		"@type": "xsd:date"
 	},
 	"tableSchema": {
 		"columns": [
 			{
 				"name": "Jahr",
-				"titles": {
-					"de": "Jahr"
-				},
-				"dc:description": {
-					"de": "Angabe des Jahres, für das die jeweiligen Daten gelten. Jahreszahl in unserer Zeitrechnung"
-				},
+				"titles": "Jahr",
+				"dc:description": "Angabe des Jahres, für das die jeweiligen Daten gelten. Jahreszahl in unserer Zeitrechnung",
 				"datatype": "number"
 			},
 			{
 				"name": "Protestantisch",
-				"titles": {
-					"de": "Protestantisch"
-				},
-				"dc:description": {
-					"de": "Anteil der Protestantinnen und Protestanten an der Gesamtbevölkerung in Prozent"
-				},
+				"titles": "Protestantisch",
+				"dc:description": "Anteil der Protestantinnen und Protestanten an der Gesamtbevölkerung in Prozent",
 				"datatype": "number"
 			},
 			{
 				"name": "Katholisch",
-				"titles": {
-					"de": "Katholisch"
-				},
-				"dc:description": {
-					"de": "Anteil der Katholikinnen und Katholiken an der Gesamtbevölkerung in Prozent"
-				},
+				"titles": "Katholisch",
+				"dc:description": "Anteil der Katholikinnen und Katholiken an der Gesamtbevölkerung in Prozent",
 				"datatype": "number"
 			},
 			{
 				"name": "Christkatholisch",
-				"titles": {
-					"de": "Christkatholisch"
-				},
-				"dc:description": {
-					"de": "Anteil der Christkatholikinnen und Christkatholiken an der Gesamtbevölkerung in Prozent"
-				},
+				"titles": "Christkatholisch",
+				"dc:description": "Anteil der Christkatholikinnen und Christkatholiken an der Gesamtbevölkerung in Prozent",
 				"datatype": "number"
 			},
 			{
 				"name": "Jüdisch",
-				"titles": {
-					"de": "Jüdisch"
-				},
-				"dc:description": {
-					"de": "Anteil der Jüdinnen und Juden an der Gesamtbevölkerung in Prozent"
-				},
+				"titles": "Jüdisch",
+				"dc:description": "Anteil der Jüdinnen und Juden an der Gesamtbevölkerung in Prozent",
 				"datatype": "number"
 			},
 			{
 				"name": "Andere/Keine/Unbekannt",
-				"titles": {
-					"de": "Andere/Keine/Unbekannt"
-				},
-				"dc:description": {
-					"de": "Anteil Angehöriger anderer, keiner oder unbekannter Religionen bzw. Konfessionen an der Gesamtbevölkerung in Prozent"
-				},
+				"titles": "Andere/Keine/Unbekannt",
+				"dc:description": "Anteil Angehöriger anderer, keiner oder unbekannter Religionen bzw. Konfessionen an der Gesamtbevölkerung in Prozent",
 				"datatype": "number"
 			}
 		],
