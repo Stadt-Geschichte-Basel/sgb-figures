@@ -1,29 +1,15 @@
-# Packages ---------
-
-## --- Ensure required packages are installed ---
-required_packages <- c("here", "csvwr", "jsonlite")
-for (pkg in required_packages) {
-  if (!requireNamespace(pkg, quietly = TRUE)) {
-    message(paste("Restoring package:", pkg, " from renv lockfile."))
-    renv::restore()
-  }
-}
-
-library(here)
-library(csvwr)
 library(jsonlite)
+library(here)
+library(lubridate)
 
-# Function to Create Metadata ---------
-
-annotate <- function(data, media_id, csv_suffix, vol, title, column_description, object_description, creator,
-                     contributor, date, coverage, source, relation, rights) {
-  # derive folder ID from media_id (first 5 digits only)
+annotate2 <- function(data, media_id, csv_suffix, vol, title, column_description,
+                     object_description, creator, contributor, date, coverage,
+                     source, relation, rights, lang = "de") {
+  # Derive folder ID
   folder_id <- sub("^(\\d{5}).*$", "\\1", media_id)
-
-  # Build suffix part
   suffix_part <- if (!is.null(csv_suffix)) paste0("_", csv_suffix) else ""
-
-  # derive license URL based on rights string
+  
+  # Determine license URL
   license_url <- if (grepl("CC BY-SA", rights, ignore.case = TRUE)) {
     "https://creativecommons.org/licenses/by-sa/4.0/"
   } else if (grepl("Public Domain Mark", rights, ignore.case = TRUE)) {
@@ -35,65 +21,94 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
   } else {
     NA
   }
-
-  # derive basic schema using csvwr::derive_table_schema()
-  metadata <- derive_table_schema(data)
-
-  # add Stadt.Geschichte.Basel Data Model
-  metadata$media_id <- paste0("m", folder_id, suffix_part)
-  metadata$isPartOf <- list(
-    ObjectID = paste0("abb", folder_id),
-    volume = switch(vol,
-      "Lassau, Guido; Schwarz, Peter-Andrew (Hg.): Auf dem langen Weg zur Stadt. 50 000 v. Chr.–800 n. Chr. Basel 2024 (Stadt.Geschichte.Basel 1).",
-      "Sieber-Lehmann, Claudius; Schwarz, Peter-Andrew (Hg.): Eine Bischofsstadt zwischen Oberrhein und Jura. 800–1273. Basel 2024 (Stadt.Geschichte.Basel 2).",
-      "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3).",
-      "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 (Stadt.Geschichte.Basel 4).",
-      "Fehlmann, Marc; Sieber, Dominik; Salvisberg, André (Hg.): Hinter der Mauer, vor der Moderne. 1760–1859. Basel 2024 (Stadt.Geschichte.Basel 5).",
-      "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6).",
-      "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7).",
-      "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8).",
-      "Baur, Esther; Gafner, Lina (Hg.): Stadträume. Offen und begrenzt, gestaltet und umkämpft. Basel 2025 (Stadt.Geschichte.Basel 9)."
+  
+  # Prepare output paths
+  csv_filename <- paste0(folder_id, suffix_part, "_Data.csv")
+  json_folder <- here("data", "clean", paste0("Band", vol), folder_id)
+  if (!dir.exists(json_folder)) dir.create(json_folder, recursive = TRUE)
+  json_file <- file.path(json_folder, paste0(csv_filename, "-metadata.json"))
+  
+  # Helper: infer datatype with optional format
+  infer_datatype <- function(x) {
+    if (is.numeric(x)) {
+      return("number")
+    } else if (is.logical(x)) {
+      return("boolean")
+    } else if (inherits(x, "Date")) {
+      return(list(base = "date", format = "yyyy-MM-dd"))
+    } else if (inherits(x, "POSIXt")) {
+      return(list(base = "dateTime", format = "yyyy-MM-dd'T'HH:mm:ss"))
+    } else if (is.character(x) || is.factor(x)) {
+      # Try detect date-like strings
+      sample_vals <- na.omit(as.character(x))[1:min(10, length(na.omit(x)))]
+      if (all(!is.na(ymd(sample_vals, quiet = TRUE)))) {
+        return(list(base = "date", format = "yyyy-MM-dd"))
+      } else if (all(!is.na(mdy(sample_vals, quiet = TRUE)))) {
+        return(list(base = "date", format = "M/d/yyyy"))
+      } else if (all(!is.na(dmy(sample_vals, quiet = TRUE)))) {
+        return(list(base = "date", format = "d/M/yyyy"))
+      } else {
+        return("string")
+      }
+    } else {
+      return("string")
+    }
+  }
+  
+  # Build tableSchema ----
+  columns <- lapply(seq_along(colnames(data)), function(i) {
+    col_name <- colnames(data)[i]
+    list(
+      name = col_name,
+      titles = setNames(list(col_name), lang),
+      `dc:description` = setNames(list(column_description[[i]]), lang),
+      datatype = infer_datatype(data[[i]])
+    )
+  })
+  
+  # Build publisher info ----
+  publisher <- list(
+    `schema:name` = "Stadt.Geschichte.Basel",
+    `schema:url` = list(`@id` = "https://forschung.stadtgeschichtebasel.ch")
+  )
+  
+  # Normalize person objects ----
+  normalize_person <- function(person) {
+    out <- list(`schema:name` = person$name)
+    if (!is.null(person$orcid))
+      out$`schema:identifier` <- list(`@id` = paste0("https://orcid.org/", person$orcid))
+    if (!is.null(person$email))
+      out$`schema:email` <- person$email
+    out
+  }
+  creators <- lapply(creator, normalize_person)
+  contributors <- lapply(contributor, normalize_person)
+  
+  # Compose full metadata structure ----
+  metadata <- list(
+    `@context` = list("http://www.w3.org/ns/csvw", list(`@language` = lang)),
+    url = csv_filename,
+    `dc:title` = setNames(list(title), lang),
+    `dc:description` = setNames(list(object_description), lang),
+    `dc:publisher` = publisher,
+    `dcat:keyword` = c("Basel", "Stadtgeschichte", "Forschungsdaten"),
+    `dc:creator` = creators,
+    `dc:contributor` = contributors,
+    `dc:license` = list(`@id` = license_url),
+    `dc:coverage` = setNames(list(coverage), lang),
+    `dc:date` = date,
+    `dc:source` = setNames(list(source), lang),
+    `dc:rights` = rights,
+    `dc:relation` = relation,
+    `dc:modified` = list(`@value` = format(Sys.time(), "%Y-%m-%dT%H:%M:%S%z"), `@type` = "xsd:date"),
+    tableSchema = list(
+      columns = columns,
+      primaryKey = colnames(data)[1],
+      aboutUrl = paste0("#", tolower(colnames(data)[1]), "-{", colnames(data)[1], "}")
     )
   )
-  metadata$columns[["description"]] <- column_description
-  metadata$title <- title
-  metadata$description <- object_description
-  metadata$creator <- creator
-  metadata$contributor <- contributor
-  metadata$publisher <- "Stadt.Geschichte.Basel"
-  metadata$date <- date
-  metadata$coverage <- coverage
-  metadata$type <- "Dataset"
-  metadata$format <- "text/csv"
-  metadata$source <- source
-  metadata$language <- "de"
-  metadata$relation <- relation
-  metadata$rights <- rights
-  metadata$license <- license_url
-  metadata$modified <- format(Sys.time(), "%Y-%m-%dT%H:%M:%S%z")
-  metadata$bibliographicCitation <- paste0(
-    "Stadt.Geschichte.Basel: ", title, ". Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb", folder_id, ".html#m", folder_id, suffix_part, ">, letzte Aktualisierung: ", format(Sys.Date(), format = "%d.%m.%Y"), "."
-  )
-
-  # Build folder path
-  json_folder <- here("data", "clean", paste0("Band", vol), folder_id)
-
-  # Create folder if needed
-  if (!dir.exists(json_folder)) {
-    dir.create(json_folder, recursive = TRUE)
-  }
-
-  # File name uses pure folder_id + optional suffix
-  csv_filename <- paste0(folder_id, suffix_part, "_Data.csv")
-  json_file <- file.path(json_folder, paste0(csv_filename, "-metadata.json"))
-
-  # write JSON
-  list(
-    url = csv_filename,
-    tableSchema = metadata
-  ) |>
-    create_metadata() |>
-    toJSON() |>
-    prettify() |>
-    write(json_file)
+  
+  # Write JSON
+  write(prettify(toJSON(metadata, auto_unbox = TRUE)), json_file)
+  invisible(metadata)
 }
