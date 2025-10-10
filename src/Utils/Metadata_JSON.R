@@ -108,7 +108,10 @@ annotate2 <- function(data, media_id, csv_suffix, vol, title, column_description
     )
   )
   
-  # Write JSON
-  write(prettify(toJSON(metadata, auto_unbox = TRUE)), json_file)
+  # Write JSON ----
+  toJSON(metadata, auto_unbox = TRUE) |>
+    prettify() |>
+    write(json_file)
+  
   invisible(metadata)
 }
