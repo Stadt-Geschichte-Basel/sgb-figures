@@ -81,7 +81,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
 
     # Collapse the column info into a bullet point list md string for display.
     columns_str <- paste(apply(columns_info, 1, function(row) {
-      paste0("- **", row["name"], ":** ", row["description"])
+      paste0("- **", row["name"], ":** ", row["dc:description"])
     }), collapse = "\n")
 
     ## --- Map Volume Numbers to Open Access DOIs ---
@@ -99,7 +99,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     # If a valid volume number is found, create a DOI link.
     if (!is.na(vol_num) && vol_num >= 1 && vol_num <= length(doi_suffixes)) {
       vol_link <- glue("[Stadt.Geschichte.Basel {vol_num}](https://doi.org/10.21255/sgb-{doi_suffixes[vol_num]})")
-      vol_text <- sub(vol_short, vol_link, vol_text, fixed = TRUE)
+      vol_text_link <- sub(vol_short, vol_link, vol_text, fixed = TRUE)
     }
 
     ## Parse meta$`dc:modified` and reformat for output
@@ -117,7 +117,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
       Publisher = publisher_link,
       Date = meta$`dc:date`[[1]],
       Coverage = meta$`dc:coverage`[[1]],
-      "is Part of" = vol_text,
+      "is Part of" = vol_text_link,
       Dataset = data_link,
       "Source (Dataset)" = meta$`dc:source`[[1]],
       "Metadata (Dataset)" = meta_link,
@@ -131,6 +131,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     list(
       fields = fields,
       #schema = schema,
+      vol_text = vol_text,
       vol_short = vol_short,
       col_description = columns_str
     )
@@ -308,10 +309,10 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
   # Assemble the YAML front matter and the body of the Quarto document.
   qmd_text <- c(
     "---",
-    glue("title: \"{main_metadata$meta$title[[1]]}\""),
+    glue("title: \"{main_metadata$fields$Title[[1]]}\""),
     "subtitle: Plot and Data Preview",
-    glue("date-modified: {as.Date(main_metadata$meta$`dc:modified`[[1]])}"),
-    glue("volume: \"{main_metadata$meta$`dc:isPartOf`$volume[[1]]}\""),
+    glue("date-modified: {as.Date(main_metadata$fields$Modified[[1]])}"),
+    glue("volume: \"{main_metadata$vol_text}\""),
     glue("vol_short: \"{main_metadata$vol_short}\""),
     glue("plotid: \"{plotid_meta}\""),
     "format:",
