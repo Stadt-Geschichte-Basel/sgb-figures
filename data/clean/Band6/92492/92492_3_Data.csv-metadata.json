@@ -7,9 +7,7 @@
 	],
 	"url": "92492_3_Data.csv",
 	"dc:identifier": "m92492_3",
-	"dc:title": {
-		"de": "Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910"
-	},
+	"dc:title": "Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910",
 	"dc:isPartOf": {
 		"object_id": "abb92492",
 		"volume": "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
@@ -53,7 +51,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-11T00:21:34+0200",
+		"@value": "2025-10-11T11:11:30+0200",
 		"@type": "xsd:date"
 	},
 	"tableSchema": {

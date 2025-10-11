@@ -115,7 +115,7 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
     `@context` = list("http://www.w3.org/ns/csvw", list(`@language` = lang)),
     url = csv_filename,
     `dc:identifier` = identifier,
-    `dc:title` = setNames(list(title), lang),
+    `dc:title` = title,
     `dc:isPartOf` = isPartOf,
     #`dc:subject` = subjects, # not yet implemented
     `dc:description` = setNames(list(object_description), lang),
