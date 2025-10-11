@@ -58,7 +58,7 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
   # If only one person, unbox to object instead of array
   creators <- if (length(creators_list) == 1) creators_list[[1]] else creators_list
   contributors <- if (length(contributors_list) == 1) contributors_list[[1]] else contributors_list
-  
+
   # Determine license URL ----
   license_url <- if (grepl("CC BY-SA", rights, ignore.case = TRUE)) {
     "https://creativecommons.org/licenses/by-sa/4.0/"
@@ -99,6 +99,11 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
     }
   }
   
+  # format date string
+  date_modified <- meta$`dc:modified`$`@value` |>
+    as.POSIXct(format = "%Y-%m-%dT%H:%M:%S%z") |>
+    format("%Y-%m-%d %H:%M:%S")
+  
   # Build tableSchema ----
   columns <- lapply(seq_along(colnames(data)), function(i) {
     col_name <- colnames(data)[i]
@@ -131,7 +136,7 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
     `dc:relation` = relation,
     `dc:rights` = rights,
     `dc:license` = list(`@id` = license_url),
-    `dc:modified` = list(`@value` = format(Sys.time(), "%Y-%m-%dT%H:%M:%S%z"), `@type` = "xsd:date"),
+    `dc:modified` = list(`@value` = date_modified, `@type` = "xs:dateTime"),
     
     tableSchema = list(
       columns = columns,
