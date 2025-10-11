@@ -99,11 +99,6 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
     }
   }
   
-  # format date string
-  date_modified <- meta$`dc:modified`$`@value` |>
-    as.POSIXct(format = "%Y-%m-%dT%H:%M:%S%z") |>
-    format("%Y-%m-%d %H:%M:%S")
-  
   # Build tableSchema ----
   columns <- lapply(seq_along(colnames(data)), function(i) {
     col_name <- colnames(data)[i]
@@ -136,7 +131,7 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
     `dc:relation` = relation,
     `dc:rights` = rights,
     `dc:license` = list(`@id` = license_url),
-    `dc:modified` = list(`@value` = date_modified, `@type` = "xs:dateTime"),
+    `dc:modified` = list(`@value` = format(Sys.time(), "%Y-%m-%dT%H:%M:%S%z"), `@type` = "xs:dateTime"),
     `dc:bibliographicCitation` = paste0(
       "Stadt.Geschichte.Basel: ", title, ". Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb", folder_id, ".html#m", folder_id, suffix_part, ">, letzte Aktualisierung: ", format(Sys.Date(), format = "%d.%m.%Y"), "."
       ),
