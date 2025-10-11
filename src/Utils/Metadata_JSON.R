@@ -137,6 +137,9 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
     `dc:rights` = rights,
     `dc:license` = list(`@id` = license_url),
     `dc:modified` = list(`@value` = date_modified, `@type` = "xs:dateTime"),
+    `dc:bibliographicCitation` = paste0(
+      "Stadt.Geschichte.Basel: ", title, ". Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb", folder_id, ".html#m", folder_id, suffix_part, ">, letzte Aktualisierung: ", format(Sys.Date(), format = "%d.%m.%Y"), "."
+      ),
     
     tableSchema = list(
       columns = columns,
