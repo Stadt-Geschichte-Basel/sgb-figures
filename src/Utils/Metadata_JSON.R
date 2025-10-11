@@ -3,8 +3,8 @@ library(here)
 library(lubridate)
 
 annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
-                     object_description, creator, contributor, date, coverage,
-                     source, relation, rights, lang = "de") {
+                     column_datatype, object_description, creator, contributor,
+                     date, coverage, source, relation, rights, lang = "de") {
   
   # Derive folder ID ----
   folder_id <- sub("^(\\d{5}).*$", "\\1", media_id)
@@ -72,31 +72,9 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
     NA
   }
   
-  # Helper: infer datatype with optional format
-  infer_datatype <- function(x) {
-    if (is.numeric(x)) {
-      return("number")
-    } else if (is.logical(x)) {
-      return("boolean")
-    } else if (inherits(x, "Date")) {
-      return(list(base = "date", format = "yyyy-MM-dd"))
-    } else if (inherits(x, "POSIXt")) {
-      return(list(base = "dateTime", format = "yyyy-MM-dd'T'HH:mm:ss"))
-    } else if (is.character(x) || is.factor(x)) {
-      # Try detect date-like strings
-      sample_vals <- na.omit(as.character(x))[1:min(10, length(na.omit(x)))]
-      if (all(!is.na(ymd(sample_vals, quiet = TRUE)))) {
-        return(list(base = "date", format = "yyyy-MM-dd"))
-      } else if (all(!is.na(mdy(sample_vals, quiet = TRUE)))) {
-        return(list(base = "date", format = "M/d/yyyy"))
-      } else if (all(!is.na(dmy(sample_vals, quiet = TRUE)))) {
-        return(list(base = "date", format = "d/M/yyyy"))
-      } else {
-        return("string")
-      }
-    } else {
-      return("string")
-    }
+  
+  if (length(column_description) != ncol(data) || length(column_datatype) != ncol(data)) {
+    stop("Lengths of column_description and column_datatype must match number of data columns.")
   }
   
   # Build tableSchema ----
@@ -106,7 +84,7 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
       name = col_name,
       titles = col_name,
       `dc:description` = column_description[[i]],
-      datatype = infer_datatype(data[[i]])
+      datatype = column_datatype[[i]]
     )
   })
   
