@@ -1,7 +1,7 @@
 ---
 title: "Staatliche Ausgaben für Musik und Theater, 1913–1966"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-06
+date-modified: 2025-10-12
 volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
 vol_short: "Stadt.Geschichte.Basel 7"
 plotid: "abb22331"
@@ -163,10 +163,10 @@ df <- data.frame(
     "[data/clean/Band7/22331/22331_3_Data.csv](../../data/clean/Band7/22331/22331_3_Data.csv)",
     "Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge: Daten 1913-1930: Ausgabe 1935, S. 294 'Musik, Theater, Literatur (einschl. Münster, Kreuzgang usw.)'. Daten 1940-1955: Ausgabe 1955, S. 200f. Daten 1956-1963: Ausgabe 1963, S. 188f. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band7/22331/22331_3_Data.csv-metadata.json](../../data/clean/Band7/22331/22331_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Staatliche Ausgaben für Musik und Theater, 1913–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb22331.html#m22331_3>, letzte Aktualisierung: 06.10.2025.",
+    "Stadt.Geschichte.Basel: Staatliche Ausgaben für Musik und Theater, 1913–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb22331.html#m22331_3>, letzte Aktualisierung: 12.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-06 16:36:16"
+    "2025-10-12 00:16:32"
   ),
   stringsAsFactors = FALSE
 )

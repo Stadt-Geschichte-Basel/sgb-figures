@@ -1,7 +1,7 @@
 ---
 title: "Exportabgaben und Konsumsteuern, 1690–1798"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-06
+date-modified: 2025-10-12
 volume: "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 (Stadt.Geschichte.Basel 4)."
 vol_short: "Stadt.Geschichte.Basel 4"
 plotid: "abb20418"
@@ -188,10 +188,10 @@ df <- data.frame(
     "[data/clean/Band4/20418/20418_3_Data.csv](../../data/clean/Band4/20418/20418_3_Data.csv)",
     "Vettori, Arthur: Finanzhaushalt und Wirtschaftsverwaltung Basels (1689–1798). Wirtschafts - und Lebensverhältnisse einer Gesellschaft zwischen Tradition und Umbruch, Basel; Frankfurt a. M. 1984, S. 211–215, 334–340. Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500). Basel, Liestal 1977, S. 173–174, 639–641. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band4/20418/20418_3_Data.csv-metadata.json](../../data/clean/Band4/20418/20418_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Exportabgaben und Konsumsteuern, 1690–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb20418.html#m20418_3>, letzte Aktualisierung: 06.10.2025.",
+    "Stadt.Geschichte.Basel: Exportabgaben und Konsumsteuern, 1690–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb20418.html#m20418_3>, letzte Aktualisierung: 12.10.2025.",
     "CC BY-SA 4.0",
     "[https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/)",
-    "2025-10-06 16:36:14"
+    "2025-10-12 00:16:31"
   ),
   stringsAsFactors = FALSE
 )

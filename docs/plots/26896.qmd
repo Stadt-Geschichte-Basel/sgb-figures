@@ -1,7 +1,7 @@
 ---
 title: "Ausgestellte Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger im Kanton Basel-Stadt, 1927–1962"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-06
+date-modified: 2025-10-12
 volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
 vol_short: "Stadt.Geschichte.Basel 7"
 plotid: "abb26896"
@@ -162,10 +162,10 @@ df <- data.frame(
     "[data/clean/Band7/26896/26896_3_Data.csv](../../data/clean/Band7/26896/26896_3_Data.csv)",
     "Banz, Marcel: Die deutschen und französischen Grenzgänger auf dem baselstädtischen Arbeitsmarkt, Basel 1964. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band7/26896/26896_3_Data.csv-metadata.json](../../data/clean/Band7/26896/26896_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Ausgestellte Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger im Kanton Basel-Stadt, 1927–1962. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26896.html#m26896_3>, letzte Aktualisierung: 06.10.2025.",
+    "Stadt.Geschichte.Basel: Ausgestellte Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger im Kanton Basel-Stadt, 1927–1962. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26896.html#m26896_3>, letzte Aktualisierung: 12.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-06 16:36:17"
+    "2025-10-12 00:16:32"
   ),
   stringsAsFactors = FALSE
 )

@@ -1,77 +1,90 @@
 {
-	"@context": ["http://www.w3.org/ns/csvw"],
-	"tables": {
-		"url": ["17308_3_Data.csv"],
-		"tableSchema": {
-			"columns": [
-				{
-					"name": "Jahr",
-					"titles": "Jahr",
-					"datatype": "number",
-					"description": "Jahreszahl, Angaben bezeichnen jeweils in Jahr unserer Zeitrechnung"
-				},
-				{
-					"name": "Bevölkerungszahl",
-					"titles": "Bevölkerungszahl",
-					"datatype": "number",
-					"description": "Bevölkerungszahl von Basel in Anzahl Personen"
-				},
-				{
-					"name": "Pestjahr",
-					"titles": "Pestjahr",
-					"datatype": "boolean",
-					"description": "Jahre, in denen die Pest auftrat (TRUE)"
-				}
-			],
-			"media_id": ["m17308_3"],
-			"isPartOf": {
-				"ObjectID": ["abb17308"],
-				"volume": [
-					"Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 (Stadt.Geschichte.Basel 4)."
-				]
-			},
-			"title": ["Bevölkerungsentwicklung und Pestepidemien, 1500–1700"],
-			"description": [
-				"Bis ins 17. Jahrhundert brach in der Stadt ungefähr alle fünfzehn Jahre eine Seuche oder die Pest aus und forderte häufig tausende Opfer. So stieg die Zahl der Stadtbewohnerinnen und -bewohner kaum an. Erst nach der letzten grossen Pestwelle 1666/67 setzte ein kontinuierliches Bevölkerungswachstum ein, dem der Rat im 18. Jahrhundert mit einer restriktiven Einwanderungspolitik entgegenwirkte. Bei der Volkszählung im Jahr 1779 wurden 15 040 Personen erfasst. Für die Zeit davor liegen keine exakten Zahlen vor. Mithilfe von Tauf- und Geburtsregistern, Verzeichnissen der Bürgeraufnahmen, Häuserverzeichnissen, Steuerrödeln und des ‹Pestberichts› des Stadtarztes Felix Platter lassen sich aber Näherungswerte abschätzen."
-			],
-			"creator": [
-				{
-					"name": ["Susanna Burghartz"]
-				},
-				{
-					"name": ["Marcus Sandl"]
-				},
-				{
-					"name": ["Daniel Sidler"]
-				}
-			],
-			"contributor": [
-				{
-					"name": ["Nico Görlich"],
-					"orcid": ["0000-0003-3860-1488"]
-				},
-				{
-					"name": ["Moritz Twente"],
-					"email": ["mtwente@protonmail.com"],
-					"orcid": ["0009-0005-7187-9774"]
-				}
-			],
-			"publisher": ["Stadt.Geschichte.Basel"],
-			"date": ["1497/1798"],
-			"coverage": ["Frühe Neuzeit"],
-			"type": ["Dataset"],
-			"format": ["text/csv"],
-			"source": [
-				"Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500). Basel, Liestal 1977, S. 172–174. Bearbeitung: Nico Görlich / Moritz Twente"
-			],
-			"language": ["de"],
-			"relation": ["m17308_1", "m17308_2"],
-			"rights": ["Public Domain Mark"],
-			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-10-06T16:44:39+0200"],
-			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Bevölkerungsentwicklung und Pestepidemien, 1500–1700. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb17308.html#m17308_3>, letzte Aktualisierung: 06.10.2025."
-			]
+	"@context": [
+		"http://www.w3.org/ns/csvw",
+		{
+			"@language": "de"
 		}
+	],
+	"url": "17308_3_Data.csv",
+	"dc:identifier": "m17308_3",
+	"dc:title": "Bevölkerungsentwicklung und Pestepidemien, 1500–1700",
+	"dc:isPartOf": {
+		"object_id": "abb17308",
+		"volume": "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 (Stadt.Geschichte.Basel 4)."
+	},
+	"dc:description": {
+		"de": "Bis ins 17. Jahrhundert brach in der Stadt ungefähr alle fünfzehn Jahre eine Seuche oder die Pest aus und forderte häufig tausende Opfer. So stieg die Zahl der Stadtbewohnerinnen und -bewohner kaum an. Erst nach der letzten grossen Pestwelle 1666/67 setzte ein kontinuierliches Bevölkerungswachstum ein, dem der Rat im 18. Jahrhundert mit einer restriktiven Einwanderungspolitik entgegenwirkte. Bei der Volkszählung im Jahr 1779 wurden 15 040 Personen erfasst. Für die Zeit davor liegen keine exakten Zahlen vor. Mithilfe von Tauf- und Geburtsregistern, Verzeichnissen der Bürgeraufnahmen, Häuserverzeichnissen, Steuerrödeln und des ‹Pestberichts› des Stadtarztes Felix Platter lassen sich aber Näherungswerte abschätzen."
+	},
+	"dc:creator": [
+		{
+			"schema:name": "Susanna Burghartz"
+		},
+		{
+			"schema:name": "Marcus Sandl"
+		},
+		{
+			"schema:name": "Daniel Sidler"
+		}
+	],
+	"dc:publisher": {
+		"schema:name": "Stadt.Geschichte.Basel",
+		"schema:url": {
+			"@id": "https://www.wikidata.org/wiki/Q122442230"
+		}
+	},
+	"dc:contributor": [
+		{
+			"schema:name": "Nico Görlich",
+			"schema:identifier": {
+				"@id": "https://orcid.org/0000-0003-3860-1488"
+			}
+		},
+		{
+			"schema:name": "Moritz Twente",
+			"schema:identifier": {
+				"@id": "https://orcid.org/0009-0005-7187-9774"
+			},
+			"schema:email": "mtwente@protonmail.com"
+		}
+	],
+	"dc:date": "1497/1798",
+	"dc:coverage": "Frühe Neuzeit",
+	"dc:type": "Dataset",
+	"dc:format": "text/csv",
+	"dc:source": "Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500). Basel, Liestal 1977, S. 172–174. Bearbeitung: Nico Görlich / Moritz Twente",
+	"dc:language": "de",
+	"dc:relation": ["m17308_1", "m17308_2"],
+	"dc:rights": "Public Domain Mark",
+	"dc:license": {
+		"@id": "https://creativecommons.org/public-domain/pdm/"
+	},
+	"dc:modified": {
+		"@value": "2025-10-12T00:16:30+0200",
+		"@type": "xs:dateTime"
+	},
+	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Bevölkerungsentwicklung und Pestepidemien, 1500–1700. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb17308.html#m17308_3>, letzte Aktualisierung: 12.10.2025.",
+	"tableSchema": {
+		"columns": [
+			{
+				"name": "Jahr",
+				"titles": "Jahr",
+				"dc:description": "Jahreszahl, Angaben bezeichnen jeweils in Jahr unserer Zeitrechnung",
+				"datatype": "number"
+			},
+			{
+				"name": "Bevölkerungszahl",
+				"titles": "Bevölkerungszahl",
+				"dc:description": "Bevölkerungszahl von Basel in Anzahl Personen",
+				"datatype": "number"
+			},
+			{
+				"name": "Pestjahr",
+				"titles": "Pestjahr",
+				"dc:description": "Jahre, in denen die Pest auftrat (TRUE)",
+				"datatype": "boolean"
+			}
+		],
+		"primaryKey": "Jahr",
+		"aboutUrl": "#jahr-{Jahr}"
 	}
 }

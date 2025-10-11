@@ -1,180 +1,193 @@
 {
-	"@context": ["http://www.w3.org/ns/csvw"],
-	"tables": {
-		"url": ["41183_3_Data.csv"],
-		"tableSchema": {
-			"columns": [
-				{
-					"name": "Jahr",
-					"titles": "Jahr",
-					"datatype": "number",
-					"description": "Jahreszahl, Angabe in Jahren unserer Zeitrechnung"
-				},
-				{
-					"name": "ß",
-					"titles": "ß",
-					"datatype": "number",
-					"description": "ß"
-				},
-				{
-					"name": "d",
-					"titles": "d",
-					"datatype": "number",
-					"description": "d (Pfennig)"
-				},
-				{
-					"name": "Preis in d",
-					"titles": "Preis in d",
-					"datatype": "number",
-					"description": "Preis in d (Pfennig)"
-				},
-				{
-					"name": "Basel: in d",
-					"titles": "Basel: in d",
-					"datatype": "number",
-					"description": "Basel: in d"
-				},
-				{
-					"name": "Basel: in g Ag",
-					"titles": "Basel: in g Ag",
-					"datatype": "number",
-					"description": "Basel: in g Ag. Umrechnung nach Schulz 320."
-				},
-				{
-					"name": "Basel: Roggen (hl in fl)",
-					"titles": "Basel: Roggen (hl in fl)",
-					"datatype": "number",
-					"description": "Basel: Roggen (hl in fl)"
-				},
-				{
-					"name": "Strasbourg: in d",
-					"titles": "Strasbourg: in d",
-					"datatype": "number",
-					"description": "Strasbourg: in d"
-				},
-				{
-					"name": "Strasbourg: Roggen (hl in fl)",
-					"titles": "Strasbourg: Roggen (hl in fl)",
-					"datatype": "number",
-					"description": "Strasbourg: Roggen (hl in fl)"
-				},
-				{
-					"name": "Strasbourg: in g Ag (1)",
-					"titles": "Strasbourg: in g Ag (1)",
-					"datatype": "number",
-					"description": "Strasbourg: in g Ag (1)"
-				},
-				{
-					"name": "Strasbourg: in g Ag (2)",
-					"titles": "Strasbourg: in g Ag (2)",
-					"datatype": "number",
-					"description": "Strasbourg: in g Ag (2)"
-				},
-				{
-					"name": "Weizen V in d",
-					"titles": "Weizen V in d",
-					"datatype": "number",
-					"description": "Weizen V in d"
-				},
-				{
-					"name": "Strasbourg: Weizen (hl in fl)",
-					"titles": "Strasbourg: Weizen (hl in fl)",
-					"datatype": "number",
-					"description": "Strasbourg: Weizen (hl in fl)"
-				},
-				{
-					"name": "Nürnberg: Sümmer in d",
-					"titles": "Nürnberg: Sümmer in d",
-					"datatype": "number",
-					"description": "Nürnberg: Sümmer in d"
-				},
-				{
-					"name": "Nürnberg: hl in d",
-					"titles": "Nürnberg: hl in d",
-					"datatype": "number",
-					"description": "Nürnberg: hl in d"
-				},
-				{
-					"name": "Nürnberg: Sümmer in fl",
-					"titles": "Nürnberg: Sümmer in fl",
-					"datatype": "number",
-					"description": "Nürnberg: Sümmer in fl"
-				},
-				{
-					"name": "Nürnberg: Roggen (hl in fl)",
-					"titles": "Nürnberg: Roggen (hl in fl)",
-					"datatype": "number",
-					"description": "Nürnberg: Roggen (hl in fl)"
-				},
-				{
-					"name": "Köln: hl in g Ag",
-					"titles": "Köln: hl in g Ag",
-					"datatype": "number",
-					"description": "Köln: hl in g Ag"
-				},
-				{
-					"name": "Köln: Malter in Mk",
-					"titles": "Köln: Malter in Mk",
-					"datatype": "number",
-					"description": "Köln: Malter in Mk"
-				},
-				{
-					"name": "Köln: hl in Allbus",
-					"titles": "Köln: hl in Allbus",
-					"datatype": "number",
-					"description": "Köln: hl in Allbus"
-				},
-				{
-					"name": "Köln: Roggen oder Weizen (hl in fl)",
-					"titles": "Köln: Roggen oder Weizen (hl in fl)",
-					"datatype": "number",
-					"description": "Köln: Roggen oder Weizen (hl in fl)"
-				}
-			],
-			"media_id": ["m41183_3"],
-			"isPartOf": {
-				"ObjectID": ["abb41183"],
-				"volume": [
-					"Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
-				]
-			},
-			"title": ["Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500"],
-			"description": [
-				"Zu den Jahren 1481/82 hielt der in Basel tätige Jurist Johannes Ursi fest, alles – ausser Fisch – sei teuer geworden. Viele seien an Hunger gestorben (BChr, Bd. 7, S. 179). Grund waren Missernten in den Jahren 1478 bis 1482. Ursis Angaben konnten in einer Untersuchung zu den Preisen für Korn in verschiedenen Städten bestätigt werden. Die in der Grafik ersichtlichen Durchschnittspreise korrelierten in Basel und Strassburg besonders eng. Dabei spielten verschiedene Ursachen zusammen: ähnliche Ertragsgebiete, intensiver Handel und rascher Austausch von Preisnachrichten (Holzwart-Schäfer 2000)."
-			],
-			"creator": [
-				{
-					"name": ["Benjamin Hitz"],
-					"orcid": ["0000-0002-3208-4881"]
-				}
-			],
-			"contributor": [
-				{
-					"name": ["Nico Görlich"],
-					"orcid": ["0000-0003-3860-1488"]
-				},
-				{
-					"name": ["Moritz Twente"],
-					"email": ["mtwente@protonmail.com"],
-					"orcid": ["0009-0005-7187-9774"]
-				}
-			],
-			"publisher": ["Stadt.Geschichte.Basel"],
-			"date": ["1443/1500"],
-			"coverage": ["Mittelalter"],
-			"type": ["Dataset"],
-			"format": ["text/csv"],
-			"source": [
-				"Holzwart-Schäfer, Iris: Getreideanbau im Elsass, Versorgungslage Strassburgs und Basels und der Handel mit elsässischem Korn (14.–16. Jahrhundert), Tübingen 2000. Bearbeitung: Nico Görlich / Moritz Twente"
-			],
-			"language": ["de"],
-			"relation": ["m41183_1", "m41183_2"],
-			"rights": ["Public Domain Mark"],
-			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-10-06T16:44:12+0200"],
-			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41183.html#m41183_3>, letzte Aktualisierung: 06.10.2025."
-			]
+	"@context": [
+		"http://www.w3.org/ns/csvw",
+		{
+			"@language": "de"
 		}
+	],
+	"url": "41183_3_Data.csv",
+	"dc:identifier": "m41183_3",
+	"dc:title": "Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500",
+	"dc:isPartOf": {
+		"object_id": "abb41183",
+		"volume": "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
+	},
+	"dc:description": {
+		"de": "Zu den Jahren 1481/82 hielt der in Basel tätige Jurist Johannes Ursi fest, alles – ausser Fisch – sei teuer geworden. Viele seien an Hunger gestorben (BChr, Bd. 7, S. 179). Grund waren Missernten in den Jahren 1478 bis 1482. Ursis Angaben konnten in einer Untersuchung zu den Preisen für Korn in verschiedenen Städten bestätigt werden. Die in der Grafik ersichtlichen Durchschnittspreise korrelierten in Basel und Strassburg besonders eng. Dabei spielten verschiedene Ursachen zusammen: ähnliche Ertragsgebiete, intensiver Handel und rascher Austausch von Preisnachrichten (Holzwart-Schäfer 2000)."
+	},
+	"dc:creator": {
+		"schema:name": "Benjamin Hitz",
+		"schema:identifier": {
+			"@id": "https://orcid.org/0000-0002-3208-4881"
+		}
+	},
+	"dc:publisher": {
+		"schema:name": "Stadt.Geschichte.Basel",
+		"schema:url": {
+			"@id": "https://www.wikidata.org/wiki/Q122442230"
+		}
+	},
+	"dc:contributor": [
+		{
+			"schema:name": "Nico Görlich",
+			"schema:identifier": {
+				"@id": "https://orcid.org/0000-0003-3860-1488"
+			}
+		},
+		{
+			"schema:name": "Moritz Twente",
+			"schema:identifier": {
+				"@id": "https://orcid.org/0009-0005-7187-9774"
+			},
+			"schema:email": "mtwente@protonmail.com"
+		}
+	],
+	"dc:date": "1443/1500",
+	"dc:coverage": "Mittelalter",
+	"dc:type": "Dataset",
+	"dc:format": "text/csv",
+	"dc:source": "Holzwart-Schäfer, Iris: Getreideanbau im Elsass, Versorgungslage Strassburgs und Basels und der Handel mit elsässischem Korn (14.–16. Jahrhundert), Tübingen 2000. Bearbeitung: Nico Görlich / Moritz Twente",
+	"dc:language": "de",
+	"dc:relation": ["m41183_1", "m41183_2"],
+	"dc:rights": "Public Domain Mark",
+	"dc:license": {
+		"@id": "https://creativecommons.org/public-domain/pdm/"
+	},
+	"dc:modified": {
+		"@value": "2025-10-12T00:16:34+0200",
+		"@type": "xs:dateTime"
+	},
+	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41183.html#m41183_3>, letzte Aktualisierung: 12.10.2025.",
+	"tableSchema": {
+		"columns": [
+			{
+				"name": "Jahr",
+				"titles": "Jahr",
+				"dc:description": "Jahreszahl, Angabe in Jahren unserer Zeitrechnung",
+				"datatype": "number"
+			},
+			{
+				"name": "ß",
+				"titles": "ß",
+				"dc:description": "ß",
+				"datatype": "number"
+			},
+			{
+				"name": "d",
+				"titles": "d",
+				"dc:description": "d (Pfennig)",
+				"datatype": "number"
+			},
+			{
+				"name": "Preis in d",
+				"titles": "Preis in d",
+				"dc:description": "Preis in d (Pfennig)",
+				"datatype": "number"
+			},
+			{
+				"name": "Basel: in d",
+				"titles": "Basel: in d",
+				"dc:description": "Basel: in d",
+				"datatype": "number"
+			},
+			{
+				"name": "Basel: in g Ag",
+				"titles": "Basel: in g Ag",
+				"dc:description": "Basel: in g Ag. Umrechnung nach Schulz 320.",
+				"datatype": "number"
+			},
+			{
+				"name": "Basel: Roggen (hl in fl)",
+				"titles": "Basel: Roggen (hl in fl)",
+				"dc:description": "Basel: Roggen (hl in fl)",
+				"datatype": "number"
+			},
+			{
+				"name": "Strasbourg: in d",
+				"titles": "Strasbourg: in d",
+				"dc:description": "Strasbourg: in d",
+				"datatype": "number"
+			},
+			{
+				"name": "Strasbourg: Roggen (hl in fl)",
+				"titles": "Strasbourg: Roggen (hl in fl)",
+				"dc:description": "Strasbourg: Roggen (hl in fl)",
+				"datatype": "number"
+			},
+			{
+				"name": "Strasbourg: in g Ag (1)",
+				"titles": "Strasbourg: in g Ag (1)",
+				"dc:description": "Strasbourg: in g Ag (1)",
+				"datatype": "number"
+			},
+			{
+				"name": "Strasbourg: in g Ag (2)",
+				"titles": "Strasbourg: in g Ag (2)",
+				"dc:description": "Strasbourg: in g Ag (2)",
+				"datatype": "number"
+			},
+			{
+				"name": "Weizen V in d",
+				"titles": "Weizen V in d",
+				"dc:description": "Weizen V in d",
+				"datatype": "number"
+			},
+			{
+				"name": "Strasbourg: Weizen (hl in fl)",
+				"titles": "Strasbourg: Weizen (hl in fl)",
+				"dc:description": "Strasbourg: Weizen (hl in fl)",
+				"datatype": "number"
+			},
+			{
+				"name": "Nürnberg: Sümmer in d",
+				"titles": "Nürnberg: Sümmer in d",
+				"dc:description": "Nürnberg: Sümmer in d",
+				"datatype": "number"
+			},
+			{
+				"name": "Nürnberg: hl in d",
+				"titles": "Nürnberg: hl in d",
+				"dc:description": "Nürnberg: hl in d",
+				"datatype": "number"
+			},
+			{
+				"name": "Nürnberg: Sümmer in fl",
+				"titles": "Nürnberg: Sümmer in fl",
+				"dc:description": "Nürnberg: Sümmer in fl",
+				"datatype": "number"
+			},
+			{
+				"name": "Nürnberg: Roggen (hl in fl)",
+				"titles": "Nürnberg: Roggen (hl in fl)",
+				"dc:description": "Nürnberg: Roggen (hl in fl)",
+				"datatype": "number"
+			},
+			{
+				"name": "Köln: hl in g Ag",
+				"titles": "Köln: hl in g Ag",
+				"dc:description": "Köln: hl in g Ag",
+				"datatype": "number"
+			},
+			{
+				"name": "Köln: Malter in Mk",
+				"titles": "Köln: Malter in Mk",
+				"dc:description": "Köln: Malter in Mk",
+				"datatype": "number"
+			},
+			{
+				"name": "Köln: hl in Allbus",
+				"titles": "Köln: hl in Allbus",
+				"dc:description": "Köln: hl in Allbus",
+				"datatype": "number"
+			},
+			{
+				"name": "Köln: Roggen oder Weizen (hl in fl)",
+				"titles": "Köln: Roggen oder Weizen (hl in fl)",
+				"dc:description": "Köln: Roggen oder Weizen (hl in fl)",
+				"datatype": "number"
+			}
+		],
+		"primaryKey": "Jahr",
+		"aboutUrl": "#jahr-{Jahr}"
 	}
 }

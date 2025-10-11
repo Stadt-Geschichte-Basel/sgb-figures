@@ -1,7 +1,7 @@
 ---
 title: "Die Bevölkerung von Basel-Stadt, 1912–1966"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-06
+date-modified: 2025-10-12
 volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
 vol_short: "Stadt.Geschichte.Basel 7"
 plotid: "abb21433"
@@ -183,10 +183,10 @@ df <- data.frame(
     "[data/clean/Band7/21433/21433_3_Data.csv](../../data/clean/Band7/21433/21433_3_Data.csv)",
     "Statistisches Jahrbuch des Kantons Basel-Stadt 1970, S. 21. Daten für das Jahr 1912 aus dem Statistischen Jahrbuch des Kantons Basel Stadt 1921, S. 34. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band7/21433/21433_3_Data.csv-metadata.json](../../data/clean/Band7/21433/21433_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Die Bevölkerung von Basel-Stadt, 1912–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21433.html#m21433_3>, letzte Aktualisierung: 06.10.2025.",
+    "Stadt.Geschichte.Basel: Die Bevölkerung von Basel-Stadt, 1912–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21433.html#m21433_3>, letzte Aktualisierung: 12.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-06 16:36:16"
+    "2025-10-12 00:16:31"
   ),
   stringsAsFactors = FALSE
 )

@@ -1,7 +1,7 @@
 ---
 title: "Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-11
+date-modified: 2025-10-12
 volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 vol_short: "Stadt.Geschichte.Basel 6"
 plotid: "abb92492"
@@ -183,10 +183,10 @@ df <- data.frame(
     "[data/clean/Band6/92492/92492_3_Data.csv](../../data/clean/Band6/92492/92492_3_Data.csv)",
     "Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band6/92492/92492_3_Data.csv-metadata.json](../../data/clean/Band6/92492/92492_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92492.html#m92492_3>, letzte Aktualisierung: 11.10.2025.",
+    "Stadt.Geschichte.Basel: Anteil der Konfessionen und Religionen an der Bevölkerung, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92492.html#m92492_3>, letzte Aktualisierung: 12.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-11 19:50:15"
+    "2025-10-12 00:16:37"
   ),
   stringsAsFactors = FALSE
 )

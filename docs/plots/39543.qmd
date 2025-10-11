@@ -1,7 +1,7 @@
 ---
 title: "Verbannungsurteile, 1376–1455"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-06
+date-modified: 2025-10-12
 volume: "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
 vol_short: "Stadt.Geschichte.Basel 3"
 plotid: "abb39543"
@@ -203,10 +203,10 @@ df <- data.frame(
     "[data/clean/Band3/39543/39543_3_Data.csv](../../data/clean/Band3/39543/39543_3_Data.csv)",
     "Simon-Muscheid, Katharina: Gewalt und Ehre im spätmittelalterlichen Handwerk am Beispiel Basels, in: Zeitschrift für historische Forschung 18, 1991, S. 1–31, hier S. 30 f. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band3/39543/39543_3_Data.csv-metadata.json](../../data/clean/Band3/39543/39543_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Verbannungsurteile, 1376–1455. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39543.html#m39543_3>, letzte Aktualisierung: 06.10.2025.",
+    "Stadt.Geschichte.Basel: Verbannungsurteile, 1376–1455. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39543.html#m39543_3>, letzte Aktualisierung: 12.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-06 16:36:18"
+    "2025-10-12 00:16:33"
   ),
   stringsAsFactors = FALSE
 )
