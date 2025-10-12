@@ -33,8 +33,10 @@ meta24528 <- annotate(
   column_datatype = c("gYear", "integer", rep("float", 4)),
   object_description = "Die Temperaturrekonstruktion zeigt, dass die Anomalie im Jahr 1540, der keine langanhaltende Klimaerwärmung folgte, sogar den «bisher heissesten» Sommer 2003 übertraf.",
   creator = list(
-    list(name = "Susanna Burghartz",
-         orcid = "0000-0001-6173-6626"),
+    list(
+      name = "Susanna Burghartz",
+      orcid = "0000-0001-6173-6626"
+    ),
     list(name = "Marcus Sandl"),
     list(name = "Daniel Sidler")
   ),

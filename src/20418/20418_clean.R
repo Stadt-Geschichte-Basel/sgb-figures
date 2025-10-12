@@ -34,8 +34,10 @@ meta20418 <- annotate(
   column_datatype = c("gYear", rep("integer", 5)),
   object_description = "Die logarithmische Darstellung verdeutlicht das exponentielle Wachstum der Abgaben auf Export- und Handelswaren im Vergleich zu den Konsumabgaben. Seit den 1770er-Jahren übertrafen die Konsumabgaben der Landschaft diejenigen der Stadt.",
   creator = list(
-    list(name = "Susanna Burghartz",
-         orcid = "0000-0001-6173-6626"),
+    list(
+      name = "Susanna Burghartz",
+      orcid = "0000-0001-6173-6626"
+    ),
     list(name = "Marcus Sandl"),
     list(name = "Daniel Sidler")
   ),

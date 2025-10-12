@@ -66,9 +66,28 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     # individual authors are not parsed at the moment, listing SGB instead
     creators_str <- publisher_link
 
-    # Process contributors list.
-    contributors <- unlist(meta$`dc:contributor`[[1]])
-    contributors_str <- paste(contributors, collapse = ", ")
+    # Process contributors list with ORCID
+    contributors <- meta$`dc:contributor`
+    if (!is.null(contributors)) {
+      contributors_str <- sapply(seq_len(nrow(contributors)), function(i) {
+        contributor <- contributors[i, ]
+        name <- contributor$`schema:name`
+
+        # extract ORCID for contributor if available
+        orcid_id <- contributor$`schema:identifier`$`@id`
+
+        if (!is.null(orcid_id) && !is.na(orcid_id)) {
+          sprintf(
+            "%s <a href='%s' target='_blank'>![ORCID](../../assets/img/ORCID-iD_icon_vector.svg){width=16}</a>",
+            name, orcid_id
+          )
+        } else {
+          name
+        }
+      }) |> paste(collapse = " / ")
+    } else {
+      contributors_str <- ""
+    }
 
     # Create a clickable link for the license.
     license <- meta$`dc:license`[[1]]

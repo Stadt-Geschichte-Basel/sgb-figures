@@ -40,8 +40,10 @@ meta14158 <- annotate(
   column_datatype = c("{'base': 'string', 'format': 'yyyy-yyyy'}", "string", rep("integer", 2)),
   object_description = "Basels Einbürgerungspolitik wurde im Laufe der Frühen Neuzeit immer restriktiver. Im 18. Jahrhundert kam es kaum noch zu Neuaufnahmen ins Bürgerrecht (Angaben nach Gschwind 1977, S. 170).",
   creator = list(
-    list(name = "Susanna Burghartz",
-         orcid = "0000-0001-6173-6626"),
+    list(
+      name = "Susanna Burghartz",
+      orcid = "0000-0001-6173-6626"
+    ),
     list(name = "Marcus Sandl"),
     list(name = "Daniel Sidler")
   ),
