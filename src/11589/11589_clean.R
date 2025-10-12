@@ -39,7 +39,7 @@ meta11589 <- annotate(
     "Anzahl der Motorräder pro 100 Einwohner*innen im Kanton Basel-Stadt im angegebenen Jahr",
     "Anzahl der Fahrräder pro 100 Einwohner*innen im Kanton Basel-Stadt im angegebenen Jahr"
   ),
-  column_datatype = c("gYear", rep("float", 4)),
+  column_datatype = c("gYear", rep("float", 3)),
   object_description = "Die Mobilität der Basler und Baslerinnen nahm zu. Die Zahl der Fahrräder überstieg lange alle anderen individuellen Verkehrsmittel. Nach dem Zweiten Weltkrieg schnellte die Zahl der motorisierten Gefährte in die Höhe.",
   creator = list(list(name = "Céline Angehrn")),
   contributor = list(
