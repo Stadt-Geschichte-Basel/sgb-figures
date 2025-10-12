@@ -19,6 +19,8 @@ data39050c <- read_excel(here("data", "raw", "Band3", "39050", "39050_Data_raw.x
   range = "A1:F61"
 )
 
+colnames(data39050c)[1] <- "Rechnungsjahr"
+
 save_clean_csv(data39050c, csv_suffix = 10, vol = 3)
 
 # Create Metadata ------------

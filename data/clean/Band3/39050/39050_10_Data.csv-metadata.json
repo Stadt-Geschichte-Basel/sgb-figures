@@ -54,15 +54,15 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T11:52:31+0200",
+		"@value": "2025-10-12T12:50:00+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Einnahmen der Stadt Basel ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_10>, letzte Aktualisierung: 12.10.2025.",
 	"tableSchema": {
 		"columns": [
 			{
-				"name": "Rechnungjahr",
-				"titles": "Rechnungjahr",
+				"name": "Rechnungsjahr",
+				"titles": "Rechnungsjahr",
 				"dc:description": "Jahreszahl, Angabe als Zeitraum in Jahren unserer Zeitrechnung",
 				"datatype": "{'base': 'string', 'format': 'yyyy/yy|yyyy-yyyy'}"
 			},
@@ -97,7 +97,7 @@
 				"datatype": "integer"
 			}
 		],
-		"primaryKey": "Rechnungjahr",
-		"aboutUrl": "#rechnungjahr-{Rechnungjahr}"
+		"primaryKey": "Rechnungsjahr",
+		"aboutUrl": "#rechnungsjahr-{Rechnungsjahr}"
 	}
 }

@@ -27,10 +27,10 @@ vertical_lines <- seq(1425, 1484, by = 5)
 
 ## Transform Data Plot c -----
 
-data39050c$Jahr_einzel <- as.numeric(substr(data39050c$Rechnungjahr, 1, 4))
+data39050c$Jahr_einzel <- as.numeric(substr(data39050c$Rechnungsjahr, 1, 4))
 
 xlabels39050c <- data39050c[data39050c$Jahr_einzel %% 5 == 0, 1]
-xlabels39050c <- unlist(xlabels39050c$Rechnungjahr)
+xlabels39050c <- unlist(xlabels39050c$Rechnungsjahr)
 
 data39050c <- data39050c[, -1]
 
@@ -47,12 +47,12 @@ data39050c_longer <- data39050c %>%
 
 ## Transform Data Plot d -----
 
-data39050d$Jahr_einzel <- as.numeric(substr(data39050d$Rechnungjahr, 1, 4))
+data39050d$Jahr_einzel <- as.numeric(substr(data39050d$Rechnungsjahr, 1, 4))
 
 xlabels39050d <- data39050d[data39050d$Jahr_einzel %% 5 == 0, 1]
-xlabels39050d <- unlist(xlabels39050d$Rechnungjahr)
+xlabels39050d <- unlist(xlabels39050d$Rechnungsjahr)
 
-data39050d <- data39050d %>% select(-Rechnungjahr)
+data39050d <- data39050d %>% select(-Rechnungsjahr)
 
 data39050d_longer <- data39050d %>%
   pivot_longer(
