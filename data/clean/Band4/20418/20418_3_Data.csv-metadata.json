@@ -17,7 +17,10 @@
 	},
 	"dc:creator": [
 		{
-			"schema:name": "Susanna Burghartz"
+			"schema:name": "Susanna Burghartz",
+			"schema:identifier": {
+				"@id": "https://orcid.org/0000-0001-6173-6626"
+			}
 		},
 		{
 			"schema:name": "Marcus Sandl"
@@ -59,7 +62,7 @@
 		"@id": "https://creativecommons.org/licenses/by-sa/4.0/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T11:52:29+0200",
+		"@value": "2025-10-12T13:09:42+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Exportabgaben und Konsumsteuern, 1690–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb20418.html#m20418_3>, letzte Aktualisierung: 12.10.2025.",

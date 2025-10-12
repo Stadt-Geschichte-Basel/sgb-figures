@@ -34,7 +34,8 @@ meta17308 <- annotate(
   column_datatype = c("gYear", "integer", "boolean"),
   object_description = "Bis ins 17. Jahrhundert brach in der Stadt ungefähr alle fünfzehn Jahre eine Seuche oder die Pest aus und forderte häufig tausende Opfer. So stieg die Zahl der Stadtbewohnerinnen und -bewohner kaum an. Erst nach der letzten grossen Pestwelle 1666/67 setzte ein kontinuierliches Bevölkerungswachstum ein, dem der Rat im 18. Jahrhundert mit einer restriktiven Einwanderungspolitik entgegenwirkte. Bei der Volkszählung im Jahr 1779 wurden 15 040 Personen erfasst. Für die Zeit davor liegen keine exakten Zahlen vor. Mithilfe von Tauf- und Geburtsregistern, Verzeichnissen der Bürgeraufnahmen, Häuserverzeichnissen, Steuerrödeln und des ‹Pestberichts› des Stadtarztes Felix Platter lassen sich aber Näherungswerte abschätzen.",
   creator = list(
-    list(name = "Susanna Burghartz"),
+    list(name = "Susanna Burghartz",
+         orcid = "0000-0001-6173-6626"),
     list(name = "Marcus Sandl"),
     list(name = "Daniel Sidler")
   ),
