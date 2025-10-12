@@ -143,9 +143,9 @@ htmltools::div(
 
 ::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Jahr:** Jahreszahl, Angabe in Jahren unserer Zeitrechnung
-- **Dinkel (in Viernzeln):** Vorrat an Dinkel, Angabe in Viernzeln
-- **Roggen (in Viernzeln):** Vorrat an Roggen, Angabe in Viernzeln
-- **Hafer (in Viernzeln):** Vorrat an Hafer, Angabe in Viernzeln
+- **Dinkel (in Viernzeln):** Vorrat an Dinkel, Angabe in Viernzeln. Ein 'Viernzel' entsprach zwei 'Säcken' à je 137 l.
+- **Roggen (in Viernzeln):** Vorrat an Roggen, Angabe in Viernzeln. Ein 'Viernzel' entsprach zwei 'Säcken' à je 137 l.
+- **Hafer (in Viernzeln):** Vorrat an Hafer, Angabe in Viernzeln. Ein 'Viernzel' entsprach zwei 'Säcken' à je 137 l.
 :::
 ```{r metatable, results="asis"}
 #| echo: false
@@ -188,7 +188,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Getreidevorräte in der Stadt Basel, 1613–1653. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb18046.html#m18046_3>, letzte Aktualisierung: 12.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-12 00:16:30"
+    "2025-10-12 13:02:33"
   ),
   stringsAsFactors = FALSE
 )

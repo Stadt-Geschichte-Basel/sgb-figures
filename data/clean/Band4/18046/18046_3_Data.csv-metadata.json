@@ -56,7 +56,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T11:52:29+0200",
+		"@value": "2025-10-12T13:02:33+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Getreidevorräte in der Stadt Basel, 1613–1653. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb18046.html#m18046_3>, letzte Aktualisierung: 12.10.2025.",
@@ -71,19 +71,19 @@
 			{
 				"name": "Dinkel (in Viernzeln)",
 				"titles": "Dinkel (in Viernzeln)",
-				"dc:description": "Vorrat an Dinkel, Angabe in Viernzeln",
+				"dc:description": "Vorrat an Dinkel, Angabe in Viernzeln. Ein 'Viernzel' entsprach zwei 'Säcken' à je 137 l.",
 				"datatype": "integer"
 			},
 			{
 				"name": "Roggen (in Viernzeln)",
 				"titles": "Roggen (in Viernzeln)",
-				"dc:description": "Vorrat an Roggen, Angabe in Viernzeln",
+				"dc:description": "Vorrat an Roggen, Angabe in Viernzeln. Ein 'Viernzel' entsprach zwei 'Säcken' à je 137 l.",
 				"datatype": "float"
 			},
 			{
 				"name": "Hafer (in Viernzeln)",
 				"titles": "Hafer (in Viernzeln)",
-				"dc:description": "Vorrat an Hafer, Angabe in Viernzeln",
+				"dc:description": "Vorrat an Hafer, Angabe in Viernzeln. Ein 'Viernzel' entsprach zwei 'Säcken' à je 137 l.",
 				"datatype": "integer"
 			}
 		],
