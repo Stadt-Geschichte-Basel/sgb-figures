@@ -45,13 +45,7 @@
 		}
 	],
 	"dc:date": "1300/2021",
-	"dc:coverage": [
-		"Mittelalter",
-		"Frühe Neuzeit",
-		"19. Jahrhundert",
-		"20. Jahrhundert",
-		"21. Jahrhundert"
-	],
+	"dc:coverage": "Mittelalter",
 	"dc:type": "Dataset",
 	"dc:format": "text/csv",
 	"dc:source": "Wetter, O., Pfister, C., Weingartner, R. u.a.: The largest floods in the High Rhine basin since 1268 assessed from documentary and instrmental evidence, in: Hydrological Sciences Journal 56 (5), 2011, S. 733-758. Bearbeitung: Nico Görlich / Moritz Twente",
@@ -62,7 +56,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T11:52:32+0200",
+		"@value": "2025-10-12T12:58:43+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Rheinhochwasser bei Basel-Schifflände, 1300–2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41404.html#m41404_3>, letzte Aktualisierung: 12.10.2025.",
