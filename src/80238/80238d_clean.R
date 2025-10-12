@@ -28,7 +28,7 @@ meta80238d <- annotate(
   csv_suffix = 12,
   vol = 8,
   title = "Vertretung Basel-Stadt im Ständerat, 1963–2023",
-  column_description = c("Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung", "Anzahl der baselstädtischen Mitglieder des Ständerats der Partei 'SP' im entsprechenden Jahr", "Anzahl der baselstädtischen Mitglieder des Ständerats der Partei 'FDP' im entsprechenden Jahr"),
+  column_description = c("Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung", "Anzahl der baselstädtischen Mitglieder des Ständerats der Partei 'Sozialdemokratische Partei' im entsprechenden Jahr", "Anzahl der baselstädtischen Mitglieder des Ständerats der Partei 'FDP.Die Liberalen' im entsprechenden Jahr"),
   column_datatype = c("gYear", rep("integer", 2)),
   object_description = "Als Halbkanton steht Basel-Stadt nur ein Sitz im Ständerat zu. Nach dem Freisinnigen Eugen Dietschi (1960–1967) trugen dieses Amt über Jahrzehnte nur noch Vertreterinnen und Vertreter der SP: Willi Wenk (1967–1979), Carl Miville (1979–1991), Gian-Reto Plattner (1991–2003), Anita Fetz (2003–2019), Eva Herzog (seit 2019).",
   creator = list(

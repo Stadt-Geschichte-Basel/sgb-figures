@@ -59,7 +59,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T11:52:33+0200",
+		"@value": "2025-10-12T13:27:11+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Regierungsrat in Basel-Stadt, 1960–2024. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_3>, letzte Aktualisierung: 12.10.2025.",
@@ -74,13 +74,13 @@
 			{
 				"name": "Grüne",
 				"titles": "Grüne",
-				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'Grüne' im entsprechenden Jahr",
+				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'Grüne Partei' im entsprechenden Jahr",
 				"datatype": "integer"
 			},
 			{
 				"name": "SP",
 				"titles": "SP",
-				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'SP' im entsprechenden Jahr",
+				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'Sozialdemokratische Partei' im entsprechenden Jahr",
 				"datatype": "integer"
 			},
 			{
@@ -92,31 +92,31 @@
 			{
 				"name": "GLP",
 				"titles": "GLP",
-				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'GLP' im entsprechenden Jahr",
+				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'Grünliberale Partei' im entsprechenden Jahr",
 				"datatype": "integer"
 			},
 			{
 				"name": "DSP",
 				"titles": "DSP",
-				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'DSP' im entsprechenden Jahr",
+				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'Demokratisch-Soziale Partei' im entsprechenden Jahr",
 				"datatype": "integer"
 			},
 			{
 				"name": "CVP",
 				"titles": "CVP",
-				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'CVP' im entsprechenden Jahr",
+				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'Christlichdemokratische Volkspartei (ab 2021 Die Mitte)' im entsprechenden Jahr",
 				"datatype": "integer"
 			},
 			{
 				"name": "FDP",
 				"titles": "FDP",
-				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'FDP' im entsprechenden Jahr",
+				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'FDP.Die Liberalen' im entsprechenden Jahr",
 				"datatype": "integer"
 			},
 			{
 				"name": "LDP",
 				"titles": "LDP",
-				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'LDP' im entsprechenden Jahr",
+				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'Liberal-Demokratische Partei' im entsprechenden Jahr",
 				"datatype": "integer"
 			},
 			{

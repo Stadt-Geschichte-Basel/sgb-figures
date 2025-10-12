@@ -160,18 +160,18 @@ htmltools::div(
 
 ::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Jahr:** Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung
-- **POB:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'POB' im entsprechenden Jahr
-- **GP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'GP' im entsprechenden Jahr
-- **SP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'SP' im entsprechenden Jahr
-- **LdU:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'LdU' im entsprechenden Jahr
-- **GLP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'GLP' im entsprechenden Jahr
+- **POB:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'Progressive Organisationen Basel' im entsprechenden Jahr
+- **GP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'Grüne Partei' im entsprechenden Jahr
+- **SP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'Sozialdemokratische Partei' im entsprechenden Jahr
+- **LdU:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'Landesring der Unabhängigen' im entsprechenden Jahr
+- **GLP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'Grünliberale Partei' im entsprechenden Jahr
 - **CVP 
-(ab 2021 Die Mitte):** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'CVP' im entsprechenden Jahr. Ab 2021 unter dem Namen 'Die Mitte'
+(ab 2021 Die Mitte):** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'Christlichdemokratische Volkspartei' im entsprechenden Jahr. Ab 2021 unter dem Namen 'Die Mitte'
 - **FDP 
-(bis 1973 RDP):** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'FDP' im entsprechenden Jahr. Bis 1973 unter dem Namen 'RDP'
-- **LDP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'LDP' im entsprechenden Jahr
-- **SVP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'SVP' im entsprechenden Jahr
-- **NA (ab 1991 UVP, ab 1982 SD):** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'NA' im entsprechenden Jahr. Ab 1991 unter dem Namen 'UVP', ab 1992 unter dem Namen 'SD'
+(bis 1973 RDP):** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'FDP.Die Liberalen' im entsprechenden Jahr. Bis 1973 unter dem Namen 'Radikal-Demokratische Partei' (RDP)
+- **LDP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'Liberal-Demokratische Partei' im entsprechenden Jahr
+- **SVP:** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'Schweizerische Volkspartei' im entsprechenden Jahr
+- **NA (ab 1991 UVP, ab 1982 SD):** Anzahl der baselstädtischen Mitglieder des Nationalrats der Partei 'Nationale Aktion' im entsprechenden Jahr. Ab 1991 unter dem Namen 'UVP', ab 1992 unter dem Namen 'Schweizer Demokraten' (SD)
 - **Total:** Gesamtzahl der baselstädtischen Mitglieder des Nationalrats im entsprechenden Jahr. Reduzierung der Anzahl der Mandate auf die Jahre 1971, 1983, 2003
 :::
 ```{r metatable, results="asis"}
@@ -215,7 +215,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Vertretung Basel-Stadt im Nationalrat, 1963–2023. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_9>, letzte Aktualisierung: 12.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-12 00:16:35"
+    "2025-10-12 13:27:12"
   ),
   stringsAsFactors = FALSE
 )

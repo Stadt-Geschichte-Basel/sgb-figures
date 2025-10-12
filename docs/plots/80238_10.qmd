@@ -135,8 +135,8 @@ htmltools::div(
 
 ::: {#callout-col-description .callout-tip title="Column Descriptions" icon="false" collapse="true"}
 - **Jahr:** Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung
-- **SP:** Anzahl der baselstädtischen Mitglieder des Ständerats der Partei 'SP' im entsprechenden Jahr
-- **FDP:** Anzahl der baselstädtischen Mitglieder des Ständerats der Partei 'FDP' im entsprechenden Jahr
+- **SP:** Anzahl der baselstädtischen Mitglieder des Ständerats der Partei 'Sozialdemokratische Partei' im entsprechenden Jahr
+- **FDP:** Anzahl der baselstädtischen Mitglieder des Ständerats der Partei 'FDP.Die Liberalen' im entsprechenden Jahr
 :::
 ```{r metatable, results="asis"}
 #| echo: false
@@ -179,7 +179,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Vertretung Basel-Stadt im Ständerat, 1963–2023. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_12>, letzte Aktualisierung: 12.10.2025.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-12 00:16:35"
+    "2025-10-12 13:27:12"
   ),
   stringsAsFactors = FALSE
 )

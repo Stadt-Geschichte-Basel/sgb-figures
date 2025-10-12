@@ -59,7 +59,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T11:52:33+0200",
+		"@value": "2025-10-12T13:27:12+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Grosser Rat in Basel-Stadt, 1960–2024. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_6>, letzte Aktualisierung: 12.10.2025.",
@@ -74,91 +74,91 @@
 			{
 				"name": "POB",
 				"titles": "POB",
-				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'POB' im entsprechenden Jahr",
+				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Progressive Organisationen Basel' im entsprechenden Jahr",
 				"datatype": "integer"
 			},
 			{
 				"name": "FraB",
 				"titles": "FraB",
-				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'FraB' im entsprechenden Jahr",
+				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Frauenliste' im entsprechenden Jahr",
 				"datatype": "integer"
 			},
 			{
 				"name": "PdA",
 				"titles": "PdA",
-				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'PdA' im entsprechenden Jahr",
+				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Partei der Arbeit Basel' im entsprechenden Jahr",
 				"datatype": "integer"
 			},
 			{
 				"name": "GB \n(Grünes Bündnis aus Grüne & BastA, ab 2021 GAB)",
 				"titles": "GB \n(Grünes Bündnis aus Grüne & BastA, ab 2021 GAB)",
-				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'GB' im entsprechenden Jahr. 'GB' bezeichnet das Grüne Bündnis aus Grüne und BastA, ab 2021 als 'GAB'",
+				"dc:description": "Anzahl der Grossratsmitglieder des 'Grünen Bündnisses' im entsprechenden Jahr. 'GB' bezeichnet das Grüne Bündnis aus Grüne und BastA, ab 2021 als 'GAB'",
 				"datatype": "integer"
 			},
 			{
 				"name": "GP",
 				"titles": "GP",
-				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'GP' im entsprechenden Jahr",
+				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Grüne Partei' im entsprechenden Jahr",
 				"datatype": "integer"
 			},
 			{
 				"name": "SP",
 				"titles": "SP",
-				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'SP' im entsprechenden Jahr",
+				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Sozialdemokratische Partei' im entsprechenden Jahr",
 				"datatype": "integer"
 			},
 			{
 				"name": "LdU",
 				"titles": "LdU",
-				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'LdU' im entsprechenden Jahr",
+				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Landesring der Unabhängigen' im entsprechenden Jahr",
 				"datatype": "integer"
 			},
 			{
 				"name": "GLP",
 				"titles": "GLP",
-				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'GLP' im entsprechenden Jahr",
+				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Grünliberale Partei' im entsprechenden Jahr",
 				"datatype": "integer"
 			},
 			{
 				"name": "DSP",
 				"titles": "DSP",
-				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'DSP' im entsprechenden Jahr",
+				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Demokratisch-Soziale Partei' im entsprechenden Jahr",
 				"datatype": "integer"
 			},
 			{
 				"name": "CVP \n(ab 2021 Die Mitte)",
 				"titles": "CVP \n(ab 2021 Die Mitte)",
-				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'CVP' im entsprechenden Jahr. Ab 2021 unter dem Namen 'Die Mitte'",
+				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Christlichdemokratische Volkspartei' im entsprechenden Jahr. Ab 2021 unter dem Namen 'Die Mitte'",
 				"datatype": "integer"
 			},
 			{
 				"name": "EVP \n(bis 2006 VEW)",
 				"titles": "EVP \n(bis 2006 VEW)",
-				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'EVP' im entsprechenden Jahr. Bis 2006 als 'VEW'",
+				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Evangelische Volkspartei' im entsprechenden Jahr. Bis 2006 als 'Vereinigung evangelischer Wähler' (VEW)",
 				"datatype": "integer"
 			},
 			{
 				"name": "FDP \n(bis 1973 RDP)",
 				"titles": "FDP \n(bis 1973 RDP)",
-				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'FDP' im entsprechenden Jahr. Bis 1973 als 'RDP'",
+				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'FDP.Die Liberalen' im entsprechenden Jahr. Bis 1973 als 'Radikal-Demokratische Parte' (RDP)",
 				"datatype": "integer"
 			},
 			{
 				"name": "LDP",
 				"titles": "LDP",
-				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'LDP' im entsprechenden Jahr",
+				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Liberal-Demokratische Partei' im entsprechenden Jahr",
 				"datatype": "integer"
 			},
 			{
 				"name": "SVP",
 				"titles": "SVP",
-				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'SVP' im entsprechenden Jahr",
+				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Schweizerische Volkspartei' im entsprechenden Jahr",
 				"datatype": "integer"
 			},
 			{
 				"name": "NA \n(ab 1991 UVP, ab 1992 SD)",
 				"titles": "NA \n(ab 1991 UVP, ab 1992 SD)",
-				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'NA' im entsprechenden Jahr. Ab 1991 als 'UVP', ab 1992 als 'SD'",
+				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Nationale Aktion' im entsprechenden Jahr. Ab 1991 als 'UVP', ab 1992 als 'Schweizer Demokraten' (SD)",
 				"datatype": "integer"
 			},
 			{
