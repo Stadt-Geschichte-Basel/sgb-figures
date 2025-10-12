@@ -17,7 +17,10 @@
 	},
 	"dc:creator": [
 		{
-			"schema:name": "Oliver Wetter"
+			"schema:name": "Oliver Wetter",
+			"schema:identifier": {
+				"@id": "https://orcid.org/0000-0003-1200-3498"
+			}
 		},
 		{
 			"schema:name": "Claudia Moddelmog"
@@ -56,7 +59,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T12:58:43+0200",
+		"@value": "2025-10-12T13:04:42+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Rheinhochwasser bei Basel-Schifflände, 1300–2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41404.html#m41404_3>, letzte Aktualisierung: 12.10.2025.",

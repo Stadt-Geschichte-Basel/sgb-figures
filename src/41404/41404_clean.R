@@ -41,7 +41,8 @@ meta41404 <- annotate(
   column_datatype = c("gYear", rep("float", 3), "string"),
   object_description = "Visualisierung der rekonstruierten und gemessenen Hochwasserstände. Gelbe Balken: die Kanderkorrektion (ab 1714) und die Juragewässerkorrektion (ab 1878). Rote Kurve: 100-jähriges gleitendes Hochwasserabflussmittel der rekonstruierten sowie aller gemessenen Jahresabflussmaxima. Graue Balken: 100-jähriges gleitendes Hochwasserabflussmittel der rekonstruierten sowie der höchsten gemessenen Jahresabflussmaxima.",
   creator = list(
-    list(name = "Oliver Wetter"),
+    list(name = "Oliver Wetter",
+         orcid = "0000-0003-1200-3498"),
     list(name = "Claudia Moddelmog")
   ),
   contributor = list(
