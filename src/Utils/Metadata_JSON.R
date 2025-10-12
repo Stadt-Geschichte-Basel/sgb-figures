@@ -5,56 +5,57 @@ library(lubridate)
 annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
                      column_datatype, object_description, creator, contributor,
                      date, coverage, source, relation, rights, lang = "de") {
-  
   # Derive folder ID ----
   folder_id <- sub("^(\\d{5}).*$", "\\1", media_id)
   suffix_part <- if (!is.null(csv_suffix)) paste0("_", csv_suffix) else ""
-  
+
   # Prepare output paths ----
   csv_filename <- paste0(folder_id, suffix_part, "_Data.csv")
   json_folder <- here("data", "clean", paste0("Band", vol), folder_id)
   if (!dir.exists(json_folder)) dir.create(json_folder, recursive = TRUE)
   json_file <- file.path(json_folder, paste0(csv_filename, "-metadata.json"))
-  
+
   # Build Identifier ----
   identifier <- paste0("m", media_id, "_", csv_suffix)
-  
+
   # Set abb and vol for is_part_of ----
   is_part_of <- list(
     object_id = paste0("abb", folder_id),
     volume = switch(vol,
-                    "Lassau, Guido; Schwarz, Peter-Andrew (Hg.): Auf dem langen Weg zur Stadt. 50 000 v. Chr.–800 n. Chr. Basel 2024 (Stadt.Geschichte.Basel 1).",
-                    "Sieber-Lehmann, Claudius; Schwarz, Peter-Andrew (Hg.): Eine Bischofsstadt zwischen Oberrhein und Jura. 800–1273. Basel 2024 (Stadt.Geschichte.Basel 2).",
-                    "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3).",
-                    "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 (Stadt.Geschichte.Basel 4).",
-                    "Fehlmann, Marc; Sieber, Dominik; Salvisberg, André (Hg.): Hinter der Mauer, vor der Moderne. 1760–1859. Basel 2024 (Stadt.Geschichte.Basel 5).",
-                    "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6).",
-                    "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7).",
-                    "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8).",
-                    "Baur, Esther; Gafner, Lina (Hg.): Stadträume. Offen und begrenzt, gestaltet und umkämpft. Basel 2025 (Stadt.Geschichte.Basel 9)."
-                    )
+      "Lassau, Guido; Schwarz, Peter-Andrew (Hg.): Auf dem langen Weg zur Stadt. 50 000 v. Chr.–800 n. Chr. Basel 2024 (Stadt.Geschichte.Basel 1).",
+      "Sieber-Lehmann, Claudius; Schwarz, Peter-Andrew (Hg.): Eine Bischofsstadt zwischen Oberrhein und Jura. 800–1273. Basel 2024 (Stadt.Geschichte.Basel 2).",
+      "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3).",
+      "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 (Stadt.Geschichte.Basel 4).",
+      "Fehlmann, Marc; Sieber, Dominik; Salvisberg, André (Hg.): Hinter der Mauer, vor der Moderne. 1760–1859. Basel 2024 (Stadt.Geschichte.Basel 5).",
+      "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6).",
+      "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7).",
+      "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8).",
+      "Baur, Esther; Gafner, Lina (Hg.): Stadträume. Offen und begrenzt, gestaltet und umkämpft. Basel 2025 (Stadt.Geschichte.Basel 9)."
     )
-  
+  )
+
   # Build publisher info ----
   publisher <- list(
     `schema:name` = "Stadt.Geschichte.Basel",
     `schema:url` = list(`@id` = "https://www.wikidata.org/wiki/Q122442230")
   )
-  
+
   # Normalize creator and contributor ----
   normalize_person <- function(person) {
     out <- list(`schema:name` = person$name)
-    if (!is.null(person$orcid))
+    if (!is.null(person$orcid)) {
       out$`schema:identifier` <- list(`@id` = paste0("https://orcid.org/", person$orcid))
-    if (!is.null(person$email))
+    }
+    if (!is.null(person$email)) {
       out$`schema:email` <- person$email
+    }
     out
   }
-  
+
   # Normalize creators and contributors
   creators_list <- lapply(creator, normalize_person)
   contributors_list <- lapply(contributor, normalize_person)
-  
+
   # If only one person, unbox to object instead of array
   creators <- if (length(creators_list) == 1) creators_list[[1]] else creators_list
   contributors <- if (length(contributors_list) == 1) contributors_list[[1]] else contributors_list
@@ -71,12 +72,12 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
   } else {
     NA
   }
-  
-  
+
+
   if (length(column_description) != ncol(data) || length(column_datatype) != ncol(data)) {
     stop("Lengths of column_description and column_datatype must match number of data columns.")
   }
-  
+
   # Build tableSchema ----
   columns <- lapply(seq_along(colnames(data)), function(i) {
     col_name <- colnames(data)[i]
@@ -87,15 +88,15 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
       datatype = column_datatype[[i]]
     )
   })
-  
+
   # Compose full metadata structure ----
   metadata <- list(
     `@context` = list("http://www.w3.org/ns/csvw", list(`@language` = lang)),
     url = csv_filename,
     `dc:identifier` = identifier,
     `dc:title` = title,
-    #`dc:subject` = subjects, # not yet implemented
     `dc:isPartOf` = is_part_of,
+    # `dc:subject` = subjects, # not yet implemented
     `dc:description` = setNames(list(object_description), lang),
     `dc:creator` = creators,
     `dc:publisher` = publisher,
@@ -112,19 +113,18 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
     `dc:modified` = list(`@value` = format(Sys.time(), "%Y-%m-%dT%H:%M:%S%z"), `@type` = "xs:dateTime"),
     `dc:bibliographicCitation` = paste0(
       "Stadt.Geschichte.Basel: ", title, ". Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb", folder_id, ".html#m", folder_id, suffix_part, ">, letzte Aktualisierung: ", format(Sys.Date(), format = "%d.%m.%Y"), "."
-      ),
-    
+    ),
     tableSchema = list(
       columns = columns,
       primaryKey = colnames(data)[1],
       aboutUrl = paste0("#", tolower(colnames(data)[1]), "-{", colnames(data)[1], "}")
     )
   )
-  
+
   # Write JSON ----
   toJSON(metadata, auto_unbox = TRUE) |>
     prettify() |>
     write(json_file)
-  
+
   invisible(metadata)
 }

@@ -55,7 +55,6 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     # --- Extract Metadata from File ----
     # Read the JSON file and extract the schema information.
     meta <- fromJSON(metadata_file)
-    #schema <- meta$tables$tableSchema
 
     # Extract specific metadata fields and create formatted links where applicable.
     fig_id <- meta$`dc:isPartOf`$object_id[[1]]
@@ -130,7 +129,6 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     # Return all processed information for this dataset.
     list(
       fields = fields,
-      #schema = schema,
       vol_text = vol_text,
       vol_short = vol_short,
       col_description = columns_str
