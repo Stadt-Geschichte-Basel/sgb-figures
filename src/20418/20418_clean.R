@@ -1,7 +1,6 @@
 # Packages -------------------
 
 library(here)
-library(csvwr)
 library(readr)
 
 # Functions ------------------
