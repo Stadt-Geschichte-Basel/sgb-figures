@@ -62,7 +62,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T13:09:23+0200",
+		"@value": "2025-10-12T14:24:19+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Bürgerrechtsaufnahmen, 1400–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb14158.html#m14158_3>, letzte Aktualisierung: 12.10.2025.",

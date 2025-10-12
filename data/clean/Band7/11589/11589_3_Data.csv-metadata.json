@@ -51,7 +51,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:30+0200",
+		"@value": "2025-10-12T14:24:18+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Anzahl Verkehrsträger pro 100 Einwohner und Einwohnerinnen im Kanton Basel-Stadt, 1916–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb11589.html#m11589_3>, letzte Aktualisierung: 12.10.2025.",
@@ -61,25 +61,25 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Personenwagen",
 				"titles": "Personenwagen",
 				"dc:description": "Anzahl der Personenwagen pro 100 Einwohner*innen im Kanton Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Motorräder",
 				"titles": "Motorräder",
 				"dc:description": "Anzahl der Motorräder pro 100 Einwohner*innen im Kanton Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Fahrräder",
 				"titles": "Fahrräder",
 				"dc:description": "Anzahl der Fahrräder pro 100 Einwohner*innen im Kanton Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "float"
 			}
 		],
 		"primaryKey": "Jahr",

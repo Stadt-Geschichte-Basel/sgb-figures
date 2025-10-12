@@ -51,7 +51,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T11:52:30+0200",
+		"@value": "2025-10-12T14:24:20+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Kantonale Staatsausgaben pro Einwohner in CHF, 1920–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21912.html#m21912_3>, letzte Aktualisierung: 12.10.2025.",
