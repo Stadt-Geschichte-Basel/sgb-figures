@@ -19,8 +19,8 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
   # Build Identifier ----
   identifier <- paste0("m", media_id, "_", csv_suffix)
   
-  # Set abb and vol for isPartOf ----
-  isPartOf <- list(
+  # Set abb and vol for is_part_of ----
+  is_part_of <- list(
     object_id = paste0("abb", folder_id),
     volume = switch(vol,
                     "Lassau, Guido; Schwarz, Peter-Andrew (Hg.): Auf dem langen Weg zur Stadt. 50 000 v. Chr.–800 n. Chr. Basel 2024 (Stadt.Geschichte.Basel 1).",
@@ -94,8 +94,8 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
     url = csv_filename,
     `dc:identifier` = identifier,
     `dc:title` = title,
-    `dc:isPartOf` = isPartOf,
     #`dc:subject` = subjects, # not yet implemented
+    `dc:isPartOf` = is_part_of,
     `dc:description` = setNames(list(object_description), lang),
     `dc:creator` = creators,
     `dc:publisher` = publisher,
