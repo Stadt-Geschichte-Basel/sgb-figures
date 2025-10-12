@@ -43,7 +43,8 @@ meta41404 <- annotate(
   creator = list(
     list(name = "Oliver Wetter",
          orcid = "0000-0003-1200-3498"),
-    list(name = "Claudia Moddelmog")
+    list(name = "Claudia Moddelmog",
+         orcid = "0000-0003-1555-1887")
   ),
   contributor = list(
     list(
