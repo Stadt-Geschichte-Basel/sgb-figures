@@ -1,10 +1,7 @@
 # Packages -------------------
 
 library(here)
-library(readxl)
-library(magrittr)
 library(csvwr)
-library(jsonlite)
 library(readr)
 
 # Functions ------------------
