@@ -59,7 +59,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:30+0200",
+		"@value": "2025-10-12T11:52:28+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Bürgerrechtsaufnahmen, 1400–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb14158.html#m14158_3>, letzte Aktualisierung: 12.10.2025.",
@@ -69,7 +69,7 @@
 				"name": "Zeitraum",
 				"titles": "Zeitraum",
 				"dc:description": "Zeitraum zwischen zwei Jahreszahlen, Angaben der Jahre nach unserer Zeitrechnung",
-				"datatype": "string"
+				"datatype": "{'base': 'string', 'format': 'yyyy-yyyy'}"
 			},
 			{
 				"name": "Jahrhundert",
@@ -81,13 +81,13 @@
 				"name": "Total Bürgerrechtsaufnahmen",
 				"titles": "Total Bürgerrechtsaufnahmen",
 				"dc:description": "Anzahl der im entsprechenden Zeitraum bzw. Jahrhundert erfolgten Aufnahmen ins Bürgerrecht",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Total aufgenommene Personen",
 				"titles": "Total aufgenommene Personen",
 				"dc:description": "Anzahl der im entsprechenden Zeitraum bzw. Jahrhundert aufgenommenen Personen",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Zeitraum",

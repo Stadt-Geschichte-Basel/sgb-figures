@@ -78,6 +78,7 @@ meta34278 <- annotate(
     "Zustand des jeweiligen Feldes in der ersten Hälfte des zwölften Monats",
     "Zustand des jeweiligen Feldes in der zweiten Hälfte des zwölften Monats"
   ),
+  column_datatype = c(rep("string", 25)),
   object_description = "Die zeitlich verschobene Bewirtschaftung der drei Felder benötigte einen grossen organisatorischen Aufwand und verbindliche Absprachen innerhalb der Dorfgemeinschaft.",
   creator = list(
     list(name = "Claudius Sieber-Lehmann"),

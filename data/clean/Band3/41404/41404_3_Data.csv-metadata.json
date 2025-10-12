@@ -62,7 +62,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:34+0200",
+		"@value": "2025-10-12T11:52:32+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Rheinhochwasser bei Basel-Schifflände, 1300–2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41404.html#m41404_3>, letzte Aktualisierung: 12.10.2025.",
@@ -72,25 +72,25 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Jahreszahl, Angabe in Jahren unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Q [m3/s]",
 				"titles": "Q [m3/s]",
 				"dc:description": "Abflussmenge Q in Kubikmetern pro Sekunde",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "P [m ü. M.]",
 				"titles": "P [m ü. M.]",
 				"dc:description": "P, Angabe in Meter über Meer (m. ü. M.)",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "gleitender 100 jähriger MW",
 				"titles": "gleitender 100 jähriger MW",
 				"dc:description": "100-jähriges gleitendes Hochwasserabflussmittel der rekonstruierten sowie aller gemessenen Jahresabflussmaxima in Kubikmetern pro Sekunde",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Gewässerkorrektionen",

@@ -54,7 +54,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:33+0200",
+		"@value": "2025-10-12T11:52:32+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Bürgeraufnahmen und Kriegsausgaben, 1360–1530. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39492.html#m39492_3>, letzte Aktualisierung: 12.10.2025.",
@@ -64,31 +64,31 @@
 				"name": "Startjahr",
 				"titles": "Startjahr",
 				"dc:description": "Jahreszahl, Angabe in Jahren unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Endjahr",
 				"titles": "Endjahr",
 				"dc:description": "Jahreszahl, Angabe in Jahren unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Zeitraum",
 				"titles": "Zeitraum",
 				"dc:description": "Zeitraum, Angaben in Jahren unserer Zeitrechnung",
-				"datatype": "string"
+				"datatype": "{'base': 'string', 'format': 'yyyy-yyyy'}"
 			},
 			{
 				"name": "Summe Bürgeraufnahmen",
 				"titles": "Summe Bürgeraufnahmen",
 				"dc:description": "Summe der Bürgeraufnahmen im jeweiligen Zeitraum",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Summe Kriegsausgaben in Pfund",
 				"titles": "Summe Kriegsausgaben in Pfund",
 				"dc:description": "Summe der Kriegsausgaben im jeweiligen Zeitraum in Pfund",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Startjahr",

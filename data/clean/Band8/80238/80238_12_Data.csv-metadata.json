@@ -59,7 +59,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:35+0200",
+		"@value": "2025-10-12T11:52:33+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Vertretung Basel-Stadt im Ständerat, 1963–2023. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_12>, letzte Aktualisierung: 12.10.2025.",
@@ -69,19 +69,19 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "SP",
 				"titles": "SP",
 				"dc:description": "Anzahl der baselstädtischen Mitglieder des Ständerats der Partei 'SP' im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "FDP",
 				"titles": "FDP",
 				"dc:description": "Anzahl der baselstädtischen Mitglieder des Ständerats der Partei 'FDP' im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Jahr",

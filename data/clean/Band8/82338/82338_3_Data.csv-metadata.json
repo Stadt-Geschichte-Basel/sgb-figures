@@ -59,7 +59,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:35+0200",
+		"@value": "2025-10-12T11:52:34+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb82338.html#m82338_3>, letzte Aktualisierung: 12.10.2025.",
@@ -69,31 +69,31 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Jahreszahl nach unserer Zeitrechnung",
-				"datatype": "string"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Gesamte Schweiz",
 				"titles": "Gesamte Schweiz",
 				"dc:description": "Anteil der Arbeitslosen an der Gesamtbevölkerung der Schweiz in Prozent im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Kanton Basel-Stadt",
 				"titles": "Kanton Basel-Stadt",
 				"dc:description": "Anteil der Arbeitslosen an der Bevölkerung des Kantons Basel-Stadt in Prozent im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Kanton Genf",
 				"titles": "Kanton Genf",
 				"dc:description": "Anteil der Arbeitslosen an der Gesamtbevölkerung des Kantons Genf in Prozent im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Kanton Zürich",
 				"titles": "Kanton Zürich",
 				"dc:description": "Anteil der Arbeitslosen an der Gesamtbevölkerung des Kantons Zürich in Prozent im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "float"
 			}
 		],
 		"primaryKey": "Jahr",

@@ -51,7 +51,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:31+0200",
+		"@value": "2025-10-12T11:52:30+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Die ausländische Wohnbevölkerung von Basel-Stadt nach Heimatnation, 1920–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21535.html#m21535_3>, letzte Aktualisierung: 12.10.2025.",
@@ -61,31 +61,31 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Deutschland",
 				"titles": "Deutschland",
 				"dc:description": "Anteil der deutschen Staatsangehörigen an der in Basel wohnhaften ausländischen Bevölkerung in Prozent im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Frankreich",
 				"titles": "Frankreich",
 				"dc:description": "Anteil der französischen Staatsangehörigen an der in Basel wohnhaften ausländischen Bevölkerung in Prozent im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Italien",
 				"titles": "Italien",
 				"dc:description": "Anteil der italienischen Staatsangehörigen an der in Basel wohnhaften ausländischen Bevölkerung in Prozent im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Übriges Ausland",
 				"titles": "Übriges Ausland",
 				"dc:description": "Anteil der Staatsangehörigen übriger Staaten an der in Basel wohnhaften ausländischen Bevölkerung in Prozent im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "float"
 			}
 		],
 		"primaryKey": "Jahr",

@@ -51,7 +51,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:37+0200",
+		"@value": "2025-10-12T11:52:35+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Glarus, 1850 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92237.html#m92237_3>, letzte Aktualisierung: 12.10.2025.",
@@ -61,19 +61,19 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Angabe des Jahres, für das die jeweiligen Daten gelten. Jahreszahl in unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Basel-Stadt",
 				"titles": "Basel-Stadt",
 				"dc:description": "Anzahl der Einwohnerinnen und Einwohner des Kantons Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Glarus",
 				"titles": "Glarus",
 				"dc:description": "Anzahl der Einwohnerinnen und Einwohner des Kantons Glarus im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Jahr",

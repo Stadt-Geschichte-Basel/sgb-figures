@@ -51,7 +51,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:32+0200",
+		"@value": "2025-10-12T11:52:31+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Hauptberuflich Beschäftigte im Dienstleistungssektor im Kanton Basel-Stadt, 1929–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26375.html#m26375_3>, letzte Aktualisierung: 12.10.2025.",
@@ -67,25 +67,25 @@
 				"name": "1929",
 				"titles": "1929",
 				"dc:description": "Anzahl der im angegebenen Bereich beschäftigten Personen im Kanton Basel-Stadt im Jahr 1929",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "1939",
 				"titles": "1939",
 				"dc:description": "Anzahl der im angegebenen Bereich beschäftigten Personen im Kanton Basel-Stadt im Jahr 1939",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "1955",
 				"titles": "1955",
 				"dc:description": "Anzahl der im angegebenen Bereich beschäftigten Personen im Kanton Basel-Stadt im Jahr 1955",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "1965",
 				"titles": "1965",
 				"dc:description": "Anzahl der im angegebenen Bereich beschäftigten Personen im Kanton Basel-Stadt im Jahr 1965",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Branche",

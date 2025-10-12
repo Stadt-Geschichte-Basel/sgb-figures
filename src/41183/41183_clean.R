@@ -36,6 +36,7 @@ meta41183 <- annotate(
   vol = 3,
   title = "Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500",
   column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "ß", "d (Pfennig)", "Preis in d (Pfennig)", "Basel: in d", "Basel: in g Ag. Umrechnung nach Schulz 320.", "Basel: Roggen (hl in fl)", "Strasbourg: in d", "Strasbourg: Roggen (hl in fl)", "Strasbourg: in g Ag (1)", "Strasbourg: in g Ag (2)", "Weizen V in d", "Strasbourg: Weizen (hl in fl)", "Nürnberg: Sümmer in d", "Nürnberg: hl in d", "Nürnberg: Sümmer in fl", "Nürnberg: Roggen (hl in fl)", "Köln: hl in g Ag", "Köln: Malter in Mk", "Köln: hl in Allbus", "Köln: Roggen oder Weizen (hl in fl)"),
+  column_datatype = c("gYear", rep("integer", 3), rep("float", 7), "integer", "float", "integer", rep("float", 7)),
   object_description = c("Zu den Jahren 1481/82 hielt der in Basel tätige Jurist Johannes Ursi fest, alles – ausser Fisch – sei teuer geworden. Viele seien an Hunger gestorben (BChr, Bd. 7, S. 179). Grund waren Missernten in den Jahren 1478 bis 1482. Ursis Angaben konnten in einer Untersuchung zu den Preisen für Korn in verschiedenen Städten bestätigt werden. Die in der Grafik ersichtlichen Durchschnittspreise korrelierten in Basel und Strassburg besonders eng. Dabei spielten verschiedene Ursachen zusammen: ähnliche Ertragsgebiete, intensiver Handel und rascher Austausch von Preisnachrichten (Holzwart-Schäfer 2000)."),
   creator = list(list(
     name = "Benjamin Hitz",

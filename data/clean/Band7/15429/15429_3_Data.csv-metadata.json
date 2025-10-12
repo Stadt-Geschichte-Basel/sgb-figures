@@ -51,7 +51,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:30+0200",
+		"@value": "2025-10-12T11:52:29+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Wohnbevölkerung im Kanton Basel-Stadt nach Religionszugehörigkeit und Herkunft, 1910–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb15429.html#m15429_3>, letzte Aktualisierung: 12.10.2025.",
@@ -61,43 +61,43 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Protestant:innen (Ausland)",
 				"titles": "Protestant:innen (Ausland)",
 				"dc:description": "Anzahl der aus dem Ausland stammenden Protestant:innen im Kanton Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Protestant:innen (Inland)",
 				"titles": "Protestant:innen (Inland)",
 				"dc:description": "Anzahl der aus dem Inland stammenden Protestant:innen im Kanton Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Katholik:innen inkl. Christkatholik:innen (Ausland)",
 				"titles": "Katholik:innen inkl. Christkatholik:innen (Ausland)",
 				"dc:description": "Anzahl der aus dem Ausland stammenden Katholik:innen inkl. Christkatholik:innen im Kanton Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Katholik:innen inkl. Christkatholik:innen (Inland)",
 				"titles": "Katholik:innen inkl. Christkatholik:innen (Inland)",
 				"dc:description": "Anzahl der aus dem Inland stammenden Katholik:innen inkl. Christkatholik:innen im Kanton Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Jüd:innen (Inland und Ausland)",
 				"titles": "Jüd:innen (Inland und Ausland)",
 				"dc:description": "Anzahl der aus dem In- und Ausland stammenden Jüd:innen im Kanton Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Andere, ohne Religionszugehörigkeit und ohne Angabe (Inland und Ausland)",
 				"titles": "Andere, ohne Religionszugehörigkeit und ohne Angabe (Inland und Ausland)",
 				"dc:description": "Anzahl der aus dem In- und Ausland stammenden Menschen mit anderer Religionszugehörigkeit, ohne Religionszugehörigkeit oder mit fehlender Angabe im Kanton Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Jahr",

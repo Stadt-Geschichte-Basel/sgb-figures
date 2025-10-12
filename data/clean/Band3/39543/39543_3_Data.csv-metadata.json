@@ -54,7 +54,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:33+0200",
+		"@value": "2025-10-12T11:52:32+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Verbannungsurteile, 1376–1455. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39543.html#m39543_3>, letzte Aktualisierung: 12.10.2025.",
@@ -64,79 +64,79 @@
 				"name": "Startjahr",
 				"titles": "Startjahr",
 				"dc:description": "Jahreszahl, Angabe in Jahren unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Endjahr",
 				"titles": "Endjahr",
 				"dc:description": "Jahreszahl, Angabe in Jahren unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Zeitraum",
 				"titles": "Zeitraum",
 				"dc:description": "Zeitraum, Angabe von Start- und Endjahr als Jahreszahl unserer Zeitrechnung",
-				"datatype": "string"
+				"datatype": "{'base': 'string', 'format': 'yyyy-yyyy'}"
 			},
 			{
 				"name": "Gotteslästerung",
 				"titles": "Gotteslästerung",
 				"dc:description": "Anzahl der Verbannungsurteile wegen Gotteslästerung im angegebenen Zeitraum",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Ehrverletzung",
 				"titles": "Ehrverletzung",
 				"dc:description": "Anzahl der Verbannungsurteile wegen Ehrverletzung im angegebenen Zeitraum",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Meineid",
 				"titles": "Meineid",
 				"dc:description": "Anzahl der Verbannungsurteile wegen Meineid im angegebenen Zeitraum",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Ungehorsam",
 				"titles": "Ungehorsam",
 				"dc:description": "Anzahl der Verbannungsurteile wegen Ungehorsam im angegebenen Zeitraum",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Jugenddelikt",
 				"titles": "Jugenddelikt",
 				"dc:description": "Anzahl der Verbannungsurteile wegen Jugenddelikten im angegebenen Zeitraum",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Eigentum",
 				"titles": "Eigentum",
 				"dc:description": "Anzahl der Verbannungsurteile wegen Eigentumsdelikten im angegebenen Zeitraum",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Sexualdelikt",
 				"titles": "Sexualdelikt",
 				"dc:description": "Anzahl der Verbannungsurteile wegen Sexualdelikten im angegebenen Zeitraum",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "«Geloiff» (Tumult)",
 				"titles": "«Geloiff» (Tumult)",
 				"dc:description": "Anzahl der Verbannungsurteile wegen Geloiff (Tumult) im angegebenen Zeitraum",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Totschlag",
 				"titles": "Totschlag",
 				"dc:description": "Anzahl der Verbannungsurteile wegen Totschlag im angegebenen Zeitraum",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Wundtat",
 				"titles": "Wundtat",
 				"dc:description": "Anzahl der Verbannungsurteile wegen Wundtaten im angegebenen Zeitraum",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Startjahr",

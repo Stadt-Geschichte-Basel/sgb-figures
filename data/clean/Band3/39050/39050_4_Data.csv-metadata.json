@@ -54,7 +54,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:33+0200",
+		"@value": "2025-10-12T11:52:31+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Einnahmen der Stadt Basel ab 1373. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_4>, letzte Aktualisierung: 12.10.2025.",
@@ -64,25 +64,25 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Jahreszahl, Angabe als Zeitraum in Jahren unserer Zeitrechnung",
-				"datatype": "string"
+				"datatype": "{'base': 'string', 'format': 'yyyy/yy|yyyy/yyyy'}"
 			},
 			{
 				"name": "Steuereinnahmen",
 				"titles": "Steuereinnahmen",
 				"dc:description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Steuereinnahmen in Basler Pfund",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Leibrenten",
 				"titles": "Leibrenten",
 				"dc:description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Leibrenten in Basler Pfund",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "verkäufliche Renten",
 				"titles": "verkäufliche Renten",
 				"dc:description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: verkäufliche Renten in Basler Pfund",
-				"datatype": "number"
+				"datatype": "float"
 			}
 		],
 		"primaryKey": "Jahr",

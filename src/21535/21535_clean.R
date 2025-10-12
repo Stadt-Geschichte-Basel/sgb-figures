@@ -37,6 +37,7 @@ meta21535 <- annotate(
     "Anteil der italienischen Staatsangehörigen an der in Basel wohnhaften ausländischen Bevölkerung in Prozent im angegebenen Jahr",
     "Anteil der Staatsangehörigen übriger Staaten an der in Basel wohnhaften ausländischen Bevölkerung in Prozent im angegebenen Jahr"
   ),
+  column_datatype = c("gYear", rep("float", 4)),
   object_description = "Der Anteil der deutschen Staatsangehörigen an der in Basel wohnhaften ausländischen Bevölkerung nahm kontinuierlich ab, jener der italienischen insbesondere in den 1960er-Jahren deutlich zu. Da die Volkszählungen im Dezember stattfanden, waren die ‹Saisonniers›, die sich maximal neun Monate am Stück im Land aufhalten durften, meist nicht eingerechnet. Mit ihnen war die Zahl der italienischen Staatsangehörigen vor allem in den Sommermonaten noch weitaus höher. Ab 1964 fanden die Spanierinnen und Spanier, deren Zahl ab Mitte der 1960er-Jahren deutlich anstieg, separat Eingang ins Statistische Jahrbuch. Vorher wurden sie zur Kategorie ‹Übriges Ausland› gerechnet.",
   creator = list(list(name = "Noëmi Crain Merz")),
   contributor = list(

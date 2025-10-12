@@ -59,7 +59,7 @@
 		"@id": "https://creativecommons.org/licenses/by-sa/4.0/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:31+0200",
+		"@value": "2025-10-12T11:52:29+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Exportabgaben und Konsumsteuern, 1690–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb20418.html#m20418_3>, letzte Aktualisierung: 12.10.2025.",
@@ -69,37 +69,37 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Jahreszahl, Angaben bezeichnen jeweils ein Jahr unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Handels- und Marktabgaben",
 				"titles": "Handels- und Marktabgaben",
 				"dc:description": "Handels- und Marktabgaben. Angaben in Pfund",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Konsumabgaben Stadt",
 				"titles": "Konsumabgaben Stadt",
 				"dc:description": "Konsumabgaben der Stadt. Angaben in Pfund",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Konsumabgaben Land",
 				"titles": "Konsumabgaben Land",
 				"dc:description": "Konsumabgaben der Landschaft. Angaben in Pfund",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Einwohnerzahl",
 				"titles": "Einwohnerzahl",
 				"dc:description": "Einwohnerzahl der Stadt in Personen. Angaben übernommen aus abb17308",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Einwohnerzahl_alternativ",
 				"titles": "Einwohnerzahl_alternativ",
 				"dc:description": "Alternative Angaben zur Einwohnerzahl der Stadt in Personen. Angaben von S. Burghartz",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Jahr",

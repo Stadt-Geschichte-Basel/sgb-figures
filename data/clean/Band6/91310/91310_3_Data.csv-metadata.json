@@ -56,7 +56,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:37+0200",
+		"@value": "2025-10-12T11:52:35+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Anzahl der Sitze im Regierungsrat des Kantons Basel-Stadt, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91310.html#m91310_3>, letzte Aktualisierung: 12.10.2025.",
@@ -66,31 +66,31 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten.",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Freisinn",
 				"titles": "Freisinn",
 				"dc:description": "Anzahl der freisinnigen Mitglieder des Regierungsrats des Kantons Basel-Stadt nach den Gesamterneuerungswahlen im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Konservative",
 				"titles": "Konservative",
 				"dc:description": "Anzahl der konservativen Mitglieder des Regierungsrats des Kantons Basel-Stadt nach den Gesamterneuerungswahlen im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Sozialdemokraten",
 				"titles": "Sozialdemokraten",
 				"dc:description": "Anzahl der sozialdemokratischen Mitglieder des Regierungsrats des Kantons Basel-Stadt nach den Gesamterneuerungswahlen im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Parteilos",
 				"titles": "Parteilos",
 				"dc:description": "Anzahl der parteilosen Mitglieder des Regierungsrats des Kantons Basel-Stadt nach den Gesamterneuerungswahlen im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Jahr",

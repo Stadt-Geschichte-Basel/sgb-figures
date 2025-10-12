@@ -59,7 +59,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:30+0200",
+		"@value": "2025-10-12T11:52:29+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Bevölkerungsentwicklung und Pestepidemien, 1500–1700. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb17308.html#m17308_3>, letzte Aktualisierung: 12.10.2025.",
@@ -69,13 +69,13 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Jahreszahl, Angaben bezeichnen jeweils in Jahr unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Bevölkerungszahl",
 				"titles": "Bevölkerungszahl",
 				"dc:description": "Bevölkerungszahl von Basel in Anzahl Personen",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Pestjahr",

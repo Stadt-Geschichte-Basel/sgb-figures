@@ -40,6 +40,7 @@ meta14158 <- annotate(
   vol = 4,
   title = "Bürgerrechtsaufnahmen, 1400–1798",
   column_description = c("Zeitraum zwischen zwei Jahreszahlen, Angaben der Jahre nach unserer Zeitrechnung", "Angabe des Jahrhunderts nach unserer Zeitrechnung", "Anzahl der im entsprechenden Zeitraum bzw. Jahrhundert erfolgten Aufnahmen ins Bürgerrecht", "Anzahl der im entsprechenden Zeitraum bzw. Jahrhundert aufgenommenen Personen"),
+  column_datatype = c("{'base': 'string', 'format': 'yyyy-yyyy'}", "string", rep("integer", 2)),
   object_description = "Basels Einbürgerungspolitik wurde im Laufe der Frühen Neuzeit immer restriktiver. Im 18. Jahrhundert kam es kaum noch zu Neuaufnahmen ins Bürgerrecht (Angaben nach Gschwind 1977, S. 170).",
   creator = list(
     list(name = "Susanna Burghartz"),

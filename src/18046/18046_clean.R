@@ -37,6 +37,7 @@ meta18046 <- annotate(
   vol = 4,
   title = "Getreidevorräte in der Stadt Basel, 1613–1653",
   column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Vorrat an Dinkel, Angabe in Viernzeln", "Vorrat an Roggen, Angabe in Viernzeln", "Vorrat an Hafer, Angabe in Viernzeln"),
+  column_datatype = c("gYear", "integer", "float", "integer"),
   object_description = "Dinkel und – in geringerem Masse – Roggen zum Backen von Brot sowie Hafer als Futter für die Pferde waren für die Versorgung der Stadt und ihrer Bewohnerinnen und Bewohner essenziell. Um Engpässe ausgleichen zu können, legte die Obrigkeit in ertragreichen Jahren Getreidevorräte an, die sie in Krisenzeiten vergünstigt an die Bevölkerung abgab. 1621 etwa – im vierten Jahr des Dreissigjährigen Kriegs – versorgte die Stadt auf diese Weise zahlreiche Flüchtlinge.",
   creator = list(
     list(name = "Daniel Sidler"),

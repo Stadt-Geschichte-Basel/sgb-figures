@@ -54,7 +54,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:34+0200",
+		"@value": "2025-10-12T11:52:32+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Getreidepreise in Basel, Strassburg, Nürnberg und Köln, 1443–1500. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41183.html#m41183_3>, letzte Aktualisierung: 12.10.2025.",
@@ -64,127 +64,127 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Jahreszahl, Angabe in Jahren unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "ß",
 				"titles": "ß",
 				"dc:description": "ß",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "d",
 				"titles": "d",
 				"dc:description": "d (Pfennig)",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Preis in d",
 				"titles": "Preis in d",
 				"dc:description": "Preis in d (Pfennig)",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Basel: in d",
 				"titles": "Basel: in d",
 				"dc:description": "Basel: in d",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Basel: in g Ag",
 				"titles": "Basel: in g Ag",
 				"dc:description": "Basel: in g Ag. Umrechnung nach Schulz 320.",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Basel: Roggen (hl in fl)",
 				"titles": "Basel: Roggen (hl in fl)",
 				"dc:description": "Basel: Roggen (hl in fl)",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Strasbourg: in d",
 				"titles": "Strasbourg: in d",
 				"dc:description": "Strasbourg: in d",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Strasbourg: Roggen (hl in fl)",
 				"titles": "Strasbourg: Roggen (hl in fl)",
 				"dc:description": "Strasbourg: Roggen (hl in fl)",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Strasbourg: in g Ag (1)",
 				"titles": "Strasbourg: in g Ag (1)",
 				"dc:description": "Strasbourg: in g Ag (1)",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Strasbourg: in g Ag (2)",
 				"titles": "Strasbourg: in g Ag (2)",
 				"dc:description": "Strasbourg: in g Ag (2)",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Weizen V in d",
 				"titles": "Weizen V in d",
 				"dc:description": "Weizen V in d",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Strasbourg: Weizen (hl in fl)",
 				"titles": "Strasbourg: Weizen (hl in fl)",
 				"dc:description": "Strasbourg: Weizen (hl in fl)",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Nürnberg: Sümmer in d",
 				"titles": "Nürnberg: Sümmer in d",
 				"dc:description": "Nürnberg: Sümmer in d",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Nürnberg: hl in d",
 				"titles": "Nürnberg: hl in d",
 				"dc:description": "Nürnberg: hl in d",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Nürnberg: Sümmer in fl",
 				"titles": "Nürnberg: Sümmer in fl",
 				"dc:description": "Nürnberg: Sümmer in fl",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Nürnberg: Roggen (hl in fl)",
 				"titles": "Nürnberg: Roggen (hl in fl)",
 				"dc:description": "Nürnberg: Roggen (hl in fl)",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Köln: hl in g Ag",
 				"titles": "Köln: hl in g Ag",
 				"dc:description": "Köln: hl in g Ag",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Köln: Malter in Mk",
 				"titles": "Köln: Malter in Mk",
 				"dc:description": "Köln: Malter in Mk",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Köln: hl in Allbus",
 				"titles": "Köln: hl in Allbus",
 				"dc:description": "Köln: hl in Allbus",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Köln: Roggen oder Weizen (hl in fl)",
 				"titles": "Köln: Roggen oder Weizen (hl in fl)",
 				"dc:description": "Köln: Roggen oder Weizen (hl in fl)",
-				"datatype": "number"
+				"datatype": "float"
 			}
 		],
 		"primaryKey": "Jahr",

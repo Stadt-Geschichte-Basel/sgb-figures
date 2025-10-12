@@ -56,7 +56,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:36+0200",
+		"@value": "2025-10-12T11:52:34+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Prozentuales Bevölkerungswachstum in Gross- und Kleinbasel, 1860–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90340.html#m90340_3>, letzte Aktualisierung: 12.10.2025.",
@@ -66,19 +66,19 @@
 				"name": "Zeitraum",
 				"titles": "Zeitraum",
 				"dc:description": "Zeitraum, für den die angegebenen Zahlen gelten. Angabe in Jahren unserer Zeitrechnung.",
-				"datatype": "string"
+				"datatype": "{'base': 'string', 'format': 'yyyy-yyyy'}"
 			},
 			{
 				"name": "Grossbasel",
 				"titles": "Grossbasel",
 				"dc:description": "Zunahme der Bevölkerungszahl im Grossbasel im angegebenen Zeitraum, Angaben in Prozent",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Kleinbasel",
 				"titles": "Kleinbasel",
 				"dc:description": "Zunahme der Bevölkerungszahl im Kleinbasel im angegebenen Zeitraum, Angaben in Prozent",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Zeitraum",

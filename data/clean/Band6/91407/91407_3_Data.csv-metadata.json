@@ -56,7 +56,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:37+0200",
+		"@value": "2025-10-12T11:52:35+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Mandate der Parteien bei Grossratswahlen, 1875–1914. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91407.html#m91407_3>, letzte Aktualisierung: 12.10.2025.",
@@ -66,49 +66,49 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten.",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "FDP/RDP",
 				"titles": "FDP/RDP",
 				"dc:description": "Anzahl der Mandate der FDP/RDP nach den Grossratswahlen im angegebenen Jahr. Sitze der Demokratischen Partei (1908: 1 / 1911:2) werden dem Freisinn (FDP/RDP) zugerechnet",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "LP/LDP",
 				"titles": "LP/LDP",
 				"dc:description": "Anzahl der Mandate der LP/LDP nach den Grossratswahlen im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Zentrum",
 				"titles": "Zentrum",
 				"dc:description": "Anzahl der Mandate des Zentrums nach den Grossratswahlen im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "BGP",
 				"titles": "BGP",
 				"dc:description": "Anzahl der Mandate der BGP nach den Grossratswahlen im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "SP",
 				"titles": "SP",
 				"dc:description": "Anzahl der Mandate der SP nach den Grossratswahlen im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "KVP/CVP",
 				"titles": "KVP/CVP",
 				"dc:description": "Anzahl der Mandate der KVP/CPV nach den Grossratswahlen im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Andere",
 				"titles": "Andere",
 				"dc:description": "Anzahl der Mandate für übrige Parteien/Kandidaturen nach den Grossratswahlen im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Jahr",

@@ -51,7 +51,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:32+0200",
+		"@value": "2025-10-12T11:52:31+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Beschäftigte nach Wirtschaftszweigen im Kanton Basel-Stadt, 1929–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26060.html#m26060_3>, letzte Aktualisierung: 12.10.2025.",
@@ -67,25 +67,25 @@
 				"name": "1929",
 				"titles": "1929",
 				"dc:description": "Anzahl der im jeweiligen Wirtschaftszweig beschäftigten Personen im Kanton Basel-Stadt im Jahr 1929",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "1939",
 				"titles": "1939",
 				"dc:description": "Anzahl der im jeweiligen Wirtschaftszweig beschäftigten Personen im Kanton Basel-Stadt im Jahr 1939",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "1955",
 				"titles": "1955",
 				"dc:description": "Anzahl der im jeweiligen Wirtschaftszweig beschäftigten Personen im Kanton Basel-Stadt im Jahr 1955",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "1965",
 				"titles": "1965",
 				"dc:description": "Anzahl der im jeweiligen Wirtschaftszweig beschäftigten Personen im Kanton Basel-Stadt im Jahr 1965",
-				"datatype": "number"
+				"datatype": "float"
 			}
 		],
 		"primaryKey": "Branche",

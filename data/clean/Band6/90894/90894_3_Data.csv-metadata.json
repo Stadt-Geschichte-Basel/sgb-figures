@@ -54,7 +54,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:37+0200",
+		"@value": "2025-10-12T11:52:35+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Exporte in die wichtigsten Zielländer, 1900. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90894.html#m90894_3>, letzte Aktualisierung: 12.10.2025.",
@@ -70,19 +70,19 @@
 				"name": "Seidenband",
 				"titles": "Seidenband",
 				"dc:description": "Export von Seidenband in das entsprechende Zielland. Angaben in Millionen Franken",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Schappe",
 				"titles": "Schappe",
 				"dc:description": "Export von Schappe in das entsprechende Zielland. Angaben in Millionen Franken",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Teerfarben",
 				"titles": "Teerfarben",
 				"dc:description": "Export von Teerfarben in das entsprechende Zielland. Angaben in Millionen Franken",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Zielland",

@@ -51,7 +51,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:31+0200",
+		"@value": "2025-10-12T11:52:30+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Die Bevölkerung von Basel-Stadt, 1912–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21433.html#m21433_3>, letzte Aktualisierung: 12.10.2025.",
@@ -61,25 +61,25 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Basler Bürgerrecht",
 				"titles": "Basler Bürgerrecht",
 				"dc:description": "Zahl der Einwohner:innen von Basel-Stadt mit Basler Bürgerrecht im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Bürgerrecht eines anderen Schweizer Kantons",
 				"titles": "Bürgerrecht eines anderen Schweizer Kantons",
 				"dc:description": "Zahl der Einwohner:innen von Basel-Stadt mit Bürgerrecht eines anderen Schweizer Kantons im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Ausländische Staatsbürgerschaft",
 				"titles": "Ausländische Staatsbürgerschaft",
 				"dc:description": "Zahl der Einwohner:innen von Basel-Stadt mit ausländischer Staatsbürgerschaft im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Jahr",

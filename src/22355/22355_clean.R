@@ -46,6 +46,7 @@ meta22355 <- annotate(
     "Anzahl der Grossratsmitglieder der Partei 'Landesring der Unabhängigen' im entsprechenden Jahr",
     "Anzahl der Grossratsmitglieder anderer Parteien im entsprechenden Jahr"
   ),
+  column_datatype = c("gYear", rep("integer", 9)),
   object_description = "Im frühen 20. Jahrhundert lösten die Sozialdemokraten die zuvor dominierenden Freisinnigen als stärkste Kraft in Basel ab.",
   creator = list(list(name = "Noëmi Crain Merz")),
   contributor = list(

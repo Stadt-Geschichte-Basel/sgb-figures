@@ -31,6 +31,7 @@ meta21892 <- annotate(
   vol = 7,
   title = "Öffentliches Personal des Kantons auf 1000 Einwohnerinnen und Einwohner, 1912–1963",
   column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Anzahl der vom Kanton Basel-Stadt angestellten Menschen gerechnet auf 1000 Einwohner:innen und Einwohner am Ende des jeweiligen Jahres"),
+  column_datatype = c("gYear", "float"),
   object_description = "Die Zahl der Staatsangestellten und die Staatsausgaben wuchsen zwischen 1912 und 1966 deutlich überproportional im Verhältnis zur Einwohnerschaft.",
   creator = list(list(name = "Noëmi Crain Merz")),
   contributor = list(

@@ -36,6 +36,7 @@ meta21433 <- annotate(
     "Zahl der Einwohner:innen von Basel-Stadt mit Bürgerrecht eines anderen Schweizer Kantons im entsprechenden Jahr",
     "Zahl der Einwohner:innen von Basel-Stadt mit ausländischer Staatsbürgerschaft im entsprechenden Jahr"
   ),
+  column_datatype = c("gYear", rep("integer", 3)),
   object_description = "Obwohl die Einwohnerschaft mit ausländischer Staatsangehörigkeit in den 1960er-Jahren deutlich zunahm – 1966 lag ihr Anteil bei 15.3 Prozent – blieb sie selbst in absoluten Zahlen unter dem Wert von 1912.",
   creator = list(list(name = "Noëmi Crain Merz")),
   contributor = list(

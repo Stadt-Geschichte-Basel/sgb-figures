@@ -56,7 +56,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:37+0200",
+		"@value": "2025-10-12T11:52:35+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Stimmberechtigte und Gesamtbevölkerung, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb91203.html#m91203_3>, letzte Aktualisierung: 12.10.2025.",
@@ -66,19 +66,19 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Gesamtbevölkerung",
 				"titles": "Gesamtbevölkerung",
 				"dc:description": "Angabe der Gesamtbevölkerung des Kantons Basel-Stadt im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Stimmberechtigte",
 				"titles": "Stimmberechtigte",
 				"dc:description": "Angabe der Zahl der stimmberechtigten Einwohner des Kantons Basel-Stadt im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Jahr",

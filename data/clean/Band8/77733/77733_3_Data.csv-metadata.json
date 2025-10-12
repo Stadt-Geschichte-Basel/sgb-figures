@@ -59,7 +59,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:34+0200",
+		"@value": "2025-10-12T11:52:33+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Basel-Landschaft, 1940–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77733.html#m77733_3>, letzte Aktualisierung: 12.10.2025.",
@@ -69,19 +69,19 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Wohnbevölkerung Kanton Basel-Stadt",
 				"titles": "Wohnbevölkerung Kanton Basel-Stadt",
 				"dc:description": "Anzahl der die Wohnbevölkerung des Kantons Basel-Stadt bildenden Menschen im entsprechenden Jahr. Die Zahlen beruhen bis 1969 auf Volkszählungen, ab 1970 handelt es sich um Rückberechnungen auf Basis des Bestandes der Einwohnerdienste im Jahr 1990",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Wohnbevölkerung Kanton Basel-Landschaft (ab 1994 mit Laufental)",
 				"titles": "Wohnbevölkerung Kanton Basel-Landschaft (ab 1994 mit Laufental)",
 				"dc:description": "Anzahl der die Wohnbevölkerung des Kantons Basel-Landschaft bildenden Menschen im entsprechenden Jahr. Ab dem Jahr 1994 inklusive Laufental",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Jahr",

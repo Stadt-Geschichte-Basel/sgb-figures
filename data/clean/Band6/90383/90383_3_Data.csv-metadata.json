@@ -56,7 +56,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:36+0200",
+		"@value": "2025-10-12T11:52:35+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Erwerbstätige nach sozialen Klassen im St. Alban und Klybeck. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90383.html#m90383_3>, letzte Aktualisierung: 12.10.2025.",
@@ -66,43 +66,43 @@
 				"name": "Stadtviertel",
 				"titles": "Stadtviertel",
 				"dc:description": "Stadtviertel, für die die Angaben zur Zusammensetzung nach sozialen Klassen gelten",
-				"datatype": "string"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Klasse1",
 				"titles": "Klasse1",
 				"dc:description": "Anzahl der Zugehörigen zur Klasse 1 'Inhaber und Leiter von Grossbetrieben, hohe Beamte, Professoren, Geistliche, selbstständige Ärzte, Apotheker, Tierärzte, Anwälte, Ingenieure, Architekten, hervorragende Künstler, Grossrentner'.",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Klasse2",
 				"titles": "Klasse2",
 				"dc:description": "Anzahl der Zugehörigen zur Klasse 2 'Mittlere und kleine Selbstständige'.",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Klasse3",
 				"titles": "Klasse3",
 				"dc:description": "Anzahl der Zugehörigen zur Klasse 3 'Mittlere Beamte und Lehrer'.",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Klasse4",
 				"titles": "Klasse4",
 				"dc:description": "Anzahl der Zugehörigen zur Klasse 4 'Unterbeamte und gelernte Arbeiter'.",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Klasse5",
 				"titles": "Klasse5",
 				"dc:description": "Anzahl der Zugehörigen zur Klasse 5 'Ungelernte Arbeiter'.",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Klasse6",
 				"titles": "Klasse6",
 				"dc:description": "Anzahl der Zugehörigen zur Klasse 6 'Häusliche Dienstboten'.",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Stadtviertel",

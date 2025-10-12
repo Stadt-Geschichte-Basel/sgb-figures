@@ -59,7 +59,7 @@
 		"@id": "https://rightsstatements.org/vocab/InC-RUU/1.0/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:32+0200",
+		"@value": "2025-10-12T11:52:30+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Temperaturabweichungen in °C, 1444–2011. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb24528.html#m24528_3>, letzte Aktualisierung: 12.10.2025.",
@@ -69,37 +69,37 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Jahreszahl, Angabe in Jahren unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Swiss GHD DOY",
 				"titles": "Swiss GHD DOY",
 				"dc:description": "Nummer des Tages im jeweiligen Jahr (DOY, Day of Year), an dem die Weinlese begonnen wurde (GHD, Grape Harvest Date)",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Mittlere April-Juli-Temperatur",
 				"titles": "Mittlere April-Juli-Temperatur",
 				"dc:description": "Abweichung der mittleren April-Juli-Temperatur verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "11-jährig gleitendes Temperaturmittel",
 				"titles": "11-jährig gleitendes Temperaturmittel",
 				"dc:description": "Abweichung des elfjährig gleitenden Temperaturmittels verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "oberer doppelter Standard-Temperaturschätzfehler",
 				"titles": "oberer doppelter Standard-Temperaturschätzfehler",
 				"dc:description": "oberer doppelter Standard-Temperaturschätzfehler verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "unterer doppelter Standard-Temperaturschätzfehler",
 				"titles": "unterer doppelter Standard-Temperaturschätzfehler",
 				"dc:description": "unterer doppelter Standard-Temperaturschätzfehler verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius",
-				"datatype": "number"
+				"datatype": "float"
 			}
 		],
 		"primaryKey": "Jahr",

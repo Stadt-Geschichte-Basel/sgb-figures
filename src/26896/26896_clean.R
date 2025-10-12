@@ -38,6 +38,7 @@ meta26896 <- annotate(
     "Anzahl der ausgestellten Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger aus Deutschland im angegebenen Jahr",
     "Anzahl der ausgestellten Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger aus Frankreich im angegebenen Jahr"
   ),
+  column_datatype = c("gYear", rep("integer", 2)),
   object_description = "Die Zahl der ausgestellten Bewilligungen folgt den jeweiligen Konjunkturen: Ab 1932 nahm sie stetig ab. Während des Zweiten Weltkriegs arbeiteten nur noch einzelne Grenzgängerinnen und Grenzgänger in Basel. Auffällig ist insbesondere die starke Zunahme nach 1953.",
   creator = list(list(name = "Isabel Koellreuter")),
   contributor = list(

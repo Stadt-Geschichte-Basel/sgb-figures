@@ -54,7 +54,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:37+0200",
+		"@value": "2025-10-12T11:52:35+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Soziale Klassen in Basel, 1888–1904. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90940.html#m90940_3>, letzte Aktualisierung: 12.10.2025.",
@@ -64,37 +64,37 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Angabe des Jahres nach unserer Zeitrechnung, für das die entsprechenden Zahlen gelten",
-				"datatype": "string"
+				"datatype": "gYear"
 			},
 			{
 				"name": "800–1500 Franken",
 				"titles": "800–1500 Franken",
 				"dc:description": "Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von 800-1500 Franken im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "1500–3000 Franken",
 				"titles": "1500–3000 Franken",
 				"dc:description": "Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von 1500-3000 Franken im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "3000–6000 Franken",
 				"titles": "3000–6000 Franken",
 				"dc:description": "Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von 3000-6000 Franken im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "6000–20 000 Franken",
 				"titles": "6000–20 000 Franken",
 				"dc:description": "Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von 6000-20000 Franken im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": ">20 000 Franken",
 				"titles": ">20 000 Franken",
 				"dc:description": "Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von >20000 Franken im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Jahr",

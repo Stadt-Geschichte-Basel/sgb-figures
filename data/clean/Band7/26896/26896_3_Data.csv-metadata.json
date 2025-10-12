@@ -51,7 +51,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:32+0200",
+		"@value": "2025-10-12T11:52:31+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Ausgestellte Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger im Kanton Basel-Stadt, 1927–1962. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26896.html#m26896_3>, letzte Aktualisierung: 12.10.2025.",
@@ -61,19 +61,19 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "aus Deutschland",
 				"titles": "aus Deutschland",
 				"dc:description": "Anzahl der ausgestellten Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger aus Deutschland im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "aus Frankreich",
 				"titles": "aus Frankreich",
 				"dc:description": "Anzahl der ausgestellten Arbeitsbewilligungen an Grenzgängerinnen und Grenzgänger aus Frankreich im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Jahr",

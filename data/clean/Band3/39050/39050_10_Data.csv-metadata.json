@@ -54,7 +54,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:33+0200",
+		"@value": "2025-10-12T11:52:31+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Einnahmen der Stadt Basel ab 1424. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb39050.html#m39050_10>, letzte Aktualisierung: 12.10.2025.",
@@ -64,37 +64,37 @@
 				"name": "Rechnungjahr",
 				"titles": "Rechnungjahr",
 				"dc:description": "Jahreszahl, Angabe als Zeitraum in Jahren unserer Zeitrechnung",
-				"datatype": "string"
+				"datatype": "{'base': 'string', 'format': 'yyyy/yy|yyyy-yyyy'}"
 			},
 			{
 				"name": "Weinungeld",
 				"titles": "Weinungeld",
 				"dc:description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Weinungeld in Basler Pfund",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Mühlenungeld",
 				"titles": "Mühlenungeld",
 				"dc:description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Mühlenungeld in Basler Pfund",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Weinungeld in Gasthäusern",
 				"titles": "Weinungeld in Gasthäusern",
 				"dc:description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Weinungeld in Gasthäusern in Basler Pfund",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Zölle",
 				"titles": "Zölle",
 				"dc:description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Zölle in Basler Pfund",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Von den Messen",
 				"titles": "Von den Messen",
 				"dc:description": "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Einnahmen von den Messen in Basler Pfund",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Rechnungjahr",

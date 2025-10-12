@@ -59,7 +59,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:36+0200",
+		"@value": "2025-10-12T11:52:34+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Museumseintritte und Kinobesuche in Basel-Stadt, 1945–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88454.html#m88454_3>, letzte Aktualisierung: 12.10.2025.",
@@ -69,19 +69,19 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Jahreszahl nach unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Kinobesuche",
 				"titles": "Kinobesuche",
 				"dc:description": "Anzahl der Kinobesuche im Kanton Basel-Stadt im entsprechenden Jahr. Angaben nach der Billetsteuerabrechnung, ab 1999 wegen der Abschaffung der Billetsteuer nur wenige Daten erhältlich. Wegen der COVID-19-Pandemie waren Kinos vom 28.02.2020 bis zum 05.06.2020 geschlossen, danach eingeschränkter Betrieb bezüglich Platz- und Personenzahl.",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Museumseintritte",
 				"titles": "Museumseintritte",
 				"dc:description": "Anzahl der Museumseintritte im Kanton Basel-Stadt im entsprechenden Jahr. Daten vor 1980 sind nicht vorhanden. Angabe zu den Eintritten bis inkl. 1991 nach StaBS ED-REG 37a 7-1 (2) Besucherstatistik nach Jahren 1980–2008, Daten ab 1992 aus dem Statistischen Jahrbuch. Im Jahr 2020 reduzierter Betrieb aufgrund der COVID-19-Pandemie.",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Jahr",

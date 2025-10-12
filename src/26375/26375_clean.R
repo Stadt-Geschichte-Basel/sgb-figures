@@ -35,6 +35,7 @@ meta26375 <- annotate(
     "Anzahl der im angegebenen Bereich beschäftigten Personen im Kanton Basel-Stadt im Jahr 1955",
     "Anzahl der im angegebenen Bereich beschäftigten Personen im Kanton Basel-Stadt im Jahr 1965"
   ),
+  column_datatype = c("string", rep("integer", 4)),
   object_description = "Die Beschäftigten im Dienstleistungssektor nahmen mit jeder Zählung zu, sprunghaft insbesondere in der Nachkriegszeit. 1965 wurden erstmals auch die Zahlen der Beschäftigten der öffentlichen Verwaltung im Rahmen der eidgenössischen Betriebszählungen separat erhoben.",
   creator = list(list(name = "Isabel Koellreuter")),
   contributor = list(

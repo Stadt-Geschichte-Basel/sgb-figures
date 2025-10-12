@@ -48,6 +48,7 @@ meta88415 <- annotate(
     "Zunahme der Bevölkerungszahl im Grossbasel im angegebenen Zeitraum, Angaben in Prozent",
     "Zunahme der Bevölkerungszahl im Kleinbasel im angegebenen Zeitraum, Angaben in Prozent"
   ),
+  column_datatype = c("{'base': 'string', 'format': 'yyyy-yyyy'}", rep("integer", 2)),
   object_description = "Innerhalb eines halben Jahrhunderts wuchs die Bevölkerung der Stadt von 37 915 um beinahe 100 000 Einwohnerinnen und Einwohner. Während sich in Grossbasel die Bevölkerung verdreifachte, entsprach die Zunahme im Kleinbasel von 10 283 auf 48 455 Einwohnerinnen und Einwohner nahezu einer Verfünffachung. Die Einwohner:innen Kleinhüningens werden ab 1900 dem Kleinbasel zugerechnet.",
   creator = list(
     list(name = "Franziska Schürch"),

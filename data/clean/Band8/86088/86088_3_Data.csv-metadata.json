@@ -59,7 +59,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:36+0200",
+		"@value": "2025-10-12T11:52:34+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Religionszugehörigkeiten in Basel-Stadt, 1950–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb86088.html#m86088_3>, letzte Aktualisierung: 12.10.2025.",
@@ -69,55 +69,55 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Angabe des Jahres nach unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Evangelisch-reformiert",
 				"titles": "Evangelisch-reformiert",
 				"dc:description": "Anzahl der Angehörigen evangelisch-reformierter Glaubensgemeinschaften im Kanton Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Römisch-katholisch",
 				"titles": "Römisch-katholisch",
 				"dc:description": "Anzahl der Angehörigen römisch-katholischer Glaubensgemeinschaften im Kanton Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Andere christliche Glaubensgemeinschaften",
 				"titles": "Andere christliche Glaubensgemeinschaften",
 				"dc:description": "Anzahl der Angehörigen anderer christlicher Glaubensgemeinschaften (weder evangelisch-reformiert, noch römisch-katholisch) im Kanton Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Jüdische Glaubensgemeinschaften",
 				"titles": "Jüdische Glaubensgemeinschaften",
 				"dc:description": "Anzahl der Angehörigen jüdischer Glaubensgemeinschaften im Kanton Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Islamische Glaubensgemeinschaften",
 				"titles": "Islamische Glaubensgemeinschaften",
 				"dc:description": "Anzahl der Angehörigen islamischer Glaubensgemeinschaften im Kanton Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Andere Religionsgemeinschaften",
 				"titles": "Andere Religionsgemeinschaften",
 				"dc:description": "Anzahl der Angehörigen anderer Glaubensgemeinschaften im Kanton Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Konfessionslos",
 				"titles": "Konfessionslos",
 				"dc:description": "Anzahl der konfessionslosen Menschen im Kanton Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Ohne Angabe",
 				"titles": "Ohne Angabe",
 				"dc:description": "Anzahl der Menschen ohne Angabe zur Religionszugehörigkeit im Kanton Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Jahr",

@@ -59,7 +59,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:36+0200",
+		"@value": "2025-10-12T11:52:34+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_2>, letzte Aktualisierung: 12.10.2025.",
@@ -75,7 +75,7 @@
 				"name": "Kultursubventionen pro Kopf in Franken (2021)",
 				"titles": "Kultursubventionen pro Kopf in Franken (2021)",
 				"dc:description": "Summe der Kulturförderung in Schweizer Franken im Jahr 2021",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Kanton",

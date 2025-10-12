@@ -59,7 +59,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:36+0200",
+		"@value": "2025-10-12T11:52:34+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Publikumszahlen an Konzerten und FCB-Spielen im St. Jakob-Stadion, 1960–2022. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88415.html#m88415_3>, letzte Aktualisierung: 12.10.2025.",
@@ -69,25 +69,25 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Angabe des Jahres nach unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Zuschauer:innen FCB-Heimspiele",
 				"titles": "Zuschauer:innen FCB-Heimspiele",
 				"dc:description": "Anzahl der Zuschauer:innen bei Heimspielen des FC Basel im angegebenen Jahr, ab 1967/1968 im St. Jakob-Station, davor im Landhof, 1999-2001 auf der Schützenmatte",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Zuschauer:innen Konzerte",
 				"titles": "Zuschauer:innen Konzerte",
 				"dc:description": "Anzahl der Zuschauer:innen bei Konzerten im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Anzahl Heimspiele",
 				"titles": "Anzahl Heimspiele",
 				"dc:description": "Anzahl der Heimspiele des FC Basel im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Jahr",

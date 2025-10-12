@@ -54,7 +54,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:36+0200",
+		"@value": "2025-10-12T11:52:35+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Anteil der Erwerbstätigen in wichtigen Branchen, 1870 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90886.html#m90886_3>, letzte Aktualisierung: 12.10.2025.",
@@ -70,13 +70,13 @@
 				"name": "1870",
 				"titles": "1870",
 				"dc:description": "Anteil der jeweiligen Branche an der Gesamtsumme der in den genannten Branchen Erwerbstätigen im Jahr 1870, Angabe in Prozent",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "1910",
 				"titles": "1910",
 				"dc:description": "Anteil der jeweiligen Branche an der Gesamtsumme der in den genannten Branchen Erwerbstätigen im Jahr 1910, Angabe in Prozent",
-				"datatype": "number"
+				"datatype": "float"
 			}
 		],
 		"primaryKey": "Branche",

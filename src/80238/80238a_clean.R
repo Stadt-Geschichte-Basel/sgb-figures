@@ -36,6 +36,7 @@ meta80238a <- annotate(
   vol = 8,
   title = "Regierungsrat in Basel-Stadt, 1960–2024",
   column_description = c("Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung", "Anzahl der Regierungsrät*innen aus der Partei 'Grüne' im entsprechenden Jahr", "Anzahl der Regierungsrät*innen aus der Partei 'SP' im entsprechenden Jahr", "Anzahl der parteilosen Regierungsrät*innen im entsprechenden Jahr", "Anzahl der Regierungsrät*innen aus der Partei 'GLP' im entsprechenden Jahr", "Anzahl der Regierungsrät*innen aus der Partei 'DSP' im entsprechenden Jahr", "Anzahl der Regierungsrät*innen aus der Partei 'CVP' im entsprechenden Jahr", "Anzahl der Regierungsrät*innen aus der Partei 'FDP' im entsprechenden Jahr", "Anzahl der Regierungsrät*innen aus der Partei 'LDP' im entsprechenden Jahr", "Gesamtzahl der Regierungsrät*innen im entsprechenden Jahr", "Angabe, ob das Jahr der Beginn einer neuen Legislaturperiode markiert"),
+  column_datatype = c("gYear", rep("integer", 9), "boolean"),
   object_description = "Die Basler Regierung war nach 1960 geprägt von relativ stabilen Verhältnissen. Bis zur Jahrtausendwende herrschte eine knappe bürgerliche Mehrheit, linke Parteien besetzten drei von sieben Sitzen. 2004 eroberten die Grünen einen Sitz der FDP, damit dominierte die rot-grüne Linke. Mit der Wahl von 2020 trat eine Pattsituation ein: Die Grünen verloren ihren Sitz an die GLP, die sowohl ökologische wie liberale Interessen vertritt.",
   creator = list(
     list(name = "Tobias Ehrenbold"),

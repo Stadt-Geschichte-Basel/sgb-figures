@@ -35,6 +35,7 @@ meta20418 <- annotate(
   vol = 4,
   title = "Exportabgaben und Konsumsteuern, 1690–1798",
   column_description = c("Jahreszahl, Angaben bezeichnen jeweils ein Jahr unserer Zeitrechnung", "Handels- und Marktabgaben. Angaben in Pfund", "Konsumabgaben der Stadt. Angaben in Pfund", "Konsumabgaben der Landschaft. Angaben in Pfund", "Einwohnerzahl der Stadt in Personen. Angaben übernommen aus abb17308", "Alternative Angaben zur Einwohnerzahl der Stadt in Personen. Angaben von S. Burghartz"),
+  column_datatype = c("gYear", rep("integer", 5)),
   object_description = "Die logarithmische Darstellung verdeutlicht das exponentielle Wachstum der Abgaben auf Export- und Handelswaren im Vergleich zu den Konsumabgaben. Seit den 1770er-Jahren übertrafen die Konsumabgaben der Landschaft diejenigen der Stadt.",
   creator = list(
     list(name = "Susanna Burghartz"),

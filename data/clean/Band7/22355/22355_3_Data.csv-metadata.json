@@ -51,7 +51,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:32+0200",
+		"@value": "2025-10-12T11:52:30+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Grossratsmandate nach Parteien, 1911–1964. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb22355.html#m22355_3>, letzte Aktualisierung: 12.10.2025.",
@@ -61,61 +61,61 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Liberaldemokratische Bürgerpartei",
 				"titles": "Liberaldemokratische Bürgerpartei",
 				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Liberaldemokratische Bürgerpartei' im entsprechenden Jahr. bis 1956 Liberale Partei, ab 1943 gemeinsame Liste mit der Bürger- und Gewerbe-Partei, seit 1957 eine Partei",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Bürger- und Gewerbepartei",
 				"titles": "Bürger- und Gewerbepartei",
 				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Bürger- und Gewerbepartei' im entsprechenden Jahr. bis 1941 Nationale Volkspartei (bis 1941), ab 1957 vereinigt mit der vormaligen Liberalen Partei zur Liberaldemokratischen Bürgerpartei",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Radikaldemokratische Partei",
 				"titles": "Radikaldemokratische Partei",
 				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Radikaldemokratische Partei' im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Vereinigung Evangelischer Wähler",
 				"titles": "Vereinigung Evangelischer Wähler",
 				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Vereinigung Evangelischer Wähler' im entsprechenden Jahr. bis 1947 Evangelische Volkspartei",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Partei der Arbeit",
 				"titles": "Partei der Arbeit",
 				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Partei der Arbeit' im entsprechenden Jahr. bis 1940 Kommunistische Partei; 1944 Liste der Arbeit; seit 1945 Partei der Arbeit (1960: und parteilose Gewerkschafter)",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Sozialdemokratische Partei",
 				"titles": "Sozialdemokratische Partei",
 				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Sozialdemokratische Partei' im entsprechenden Jahr. bis 1963 Sozialdemokratische Partei: 1964 Sozialdemokraten und Gewerkschafter",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Kath. und Christlich-soziale Volkspartei",
 				"titles": "Kath. und Christlich-soziale Volkspartei",
 				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Kath. und Christlich-Soziale Volkspartei' im entsprechenden Jahr. bis 1961 Katholische Volkspartei; seit 1963 Katholische und Christlichsoziale Volkspartei",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Landesring der Unabhängigen",
 				"titles": "Landesring der Unabhängigen",
 				"dc:description": "Anzahl der Grossratsmitglieder der Partei 'Landesring der Unabhängigen' im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Andere Parteien",
 				"titles": "Andere Parteien",
 				"dc:description": "Anzahl der Grossratsmitglieder anderer Parteien im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Jahr",

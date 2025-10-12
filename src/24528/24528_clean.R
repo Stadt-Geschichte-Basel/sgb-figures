@@ -33,6 +33,7 @@ meta24528 <- annotate(
   vol = 4,
   title = "Temperaturabweichungen in °C, 1444–2011",
   column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Nummer des Tages im jeweiligen Jahr (DOY, Day of Year), an dem die Weinlese begonnen wurde (GHD, Grape Harvest Date)", "Abweichung der mittleren April-Juli-Temperatur verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius", "Abweichung des elfjährig gleitenden Temperaturmittels verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius", "oberer doppelter Standard-Temperaturschätzfehler verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius", "unterer doppelter Standard-Temperaturschätzfehler verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius"),
+  column_datatype = c("gYear", "integer", rep("float", 4)),
   object_description = "Die Temperaturrekonstruktion zeigt, dass die Anomalie im Jahr 1540, der keine langanhaltende Klimaerwärmung folgte, sogar den «bisher heissesten» Sommer 2003 übertraf.",
   creator = list(
     list(name = "Susanna Burghartz"),

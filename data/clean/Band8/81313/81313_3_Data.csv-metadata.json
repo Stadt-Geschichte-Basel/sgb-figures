@@ -59,7 +59,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:35+0200",
+		"@value": "2025-10-12T11:52:33+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Nationalitäten von in Basel-Stadt wohnhaften Ausländerinnen und Ausländern, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb81313.html#m81313_3>, letzte Aktualisierung: 12.10.2025.",
@@ -75,43 +75,43 @@
 				"name": "1960",
 				"titles": "1960",
 				"dc:description": "Anzahl der wohnhaften Ausländer*innen der angegebenen Nationalitäten im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "1970",
 				"titles": "1970",
 				"dc:description": "Anzahl der wohnhaften Ausländer*innen der angegebenen Nationalitäten im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "1980",
 				"titles": "1980",
 				"dc:description": "Anzahl der wohnhaften Ausländer*innen der angegebenen Nationalitäten im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "1990",
 				"titles": "1990",
 				"dc:description": "Anzahl der wohnhaften Ausländer*innen der angegebenen Nationalitäten im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "2000",
 				"titles": "2000",
 				"dc:description": "Anzahl der wohnhaften Ausländer*innen der angegebenen Nationalitäten im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "2010",
 				"titles": "2010",
 				"dc:description": "Anzahl der wohnhaften Ausländer*innen der angegebenen Nationalitäten im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "2020",
 				"titles": "2020",
 				"dc:description": "Anzahl der wohnhaften Ausländer*innen der angegebenen Nationalitäten im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Nationalität",

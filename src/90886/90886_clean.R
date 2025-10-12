@@ -39,6 +39,7 @@ meta90886 <- annotate(
     "Anteil der jeweiligen Branche an der Gesamtsumme der in den genannten Branchen Erwerbstätigen im Jahr 1870, Angabe in Prozent",
     "Anteil der jeweiligen Branche an der Gesamtsumme der in den genannten Branchen Erwerbstätigen im Jahr 1910, Angabe in Prozent"
   ),
+  column_datatype = c("string", rep("float", 2)),
   object_description = "Im Vergleich der Jahre 1870 und 1910 zeichnen sich Veränderungen ab: Die Beschäftigten in der Landwirtschaft gehen auf unter 2 Prozent zurück. Das Baugewerbe löst die Textilindustrie als wichtigster gewerblicher Arbeitgeber ab. Der Anteil des Handels steigt auf 20 Prozent, jener von Dienstbotinnen und Dienstboten sinkt deutlich.",
   creator = list(list(
     name = "Oliver Kühschelm",

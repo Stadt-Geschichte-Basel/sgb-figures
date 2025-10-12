@@ -59,7 +59,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:35+0200",
+		"@value": "2025-10-12T11:52:33+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Anteil an Ausländerinnen und Ausländern im Kanton und in ausgewählten Quartieren, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb81757.html#m81757_3>, letzte Aktualisierung: 12.10.2025.",
@@ -69,49 +69,49 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Jahreszahl nach unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Kanton",
 				"titles": "Kanton",
 				"dc:description": "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung im Kanton Basel-Stadt im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Matthäus",
 				"titles": "Matthäus",
 				"dc:description": "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung im Wohnviertel Matthäus im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "St. Johann",
 				"titles": "St. Johann",
 				"dc:description": "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung im Wohnviertel St. Johann im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Breite",
 				"titles": "Breite",
 				"dc:description": "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung im Wohnviertel Breite im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Gundeldingen",
 				"titles": "Gundeldingen",
 				"dc:description": "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung im Wohnviertel Gundeldingen im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Bruderholz",
 				"titles": "Bruderholz",
 				"dc:description": "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung im Wohnviertel Bruderholz im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "float"
 			},
 			{
 				"name": "Riehen",
 				"titles": "Riehen",
 				"dc:description": "Prozentualer Anteil der Ausländerinnen und Ausländer an der Gesamtbevölkerung in der Gemeinde Riehen im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "float"
 			}
 		],
 		"primaryKey": "Jahr",

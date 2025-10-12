@@ -30,6 +30,7 @@ meta39050d <- annotate(
   vol = 3,
   title = "Einnahmen der Stadt Basel ab 1424",
   column_description = c("Rechnungsjahr, Angabe als Jahreszahl in Jahren unserer Zeitrechnung", "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Steuereinnahmen in Basler Pfund", "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Leibrenten in Basler Pfund", "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: verkäufliche Renten in Basler Pfund"),
+  column_datatype = c("{'base': 'string', 'format': 'yyyy/yy|yyyy-yyyy'}", "integer", rep("float", 2)),
   object_description = c("Die Einnahmen sind jeweils getrennt dargestellt nach ausserordentlichen Einnahmen (direkte Steuern und Anleihen; letztere aufgeschlüsselt nach an den Gläubiger gebundene Leibrenten und verkäufliche Renten) und laufenden Einnahmen (indirekte Steuern und Zölle). Alle Einnahmen in Basler Pfund."),
   creator = list(list(
     name = "Benjamin Hitz",

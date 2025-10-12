@@ -59,7 +59,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:35+0200",
+		"@value": "2025-10-12T11:52:33+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Auflage der Tageszeitungen in der Region Basel, 1966–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80380.html#m80380_3>, letzte Aktualisierung: 12.10.2025.",
@@ -75,97 +75,97 @@
 				"name": "1966",
 				"titles": "1966",
 				"dc:description": "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "1971",
 				"titles": "1971",
 				"dc:description": "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "1972",
 				"titles": "1972",
 				"dc:description": "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "1973",
 				"titles": "1973",
 				"dc:description": "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "1975",
 				"titles": "1975",
 				"dc:description": "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "1978",
 				"titles": "1978",
 				"dc:description": "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "1984",
 				"titles": "1984",
 				"dc:description": "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "1985",
 				"titles": "1985",
 				"dc:description": "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "1990",
 				"titles": "1990",
 				"dc:description": "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "1991",
 				"titles": "1991",
 				"dc:description": "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "1992",
 				"titles": "1992",
 				"dc:description": "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "1996",
 				"titles": "1996",
 				"dc:description": "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "2002",
 				"titles": "2002",
 				"dc:description": "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "2008",
 				"titles": "2008",
 				"dc:description": "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "2014",
 				"titles": "2014",
 				"dc:description": "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "2020",
 				"titles": "2020",
 				"dc:description": "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Tageszeitungen (total verkaufte Auflage Print, exkl. Gratisauflage)",

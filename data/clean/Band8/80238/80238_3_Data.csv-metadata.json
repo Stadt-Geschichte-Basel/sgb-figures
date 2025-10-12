@@ -59,7 +59,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:34+0200",
+		"@value": "2025-10-12T11:52:33+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Regierungsrat in Basel-Stadt, 1960–2024. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb80238.html#m80238_3>, letzte Aktualisierung: 12.10.2025.",
@@ -69,61 +69,61 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Grüne",
 				"titles": "Grüne",
 				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'Grüne' im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "SP",
 				"titles": "SP",
 				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'SP' im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Parteilos",
 				"titles": "Parteilos",
 				"dc:description": "Anzahl der parteilosen Regierungsrät*innen im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "GLP",
 				"titles": "GLP",
 				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'GLP' im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "DSP",
 				"titles": "DSP",
 				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'DSP' im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "CVP",
 				"titles": "CVP",
 				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'CVP' im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "FDP",
 				"titles": "FDP",
 				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'FDP' im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "LDP",
 				"titles": "LDP",
 				"dc:description": "Anzahl der Regierungsrät*innen aus der Partei 'LDP' im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Total",
 				"titles": "Total",
 				"dc:description": "Gesamtzahl der Regierungsrät*innen im entsprechenden Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "NeueLegislatur",

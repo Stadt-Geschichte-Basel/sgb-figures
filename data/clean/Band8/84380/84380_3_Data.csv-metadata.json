@@ -59,7 +59,7 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T00:16:35+0200",
+		"@value": "2025-10-12T11:52:34+0200",
 		"@type": "xs:dateTime"
 	},
 	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Eheschliessungen und Ehescheidungen in Basel-Stadt, 1960–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb84380.html#m84380_3>, letzte Aktualisierung: 12.10.2025.",
@@ -69,19 +69,19 @@
 				"name": "Jahr",
 				"titles": "Jahr",
 				"dc:description": "Angabe des Jahres nach unserer Zeitrechnung",
-				"datatype": "number"
+				"datatype": "gYear"
 			},
 			{
 				"name": "Eheschliessungen",
 				"titles": "Eheschliessungen",
 				"dc:description": "Anzahl der Eheschliessungen im Kanton Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			},
 			{
 				"name": "Ehescheidungen",
 				"titles": "Ehescheidungen",
 				"dc:description": "Anzahl der Ehescheidungen im Kanton Basel-Stadt im angegebenen Jahr",
-				"datatype": "number"
+				"datatype": "integer"
 			}
 		],
 		"primaryKey": "Jahr",

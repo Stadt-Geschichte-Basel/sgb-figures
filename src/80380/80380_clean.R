@@ -106,6 +106,7 @@ meta80380 <- annotate(
     "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage",
     "Total verkaufte Auflage der jeweiligen Zeitung im entsprechenden Jahr. Angaben für die Printausgabe, exkl. Gratisauflage"
   ),
+  column_datatype = c("string", rep("integer", 16)),
   object_description = "Die 'National-Zeitung' fusionierte mit den 'Basler Nachrichten' zur 'Basler Zeitung', die 'Basellandschaftliche Zeitung' übernahm die 'Nordschweiz', und die 'AZ Abend-Zeitung' musste den Betrieb einstellen. Die BaZ war über Jahrzehnte die bestverkaufte Zeitung in der Region – allerdings mit stark rückläufigen Verkaufszahlen. Die Digitalisierung hat den Medienkonsum grundlegend verändert.",
   creator = list(
     list(name = "Tobias Ehrenbold"),
