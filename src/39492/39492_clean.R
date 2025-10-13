@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(magrittr)
-library(csvwr)
-library(jsonlite)
 
 # Functions ------------------
 
@@ -30,6 +27,7 @@ meta39492 <- annotate(
   vol = 3,
   title = "Bürgeraufnahmen und Kriegsausgaben, 1360–1530",
   column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Zeitraum, Angaben in Jahren unserer Zeitrechnung", "Summe der Bürgeraufnahmen im jeweiligen Zeitraum", "Summe der Kriegsausgaben im jeweiligen Zeitraum in Pfund"),
+  column_datatype = c(rep("gYear", 2), "{'base': 'string', 'format': 'yyyy-yyyy'}", rep("integer", 2)),
   object_description = c("Der Zusammenhang zwischen Bürgeraufnahmen und Kriegszügen wird aus der Gegenüberstellung mit den städtischen Kriegsausgaben klar ersichtlich. Bis weit ins 15. Jahrhundert richtete sich die Einbürgerungspolitik nach den Bedürfnissen der Stadt im Kriegsfall und nicht nach der Migration. Entsprechend verging wohl für viele Zugezogene eine lange Zeit zwischen Zuwanderung und Einbürgerung (Daten nach: Portmann 1979, S. 96–99. Rosen 1984, S. 477–479)."),
   creator = list(list(
     name = "Benjamin Hitz",

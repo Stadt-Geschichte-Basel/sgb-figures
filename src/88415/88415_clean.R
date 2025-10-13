@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(magrittr)
-library(jsonlite)
 
 # Functions ------------------
 
@@ -33,6 +30,7 @@ meta88415 <- annotate(
     "Anzahl der Zuschauer:innen bei Konzerten im angegebenen Jahr",
     "Anzahl der Heimspiele des FC Basel im angegebenen Jahr"
   ),
+  column_datatype = c("gYear", rep("integer", 3)),
   object_description = "In den 1980er-Jahren rutschte der FC Basel in eine veritable Krise, die 1988 im Abstieg in die Nationalliga B mündete. Die Spiele besuchten jeweils nur noch etwa 5000 Menschen, deutlich mehr gingen inzwischen für die Grössen der Pop- und Rockmusik ins Stadion. Im 2001 eröffneten neuen St. Jakob-Park fanden Open-Air-Konzerte nur noch selten statt, während bis zu 30 000 Menschen Woche um Woche den FCB bejubelten, der wieder gross aufspielte. Der Einbruch im Jahr 2020 ist auf die Corona-Pandemie zurückzuführen.",
   creator = list(
     list(name = "Tobias Ehrenbold"),

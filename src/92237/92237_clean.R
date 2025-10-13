@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(magrittr)
-library(jsonlite)
 
 # Functions ------------------
 
@@ -30,6 +27,7 @@ meta92237 <- annotate(
     "Anzahl der Einwohnerinnen und Einwohner des Kantons Basel-Stadt im angegebenen Jahr",
     "Anzahl der Einwohnerinnen und Einwohner des Kantons Glarus im angegebenen Jahr"
   ),
+  column_datatype = c("gYear", rep("integer", 2)),
   object_description = "Der Vergleich zwischen Basel-Stadt und Glarus veranschaulicht den sozialen Strukturwandel innerhalb der Schweiz. Um 1850 hatten beide Kantone rund 30 000 Einwohnerinnen und Einwohner. Bis 1910 wuchs die Bevölkerung von Glarus auf etwas über 33 000 Menschen an, während sich die Bevölkerung des Kantons Basel-Stadt auf über 135 000 vervielfachte.",
   creator = list(list(name = "Benedikt Pfister")),
   contributor = list(

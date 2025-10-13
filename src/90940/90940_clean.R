@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(magrittr)
-library(jsonlite)
 
 # Functions ------------------
 
@@ -56,6 +53,7 @@ meta90940 <- annotate(
     "Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von 6000-20000 Franken im entsprechenden Jahr",
     "Anzahl der Gemeindesteuerpflichtigen in der Gruppe der Haushalte mit jährlichem Haushaltseinkommen von >20000 Franken im entsprechenden Jahr"
   ),
+  column_datatype = c("gYear", rep("integer", 5)),
   object_description = "Die Grafik beruht auf den Daten zur Gemeindesteuer. Diese erfasste Haushaltseinkommen ab 800 Franken pro Jahr, der Verdienst der Ehefrau und von minderjährigen Kindern wurde gemeinsam mit dem Einkommen des Mannes versteuert. Die Erhebung war also patriarchal zugeschnitten – und sie erbrachte das Bild einer Bevölkerung, die mehrheitlich am unteren Rand des Möglichen leben musste.",
   creator = list(list(
     name = "Oliver Kühschelm",

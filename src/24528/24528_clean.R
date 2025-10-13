@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(magrittr)
-library(csvwr)
-library(jsonlite)
 
 # Functions ------------------
 
@@ -33,9 +30,13 @@ meta24528 <- annotate(
   vol = 4,
   title = "Temperaturabweichungen in °C, 1444–2011",
   column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Nummer des Tages im jeweiligen Jahr (DOY, Day of Year), an dem die Weinlese begonnen wurde (GHD, Grape Harvest Date)", "Abweichung der mittleren April-Juli-Temperatur verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius", "Abweichung des elfjährig gleitenden Temperaturmittels verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius", "oberer doppelter Standard-Temperaturschätzfehler verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius", "unterer doppelter Standard-Temperaturschätzfehler verglichen mit den monatlichen Anomalien des Mittelwerts von 1901 bis 2000 in Grad Celsius"),
+  column_datatype = c("gYear", "integer", rep("float", 4)),
   object_description = "Die Temperaturrekonstruktion zeigt, dass die Anomalie im Jahr 1540, der keine langanhaltende Klimaerwärmung folgte, sogar den «bisher heissesten» Sommer 2003 übertraf.",
   creator = list(
-    list(name = "Susanna Burghartz"),
+    list(
+      name = "Susanna Burghartz",
+      orcid = "0000-0001-6173-6626"
+    ),
     list(name = "Marcus Sandl"),
     list(name = "Daniel Sidler")
   ),
@@ -51,7 +52,7 @@ meta24528 <- annotate(
     )
   ),
   date = "1444/2011",
-  coverage = list("Frühe Neuzeit", "19. Jahrhundert", "20. Jahrhundert", "21. Jahrhundert"),
+  coverage = "Frühe Neuzeit",
   source = "Wetter, Oliver; Pfister, Christian: Spring–summer Temperatures Reconstructed for Northern Switzerland and Southwestern Germany from Winter Rye Harvest Dates, 1454–1970, in: Climate of the Past 7 (4), 2011, S. 1307–1326. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "In Copyright",
   relation = c("m24528_1", "m24528_2")

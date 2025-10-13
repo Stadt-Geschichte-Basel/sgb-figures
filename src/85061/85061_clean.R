@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(magrittr)
-library(jsonlite)
 library(tidyr)
 
 # Functions ------------------
@@ -43,6 +40,7 @@ meta85061 <- annotate(
     "Angabe des Jahres nach unserer Zeitrechnung",
     "Leerstandsquote in Basel-Stadt in Prozent"
   ),
+  column_datatype = c("gYear", "float"),
   object_description = "Insbesondere in der Hochkonjunktur der 1960er-Jahre, als die Zahl der Einwohnerinnen und Einwohner stark wuchs, war die Wohnungsnot gross. In den 1970er-Jahren entspannte sich die Situation auf dem Wohnungsmarkt. In den 2010er-Jahren machte sich die wachsende Wohnbevölkerung erneut anhand der wenigen freien Wohnungen bemerkbar.",
   creator = list(
     list(name = "Tobias Ehrenbold"),

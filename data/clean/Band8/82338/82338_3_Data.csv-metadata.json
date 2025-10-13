@@ -1,91 +1,102 @@
 {
-	"@context": ["http://www.w3.org/ns/csvw"],
-	"tables": {
-		"url": ["82338_3_Data.csv"],
-		"tableSchema": {
-			"columns": [
-				{
-					"name": "Jahr",
-					"titles": "Jahr",
-					"datatype": "string",
-					"description": "Jahreszahl nach unserer Zeitrechnung"
-				},
-				{
-					"name": "Gesamte Schweiz",
-					"titles": "Gesamte Schweiz",
-					"datatype": "number",
-					"description": "Anteil der Arbeitslosen an der Gesamtbevölkerung der Schweiz in Prozent im entsprechenden Jahr"
-				},
-				{
-					"name": "Kanton Basel-Stadt",
-					"titles": "Kanton Basel-Stadt",
-					"datatype": "number",
-					"description": "Anteil der Arbeitslosen an der Bevölkerung des Kantons Basel-Stadt in Prozent im entsprechenden Jahr"
-				},
-				{
-					"name": "Kanton Genf",
-					"titles": "Kanton Genf",
-					"datatype": "number",
-					"description": "Anteil der Arbeitslosen an der Gesamtbevölkerung des Kantons Genf in Prozent im entsprechenden Jahr"
-				},
-				{
-					"name": "Kanton Zürich",
-					"titles": "Kanton Zürich",
-					"datatype": "number",
-					"description": "Anteil der Arbeitslosen an der Gesamtbevölkerung des Kantons Zürich in Prozent im entsprechenden Jahr"
-				}
-			],
-			"media_id": ["m82338_3"],
-			"isPartOf": {
-				"ObjectID": ["abb82338"],
-				"volume": [
-					"Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
-				]
-			},
-			"title": [
-				"Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002"
-			],
-			"description": [
-				"Die Erfassung der Arbeitslosigkeit ist voller Tücken. In der Statistik werden nur Menschen erfasst, die Anspruch auf Arbeitslosenentschädigungen haben. Der Anteil an Erwerbslosen war während der Rezession Mitte der 1970er-Jahre jedoch wesentlich höher, als es die erhobene Arbeitslosenquote von 0.5 bis 1.5 Prozent vermuten lässt. Die Zahlen blieben niedrig, weil viele ausländische Arbeitnehmerinnen und Arbeitnehmer mit ihrem Stellenverlust auch ihr Aufenthaltsrecht verloren. Im Vergleich zum Landesdurchschnitt verzeichnete der Kanton Basel-Stadt Mitte der 1980er-Jahre eine hohe Arbeitslosenquote von knapp drei Prozent. In der Krise der 1990er-Jahre stieg sie auf fast sechs Prozent, im Kanton Zürich lag sie tiefer, in Westschweizer Kantonen wie Genf noch höher."
-			],
-			"creator": [
-				{
-					"name": ["Tobias Ehrenbold"]
-				},
-				{
-					"name": ["Silas Gusset"]
-				},
-				{
-					"name": ["Anina Zahn"]
-				}
-			],
-			"contributor": [
-				{
-					"name": ["Nico Görlich"],
-					"orcid": ["0000-0003-3860-1488"]
-				},
-				{
-					"name": ["Moritz Twente"],
-					"email": ["mtwente@protonmail.com"],
-					"orcid": ["0009-0005-7187-9774"]
-				}
-			],
-			"publisher": ["Stadt.Geschichte.Basel"],
-			"date": ["1973/2002"],
-			"coverage": ["20. Jahrhundert"],
-			"type": ["Dataset"],
-			"format": ["text/csv"],
-			"source": [
-				"Bundesamt für Statistik, Staatssekretariat für Wirtschaft 2024: Arbeitslose nach Kanton. Jahresdurchschnitt. https://www.bfs.admin.ch/asset/de/30245369. Bearbeitung: Nico Görlich / Moritz Twente"
-			],
-			"language": ["de"],
-			"relation": ["m82338_1", "m82338_2"],
-			"rights": ["Public Domain Mark"],
-			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-10-06T16:44:23+0200"],
-			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb82338.html#m82338_3>, letzte Aktualisierung: 06.10.2025."
-			]
+	"@context": [
+		"http://www.w3.org/ns/csvw",
+		{
+			"@language": "de"
 		}
+	],
+	"url": "82338_3_Data.csv",
+	"dc:identifier": "m82338_3",
+	"dc:title": "Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002",
+	"dc:isPartOf": {
+		"object_id": "abb82338",
+		"volume": "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
+	},
+	"dc:description": {
+		"de": "Die Erfassung der Arbeitslosigkeit ist voller Tücken. In der Statistik werden nur Menschen erfasst, die Anspruch auf Arbeitslosenentschädigungen haben. Der Anteil an Erwerbslosen war während der Rezession Mitte der 1970er-Jahre jedoch wesentlich höher, als es die erhobene Arbeitslosenquote von 0.5 bis 1.5 Prozent vermuten lässt. Die Zahlen blieben niedrig, weil viele ausländische Arbeitnehmerinnen und Arbeitnehmer mit ihrem Stellenverlust auch ihr Aufenthaltsrecht verloren. Im Vergleich zum Landesdurchschnitt verzeichnete der Kanton Basel-Stadt Mitte der 1980er-Jahre eine hohe Arbeitslosenquote von knapp drei Prozent. In der Krise der 1990er-Jahre stieg sie auf fast sechs Prozent, im Kanton Zürich lag sie tiefer, in Westschweizer Kantonen wie Genf noch höher."
+	},
+	"dc:creator": [
+		{
+			"schema:name": "Tobias Ehrenbold"
+		},
+		{
+			"schema:name": "Silas Gusset"
+		},
+		{
+			"schema:name": "Anina Zahn"
+		}
+	],
+	"dc:publisher": {
+		"schema:name": "Stadt.Geschichte.Basel",
+		"schema:url": {
+			"@id": "https://www.wikidata.org/wiki/Q122442230"
+		}
+	},
+	"dc:contributor": [
+		{
+			"schema:name": "Nico Görlich",
+			"schema:identifier": {
+				"@id": "https://orcid.org/0000-0003-3860-1488"
+			}
+		},
+		{
+			"schema:name": "Moritz Twente",
+			"schema:identifier": {
+				"@id": "https://orcid.org/0009-0005-7187-9774"
+			},
+			"schema:email": "mtwente@protonmail.com"
+		}
+	],
+	"dc:date": "1973/2002",
+	"dc:coverage": "20. Jahrhundert",
+	"dc:type": "Dataset",
+	"dc:format": "text/csv",
+	"dc:source": "Bundesamt für Statistik, Staatssekretariat für Wirtschaft 2024: Arbeitslose nach Kanton. Jahresdurchschnitt. https://www.bfs.admin.ch/asset/de/30245369. Bearbeitung: Nico Görlich / Moritz Twente",
+	"dc:language": "de",
+	"dc:relation": ["m82338_1", "m82338_2"],
+	"dc:rights": "Public Domain Mark",
+	"dc:license": {
+		"@id": "https://creativecommons.org/public-domain/pdm/"
+	},
+	"dc:modified": {
+		"@value": "2025-10-12T14:24:24+0200",
+		"@type": "xs:dateTime"
+	},
+	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb82338.html#m82338_3>, letzte Aktualisierung: 12.10.2025.",
+	"tableSchema": {
+		"columns": [
+			{
+				"name": "Jahr",
+				"titles": "Jahr",
+				"dc:description": "Jahreszahl nach unserer Zeitrechnung",
+				"datatype": "gYear"
+			},
+			{
+				"name": "Gesamte Schweiz",
+				"titles": "Gesamte Schweiz",
+				"dc:description": "Anteil der Arbeitslosen an der Gesamtbevölkerung der Schweiz in Prozent im entsprechenden Jahr",
+				"datatype": "float"
+			},
+			{
+				"name": "Kanton Basel-Stadt",
+				"titles": "Kanton Basel-Stadt",
+				"dc:description": "Anteil der Arbeitslosen an der Bevölkerung des Kantons Basel-Stadt in Prozent im entsprechenden Jahr",
+				"datatype": "float"
+			},
+			{
+				"name": "Kanton Genf",
+				"titles": "Kanton Genf",
+				"dc:description": "Anteil der Arbeitslosen an der Gesamtbevölkerung des Kantons Genf in Prozent im entsprechenden Jahr",
+				"datatype": "float"
+			},
+			{
+				"name": "Kanton Zürich",
+				"titles": "Kanton Zürich",
+				"dc:description": "Anteil der Arbeitslosen an der Gesamtbevölkerung des Kantons Zürich in Prozent im entsprechenden Jahr",
+				"datatype": "float"
+			}
+		],
+		"primaryKey": "Jahr",
+		"aboutUrl": "#jahr-{Jahr}"
 	}
 }

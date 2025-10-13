@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(magrittr)
-library(jsonlite)
 
 # Functions ------------------
 
@@ -42,6 +39,7 @@ meta91203 <- annotate(
     "Angabe der Gesamtbevölkerung des Kantons Basel-Stadt im entsprechenden Jahr",
     "Angabe der Zahl der stimmberechtigten Einwohner des Kantons Basel-Stadt im entsprechenden Jahr"
   ),
+  column_datatype = c("gYear", rep("integer", 2)),
   object_description = "Auch wenn das Stimm- und Wahlrecht nach 1875 erweitert wurde, repräsentierten die Stimmberechtigten nur einen Bruchteil der Gesamtbevölkerung. Die Zahlen zur Bevölkerung stammen aus den ‹Mitteilungen des Statistischen Amtes Basel-Stadt›, Nr. 28, Basel 1924, jene zur Anzahl Stimmberechtigter aus dem ‹Kantons-Blatt Basel-Stadt›.",
   creator = list(
     list(name = "Eva Gschwind"),

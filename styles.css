@@ -136,10 +136,21 @@ hr {
 	opacity: 1;
 }
 
+/* DataTable Styling */
+
 .datatable-frame {
 	border: 4px solid #ffe880;
 	border-radius: 8px;
 	padding: 0.5em;
 	background-color: none;
 	margin: none;
+}
+
+.datatable-frame table.dataTable td {
+	border-right: 1px solid #ccc;
+	border-bottom: none;
+}
+
+.datatable-frame table.dataTable td:last-child {
+	border-right: none;
 }

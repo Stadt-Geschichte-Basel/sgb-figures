@@ -2,11 +2,7 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(magrittr)
-library(jsonlite)
 library(tidyr)
-library(dplyr)
 
 # Functions ------------------
 
@@ -34,6 +30,7 @@ meta92209 <- annotate(
     "Zahl der Einwohner:innen von Basel-Stadt mit ausländischer Staatsbürgerschaft im entsprechenden Jahr",
     "Gesamtsumme der Zahl der Einwohner:innen von Basel-Stadt im entsprechenden Jahr"
   ),
+  column_datatype = c("gYear", rep("integer", 4)),
   object_description = "Dank der liberalen Einbürgerungspraxis stieg der Anteil der Menschen mit Basler Bürgerrecht von 1900 bis 1910 von rund 17 000 auf 45 000 Personen an. Der Anteil von Einwohner:innen mit ausländischer Staatsbürgerschaft lag um 1910 bei rund 38 Prozent.",
   creator = list(list(name = "Benedikt Pfister")),
   contributor = list(

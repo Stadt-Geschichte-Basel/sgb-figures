@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(magrittr)
-library(csvwr)
-library(jsonlite)
 
 # Functions ------------------
 
@@ -19,6 +16,8 @@ data39050c <- read_excel(here("data", "raw", "Band3", "39050", "39050_Data_raw.x
   range = "A1:F61"
 )
 
+colnames(data39050c)[1] <- "Rechnungsjahr"
+
 save_clean_csv(data39050c, csv_suffix = 10, vol = 3)
 
 # Create Metadata ------------
@@ -30,6 +29,7 @@ meta39050c <- annotate(
   vol = 3,
   title = "Einnahmen der Stadt Basel ab 1424",
   column_description = c("Jahreszahl, Angabe als Zeitraum in Jahren unserer Zeitrechnung", "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Weinungeld in Basler Pfund", "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Mühlenungeld in Basler Pfund", "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Weinungeld in Gasthäusern in Basler Pfund", "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Zölle in Basler Pfund", "Laufende Einnahmen der Stadt Basel im jeweiligen Zeitraum: Einnahmen von den Messen in Basler Pfund"),
+  column_datatype = c("{'base': 'string', 'format': 'yyyy/yy|yyyy-yyyy'}", "integer", rep("float", 2), rep("integer", 2)),
   object_description = c("Die Einnahmen sind jeweils getrennt dargestellt nach ausserordentlichen Einnahmen (direkte Steuern und Anleihen; letztere aufgeschlüsselt nach an den Gläubiger gebundene Leibrenten und verkäufliche Renten) und laufenden Einnahmen (indirekte Steuern und Zölle). Alle Einnahmen in Basler Pfund."),
   creator = list(list(
     name = "Benjamin Hitz",

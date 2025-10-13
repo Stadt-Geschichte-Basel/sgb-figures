@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(magrittr)
-library(jsonlite)
 
 # Functions ------------------
 
@@ -36,6 +33,7 @@ meta90894 <- annotate(
     "Export von Schappe in das entsprechende Zielland. Angaben in Millionen Franken",
     "Export von Teerfarben in das entsprechende Zielland. Angaben in Millionen Franken"
   ),
+  column_datatype = c("string", rep("integer", 3)),
   object_description = "Die Seidenbandindustrie exportierte im Jahr 1900 Waren im Wert von 31 Millionen Franken. Rund 87 Prozent gingen in die drei wichtigsten Zielländer, so wie auch im Fall des aus Seidenabfällen hergestellten Schappegarns. Die Exporte der Farbenindustrie verweisen bereits auf den Aufstieg der chemischen Industrie. Sie betrugen zwar mit 15 Millionen Franken weniger als die Hälfte des mit Seidenbändern erzielten Exports. Dafür streuten sich die Abnehmerländer breiter. Nur 55 Prozent gingen in die drei wichtigsten Märkte.",
   creator = list(list(
     name = "Oliver Kühschelm",

@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(magrittr)
-library(jsonlite)
 
 # Functions ------------------
 
@@ -36,6 +33,7 @@ meta88300a <- annotate(
     "Name des Kantons, für den Angaben zur Kulturförderung gemacht werden",
     "Summe der Kulturförderung in Schweizer Franken im Jahr 2021"
   ),
+  column_datatype = c("string", "integer"),
   object_description = "Basels Selbstverständnis als Kulturstadt wird im kantonalen Vergleich der Kultursubventionen deutlich. 2021 betrugen diese in Basel-Stadt 408 Franken pro Kopf, im zweitplatzierten Kanton Genf waren es 117 Franken, im Kanton Zürich 81 Franken.",
   creator = list(
     list(name = "Tobias Ehrenbold"),

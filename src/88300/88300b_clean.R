@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(magrittr)
-library(jsonlite)
 
 # Functions ------------------
 
@@ -35,6 +32,7 @@ meta88300b <- annotate(
     "Gruppe der Institutionen, an die im Kanton Basel-Stadt Kulturförderung verteilt wurde",
     "Summe der Förderung in Schweizer Franken im Jahr 2021. Zahlen ohne Beträge aus dem Swisslos-Fonds Basel-Stadt"
   ),
+  column_datatype = c("string", "integer"),
   object_description = "Basels Selbstverständnis als Kulturstadt wird in der Betrachtung der Kultursubventionen deutlich. 2021 betrugen diese in Basel-Stadt 408 Franken pro Kopf. Die öffentliche Hand subventionierte verschiedene Kultureinrichtungen; mit Abstand am meisten Gelder erhielten in Basel das Theater, das Sinfonieorchester und die fünf staatlichen Museen.",
   creator = list(
     list(name = "Tobias Ehrenbold"),

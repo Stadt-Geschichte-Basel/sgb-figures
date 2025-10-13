@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(magrittr)
-library(jsonlite)
 
 # Functions ------------------
 
@@ -32,6 +29,7 @@ meta84380 <- annotate(
     "Anzahl der Eheschliessungen im Kanton Basel-Stadt im angegebenen Jahr",
     "Anzahl der Ehescheidungen im Kanton Basel-Stadt im angegebenen Jahr"
   ),
+  column_datatype = c("gYear", rep("integer", 2)),
   object_description = "Zwischen 1965 und 1975 sank die Zahl der Eheschliessungen in Basel-Stadt um die Hälfte, von über 2000 auf rund 1000 pro Jahr. Gleichzeitig erhöhte sich die Scheidungsrate, die über dem nationalen Schnitt lag: 1960 siebzehn Prozent (Schweiz: elf Prozent), 1980 38 (Schweiz 31). Mit der Abschaffung des Konkubinatsverbots 1978 war die Ehe nicht mehr Voraussetzung für ein gemeinsames Zusammenleben, zudem waren Trennungen weniger stigmatisierend als früher.",
   creator = list(
     list(name = "Tobias Ehrenbold"),

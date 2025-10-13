@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(magrittr)
-library(jsonlite)
 
 # Functions ------------------
 
@@ -40,6 +37,7 @@ meta81313 <- annotate(
     "Anzahl der wohnhaften Ausländer*innen der angegebenen Nationalitäten im entsprechenden Jahr",
     "Anzahl der wohnhaften Ausländer*innen der angegebenen Nationalitäten im entsprechenden Jahr"
   ),
+  column_datatype = c("string", rep("integer", 7)),
   object_description = "Zwischen 1960 und 1970 verdoppelte sich die Zahl der Einwohnerinnen und Einwohner mit ausländischer Staatsangehörigkeit nahezu. Besonders häufig waren Saisonniers aus Südeuropa. Italienerinnen und Italiener machten 1970 45 Prozent der ausländischen Bevölkerung und acht Prozent der Gesamteinwohnerzahl von Basel aus. Fortan sank ihr Anteil, während der Rezession mussten viele die Schweiz verlassen, später liessen sich auch einige einbürgern. Am Ende des 20. Jahrhunderts kam ein grosser Teil der Einwanderinnen und Einwanderer aus Osteuropa, 1990 stammten vierzehn Prozent aller in Basel lebenden Ausländerinnen und Ausländer aus Jugoslawien und dreizehn Prozent aus der Türkei. 2002 führte die Schweiz die Personenfreizügigkeit ein und mit der Globalisierung kamen mehr Menschen aus fernen Ländern; die Bevölkerung wurde diverser. 2020 machte die Gruppe 'Übriges Ausland' mit 34 Prozent den grössten Anteil der ausländischen Einwohnerinnen und Einwohner aus, gefolgt von deutschen (22,5 Prozent) und italienischen (zwölf Prozent) Staatsangehörigen.",
   creator = list(
     list(name = "Tobias Ehrenbold"),

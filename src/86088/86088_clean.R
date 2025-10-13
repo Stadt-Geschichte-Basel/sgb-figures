@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(magrittr)
-library(jsonlite)
 
 # Functions ------------------
 
@@ -38,6 +35,7 @@ meta86088 <- annotate(
     "Anzahl der konfessionslosen Menschen im Kanton Basel-Stadt im angegebenen Jahr",
     "Anzahl der Menschen ohne Angabe zur Religionszugehörigkeit im Kanton Basel-Stadt im angegebenen Jahr"
   ),
+  column_datatype = c("gYear", rep("integer", 8)),
   object_description = "In den 1950er-Jahren waren fast alle Bewohnerinnen und Bewohner von Basel reformiert oder katholisch, kaum jemand konfessionslos und nur wenige Angehörige einer anderen Glaubensgemeinschaft. Das hat sich seither grundlegend verändert. Basel entwickelte sich zu einer multireligiösen Gesellschaft. Der muslimische Glaube etablierte sich, das Christentum verlor derweil an Bedeutung im Alltag. Keine andere Stadt in der Schweiz hatte um 2020 so viele Konfessionslose wie Basel.",
   creator = list(
     list(name = "Tobias Ehrenbold"),

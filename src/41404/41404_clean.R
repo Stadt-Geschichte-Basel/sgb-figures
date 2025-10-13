@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(magrittr)
-library(csvwr)
-library(jsonlite)
 
 # Functions ------------------
 
@@ -41,10 +38,17 @@ meta41404 <- annotate(
   vol = 3,
   title = "Rheinhochwasser bei Basel-Schifflände, 1300–2021",
   column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Abflussmenge Q in Kubikmetern pro Sekunde", "P, Angabe in Meter über Meer (m. ü. M.)", "100-jähriges gleitendes Hochwasserabflussmittel der rekonstruierten sowie aller gemessenen Jahresabflussmaxima in Kubikmetern pro Sekunde", "Gewässerkorrektionen im jeweilige Jahr: Kanderkorrektion (ab 1714) und Juragewässerkorrektion (ab 1878)"),
+  column_datatype = c("gYear", rep("float", 3), "string"),
   object_description = "Visualisierung der rekonstruierten und gemessenen Hochwasserstände. Gelbe Balken: die Kanderkorrektion (ab 1714) und die Juragewässerkorrektion (ab 1878). Rote Kurve: 100-jähriges gleitendes Hochwasserabflussmittel der rekonstruierten sowie aller gemessenen Jahresabflussmaxima. Graue Balken: 100-jähriges gleitendes Hochwasserabflussmittel der rekonstruierten sowie der höchsten gemessenen Jahresabflussmaxima.",
   creator = list(
-    list(name = "Oliver Wetter"),
-    list(name = "Claudia Moddelmog")
+    list(
+      name = "Oliver Wetter",
+      orcid = "0000-0003-1200-3498"
+    ),
+    list(
+      name = "Claudia Moddelmog",
+      orcid = "0000-0003-1555-1887"
+    )
   ),
   contributor = list(
     list(
@@ -58,7 +62,7 @@ meta41404 <- annotate(
     )
   ),
   date = "1300/2021",
-  coverage = list("Mittelalter", "Frühe Neuzeit", "19. Jahrhundert", "20. Jahrhundert", "21. Jahrhundert"),
+  coverage = "Mittelalter",
   source = "Wetter, O., Pfister, C., Weingartner, R. u.a.: The largest floods in the High Rhine basin since 1268 assessed from documentary and instrmental evidence, in: Hydrological Sciences Journal 56 (5), 2011, S. 733-758. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
   relation = c("m41404_1", "m41404_2")

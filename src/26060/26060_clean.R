@@ -2,8 +2,6 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(jsonlite)
 library(tidyr)
 
 # Functions ------------------
@@ -39,6 +37,7 @@ meta26060 <- annotate(
     "Anzahl der im jeweiligen Wirtschaftszweig beschäftigten Personen im Kanton Basel-Stadt im Jahr 1955",
     "Anzahl der im jeweiligen Wirtschaftszweig beschäftigten Personen im Kanton Basel-Stadt im Jahr 1965"
   ),
+  column_datatype = c("string", rep("float", 4)),
   object_description = "Zehn Jahre sollte der Abstand zwischen den einzelnen Zählungen betragen, was die beiden Weltkriege jedoch verhinderten. Trotz beträchtlicher zeitlicher Abstände untersuchten die Statistiker die erhobenen Daten auf Kontinuitäten und Veränderungen. Bei der Zusammenstellung der vier Zählungen von 1965 fällt auf, dass 1939 – als Folge der Wirtschaftskrise der 1930er Jahre – die Zahl der Beschäftigten tiefer ist als 1929, obschon im selben Zeitraum der Kanton einen Bevölkerungszuwachs erfuhr. Von einer deutlichen Zunahme der Beschäftigten während der Hochkonjunktur hingegen zeugen die Daten von 1955 und 1965. Die Zahl der Beschäftigten in «Bergbau, Steinbrüche, Gruben» ist dermassen klein (zwischen 25 und 10), dass sie in der Grafik nicht erscheint.",
   creator = list(list(name = "Isabel Koellreuter")),
   contributor = list(

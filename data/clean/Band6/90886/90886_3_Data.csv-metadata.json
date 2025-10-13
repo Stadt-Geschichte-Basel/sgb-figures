@@ -1,72 +1,85 @@
 {
-	"@context": ["http://www.w3.org/ns/csvw"],
-	"tables": {
-		"url": ["90886_3_Data.csv"],
-		"tableSchema": {
-			"columns": [
-				{
-					"name": "Branche",
-					"titles": "Branche",
-					"datatype": "string",
-					"description": "Bezeichnung der Branche, für die die jeweiligen Zahlen zum Anteil der dort beschäftigten im jeweiligen Jahr gilt"
-				},
-				{
-					"name": "1870",
-					"titles": "1870",
-					"datatype": "number",
-					"description": "Anteil der jeweiligen Branche an der Gesamtsumme der in den genannten Branchen Erwerbstätigen im Jahr 1870, Angabe in Prozent"
-				},
-				{
-					"name": "1910",
-					"titles": "1910",
-					"datatype": "number",
-					"description": "Anteil der jeweiligen Branche an der Gesamtsumme der in den genannten Branchen Erwerbstätigen im Jahr 1910, Angabe in Prozent"
-				}
-			],
-			"media_id": ["m90886_3"],
-			"isPartOf": {
-				"ObjectID": ["abb90886"],
-				"volume": [
-					"Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
-				]
-			},
-			"title": ["Anteil der Erwerbstätigen in wichtigen Branchen, 1870 und 1910"],
-			"description": [
-				"Im Vergleich der Jahre 1870 und 1910 zeichnen sich Veränderungen ab: Die Beschäftigten in der Landwirtschaft gehen auf unter 2 Prozent zurück. Das Baugewerbe löst die Textilindustrie als wichtigster gewerblicher Arbeitgeber ab. Der Anteil des Handels steigt auf 20 Prozent, jener von Dienstbotinnen und Dienstboten sinkt deutlich."
-			],
-			"creator": [
-				{
-					"name": ["Oliver Kühschelm"],
-					"orcid": ["0000-0002-3091-5426"]
-				}
-			],
-			"contributor": [
-				{
-					"name": ["Nico Görlich"],
-					"orcid": ["0000-0003-3860-1488"]
-				},
-				{
-					"name": ["Moritz Twente"],
-					"email": ["mtwente@protonmail.com"],
-					"orcid": ["0009-0005-7187-9774"]
-				}
-			],
-			"publisher": ["Stadt.Geschichte.Basel"],
-			"date": ["[1870, 1910]"],
-			"coverage": ["19. Jahrhundert"],
-			"type": ["Dataset"],
-			"format": ["text/csv"],
-			"source": [
-				"Polivka, Heinz: Basel und seine Wirtschaft. Eine Zeitreise durch 2000 Jahre, Lenzburg 2016, S. 206. Bearbeitung: Nico Görlich / Moritz Twente"
-			],
-			"language": ["de"],
-			"relation": ["m90886_1", "m90886_2"],
-			"rights": ["Public Domain Mark"],
-			"license": ["https://creativecommons.org/public-domain/pdm/"],
-			"modified": ["2025-10-06T16:44:43+0200"],
-			"bibliographicCitation": [
-				"Stadt.Geschichte.Basel: Anteil der Erwerbstätigen in wichtigen Branchen, 1870 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90886.html#m90886_3>, letzte Aktualisierung: 06.10.2025."
-			]
+	"@context": [
+		"http://www.w3.org/ns/csvw",
+		{
+			"@language": "de"
 		}
+	],
+	"url": "90886_3_Data.csv",
+	"dc:identifier": "m90886_3",
+	"dc:title": "Anteil der Erwerbstätigen in wichtigen Branchen, 1870 und 1910",
+	"dc:isPartOf": {
+		"object_id": "abb90886",
+		"volume": "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
+	},
+	"dc:description": {
+		"de": "Im Vergleich der Jahre 1870 und 1910 zeichnen sich Veränderungen ab: Die Beschäftigten in der Landwirtschaft gehen auf unter 2 Prozent zurück. Das Baugewerbe löst die Textilindustrie als wichtigster gewerblicher Arbeitgeber ab. Der Anteil des Handels steigt auf 20 Prozent, jener von Dienstbotinnen und Dienstboten sinkt deutlich."
+	},
+	"dc:creator": {
+		"schema:name": "Oliver Kühschelm",
+		"schema:identifier": {
+			"@id": "https://orcid.org/0000-0002-3091-5426"
+		}
+	},
+	"dc:publisher": {
+		"schema:name": "Stadt.Geschichte.Basel",
+		"schema:url": {
+			"@id": "https://www.wikidata.org/wiki/Q122442230"
+		}
+	},
+	"dc:contributor": [
+		{
+			"schema:name": "Nico Görlich",
+			"schema:identifier": {
+				"@id": "https://orcid.org/0000-0003-3860-1488"
+			}
+		},
+		{
+			"schema:name": "Moritz Twente",
+			"schema:identifier": {
+				"@id": "https://orcid.org/0009-0005-7187-9774"
+			},
+			"schema:email": "mtwente@protonmail.com"
+		}
+	],
+	"dc:date": "[1870, 1910]",
+	"dc:coverage": "19. Jahrhundert",
+	"dc:type": "Dataset",
+	"dc:format": "text/csv",
+	"dc:source": "Polivka, Heinz: Basel und seine Wirtschaft. Eine Zeitreise durch 2000 Jahre, Lenzburg 2016, S. 206. Bearbeitung: Nico Görlich / Moritz Twente",
+	"dc:language": "de",
+	"dc:relation": ["m90886_1", "m90886_2"],
+	"dc:rights": "Public Domain Mark",
+	"dc:license": {
+		"@id": "https://creativecommons.org/public-domain/pdm/"
+	},
+	"dc:modified": {
+		"@value": "2025-10-12T14:24:25+0200",
+		"@type": "xs:dateTime"
+	},
+	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Anteil der Erwerbstätigen in wichtigen Branchen, 1870 und 1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90886.html#m90886_3>, letzte Aktualisierung: 12.10.2025.",
+	"tableSchema": {
+		"columns": [
+			{
+				"name": "Branche",
+				"titles": "Branche",
+				"dc:description": "Bezeichnung der Branche, für die die jeweiligen Zahlen zum Anteil der dort beschäftigten im jeweiligen Jahr gilt",
+				"datatype": "string"
+			},
+			{
+				"name": "1870",
+				"titles": "1870",
+				"dc:description": "Anteil der jeweiligen Branche an der Gesamtsumme der in den genannten Branchen Erwerbstätigen im Jahr 1870, Angabe in Prozent",
+				"datatype": "float"
+			},
+			{
+				"name": "1910",
+				"titles": "1910",
+				"dc:description": "Anteil der jeweiligen Branche an der Gesamtsumme der in den genannten Branchen Erwerbstätigen im Jahr 1910, Angabe in Prozent",
+				"datatype": "float"
+			}
+		],
+		"primaryKey": "Branche",
+		"aboutUrl": "#branche-{Branche}"
 	}
 }

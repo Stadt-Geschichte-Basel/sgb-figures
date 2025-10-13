@@ -55,37 +55,55 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     # --- Extract Metadata from File ----
     # Read the JSON file and extract the schema information.
     meta <- fromJSON(metadata_file)
-    schema <- meta$tables$tableSchema
 
     # Extract specific metadata fields and create formatted links where applicable.
-    fig_id <- schema$isPartOf$ObjectID[[1]]
+    fig_id <- meta$`dc:isPartOf`$object_id[[1]]
     fig_link <- glue("{fig_id} ([Research Data Platform](https://forschung.stadtgeschichtebasel.ch/items/{fig_id}.html))")
 
-    publisher <- schema$publisher[[1]]
+    publisher <- meta$`dc:publisher`[[1]]
     publisher_link <- glue("[{publisher}](https://www.wikidata.org/wiki/Q122442230)")
 
     # individual authors are not parsed at the moment, listing SGB instead
     creators_str <- publisher_link
 
-    # Process contributors list.
-    contributors <- unlist(schema$contributor[[1]])
-    contributors_str <- paste(contributors, collapse = ", ")
+    # Process contributors list with ORCID
+    contributors <- meta$`dc:contributor`
+    if (!is.null(contributors)) {
+      contributors_str <- sapply(seq_len(nrow(contributors)), function(i) {
+        contributor <- contributors[i, ]
+        name <- contributor$`schema:name`
+
+        # extract ORCID for contributor if available
+        orcid_id <- contributor$`schema:identifier`$`@id`
+
+        if (!is.null(orcid_id) && !is.na(orcid_id)) {
+          sprintf(
+            "%s <a href='%s' target='_blank'>![ORCID](../../assets/img/ORCID-iD_icon_vector.svg){width=16}</a>",
+            name, orcid_id
+          )
+        } else {
+          name
+        }
+      }) |> paste(collapse = " / ")
+    } else {
+      contributors_str <- ""
+    }
 
     # Create a clickable link for the license.
-    license <- schema$license[[1]]
+    license <- meta$`dc:license`[[1]]
     license_link <- glue("[{license}]({license})")
 
     ## --- Read Column Descriptions ---
     # Extract column names and their descriptions from the schema.
-    columns_info <- schema$columns[c("name", "description")]
+    columns_info <- meta$tableSchema$columns[c("name", "dc:description")]
 
     # Collapse the column info into a bullet point list md string for display.
     columns_str <- paste(apply(columns_info, 1, function(row) {
-      paste0("- **", row["name"], ":** ", row["description"])
+      paste0("- **", row["name"], ":** ", row["dc:description"])
     }), collapse = "\n")
 
     ## --- Map Volume Numbers to Open Access DOIs ---
-    vol_text <- schema$isPartOf$volume[[1]]
+    vol_text <- meta$`dc:isPartOf`$volume[[1]]
     vol_short <- str_extract(vol_text, "Stadt\\.Geschichte\\.Basel\\s*\\d+")
     vol_num <- as.integer(str_extract(vol_short, "\\d+"))
 
@@ -99,30 +117,30 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     # If a valid volume number is found, create a DOI link.
     if (!is.na(vol_num) && vol_num >= 1 && vol_num <= length(doi_suffixes)) {
       vol_link <- glue("[Stadt.Geschichte.Basel {vol_num}](https://doi.org/10.21255/sgb-{doi_suffixes[vol_num]})")
-      vol_text <- sub(vol_short, vol_link, vol_text, fixed = TRUE)
+      vol_text_link <- sub(vol_short, vol_link, vol_text, fixed = TRUE)
     }
 
-    ## Parse schema$modified and reformat for output
-    date_modified <- schema$modified[[1]] |>
+    ## Parse meta$`dc:modified` and reformat for output
+    date_modified <- meta$`dc:modified`[[1]] |>
       as.POSIXct(format = "%Y-%m-%dT%H:%M:%S%z") |>
       format("%Y-%m-%d %H:%M:%S")
 
     # --- Create a list of metadata fields to appear in the metadata table ---
     fields <- list(
       Figure = fig_link,
-      Title = schema$title[[1]],
-      Description = schema$description[[1]],
+      Title = meta$`dc:title`[[1]],
+      Description = meta$`dc:description`[[1]],
       Creator = creators_str,
       Contributors = contributors_str,
       Publisher = publisher_link,
-      Date = schema$date[[1]],
-      Coverage = schema$coverage[[1]],
-      "is Part of" = vol_text,
+      Date = meta$`dc:date`[[1]],
+      Coverage = meta$`dc:coverage`[[1]],
+      "is Part of" = vol_text_link,
       Dataset = data_link,
-      "Source (Dataset)" = schema$source[[1]],
+      "Source (Dataset)" = meta$`dc:source`[[1]],
       "Metadata (Dataset)" = meta_link,
-      "Citation (Dataset)" = schema$bibliographicCitation[[1]],
-      Rights = schema$rights[[1]],
+      "Citation (Dataset)" = meta$`dc:bibliographicCitation`[[1]],
+      Rights = meta$`dc:rights`[[1]],
       License = license_link,
       Modified = date_modified
     )
@@ -130,7 +148,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     # Return all processed information for this dataset.
     list(
       fields = fields,
-      schema = schema,
+      vol_text = vol_text,
       vol_short = vol_short,
       col_description = columns_str
     )
@@ -308,10 +326,10 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
   # Assemble the YAML front matter and the body of the Quarto document.
   qmd_text <- c(
     "---",
-    glue("title: \"{main_metadata$schema$title[[1]]}\""),
+    glue("title: \"{main_metadata$fields$Title[[1]]}\""),
     "subtitle: Plot and Data Preview",
-    glue("date-modified: {as.Date(main_metadata$schema$modified[[1]])}"),
-    glue("volume: \"{main_metadata$schema$isPartOf$volume[[1]]}\""),
+    glue("date-modified: {as.Date(main_metadata$fields$Modified[[1]])}"),
+    glue("volume: \"{main_metadata$vol_text}\""),
     glue("vol_short: \"{main_metadata$vol_short}\""),
     glue("plotid: \"{plotid_meta}\""),
     "format:",

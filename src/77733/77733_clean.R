@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(jsonlite)
-library(magrittr)
 
 # Functions ------------------
 
@@ -31,6 +28,7 @@ meta77733 <- annotate(
   vol = 8,
   title = "Bevölkerungsentwicklung in den Kantonen Basel-Stadt und Basel-Landschaft, 1940–2020",
   column_description = c("Jahreszahl im 20. Jahrhundert nach unserer Zeitrechnung", "Anzahl der die Wohnbevölkerung des Kantons Basel-Stadt bildenden Menschen im entsprechenden Jahr. Die Zahlen beruhen bis 1969 auf Volkszählungen, ab 1970 handelt es sich um Rückberechnungen auf Basis des Bestandes der Einwohnerdienste im Jahr 1990", "Anzahl der die Wohnbevölkerung des Kantons Basel-Landschaft bildenden Menschen im entsprechenden Jahr. Ab dem Jahr 1994 inklusive Laufental"),
+  column_datatype = c("gYear", rep("integer", 2)),
   object_description = "Während der Kanton Basel-Stadt nach 1970 einen markanten Rückgang verzeichnete, nahm die Bevölkerung in Basel-Landschaft kontinuierlich zu. Viele junge Familien zog es in die Agglomeration, wo der Traum vom Eigenheim noch finanzierbar war. Die Entwicklung der Wohnbevölkerung veranschaulicht den Trend der Stadtflucht, der im 21. Jahrhundert abflaute.",
   creator = list(
     list(name = "Tobias Ehrenbold"),

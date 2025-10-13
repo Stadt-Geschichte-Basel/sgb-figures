@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(magrittr)
-library(jsonlite)
 
 # Functions ------------------
 
@@ -35,6 +32,7 @@ meta92492 <- annotate(
     "Anteil der Jüdinnen und Juden an der Gesamtbevölkerung in Prozent",
     "Anteil Angehöriger anderer, keiner oder unbekannter Religionen bzw. Konfessionen an der Gesamtbevölkerung in Prozent"
   ),
+  column_datatype = c("gYear", rep("float", 5)),
   object_description = "Der Anteil der Protestantinnen und Protestanten an der Bevölkerung verringerte sich von 75 Prozent 1860 auf 63,4 Prozent 1910. Im gleichen Zeitraum stieg der Anteil der Katholikinnen und Katholiken von einem Viertel auf einen Drittel und die jüdische Bevölkerung vergrösserte sich beinahe um den Faktor fünf.",
   creator = list(list(name = "Benedikt Pfister")),
   contributor = list(

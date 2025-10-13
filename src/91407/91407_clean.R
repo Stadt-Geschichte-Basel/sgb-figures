@@ -2,11 +2,7 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(magrittr)
-library(jsonlite)
 library(tidyr)
-library(dplyr)
 
 # Functions ------------------
 
@@ -53,6 +49,7 @@ meta91407 <- annotate(
     "Anzahl der Mandate der KVP/CPV nach den Grossratswahlen im angegebenen Jahr",
     "Anzahl der Mandate für übrige Parteien/Kandidaturen nach den Grossratswahlen im angegebenen Jahr"
   ),
+  column_datatype = c("gYear", rep("integer", 7)),
   object_description = "Die Einführung des Proporzes 1905 bedeutete eine Zäsur. Mit dem Erstarken der Sozialdemokratischen Partei (SP) und der Katholischen Volkspartei (KVP) diversifizierte sich die Parteienlandschaft. Davor stand die Wahl von Persönlichkeiten im Vordergrund, die auf Wahllisten für die Freisinnigen (Radikale, Demokraten, FDP/RDP), die liberal-konservative Mitte (Juste Milieu, Zentrum) und die Konservativen (LP, LDP) kandidierten.",
   creator = list(
     list(name = "Eva Gschwind"),

@@ -1,48 +1,26 @@
-# Packages ---------
-
-## --- Ensure required packages are installed ---
-required_packages <- c("here", "csvwr", "jsonlite")
-for (pkg in required_packages) {
-  if (!requireNamespace(pkg, quietly = TRUE)) {
-    message(paste("Restoring package:", pkg, " from renv lockfile."))
-    renv::restore()
-  }
-}
-
-library(here)
-library(csvwr)
 library(jsonlite)
+library(here)
+library(lubridate)
 
-# Function to Create Metadata ---------
-
-annotate <- function(data, media_id, csv_suffix, vol, title, column_description, object_description, creator,
-                     contributor, date, coverage, source, relation, rights) {
-  # derive folder ID from media_id (first 5 digits only)
+annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
+                     column_datatype, object_description, creator, contributor,
+                     date, coverage, source, relation, rights, lang = "de") {
+  # Derive folder ID ----
   folder_id <- sub("^(\\d{5}).*$", "\\1", media_id)
-
-  # Build suffix part
   suffix_part <- if (!is.null(csv_suffix)) paste0("_", csv_suffix) else ""
 
-  # derive license URL based on rights string
-  license_url <- if (grepl("CC BY-SA", rights, ignore.case = TRUE)) {
-    "https://creativecommons.org/licenses/by-sa/4.0/"
-  } else if (grepl("Public Domain Mark", rights, ignore.case = TRUE)) {
-    "https://creativecommons.org/public-domain/pdm/"
-  } else if (grepl("CC BY", rights, ignore.case = TRUE)) {
-    "https://creativecommons.org/licenses/by/4.0/"
-  } else if (grepl("In Copyright", rights, ignore.case = TRUE)) {
-    "https://rightsstatements.org/vocab/InC-RUU/1.0/"
-  } else {
-    NA
-  }
+  # Prepare output paths ----
+  csv_filename <- paste0(folder_id, suffix_part, "_Data.csv")
+  json_folder <- here("data", "clean", paste0("Band", vol), folder_id)
+  if (!dir.exists(json_folder)) dir.create(json_folder, recursive = TRUE)
+  json_file <- file.path(json_folder, paste0(csv_filename, "-metadata.json"))
 
-  # derive basic schema using csvwr::derive_table_schema()
-  metadata <- derive_table_schema(data)
+  # Build Identifier ----
+  identifier <- paste0("m", media_id, "_", csv_suffix)
 
-  # add Stadt.Geschichte.Basel Data Model
-  metadata$media_id <- paste0("m", folder_id, suffix_part)
-  metadata$isPartOf <- list(
-    ObjectID = paste0("abb", folder_id),
+  # Set abb and vol for is_part_of ----
+  is_part_of <- list(
+    object_id = paste0("abb", folder_id),
     volume = switch(vol,
       "Lassau, Guido; Schwarz, Peter-Andrew (Hg.): Auf dem langen Weg zur Stadt. 50 000 v. Chr.–800 n. Chr. Basel 2024 (Stadt.Geschichte.Basel 1).",
       "Sieber-Lehmann, Claudius; Schwarz, Peter-Andrew (Hg.): Eine Bischofsstadt zwischen Oberrhein und Jura. 800–1273. Basel 2024 (Stadt.Geschichte.Basel 2).",
@@ -55,45 +33,98 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
       "Baur, Esther; Gafner, Lina (Hg.): Stadträume. Offen und begrenzt, gestaltet und umkämpft. Basel 2025 (Stadt.Geschichte.Basel 9)."
     )
   )
-  metadata$columns[["description"]] <- column_description
-  metadata$title <- title
-  metadata$description <- object_description
-  metadata$creator <- creator
-  metadata$contributor <- contributor
-  metadata$publisher <- "Stadt.Geschichte.Basel"
-  metadata$date <- date
-  metadata$coverage <- coverage
-  metadata$type <- "Dataset"
-  metadata$format <- "text/csv"
-  metadata$source <- source
-  metadata$language <- "de"
-  metadata$relation <- relation
-  metadata$rights <- rights
-  metadata$license <- license_url
-  metadata$modified <- format(Sys.time(), "%Y-%m-%dT%H:%M:%S%z")
-  metadata$bibliographicCitation <- paste0(
-    "Stadt.Geschichte.Basel: ", title, ". Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb", folder_id, ".html#m", folder_id, suffix_part, ">, letzte Aktualisierung: ", format(Sys.Date(), format = "%d.%m.%Y"), "."
+
+  # Build publisher info ----
+  publisher <- list(
+    `schema:name` = "Stadt.Geschichte.Basel",
+    `schema:url` = list(`@id` = "https://www.wikidata.org/wiki/Q122442230")
   )
 
-  # Build folder path
-  json_folder <- here("data", "clean", paste0("Band", vol), folder_id)
-
-  # Create folder if needed
-  if (!dir.exists(json_folder)) {
-    dir.create(json_folder, recursive = TRUE)
+  # Normalize creator and contributor ----
+  normalize_person <- function(person) {
+    out <- list(`schema:name` = person$name)
+    if (!is.null(person$orcid)) {
+      out$`schema:identifier` <- list(`@id` = paste0("https://orcid.org/", person$orcid))
+    }
+    if (!is.null(person$email)) {
+      out$`schema:email` <- person$email
+    }
+    out
   }
 
-  # File name uses pure folder_id + optional suffix
-  csv_filename <- paste0(folder_id, suffix_part, "_Data.csv")
-  json_file <- file.path(json_folder, paste0(csv_filename, "-metadata.json"))
+  # Normalize creators and contributors
+  creators_list <- lapply(creator, normalize_person)
+  contributors_list <- lapply(contributor, normalize_person)
 
-  # write JSON
-  list(
+  # If only one person, unbox to object instead of array
+  creators <- if (length(creators_list) == 1) creators_list[[1]] else creators_list
+  contributors <- if (length(contributors_list) == 1) contributors_list[[1]] else contributors_list
+
+  # Determine license URL ----
+  license_url <- if (grepl("CC BY-SA", rights, ignore.case = TRUE)) {
+    "https://creativecommons.org/licenses/by-sa/4.0/"
+  } else if (grepl("Public Domain Mark", rights, ignore.case = TRUE)) {
+    "https://creativecommons.org/public-domain/pdm/"
+  } else if (grepl("CC BY", rights, ignore.case = TRUE)) {
+    "https://creativecommons.org/licenses/by/4.0/"
+  } else if (grepl("In Copyright", rights, ignore.case = TRUE)) {
+    "https://rightsstatements.org/vocab/InC-RUU/1.0/"
+  } else {
+    NA
+  }
+
+
+  if (length(column_description) != ncol(data) || length(column_datatype) != ncol(data)) {
+    stop("Lengths of column_description and column_datatype must match number of data columns.")
+  }
+
+  # Build tableSchema ----
+  columns <- lapply(seq_along(colnames(data)), function(i) {
+    col_name <- colnames(data)[i]
+    list(
+      name = col_name,
+      titles = col_name,
+      `dc:description` = column_description[[i]],
+      datatype = column_datatype[[i]]
+    )
+  })
+
+  # Compose full metadata structure ----
+  metadata <- list(
+    `@context` = list("http://www.w3.org/ns/csvw", list(`@language` = lang)),
     url = csv_filename,
-    tableSchema = metadata
-  ) |>
-    create_metadata() |>
-    toJSON() |>
+    `dc:identifier` = identifier,
+    `dc:title` = title,
+    `dc:isPartOf` = is_part_of,
+    # `dc:subject` = subjects, # not yet implemented
+    `dc:description` = setNames(list(object_description), lang),
+    `dc:creator` = creators,
+    `dc:publisher` = publisher,
+    `dc:contributor` = contributors,
+    `dc:date` = date,
+    `dc:coverage` = coverage,
+    `dc:type` = "Dataset",
+    `dc:format` = "text/csv",
+    `dc:source` = source,
+    `dc:language` = lang,
+    `dc:relation` = relation,
+    `dc:rights` = rights,
+    `dc:license` = list(`@id` = license_url),
+    `dc:modified` = list(`@value` = format(Sys.time(), "%Y-%m-%dT%H:%M:%S%z"), `@type` = "xs:dateTime"),
+    `dc:bibliographicCitation` = paste0(
+      "Stadt.Geschichte.Basel: ", title, ". Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb", folder_id, ".html#m", folder_id, suffix_part, ">, letzte Aktualisierung: ", format(Sys.Date(), format = "%d.%m.%Y"), "."
+    ),
+    tableSchema = list(
+      columns = columns,
+      primaryKey = colnames(data)[1],
+      aboutUrl = paste0("#", tolower(colnames(data)[1]), "-{", colnames(data)[1], "}")
+    )
+  )
+
+  # Write JSON ----
+  toJSON(metadata, auto_unbox = TRUE) |>
     prettify() |>
     write(json_file)
+
+  invisible(metadata)
 }

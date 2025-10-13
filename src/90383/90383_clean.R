@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(magrittr)
-library(jsonlite)
 
 # Functions ------------------
 
@@ -40,6 +37,7 @@ meta90383 <- annotate(
     "Anzahl der Zugehörigen zur Klasse 5 'Ungelernte Arbeiter'.",
     "Anzahl der Zugehörigen zur Klasse 6 'Häusliche Dienstboten'."
   ),
+  column_datatype = c("gYear", rep("integer", 6)),
   object_description = "Um die soziale Zusammensetzung der Wohnviertel zu bestimmen, teilte die Volkszählung von 1910 die Bevölkerung in «Erwerbstätige nach sozialen Klassen» ein. Während im Alban-Viertel die obersten drei sozialen Klassen mehr als ein Drittel ausmachten, waren es im Klybeck knapp ein Fünftel, dafür ungleich mehr gelernte und ungelernte Arbeiter. Obschon die Dienstboten im Alban-Viertel die Anzahl hoher Beamter und Leiter von Grossbetrieben deutlich übertrafen, wurden sie für die Charakterisierung der Stadtteile nicht miteinbezogen: Für die Prägung eines Stadtteils waren sie in den Augen der Statistiker keine relevante Grösse.",
   creator = list(
     list(name = "Franziska Schürch"),

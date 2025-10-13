@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(magrittr)
-library(csvwr)
-library(jsonlite)
 
 # Functions ------------------
 
@@ -36,6 +33,7 @@ meta21912 <- annotate(
   vol = 7,
   title = "Kantonale Staatsausgaben pro Einwohner in CHF, 1920–1966",
   column_description = c("Jahreszahl, Angabe in Jahren unserer Zeitrechnung", "Höhe der Staatsausgaben des Kantons Basel-Stadt in Schweizer Franken pro Einwohner:in im angegebenen Jahr"),
+  column_datatype = c("gYear", "float"),
   object_description = "Die Zahl der Staatsangestellten und die Staatsausgaben wuchsen zwischen 1912 und 1966 deutlich überproportional im Verhältnis zur Einwohnerschaft.",
   creator = list(list(name = "Noëmi Crain Merz")),
   contributor = list(

@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(jsonlite)
-library(magrittr)
 
 # Functions ------------------
 
@@ -39,6 +36,7 @@ meta15429 <- annotate(
     "Anzahl der aus dem In- und Ausland stammenden Jüd:innen im Kanton Basel-Stadt im angegebenen Jahr",
     "Anzahl der aus dem In- und Ausland stammenden Menschen mit anderer Religionszugehörigkeit, ohne Religionszugehörigkeit oder mit fehlender Angabe im Kanton Basel-Stadt im angegebenen Jahr"
   ),
+  column_datatype = c("gYear", rep("integer", 6)),
   object_description = "Der Anteil der Katholiken und Katholikinnen stieg zwischen 1910 und 1970 von 33 auf 40 Prozent der basel-städtischen Wohnbevölkerung. Bis zum Zweiten Weltkrieg und dann ab 1960 wieder stammten relativ viele von ihnen aus dem Ausland. Der Anteil der Juden und Jüdinnen an der Wohnbevölkerung betrug 1910 knapp zwei, 1970 knapp ein Prozent. Diese Abnahme wird mit der Abwanderung nach 1945 vor allem nach Israel in Zusammenhang gebracht (Erlanger 2005, S. 220–221). Mit zwei bis drei Prozent war der Anteil der als konfessionslos oder als einer anderen Konfession zugehörig registrierten Personen bis in die 1960er-Jahre noch klein. Ihr Anteil stieg bis 1970 auf fünf Prozent und sollte im letzten Drittel des Jahrhunderts markant zu Buche schlagen. Die Kategorien «Inland» und «Ausland» entstammen der Quelle.",
   creator = list(list(name = "Céline Angehrn")),
   contributor = list(

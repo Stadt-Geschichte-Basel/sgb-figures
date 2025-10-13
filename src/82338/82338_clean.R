@@ -2,9 +2,6 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(magrittr)
-library(jsonlite)
 library(tidyr)
 
 # Functions ------------------
@@ -37,6 +34,7 @@ meta82338 <- annotate(
   vol = 8,
   title = "Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002",
   column_description = c("Jahreszahl nach unserer Zeitrechnung", "Anteil der Arbeitslosen an der Gesamtbevölkerung der Schweiz in Prozent im entsprechenden Jahr", "Anteil der Arbeitslosen an der Bevölkerung des Kantons Basel-Stadt in Prozent im entsprechenden Jahr", "Anteil der Arbeitslosen an der Gesamtbevölkerung des Kantons Genf in Prozent im entsprechenden Jahr", "Anteil der Arbeitslosen an der Gesamtbevölkerung des Kantons Zürich in Prozent im entsprechenden Jahr"),
+  column_datatype = c("gYear", rep("float", 4)),
   object_description = "Die Erfassung der Arbeitslosigkeit ist voller Tücken. In der Statistik werden nur Menschen erfasst, die Anspruch auf Arbeitslosenentschädigungen haben. Der Anteil an Erwerbslosen war während der Rezession Mitte der 1970er-Jahre jedoch wesentlich höher, als es die erhobene Arbeitslosenquote von 0.5 bis 1.5 Prozent vermuten lässt. Die Zahlen blieben niedrig, weil viele ausländische Arbeitnehmerinnen und Arbeitnehmer mit ihrem Stellenverlust auch ihr Aufenthaltsrecht verloren. Im Vergleich zum Landesdurchschnitt verzeichnete der Kanton Basel-Stadt Mitte der 1980er-Jahre eine hohe Arbeitslosenquote von knapp drei Prozent. In der Krise der 1990er-Jahre stieg sie auf fast sechs Prozent, im Kanton Zürich lag sie tiefer, in Westschweizer Kantonen wie Genf noch höher.",
   creator = list(
     list(name = "Tobias Ehrenbold"),

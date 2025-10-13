@@ -2,10 +2,6 @@
 
 library(here)
 library(readxl)
-library(csvwr)
-library(magrittr)
-library(jsonlite)
-library(tidyr)
 
 # Functions ------------------
 
@@ -33,6 +29,7 @@ meta76999 <- annotate(
   vol = 9,
   title = "Privatbesitz an Boden und Wohnraum in Basel, 2021",
   column_description = c("Namen der auf dem Wohnungsmarkt aktiven Akteure in Basel-Stadt (ausgewählte)", "Anzahl der vom jeweiligen Akteur besessenen Wohnungen im Kanton Basel-Stadt. Angaben der Pensionskasse Basel-Stadt nach Eigendeklaration, im Datensatz sind einige der Grundstücke im Finanzvermögen der Einwohnergemeinde."),
+  column_datatype = c("string", "integer"),
   object_description = "Wem gehört Basel heute? Die Darstellung zeigt die grössten Privatplayer auf dem baselstädtischen Boden- und Wohnungsmarkt. Nach einer Recherche von reflect.ch und Bajour aus dem Jahr 2021 gehört rund ein Drittel aller Wohnungen in Basel-Stadt mittlerweile institutionellen, renditeorientierten Unternehmen. Dem Staat gehörten 2016 etwa 24 Prozent der bebau-baren Kantonsfläche (Berechnung der Initiant:innen der kantonalen ‹Neuen Bodeninitiative› von 2016).",
   creator = list(
     list(name = "Tobias Ehrenbold"),
