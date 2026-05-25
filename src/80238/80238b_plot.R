@@ -103,6 +103,7 @@ plot80238b <- ggplot(
     legend.position = "none",
     legend.key.width = unit(5, "mm"), # resultiert in 4 mm
     legend.key.height = unit(2.5, "mm"), # resultiert in 2 mm
+    legend.key.justification = "top",
     axis.text.y = element_text(margin = margin(r = 5)),
     plot.margin = margin(0.5, 0.1, 0, 0.5, "lines")
   )

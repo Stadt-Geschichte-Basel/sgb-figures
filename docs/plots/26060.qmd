@@ -1,7 +1,7 @@
 ---
 title: "Beschäftigte nach Wirtschaftszweigen im Kanton Basel-Stadt, 1929–1965"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-12
+date-modified: 2026-05-25
 volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
 vol_short: "Stadt.Geschichte.Basel 7"
 plotid: "abb26060"
@@ -101,6 +101,7 @@ plot26060 <- ggplot(data26060_longer) +
     legend.position = "none",
     legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
     legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+    legend.key.justification = "top",
     axis.ticks.x = element_blank(),
     axis.text.y = element_text(
       margin = margin(r = 5),
@@ -193,10 +194,10 @@ df <- data.frame(
     "[data/clean/Band7/26060/26060_3_Data.csv](../../data/clean/Band7/26060/26060_3_Data.csv)",
     "Böhner, Martin: Die Eidgenössische Betriebszählung 1965 aus baslerischer Sicht, Basel 1968, S. 66f. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band7/26060/26060_3_Data.csv-metadata.json](../../data/clean/Band7/26060/26060_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Beschäftigte nach Wirtschaftszweigen im Kanton Basel-Stadt, 1929–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26060.html#m26060_3>, letzte Aktualisierung: 12.10.2025.",
+    "Stadt.Geschichte.Basel: Beschäftigte nach Wirtschaftszweigen im Kanton Basel-Stadt, 1929–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26060.html#m26060_3>, letzte Aktualisierung: 25.05.2026.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-12 14:24:21"
+    "2026-05-25 15:47:04"
   ),
   stringsAsFactors = FALSE
 )

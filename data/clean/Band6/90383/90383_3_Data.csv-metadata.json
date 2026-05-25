@@ -56,10 +56,10 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T14:24:25+0200",
+		"@value": "2026-05-25T15:47:32+0200",
 		"@type": "xs:dateTime"
 	},
-	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Erwerbstätige nach sozialen Klassen im St. Alban und Klybeck. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90383.html#m90383_3>, letzte Aktualisierung: 12.10.2025.",
+	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Erwerbstätige nach sozialen Klassen im St. Alban und Klybeck. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90383.html#m90383_3>, letzte Aktualisierung: 25.05.2026.",
 	"tableSchema": {
 		"columns": [
 			{
