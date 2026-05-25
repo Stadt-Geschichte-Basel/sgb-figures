@@ -63,7 +63,7 @@ plot39492a <- ggplot(data39492, aes(x = Startjahr)) +
       margin = margin(r = 5),
       hjust = 1
     ),
-    plot.margin = margin(0.5, 0.25, 0, 0.2, "lines")
+    plot.margin = margin(0.5, 0.25, 0.5, 0.2, "lines")
   )
 
 ## zweiter Plot: Bürgeraufnahmen -----------

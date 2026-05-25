@@ -104,7 +104,7 @@ plot39050c <- ggplot(
       margin = margin(r = 5),
       hjust = 1
     ),
-    plot.margin = margin(0.5, 0.5, 0, 0, "lines")
+    plot.margin = margin(0.5, 0.5, 0.5, 0, "lines")
   )
 
 # Plot 39050d: Steuereinnahmen, Leibrenten, verk. Renten ---------
@@ -143,7 +143,7 @@ plot39050d <- ggplot(
   coord_cartesian(clip = "off") +
   theme_sgb_basis() +
   theme(
-    plot.margin = margin(0.5, 0.5, 0, 0, "lines"),
+    plot.margin = margin(0.5, 0.5, 0.5, 0, "lines"),
     legend.position = "none",
     axis.text.x = element_blank(),
     axis.text.y = element_text(
