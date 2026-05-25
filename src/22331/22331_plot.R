@@ -56,7 +56,7 @@ plot22331 <- ggplot(
       hjust = 1
     ),
     legend.key.height = unit(2.05, "mm"), # entspricht 1.64mm
-    legend.key.width = unit(5, "mm"), # entspricht 4mm
+    legend.key.width = unit(4.8, "mm"), # entspricht 4mm
     legend.key.justification = "top",
     plot.margin = margin(0.5, 0.2, 0, 0, "lines")
   )
@@ -72,7 +72,7 @@ write_info_page(
 
 # Export ---------------------
 
-export_plot(plot22331, 7, 112, 63, 50, 7,
+export_plot(plot22331, 7, 112, 66, 50, 7,
   plot_suffix = 1,
   legend_suffix = 2
 )
