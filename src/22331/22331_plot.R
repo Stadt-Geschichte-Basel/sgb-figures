@@ -27,7 +27,7 @@ plot22331 <- ggplot(
   geom_bar(aes(fill = "Ausgaben"), stat = "identity") +
   scale_fill_manual(
     values = c("Ausgaben" = "#6195CF"),
-    labels = c("Staatsausgaben für Musik\nund Theater pro Einwohner:in in CHF")
+    labels = c("Staatsausgaben für Musik und Theater\npro 100'000 Einwohner:innen in CHF")
   ) +
   scale_x_continuous(
     breaks = c(1913, 1920, 1930, 1940, 1950, 1960, 1966),
@@ -43,7 +43,7 @@ plot22331 <- ggplot(
   scale_color_identity(
     name = "",
     breaks = c("#6195CF"),
-    labels = c("Staatsausgaben für Musik und\nTheater pro Einwohner:in in CHF"),
+    labels = c("Staatsausgaben für Musik und Theater\npro 100'000 Einwohner:innen in CHF"),
     guide = "legend"
   ) +
   coord_cartesian(clip = "off") +
