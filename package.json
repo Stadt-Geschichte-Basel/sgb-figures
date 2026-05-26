@@ -18,7 +18,7 @@
 		"format:r": "Rscript src/Utils/Format_R_Scripts.R"
 	},
 	"devDependencies": {
-		"commitizen": "^4.3.1",
+		"commitizen": "^4.2.4",
 		"cz": "^1.8.2",
 		"cz-conventional-changelog": "^3.3.0",
 		"git-cliff": "^2.10.1",
