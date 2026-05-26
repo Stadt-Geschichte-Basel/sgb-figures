@@ -15,7 +15,7 @@ plot_dirs <- dir_ls(src_path, type = "directory", regexp = "[0-9]+$") %>%
 
 # extract title string from metadata json
 extract_title <- function(json_content) {
-  json_content$tables$tableSchema$title[[1]]
+  json_content$`dc:title`[[1]]
 }
 
 # Collect all titles for one plot_id
