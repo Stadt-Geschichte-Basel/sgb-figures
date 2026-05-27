@@ -2,7 +2,7 @@
 title: Workflow
 subtitle: Repository Structure, Software and Data Model
 lang: en
-format: html
+format: sgb-theme-html
 author:
   - name: Moritz Twente
     email: mtwente@protonmail.com

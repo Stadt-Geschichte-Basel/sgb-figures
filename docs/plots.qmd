@@ -2,7 +2,7 @@
 title: Available Figures
 subtitle: Plots, Datasets and Metadata
 lang: en
-format: html
+format: sgb-theme-html
 date-modified: last-modified
 listing:
   - id: plot-list

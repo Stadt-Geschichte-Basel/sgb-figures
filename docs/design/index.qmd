@@ -2,7 +2,7 @@
 title: Design Principles
 subtitle: Visual Identity and Colour Scheme
 lang: en
-format: html
+format: sgb-theme-html
 author: 
 - name: Cristina Münch
   affiliation: University of Basel
