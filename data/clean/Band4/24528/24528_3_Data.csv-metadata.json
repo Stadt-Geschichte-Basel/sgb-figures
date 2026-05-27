@@ -62,10 +62,10 @@
 		"@id": "https://rightsstatements.org/vocab/InC-RUU/1.0/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T14:24:21+0200",
+		"@value": "2026-05-27T17:23:56+0200",
 		"@type": "xs:dateTime"
 	},
-	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Temperaturabweichungen in °C, 1444–2011. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb24528.html#m24528_3>, letzte Aktualisierung: 12.10.2025.",
+	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Temperaturabweichungen in °C, 1444–2011. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb24528.html#m24528_3>, letzte Aktualisierung: 27.05.2026.",
 	"tableSchema": {
 		"columns": [
 			{

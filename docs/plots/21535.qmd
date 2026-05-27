@@ -1,12 +1,12 @@
 ---
 title: "Die ausländische Wohnbevölkerung von Basel-Stadt nach Heimatnation, 1920–1965"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-12
+date-modified: 2026-05-27
 volume: "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
 vol_short: "Stadt.Geschichte.Basel 7"
 plotid: "abb21535"
 format:
-  html:
+  sgb-theme-html:
     fig-width: 8
     title-block-categories: false
 fig-cap-location: top
@@ -170,10 +170,10 @@ df <- data.frame(
     "[data/clean/Band7/21535/21535_3_Data.csv](../../data/clean/Band7/21535/21535_3_Data.csv)",
     "Statistisches Jahrbuch des Kantons Basel-Stadt 1966, S. 32. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band7/21535/21535_3_Data.csv-metadata.json](../../data/clean/Band7/21535/21535_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Die ausländische Wohnbevölkerung von Basel-Stadt nach Heimatnation, 1920–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21535.html#m21535_3>, letzte Aktualisierung: 12.10.2025.",
+    "Stadt.Geschichte.Basel: Die ausländische Wohnbevölkerung von Basel-Stadt nach Heimatnation, 1920–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21535.html#m21535_3>, letzte Aktualisierung: 27.05.2026.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-12 14:24:20"
+    "2026-05-27 17:23:56"
   ),
   stringsAsFactors = FALSE
 )

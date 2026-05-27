@@ -1,12 +1,12 @@
 ---
 title: "Bevölkerungsentwicklung und Pestepidemien, 1500–1700"
 subtitle: Plot and Data Preview
-date-modified: 2026-05-25
+date-modified: 2026-05-27
 volume: "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 (Stadt.Geschichte.Basel 4)."
 vol_short: "Stadt.Geschichte.Basel 4"
 plotid: "abb17308"
 format:
-  html:
+  sgb-theme-html:
     fig-width: 8
     title-block-categories: false
 fig-cap-location: top
@@ -224,10 +224,10 @@ df <- data.frame(
     "[data/clean/Band4/17308/17308_3_Data.csv](../../data/clean/Band4/17308/17308_3_Data.csv)",
     "Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500). Basel, Liestal 1977, S. 172–174. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band4/17308/17308_3_Data.csv-metadata.json](../../data/clean/Band4/17308/17308_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Bevölkerungsentwicklung und Pestepidemien, 1500–1700. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb17308.html#m17308_3>, letzte Aktualisierung: 25.05.2026.",
+    "Stadt.Geschichte.Basel: Bevölkerungsentwicklung und Pestepidemien, 1500–1700. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb17308.html#m17308_3>, letzte Aktualisierung: 27.05.2026.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2026-05-25 17:31:32"
+    "2026-05-27 17:23:54"
   ),
   stringsAsFactors = FALSE
 )

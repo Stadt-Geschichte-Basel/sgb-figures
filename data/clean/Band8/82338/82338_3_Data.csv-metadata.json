@@ -59,10 +59,10 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T14:24:24+0200",
+		"@value": "2026-05-27T17:24:01+0200",
 		"@type": "xs:dateTime"
 	},
-	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb82338.html#m82338_3>, letzte Aktualisierung: 12.10.2025.",
+	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Arbeitslosenquote der Kantone Basel-Stadt, Genf und Zürich sowie der gesamten Schweiz, 1973–2002. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb82338.html#m82338_3>, letzte Aktualisierung: 27.05.2026.",
 	"tableSchema": {
 		"columns": [
 			{

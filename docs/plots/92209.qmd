@@ -1,12 +1,12 @@
 ---
 title: "Bevölkerungsentwicklung des Kantons Basel-Stadt, 1870–1910"
 subtitle: Plot and Data Preview
-date-modified: 2026-05-25
+date-modified: 2026-05-27
 volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 vol_short: "Stadt.Geschichte.Basel 6"
 plotid: "abb92209"
 format:
-  html:
+  sgb-theme-html:
     fig-width: 8
     title-block-categories: false
 fig-cap-location: top
@@ -174,10 +174,10 @@ df <- data.frame(
     "[data/clean/Band6/92209/92209_3_Data.csv](../../data/clean/Band6/92209/92209_3_Data.csv)",
     "Mitteilungen des Statistischen Amtes Basel-Stadt, Nr. 28, Basel 1924. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band6/92209/92209_3_Data.csv-metadata.json](../../data/clean/Band6/92209/92209_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Bevölkerungsentwicklung des Kantons Basel-Stadt, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92209.html#m92209_3>, letzte Aktualisierung: 25.05.2026.",
+    "Stadt.Geschichte.Basel: Bevölkerungsentwicklung des Kantons Basel-Stadt, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92209.html#m92209_3>, letzte Aktualisierung: 27.05.2026.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2026-05-25 15:47:41"
+    "2026-05-27 17:24:04"
   ),
   stringsAsFactors = FALSE
 )

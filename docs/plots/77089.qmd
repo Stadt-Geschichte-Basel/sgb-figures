@@ -1,12 +1,12 @@
 ---
 title: "Der Fahrzeugbestand in Basel-Stadt, 1920–2022"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-12
+date-modified: 2026-05-27
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb77089"
 format:
-  html:
+  sgb-theme-html:
     fig-width: 8
     title-block-categories: false
 fig-cap-location: top
@@ -186,10 +186,10 @@ df <- data.frame(
     "[data/clean/Band8/77089/77089_3_Data.csv](../../data/clean/Band8/77089/77089_3_Data.csv)",
     "https://statistik.bs.ch/apps/jahrbuch; https://statistik.bs.ch/files/webtabellen/t11-1-01.xlsx. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/77089/77089_3_Data.csv-metadata.json](../../data/clean/Band8/77089/77089_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Der Fahrzeugbestand in Basel-Stadt, 1920–2022. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77089.html#m77089_3>, letzte Aktualisierung: 12.10.2025.",
+    "Stadt.Geschichte.Basel: Der Fahrzeugbestand in Basel-Stadt, 1920–2022. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77089.html#m77089_3>, letzte Aktualisierung: 27.05.2026.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-12 14:24:23"
+    "2026-05-27 17:23:59"
   ),
   stringsAsFactors = FALSE
 )

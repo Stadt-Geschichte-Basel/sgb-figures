@@ -62,10 +62,10 @@
 		"@id": "https://creativecommons.org/licenses/by-sa/4.0/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T14:24:19+0200",
+		"@value": "2026-05-27T17:23:55+0200",
 		"@type": "xs:dateTime"
 	},
-	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Exportabgaben und Konsumsteuern, 1690–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb20418.html#m20418_3>, letzte Aktualisierung: 12.10.2025.",
+	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Exportabgaben und Konsumsteuern, 1690–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb20418.html#m20418_3>, letzte Aktualisierung: 27.05.2026.",
 	"tableSchema": {
 		"columns": [
 			{

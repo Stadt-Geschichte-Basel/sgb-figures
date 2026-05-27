@@ -1,12 +1,12 @@
 ---
 title: "Getreidevorräte in der Stadt Basel, 1613–1653"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-12
+date-modified: 2026-05-27
 volume: "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 (Stadt.Geschichte.Basel 4)."
 vol_short: "Stadt.Geschichte.Basel 4"
 plotid: "abb18046"
 format:
-  html:
+  sgb-theme-html:
     fig-width: 8
     title-block-categories: false
 fig-cap-location: top
@@ -185,10 +185,10 @@ df <- data.frame(
     "[data/clean/Band4/18046/18046_3_Data.csv](../../data/clean/Band4/18046/18046_3_Data.csv)",
     "Stritmatter, Robert: Die Stadt Basel während des Dreissigjährigen Krieges. Politik, Wirtschaft, Finanzen, Basel; Frankfurt a. M.; Las Vegas 1977, S. 115. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band4/18046/18046_3_Data.csv-metadata.json](../../data/clean/Band4/18046/18046_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Getreidevorräte in der Stadt Basel, 1613–1653. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb18046.html#m18046_3>, letzte Aktualisierung: 12.10.2025.",
+    "Stadt.Geschichte.Basel: Getreidevorräte in der Stadt Basel, 1613–1653. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb18046.html#m18046_3>, letzte Aktualisierung: 27.05.2026.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-12 14:24:19"
+    "2026-05-27 17:23:54"
   ),
   stringsAsFactors = FALSE
 )

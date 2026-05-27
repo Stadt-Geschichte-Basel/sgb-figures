@@ -51,10 +51,10 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2026-05-25T15:47:41+0200",
+		"@value": "2026-05-27T17:24:04+0200",
 		"@type": "xs:dateTime"
 	},
-	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Bevölkerungsentwicklung des Kantons Basel-Stadt, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92209.html#m92209_3>, letzte Aktualisierung: 25.05.2026.",
+	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Bevölkerungsentwicklung des Kantons Basel-Stadt, 1870–1910. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb92209.html#m92209_3>, letzte Aktualisierung: 27.05.2026.",
 	"tableSchema": {
 		"columns": [
 			{
