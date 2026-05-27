@@ -34,7 +34,6 @@ additional_entry <- tibble(
 
 data17308 <- data17308 %>%
   bind_rows(additional_entry) %>%
-  
   # Jahre anpassen für bessere x-Achsen-Darstellung
   mutate(
     Jahr = case_when(
