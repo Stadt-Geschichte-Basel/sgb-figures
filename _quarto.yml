@@ -57,7 +57,11 @@ website:
             href: SECURITY.md
 
 format:
-  sgb-theme-html: default
+  sgb-theme-html:
+    css: styles.css
+    link-external-icon: false
+    mermaid:
+      theme: neutral
 
 freeze: true
 
