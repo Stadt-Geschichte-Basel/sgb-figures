@@ -49,7 +49,7 @@ plot22331 <- ggplot(
   geom_bar(aes(fill = "Ausgaben"), stat = "identity") +
   scale_fill_manual(
     values = c("Ausgaben" = "#6195CF"),
-    labels = c("Staatsausgaben für Musik und Theater\npro 100'000 Einwohner:innen in CHF")
+    labels = c("Staatsausgaben für Musik und Theater\npro 1000 Einwohner:innen in CHF")
   ) +
   scale_x_continuous(
     breaks = c(1913, 1920, 1930, 1940, 1950, 1960, 1966),
@@ -65,7 +65,7 @@ plot22331 <- ggplot(
   scale_color_identity(
     name = "",
     breaks = c("#6195CF"),
-    labels = c("Staatsausgaben für Musik und Theater\npro 100'000 Einwohner:innen in CHF"),
+    labels = c("Staatsausgaben für Musik und Theater\npro 1000 Einwohner:innen in CHF"),
     guide = "legend"
   ) +
   coord_cartesian(clip = "off") +
@@ -167,7 +167,7 @@ df <- data.frame(
     "Stadt.Geschichte.Basel: Staatliche Ausgaben für Musik und Theater, 1913–1966. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb22331.html#m22331_3>, letzte Aktualisierung: 27.05.2026.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2026-05-27 17:23:56"
+    "2026-05-27 18:50:43"
   ),
   stringsAsFactors = FALSE
 )
