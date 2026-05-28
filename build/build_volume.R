@@ -35,7 +35,7 @@ band_plots <- dir_ls(data_path, type = "directory", regexp = "[0-9]+$") %>%
 
 # Extract title string from metadata JSON
 extract_title <- function(json_content) {
-  json_content$tables$tableSchema$title[[1]]
+  json_content$`dc:title`[[1]]
 }
 
 # Collect all titles for one plot_id

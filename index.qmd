@@ -3,7 +3,7 @@ title: sgb-figures
 subtitle: Figures, Code and Data for Stadt.Geschichte.Basel
 lang: en
 format:
-  html:
+  sgb-theme-html:
     filters:
       - filter-h1.lua
 date-modified: last-modified

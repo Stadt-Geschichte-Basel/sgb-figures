@@ -51,10 +51,10 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T14:24:18+0200",
+		"@value": "2026-05-27T17:23:53+0200",
 		"@type": "xs:dateTime"
 	},
-	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Anzahl Verkehrsträger pro 100 Einwohner und Einwohnerinnen im Kanton Basel-Stadt, 1916–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb11589.html#m11589_3>, letzte Aktualisierung: 12.10.2025.",
+	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Anzahl Verkehrsträger pro 100 Einwohner und Einwohnerinnen im Kanton Basel-Stadt, 1916–1970. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb11589.html#m11589_3>, letzte Aktualisierung: 27.05.2026.",
 	"tableSchema": {
 		"columns": [
 			{

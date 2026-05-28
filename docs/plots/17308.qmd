@@ -1,12 +1,12 @@
 ---
 title: "Bevölkerungsentwicklung und Pestepidemien, 1500–1700"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-12
+date-modified: 2026-05-27
 volume: "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 (Stadt.Geschichte.Basel 4)."
 vol_short: "Stadt.Geschichte.Basel 4"
 plotid: "abb17308"
 format:
-  html:
+  sgb-theme-html:
     fig-width: 8
     title-block-categories: false
 fig-cap-location: top
@@ -42,20 +42,35 @@ source(here("src", "17308", "17308_clean.R"))
 
 # Transform Data -------------
 
-data17308_pest <- subset(data17308,
-  Pestjahr == TRUE,
-  select = c(Jahr, Bevölkerungszahl)
+data17308_pest <- data17308 %>%
+  filter(Pestjahr == TRUE) %>%
+  select(Jahr, Bevölkerungszahl)
+
+# Manipulation:
+# zusätzlich 1500 mit Werten von 1501 für bessere x-Achsen-Darstellung
+additional_entry <- tibble(
+  Jahr = 1500,
+  Bevölkerungszahl = 9500,
+  Pestjahr = FALSE
 )
 
-# Manipulation: zusätzlich 1500 mit Werten von 1501 für bessere x-Achsen-Darstellung
-additional_entry <- list(Jahr = 1500, Bevölkerungszahl = 9500, Pestjahr = FALSE)
-data17308 <- rbind(data17308, additional_entry)
+data17308 <- data17308 %>%
+  bind_rows(additional_entry) %>%
+  
+  # Jahre anpassen für bessere x-Achsen-Darstellung
+  mutate(
+    Jahr = case_when(
+      Jahr == 1699 ~ 1700,
+      Jahr == 1501 ~ 1502,
+      TRUE ~ Jahr
+    )
+  )
 
-# Manipulation: Jahre anpassen für bessere x-Achsen-Darstellung
-data17308$Jahr[34] <- 1700 # eigentlich 1699
-
-data17308$Jahr[2] <- 1502 # eigentlich 1501, Label bleibt
-data17308_pest$Jahr[1] <- 1502 # eigentlich 1501, Label bleibt
+# Pestdaten ebenfalls anpassen
+data17308_pest <- data17308_pest %>%
+  mutate(
+    Jahr = if_else(Jahr == 1501, 1502, Jahr)
+  )
 
 # Plot -----------------------
 
@@ -209,10 +224,10 @@ df <- data.frame(
     "[data/clean/Band4/17308/17308_3_Data.csv](../../data/clean/Band4/17308/17308_3_Data.csv)",
     "Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500). Basel, Liestal 1977, S. 172–174. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band4/17308/17308_3_Data.csv-metadata.json](../../data/clean/Band4/17308/17308_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Bevölkerungsentwicklung und Pestepidemien, 1500–1700. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb17308.html#m17308_3>, letzte Aktualisierung: 12.10.2025.",
+    "Stadt.Geschichte.Basel: Bevölkerungsentwicklung und Pestepidemien, 1500–1700. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb17308.html#m17308_3>, letzte Aktualisierung: 27.05.2026.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-12 14:24:19"
+    "2026-05-27 17:23:54"
   ),
   stringsAsFactors = FALSE
 )

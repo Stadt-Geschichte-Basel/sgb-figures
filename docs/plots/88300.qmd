@@ -1,12 +1,12 @@
 ---
 title: "Kulturausgaben in Basel-Stadt, 2021"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-12
+date-modified: 2026-05-27
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb88300"
 format:
-  html:
+  sgb-theme-html:
     fig-width: 8
     title-block-categories: false
 fig-cap-location: top
@@ -231,10 +231,10 @@ df <- data.frame(
     "[data/clean/Band8/88300/88300_2_Data.csv](../../data/clean/Band8/88300/88300_2_Data.csv)",
     "Bundesamt für Statistik, gd-d-16.02.05.01-2024. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/88300/88300_2_Data.csv-metadata.json](../../data/clean/Band8/88300/88300_2_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_2>, letzte Aktualisierung: 12.10.2025.",
+    "Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_2>, letzte Aktualisierung: 27.05.2026.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-12 14:24:24"
+    "2026-05-27 17:24:02"
   ),
   stringsAsFactors = FALSE
 )
@@ -313,10 +313,10 @@ df <- data.frame(
     "[data/clean/Band8/88300/88300_3_Data.csv](../../data/clean/Band8/88300/88300_3_Data.csv)",
     "Jahresbericht Abteilung Kultur 2021. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/88300/88300_3_Data.csv-metadata.json](../../data/clean/Band8/88300/88300_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_3>, letzte Aktualisierung: 12.10.2025.",
+    "Stadt.Geschichte.Basel: Kulturausgaben in Basel-Stadt, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88300.html#m88300_3>, letzte Aktualisierung: 27.05.2026.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-12 14:24:24"
+    "2026-05-27 17:24:02"
   ),
   stringsAsFactors = FALSE
 )

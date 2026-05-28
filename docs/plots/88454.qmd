@@ -1,12 +1,12 @@
 ---
 title: "Museumseintritte und Kinobesuche in Basel-Stadt, 1945–2020"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-12
+date-modified: 2026-05-27
 volume: "Lengwiler, Martin (Hg.): Auf dem Weg ins Jetzt. Seit 1960. Basel 2025 (Stadt.Geschichte.Basel 8)."
 vol_short: "Stadt.Geschichte.Basel 8"
 plotid: "abb88454"
 format:
-  html:
+  sgb-theme-html:
     fig-width: 8
     title-block-categories: false
 fig-cap-location: top
@@ -174,10 +174,10 @@ df <- data.frame(
     "[data/clean/Band8/88454/88454_3_Data.csv](../../data/clean/Band8/88454/88454_3_Data.csv)",
     "Statistisches Jahrbuch des Kantons Basel-Stadt. Daten zu Museumseintritten vor 1992 nach StaBS ED-REG 37a 7-1 (2). Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band8/88454/88454_3_Data.csv-metadata.json](../../data/clean/Band8/88454/88454_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Museumseintritte und Kinobesuche in Basel-Stadt, 1945–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88454.html#m88454_3>, letzte Aktualisierung: 12.10.2025.",
+    "Stadt.Geschichte.Basel: Museumseintritte und Kinobesuche in Basel-Stadt, 1945–2020. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb88454.html#m88454_3>, letzte Aktualisierung: 27.05.2026.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-12 14:24:25"
+    "2026-05-27 17:24:02"
   ),
   stringsAsFactors = FALSE
 )

@@ -2,7 +2,7 @@
 title: Workflow
 subtitle: Repository Structure, Software and Data Model
 lang: en
-format: html
+format: sgb-theme-html
 author:
   - name: Moritz Twente
     email: mtwente@protonmail.com
@@ -253,7 +253,7 @@ classDiagram
         type
         format
         source
-        language &lpar;ISO 639-2 code&rpar;
+        language &lpar;ISO 639-1 code&rpar;
         [relation]
         rights
         license
@@ -267,19 +267,19 @@ classDiagram
         class media {
             id &lpar;m01313&rpar;
             title
-            [subject;subject] &lpar;keywords from GenderOpen Index&rpar;
+            [subject;subject]
             description
             [abstract] &lpar;alt attribute for alternative text&rpar;
             [creator] &lpar;incl. link to Wikidata&rpar;
             [publisher] &lpar;incl. link to Wikidata&rpar;
-            date
+            date &lpar;EDTF&rpar;
             temporal
             type
             format
             extent
             [source] &lpar;Source and catalogue link&rpar;
-            language &lpar;ISO 639-2 code&rpar;
-            [relation] &lpar;internal links to other items, link to GitHub, further information&rpar;
+            language &lpar;ISO 639-1 code&rpar;
+            [relation] &lpar;internal links, further information&rpar;
             rights
             license
         }
@@ -290,6 +290,7 @@ classDiagram
         [subject;subject]
         description
         temporal
+        language &lpar;ISO 639-1 code&rpar;
         [isPartOf;isPartOf] &lpar;Data DOIs&rpar;
     }
     }

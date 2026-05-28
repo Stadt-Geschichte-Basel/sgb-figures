@@ -51,10 +51,10 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T14:24:21+0200",
+		"@value": "2026-05-27T17:23:57+0200",
 		"@type": "xs:dateTime"
 	},
-	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Beschäftigte nach Wirtschaftszweigen im Kanton Basel-Stadt, 1929–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26060.html#m26060_3>, letzte Aktualisierung: 12.10.2025.",
+	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Beschäftigte nach Wirtschaftszweigen im Kanton Basel-Stadt, 1929–1965. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb26060.html#m26060_3>, letzte Aktualisierung: 27.05.2026.",
 	"tableSchema": {
 		"columns": [
 			{

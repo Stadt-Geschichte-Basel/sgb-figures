@@ -62,10 +62,10 @@
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2025-10-12T14:24:22+0200",
+		"@value": "2026-05-27T17:23:59+0200",
 		"@type": "xs:dateTime"
 	},
-	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Rheinhochwasser bei Basel-Schifflände, 1300–2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41404.html#m41404_3>, letzte Aktualisierung: 12.10.2025.",
+	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Rheinhochwasser bei Basel-Schifflände, 1300–2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41404.html#m41404_3>, letzte Aktualisierung: 27.05.2026.",
 	"tableSchema": {
 		"columns": [
 			{

@@ -333,7 +333,7 @@ write_info_page <- function(plot_obj, plot_id, volume, csv_suffix, plot_suffix =
     glue("vol_short: \"{main_metadata$vol_short}\""),
     glue("plotid: \"{plotid_meta}\""),
     "format:",
-    "  html:",
+    "  sgb-theme-html:",
     "    fig-width: 8",
     "    title-block-categories: false",
     "fig-cap-location: top",

@@ -1,12 +1,12 @@
 ---
 title: "Soziale Klassen in Basel, 1888–1904"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-12
+date-modified: 2026-05-27
 volume: "Kury, Patrick (Hg.): Die beschleunigte Stadt. 1856–1914. Basel 2024 (Stadt.Geschichte.Basel 6)."
 vol_short: "Stadt.Geschichte.Basel 6"
 plotid: "abb90940"
 format:
-  html:
+  sgb-theme-html:
     fig-width: 8
     title-block-categories: false
 fig-cap-location: top
@@ -187,10 +187,10 @@ df <- data.frame(
     "[data/clean/Band6/90940/90940_3_Data.csv](../../data/clean/Band6/90940/90940_3_Data.csv)",
     "Mangold, Fritz: Basels Staatseinahmen und Steuerverteilung 1888–1903, tabellarisch dargestellt, Basel 1905, Tab. XIX. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band6/90940/90940_3_Data.csv-metadata.json](../../data/clean/Band6/90940/90940_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Soziale Klassen in Basel, 1888–1904. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90940.html#m90940_3>, letzte Aktualisierung: 12.10.2025.",
+    "Stadt.Geschichte.Basel: Soziale Klassen in Basel, 1888–1904. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb90940.html#m90940_3>, letzte Aktualisierung: 27.05.2026.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-12 14:24:25"
+    "2026-05-27 17:24:03"
   ),
   stringsAsFactors = FALSE
 )

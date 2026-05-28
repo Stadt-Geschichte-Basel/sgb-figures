@@ -75,7 +75,8 @@ plot21433 <- ggplot(
       hjust = 1
     ),
     legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
-    legend.key.width = unit(5, "mm") # entspricht 4.5 mm
+    legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+    legend.key.justification = "top"
   )
 
 # Write Info Page ------------

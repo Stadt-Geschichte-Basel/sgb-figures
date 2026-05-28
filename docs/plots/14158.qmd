@@ -1,12 +1,12 @@
 ---
 title: "Bürgerrechtsaufnahmen, 1400–1798"
 subtitle: Plot and Data Preview
-date-modified: 2025-10-12
+date-modified: 2026-05-27
 volume: "Burghartz, Susanna (Hg.): Aufbrüche, Krisen, Transformationen. 1510–1790. Basel 2024 (Stadt.Geschichte.Basel 4)."
 vol_short: "Stadt.Geschichte.Basel 4"
 plotid: "abb14158"
 format:
-  html:
+  sgb-theme-html:
     fig-width: 8
     title-block-categories: false
 fig-cap-location: top
@@ -161,10 +161,10 @@ df <- data.frame(
     "[data/clean/Band4/14158/14158_3_Data.csv](../../data/clean/Band4/14158/14158_3_Data.csv)",
     "Gschwind, Franz: Bevölkerungsentwicklung und Wirtschaftsstruktur der Landschaft Basel im 18. Jahrhundert. Ein historisch-demographischer Beitrag zur Sozial- und Wirtschaftsgeschichte mit besonderer Berücksichtigung der langfristigen Bevölkerungsentwicklung von Stadt (seit 1100) und Landschaft (seit 1500). Basel, Liestal 1977, S. 170. Bearbeitung: Nico Görlich / Moritz Twente",
     "[data/clean/Band4/14158/14158_3_Data.csv-metadata.json](../../data/clean/Band4/14158/14158_3_Data.csv-metadata.json)",
-    "Stadt.Geschichte.Basel: Bürgerrechtsaufnahmen, 1400–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb14158.html#m14158_3>, letzte Aktualisierung: 12.10.2025.",
+    "Stadt.Geschichte.Basel: Bürgerrechtsaufnahmen, 1400–1798. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb14158.html#m14158_3>, letzte Aktualisierung: 27.05.2026.",
     "Public Domain Mark",
     "[https://creativecommons.org/public-domain/pdm/](https://creativecommons.org/public-domain/pdm/)",
-    "2025-10-12 14:24:19"
+    "2026-05-27 17:23:54"
   ),
   stringsAsFactors = FALSE
 )

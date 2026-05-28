@@ -27,8 +27,8 @@ theme_sgb_basis <- function() {
 
       axis.title.x = element_blank(),
       axis.title.y = element_blank(),
-      axis.text.x = element_text(size = 6.5, color = "black", margin = unit(c(2.2, 0, 0, 0), "pt")),
-      axis.text.y = element_text(size = 6.5, color = "black", margin = unit(c(0, 0, 0, 0), "pt")),
+      axis.text.x = element_text(size = 6.5, color = "black", margin = margin(2.2, 0, 0, 0, "pt")),
+      axis.text.y = element_text(size = 6.5, color = "black", margin = margin(0, 0, 0, 0, "pt")),
       axis.line.x.bottom = element_line(color = "black", linewidth = 0.14),
       axis.line.y.left = element_line(color = "black", linewidth = 0.14),
       axis.ticks.x = element_line(color = "black", linewidth = 0.14),

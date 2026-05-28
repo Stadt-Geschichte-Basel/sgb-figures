@@ -20,20 +20,34 @@ source(here("src", "17308", "17308_clean.R"))
 
 # Transform Data -------------
 
-data17308_pest <- subset(data17308,
-  Pestjahr == TRUE,
-  select = c(Jahr, Bevölkerungszahl)
+data17308_pest <- data17308 %>%
+  filter(Pestjahr == TRUE) %>%
+  select(Jahr, Bevölkerungszahl)
+
+# Manipulation:
+# zusätzlich 1500 mit Werten von 1501 für bessere x-Achsen-Darstellung
+additional_entry <- tibble(
+  Jahr = 1500,
+  Bevölkerungszahl = 9500,
+  Pestjahr = FALSE
 )
 
-# Manipulation: zusätzlich 1500 mit Werten von 1501 für bessere x-Achsen-Darstellung
-additional_entry <- list(Jahr = 1500, Bevölkerungszahl = 9500, Pestjahr = FALSE)
-data17308 <- rbind(data17308, additional_entry)
+data17308 <- data17308 %>%
+  bind_rows(additional_entry) %>%
+  # Jahre anpassen für bessere x-Achsen-Darstellung
+  mutate(
+    Jahr = case_when(
+      Jahr == 1699 ~ 1700,
+      Jahr == 1501 ~ 1502,
+      TRUE ~ Jahr
+    )
+  )
 
-# Manipulation: Jahre anpassen für bessere x-Achsen-Darstellung
-data17308$Jahr[34] <- 1700 # eigentlich 1699
-
-data17308$Jahr[2] <- 1502 # eigentlich 1501, Label bleibt
-data17308_pest$Jahr[1] <- 1502 # eigentlich 1501, Label bleibt
+# Pestdaten ebenfalls anpassen
+data17308_pest <- data17308_pest %>%
+  mutate(
+    Jahr = if_else(Jahr == 1501, 1502, Jahr)
+  )
 
 # Plot -----------------------
 

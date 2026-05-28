@@ -98,6 +98,7 @@ plot26375 <- ggplot(data26375_longer) +
     legend.position = "none",
     legend.key.height = unit(2.5, "mm"), # entspricht 2 mm
     legend.key.width = unit(5, "mm"), # entspricht 4.5 mm
+    legend.key.justification = "top",
     axis.ticks.x = element_blank(),
     axis.text.y = element_text(
       margin = margin(r = 5),
