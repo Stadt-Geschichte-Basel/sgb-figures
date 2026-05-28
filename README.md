@@ -151,7 +151,7 @@ We use [SemVer](http://semver.org/) for versioning. The available versions are l
 
 ## Authors and Acknowledgments
 
-- Initial Work: **Moritz Twente** – [mtwente](https://github.com/mtwente) – [ORCID](https://orcid.org/0009-0005-7187-9774)
+- **Moritz Twente** – _Initial work_ – [mtwente](https://github.com/mtwente) – [ORCID](https://orcid.org/0009-0005-7187-9774)
 
 See also the list of [contributors](https://github.com/stadt-geschichte-basel/sgb-figures/graphs/contributors) who contributed to this project.
 
