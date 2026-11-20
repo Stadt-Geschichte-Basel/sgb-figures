@@ -36,7 +36,8 @@ jobs:
 
   build-optimize:
     name: Build, Optimize, and Upload Artifacts
-    runs-on: ubuntu-latest
+    # ubuntu-latest is Ubuntu 26.04. The R package later 1.4.2 does not compile there.
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Check out repository
