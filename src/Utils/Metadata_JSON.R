@@ -96,7 +96,6 @@ annotate <- function(data, media_id, csv_suffix, vol, title, column_description,
     `dc:identifier` = identifier,
     `dc:title` = title,
     `dc:isPartOf` = is_part_of,
-    # `dc:subject` = subjects, # not yet implemented
     `dc:description` = setNames(list(object_description), lang),
     `dc:creator` = creators,
     `dc:publisher` = publisher,
