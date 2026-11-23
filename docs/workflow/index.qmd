@@ -212,6 +212,8 @@ Metadata for research data of Stadt.Geschichte.Basel is provided according to a 
 
 For the data in sgb-figures, the model was slightly adapted to align with the requirements of publishing tabular data. To this end, recommendations as outlined in the W3C standard for tabular data and metadata on the web [@w3cModelTabularData2022] were consulted and implemented using a custom annotation function.
 
+The data model has no subject field. Stadt.Geschichte.Basel decided not to assign subject terms to its collection objects. The [data model documentation](https://dokumentation.stadtgeschichtebasel.ch/products/research-data/datamodel/#keine-schlagwoerter) explains this decision.
+
 Metadata for the `csv` datasets used for creating the figures is stored in a separate `json` file. Again using the example metadata object `abb01313`, @fig-datamodel illustrates how this annotation integrates with the Stadt.Geschichte.Basel data model used for the research data platform. In this example, `abb01313` has one child media object `m01313`. `m01313` is a sgb-figures plot built using the dataset `01313_3` which in turn is described by the metadata file `01313_3_Data.csv-metadata.json`.
 
 Each `json` metadata file annotates one `csv` dataset. Each dataset is used for one figure, but a figure may be built taking multiple datasets as input. Each figure is represented as one media object on the Stadt.Geschichte.Basel Research Data Platform. This (child) media object is then part of a parent metadata object, alongside zero or more other child media objects. If a parent metadata object has more than one child media object, their `id` values -- as well as the `id` values of the corresponding dataset(s) and metadata file(s) -- are numbered consecutively (`m01313_1`, `m01313_2`, etc.).
@@ -267,7 +269,6 @@ classDiagram
         class media {
             id &lpar;m01313&rpar;
             title
-            [subject;subject]
             description
             [abstract] &lpar;alt attribute for alternative text&rpar;
             [creator] &lpar;incl. link to Wikidata&rpar;
@@ -287,7 +288,6 @@ classDiagram
     class metadata2 {
         id &lpar;abb01313&rpar;
         title
-        [subject;subject]
         description
         temporal
         language &lpar;ISO 639-1 code&rpar;
