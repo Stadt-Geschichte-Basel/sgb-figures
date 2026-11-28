@@ -5,11 +5,11 @@
 			"@language": "de"
 		}
 	],
-	"url": "41404_3_Data.csv",
-	"dc:identifier": "m41404_3",
+	"url": "42596_3_Data.csv",
+	"dc:identifier": "m42596_3",
 	"dc:title": "Rheinhochwasser bei Basel-Schifflände, 1300–2021",
 	"dc:isPartOf": {
-		"object_id": "abb41404",
+		"object_id": "abb42596",
 		"volume": "Burkart, Lucas (Hg.): Stadt in Verhandlung. 1250–1530. Basel 2024 (Stadt.Geschichte.Basel 3)."
 	},
 	"dc:description": {
@@ -56,16 +56,16 @@
 	"dc:format": "text/csv",
 	"dc:source": "Wetter, O., Pfister, C., Weingartner, R. u.a.: The largest floods in the High Rhine basin since 1268 assessed from documentary and instrmental evidence, in: Hydrological Sciences Journal 56 (5), 2011, S. 733-758. Bearbeitung: Nico Görlich / Moritz Twente",
 	"dc:language": "de",
-	"dc:relation": ["m41404_1", "m41404_2"],
+	"dc:relation": ["m42596_1", "m42596_2"],
 	"dc:rights": "Public Domain Mark",
 	"dc:license": {
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2026-05-27T17:23:59+0200",
+		"@value": "2026-11-28T21:20:03+0100",
 		"@type": "xs:dateTime"
 	},
-	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Rheinhochwasser bei Basel-Schifflände, 1300–2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb41404.html#m41404_3>, letzte Aktualisierung: 27.05.2026.",
+	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Rheinhochwasser bei Basel-Schifflände, 1300–2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb42596.html#m42596_3>, letzte Aktualisierung: 28.11.2026.",
 	"tableSchema": {
 		"columns": [
 			{
