@@ -126,14 +126,14 @@ curl -i https://zenodo.org/api/records/ZENODO_RECORD
 
 This project is maintained by [@Stadt-Geschichte-Basel](https://github.com/stadt-geschichte-basel). Please understand that we can't provide individual support via email. We also believe that help is much more valuable when it's shared publicly, so more people can benefit from it.
 
-| Type                                   | Platforms                                                                               |
-| -------------------------------------- | --------------------------------------------------------------------------------------- |
-| 🚨 **Bug Reports**                     | [GitHub Issue Tracker](https://github.com/stadt-geschichte-basel/sgb-figures/issues)    |
-| 📊 **Report bad data**                 | [GitHub Issue Tracker](https://github.com/stadt-geschichte-basel/sgb-figures/issues)    |
-| 📚 **Docs Issue**                      | [GitHub Issue Tracker](https://github.com/stadt-geschichte-basel/sgb-figures/issues)    |
-| 🎁 **Feature Requests**                | [GitHub Issue Tracker](https://github.com/stadt-geschichte-basel/sgb-figures/issues)    |
+| Type                                  | Platforms                                                                               |
+| ------------------------------------- | --------------------------------------------------------------------------------------- |
+| 🚨 **Bug Reports**                    | [GitHub Issue Tracker](https://github.com/stadt-geschichte-basel/sgb-figures/issues)    |
+| 📊 **Report bad data**                | [GitHub Issue Tracker](https://github.com/stadt-geschichte-basel/sgb-figures/issues)    |
+| 📚 **Docs Issue**                     | [GitHub Issue Tracker](https://github.com/stadt-geschichte-basel/sgb-figures/issues)    |
+| 🎁 **Feature Requests**               | [GitHub Issue Tracker](https://github.com/stadt-geschichte-basel/sgb-figures/issues)    |
 | 🛡 **Report a security vulnerability** | See [SECURITY.md](SECURITY.md)                                                          |
-| 💬 **General Questions**               | [GitHub Discussions](https://github.com/stadt-geschichte-basel/sgb-figures/discussions) |
+| 💬 **General Questions**              | [GitHub Discussions](https://github.com/stadt-geschichte-basel/sgb-figures/discussions) |
 
 ## Roadmap
 
