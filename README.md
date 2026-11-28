@@ -137,9 +137,7 @@ This project is maintained by [@Stadt-Geschichte-Basel](https://github.com/stadt
 
 ## Roadmap
 
-- [ ] Archive repository on Zenodo
-- [ ] Add DOIs
-- [ ] Add alt-text to plots
+No changes are currently planned.
 
 ## Contributing
 
