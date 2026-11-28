@@ -32,9 +32,7 @@ meta76999 <- annotate(
   column_datatype = c("string", "integer"),
   object_description = "Wem gehört Basel heute? Die Darstellung zeigt die grössten Privatplayer auf dem baselstädtischen Boden- und Wohnungsmarkt. Nach einer Recherche von reflect.ch und Bajour aus dem Jahr 2021 gehört rund ein Drittel aller Wohnungen in Basel-Stadt mittlerweile institutionellen, renditeorientierten Unternehmen. Dem Staat gehörten 2016 etwa 24 Prozent der bebau-baren Kantonsfläche (Berechnung der Initiant:innen der kantonalen ‹Neuen Bodeninitiative› von 2016).",
   creator = list(
-    list(name = "Tobias Ehrenbold"),
-    list(name = "Silas Gusset"),
-    list(name = "Anina Zahn")
+    list(name = "Robert Labhart")
   ),
   contributor = list(
     list(
