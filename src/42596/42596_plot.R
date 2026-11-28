@@ -16,23 +16,23 @@ source(here("src", "Utils", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
-source(here("src", "41404", "41404_clean.R"))
+source(here("src", "42596", "42596_clean.R"))
 
 # Transform Data -------------
 
-data41404_korrektionen <- subset(
-  data41404,
+data42596_korrektionen <- subset(
+  data42596,
   !(is.na(Gewässerkorrektionen))
 )
 
 # Plot -----------------------
 
-plot41404 <- ggplot(
-  data = data41404,
+plot42596 <- ggplot(
+  data = data42596,
   aes(x = Jahr)
 ) +
   geom_segment(
-    data = data41404_korrektionen,
+    data = data42596_korrektionen,
     aes(
       x = Jahr, y = 0,
       xend = Jahr, yend = max(`Q [m3/s]`),
@@ -103,15 +103,15 @@ plot41404 <- ggplot(
 # Write Info Page ------------
 
 write_info_page(
-  plot_obj = plot41404,
-  plot_id = 41404,
+  plot_obj = plot42596,
+  plot_id = 42596,
   volume = 3,
   csv_suffix = 3
 )
 
 # Export ---------------------
 
-export_plot(plot41404, 3, 140, 55.6, 65, 23,
+export_plot(plot42596, 3, 140, 55.6, 65, 23,
   plot_suffix = 1,
   legend_suffix = 2
 )

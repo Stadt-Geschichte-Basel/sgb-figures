@@ -10,20 +10,20 @@ source(here("src", "Utils", "Export_CSV.R"))
 
 # Process Data ---------------
 
-data21892 <- read_excel(here("data", "raw", "Band7", "21892", "21892_Data_raw.xlsx"),
+data77023 <- read_excel(here("data", "raw", "Band7", "77023", "77023_Data_raw.xlsx"),
   range = "F2:G55",
   col_names = TRUE
 )
 
-colnames(data21892)[2] <- "Öffentliches Personal auf 1000 Einwohner"
+colnames(data77023)[2] <- "Öffentliches Personal auf 1000 Einwohner"
 
-save_clean_csv(data21892, csv_suffix = 3, vol = 7)
+save_clean_csv(data77023, csv_suffix = 3, vol = 7)
 
 # Create Metadata ------------
 
-meta21892 <- annotate(
-  data = data21892,
-  media_id = 21892,
+meta77023 <- annotate(
+  data = data77023,
+  media_id = 77023,
   csv_suffix = 3,
   vol = 7,
   title = "Öffentliches Personal des Kantons auf 1000 Einwohnerinnen und Einwohner, 1912–1963",
@@ -46,5 +46,5 @@ meta21892 <- annotate(
   coverage = "20. Jahrhundert",
   source = "Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge: Daten 1911-1945: Ausgabe 1945, S. 203. Daten 1946-1950: Ausgabe 1950, S. 199. Daten 1951-1955: Ausgabe 1955, S. 192. Daten 1956-1960: Ausgabe 1960, S. 182. Daten 1961-1963: Ausgabe 1963, S. 180. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = c("m21892_1", "m21892_2", "m21912_1", "m21912_2", "m21912_3")
+  relation = c("m77023_1", "m77023_2", "m21912_1", "m21912_2", "m21912_3")
 )

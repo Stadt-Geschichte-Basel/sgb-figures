@@ -10,30 +10,30 @@ source(here("src", "Utils", "Export_CSV.R"))
 
 # Process Data ---------------
 
-data41404 <- read_excel(here("data", "raw", "Band3", "41404", "41404_Data_raw.xlsx"),
+data42596 <- read_excel(here("data", "raw", "Band3", "42596", "42596_Data_raw.xlsx"),
   col_names = TRUE,
   range = "A15:F737"
 )
 
-data41404 <- data41404[, -3]
+data42596 <- data42596[, -3]
 
 col_order <- c("Jahr", "Q [m3/s]", "P [m ü. M.]", "gleitender 100 jähriger MW", "Gewässerkorrektionen")
-data41404 <- data41404[, col_order]
+data42596 <- data42596[, col_order]
 
 # in Spalte 5 geparkte Quellenangaben entfernen
 spalte5_bereinigen <- c(465, 502, 518, 553, 577, 582)
 
 for (i in spalte5_bereinigen) {
-  data41404[i, 5] <- NA
+  data42596[i, 5] <- NA
 }
 
-save_clean_csv(data41404, csv_suffix = 3, vol = 3)
+save_clean_csv(data42596, csv_suffix = 3, vol = 3)
 
 # Create Metadata ------------
 
-meta41404 <- annotate(
-  data = data41404,
-  media_id = 41404,
+meta42596 <- annotate(
+  data = data42596,
+  media_id = 42596,
   csv_suffix = 3,
   vol = 3,
   title = "Rheinhochwasser bei Basel-Schifflände, 1300–2021",
@@ -65,5 +65,5 @@ meta41404 <- annotate(
   coverage = "Mittelalter",
   source = "Wetter, O., Pfister, C., Weingartner, R. u.a.: The largest floods in the High Rhine basin since 1268 assessed from documentary and instrmental evidence, in: Hydrological Sciences Journal 56 (5), 2011, S. 733-758. Bearbeitung: Nico Görlich / Moritz Twente",
   rights = "Public Domain Mark",
-  relation = c("m41404_1", "m41404_2")
+  relation = c("m42596_1", "m42596_2")
 )

@@ -5,11 +5,11 @@
 			"@language": "de"
 		}
 	],
-	"url": "21892_3_Data.csv",
-	"dc:identifier": "m21892_3",
+	"url": "77023_3_Data.csv",
+	"dc:identifier": "m77023_3",
 	"dc:title": "Öffentliches Personal des Kantons auf 1000 Einwohnerinnen und Einwohner, 1912–1963",
 	"dc:isPartOf": {
-		"object_id": "abb21892",
+		"object_id": "abb77023",
 		"volume": "Arni, Caroline (Hg.): Stadt an der Grenze in einer Zeit der Gefährdung. 1912–1966. Basel 2024 (Stadt.Geschichte.Basel 7)."
 	},
 	"dc:description": {
@@ -45,16 +45,16 @@
 	"dc:format": "text/csv",
 	"dc:source": "Statistisches Jahrbuch des Kantons Basel-Stadt, diverse Jahrgänge: Daten 1911-1945: Ausgabe 1945, S. 203. Daten 1946-1950: Ausgabe 1950, S. 199. Daten 1951-1955: Ausgabe 1955, S. 192. Daten 1956-1960: Ausgabe 1960, S. 182. Daten 1961-1963: Ausgabe 1963, S. 180. Bearbeitung: Nico Görlich / Moritz Twente",
 	"dc:language": "de",
-	"dc:relation": ["m21892_1", "m21892_2", "m21912_1", "m21912_2", "m21912_3"],
+	"dc:relation": ["m77023_1", "m77023_2", "m21912_1", "m21912_2", "m21912_3"],
 	"dc:rights": "Public Domain Mark",
 	"dc:license": {
 		"@id": "https://creativecommons.org/public-domain/pdm/"
 	},
 	"dc:modified": {
-		"@value": "2026-05-27T17:23:56+0200",
+		"@value": "2026-11-28T21:25:59+0100",
 		"@type": "xs:dateTime"
 	},
-	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Öffentliches Personal des Kantons auf 1000 Einwohnerinnen und Einwohner, 1912–1963. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb21892.html#m21892_3>, letzte Aktualisierung: 27.05.2026.",
+	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Öffentliches Personal des Kantons auf 1000 Einwohnerinnen und Einwohner, 1912–1963. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb77023.html#m77023_3>, letzte Aktualisierung: 28.11.2026.",
 	"tableSchema": {
 		"columns": [
 			{

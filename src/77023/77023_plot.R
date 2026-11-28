@@ -16,11 +16,11 @@ source(here("src", "Utils", "Write_InfoPage.R"))
 
 # Read Data ------------------
 
-source(here("src", "21892", "21892_clean.R"))
+source(here("src", "77023", "77023_clean.R"))
 
 # Plot -----------------------
 
-plot21892 <- ggplot(data = data21892) +
+plot77023 <- ggplot(data = data77023) +
   geom_line(
     aes(
       x = Jahresende,
@@ -62,15 +62,15 @@ plot21892 <- ggplot(data = data21892) +
 # Write Info Page ------------
 
 write_info_page(
-  plot_obj = plot21892,
-  plot_id = 21892,
+  plot_obj = plot77023,
+  plot_id = 77023,
   volume = 7,
   csv_suffix = 3
 )
 
 # Export ---------------------
 
-export_plot(plot21892, 7, 68, 38, 37, 7,
+export_plot(plot77023, 7, 68, 38, 37, 7,
   plot_suffix = 1,
   legend_suffix = 2
 )

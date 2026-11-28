@@ -13,19 +13,11 @@
 		"volume": "Baur, Esther; Gafner, Lina (Hg.): Stadträume. Offen und begrenzt, gestaltet und umkämpft. Basel 2025 (Stadt.Geschichte.Basel 9)."
 	},
 	"dc:description": {
-		"de": "Wem gehört Basel heute? Die Darstellung zeigt die grössten Privatplayer auf dem baselstädtischen Boden- und Wohnungsmarkt. Nach einer Recherche von reflect.ch und Bajour aus dem Jahr 2021 gehört rund ein Drittel aller Wohnungen in Basel-Stadt mittlerweile institutionellen, renditeorientierten Unternehmen. Dem Staat gehörten 2016 etwa 24 Prozent der bebau-baren Kantonsfläche (Berechnung der Initiant:innen der kantonalen ‹Neuen Bodeninitiative› von 2016)."
+		"de": "Wem gehört Basel heute? Die Darstellung zeigt die grössten Privatplayer auf dem baselstädtischen Boden- und Wohnungsmarkt. Nach einer Recherche von reflect.ch und Bajour aus dem Jahr 2021 gehört rund ein Drittel aller Wohnungen in Basel-Stadt mittlerweile institutionellen, renditeorientierten Unternehmen. Dem Staat gehörten 2016 etwa 24 Prozent der bebaubaren Kantonsfläche (Berechnung der Initiant:innen der kantonalen ‹Neuen Bodeninitiative› von 2016)."
 	},
-	"dc:creator": [
-		{
-			"schema:name": "Tobias Ehrenbold"
-		},
-		{
-			"schema:name": "Silas Gusset"
-		},
-		{
-			"schema:name": "Anina Zahn"
-		}
-	],
+	"dc:creator": {
+		"schema:name": "Robert Labhart"
+	},
 	"dc:publisher": {
 		"schema:name": "Stadt.Geschichte.Basel",
 		"schema:url": {
@@ -59,10 +51,10 @@
 		"@id": "https://creativecommons.org/licenses/by-sa/4.0/"
 	},
 	"dc:modified": {
-		"@value": "2026-05-27T17:23:59+0200",
+		"@value": "2026-11-28T20:42:59+0100",
 		"@type": "xs:dateTime"
 	},
-	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Privatbesitz an Boden und Wohnraum in Basel, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb76999.html#m76999_3>, letzte Aktualisierung: 27.05.2026.",
+	"dc:bibliographicCitation": "Stadt.Geschichte.Basel: Privatbesitz an Boden und Wohnraum in Basel, 2021. Forschungsdatenplattform Stadt.Geschichte.Basel, <https://forschung.stadtgeschichtebasel.ch/items/abb76999.html#m76999_3>, letzte Aktualisierung: 28.11.2026.",
 	"tableSchema": {
 		"columns": [
 			{
